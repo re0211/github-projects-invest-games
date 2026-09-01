@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 开源项目梳理 · 投资 × 游戏制作 × 游戏拓展</title>
+<style>
+:root{
+  --bg:#f7f8fa;
+  --surface:#ffffff;
+  --surface-2:#f2f4f7;
+  --border:#e3e7ed;
+  --text:#1a1f2b;
+  --text-2:#4a5568;
+  --text-3:#7b8794;
+  --accent:#2563eb;
+  --accent-soft:#eff4ff;
+  --invest:#0e7490;
+  --invest-soft:#ecfeff;
+  --make:#7c3aed;
+  --make-soft:#f5f3ff;
+  --mod:#b45309;
+  --mod-soft:#fffbeb;
+  --warn:#b91c1c;
+  --warn-soft:#fef2f2;
+  --ok:#15803d;
+  --ok-soft:#f0fdf4;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 4px 16px rgba(16,24,40,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- Header ---------- */
+header{
+  background:linear-gradient(135deg,#1e293b 0%,#334155 55%,#475569 100%);
+  color:#fff;padding:56px 0 48px;margin-bottom:40px;
+}
+header .kicker{
+  display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  background:rgba(255,255,255,.14);padding:5px 12px;border-radius:999px;margin-bottom:18px;
+  color:#e2e8f0;
+}
+header h1{font-size:34px;line-height:1.3;font-weight:700;letter-spacing:-.02em}
+header .sub{margin-top:14px;font-size:15px;color:#cbd5e1;max-width:760px}
+header .meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
+header .meta span{
+  font-size:13px;background:rgba(255,255,255,.12);padding:6px 14px;border-radius:8px;color:#e2e8f0;
+}
+
+/* ---------- Overview ---------- */
+.overview{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px 30px;box-shadow:var(--shadow);margin-bottom:44px;
+}
+.overview h2{font-size:19px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.overview p{color:var(--text-2);font-size:15px;margin-bottom:12px}
+.overview p:last-child{margin-bottom:0}
+.overview strong{color:var(--text);font-weight:600}
+
+/* ---------- Section ---------- */
+section{margin-bottom:52px;scroll-margin-top:20px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px;padding-bottom:16px;border-bottom:2px solid var(--border)}
+.sec-num{
+  font-size:13px;font-weight:700;width:30px;height:30px;flex-shrink:0;
+  display:inline-flex;align-items:center;justify-content:center;border-radius:9px;color:#fff;
+}
+.sec-head h2{font-size:25px;font-weight:700;letter-spacing:-.01em}
+.sec-desc{color:var(--text-2);font-size:14.5px;margin:16px 0 26px;max-width:820px}
+.s-invest .sec-num{background:var(--invest)}
+.s-make .sec-num{background:var(--make)}
+.s-mod .sec-num{background:var(--mod)}
+
+/* ---------- Group ---------- */
+.group{margin-bottom:32px}
+.group-title{
+  font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:14px;display:flex;align-items:center;gap:10px;
+}
+.group-title::after{content:"";flex:1;height:1px;background:var(--border)}
+
+/* ---------- Card ---------- */
+.card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow);
+  transition:border-color .18s ease, transform .18s ease;
+}
+.card:hover{border-color:#cbd5e1;transform:translateY(-1px)}
+.card-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+.card-name{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.card-name a{color:var(--text);text-decoration:none;border-bottom:2px solid transparent}
+.card-name a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.lang{font-size:12px;color:var(--text-3);background:var(--surface-2);padding:2px 9px;border-radius:6px}
+.stars{font-size:12.5px;color:var(--text-2);font-variant-numeric:tabular-nums;font-weight:600}
+.stars::before{content:"★ ";color:#f59e0b}
+.tag{
+  font-size:11.5px;padding:2px 9px;border-radius:6px;font-weight:600;letter-spacing:.02em;
+}
+.t-invest{background:var(--invest-soft);color:var(--invest)}
+.t-make{background:var(--make-soft);color:var(--make)}
+.t-mod{background:var(--mod-soft);color:var(--mod)}
+.t-warn{background:var(--warn-soft);color:var(--warn)}
+.t-ok{background:var(--ok-soft);color:var(--ok)}
+
+.plain{
+  font-size:14.5px;color:var(--text-2);margin-bottom:12px;
+}
+.plain em{font-style:normal;color:var(--text);font-weight:600}
+.analogy{
+  background:var(--surface-2);border-left:3px solid #cbd5e1;border-radius:0 8px 8px 0;
+  padding:10px 14px;font-size:13.5px;color:var(--text-2);margin-bottom:14px;
+}
+.analogy b{color:var(--text);font-weight:600}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+.mini{background:var(--surface-2);border-radius:10px;padding:12px 14px}
+.mini .lbl{font-size:11.5px;font-weight:700;color:var(--text-3);letter-spacing:.05em;text-transform:uppercase;margin-bottom:5px;display:block}
+.mini .val{font-size:13.5px;color:var(--text-2);line-height:1.65}
+
+.bar{display:flex;align-items:center;gap:8px;margin-top:2px}
+.bar-track{flex:1;height:6px;background:var(--surface-2);border-radius:99px;overflow:hidden;max-width:150px}
+.bar-fill{height:100%;border-radius:99px}
+.bar-num{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--text-2)}
+
+/* ---------- Callout ---------- */
+.callout{
+  border-radius:var(--radius);padding:20px 24px;margin:20px 0;font-size:14.5px;
+  border:1px solid var(--border);background:var(--surface);
+}
+.callout.warn{background:var(--warn-soft);border-color:#fecaca}
+.callout.warn h4{color:var(--warn)}
+.callout.ok{background:var(--ok-soft);border-color:#bbf7d0}
+.callout.ok h4{color:var(--ok)}
+.callout h4{font-size:15px;margin-bottom:9px;font-weight:700;display:flex;align-items:center;gap:8px}
+.callout p{color:var(--text-2);margin-bottom:8px}
+.callout p:last-child{margin-bottom:0}
+.callout code{
+  background:rgba(0,0,0,.06);padding:1px 6px;border-radius:5px;font-size:13px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+
+/* ---------- Pipeline ---------- */
+.pipe{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);margin-bottom:24px}
+.pipe-step{display:flex;gap:16px;padding:14px 0;border-bottom:1px dashed var(--border)}
+.pipe-step:last-child{border-bottom:none;padding-bottom:0}
+.pipe-step:first-child{padding-top:0}
+.pipe-n{
+  width:26px;height:26px;flex-shrink:0;border-radius:8px;background:var(--accent-soft);color:var(--accent);
+  font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.pipe-body h5{font-size:15px;margin-bottom:4px;font-weight:600}
+.pipe-body p{font-size:13.5px;color:var(--text-2)}
+.pipe-body .tools{margin-top:6px;font-size:12.5px;color:var(--text-3)}
+.pipe-body .tools b{color:var(--text-2);font-weight:600}
+
+/* ---------- Table ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+th{
+  text-align:left;padding:13px 16px;background:var(--surface-2);font-size:12px;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--text-3);font-weight:700;
+  border-bottom:1px solid var(--border);white-space:nowrap;
+}
+td{padding:13px 16px;border-bottom:1px solid var(--border);color:var(--text-2);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfc}
+td b{color:var(--text);font-weight:600}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:6px}
+
+/* ---------- TOC ---------- */
+nav.toc{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 24px;margin-bottom:40px;box-shadow:var(--shadow);
+}
+nav.toc .t{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px}
+nav.toc ol{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px}
+nav.toc a{color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500}
+nav.toc a:hover{color:var(--accent)}
+
+footer{
+  margin-top:56px;padding:32px 0 48px;border-top:1px solid var(--border);
+  font-size:13px;color:var(--text-3);
+}
+footer p{margin-bottom:6px}
+footer a{color:var(--text-2)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="kicker">GitHub 开源项目梳理</span>
+    <h1>投资 × 游戏制作 × 游戏拓展<br>三条线上的开源工具地图</h1>
+    <p class="sub">从 GitHub 上筛出真正活跃、能落地的项目，用人话讲清楚它们各自解决什么问题、能不能二次开发、值不值得花时间。不是罗列链接，是帮你做取舍。</p>
+    <div class="meta">
+      <span>数据抓取：2026-09-01</span>
+      <span>共 40+ 个项目</span>
+      <span>活跃度与 License 已逐项核实</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="overview">
+    <h2>👀 先看结论</h2>
+    <p>这三条线看着不搭界，其实有一根共同的线：<strong>都是「把别人的系统拆开看懂，再按自己的意图重新组装」</strong>。量化是把市场数据结构化后建模，做游戏是把引擎能力组合成体验，做游戏拓展（解包 / MOD）则是把一个已经封好的成品重新拆回可编辑状态。</p>
+    <p>所以判断标准也一样：<strong>看它的「输入」和「输出」是不是开放、可编程的。</strong> 一个只能在图形界面里点点的工具，实用性高但可拓展性低；一个只有 API 没有界面的库，反过来。下面每个项目都按这两条打分。</p>
+    <p>还有个交叉点挺有意思：<strong>你有 73 款游戏的资料库，又对投资感兴趣——那「用量化工具分析游戏公司的股票/板块」就是把两条线接起来的那条线。</strong> 报告最后给了具体接法。</p>
+  </div>
+
+  <nav class="toc">
+    <div class="t">目录</div>
+    <ol>
+      <li><a href="#s1">一、投资与量化</a></li>
+      <li><a href="#s2">二、游戏制作</a></li>
+      <li><a href="#s3">三、游戏拓展与解包</a></li>
+      <li><a href="#s4">四、推荐组合与落地路线</a></li>
+      <li><a href="#s5">五、避坑与合规</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 一、投资 ============ -->
+  <section id="s1" class="s-invest">
+    <div class="sec-head">
+      <span class="sec-num">1</span>
+      <h2>投资与量化</h2>
+    </div>
+    <p class="sec-desc">这一块分四层：<b>数据层</b>（米从哪来）→ <b>回测层</b>（想法先试跑）→ <b>策略/AI 层</b>（怎么产生信号）→ <b>实盘层</b>（真金白银跑起来）。很多人一上来就扑策略，其实卡在第一步——数据拿不干净，后面全是自欺欺人。</p>
+
+    <div class="group">
+      <div class="group-title">数据层 · 先有米才能做饭</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/akfamily/akshare" target="_blank">AKShare</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">22.3k</span>
+          <span class="tag t-invest">A股首选</span>
+          <span class="tag t-ok">今日仍在更新</span>
+        </div>
+        <p class="plain">国内最全的<em>免费财经数据接口库</em>，一行代码拿 A 股行情、财报、宏观、期货、基金、甚至舆情数据。不用注册、不用 Token，直接 <code style="background:#f2f4f7;padding:1px 6px;border-radius:5px;font-size:13px">pip install akshare</code> 就能用。</p>
+        <div class="analogy"><b>打个比方：</b>它是个万能水龙头，拧开就有水，而且不收水费。缺点是水压不稳——上游网站一改版接口就可能断，需要自己写重试和兜底。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--invest)"></div></div><span class="bar-num">8/10</span></div><div class="val" style="margin-top:6px">返回的就是 pandas DataFrame，接到任何回测框架都无缝。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--invest)"></div></div><span class="bar-num">9/10</span></div><div class="val" style="margin-top:6px">中文圈量化绕不开它，文档是中文，坑有人踩过。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/ranaroussi/yfinance" target="_blank">yfinance</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">25.1k</span>
+          <span class="tag t-invest">美股/全球</span>
+        </div>
+        <p class="plain">抓雅虎财经的数据，覆盖<em>美股、ETF、外汇、加密货币</em>。接口简单到不能再简单，三行拿到苹果五年日线。</p>
+        <div class="analogy"><b>打个比方：</b>AKShare 是中式菜市场，yfinance 是进口超市。做 A 股别用它，数据质量和监管口径都不对。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--invest)"></div></div><span class="bar-num">7.5/10</span></div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--invest)"></div></div><span class="bar-num">8.5/10</span></div><div class="val" style="margin-top:6px">非官方接口，雅虎改版会抽风，别用在生产环境。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/HiThink-Tech/Financial-API" target="_blank">同花顺 Financial-API</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">2.1k</span>
+          <span class="tag t-invest">官方数据源</span>
+        </div>
+        <p class="plain">同花顺<em>官方出的 A 股数据服务</em>，覆盖实时行情、财报、指数、板块、涨停板。关键它有 <b>MCP 接口</b>——意味着 AI Agent 能直接调用，不用你写代码。</p>
+        <div class="analogy"><b>打个比方：</b>前两个是"自己爬数据"，这个是"官方开的窗口"。稳定性和合规性高一档，但要按人家规则来。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--invest)"></div></div><span class="bar-num">8.5/10</span></div><div class="val" style="margin-top:6px">支持 API / MCP / CLI / Python 四种入口，Agent 友好度全场最高。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--invest)"></div></div><span class="bar-num">7/10</span></div><div class="val" style="margin-top:6px">项目较新（2.1k star），生态和社区还不如 AKShare。</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">回测层 · 想法先跑一遍再谈钱</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/polakowo/vectorbt" target="_blank">vectorbt</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">8.9k</span>
+          <span class="tag t-invest">速度之王</span>
+        </div>
+        <p class="plain">用「向量化」思路做回测——不是一根根 K 线循环，而是整列一起算。<em>别人跑一个策略的时间，它能跑几千个参数组合。</em></p>
+        <div class="analogy"><b>打个比方：</b>传统回测是"一个人拿着算盘一笔笔算"，vectorbt 是"把所有数字倒进 Excel 一列公式拉到底"。适合扫参数、找感觉，不适合精细模拟撮合细节。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--invest)"></div></div><span class="bar-num">7/10</span></div><div class="val" style="margin-top:6px">API 学习曲线陡，但一旦上手，自由度极高。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--invest)"></div></div><span class="bar-num">9/10</span></div><div class="val" style="margin-top:6px">做因子挖掘/参数扫描时的最优解，快到能改变你的研究方式。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/kernc/backtesting.py" target="_blank">backtesting.py</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">8.9k</span>
+          <span class="tag t-invest">新手友好</span>
+        </div>
+        <p class="plain">轻量到极致，<em>写一个策略大概 30 行</em>，跑完直接出交互式收益曲线图。文档干净，没有历史包袱。</p>
+        <div class="analogy"><b>打个比方：</b>它是回测界的"傻瓜相机"。功能不如单反全，但你现在只想拍张照，它最快。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--invest)"></div></div><span class="bar-num">6/10</span></div><div class="val" style="margin-top:6px">设计上就是"够用就好"，深度定制会撞天花板。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--invest)"></div></div><span class="bar-num">8.8/10</span></div><div class="val" style="margin-top:6px">入门第一个回测框架选它，一天能跑通闭环。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/mementum/backtrader" target="_blank">backtrader</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">23k</span>
+          <span class="tag t-invest">经典</span>
+          <span class="tag t-warn">已停止维护</span>
+        </div>
+        <p class="plain">曾经的行业标准，功能全、社区资料海量。<em>但作者已经不再维护了</em>，现在还能用，只是遇到 bug 没人修。</p>
+        <div class="analogy"><b>打个比方：</b>像一辆停产但配件满街都是的老款车。能开，修得起，但别指望新功能。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--invest)"></div></div><span class="bar-num">7.5/10</span></div><div class="val" style="margin-top:6px">架构设计优秀，社区有大量第三方扩展。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--invest)"></div></div><span class="bar-num">5.5/10</span></div><div class="val" style="margin-top:6px">新项目不建议入场，除非要复现别人的老策略。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/QuantConnect/Lean" target="_blank">QuantConnect / Lean</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">21.4k</span>
+          <span class="tag t-invest">机构级</span>
+        </div>
+        <p class="plain">正经的<em>机构级回测 + 实盘引擎</em>，支持股票、期货、外汇、加密、期权。同一套代码可以从回测直接切到实盘，这是它最大的价值。</p>
+        <div class="analogy"><b>打个比方：</b>别的框架是"模拟器"，Lean 是"模拟器 + 真车同一套方向盘"。代价是重，学习成本高。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--invest)"></div></div><span class="bar-num">9.2/10</span></div><div class="val" style="margin-top:6px">C# 与 Python 双语言，架构分层清晰，能接几乎任何经纪商。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--invest)"></div></div><span class="bar-num">6.5/10</span></div><div class="val" style="margin-top:6px">个人玩家上手门槛高，国内券商接入也麻烦。</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">AI 与策略层 · 让机器帮忙找信号</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/TauricResearch/TradingAgents" target="_blank">TradingAgents</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">102k</span>
+          <span class="tag t-invest">全场最火</span>
+          <span class="tag t-ok">Apache-2.0</span>
+        </div>
+        <p class="plain">用<em>多个 AI Agent 模拟一家投资公司</em>：有做基本面分析的、有看新闻情绪的、有画技术图的，还有多头研究员和空头研究员互相抬杠，最后由风控和交易员拍板。这是目前这个领域 star 最高的项目。</p>
+        <div class="analogy"><b>打个比方：</b>它不是给你一个"AI 算命先生"，而是给你搭了个"AI 投委会"。价值不在预测准不准，在于<b>把决策过程拆成了可审查、可替换的模块</b>。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:95%;background:var(--invest)"></div></div><span class="bar-num">9.5/10</span></div><div class="val" style="margin-top:6px">每个 Agent 都是独立节点，你可以换成自己的数据源、自己的 LLM、甚至加一个"政策面分析师"。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--invest)"></div></div><span class="bar-num">6/10</span></div><div class="val" style="margin-top:6px">研究价值 &gt; 直接盈利能力。API 成本不低，别指望它替你赚钱。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/microsoft/qlib" target="_blank">Microsoft Qlib</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">48.2k</span>
+          <span class="tag t-invest">微软出品</span>
+          <span class="tag t-ok">MIT · 今日仍在更新</span>
+        </div>
+        <p class="plain">微软的 <em>AI 量化投资平台</em>，把「数据管理 → 因子计算 → 模型训练 → 回测 → 实盘」整条流水线都做成了标准化模块。内置几十个 SOTA 模型，也支持强化学习。</p>
+        <div class="analogy"><b>打个比方：</b>它是量化界的"工业流水线"。别的库给你零件，Qlib 给你整条产线，还带操作手册。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:93%;background:var(--invest)"></div></div><span class="bar-num">9.3/10</span></div><div class="val" style="margin-top:6px">模块化设计 + MIT 协议，商业可用。表达式引擎能自己定义因子。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--invest)"></div></div><span class="bar-num">8/10</span></div><div class="val" style="margin-top:6px">今天还在更新，A 股数据有官方支持。认真做量化值得投入。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/xbtlin/ai-berkshire" target="_blank">AI 伯克希尔</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">16.1k</span>
+          <span class="tag t-invest">价值投资</span>
+        </div>
+        <p class="plain">不搞技术指标，专门做<em>价值投资研究框架</em>：把巴菲特、芒格、段永平、李录四套方法论固化成提示词，配多 Agent 并行研究一只股票。</p>
+        <div class="analogy"><b>打个比方：</b>如果说 TradingAgents 是"AI 交易室"，这个更像"AI 研究员"——它不告诉你明天涨跌，它帮你把一家公司的护城河、管理层、估值翻个底朝天。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--invest)"></div></div><span class="bar-num">8/10</span></div><div class="val" style="margin-top:6px">方法论是纯文本，你可以塞进自己的投资框架（比如"只看现金流"）。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--invest)"></div></div><span class="bar-num">7.2/10</span></div><div class="val" style="margin-top:6px">做长线、看基本面的话，比追涨杀跌的量化工具更贴合。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/AI4Finance-Foundation/FinRL" target="_blank">FinRL</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">16.2k</span>
+          <span class="tag t-invest">强化学习</span>
+        </div>
+        <p class="plain">把强化学习完整套到交易上：状态是行情，动作是买/卖/持有，奖励是收益。内置多个市场的环境和 dozens 个算法。</p>
+        <div class="analogy"><b>打个比方：</b>让 AI 像打游戏一样学炒股——不断试错、拿分数。问题是<em>市场不是游戏，规则会变</em>，这也是它争议所在。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:82%;background:var(--invest)"></div></div><span class="bar-num">8.2/10</span></div><div class="val" style="margin-top:6px">环境/算法/奖励函数都可换，学术圈标准工具。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--invest)"></div></div><span class="bar-num">5/10</span></div><div class="val" style="margin-top:6px">过拟合风险极大，回测漂亮、实盘翻车的重灾区。当学习材料看。</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">实盘层 · 真金白银跑起来</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/freqtrade/freqtrade" target="_blank">Freqtrade</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">53.9k</span>
+          <span class="tag t-invest">实盘首选</span>
+          <span class="tag t-ok">今日仍在更新 · 仅 34 个未处理 issue</span>
+        </div>
+        <p class="plain">开源加密货币交易机器人里的<em>事实标准</em>。回测、dry-run 模拟盘、真实下单一条龙，带 Telegram 机器人远程控制。最难得的是维护质量：<b>5.4 万 star 的仓库只有 34 个未处理 issue</b>，这在开源界是奇迹级数字。</p>
+        <div class="analogy"><b>打个比方：</b>它是个"已经在战场上跑了几年的老兵"，而不是实验室里的原型。所有该踩的坑都踩过了。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--invest)"></div></div><span class="bar-num">9/10</span></div><div class="val" style="margin-top:6px">策略就是写一个 Python 类，FreqAI 模块还能把机器学习模型接进去。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:95%;background:var(--invest)"></div></div><span class="bar-num">9.5/10</span></div><div class="val" style="margin-top:6px">想认真跑实盘，这是最稳的起点。GPL 协议，自用没问题。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/hummingbot/hummingbot" target="_blank">Hummingbot</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">19.7k</span>
+          <span class="tag t-invest">做市专用</span>
+        </div>
+        <p class="plain">主打<em>做市策略</em>——不吃方向，靠同时挂买单卖单赚价差。支持 30+ 交易所，跨所套利是它的强项。</p>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--invest)"></div></div><span class="bar-num">8/10</span></div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--invest)"></div></div><span class="bar-num">7/10</span></div><div class="val" style="margin-top:6px">只在加密市场有用，且做市对小资金不友好。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/StockSharp/StockSharp" target="_blank">StockSharp</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">10.7k</span>
+          <span class="tag t-invest">股票/期货</span>
+        </div>
+        <p class="plain">覆盖<em>股票、期货、期权、外汇、加密</em>的全能交易平台，带完整图形界面。适合不想写太多代码、又想做传统市场的人。</p>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--invest)"></div></div><span class="bar-num">7.8/10</span></div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:68%;background:var(--invest)"></div></div><span class="bar-num">6.8/10</span></div><div class="val" style="margin-top:6px">C# 门槛 + 国内券商接入需自己打通，属于"能用但费劲"。</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">组合优化 · 钱怎么分</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>项目</th><th>Stars</th><th>干什么</th><th>一句话评价</th></tr></thead>
+          <tbody>
+            <tr><td><b>PyPortfolioOpt</b></td><td>6.0k</td><td>经典有效前沿、Black-Litterman、层次风险平价</td><td>组合优化的入门标准答案，公式实现得干净，适合先理解原理</td></tr>
+            <tr><td><b>Riskfolio-Lib</b></td><td>4.5k</td><td>更全的优化模型 + 漂亮的图表</td><td>比 PyPortfolioOpt 模型更多，出图直接能贴报告</td></tr>
+            <tr><td><b>FinanceToolkit</b></td><td>5.3k</td><td>财务报表分析、估值建模</td><td>想认真看一家公司基本面时，比自己拼 Excel 强</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 二、游戏制作 ============ -->
+  <section id="s2" class="s-make">
+    <div class="sec-head">
+      <span class="sec-num">2</span>
+      <h2>游戏制作</h2>
+    </div>
+    <p class="sec-desc">这块按"你想做哪种游戏"来分。<b>视觉小说 / Galgame</b> 这条线单独拉出来了——因为你的资料库里大量是这类，而且它也是个人开发者唯一能独立做完的类型。</p>
+
+    <div class="group">
+      <div class="group-title">通用引擎 · 主力选手</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/godotengine/godot" target="_blank">Godot</a></span>
+          <span class="lang">C++ / GDScript</span>
+          <span class="stars">116k</span>
+          <span class="tag t-make">开源引擎一哥</span>
+          <span class="tag t-ok">MIT · 今日仍在更新</span>
+        </div>
+        <p class="plain">目前<em>最活跃的开源游戏引擎</em>，2D 和 3D 都强，编辑器只有几十 MB，启动秒开。用类 Python 的 GDScript 写逻辑，也能用 C#。MIT 协议意味着<strong>你做的游戏赚了钱一分不用分给它</strong>。</p>
+        <div class="analogy"><b>打个比方：</b>Unity 和 Unreal 是"租商铺做生意，要交提成"；Godot 是"自己买了块地"。这几年 Unity 收费风波之后，大量开发者迁过来了。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:95%;background:var(--make)"></div></div><span class="bar-num">9.5/10</span></div><div class="val" style="margin-top:6px">引擎源码全开，能改到骨头里。插件生态成熟，Asset Library 上千扩展。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--make)"></div></div><span class="bar-num">9/10</span></div><div class="val" style="margin-top:6px">中小项目通吃。3A 级画质还是打不过 Unreal，但你大概率不需要。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/bevyengine/bevy" target="_blank">Bevy</a></span>
+          <span class="lang">Rust</span>
+          <span class="stars">48k</span>
+          <span class="tag t-make">新锐</span>
+        </div>
+        <p class="plain">用 Rust 写的<em>数据驱动引擎</em>，ECS 架构（把游戏对象拆成数据 + 系统，而不是层层继承）。性能好、并发安全，代码组织方式很现代。</p>
+        <div class="analogy"><b>打个比方：</b>Godot 是"开箱即用的精装房"，Bevy 是"自己搭的模块化建筑"。前者快，后者自由——但 Bevy 目前还没精装完，编辑器、动画这些还在补。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--make)"></div></div><span class="bar-num">8.8/10</span></div><div class="val" style="margin-top:6px">插件即 crate，组合性极强。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--make)"></div></div><span class="bar-num">6/10</span></div><div class="val" style="margin-top:6px">Rust 学习曲线 + 生态未成熟，现在是"为爱发电"阶段。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/4ian/GDevelop" target="_blank">GDevelop</a></span>
+          <span class="lang">JavaScript</span>
+          <span class="stars">26.1k</span>
+          <span class="tag t-make">零代码</span>
+        </div>
+        <p class="plain">主打<em>事件表（可视化逻辑）</em>，不写代码也能做游戏：把"如果 玩家碰到金币 → 加分 + 播放音效"这种规则用下拉菜单拼出来。支持 2D/3D/多人联机，导出到网页、手机、桌面。</p>
+        <div class="analogy"><b>打个比方：</b>游戏引擎里的"乐高说明书版"。你不用懂电路，照着拼就能亮灯。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--make)"></div></div><span class="bar-num">6.5/10</span></div><div class="val" style="margin-top:6px">能写 JS 扩展，也能加自定义行为，但天花板明显。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--make)"></div></div><span class="bar-num">8.8/10</span></div><div class="val" style="margin-top:6px">验证玩法原型极快，一两天出一个能玩的东西。</div></div>
+        </div>
+      </div>
+
+      <div class="tbl-wrap" style="margin-top:14px">
+        <table>
+          <thead><tr><th>项目</th><th>Stars</th><th>定位</th><th>适合谁</th></tr></thead>
+          <tbody>
+            <tr><td><b>Phaser</b></td><td>40.2k</td><td>HTML5 2D 游戏框架</td><td>想做网页小游戏、H5 营销互动的人，打开浏览器就能玩</td></tr>
+            <tr><td><b>raylib</b></td><td>34.5k</td><td>C 语言极简游戏库</td><td>想从零理解"游戏是怎么跑起来的"，教学价值极高</td></tr>
+            <tr><td><b>Babylon.js</b></td><td>26k</td><td>网页 3D 引擎</td><td>要做浏览器里的 3D 展示/配置器，不是做游戏也用得上</td></tr>
+            <tr><td><b>Pyxel</b></td><td>17.8k</td><td>Python 复古像素引擎</td><td>想练手又只会 Python 的，限制反而是灵感的来源</td></tr>
+            <tr><td><b>OpenRA</b></td><td>17.3k</td><td>C&amp;C / 红警 开源重制引擎</td><td>既是"游戏"也是"引擎"，研究 RTS 架构的活教材</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">视觉小说 / Galgame 引擎 · 与你的资料库直接对口</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/renpy/renpy" target="_blank">Ren'Py</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">6.8k</span>
+          <span class="tag t-make">业界标准</span>
+        </div>
+        <p class="plain">视觉小说领域的<em>绝对标准</em>——Steam 上大部分 AVG/Galgame 都是它做的。脚本语法接近自然语言，写分支剧情几乎不需要编程。注意它的 <b>License 是自定义的</b>（允许商用但要求署名），不是标准开源协议。</p>
+        <div class="analogy"><b>打个比方：</b>视觉小说界的 WordPress。你写剧本它管渲染、存档、多语言、打包发布。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--make)"></div></div><span class="bar-num">8.5/10</span></div><div class="val" style="margin-top:6px">底层是 Python，能写自定义界面、加小游戏、接外部系统。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--make)"></div></div><span class="bar-num">9.2/10</span></div><div class="val" style="margin-top:6px">你资料库里凡是 Ren'Py 游戏，源码解出来后能直接在这里跑起来对照看。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/OpenWebGAL/WebGAL" target="_blank">WebGAL</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">3.9k</span>
+          <span class="tag t-make">网页端 · 国产</span>
+        </div>
+        <p class="plain">国产的<em>网页端视觉小说引擎</em>。最大好处是成品就是一个网页——丢到 GitHub Pages 上就能分享，别人点开即玩，不用下载。脚本语法简单，支持分支、立绘、Live2D。</p>
+        <div class="analogy"><b>打个比方：</b>Ren'Py 做出来是"要安装的软件"，WebGAL 做出来是"一个网址"。传播成本差一个数量级。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--make)"></div></div><span class="bar-num">7.8/10</span></div><div class="val" style="margin-top:6px">基于 Web 技术栈，任何前端库都能塞进去。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--make)"></div></div><span class="bar-num">8.5/10</span></div><div class="val" style="margin-top:6px">中文文档、中文社区，想快速做个能分享的 AVG 首选。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/ShikemokuMK/tyranoscript" target="_blank">TyranoScript</a></span>
+          <span class="lang">JavaScript</span>
+          <span class="stars">538</span>
+          <span class="tag t-make">日系老牌</span>
+        </div>
+        <p class="plain">日本同人圈常用的<em>网页视觉小说引擎</em>，你资料库里的 TyranoScript 游戏就是它做的。基于 Web 技术，脚本是自定义标签语法。</p>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--make)"></div></div><span class="bar-num">7/10</span></div><div class="val" style="margin-top:6px">本质是 JS，插件机制完善。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--make)"></div></div><span class="bar-num">7.5/10</span></div><div class="val" style="margin-top:6px">社区以日文为主，但它开源——研究你手上那些游戏的运行机制正合适。</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">Godot 生态 · 现成的轮子</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>项目</th><th>Stars</th><th>干什么</th><th>一句话评价</th></tr></thead>
+          <tbody>
+            <tr><td><b>Dialogic</b></td><td>6.0k</td><td>对话系统 / 视觉小说插件</td><td>在 Godot 里做 AVG 的标配，带时间线编辑器，不用写代码编排对话</td></tr>
+            <tr><td><b>awesome-godot</b></td><td>10.7k</td><td>Godot 资源索引</td><td>找插件先翻这个，比自己搜快十倍</td></tr>
+            <tr><td><b>godot-mcp</b></td><td>5.4k</td><td>Godot 的 MCP 服务器</td><td>让 AI 帮你启动编辑器、跑项目、抓调试输出——AI 辅助开发的关键接口</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">AI 辅助开发 · 新玩法</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank">Claude-Code-Game-Studios</a></span>
+          <span class="lang">Shell</span>
+          <span class="stars">24.7k</span>
+          <span class="tag t-make">AI 游戏工作室</span>
+        </div>
+        <p class="plain">把 AI 编程工具变成<em>一个虚拟游戏工作室</em>：49 个 AI 智能体、72 个工作流，按真实工作室的层级协作（制作人、策划、程序、美术、QA）。</p>
+        <div class="analogy"><b>打个比方：</b>以前 AI 是你的"写代码助手"，这个框架把它变成"一个团队"。你只当制作人，提需求、审产出。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--make)"></div></div><span class="bar-num">9/10</span></div><div class="val" style="margin-top:6px">本质是提示词 + 工作流配置文件，全部可改。你能照着它的思路搭自己的"AI 分析工作室"。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:62%;background:var(--make)"></div></div><span class="bar-num">6.2/10</span></div><div class="val" style="margin-top:6px">框架很重，小项目用不上。但<b>它的组织思路值得偷师</b>——尤其对你"73 款游戏批量分析"这种规模化任务。</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 三、游戏拓展 ============ -->
+  <section id="s3" class="s-mod">
+    <div class="sec-head">
+      <span class="sec-num">3</span>
+      <h2>游戏拓展与解包</h2>
+    </div>
+    <p class="sec-desc">这一块跟你的 73 款游戏资料库<b>直接相关</b>。我按引擎分开列——因为解包这件事没有万能钥匙，<em>认准引擎才能找到对的撬棍</em>。另外，「拓展」还有另一层意思：MOD 框架和实时翻译工具，放在最后两组。</p>
+
+    <div class="callout warn">
+      <h4>⚠️ 先说清楚一件事</h4>
+      <p>下面这些工具本身是合法的（学界叫逆向工程工具，很多还用于游戏保存/归档）。但<strong>怎么用取决于你</strong>：对自己合法拥有的游戏做学习研究、做个人 MOD，通常没问题；解包商业游戏后分发资源、破解付费内容、绕过 DRM，则是明确侵权的。</p>
+      <p>你做「源码解包 + 设计分析」这个方向，<b>建议把产出定位在分析文档和方法论上，不要把解出来的素材原样打包传播</b>。这样既安全，也更有价值——分析是你自己的智力产出，素材不是。</p>
+    </div>
+
+    <div class="group">
+      <div class="group-title">🔧 通用资源浏览器 · 先认引擎，再选工具</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/morkt/GARbro" target="_blank">GARbro</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">3.3k</span>
+          <span class="tag t-mod">万能钥匙</span>
+          <span class="tag t-ok">MIT · 今日仍在更新</span>
+        </div>
+        <p class="plain">视觉小说资源浏览器，<em>支持几十种引擎的封包格式</em>——包括你资料库里的 KiriKiri、Ren'Py、TyranoScript、以及大量日系小众引擎。它的价值在于：<b>你不认识某个游戏的封包格式时，拿它试一下就能认出来</b>。</p>
+        <div class="analogy"><b>打个比方：</b>解包界的"万能螺丝刀套装"。每把不一定最好用，但你永远知道该先拿它试。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--mod)"></div></div><span class="bar-num">8/10</span></div><div class="val" style="margin-top:6px">每种格式是一个独立的 C# 类，照着模板加新格式不难。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--mod)"></div></div><span class="bar-num">9.2/10</span></div><div class="val" style="margin-top:6px">对你这种"73 款游戏混装"的场景，它是第一道工序的不二之选。</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">🎴 Ren'Py · 你资料库里的主力</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Lattyware/unrpa" target="_blank">UnRPA</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">758</span>
+          <span class="tag t-mod">第一步：拆包</span>
+        </div>
+        <p class="plain">专门解 Ren'Py 的 <code style="background:#f2f4f7;padding:1px 6px;border-radius:5px;font-size:13px">.rpa</code> 归档文件——游戏里所有图片、音频、脚本都打包在里面。命令行一条指令搞定，也支持加密过的 RPA（需提供密钥）。</p>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--mod)"></div></div><span class="bar-num">8.5/10</span></div><div class="val" style="margin-top:6px">是 Python 库，可以 <code style="font-size:12px">import unrpa</code> 写进你自己的批处理脚本——<b>批量解 73 款游戏就靠这个</b>。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--mod)"></div></div><span class="bar-num">9/10</span></div><div class="val" style="margin-top:6px">纯命令行、可脚本化、无 GUI 依赖，自动化流水线的完美组件。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/CensoredUsername/unrpyc" target="_blank">unrpyc</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.2k</span>
+          <span class="tag t-mod">第二步：反编译</span>
+        </div>
+        <p class="plain">拆包拿到的是 <code style="background:#f2f4f7;padding:1px 6px;border-radius:5px;font-size:13px">.rpyc</code> 字节码，人看不懂。这个工具把它<em>反编译回接近原始的 .rpy 脚本文本</em>——也就是能读的剧情代码。</p>
+        <div class="analogy"><b>打个比方：</b>UnRPA 是"把保险箱里的东西倒出来"，unrpyc 是"把倒出来的机器语言翻译回人话"。<b>要做剧情结构分析，必须走到这一步。</b></div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:82%;background:var(--mod)"></div></div><span class="bar-num">8.2/10</span></div><div class="val" style="margin-top:6px">纯 Python、单文件，能直接塞进你的流水线。反编译结果还可以二次解析。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--mod)"></div></div><span class="bar-num">8.8/10</span></div><div class="val" style="margin-top:6px">新版 Ren'Py 反编译偶尔会失败，但覆盖率足够高。</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">⛩️ KiriKiri / 吉里吉里 · 日系 AVG 半壁江山</div>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>项目</th><th>Stars</th><th>干什么</th><th>什么时候用</th></tr></thead>
+          <tbody>
+            <tr><td><b>KirikiriTools</b></td><td>433</td><td>解 XP3 封包 + 反编译 TJS 脚本</td><td><b>KiriKiri 2 的主力工具</b>。XP3 是它的封包格式，TJS 是脚本语言，这套工具两个都能处理</td></tr>
+            <tr><td><b>KrkrDump</b></td><td>308</td><td>从 KiriKiri Z 引擎提取文件</td><td>遇到较新的 KiriKiri Z 游戏时用。<b>注意：需要游戏本身运行起来</b>，属于内存 dump 思路</td></tr>
+            <tr><td><b>KrkrPatch</b></td><td>61</td><td>给新 KiriKiri 游戏打通用补丁</td><td>主要做汉化补丁注入，你要改文本时用它</td></tr>
+            <tr><td><b>krkrz / krkrsdl2</b></td><td>941 / 430</td><td>KiriKiri 引擎的开源重实现</td><td>想跨平台运行老 KiriKiri 游戏时用，比如让它跑在 Linux 或 Switch 上</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">🗡️ RPG Maker · 另一半江山</div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/EasyRPG/Player" target="_blank">EasyRPG Player</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">1.2k</span>
+          <span class="tag t-mod">开源重实现</span>
+        </div>
+        <p class="plain">从零重写的 RPG Maker 2000/2003 运行器，<em>不用原版引擎就能跑老 RM 游戏</em>，支持 Windows/Linux/安卓/网页。GPL 协议。</p>
+        <div class="analogy"><b>打个比方：</b>官方引擎是"闭源的黑盒子"，EasyRPG 是"照着行为重写的一个透明盒子"。<b>你想搞懂 RM 的战斗数值、事件系统是怎么运作的，读它的源码比逆向原版高效得多。</b></div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--mod)"></div></div><span class="bar-num">8.8/10</span></div><div class="val" style="margin-top:6px">完整开源实现，你能加自己的调试面板、导出游戏数据做分析。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--mod)"></div></div><span class="bar-num">8/10</span></div><div class="val" style="margin-top:6px">只覆盖 RM2000/2003；MV/MZ 是另一套（JavaScript），看下面那个。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Petschko/RPG-Maker-MV-Decrypter" target="_blank">RPG Maker MV Decrypter</a></span>
+          <span class="lang">JavaScript</span>
+          <span class="stars">765</span>
+          <span class="tag t-mod">MV / MZ 专用</span>
+        </div>
+        <p class="plain">RPG Maker MV/MZ 会把资源<em>无加密密钥地混淆</em>——不是真加密，只是改了文件头。这个工具还原文件头，把图片音频恢复成正常格式。有网页版，浏览器里就能用。</p>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--mod)"></div></div><span class="bar-num">7/10</span></div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--mod)"></div></div><span class="bar-num">9/10</span></div><div class="val" style="margin-top:6px">MV/MZ 的数据文件（<code style="font-size:12px">data/*.json</code>）本来就没加密，解出来直接是可读 JSON——<b>做设计分析简直不要太爽</b>。</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">🎮 Unity / 通用 3D · 注意有个坑</div>
+
+      <div class="callout warn">
+        <h4>⚠️ Perfare/AssetStudio 已经归档了</h4>
+        <p>你可能搜到 <code>Perfare/AssetStudio</code>（15.6k star），它是 Unity 解包最知名的工具——<strong>但仓库已于近期设为归档（archived），不再维护</strong>，新版本的 Unity 游戏它大概率解不动。</p>
+        <p>用下面这几个接替方案。</p>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/AssetRipper/AssetRipper" target="_blank">AssetRipper</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">8.2k</span>
+          <span class="tag t-mod">AssetStudio 接班人</span>
+        </div>
+        <p class="plain">不只是"提取"，它能把整个 Unity 游戏<em>还原成可直接用 Unity 编辑器打开的工程</em>——场景、材质、脚本引用都在。这是目前功能最强的一个。</p>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--mod)"></div></div><span class="bar-num">8.5/10</span></div><div class="val" style="margin-top:6px">有 CLI 模式，能写进批处理脚本。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--mod)"></div></div><span class="bar-num">8.8/10</span></div><div class="val" style="margin-top:6px">想"完整还原一个游戏工程"，这是唯一选择。</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/K0lb3/UnityPy" target="_blank">UnityPy</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.4k</span>
+          <span class="tag t-mod">可脚本化 · 推荐</span>
+        </div>
+        <p class="plain">Unity 资源解析的 Python 库，<em>没有图形界面，但有完整的编程接口</em>——能读取、修改、重新打包 Unity 资源。</p>
+        <div class="analogy"><b>打个比方：</b>前面那两个是"带界面的工具软件"，UnityPy 是"一个库"。对你做批量自动化处理，后者价值大得多——你可以写个脚本遍历 73 款游戏，把里面所有角色立绘按尺寸分类导出。</div>
+        <div class="grid2">
+          <div class="mini"><span class="lbl">可拓展性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:95%;background:var(--mod)"></div></div><span class="bar-num">9.5/10</span></div><div class="val" style="margin-top:6px">纯 Python 库，能读能写能改，是三个里唯一支持"回写"的。</div></div>
+          <div class="mini"><span class="lbl">实用性</span><div class="bar"><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--mod)"></div></div><span class="bar-num">8.5/10</span></div><div class="val" style="margin-top:6px">没有 GUI，得自己写代码——但对你来说这反而是优势。</div></div>
+        </div>
+      </div>
+
+      <div class="tbl-wrap" style="margin-top:14px">
+        <table>
+          <thead><tr><th>项目</th><th>Stars</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td><b>RaduMC/AssetStudio</b></td><td>1.4k</td><td>AssetStudio 的独立维护分支，界面熟悉，适合只想点鼠标的人</td></tr>
+            <tr><td><b>RazTools/Studio</b></td><td>1.3k</td><td>增强版 AssetStudio，社区持续加新特性</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">🔌 MOD 框架 · 让别人也能拓展你的游戏</div>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>项目</th><th>Stars</th><th>适用</th><th>一句话</th></tr></thead>
+          <tbody>
+            <tr><td><b>BepInEx</b></td><td>8.5k</td><td>Unity / XNA 游戏</td><td><b>Unity 游戏 MOD 的事实标准</b>。装了它，别人写个 DLL 丢进去就能改游戏逻辑，你不用改一行原代码</td></tr>
+            <tr><td><b>REFramework</b></td><td>5.4k</td><td>RE Engine 游戏（生化危机、怪物猎人等）</td><td>带脚本环境和 VR 支持，卡普空游戏 MOD 圈的地基</td></tr>
+            <tr><td><b>MelonLoader</b></td><td>4.2k</td><td>Unity（Il2Cpp 与 Mono 通吃）</td><td>另一个通用加载器，某些 BepInEx 搞不定的游戏它能搞定</td></tr>
+            <tr><td><b>UnityExplorer</b></td><td>3.1k</td><td>Unity 运行时</td><td>游戏内实时查看/修改对象树，<b>调试和逆向的神器</b>——能直观看到"这个按钮背后绑着哪个函数"</td></tr>
+            <tr><td><b>Geode</b></td><td>2.8k</td><td>几何冲刺</td><td>单个游戏的 MOD 框架，但架构成熟，是"怎么做 MOD 生态"的样板</td></tr>
+            <tr><td><b>r2modman</b></td><td>2.2k</td><td>多游戏通用</td><td>MOD 管理器，解决"装了十个 MOD 互相打架"的问题</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13.5px;color:var(--text-2);margin-top:12px"><b>值得想一层的点：</b>如果你自己做游戏，<em>一开始就设计好 MOD 接口，等于免费招了一批内容创作者</em>。《骑马与砍杀》《Minecraft》《Stardew Valley》的长寿都靠这个。Godot 项目可以天然做到——因为脚本和资源本来就不编译打包。</p>
+    </div>
+
+    <div class="group">
+      <div class="group-title">🌐 实时翻译 · 玩外文游戏的刚需</div>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>项目</th><th>Stars</th><th>方式</th><th>一句话</th></tr></thead>
+          <tbody>
+            <tr><td><b>LunaTranslator</b></td><td>13k</td><td>OCR +  hook 注入</td><td><b>视觉小说翻译器里的顶流</b>。能直接钩住游戏进程读文本（比 OCR 准），接几十种翻译引擎，还能"翻译缓存 + 术语表"保证人名前后一致</td></tr>
+            <tr><td><b>MisakaTranslator</b></td><td>5.8k</td><td>OCR + 文本 hook</td><td>御坂翻译器，同样成熟，界面更传统，支持漫画翻译</td></tr>
+            <tr><td><b>MORT</b></td><td>1.7k</td><td>实时 OCR</td><td>韩国开发者做的，对韩语/日语游戏支持好</td></tr>
+            <tr><td><b>YUKI</b></td><td>1.6k</td><td>文本 hook</td><td>基于 Electron，插件化，能自己写 JS 扩展翻译流程</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13.5px;color:var(--text-2);margin-top:12px"><b>对你有个额外用法：</b>这些工具的<em>文本提取（hook）机制</em>，本身就是一套"从运行中的游戏里抓文本"的方案。有些游戏封包加密解不开时，<b>让它跑起来再从内存里读文本，是条绕过去的路</b>——KrkrDump 用的也是这个思路。</p>
+    </div>
+  </section>
+
+  <!-- ============ 四、推荐组合 ============ -->
+  <section id="s4">
+    <div class="sec-head">
+      <span class="sec-num" style="background:var(--accent)">4</span>
+      <h2>推荐组合与落地路线</h2>
+    </div>
+    <p class="sec-desc">项目太多反而不知道从哪下手。下面三组是按你的实际情况配的——你可以挑一组先跑通。</p>
+
+    <div class="callout">
+      <h4>🎯 组合 A：把 73 款游戏的分析流水线跑起来（最贴合你当前任务）</h4>
+      <p>你现在的核心任务是"解包 + 分析 + 出文档"。这件事真正的瓶颈不是单款游戏的技术难度，而是<strong>73 款的重复劳动</strong>。所以设计原则是：<em>能脚本化的一律脚本化，只有卡住的那几款才人工介入。</em></p>
+    </div>
+
+    <div class="pipe">
+      <div class="pipe-step">
+        <div class="pipe-n">1</div>
+        <div class="pipe-body">
+          <h5>自动识别引擎</h5>
+          <p>扫描每款游戏的目录，靠特征文件判断引擎类型：<code>.rpa</code>/<code>game/</code> 是 Ren'Py，<code>.xp3</code> 是 KiriKiri，<code>www/</code>+<code>data/</code> 是 RPG Maker MV，<code>*_Data/</code> 是 Unity，<code>package.json</code>+<code>nw</code> 是 NW.js。</p>
+          <div class="tools">先跑 <b>GARbro</b> 兜底识别不出来的；这步做完你会得到一张"引擎分布表"，后面所有工作都基于它。</div>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-n">2</div>
+        <div class="pipe-body">
+          <h5>按引擎分流解包</h5>
+          <p>每个引擎走对应的工具，全部通过命令行调用，写成一个 Python 调度脚本。</p>
+          <div class="tools">Ren'Py → <b>UnRPA</b> + <b>unrpyc</b> ｜ KiriKiri → <b>KirikiriTools</b> / <b>KrkrDump</b> ｜ RPG Maker → <b>MV-Decrypter</b> / <b>EasyRPG</b> ｜ Unity → <b>UnityPy</b> ｜ NW.js → 多数直接可读，只需解 asar</div>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-n">3</div>
+        <div class="pipe-body">
+          <h5>结构化提取</h5>
+          <p>把散落的文本、数值表、对话树、资源清单，统一转成 JSON / Markdown。<strong>这一步是整个流程的价值分水岭</strong>——原始文件解出来只是一堆素材，结构化之后才是可分析的数据。</p>
+          <div class="tools">RPG Maker 的 <code>data/*.json</code> 和 Ren'Py 的 <code>.rpy</code> 是最容易结构化的，建议先从这两类入手，快速出成果建立信心。</div>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-n">4</div>
+        <div class="pipe-body">
+          <h5>交给 AI 做设计维度分析</h5>
+          <p>把结构化数据喂给 LLM，按你定的维度（叙事结构、数值曲线、选择分支密度、资源规模、UX 节奏……）生成分析。<b>这里可以学 Claude-Code-Game-Studios 的思路</b>：别用一个提示词硬算，拆成"数值分析师""叙事分析师""美术资源分析师"几个角色分别处理再汇总——质量差别很大。</p>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-n">5</div>
+        <div class="pipe-body">
+          <h5>沉淀横向对比</h5>
+          <p>73 款各自出完文档后，最有价值的其实是<b>跨游戏的横向对比</b>——"同为 KiriKiri 引擎，A 游戏的分支密度是 B 的 3 倍，为什么？"这种结论，是任何单款分析给不了的。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout ok">
+      <h4>💰 组合 B：投资线，按顺序来别跳步</h4>
+      <p><b>第一步</b>：<code>AKShare</code> 拉数据，先别想策略，把数据拿稳、存成本地（别每次都现拉）。</p>
+      <p><b>第二步</b>：<code>backtesting.py</code> 跑通第一个策略——就一个双均线，30 行代码。目标是把"想法→回测→看结果"这个闭环跑通，不是赚钱。</p>
+      <p><b>第三步</b>：想提速上 <code>vectorbt</code> 做参数扫描；想上 AI 就 <code>Qlib</code>（工程化最完善）。</p>
+      <p><b>第四步</b>：只有前三步都稳了，才考虑 <code>Freqtrade</code> 上模拟盘，跑满一个月再谈实盘。</p>
+      <p style="margin-top:10px"><b>别跳步。</b>直接上 TradingAgents 那种框架不难，但你分不清是框架在赚钱还是运气在赚钱。</p>
+    </div>
+
+    <div class="callout">
+      <h4>🔗 组合 C：把两条线接起来（最独特，也最有意思）</h4>
+      <p>你的游戏资料和投资兴趣其实能合成一件事：<strong>用量化方法研究游戏行业</strong>。</p>
+      <p>具体点：用 <code>AKShare</code> 拉游戏板块（申万/东财分类）的成分股行情和财报，配上你从 73 款游戏里提炼的设计数据，去验证一些有意思的假设——比如"高分支密度的叙事型游戏，用户留存是否真的更好？""研发投入占营收比和流水表现的相关性有多强？"</p>
+      <p style="margin-top:10px">这件事市场上几乎没人做，因为<em>同时懂游戏设计和数据分析的人太少</em>。你手上有别人拿不到的数据（73 款游戏的内部结构），这才是真正的壁垒。</p>
+    </div>
+  </section>
+
+  <!-- ============ 五、避坑 ============ -->
+  <section id="s5">
+    <div class="sec-head">
+      <span class="sec-num" style="background:var(--warn)">5</span>
+      <h2>避坑与合规</h2>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th style="width:32%">坑</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>高 star ≠ 还在维护</b></td>
+            <td>本次核查就撞上一个：<code>Perfare/AssetStudio</code> 15.6k star 但已归档，<code>backtrader</code> 23k star 但已停更。<b>决定用之前，务必看一眼仓库顶部的 archived 标记和最近提交时间。</b></td>
+          </tr>
+          <tr>
+            <td><b>回测漂亮 ≠ 能赚钱</b></td>
+            <td>过拟合是量化第一杀手。判断标准很简单：<em>参数是不是多到离谱、曲线是不是好得不真实</em>。样本外测试和走前测试（walk-forward）必须用。</td>
+          </tr>
+          <tr>
+            <td><b>解包 ≠ 可以分发</b></td>
+            <td>再强调一次：分析文档是你的智力产出，随便发；解出来的立绘、音频、剧本原文不是。<b>分析时用截图和引用片段，不要整包资源外传。</b></td>
+          </tr>
+          <tr>
+            <td><b>License 别想当然</b></td>
+            <td>本次发现 <code>Ren'Py</code> 用的是自定义协议（要求署名），不是 MIT/GPL。<b>要商用就一定逐项确认</b>——MIT/Apache/BSD 最宽松，GPL 有传染性，自定义协议要读原文。</td>
+          </tr>
+          <tr>
+            <td><b>别一上来就追最火的</b></td>
+            <td>TradingAgents 102k star 很亮眼，但它解决的是"研究框架"，不是"赚钱"。<b>你当前阶段需要的是跑通闭环，不是最前沿的架构。</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>数据来源</b>：GitHub Search API 与 Repository API，抓取时间 2026-09-01（UTC+8）。星级、更新时间、开源协议均为实测值。</p>
+    <p><b>评分说明</b>：「可拓展性」指二次开发、脚本化、接入自有系统的难度；「实用性」指当下就能解决问题的程度。两者都基于项目实际状态，非主观好恶。</p>
+    <p style="margin-top:12px;color:var(--text-3)">本报告仅供技术调研参考，不构成任何投资建议。涉及解包工具的使用请遵守当地法律法规与软件许可协议。</p>
+  </footer>
+
+</div>
+</body>
+</html>
