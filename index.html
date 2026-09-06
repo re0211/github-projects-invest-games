@@ -264,7 +264,17 @@ footer a{color:var(--text-2)}
   <section id="s1" class="s-invest">
     <div class="sec-head">
       <span class="sec-num">1</span>
-      <h2>投资与量化</h2>
+      
+        <hr style="margin:14px 0;border:none;border-top:1px dashed var(--border)">
+        <h4 style="margin-top:6px">🆕 2026-09-06 更新（相对 2026-09-04 版）</h4>
+        <p>本轮在上一版 <b>295</b> 个项目基础上，新增 <b>112</b> 个，累计 <b>407</b> 个；新增分组统一插在各章节的「速查」之前，样式与速查一致（简明卡片）。</p>
+        <p>三大方向各有侧重：</p>
+        <ul style="margin:6px 0 10px 18px;line-height:1.75;color:var(--text-2)">
+          <li><b>投资线 46 项</b>：补 AI 交易终端/Agent 新势力（NoFx、FinRobot、quant-mind、nof0 等）、时序与撮合底层（ArcticDB、TimescaleDB、exchange-core、quickfixj）、预测市场新赛道（pmxt）；个人财富管理自建（ghostfolio、actual、hledger）首次入清单。</li>
+          <li><b>制作线 32 项</b>：视觉小说/叙事三大件（inkle/ink、YarnSpinner、godot_dialogue_manager）首次到齐；2D 关卡与奇幻地图（LDtk、Fantasy-Map-Generator）补上 RPG 制作刚需；AI 辅助（Unity-MCP、godogen）是 2025 后才出现的新类。</li>
+          <li><b>拓展线 34 项</b>：补完模拟器谱系（Cemu、Wii U；xenia、Xbox 360；Vita3K、PSV；xemu、初代 Xbox；BizHawk、PyBoy 等），并新开「游戏重实现/反编译工程」与「AI × 逆向新工具」两个子方向。</li>
+        </ul>
+        <p style="margin-top:8px">⚠️ 6 项距今超 18 个月未更新，已打「停更」标记并给出替代：quantopian/alphalens、hudson-and-thames/mlfinlab、exchange-core/exchange-core、name5566/leaf、Artikash/Textractor、munificent/game-programming-patterns（书·内容稳定）。</p><h2>投资与量化</h2>
     </div>
     <p class="sec-desc">这一块分四层：<b>数据层</b>（米从哪来）→ <b>回测层</b>（想法先试跑）→ <b>策略/AI 层</b>（怎么产生信号）→ <b>实盘层</b>（真金白银跑起来）。很多人一上来就扑策略，其实卡在第一步——数据拿不干净，后面全是自欺欺人。</p>
 
@@ -1957,6 +1967,536 @@ footer a{color:var(--text-2)}
       </div>
     </div>
 <div class="group">
+        <div class="group-title">🆕 本次新增 · 投资方向（46 项 · 数据采集 2026-09-06）</div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · AI 交易终端与 Agent 新势力</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/NoFxAiOS/nofx" target="_blank">NoFxAiOS/nofx</a></span>
+          <span class="lang">Go</span>
+          <span class="stars">12.8k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>AI 交易终端</em> —— 把 AI 大模型接进美股/商品/外汇/加密的实时交易台，Go 写的单体服务，自带 Web 界面和风控开关。适合想看「AI 到底怎么下单」的人，不建议直接上真钱。</p>
+        <div class="src-line">最近更新 2026-09-05 · AGPL-3.0 · <a href="#r296">信源 [296]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Open-Dev-Society/OpenStock" target="_blank">Open-Dev-Society/OpenStock</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">14.2k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>开源股票平台</em> —— 对标彭博终端的开源替代品：实时行情、财报、持仓跟踪、AI 分析一整套，TypeScript 全栈。2025 年才出现，是这轮星数涨得最猛的新项目之一。</p>
+        <div class="src-line">最近更新 2026-08-21 · AGPL-3.0 · <a href="#r297">信源 [297]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/AI4Finance-Foundation/FinRobot" target="_blank">AI4Finance-Foundation/FinRobot</a></span>
+          <span class="lang">Jupyter Notebook</span>
+          <span class="stars">7.9k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>金融 Agent 平台</em> —— FinGPT 同门，主打「多 Agent 分工做金融任务」：一个负责取数、一个写代码、一个做分析。适合把繁杂的投研流程自动化。</p>
+        <div class="src-line">最近更新 2026-08-23 · Apache-2.0 · <a href="#r298">信源 [298]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/wquguru/nof0" target="_blank">wquguru/nof0</a></span>
+          <span class="lang">Go</span>
+          <span class="stars">2.8k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>AI 交易竞技场</em> —— 让多个 AI 模型同台实盘/模拟盘比拼收益的开源擂台。本身不赚钱，但它是评估「哪个模型真会交易」的少见公开基准。</p>
+        <div class="src-line">最近更新 2025-12-07 · 未声明 · <a href="#r299">信源 [299]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/guy-hartstein/company-research-agent" target="_blank">guy-hartstein/company-research-agent</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">2.3k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>公司尽调 Agent</em> —— 用 LangGraph 编排的多步研究 Agent：自动搜公开信息、读财报、输出一整套尽调笔记。做基本面研究时省下大量机械检索。</p>
+        <div class="src-line">最近更新 2026-09-03 · Apache-2.0 · <a href="#r300">信源 [300]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/DemonDamon/FinnewsHunter" target="_blank">DemonDamon/FinnewsHunter</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.5k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>多 Agent 金融情报</em> —— 实时新闻抓取 + 多 Agent 分工研判的中文项目，偏「事件驱动」交易的信息前置处理。</p>
+        <div class="src-line">最近更新 2026-07-05 · Apache-2.0 · <a href="#r301">信源 [301]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/LLMQuant/quant-mind" target="_blank">LLMQuant/quant-mind</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">2.8k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>量化知识抽取框架</em> —— 为 Agent 设计的量化知识库：把研报、论文、代码抽成可检索结构。解决的是「AI 不懂金融语境」这个根本问题。</p>
+        <div class="src-line">最近更新 2026-08-15 · MIT · <a href="#r302">信源 [302]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/mnemox-ai/tradememory-protocol" target="_blank">mnemox-ai/tradememory-protocol</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.4k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>AI 交易决策审计</em> —— 给 AI 交易 Agent 做「决策留痕」：每笔决策为什么做、后来结果如何，可追溯回放。这是 AI 下单落地前必须补的一环。</p>
+        <div class="src-line">最近更新 2026-08-11 · MIT · <a href="#r303">信源 [303]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/himself65/finance-skills" target="_blank">himself65/finance-skills</a></span>
+          <span class="lang">JavaScript</span>
+          <span class="stars">3.3k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>AI 金融分析技能集</em> —— 把金融分析动作封装成 AI 可直接调用的 Skill。代表一个新趋势：不是给你代码，而是给你「能装进 Agent 的能力包」。</p>
+        <div class="src-line">最近更新 2026-08-27 · MIT · <a href="#r304">信源 [304]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/zhangxiangliang/stock-api" target="_blank">zhangxiangliang/stock-api</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">1.8k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>A股/美股/港股行情 SDK</em> —— 零依赖 TypeScript SDK，能从 Node、浏览器、CLI 甚至 MCP 直接取 A 股/美股/港股/基金行情。做跨境对比时很好用。</p>
+        <div class="src-line">最近更新 2026-09-06 · MIT · <a href="#r305">信源 [305]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/simonlin1212/global-stock-data" target="_blank">simonlin1212/global-stock-data</a></span>
+          <span class="lang"></span>
+          <span class="stars">1.6k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>美股数据 for AI</em> —— 专为 AI 编程助手准备的美股数据源，免鉴权、官方来源，含 CBOE 期权数据。喂给 Cursor/Claude 做分析很顺手。</p>
+        <div class="src-line">最近更新 2026-09-04 · Apache-2.0 · <a href="#r306">信源 [306]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/lyra81604/zhengxi-views" target="_blank">lyra81604/zhengxi-views</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.6k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>基金经理投研 Agent</em> —— 把易方达郑希的公开观点原文做成可溯源问答的 Agent Skill，每句话都能点回原文。示范了「AI 投研必须能溯源」的正确做法。</p>
+        <div class="src-line">最近更新 2026-09-04 · NOASSERTION · <a href="#r307">信源 [307]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 数据源与基础设施补缺</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/JerBouma/FinanceDatabase" target="_blank">JerBouma/FinanceDatabase</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">8.8k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>30 万标的大全</em> —— 把全球 30 多万只股票/ETF/基金/指数/币/外汇整理成统一数据库和 Python 包。做全市场扫描时省掉到处凑代码的麻烦。</p>
+        <div class="src-line">最近更新 2026-09-01 · MIT · <a href="#r308">信源 [308]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Micro-sheep/efinance" target="_blank">Micro-sheep/efinance</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">4k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>A股数据快取</em> —— 一个函数拿到基金、股票、债券、期货数据，纯 Python 无依赖。国内个人玩家的轻量替代方案。</p>
+        <div class="src-line">最近更新 2026-07-17 · MIT · <a href="#r309">信源 [309]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/JoinQuant/jqdatasdk" target="_blank">JoinQuant/jqdatasdk</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.4k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>聚宽数据 SDK</em> —— 老牌国内量化平台的数据接口，A 股数据质量稳定，学术研究常用。</p>
+        <div class="src-line">最近更新 2026-01-29 · MIT · <a href="#r310">信源 [310]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/sngyai/Sequoia-X" target="_blank">sngyai/Sequoia-X</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">6.8k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>A股自动选股</em> —— 收盘后自动跑技术形态扫描并推飞书。典型的「个人量化最后一公里」——信号到通知。</p>
+        <div class="src-line">最近更新 2026-07-10 · 未声明 · <a href="#r311">信源 [311]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/wondertrader/wondertrader" target="_blank">wondertrader/wondertrader</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">6.3k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>C++ 量化一站式</em> —— 国内少见的 C++ 全栈量化框架，从回测到实盘一条链，也有 Python 子框架 wtpy。追求低延迟的老手向。</p>
+        <div class="src-line">最近更新 2026-09-01 · MIT · <a href="#r312">信源 [312]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/cuemacro/findatapy" target="_blank">cuemacro/findatapy</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">2.1k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>多源行情下载库</em> —— 把 Bloomberg、Eikon、Quandl、Yahoo 等一堆数据源封装成同一套接口。换数据源时不用重写代码。</p>
+        <div class="src-line">最近更新 2026-07-02 · Apache-2.0 · <a href="#r313">信源 [313]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/alvarobartt/investpy" target="_blank">alvarobartt/investpy</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.9k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Investing.com 数据</em> —— 全球主要市场历史数据抓取，覆盖 A 股在内的多国市场。免费数据源里的万金油。</p>
+        <div class="src-line">最近更新 2026-04-13 · MIT · <a href="#r314">信源 [314]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/mortada/fredapi" target="_blank">mortada/fredapi</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.7k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>美联储数据 API</em> —— 直接取 FRED 宏观数据。做任何宏观驱动的资产配置，这是最省事的起点。</p>
+        <div class="src-line">最近更新 2026-01-28 · Apache-2.0 · <a href="#r315">信源 [315]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/sec-edgar/sec-edgar" target="_blank">sec-edgar/sec-edgar</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.4k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>SEC 文件下载</em> —— 批量抓美股上市公司定期报告和表单。想做基本面因子，原始文件比二手数据可信。</p>
+        <div class="src-line">最近更新 2025-12-09 · Apache-2.0 · <a href="#r316">信源 [316]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/man-group/ArcticDB" target="_blank">man-group/ArcticDB</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">2.5k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>时序 DataFrame 库</em> —— 对冲基金 Man Group 开源的列式时序数据库，专为 Python 数据科学生态设计，比通用数据库更贴合因子研究。</p>
+        <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r317">信源 [317]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/timescale/timescaledb" target="_blank">timescale/timescaledb</a></span>
+          <span class="lang">C</span>
+          <span class="stars">23.5k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>时序数据库</em> —— PostgreSQL 扩展，把行情数据存进 SQL 又能扛住高频写入。中小团队自建行情库的首选。</p>
+        <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r318">信源 [318]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/massive-com/client-python" target="_blank">massive-com/client-python</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.5k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Massive(Polygon) 客户端</em> —— 美股官方行情商 Massive.com 的 Python 客户端，适合需要稳定美股分钟/逐笔数据的人。</p>
+        <div class="src-line">最近更新 2026-07-09 · MIT · <a href="#r319">信源 [319]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 因子、统计与因果</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/quantopian/alphalens" target="_blank">quantopian/alphalens</a></span>
+          <span class="lang">Jupyter Notebook</span>
+          <span class="stars">4.4k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>因子有效性分析</em> —— 量化圈的经典工具：把一个候选因子丢进去，直接出分层收益、IC、换手等全套诊断。判断「这个因子是不是真有用」的标准动作。</p>
+        <div class="src-line">最近更新 2024-02-12 · Apache-2.0 · <a href="#r320">信源 [320]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/statsmodels/statsmodels" target="_blank">statsmodels/statsmodels</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">11.6k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>计量统计库</em> —— 回归、时序、假设检验的 Python 地基。所有「用统计验证策略」的工作最后都会回到这里。</p>
+        <div class="src-line">最近更新 2026-09-06 · BSD-3-Clause · <a href="#r321">信源 [321]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Nixtla/statsforecast" target="_blank">Nixtla/statsforecast</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">4.9k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>快速统计预测</em> —— 极快的时序预测库，ARIMA/ETS 等经典模型的大规模并行实现。做多标的批量预测时比传统写法快一个量级。</p>
+        <div class="src-line">最近更新 2026-09-05 · Apache-2.0 · <a href="#r322">信源 [322]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/py-why/EconML" target="_blank">py-why/EconML</a></span>
+          <span class="lang">Jupyter Notebook</span>
+          <span class="stars">4.8k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>因果推断</em> —— 微软研究院的因果推断库，回答「这个因子和收益到底是因果还是巧合」。量化过拟合的解药之一。</p>
+        <div class="src-line">最近更新 2026-08-31 · NOASSERTION · <a href="#r323">信源 [323]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/hudson-and-thames/mlfinlab" target="_blank">hudson-and-thames/mlfinlab</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">4.9k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>金融机器学习库</em> —— 把《Advances in Financial Machine Learning》那本书的算法实现了一遍：三重屏障标注、样本权重等。停更于 2023 年，看思路可以，生产用要自己维护。</p>
+        <div class="src-line">最近更新 2023-10-02 · NOASSERTION · <a href="#r324">信源 [324]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 图表、终端与微结构</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/tradingview/lightweight-charts" target="_blank">tradingview/lightweight-charts</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">17.2k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>轻量 K 线图</em> —— TradingView 官方开源的高性能 Canvas 图表库，几乎是所有自建交易界面的默认选择。</p>
+        <div class="src-line">最近更新 2026-09-04 · Apache-2.0 · <a href="#r325">信源 [325]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/klinecharts/KLineChart" target="_blank">klinecharts/KLineChart</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">4.1k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>可定制 K 线</em> —— 零依赖 K 线库，支持移动端，中文文档友好。国内项目里出现频率很高。</p>
+        <div class="src-line">最近更新 2026-08-30 · Apache-2.0 · <a href="#r326">信源 [326]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/achannarasappa/ticker" target="_blank">achannarasappa/ticker</a></span>
+          <span class="lang">Go</span>
+          <span class="stars">6.2k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>终端看盘器</em> —— Go 写的命令行看盘工具，股票/加密/衍生品持仓实时刷新。习惯终端的人会很舒服。</p>
+        <div class="src-line">最近更新 2026-06-28 · GPL-3.0 · <a href="#r327">信源 [327]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/visualHFT/VisualHFT" target="_blank">visualHFT/VisualHFT</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">1.2k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>市场微结构可视化</em> —— 实时 Level2 盘口可视化桌面应用。想理解「价格到底怎么被吃掉的」，这是最直观的教具。</p>
+        <div class="src-line">最近更新 2026-09-05 · Apache-2.0 · <a href="#r328">信源 [328]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/cinar/indicator" target="_blank">cinar/indicator</a></span>
+          <span class="lang">Go</span>
+          <span class="stars">1.7k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Go 技术指标与回测</em> —— 零依赖的 Go 指标库 + 回测框架。给不想背 Python 全家桶的人一个轻选择。</p>
+        <div class="src-line">最近更新 2026-09-03 · AGPL-3.0 · <a href="#r329">信源 [329]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/bukosabino/ta" target="_blank">bukosabino/ta</a></span>
+          <span class="lang">Jupyter Notebook</span>
+          <span class="stars">5.2k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>技术分析库</em> —— 纯 Pandas/Numpy 实现的指标库，接入干净。已有 TA-Lib 之外的轻量替代。</p>
+        <div class="src-line">最近更新 2026-03-18 · MIT · <a href="#r330">信源 [330]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 撮合、协议与预测市场</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/exchange-core/exchange-core" target="_blank">exchange-core/exchange-core</a></span>
+          <span class="lang">Java</span>
+          <span class="stars">2.6k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>撮合引擎</em> —— Java 写的超低延迟撮合引擎，基于 LMAX Disruptor。想搞懂交易所内部怎么撮合，看它就对了。</p>
+        <div class="src-line">最近更新 2023-10-08 · Apache-2.0 · <a href="#r331">信源 [331]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/quickfix-j/quickfixj" target="_blank">quickfix-j/quickfixj</a></span>
+          <span class="lang">Java</span>
+          <span class="stars">1.2k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>FIX 协议引擎</em> —— 金融行业通用通信协议 FIX 的 Java 实现。对接机构柜台时绕不开的活化石。</p>
+        <div class="src-line">最近更新 2026-09-05 · NOASSERTION · <a href="#r332">信源 [332]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/pmxt-dev/pmxt" target="_blank">pmxt-dev/pmxt</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">2.1k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>预测市场统一 API</em> —— 号称「预测市场界的 CCXT」，一个接口打通 Polymarket、Kalshi。2025 年最热的新赛道之一。</p>
+        <div class="src-line">最近更新 2026-07-18 · MIT · <a href="#r333">信源 [333]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/evan-kolberg/prediction-market-backtesting" target="_blank">evan-kolberg/prediction-market-backtesting</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.2k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>预测市场回测</em> —— Nautilus Trader 的扩展，专门回测预测市场策略。新赛道里少有的严肃工具。</p>
+        <div class="src-line">最近更新 2026-05-16 · NOASSERTION · <a href="#r334">信源 [334]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 个人财富管理自建</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/ghostfolio/ghostfolio" target="_blank">ghostfolio/ghostfolio</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">9.2k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>开源财富管理</em> —— 自托管的资产看板，追踪股票/加密/ETF 的真实收益与分红。想自己掌控数据隐私的人首选。</p>
+        <div class="src-line">最近更新 2026-09-06 · AGPL-3.0 · <a href="#r335">信源 [335]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/actualbudget/actual" target="_blank">actualbudget/actual</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">28.6k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>本地优先记账</em> —— local-first 的个人财务应用，数据全在本地。和投资组合管理是互补关系。</p>
+        <div class="src-line">最近更新 2026-09-06 · MIT · <a href="#r336">信源 [336]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/portfolio-performance/portfolio" target="_blank">portfolio-performance/portfolio</a></span>
+          <span class="lang">Java</span>
+          <span class="stars">4.1k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>组合绩效分析</em> —— Java 老牌桌面软件，跨股票/加密的真实收益率计算（含内部收益率 IRR）做得极准。</p>
+        <div class="src-line">最近更新 2026-09-03 · EPL-1.0 · <a href="#r337">信源 [337]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/plaintextaccounting/hledger" target="_blank">plaintextaccounting/hledger</a></span>
+          <span class="lang">Haskell</span>
+          <span class="stars">4.7k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>纯文本记账</em> —— 用文本文件记账的复式会计工具。极客向，但数据永不被平台锁死。</p>
+        <div class="src-line">最近更新 2026-09-06 · GPL-3.0 · <a href="#r338">信源 [338]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 交易执行与多交易所</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/thrasher-corp/gocryptotrader" target="_blank">thrasher-corp/gocryptotrader</a></span>
+          <span class="lang">Go</span>
+          <span class="stars">3.5k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Go 多交易所框架</em> —— 一个 Go 程序对接几十家交易所的行情与下单。做跨所套利的基础设施。</p>
+        <div class="src-line">最近更新 2026-09-04 · MIT · <a href="#r339">信源 [339]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/bmoscon/cryptofeed" target="_blank">bmoscon/cryptofeed</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">2.9k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>行情 WebSocket 聚合</em> —— 专注交易所 WebSocket 行情的高性能收集器。做实时策略的取数入口。</p>
+        <div class="src-line">最近更新 2026-09-01 · NOASSERTION · <a href="#r340">信源 [340]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/freqtrade/freqtrade-strategies" target="_blank">freqtrade/freqtrade-strategies</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">5.4k</span>
+          <span class="tag t-invest">投资</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Freqtrade 策略库</em> —— Freqtrade 官方策略仓库，几百个现成策略可参考。学写策略的素材库。</p>
+        <div class="src-line">最近更新 2026-08-12 · GPL-3.0 · <a href="#r341">信源 [341]</a></div>
+      </div>
+      </div>
+      </div>
+    <div class="group">
       <div class="group-title">投资线速查 · 其余值得一试的</div>
       <div class="tbl-wrap">
         <table>
@@ -3491,6 +4031,360 @@ footer a{color:var(--text-2)}
       </div>
     </div>
 <div class="group">
+        <div class="group-title">🆕 本次新增 · 游戏制作方向（30 项 · 数据采集 2026-09-06）</div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 叙事与对话（视觉小说核心）</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/inkle/ink" target="_blank">inkle/ink</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">4.9k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>叙事脚本语言</em> —— 《80 天》《天堂之穹》开发商的开源叙事语言，写分支剧情像写带标签的文本，Unity 有官方集成。做分支叙事的行业标准。</p>
+        <div class="src-line">最近更新 2026-05-05 · MIT · <a href="#r342">信源 [342]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/YarnSpinnerTool/YarnSpinner" target="_blank">YarnSpinnerTool/YarnSpinner</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">2.8k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>对话系统</em> —— 用类似剧本的语法写对话，Godot/Unity 都有接入。《林中小女巫》等独立游戏在用，比手写状态机省事得多。</p>
+        <div class="src-line">最近更新 2026-08-11 · MIT · <a href="#r343">信源 [343]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/nathanhoad/godot_dialogue_manager" target="_blank">nathanhoad/godot_dialogue_manager</a></span>
+          <span class="lang">GDScript</span>
+          <span class="stars">3.8k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Godot 对话插件</em> —— Godot 4 的非线性对话系统，语法接近 Twine/ink，支持条件跳转和翻译导出。Godot 做 VN 的必备件。</p>
+        <div class="src-line">最近更新 2026-09-04 · MIT · <a href="#r344">信源 [344]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/colyseus/colyseus" target="_blank">colyseus/colyseus</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">7.3k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Node.js 多人框架</em> —— 把服务器状态自动同步给客户端的多人游戏框架。想给小游戏加联机，门槛最低的路线之一。</p>
+        <div class="src-line">最近更新 2026-08-28 · MIT · <a href="#r345">信源 [345]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 关卡、地图与世界构建</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/deepnight/ldtk" target="_blank">deepnight/ldtk</a></span>
+          <span class="lang">Haxe</span>
+          <span class="stars">4.2k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>2D 关卡编辑器</em> —— 现代轻量 2D 关卡编辑器，图块+实体分层，导出 JSON 极干净，主流引擎都有导入器。做 2D 游戏的标配工具。</p>
+        <div class="src-line">最近更新 2026-07-12 · MIT · <a href="#r346">信源 [346]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Azgaar/Fantasy-Map-Generator" target="_blank">Azgaar/Fantasy-Map-Generator</a></span>
+          <span class="lang">HTML</span>
+          <span class="stars">6k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>奇幻地图生成器</em> —— 浏览器里一键生成带地形、国界、城市、文化的奇幻地图，参数可精调。写 RPG 世界观设定时的神器。</p>
+        <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r347">信源 [347]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/TokisanGames/Terrain3D" target="_blank">TokisanGames/Terrain3D</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">4.2k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Godot 4 地形系统</em> —— 高性能可编辑地形，支持笔刷雕刻和纹理分层。Godot 做开放场景的短板补上了。</p>
+        <div class="src-line">最近更新 2026-08-29 · MIT · <a href="#r348">信源 [348]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 美术与动画</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/LibreSprite/LibreSprite" target="_blank">LibreSprite/LibreSprite</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">8.3k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>开源像素编辑器</em> —— Aseprite 最后一个 GPL 版本的分支。想要 Aseprite 的工作流又想用开源版本，就是它。</p>
+        <div class="src-line">最近更新 2026-09-01 · GPL-2.0 · <a href="#r349">信源 [349]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/piskelapp/piskel" target="_blank">piskelapp/piskel</a></span>
+          <span class="lang">JavaScript</span>
+          <span class="stars">12.8k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>网页像素动画</em> —— 浏览器里画像素图和帧动画，导出精灵表。零安装，教小孩或临时改图很方便。</p>
+        <div class="src-line">最近更新 2026-06-28 · Apache-2.0 · <a href="#r350">信源 [350]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/JannisX11/blockbench" target="_blank">JannisX11/blockbench</a></span>
+          <span class="lang">JavaScript</span>
+          <span class="stars">5.9k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>低模 3D 编辑器</em> —— 网页/桌面都能跑的低多边形建模工具，主要服务 Minecraft/基岩版模型，也能导出通用格式。</p>
+        <div class="src-line">最近更新 2026-09-05 · GPL-3.0 · <a href="#r351">信源 [351]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/EsotericSoftware/spine-runtimes" target="_blank">EsotericSoftware/spine-runtimes</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">5.3k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>骨骼动画运行时</em> —— 商业动画软件 Spine 的开源运行时。做 2D 骨骼动画的工业标准，运行时免费、编辑器收费。</p>
+        <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r352">信源 [352]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/PixiEditor/PixiEditor" target="_blank">PixiEditor/PixiEditor</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">8k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>通用 2D 编辑器</em> —— C# 写的开源 2D 图像编辑器，定位接近 Aseprite/Photoshop 的轻量替代。</p>
+        <div class="src-line">最近更新 2026-09-04 · LGPL-3.0 · <a href="#r353">信源 [353]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 引擎与渲染补缺</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/nesbox/TIC-80" target="_blank">nesbox/TIC-80</a></span>
+          <span class="lang">C</span>
+          <span class="stars">6.1k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>幻想计算机</em> —— 一个自带编辑器/编译器/运行时的「假想游戏机」，写小游戏像写红白机卡带。想做第一个完整小游戏，这是最快乐的入口。</p>
+        <div class="src-line">最近更新 2026-07-06 · MIT · <a href="#r354">信源 [354]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/google/filament" target="_blank">google/filament</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">20.5k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>PBR 渲染引擎</em> —— Google 的跨平台实时物理渲染引擎，Android 上尤其成熟。想看懂现代渲染管线怎么落地，代码质量很高。</p>
+        <div class="src-line">最近更新 2026-09-05 · Apache-2.0 · <a href="#r355">信源 [355]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/bkaradzic/bgfx" target="_blank">bkaradzic/bgfx</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">17.5k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>渲染抽象层</em> —— 一套代码跑遍 D3D/GL/Vulkan/Metal 的渲染中间层。跨平台的脏活它替你干完了。</p>
+        <div class="src-line">最近更新 2026-09-06 · BSD-2-Clause · <a href="#r356">信源 [356]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/armory3d/armory" target="_blank">armory3d/armory</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">3.3k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Blender 内置引擎</em> —— 直接嵌在 Blender 里的 3D 引擎，建模完就地能跑。会用 Blender 的人几乎零学习成本。</p>
+        <div class="src-line">最近更新 2026-07-16 · Zlib · <a href="#r357">信源 [357]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/OGRECave/ogre" target="_blank">OGRECave/ogre</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">4.6k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>OGRE 渲染引擎</em> —— 二十年的老牌开源渲染引擎，资料多、结构清晰。学图形学的经典教材级项目。</p>
+        <div class="src-line">最近更新 2026-08-30 · MIT · <a href="#r358">信源 [358]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 服务端、联机与运维</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/googleforgames/open-match" target="_blank">googleforgames/open-match</a></span>
+          <span class="lang">Go</span>
+          <span class="stars">3.4k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>匹配系统</em> —— Google 开源的游戏匹配框架，跑在 K8s 上。联机游戏的「找对手」模块不用自己造。</p>
+        <div class="src-line">最近更新 2026-07-12 · Apache-2.0 · <a href="#r359">信源 [359]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/agones-dev/agones" target="_blank">agones-dev/agones</a></span>
+          <span class="lang">Go</span>
+          <span class="stars">7k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>K8s 游戏服务器托管</em> —— 在 Kubernetes 上部署和伸缩专用游戏服务器的事实标准。多人游戏上规模后的必选项。</p>
+        <div class="src-line">最近更新 2026-09-05 · Apache-2.0 · <a href="#r360">信源 [360]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/name5566/leaf" target="_blank">name5566/leaf</a></span>
+          <span class="lang">Go</span>
+          <span class="stars">5.5k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Go 游戏服务器框架</em> —— 国内使用广泛的 Go 服务端框架，模块清晰、上手快。中小型联机游戏的务实选择。</p>
+        <div class="src-line">最近更新 2024-05-23 · Apache-2.0 · <a href="#r361">信源 [361]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/boardgameio/boardgame.io" target="_blank">boardgameio/boardgame.io</a></span>
+          <span class="lang">TypeScript</span>
+          <span class="stars">12.4k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>回合制多人框架</em> —— 棋牌/回合制游戏的状态同步与联机方案，内置多人房间。做桌游类游戏几乎不用写网络代码。</p>
+        <div class="src-line">最近更新 2026-08-18 · MIT · <a href="#r362">信源 [362]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · AI 辅助与自动化</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/IvanMurzak/Unity-MCP" target="_blank">IvanMurzak/Unity-MCP</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">4.2k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Unity AI 开发闭环</em> —— 把 Unity 编辑器暴露成 MCP 工具，AI 能真正改场景、跑测试。比「让 AI 写代码你手动贴」高一个维度。</p>
+        <div class="src-line">最近更新 2026-09-04 · Apache-2.0 · <a href="#r363">信源 [363]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/htdt/godogen" target="_blank">htdt/godogen</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">6.7k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>AI 自主游戏开发</em> —— 面向 Godot/Bevy/Babylon.js 的 Claude Code 工作流，把「一句话生成可玩原型」流程化。适合验证创意，不适合直接出商业品。</p>
+        <div class="src-line">最近更新 2026-09-04 · MIT · <a href="#r364">信源 [364]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/godot-rust/gdext" target="_blank">godot-rust/gdext</a></span>
+          <span class="lang">Rust</span>
+          <span class="stars">5.2k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Godot 4 Rust 绑定</em> —— 官方合作维护的 Rust 绑定。想用 Rust 写 Godot 游戏逻辑的唯一正路。</p>
+        <div class="src-line">最近更新 2026-09-05 · MPL-2.0 · <a href="#r365">信源 [365]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/AirtestProject/Airtest" target="_blank">AirtestProject/Airtest</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">9.6k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>游戏 UI 自动化</em> —— 网易开源的游戏自动化测试框架，基于图像识别，能跑手机和 PC。做回归测试省人力。</p>
+        <div class="src-line">最近更新 2026-03-23 · Apache-2.0 · <a href="#r366">信源 [366]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 本地化与工程化</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/WeblateOrg/weblate" target="_blank">WeblateOrg/weblate</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">6.1k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>本地化平台</em> —— 带版本控制集成的翻译协作平台。游戏多语言、MOD 汉化协作的标准工具，能接 Git 工作流。</p>
+        <div class="src-line">最近更新 2026-09-06 · GPL-3.0 · <a href="#r367">信源 [367]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/focus-creative-games/luban" target="_blank">focus-creative-games/luban</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">4.6k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>游戏配置方案</em> —— 国内使用极广的配置表工具，Excel 一键导出多语言代码与二进制。中重度游戏必备的工程件。</p>
+        <div class="src-line">最近更新 2026-09-05 · MIT · <a href="#r368">信源 [368]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Tencent/xLua" target="_blank">Tencent/xLua</a></span>
+          <span class="lang">C</span>
+          <span class="stars">10.2k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Unity 热更新</em> —— 腾讯开源的 Unity Lua 方案，支持运行时替换 C# 逻辑。国内手游热更的经典解法。</p>
+        <div class="src-line">最近更新 2025-11-21 · NOASSERTION · <a href="#r369">信源 [369]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/liangxiegame/QFramework" target="_blank">liangxiegame/QFramework</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">5.4k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Godot/Unity 架构框架</em> —— 国产轻量架构框架，含一套约定俗成的分层与工具集。想快速搭出有结构的工程时很好用。</p>
+        <div class="src-line">最近更新 2026-09-03 · MIT · <a href="#r370">信源 [370]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/munificent/game-programming-patterns" target="_blank">munificent/game-programming-patterns</a></span>
+          <span class="lang">HTML</span>
+          <span class="stars">4.5k</span>
+          <span class="tag t-make">制作</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>《游戏编程模式》</em> —— 经典书《Game Programming Patterns》全文在线。想搞懂「为什么游戏代码要这么组织」，读它最值。</p>
+        <div class="src-line">最近更新 2024-07-21 · NOASSERTION · <a href="#r371">信源 [371]</a></div>
+      </div>
+      </div>
+      </div>
+    <div class="group">
       <div class="group-title">游戏制作速查 · 其余值得一试的</div>
       <div class="tbl-wrap">
         <table>
@@ -5109,6 +6003,417 @@ footer a{color:var(--text-2)}
       </div>
     </div>
 <div class="group">
+        <div class="group-title">🆕 本次新增 · 游戏拓展方向（36 项 · 数据采集 2026-09-06）</div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 模拟器谱系补全</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/stenzek/duckstation" target="_blank">stenzek/duckstation</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">10.6k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>PS1 模拟器</em> —— 目前最快最准的初代 PlayStation 模拟器，支持画面增强和金手指。老游戏考古首选。</p>
+        <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r372">信源 [372]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/cemu-project/Cemu" target="_blank">cemu-project/Cemu</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">9.8k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Wii U 模拟器</em> —— 能跑《塞尔达：旷野之息》的 Wii U 模拟器，画面增强生态成熟。现已开源。</p>
+        <div class="src-line">最近更新 2026-09-03 · MPL-2.0 · <a href="#r373">信源 [373]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/xenia-project/xenia" target="_blank">xenia-project/xenia</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">9.7k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Xbox 360 模拟器</em> —— Xbox 360 模拟的研究型项目，兼容性一般但代码是学习主机逆向的宝库。</p>
+        <div class="src-line">最近更新 2026-02-18 · NOASSERTION · <a href="#r374">信源 [374]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Vita3K/Vita3K" target="_blank">Vita3K/Vita3K</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">5.7k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>PS Vita 模拟器</em> —— 实验性 PSV 模拟器，已能跑不少商业游戏。掌机游戏考古的重要阵地。</p>
+        <div class="src-line">最近更新 2026-09-05 · GPL-2.0 · <a href="#r375">信源 [375]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/xemu-project/xemu" target="_blank">xemu-project/xemu</a></span>
+          <span class="lang">C</span>
+          <span class="stars">4.1k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>初代 Xbox 模拟器</em> —— 唯一活跃的原版 Xbox 模拟器，持续开发中。</p>
+        <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r376">信源 [376]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/flyinghead/flycast" target="_blank">flyinghead/flycast</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">2.5k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>DC/街机模拟器</em> —— 世嘉 Dreamcast 与 Naomi 街机基板模拟，街机 ROM 玩家的主力工具。</p>
+        <div class="src-line">最近更新 2026-09-06 · GPL-2.0 · <a href="#r377">信源 [377]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/TASEmulators/BizHawk" target="_blank">TASEmulators/BizHawk</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">2.7k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>多机种 + TAS 工具</em> —— 速通（TAS）圈子的事实标准模拟器，帧级回放、内存监视、录像编码一应俱全。</p>
+        <div class="src-line">最近更新 2026-09-03 · NOASSERTION · <a href="#r378">信源 [378]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/melonDS-emu/melonDS" target="_blank">melonDS-emu/melonDS</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">5k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>NDS 模拟器</em> —— 任天堂 DS 模拟，兼容性优秀，也有 Android 移植版。</p>
+        <div class="src-line">最近更新 2026-08-23 · GPL-3.0 · <a href="#r379">信源 [379]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/ares-emulator/ares" target="_blank">ares-emulator/ares</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">1.8k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>高精度多机种</em> —— 追求「逐周期精确」的多机种模拟器，higan 精神的继承者。做硬件级还原研究的首选。</p>
+        <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r380">信源 [380]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/dosbox-staging/dosbox-staging" target="_blank">dosbox-staging/dosbox-staging</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">1.8k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>DOS 模拟器</em> —— DOSBox 的现代维护版，老 PC 游戏兼容性和画面都大幅提升。</p>
+        <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r381">信源 [381]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/86Box/86Box" target="_blank">86Box/86Box</a></span>
+          <span class="lang">C</span>
+          <span class="stars">4.8k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>老 PC 整机模拟</em> —— 不是只模拟 DOS，而是模拟整台 x86 电脑含硬件卡。跑 Windows 9x 时代老游戏的唯一解。</p>
+        <div class="src-line">最近更新 2026-09-06 · GPL-2.0 · <a href="#r382">信源 [382]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/OpenEmu/OpenEmu" target="_blank">OpenEmu/OpenEmu</a></span>
+          <span class="lang">Swift</span>
+          <span class="stars">17.8k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>macOS 模拟器前端</em> —— macOS 上的统一模拟器前端，接一堆内核核心，开箱即用。</p>
+        <div class="src-line">最近更新 2025-10-22 · 未声明 · <a href="#r383">信源 [383]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/EmulatorJS/EmulatorJS" target="_blank">EmulatorJS/EmulatorJS</a></span>
+          <span class="lang">JavaScript</span>
+          <span class="stars">4.1k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>网页端模拟器</em> —— 把 RetroArch 搬进浏览器的前端方案，做个「在线玩老游戏」的页面很容易。</p>
+        <div class="src-line">最近更新 2026-08-07 · GPL-3.0 · <a href="#r384">信源 [384]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Trixarian/NetherSX2-patch" target="_blank">Trixarian/NetherSX2-patch</a></span>
+          <span class="lang">HTML</span>
+          <span class="stars">2.6k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>安卓 PS2 模拟器</em> —— AetherSX2 停止维护后的社区续作补丁，安卓上跑 PS2 的实际选择。</p>
+        <div class="src-line">最近更新 2026-07-03 · Unlicense · <a href="#r385">信源 [385]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Baekalfen/PyBoy" target="_blank">Baekalfen/PyBoy</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">5.2k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Python GB 模拟器</em> —— 用 Python 写的 Game Boy 模拟器，可读可改。想学习模拟器原理或做 AI 打游戏实验，这个最友好。</p>
+        <div class="src-line">最近更新 2026-08-28 · NOASSERTION · <a href="#r386">信源 [386]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 解包与改包补强</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/ValveResourceFormat/ValveResourceFormat" target="_blank">ValveResourceFormat/ValveResourceFormat</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">2.4k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Source 2 资源工具</em> —— 浏览、提取、反编译 VPK 包的瑞士军刀。搞 V 社游戏（DOTA2/CS2）资源的唯一选择。</p>
+        <div class="src-line">最近更新 2026-09-05 · MIT · <a href="#r387">信源 [387]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/UE4SS-RE/RE-UE4SS" target="_blank">UE4SS-RE/RE-UE4SS</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">2.9k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>虚幻引擎 MOD 框架</em> —— 可注入的 Lua 脚本系统 + SDK 生成器 + 实时属性编辑器。虚幻游戏 MOD 的通用底座，支持 UE4/UE5。</p>
+        <div class="src-line">最近更新 2026-09-05 · MIT · <a href="#r388">信源 [388]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/UnderminersTeam/UndertaleModTool" target="_blank">UnderminersTeam/UndertaleModTool</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">2k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>GameMaker 改包工具</em> —— 《传说之下》《DeltaRune》等 GameMaker 游戏的解包/反编译/改包工具，也适用同类游戏。</p>
+        <div class="src-line">最近更新 2026-09-03 · GPL-3.0 · <a href="#r389">信源 [389]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Artikash/Textractor" target="_blank">Artikash/Textractor</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">2.7k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>游戏文本提取</em> —— 从游戏和视觉小说里实时提取原文文本，插件可扩展。做汉化和文本分析的第一道工具。</p>
+        <div class="src-line">最近更新 2024-03-15 · GPL-3.0 · <a href="#r390">信源 [390]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/kaitai-io/kaitai_struct" target="_blank">kaitai-io/kaitai_struct</a></span>
+          <span class="lang">Shell</span>
+          <span class="stars">4.7k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>二进制格式解析</em> —— 用声明式语言描述二进制格式，自动生成十几种语言的解析代码。遇到未知游戏文件格式时的通用解法。</p>
+        <div class="src-line">最近更新 2026-08-31 · 未声明 · <a href="#r391">信源 [391]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/WerWolv/ImHex" target="_blank">WerWolv/ImHex</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">54.7k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>十六进制编辑器</em> —— 给逆向工程师的现代化十六进制编辑器，支持自定义格式模板和可视化。分析陌生文件结构必备。</p>
+        <div class="src-line">最近更新 2026-09-06 · GPL-2.0 · <a href="#r392">信源 [392]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/redballoonsecurity/ofrak" target="_blank">redballoonsecurity/ofrak</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">2.1k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>解包-修改-重打包</em> —— 把二进制文件拆开、改内容、再原样封回去的框架。做 ROM 汉化和资源替换的正规流程。</p>
+        <div class="src-line">最近更新 2026-08-21 · NOASSERTION · <a href="#r393">信源 [393]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/SpecialKO/SpecialK" target="_blank">SpecialKO/SpecialK</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">2k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>PC 游戏增强瑞士军刀</em> —— 注入式工具集：修复老游戏、加画面增强、解锁帧率、改分辨率。老 PC 游戏的续命工具。</p>
+        <div class="src-line">最近更新 2026-08-31 · GPL-3.0 · <a href="#r394">信源 [394]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/SteamRE/SteamKit" target="_blank">SteamRE/SteamKit</a></span>
+          <span class="lang">C#</span>
+          <span class="stars">3.2k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Steam 协议库</em> —— .NET 实现 Steam 网络协议。想自己做 Steam 相关工具（库存、社区、下载）的起点。</p>
+        <div class="src-line">最近更新 2026-09-01 · LGPL-2.1 · <a href="#r395">信源 [395]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · 游戏重实现与反编译工程</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/pret/pokered" target="_blank">pret/pokered</a></span>
+          <span class="lang">Assembly</span>
+          <span class="stars">4.9k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>宝可梦红蓝反汇编</em> —— 把 ROM 完整反汇编成可编译的汇编源码，可改后重新出 ROM。ROM 汉化与改版的技术源头。</p>
+        <div class="src-line">最近更新 2026-08-27 · 未声明 · <a href="#r396">信源 [396]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/zeldaret/botw" target="_blank">zeldaret/botw</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">2.1k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>旷野之息反编译</em> —— 《塞尔达：旷野之息》的反编译工程。这类项目的价值在于完整揭示商业引擎的组织方式。</p>
+        <div class="src-line">最近更新 2026-09-05 · 未声明 · <a href="#r397">信源 [397]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/open-goal/jak-project" target="_blank">open-goal/jak-project</a></span>
+          <span class="lang">Common Lisp</span>
+          <span class="stars">3.5k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Jak 引擎逆向</em> —— 不仅反编译《Jak & Daxter》，还复活了它自研的 Lisp 方言。游戏逆向的天花板级示范。</p>
+        <div class="src-line">最近更新 2026-09-05 · ISC · <a href="#r398">信源 [398]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/pmret/papermario" target="_blank">pmret/papermario</a></span>
+          <span class="lang">C</span>
+          <span class="stars">1.6k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>纸片马里奥反编译</em> —— N64 版《纸片马里奥》的反编译。N64 逆向的活教材。</p>
+        <div class="src-line">最近更新 2026-08-25 · 未声明 · <a href="#r399">信源 [399]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/ran-j/PS2Recomp" target="_blank">ran-j/PS2Recomp</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">3.2k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>PS2 静态重编译</em> —— 把 PS2 游戏静态重编译成原生 PC 版的运行时工具。让老游戏脱离模拟器直接跑的前沿路线。</p>
+        <div class="src-line">最近更新 2026-09-02 · GPL-3.0 · <a href="#r400">信源 [400]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/OpenRCT2/OpenRCT2" target="_blank">OpenRCT2/OpenRCT2</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">16.2k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>过山车大亨 2 重实现</em> —— 把经典游戏完整重写成现代跨平台版本，二十年的工程。研究「如何复刻一个商业游戏」的最佳样本。</p>
+        <div class="src-line">最近更新 2026-09-06 · GPL-3.0 · <a href="#r401">信源 [401]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/ihhub/fheroes2" target="_blank">ihhub/fheroes2</a></span>
+          <span class="lang">C++</span>
+          <span class="stars">3.5k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>英雄无敌 2 引擎重建</em> —— 逐像素复刻《英雄无敌 2》的开源引擎。国内玩家熟悉的老游戏重建典范。</p>
+        <div class="src-line">最近更新 2026-09-04 · GPL-2.0 · <a href="#r402">信源 [402]</a></div>
+      </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 本次新增 · AI × 逆向新工具</div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/mrexodia/ida-pro-mcp" target="_blank">mrexodia/ida-pro-mcp</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">11.9k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>IDA Pro × AI</em> —— 把 IDA Pro 接给大模型的 MCP 服务，让 AI 直接读反汇编、重命名、写注释。逆向效率的代际变化。</p>
+        <div class="src-line">最近更新 2026-08-28 · MIT · <a href="#r403">信源 [403]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/bethington/ghidra-mcp" target="_blank">bethington/ghidra-mcp</a></span>
+          <span class="lang">Java</span>
+          <span class="stars">3.7k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Ghidra × AI</em> —— 200 多个 MCP 工具的 Ghidra 服务，支持 GUI 插件和无头模式。免费版 IDA 的 AI 平替。</p>
+        <div class="src-line">最近更新 2026-09-04 · Apache-2.0 · <a href="#r404">信源 [404]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/miscusi-peek/cheatengine-mcp-bridge" target="_blank">miscusi-peek/cheatengine-mcp-bridge</a></span>
+          <span class="lang">Lua</span>
+          <span class="stars">1.4k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>Cheat Engine × AI</em> —— 把 Cheat Engine 通过 MCP 接给 Cursor/Claude，让 AI 自动搜内存、找结构。游戏逆向的最省力组合。</p>
+        <div class="src-line">最近更新 2026-08-14 · MIT · <a href="#r405">信源 [405]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/albertan017/LLM4Decompile" target="_blank">albertan017/LLM4Decompile</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">7k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>大模型反编译</em> —— 用 LLM 把二进制反编译成可读 C 的开山项目，也是该方向的公开基准。</p>
+        <div class="src-line">最近更新 2026-02-12 · MIT · <a href="#r406">信源 [406]</a></div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <span class="card-name"><a href="https://github.com/Dryxio/auto-re-agent" target="_blank">Dryxio/auto-re-agent</a></span>
+          <span class="lang">Python</span>
+          <span class="stars">1.5k</span>
+          <span class="tag t-mod">拓展</span>
+          <span class="tag t-ok">持续更新</span>
+        </div>
+        <p class="plain"><em>AI 逆向 Agent</em> —— 用 Ghidra + LLM 自动重构并验证逆向结果的开源 Agent。代表「逆向自动化」的最新尝试。</p>
+        <div class="src-line">最近更新 2026-09-04 · MIT · <a href="#r407">信源 [407]</a></div>
+      </div>
+      </div>
+      </div>
+    <div class="group">
       <div class="group-title">游戏拓展速查 · 其余与替代方案</div>
       <div class="tbl-wrap">
         <table>
@@ -5298,7 +6603,7 @@ footer a{color:var(--text-2)}
     <p><b>数据来源</b>：GitHub Repository API 与 Search API，抓取时间 <b>2026-09-04</b>（UTC+8）。所有星级、最近更新时间、License、归档状态均为实测值，非估算。</p>
     <p><b>评分口径</b>：「可拓展性」指二次开发、脚本化、接入自有系统的难易程度（越高越容易扩展）；「实用性」指当下就能解决问题的程度。两项均为本报告基于项目架构、文档、社区与更新状态给出的主观评估。</p>
     <p><b>免责声明</b>：本报告仅用于技术调研参考，不构成投资建议。涉及解包工具的使用请遵守当地法律法规与软件许可协议。</p>
-    <p style="margin-top:18px"><b>信源清单（共 295 项，按报告出现顺序编号）</b></p>
+    <p style="margin-top:18px"><b>信源清单（共 407 项，按报告出现顺序编号）</b></p>
     <div class="srcs">
       <div id="r1">[1] <a href="https://github.com/akfamily/akshare" target="_blank">akfamily/akshare</a> — 22.4k · 2026-09-02 · MIT</div>
       <div id="r2">[2] <a href="https://github.com/ranaroussi/yfinance" target="_blank">ranaroussi/yfinance</a> — 25.2k · 2026-08-27 · Apache-2.0</div>
@@ -5595,8 +6900,120 @@ footer a{color:var(--text-2)}
       <div id="r293">[293] <a href="https://github.com/arcusmaximus/kirikiritools" target="_blank">arcusmaximus/kirikiritools</a> — 433 · 2023-04-12 · MIT</div>
       <div id="r294">[294] <a href="https://github.com/ogkalu2/comic-translate" target="_blank">ogkalu2/comic-translate</a> — 2.9k · 2026-08-10 · Apache-2.0</div>
       <div id="r295">[295] <a href="https://github.com/gildor2/ueviewer" target="_blank">gildor2/ueviewer</a> — 2.9k · 2024-03-16 · MIT</div>
+      <div id="r296">[296] <a href="https://github.com/NoFxAiOS/nofx" target="_blank">NoFxAiOS/nofx</a> — 12.8k · 2026-09-05 · AGPL-3.0</div>
+      <div id="r297">[297] <a href="https://github.com/Open-Dev-Society/OpenStock" target="_blank">Open-Dev-Society/OpenStock</a> — 14.2k · 2026-08-21 · AGPL-3.0</div>
+      <div id="r298">[298] <a href="https://github.com/AI4Finance-Foundation/FinRobot" target="_blank">AI4Finance-Foundation/FinRobot</a> — 7.9k · 2026-08-23 · Apache-2.0</div>
+      <div id="r299">[299] <a href="https://github.com/wquguru/nof0" target="_blank">wquguru/nof0</a> — 2.8k · 2025-12-07 · 未声明</div>
+      <div id="r300">[300] <a href="https://github.com/guy-hartstein/company-research-agent" target="_blank">guy-hartstein/company-research-agent</a> — 2.3k · 2026-09-03 · Apache-2.0</div>
+      <div id="r301">[301] <a href="https://github.com/DemonDamon/FinnewsHunter" target="_blank">DemonDamon/FinnewsHunter</a> — 1.5k · 2026-07-05 · Apache-2.0</div>
+      <div id="r302">[302] <a href="https://github.com/LLMQuant/quant-mind" target="_blank">LLMQuant/quant-mind</a> — 2.8k · 2026-08-15 · MIT</div>
+      <div id="r303">[303] <a href="https://github.com/mnemox-ai/tradememory-protocol" target="_blank">mnemox-ai/tradememory-protocol</a> — 1.4k · 2026-08-11 · MIT</div>
+      <div id="r304">[304] <a href="https://github.com/himself65/finance-skills" target="_blank">himself65/finance-skills</a> — 3.3k · 2026-08-27 · MIT</div>
+      <div id="r305">[305] <a href="https://github.com/zhangxiangliang/stock-api" target="_blank">zhangxiangliang/stock-api</a> — 1.8k · 2026-09-06 · MIT</div>
+      <div id="r306">[306] <a href="https://github.com/simonlin1212/global-stock-data" target="_blank">simonlin1212/global-stock-data</a> — 1.6k · 2026-09-04 · Apache-2.0</div>
+      <div id="r307">[307] <a href="https://github.com/lyra81604/zhengxi-views" target="_blank">lyra81604/zhengxi-views</a> — 1.6k · 2026-09-04 · NOASSERTION</div>
+      <div id="r308">[308] <a href="https://github.com/JerBouma/FinanceDatabase" target="_blank">JerBouma/FinanceDatabase</a> — 8.8k · 2026-09-01 · MIT</div>
+      <div id="r309">[309] <a href="https://github.com/Micro-sheep/efinance" target="_blank">Micro-sheep/efinance</a> — 4k · 2026-07-17 · MIT</div>
+      <div id="r310">[310] <a href="https://github.com/JoinQuant/jqdatasdk" target="_blank">JoinQuant/jqdatasdk</a> — 1.4k · 2026-01-29 · MIT</div>
+      <div id="r311">[311] <a href="https://github.com/sngyai/Sequoia-X" target="_blank">sngyai/Sequoia-X</a> — 6.8k · 2026-07-10 · 未声明</div>
+      <div id="r312">[312] <a href="https://github.com/wondertrader/wondertrader" target="_blank">wondertrader/wondertrader</a> — 6.3k · 2026-09-01 · MIT</div>
+      <div id="r313">[313] <a href="https://github.com/cuemacro/findatapy" target="_blank">cuemacro/findatapy</a> — 2.1k · 2026-07-02 · Apache-2.0</div>
+      <div id="r314">[314] <a href="https://github.com/alvarobartt/investpy" target="_blank">alvarobartt/investpy</a> — 1.9k · 2026-04-13 · MIT</div>
+      <div id="r315">[315] <a href="https://github.com/mortada/fredapi" target="_blank">mortada/fredapi</a> — 1.7k · 2026-01-28 · Apache-2.0</div>
+      <div id="r316">[316] <a href="https://github.com/sec-edgar/sec-edgar" target="_blank">sec-edgar/sec-edgar</a> — 1.4k · 2025-12-09 · Apache-2.0</div>
+      <div id="r317">[317] <a href="https://github.com/man-group/ArcticDB" target="_blank">man-group/ArcticDB</a> — 2.5k · 2026-09-06 · NOASSERTION</div>
+      <div id="r318">[318] <a href="https://github.com/timescale/timescaledb" target="_blank">timescale/timescaledb</a> — 23.5k · 2026-09-06 · NOASSERTION</div>
+      <div id="r319">[319] <a href="https://github.com/massive-com/client-python" target="_blank">massive-com/client-python</a> — 1.5k · 2026-07-09 · MIT</div>
+      <div id="r320">[320] <a href="https://github.com/quantopian/alphalens" target="_blank">quantopian/alphalens</a> — 4.4k · 2024-02-12 · Apache-2.0</div>
+      <div id="r321">[321] <a href="https://github.com/statsmodels/statsmodels" target="_blank">statsmodels/statsmodels</a> — 11.6k · 2026-09-06 · BSD-3-Clause</div>
+      <div id="r322">[322] <a href="https://github.com/Nixtla/statsforecast" target="_blank">Nixtla/statsforecast</a> — 4.9k · 2026-09-05 · Apache-2.0</div>
+      <div id="r323">[323] <a href="https://github.com/py-why/EconML" target="_blank">py-why/EconML</a> — 4.8k · 2026-08-31 · NOASSERTION</div>
+      <div id="r324">[324] <a href="https://github.com/hudson-and-thames/mlfinlab" target="_blank">hudson-and-thames/mlfinlab</a> — 4.9k · 2023-10-02 · NOASSERTION</div>
+      <div id="r325">[325] <a href="https://github.com/tradingview/lightweight-charts" target="_blank">tradingview/lightweight-charts</a> — 17.2k · 2026-09-04 · Apache-2.0</div>
+      <div id="r326">[326] <a href="https://github.com/klinecharts/KLineChart" target="_blank">klinecharts/KLineChart</a> — 4.1k · 2026-08-30 · Apache-2.0</div>
+      <div id="r327">[327] <a href="https://github.com/achannarasappa/ticker" target="_blank">achannarasappa/ticker</a> — 6.2k · 2026-06-28 · GPL-3.0</div>
+      <div id="r328">[328] <a href="https://github.com/visualHFT/VisualHFT" target="_blank">visualHFT/VisualHFT</a> — 1.2k · 2026-09-05 · Apache-2.0</div>
+      <div id="r329">[329] <a href="https://github.com/cinar/indicator" target="_blank">cinar/indicator</a> — 1.7k · 2026-09-03 · AGPL-3.0</div>
+      <div id="r330">[330] <a href="https://github.com/bukosabino/ta" target="_blank">bukosabino/ta</a> — 5.2k · 2026-03-18 · MIT</div>
+      <div id="r331">[331] <a href="https://github.com/exchange-core/exchange-core" target="_blank">exchange-core/exchange-core</a> — 2.6k · 2023-10-08 · Apache-2.0</div>
+      <div id="r332">[332] <a href="https://github.com/quickfix-j/quickfixj" target="_blank">quickfix-j/quickfixj</a> — 1.2k · 2026-09-05 · NOASSERTION</div>
+      <div id="r333">[333] <a href="https://github.com/pmxt-dev/pmxt" target="_blank">pmxt-dev/pmxt</a> — 2.1k · 2026-07-18 · MIT</div>
+      <div id="r334">[334] <a href="https://github.com/evan-kolberg/prediction-market-backtesting" target="_blank">evan-kolberg/prediction-market-backtesting</a> — 1.2k · 2026-05-16 · NOASSERTION</div>
+      <div id="r335">[335] <a href="https://github.com/ghostfolio/ghostfolio" target="_blank">ghostfolio/ghostfolio</a> — 9.2k · 2026-09-06 · AGPL-3.0</div>
+      <div id="r336">[336] <a href="https://github.com/actualbudget/actual" target="_blank">actualbudget/actual</a> — 28.6k · 2026-09-06 · MIT</div>
+      <div id="r337">[337] <a href="https://github.com/portfolio-performance/portfolio" target="_blank">portfolio-performance/portfolio</a> — 4.1k · 2026-09-03 · EPL-1.0</div>
+      <div id="r338">[338] <a href="https://github.com/plaintextaccounting/hledger" target="_blank">plaintextaccounting/hledger</a> — 4.7k · 2026-09-06 · GPL-3.0</div>
+      <div id="r339">[339] <a href="https://github.com/thrasher-corp/gocryptotrader" target="_blank">thrasher-corp/gocryptotrader</a> — 3.5k · 2026-09-04 · MIT</div>
+      <div id="r340">[340] <a href="https://github.com/bmoscon/cryptofeed" target="_blank">bmoscon/cryptofeed</a> — 2.9k · 2026-09-01 · NOASSERTION</div>
+      <div id="r341">[341] <a href="https://github.com/freqtrade/freqtrade-strategies" target="_blank">freqtrade/freqtrade-strategies</a> — 5.4k · 2026-08-12 · GPL-3.0</div>
+      <div id="r342">[342] <a href="https://github.com/inkle/ink" target="_blank">inkle/ink</a> — 4.9k · 2026-05-05 · MIT</div>
+      <div id="r343">[343] <a href="https://github.com/YarnSpinnerTool/YarnSpinner" target="_blank">YarnSpinnerTool/YarnSpinner</a> — 2.8k · 2026-08-11 · MIT</div>
+      <div id="r344">[344] <a href="https://github.com/nathanhoad/godot_dialogue_manager" target="_blank">nathanhoad/godot_dialogue_manager</a> — 3.8k · 2026-09-04 · MIT</div>
+      <div id="r345">[345] <a href="https://github.com/colyseus/colyseus" target="_blank">colyseus/colyseus</a> — 7.3k · 2026-08-28 · MIT</div>
+      <div id="r346">[346] <a href="https://github.com/deepnight/ldtk" target="_blank">deepnight/ldtk</a> — 4.2k · 2026-07-12 · MIT</div>
+      <div id="r347">[347] <a href="https://github.com/Azgaar/Fantasy-Map-Generator" target="_blank">Azgaar/Fantasy-Map-Generator</a> — 6k · 2026-09-06 · NOASSERTION</div>
+      <div id="r348">[348] <a href="https://github.com/TokisanGames/Terrain3D" target="_blank">TokisanGames/Terrain3D</a> — 4.2k · 2026-08-29 · MIT</div>
+      <div id="r349">[349] <a href="https://github.com/LibreSprite/LibreSprite" target="_blank">LibreSprite/LibreSprite</a> — 8.3k · 2026-09-01 · GPL-2.0</div>
+      <div id="r350">[350] <a href="https://github.com/piskelapp/piskel" target="_blank">piskelapp/piskel</a> — 12.8k · 2026-06-28 · Apache-2.0</div>
+      <div id="r351">[351] <a href="https://github.com/JannisX11/blockbench" target="_blank">JannisX11/blockbench</a> — 5.9k · 2026-09-05 · GPL-3.0</div>
+      <div id="r352">[352] <a href="https://github.com/EsotericSoftware/spine-runtimes" target="_blank">EsotericSoftware/spine-runtimes</a> — 5.3k · 2026-09-06 · NOASSERTION</div>
+      <div id="r353">[353] <a href="https://github.com/PixiEditor/PixiEditor" target="_blank">PixiEditor/PixiEditor</a> — 8k · 2026-09-04 · LGPL-3.0</div>
+      <div id="r354">[354] <a href="https://github.com/nesbox/TIC-80" target="_blank">nesbox/TIC-80</a> — 6.1k · 2026-07-06 · MIT</div>
+      <div id="r355">[355] <a href="https://github.com/google/filament" target="_blank">google/filament</a> — 20.5k · 2026-09-05 · Apache-2.0</div>
+      <div id="r356">[356] <a href="https://github.com/bkaradzic/bgfx" target="_blank">bkaradzic/bgfx</a> — 17.5k · 2026-09-06 · BSD-2-Clause</div>
+      <div id="r357">[357] <a href="https://github.com/armory3d/armory" target="_blank">armory3d/armory</a> — 3.3k · 2026-07-16 · Zlib</div>
+      <div id="r358">[358] <a href="https://github.com/OGRECave/ogre" target="_blank">OGRECave/ogre</a> — 4.6k · 2026-08-30 · MIT</div>
+      <div id="r359">[359] <a href="https://github.com/googleforgames/open-match" target="_blank">googleforgames/open-match</a> — 3.4k · 2026-07-12 · Apache-2.0</div>
+      <div id="r360">[360] <a href="https://github.com/agones-dev/agones" target="_blank">agones-dev/agones</a> — 7k · 2026-09-05 · Apache-2.0</div>
+      <div id="r361">[361] <a href="https://github.com/name5566/leaf" target="_blank">name5566/leaf</a> — 5.5k · 2024-05-23 · Apache-2.0</div>
+      <div id="r362">[362] <a href="https://github.com/boardgameio/boardgame.io" target="_blank">boardgameio/boardgame.io</a> — 12.4k · 2026-08-18 · MIT</div>
+      <div id="r363">[363] <a href="https://github.com/IvanMurzak/Unity-MCP" target="_blank">IvanMurzak/Unity-MCP</a> — 4.2k · 2026-09-04 · Apache-2.0</div>
+      <div id="r364">[364] <a href="https://github.com/htdt/godogen" target="_blank">htdt/godogen</a> — 6.7k · 2026-09-04 · MIT</div>
+      <div id="r365">[365] <a href="https://github.com/godot-rust/gdext" target="_blank">godot-rust/gdext</a> — 5.2k · 2026-09-05 · MPL-2.0</div>
+      <div id="r366">[366] <a href="https://github.com/AirtestProject/Airtest" target="_blank">AirtestProject/Airtest</a> — 9.6k · 2026-03-23 · Apache-2.0</div>
+      <div id="r367">[367] <a href="https://github.com/WeblateOrg/weblate" target="_blank">WeblateOrg/weblate</a> — 6.1k · 2026-09-06 · GPL-3.0</div>
+      <div id="r368">[368] <a href="https://github.com/focus-creative-games/luban" target="_blank">focus-creative-games/luban</a> — 4.6k · 2026-09-05 · MIT</div>
+      <div id="r369">[369] <a href="https://github.com/Tencent/xLua" target="_blank">Tencent/xLua</a> — 10.2k · 2025-11-21 · NOASSERTION</div>
+      <div id="r370">[370] <a href="https://github.com/liangxiegame/QFramework" target="_blank">liangxiegame/QFramework</a> — 5.4k · 2026-09-03 · MIT</div>
+      <div id="r371">[371] <a href="https://github.com/munificent/game-programming-patterns" target="_blank">munificent/game-programming-patterns</a> — 4.5k · 2024-07-21 · NOASSERTION</div>
+      <div id="r372">[372] <a href="https://github.com/stenzek/duckstation" target="_blank">stenzek/duckstation</a> — 10.6k · 2026-09-06 · NOASSERTION</div>
+      <div id="r373">[373] <a href="https://github.com/cemu-project/Cemu" target="_blank">cemu-project/Cemu</a> — 9.8k · 2026-09-03 · MPL-2.0</div>
+      <div id="r374">[374] <a href="https://github.com/xenia-project/xenia" target="_blank">xenia-project/xenia</a> — 9.7k · 2026-02-18 · NOASSERTION</div>
+      <div id="r375">[375] <a href="https://github.com/Vita3K/Vita3K" target="_blank">Vita3K/Vita3K</a> — 5.7k · 2026-09-05 · GPL-2.0</div>
+      <div id="r376">[376] <a href="https://github.com/xemu-project/xemu" target="_blank">xemu-project/xemu</a> — 4.1k · 2026-09-06 · NOASSERTION</div>
+      <div id="r377">[377] <a href="https://github.com/flyinghead/flycast" target="_blank">flyinghead/flycast</a> — 2.5k · 2026-09-06 · GPL-2.0</div>
+      <div id="r378">[378] <a href="https://github.com/TASEmulators/BizHawk" target="_blank">TASEmulators/BizHawk</a> — 2.7k · 2026-09-03 · NOASSERTION</div>
+      <div id="r379">[379] <a href="https://github.com/melonDS-emu/melonDS" target="_blank">melonDS-emu/melonDS</a> — 5k · 2026-08-23 · GPL-3.0</div>
+      <div id="r380">[380] <a href="https://github.com/ares-emulator/ares" target="_blank">ares-emulator/ares</a> — 1.8k · 2026-09-06 · NOASSERTION</div>
+      <div id="r381">[381] <a href="https://github.com/dosbox-staging/dosbox-staging" target="_blank">dosbox-staging/dosbox-staging</a> — 1.8k · 2026-09-06 · NOASSERTION</div>
+      <div id="r382">[382] <a href="https://github.com/86Box/86Box" target="_blank">86Box/86Box</a> — 4.8k · 2026-09-06 · GPL-2.0</div>
+      <div id="r383">[383] <a href="https://github.com/OpenEmu/OpenEmu" target="_blank">OpenEmu/OpenEmu</a> — 17.8k · 2025-10-22 · 未声明</div>
+      <div id="r384">[384] <a href="https://github.com/EmulatorJS/EmulatorJS" target="_blank">EmulatorJS/EmulatorJS</a> — 4.1k · 2026-08-07 · GPL-3.0</div>
+      <div id="r385">[385] <a href="https://github.com/Trixarian/NetherSX2-patch" target="_blank">Trixarian/NetherSX2-patch</a> — 2.6k · 2026-07-03 · Unlicense</div>
+      <div id="r386">[386] <a href="https://github.com/Baekalfen/PyBoy" target="_blank">Baekalfen/PyBoy</a> — 5.2k · 2026-08-28 · NOASSERTION</div>
+      <div id="r387">[387] <a href="https://github.com/ValveResourceFormat/ValveResourceFormat" target="_blank">ValveResourceFormat/ValveResourceFormat</a> — 2.4k · 2026-09-05 · MIT</div>
+      <div id="r388">[388] <a href="https://github.com/UE4SS-RE/RE-UE4SS" target="_blank">UE4SS-RE/RE-UE4SS</a> — 2.9k · 2026-09-05 · MIT</div>
+      <div id="r389">[389] <a href="https://github.com/UnderminersTeam/UndertaleModTool" target="_blank">UnderminersTeam/UndertaleModTool</a> — 2k · 2026-09-03 · GPL-3.0</div>
+      <div id="r390">[390] <a href="https://github.com/Artikash/Textractor" target="_blank">Artikash/Textractor</a> — 2.7k · 2024-03-15 · GPL-3.0</div>
+      <div id="r391">[391] <a href="https://github.com/kaitai-io/kaitai_struct" target="_blank">kaitai-io/kaitai_struct</a> — 4.7k · 2026-08-31 · 未声明</div>
+      <div id="r392">[392] <a href="https://github.com/WerWolv/ImHex" target="_blank">WerWolv/ImHex</a> — 54.7k · 2026-09-06 · GPL-2.0</div>
+      <div id="r393">[393] <a href="https://github.com/redballoonsecurity/ofrak" target="_blank">redballoonsecurity/ofrak</a> — 2.1k · 2026-08-21 · NOASSERTION</div>
+      <div id="r394">[394] <a href="https://github.com/SpecialKO/SpecialK" target="_blank">SpecialKO/SpecialK</a> — 2k · 2026-08-31 · GPL-3.0</div>
+      <div id="r395">[395] <a href="https://github.com/SteamRE/SteamKit" target="_blank">SteamRE/SteamKit</a> — 3.2k · 2026-09-01 · LGPL-2.1</div>
+      <div id="r396">[396] <a href="https://github.com/pret/pokered" target="_blank">pret/pokered</a> — 4.9k · 2026-08-27 · 未声明</div>
+      <div id="r397">[397] <a href="https://github.com/zeldaret/botw" target="_blank">zeldaret/botw</a> — 2.1k · 2026-09-05 · 未声明</div>
+      <div id="r398">[398] <a href="https://github.com/open-goal/jak-project" target="_blank">open-goal/jak-project</a> — 3.5k · 2026-09-05 · ISC</div>
+      <div id="r399">[399] <a href="https://github.com/pmret/papermario" target="_blank">pmret/papermario</a> — 1.6k · 2026-08-25 · 未声明</div>
+      <div id="r400">[400] <a href="https://github.com/ran-j/PS2Recomp" target="_blank">ran-j/PS2Recomp</a> — 3.2k · 2026-09-02 · GPL-3.0</div>
+      <div id="r401">[401] <a href="https://github.com/OpenRCT2/OpenRCT2" target="_blank">OpenRCT2/OpenRCT2</a> — 16.2k · 2026-09-06 · GPL-3.0</div>
+      <div id="r402">[402] <a href="https://github.com/ihhub/fheroes2" target="_blank">ihhub/fheroes2</a> — 3.5k · 2026-09-04 · GPL-2.0</div>
+      <div id="r403">[403] <a href="https://github.com/mrexodia/ida-pro-mcp" target="_blank">mrexodia/ida-pro-mcp</a> — 11.9k · 2026-08-28 · MIT</div>
+      <div id="r404">[404] <a href="https://github.com/bethington/ghidra-mcp" target="_blank">bethington/ghidra-mcp</a> — 3.7k · 2026-09-04 · Apache-2.0</div>
+      <div id="r405">[405] <a href="https://github.com/miscusi-peek/cheatengine-mcp-bridge" target="_blank">miscusi-peek/cheatengine-mcp-bridge</a> — 1.4k · 2026-08-14 · MIT</div>
+      <div id="r406">[406] <a href="https://github.com/albertan017/LLM4Decompile" target="_blank">albertan017/LLM4Decompile</a> — 7k · 2026-02-12 · MIT</div>
+      <div id="r407">[407] <a href="https://github.com/Dryxio/auto-re-agent" target="_blank">Dryxio/auto-re-agent</a> — 1.5k · 2026-09-04 · MIT</div>
     </div>
-    <p style="margin-top:20px">报告生成时间：2026-09-03 · 上一版：2026-09-02 · 再上一版：2026-09-01 · 本页为静态单文件 HTML，无外部依赖。</p>
+    <p style="margin-top:20px">报告生成时间：2026-09-06 · 上一版：2026-09-04 · 再上一版：2026-09-03 · 上上版：2026-09-02 · 上上上版：2026-09-01 · 本页为静态单文件 HTML，无外部依赖。</p>
   </footer>
 </div>
 </body>
