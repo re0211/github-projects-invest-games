@@ -22,7 +22,7 @@ https://re0211.github.io/github-projects-invest-games/
 
 ## 数据来源
 
-GitHub Repository API、Search API 与 GraphQL API，抓取时间 **2026-09-08**（UTC+8）。共 **638** 个项目，星级、最近更新时间、License、归档状态均为逐项实测值。
+GitHub Repository API、Search API 与 GraphQL API，抓取时间 **2026-09-08**（UTC+8）。共 **753** 个项目，星级、最近更新时间、License、归档状态均为逐项实测值。
 
 ### 版本记录
 
@@ -38,12 +38,13 @@ GitHub Repository API、Search API 与 GraphQL API，抓取时间 **2026-09-08**
 | 2026-09-08 | **398** | 零重复增量 79 项：图形调试与 Shader 链路、底层基座、中文热更新生态、本地跑模型与 Agent 协作、OCR 与老素材修复、UE 改造、Proton/DXVK 兼容层、radare2/angr 自动化逆向、街机与掌机模拟器 |
 | 2026-09-08 | **508** | 零重复增量 110 项：界面与编辑器、数学/窗口/图形底座、数据序列化、资产管线、网络传输层、多语言引擎框架、构建与性能剖析、Steam 接入、VR；AI 侧新增立绘抠图放大与「让角色开口说话」、离线语音识别；解包侧新增 .NET 逆向五件套、IL2CPP 最后一公里、音频提取、视觉小说底层引擎（KiriKiri / ONScripter / RPA） |
 | 2026-09-08 | **638** | 零重复增量 130 项：摄影测量与 3D 重建（Meshroom / COLMAP / VGGT）、动作捕捉（MediaPipe / OpenPose / FreeMoCap / AnimateAnyone）、关卡生成研究环境（Procgen / MiniGrid / TextWorld）、游戏测试自动化、游戏运营分析；补缺网页游戏引擎、字体与文字排版、3D 资产管线、中文游戏服务端、开源游戏样本、Minecraft MOD 生态、ROM 自建库 |
+| 2026-09-08 | **753** | 零重复增量 115 项。覆盖面开始饱和（268 个候选里 153 个上版已收），转向细分空档：MMO 服务端（TrinityCore / rAthena）、棋类与博弈 AI（Stockfish / KataGo / Pikafish）、幻想计算机（wasm4）、音频工作站与芯片音乐（Ardour / OpenMPT / MilkyTracker）、神经渲染（nerfstudio / instant-ngp）、后端即服务（PocketBase / Supabase）、资源压缩与编解码底座（zstd / Opus / libpng）、Doom 源端口与 Minecraft 生态、AI Agent 评测基准（SWE-bench / terminal-bench / LiveCodeBench） |
 
 每轮都会重新抓取全部条目的星级与更新时间，对超过 18 个月未更新的项目打「停更」标记。
 
 ## 信源规范
 
-正文每张卡片底部标注最近更新时间、License 与信源编号，编号可点击跳转至页脚完整信源清单（共 638 项，全部可追溯）。信源编号按正文出现顺序编排，正文条目与页脚清单一一对应。
+正文每张卡片底部标注最近更新时间、License 与信源编号，编号可点击跳转至页脚完整信源清单（共 753 项，全部可追溯）。信源编号按正文出现顺序编排，正文条目与页脚清单一一对应。
 
 ## 说明
 

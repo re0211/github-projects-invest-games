@@ -216,9 +216,9 @@ footer a{color:var(--text-2)}
     <p class="sub" data-page-node-id="LVHhXAo5FhfwKnCSkj9LXr">从 GitHub 上筛出真正活跃、能落地的项目，用人话讲清楚它们各自解决什么问题、能不能二次开发、值不值得花时间。不是罗列链接，是帮你做取舍。</p>
     <div class="meta" data-page-node-id="xhBz9HP4CMitXa7DRJmiCE">
       <span data-page-node-id="U5SVC0zIlhM1HBfAou01f1">数据抓取：2026-09-08</span>
-      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 638 个项目</span>
+      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 753 个项目</span>
       <span data-page-node-id="DCE1SCzjW3tXhAFVtReJ7C">星级 / 更新时间 / License 逐项实测</span>
-      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">本次新增 130 项（与上版零重复）</span>
+      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">本次新增 115 项（与上版零重复）</span>
     </div>
   </div>
 </header>
@@ -230,18 +230,17 @@ footer a{color:var(--text-2)}
     <p data-page-node-id="ZkiJSGCMemMOwvN2cSOI6D">这两条线加上 AI 制作游戏专题，看着不搭界，其实有一根共同的线：<strong data-page-node-id="efEv1wK0HJaeFsACKcHD3y">都是「把别人的系统拆开看懂，再按自己的意图重新组装」</strong>。做游戏是把引擎能力组合成体验，做游戏拓展（解包 / MOD）则是把已经封好的成品拆回可编辑状态；AI 制作游戏则是让大模型直接接管其中最难的一环——内容生成。</p>
     <p data-page-node-id="wCLcAOVIzIraMtOmWpCjkO">所以判断标准也一样：<strong data-page-node-id="QmAaK3yNC70HDIYytt19lg">看它的「输入」和「输出」是不是开放、可编程的。</strong> 一个只能在图形界面里点点的工具，实用性高但可拓展性低；一个只有 API 没有界面的库，反过来。下面每个项目都按这两条打分；AI 专题另加一项——它能否让「不会写代码的人也能做出来」。</p>
     <p data-page-node-id="lX2v1zBUEBlxB11nMXJlBh">本轮发现：<strong data-page-node-id="DQen2pAz0xt3oq4Tmc818S">2025-2026 是「AI 制作游戏」真正成型的一年</strong>——大模型不再只是写代码补全，而是直接接管剧情生成、对话 NPC、资产生成、关卡编排、整段关卡「一句话生成」。本报告新开「<b data-page-node-id="kJBetiGOHUhInUe2a1XJ3s">AI 制作游戏</b>」专题单独列出 23 个相关项目，是本轮最大增量。</p>
-    <p>本轮（2026-09-08 第十一版）<strong>只做一件事：补空白，不重复</strong>。先把上版 <b>508 个已收录项目</b> 抽成去重黑名单，再按「定向候选 + 逐个 GraphQL 实测」跑了五批共 168 个候选，实际收录 <b>130 个</b>。本轮最大增量是五块此前<b>完全空白</b>的领域：<b>摄影测量与 3D 重建、动作捕捉、关卡生成研究、游戏测试自动化、游戏运营分析</b>；外加中文游戏服务端、网页游戏引擎、字体渲染、开源游戏样本等一批补缺。</p>
+    <p>本轮（2026-09-08 第十二版）<strong>只做一件事：补空白，不重复</strong>。先把上版 <b>638 个已收录项目</b> 抽成去重黑名单，再按「定向候选 + 逐个 GraphQL 实测」跑了三批共 268 个候选，实际收录 <b>115 个</b>。到这一版，主流项目的覆盖面已经相当高——随手能想到的引擎、模拟器、AI 工具此前基本都收过了，所以本轮转向<b>更细分的空档</b>：MMO 服务端、棋类与博弈 AI、幻想计算机、音频工作站与芯片音乐、神经渲染、后端即服务、Doom 源端口与 Minecraft 生态、资源压缩与编解码底座，以及 AI 侧的<b>Agent 评测基准</b>（到底哪个模型更能干活，总得有把尺子）。</p>
   </div>
 
   <div class="callout info">
-    <h4>🆕 本次更新（2026-09-08 第十一版 · 相对第十版）</h4>
+    <h4>🆕 本次更新（2026-09-08 第十二版 · 相对第十一版）</h4>
     <ul>
-      <li><b>与上版零重复</b>：先抽上版全部 <b>508 个已收录项目</b> 做黑名单，再用「定向候选 + GraphQL 逐个实测」跑五批共 168 个候选，实际收录 <b>130 个</b>（编号 r509–r638）。脚本双向校验：与上版 <b>零重叠</b>，正文引用与页脚信源 <b>638 条一一对齐</b>；</li>
-      <li><b>本轮踩到的最大坑：黑名单过宽</b>。按惯例从正文抽全部 <code>github.com/xxx</code> 链接做去重，会得到 471 个 slug——但其中一部分只是<b>正文里顺口提到</b>，并非正式收录的卡片。改用「页脚信源清单的 508 条」做黑名单后，才发现自己拟的候选里 <b>131 个其实是上版已经收过的</b>，差点重复收录。这条已写进自动化记忆；</li>
-      <li><b>补上五块此前完全空白的领域</b>：① <b>摄影测量与 3D 重建</b>（Meshroom / COLMAP / MeshLab / VGGT / DUSt3R / MASt3R）——拍一圈照片就能出模型；② <b>动作捕捉与让角色动起来</b>（MediaPipe / OpenPose / FreeMoCap / AnimateAnyone / MimicMotion）；③ <b>关卡生成与研究环境</b>（Procgen / MiniGrid / TextWorld）；④ <b>游戏测试自动化</b>（Airtest / AltTester）；⑤ <b>游戏运营与数据分析</b>（Countly / PostHog）；</li>
-      <li><b>与 16GB 本地机强绑定的一批</b>：vLLM / SGLang / ms-swift / ai-toolkit（微调与推理）、Qwen3 / GLM-4 / MiniCPM（开源模型本体）、Cherry Studio（本地前端）、AnimateDiff + ControlNet（立绘动起来）；</li>
-      <li><b>解包线补的是「最后一公里」</b>：魂系列专用编辑器 DSMapStudio、Minecraft MOD 生态（Forge / Paper / Minestom）、逆向侧的 ReClass.NET 与 SystemInformer、ROM 自建库 RomM；</li>
-      <li><b>收录但明确标停更/归档的</b>：egret-core（2022 停更，新项目选 LayaAir 或 Cocos）、ControlNet / AnimateDiff（2024 后停更但仍是事实标准）、DUSt3R / MASt3R（已被 VGGT 超越）。<b>每组都写了替代方案</b>，避免踩进死胡同。</li>
+      <li><b>与上版零重复</b>：先抽上版全部 <b>638 个已收录项目</b> 做黑名单，再用「定向候选 + GraphQL 逐个实测」跑三批共 268 个候选，实际收录 <b>115 个</b>（编号 r639–r753）。脚本双向校验：与上版 <b>零重叠</b>，正文引用与页脚信源 <b>753 条一一对齐</b>；</li>
+      <li><b>这一版最重要的信号：覆盖面开始饱和</b>。268 个自拟候选里有 <b>153 个</b>上版已经收过了——也就是说，「随手想到的知名项目」基本收完了。后面再想挖增量，只能往细分领域走。</li>
+      <li><b>本轮补的九块空档</b>：① MMO 服务端（TrinityCore / rAthena）② 棋类与博弈 AI（Stockfish / KataGo / Pikafish）③ 幻想计算机（wasm4）④ 音频工作站与芯片音乐（Ardour / OpenMPT / MilkyTracker）⑤ 神经渲染（nerfstudio / instant-ngp）⑥ 后端即服务（PocketBase / Supabase）⑦ 资源压缩与编解码底座（zstd / Opus / libpng）⑧ Doom 源端口与 Minecraft 生态 ⑨ AI Agent 评测基准（SWE-bench / terminal-bench / LiveCodeBench）。</li>
+      <li><b>和你直接相关的三条</b>：做视觉小说用 <b>inky</b> 写分支、用 <b>rhubarb-lip-sync</b> 自动生成口型；本地跑 qwen3 时用 <b>Qwen-Agent</b> 做 Agent 层、用 <b>chatbox</b> 做图形界面；手上 200GB 游戏库换机前用 <b>ludusavi</b> 备份存档。</li>
+      <li><b>收录但明确标注状态的项目</b>：0 A.D.（仓库已归档，官方迁到 Gitea）、LIKO-12（已归档，建议改用 wasm4）、Microsoft Malmo（已归档）、Fungus / JoyShockMapper / LiveCodeBench 等距上次更新已超过一年，卡片里都写了替代方案或注意事项。</li>
     </ul>
   </div>
   </div>
@@ -4127,6 +4126,1143 @@ footer a{color:var(--text-2)}
           <div class="src-line">最近更新 2026-09-07 · Zlib · <a href="#r552">信源 [552]</a></div>
         </div>
       </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · MMO 服务端 · 撑得起几千人同服的后端（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">想理解「一个大世界怎么同时装下几千人」，读这几份服务端源码比读任何教程都直接。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/TrinityCore/TrinityCore" target="_blank">TrinityCore</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">10.8k</span>
+            <span class="tag t-make">MMO 服务端</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">魔兽世界 3.3.5 的完整开源服务端，是目前最成熟的大型 MMO 后端参考。它把玩家数据、地图分区、AI 线程、脚本系统拆得很清楚——做多人在线游戏前先翻一遍它的数据库表设计，能省掉大量踩坑。注意 GPL-2.0 有传染性，商用要评估。</p>
+          <div class="src-line">最近更新 2026-09-07 · GPL-2.0 · <a href="#r639">信源 [639]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/rathena/rathena" target="_blank">rathena</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">3.6k</span>
+            <span class="tag t-make">MMO 服务端</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">《仙境传说 RO》的开源服务端，用 C++ 重写。最大好处是「改职业、加地图、调掉落」基本不用碰 C++，改数据表和脚本就行，二次开发非常省事。</p>
+          <div class="src-line">最近更新 2026-09-04 · GPL-3.0 · <a href="#r640">信源 [640]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/cmangos/mangos-classic" target="_blank">mangos-classic</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">1.1k</span>
+            <span class="tag t-make">MMO 服务端</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">TrinityCore 的前身分支，专注还原「原版 60 级」那份数据。代码更保守、更贴近当年原始实现，适合做考据或需要长期不变的稳定服。</p>
+          <div class="src-line">最近更新 2026-08-31 · GPL-2.0 · <a href="#r641">信源 [641]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/HerculesWS/Hercules" target="_blank">Hercules</a></span>
+            <span class="lang">C</span>
+            <span class="stars">1.0k</span>
+            <span class="tag t-make">MMO 服务端</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">rAthena 的活跃分支，插件体系（HPM）更现代。要在 RO 服务端上加定制功能时，写插件比改源码安全得多，升级也不会冲突。</p>
+          <div class="src-line">最近更新 2026-08-23 · GPL-3.0 · <a href="#r642">信源 [642]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 棋类与博弈 AI · 象棋、围棋、国际象棋引擎（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">这几项不只是「会下棋」，它们的搜索与评估写法可以直接搬进策略游戏的 NPC 决策里。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/official-stockfish/Stockfish" target="_blank">Stockfish</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">16.5k</span>
+            <span class="tag t-make">博弈 AI</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">当今最强的开源国际象棋引擎，是所有棋力评测的基准线。真正值得学的不是它能下赢人，而是它「在限定时间内怎么做出最好决策」——这套搜索剪枝思路，做战术型游戏 AI 能直接借鉴。</p>
+          <div class="src-line">最近更新 2026-09-05 · GPL-3.0 · <a href="#r643">信源 [643]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/official-pikafish/Pikafish" target="_blank">Pikafish</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.0k</span>
+            <span class="tag t-make">博弈 AI</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Stockfish 的中国象棋衍生版，中文社区维护。想给游戏里加个会下象棋的 NPC，用 UCI 协议接上就行，不用自己写搜索算法。</p>
+          <div class="src-line">最近更新 2026-09-06 · GPL-3.0 · <a href="#r644">信源 [644]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/lightvector/KataGo" target="_blank">KataGo</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">5.1k</span>
+            <span class="tag t-make">博弈 AI</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">目前最强的开源围棋引擎之一，支持自我对弈训练与多分支分析。它还能给出每一步的「胜率曲线」——这种实时评估能力，移植到任何策略游戏都能做 AI 提示或难度调节。</p>
+          <div class="src-line">最近更新 2026-09-07 · NOASSERTION · <a href="#r645">信源 [645]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/LeelaChessZero/lc0" target="_blank">lc0</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">3.2k</span>
+            <span class="tag t-make">博弈 AI</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用神经网络取代人工评估函数的国际象棋引擎，纯靠自我对弈变强，不喂人类棋谱。是「不用人类数据也能训练出高手 AI」的活样本，做强化学习 NPC 值得参考。</p>
+          <div class="src-line">最近更新 2026-09-07 · GPL-3.0 · <a href="#r646">信源 [646]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 多智能体博弈环境 · 让几个 AI 学会配合（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">单人 AI 已经有不少现成方案，「几个 AI 怎么分工包抄」才是难点，这块测试环境很少。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/oxwhirl/smac" target="_blank">smac</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">1.4k</span>
+            <span class="tag t-make">多智能体</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">基于星际争霸 2 的多智能体强化学习环境，考的是小队协作而非单兵作战。想做会配合的 NPC 小队，这是最成熟的练兵场。注意已 2 年多未更新，且依赖旧版 SC2，新项目建议配合 SMACv2 使用。</p>
+          <div class="src-line">最近更新 2024-02-18 · MIT · <a href="#r647">信源 [647]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 幻想计算机 · 在假想的 80 年代硬件上做游戏（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">把分辨率、颜色数、内存全部框死，反而逼你只琢磨玩法。练手和 Game Jam 的神器。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/aduros/wasm4" target="_blank">wasm4</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">1.5k</span>
+            <span class="tag t-make">幻想计算机</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">一台「不存在的复古游戏机」：160×160 分辨率、4 色、64KB 内存，用 WebAssembly 跑。限制多到不用纠结美术，只能专心做玩法。做小游戏最快的路径之一。</p>
+          <div class="src-line">最近更新 2026-08-28 · ISC · <a href="#r648">信源 [648]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/RamiLego4Game/LIKO-12" target="_blank">LIKO-12</a></span>
+            <span class="lang">Lua</span>
+            <span class="stars">1.2k</span>
+            <span class="tag t-make">幻想计算机</span>
+            <span class="tag t-warn">已归档</span>
+          </div>
+          <p class="plain">同类幻想计算机，用 Lua 编程，自带代码编辑器、画图板和音乐工具——开机就是一台完整的开发机。已归档，新项目更推荐上面的 wasm4。</p>
+          <div class="src-line">最近更新 2024-01-24 · MIT · <a href="#r649">信源 [649]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 3D 建模与 PBR 材质绘制（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">从「捏出形状」到「给表面上材质」，这两件基本覆盖了独立开发的美术需求。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/blender/blender" target="_blank">blender</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">20.2k</span>
+            <span class="tag t-make">3D 制作</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">开源 3D 制作的事实标准，不再需要多介绍。对独立开发者它不只是建模工具——渲染、骨骼绑定、动画、剪辑一条龙，而且 Python 脚本能批量处理资产，是资产管线里绕不开的那一环。</p>
+          <div class="src-line">最近更新 2026-09-08 · NOASSERTION · <a href="#r650">信源 [650]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/armory3d/armorpaint" target="_blank">armorpaint</a></span>
+            <span class="lang">C</span>
+            <span class="stars">4.1k</span>
+            <span class="tag t-make">材质绘制</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">直接在 3D 模型上画 PBR 贴图（颜色、粗糙度、金属度、法线一次搞定），效果接近 Substance Painter。买不起商业替代品时的首选，也能嵌进 Blender 工作流。</p>
+          <div class="src-line">最近更新 2026-09-04 · NOASSERTION · <a href="#r651">信源 [651]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 体素建模补缺（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">像素风 3D（比如《Teardown》那种）需要专门的工具链。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/vengi-voxel/vengi" target="_blank">vengi</a></span>
+            <span class="lang">C</span>
+            <span class="stars">1.4k</span>
+            <span class="tag t-make">体素编辑</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">免费的体素编辑器，同时兼职格式转换器和缩略图生成器。它还支持把体素模型转成普通网格导出到引擎，打通了「用体素捏、用引擎跑」这条路。</p>
+          <div class="src-line">最近更新 2026-09-03 · NOASSERTION · <a href="#r652">信源 [652]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 自己做 BGM · 从专业混音到芯片音乐（5 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">配乐是独立游戏最容易卡住的一环，这五个覆盖了从录音棚到 8-bit 的全部需求。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Ardour/ardour" target="_blank">ardour</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">5.3k</span>
+            <span class="tag t-make">音频工作站</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">完整的数字音频工作站（DAW），多轨录音、混音、MIDI 全支持。给游戏录配音、混环境音，自由软件里它最专业。</p>
+          <div class="src-line">最近更新 2026-09-08 · NOASSERTION · <a href="#r653">信源 [653]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/zrythm/zrythm" target="_blank">zrythm</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">3.1k</span>
+            <span class="tag t-make">音频工作站</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">更现代、上手更快的 DAW，界面接近商业软件，自动化曲线做得顺手。想「像用 FL Studio 那样」免费做游戏音乐，它比 Ardour 更友好。</p>
+          <div class="src-line">最近更新 2026-09-07 · NOASSERTION · <a href="#r654">信源 [654]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/openmpt/openmpt" target="_blank">openmpt</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">771</span>
+            <span class="tag t-make">芯片音乐</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">经典的 tracker 音轨编辑器，.it/.xm/.mod 这些老格式就是它家的。做 8-bit / 16-bit 复古配乐的正统工具，也能当库把音乐直接读进游戏。</p>
+          <div class="src-line">最近更新 2026-08-29 · BSD-3-Clause · <a href="#r655">信源 [655]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/milkytracker/MilkyTracker" target="_blank">MilkyTracker</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.1k</span>
+            <span class="tag t-make">芯片音乐</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">DOS 时代 FastTracker II 的开源复刻，界面就是那个味。写芯片音乐最有仪式感的选择，导出的 .xm 体积极小，塞进小体量游戏正合适。</p>
+          <div class="src-line">最近更新 2026-06-22 · NOASSERTION · <a href="#r656">信源 [656]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/schismtracker/schismtracker" target="_blank">schismtracker</a></span>
+            <span class="lang">C</span>
+            <span class="stars">1.6k</span>
+            <span class="tag t-make">芯片音乐</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Impulse Tracker 的复刻版，跨平台且支持鼠标操作，比 MilkyTracker 容易上手。产出 .it 格式，复古游戏配乐的另一主力。</p>
+          <div class="src-line">最近更新 2026-08-28 · GPL-2.0 · <a href="#r657">信源 [657]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · Web 游戏库补缺 · 物理、音频与动态音乐（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">网页小游戏的三大刚需，几十行代码就能接上。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/liabru/matter-js" target="_blank">matter-js</a></span>
+            <span class="lang">JavaScript</span>
+            <span class="stars">18.4k</span>
+            <span class="tag t-make">网页物理</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">网页 2D 刚体物理引擎，比 Box2D 轻很多，几十行就能做出堆叠、碰撞、弹跳。做 H5 小游戏和互动页面的第一选择。已 2 年未更新，但功能早已稳定。</p>
+          <div class="src-line">最近更新 2024-08-17 · MIT · <a href="#r658">信源 [658]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/goldfire/howler.js" target="_blank">howler.js</a></span>
+            <span class="lang">JavaScript</span>
+            <span class="stars">25.3k</span>
+            <span class="tag t-make">网页音频</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">网页音频播放库，专门解决「不同浏览器音频行为不一致」这个老问题。支持音频精灵、淡入淡出、3D 音效定位，做网页游戏几乎绕不开。</p>
+          <div class="src-line">最近更新 2025-11-23 · MIT · <a href="#r659">信源 [659]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Tonejs/Tone.js" target="_blank">Tone.js</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">14.7k</span>
+            <span class="tag t-make">网页音乐</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">基于 Web Audio 的音乐框架，能在浏览器里搭合成器、鼓机、音序器。想让游戏音乐随玩法动态变化（比如战斗时鼓点加密），它做得到。</p>
+          <div class="src-line">最近更新 2026-09-03 · MIT · <a href="#r660">信源 [660]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · Python 做游戏补缺（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">Python 生态里除了 pygame 还有别的选择。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/pyglet/pyglet" target="_blank">pyglet</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">2.2k</span>
+            <span class="tag t-make">Python 游戏</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">纯 Python 的窗口与多媒体库，不依赖任何 C 扩展。比 pygame 更贴近底层、写法更「Python 味」，适合教学和快速做可视化原型。</p>
+          <div class="src-line">最近更新 2026-09-08 · BSD-3-Clause · <a href="#r661">信源 [661]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 引擎补缺 · Java / C# / Lua / C++ 各来一个（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">不同语言阵营的地基项目，做引擎或自己写渲染时绕不开。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/LWJGL/lwjgl3" target="_blank">lwjgl3</a></span>
+            <span class="lang">Java</span>
+            <span class="stars">5.4k</span>
+            <span class="tag t-make">Java 图形</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">让 Java 能调用 OpenGL、Vulkan、GLFW 的绑定层。想在 Java 里自己写渲染而不想用现成引擎，这是必经之路——Minecraft 早期就靠它。</p>
+          <div class="src-line">最近更新 2026-09-03 · BSD-3-Clause · <a href="#r662">信源 [662]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/axmolengine/axmol" target="_blank">axmol</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">1.4k</span>
+            <span class="tag t-make">C++ 引擎</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Cocos2d-x 的社区续作，C++ 跨平台引擎，支持到 Xbox 和 WebAssembly。老 Cocos 项目迁移过来最省事，也是为数不多还在积极维护的 C++ 游戏引擎。</p>
+          <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r663">信源 [663]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/gideros/gideros" target="_blank">gideros</a></span>
+            <span class="lang">C</span>
+            <span class="stars">613</span>
+            <span class="tag t-make">Lua 引擎</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用 Lua 写跨平台手游的轻量引擎，自带 IDE 和真机即时预览——改完代码手机上立刻生效，调手感非常省时间。</p>
+          <div class="src-line">最近更新 2026-09-03 · NOASSERTION · <a href="#r664">信源 [664]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/veldrid/veldrid" target="_blank">veldrid</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">2.7k</span>
+            <span class="tag t-make">.NET 图形</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">.NET 的底层图形库，一套代码跑 D3D11、Vulkan、Metal、OpenGL。想在 C# 里自己写渲染器又不想被某个图形 API 绑死，用它做抽象层。</p>
+          <div class="src-line">最近更新 2026-03-17 · MIT · <a href="#r665">信源 [665]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 叙事工具补缺 · 写分支剧情的编辑器与 Unity 方案（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">剧情写起来顺不顺手，直接决定你能不能坚持写完。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/inkle/inky" target="_blank">inky</a></span>
+            <span class="lang">JavaScript</span>
+            <span class="stars">2.7k</span>
+            <span class="tag t-make">叙事编辑器</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">ink 语言的官方编辑器：左边写脚本，右边实时预览分支走向，能直接看到玩家会走到哪。写互动小说的体验接近写文档。（ink 本体已在视觉小说章节收录）</p>
+          <div class="src-line">最近更新 2026-05-05 · NOASSERTION · <a href="#r666">信源 [666]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/snozbot/fungus" target="_blank">fungus</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">1.9k</span>
+            <span class="tag t-make">Unity 叙事</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">Unity 上的可视化叙事插件，用流程图连对话和分支，不写代码也能做视觉小说。Unity 用户零基础上手很合适；注意已 600 天未更新。</p>
+          <div class="src-line">最近更新 2025-01-16 · MIT · <a href="#r667">信源 [667]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 口型同步与面部捕捉 · 让角色开口说话（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">配音做完之后的那一步，手 K 口型是最耗时的活。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/DanielSWolf/rhubarb-lip-sync" target="_blank">rhubarb-lip-sync</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.6k</span>
+            <span class="tag t-make">口型同步</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">命令行工具：丢一段配音进去，自动生成 2D 口型动画时间轴。做 Galgame 或 2D 角色说话时，能省掉手 K 口型的绝大部分工作量。</p>
+          <div class="src-line">最近更新 2026-06-16 · NOASSERTION · <a href="#r668">信源 [668]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/emilianavt/OpenSeeFace" target="_blank">OpenSeeFace</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">2.0k</span>
+            <span class="tag t-make">面部捕捉</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">用普通摄像头做实时人脸与表情关键点追踪，纯 CPU 可跑，还带 Unity 集成。想让虚拟形象实时跟着你眨眼张嘴，这是零成本方案。</p>
+          <div class="src-line">最近更新 2025-12-28 · BSD-2-Clause · <a href="#r669">信源 [669]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 神经渲染 · 几张照片变成可漫游的场景（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">拍照就能生成真实场景，是做写实背景的新路子。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/nerfstudio-project/nerfstudio" target="_blank">nerfstudio</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">12.0k</span>
+            <span class="tag t-make">神经渲染</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">NeRF（神经辐射场）的一站式工具箱，把训练、可视化、导出串成一条流水线。绕着物体拍一圈照片，就能生成从任意角度看的新视角，做超真实游戏背景很好用。</p>
+          <div class="src-line">最近更新 2025-07-29 · Apache-2.0 · <a href="#r670">信源 [670]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/NVlabs/instant-ngp" target="_blank">instant-ngp</a></span>
+            <span class="lang">Cuda</span>
+            <span class="stars">17.5k</span>
+            <span class="tag t-make">神经渲染</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">英伟达的「秒级 NeRF」，把原本几小时的训练压到几十秒，验证想法特别快。注意它导出的是神经场不是网格，要进游戏引擎还得再转一步。</p>
+          <div class="src-line">最近更新 2026-02-02 · NOASSERTION · <a href="#r671">信源 [671]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 后端即服务 · 一个人也能做联网游戏（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">排行榜、云存档、用户系统，不用自己写服务器。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/pocketbase/pocketbase" target="_blank">pocketbase</a></span>
+            <span class="lang">Go</span>
+            <span class="stars">61.0k</span>
+            <span class="tag t-make">后端即服务</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">一个文件就是整个后端：数据库、用户系统、文件存储、实时订阅全在里面。个人项目和小游戏做排行榜、云存档，装它最省事。</p>
+          <div class="src-line">最近更新 2026-09-07 · MIT · <a href="#r672">信源 [672]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/supabase/supabase" target="_blank">supabase</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">109.0k</span>
+            <span class="tag t-make">后端即服务</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">开源版 Firebase，核心是 Postgres 外加鉴权、存储和实时推送。将来数据要迁移、要做复杂查询时，比 PocketBase 更能撑得住。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r673">信源 [673]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/appwrite/appwrite" target="_blank">appwrite</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">57.3k</span>
+            <span class="tag t-make">后端即服务</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">另一套自托管后端，Docker 一键起，自带管理控制台。函数计算和多语言 SDK 覆盖比前两者全，几个人协作时更好分工。</p>
+          <div class="src-line">最近更新 2026-09-08 · BSD-3-Clause · <a href="#r674">信源 [674]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 串流补缺 · 把画面推到别的设备（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">在一台机器上跑，在另一台上玩。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ClassicOldSong/Apollo" target="_blank">Apollo</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">10.8k</span>
+            <span class="tag t-make">游戏串流</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Sunshine 的增强分支，主打「按客户端原生分辨率串流」。串流方案此前收过 Sunshine 本体，这个分支对高 DPI 掌机和手机更友好。</p>
+          <div class="src-line">最近更新 2026-05-21 · GPL-3.0 · <a href="#r675">信源 [675]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/games-on-whales/wolf" target="_blank">wolf</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.2k</span>
+            <span class="tag t-make">游戏串流</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用 Docker 容器跑游戏再串流出去，同一台机器能同时给几个人各开一个虚拟桌面。想搭一台「家庭云游戏服务器」，这是最接近成品的方案。</p>
+          <div class="src-line">最近更新 2026-09-07 · MIT · <a href="#r676">信源 [676]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 存档备份 · 别让几十小时进度归零（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">你那 200GB 游戏库换机前的必做一步。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/mtkennerly/ludusavi" target="_blank">ludusavi</a></span>
+            <span class="lang">Rust</span>
+            <span class="stars">6.2k</span>
+            <span class="tag t-make">存档备份</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">PC 游戏存档备份工具，能自动识别几百款游戏的存档位置，包括 Steam 云没覆盖的那些。重装系统或换机器前跑一遍，比事后找存档省心一百倍。</p>
+          <div class="src-line">最近更新 2026-09-06 · MIT · <a href="#r677">信源 [677]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 发行与社区 · 做完之后往哪放（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">独立游戏首发几乎都在这两个地方。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/itchio/itch" target="_blank">itch</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">2.8k</span>
+            <span class="tag t-make">发行平台</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">itch.io 官方客户端，装游戏、更新、管理一条龙。独立游戏首发基本都在 itch.io，这个客户端就是玩家的入口。</p>
+          <div class="src-line">最近更新 2026-09-06 · MIT · <a href="#r678">信源 [678]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/gibbed/SteamAchievementManager" target="_blank">SteamAchievementManager</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">9.0k</span>
+            <span class="tag t-make">Steam 工具</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">Steam 成就管理工具。做游戏时用它验证自己接的成就逻辑到底有没有触发，比反复改代码测试快得多。</p>
+          <div class="src-line">最近更新 2026-03-19 · Zlib · <a href="#r679">信源 [679]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 自动化操作 · 让脚本替你点鼠标（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">测试老游戏、批量截图、跑重复流程都用得上。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/asweigart/pyautogui" target="_blank">pyautogui</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">12.7k</span>
+            <span class="tag t-make">自动化</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">Python 控制鼠标键盘的库，写几行就能自动点击、截图比对颜色。做游戏自动化测试、批量截图最省事；已 2 年未更新但功能早就够用。</p>
+          <div class="src-line">最近更新 2024-08-20 · BSD-3-Clause · <a href="#r680">信源 [680]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/RaiMan/SikuliX1" target="_blank">SikuliX1</a></span>
+            <span class="lang">Java</span>
+            <span class="stars">3.2k</span>
+            <span class="tag t-make">自动化</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用「截图片段」定位界面元素再操作，不需要知道程序内部结构。测那些拿不到接口的闭源老游戏时，几乎是唯一办法。</p>
+          <div class="src-line">最近更新 2026-07-24 · MIT · <a href="#r681">信源 [681]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 手柄补缺 · 让冷门手柄也能用（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">游戏不认你的手柄时，靠这层翻译。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/AntiMicroX/antimicrox" target="_blank">antimicrox</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">4.0k</span>
+            <span class="tag t-make">手柄映射</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把手柄按键映射成键盘鼠标的图形化工具。游戏不认你的手柄时，用它伪装成键鼠就能玩。</p>
+          <div class="src-line">最近更新 2026-08-18 · GPL-3.0 · <a href="#r682">信源 [682]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Davidobot/BetterJoy" target="_blank">BetterJoy</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">4.8k</span>
+            <span class="tag t-make">手柄映射</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">让 Switch 手柄和 Joy-Con 在 PC 上被识别成 Xbox 手柄，配合 Cemu、Citra、Dolphin 等模拟器使用。</p>
+          <div class="src-line">最近更新 2024-07-19 · NOASSERTION · <a href="#r683">信源 [683]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/JibbSmart/JoyShockMapper" target="_blank">JoyShockMapper</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">868</span>
+            <span class="tag t-make">体感瞄准</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">专注「陀螺仪体感瞄准」，支持 PS4/PS5/Switch 手柄。想在主视角游戏里做体感瞄准，这是唯一成熟的方案；已 2 年未更新。</p>
+          <div class="src-line">最近更新 2024-06-25 · NOASSERTION · <a href="#r684">信源 [684]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 翻译的工程侧 · 把文本抽出来交给翻译（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">多语言游戏里，「抽文本」这一步比翻译本身更容易出错。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/python-babel/babel" target="_blank">babel</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">1.5k</span>
+            <span class="tag t-make">国际化</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Python 的国际化库，负责抽取待翻译文本、管理 .po 文件、处理复数和日期格式。做多语言游戏时，「把中文抽出来、翻完再装回去」这套流程靠它串起来。</p>
+          <div class="src-line">最近更新 2026-09-08 · BSD-3-Clause · <a href="#r685">信源 [685]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 脚本语言补缺 · 给引擎装一门外挂语言（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">比 Lua 更轻，或者比 Lua 更好写。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/janet-lang/janet" target="_blank">janet</a></span>
+            <span class="lang">C</span>
+            <span class="stars">4.4k</span>
+            <span class="tag t-make">脚本语言</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">极小的 Lisp 方言，整个虚拟机就一个可执行文件、几百 KB。想给游戏嵌一门能热重载的配置或脚本语言，它比 Lua 还轻。</p>
+          <div class="src-line">最近更新 2026-09-07 · MIT · <a href="#r686">信源 [686]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/bakpakin/Fennel" target="_blank">Fennel</a></span>
+            <span class="lang">Fennel</span>
+            <span class="stars">2.8k</span>
+            <span class="tag t-make">脚本语言</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">编译成 Lua 的 Lisp：写起来是括号语法，跑出来还是标准 Lua。既想用 Lua 生态（LÖVE、TIC-80 都行）又想要更强的表达力时正合适。</p>
+          <div class="src-line">最近更新 2026-02-08 · MIT · <a href="#r687">信源 [687]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · Haxe 底层 · 一套代码编译到全平台（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">Haxe 游戏生态的底座。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Kode/Kha" target="_blank">Kha</a></span>
+            <span class="lang">C</span>
+            <span class="stars">1.6k</span>
+            <span class="tag t-make">Haxe 底层</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Haxe 的多媒体底层框架，一套 Haxe 代码能编译到 Windows、macOS、Linux、网页甚至主机。Heaps、Armory 这些 Haxe 引擎都站在它上面。</p>
+          <div class="src-line">最近更新 2026-09-01 · Zlib · <a href="#r688">信源 [688]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 图形底座补缺 · UI 与渲染的四个轮子（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">自己搭引擎时，这四块基本决定了你要写多少胶水代码。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/floooh/sokol" target="_blank">sokol</a></span>
+            <span class="lang">C</span>
+            <span class="stars">10.3k</span>
+            <span class="tag t-make">图形底座</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">一组互相独立的 C 头文件，覆盖窗口、图形 API 抽象、音频、字体。特点是每个头文件互不依赖，只拿你需要的那一块——自己搭引擎时特别干净。</p>
+          <div class="src-line">最近更新 2026-09-08 · Zlib · <a href="#r689">信源 [689]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/nicbarker/clay" target="_blank">clay</a></span>
+            <span class="lang">C</span>
+            <span class="stars">18.1k</span>
+            <span class="tag t-make">UI 布局</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">年轻的 C 语言 UI 布局库，主打声明式和自动排版，不用手算坐标。想给 C/C++ 引擎加一套现代界面，它是这两年讨论度最高的新选项。</p>
+          <div class="src-line">最近更新 2026-05-20 · Zlib · <a href="#r690">信源 [690]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Immediate-Mode-UI/Nuklear" target="_blank">Nuklear</a></span>
+            <span class="lang">C</span>
+            <span class="stars">11.4k</span>
+            <span class="tag t-make">即时 UI</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">单头文件的 C 语言即时模式 GUI，塞进自己的引擎只要拷一个 .h。做调试面板、编辑器界面比接 Qt 轻得多。</p>
+          <div class="src-line">最近更新 2026-09-05 · NOASSERTION · <a href="#r691">信源 [691]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/google/filament" target="_blank">filament</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">20.5k</span>
+            <span class="tag t-make">渲染引擎</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Google 的物理渲染引擎，专为移动端优化，Android 上表现尤其好。想要「开箱就好看的画面」又不想上完整引擎，可以只把它当渲染层用。</p>
+          <div class="src-line">最近更新 2026-09-05 · Apache-2.0 · <a href="#r692">信源 [692]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 游戏内动效 · 让美术在 AE 里做完直接给程序（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">UI 入场动画、活动特效，不用程序手写。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Tencent/libpag" target="_blank">libpag</a></span>
+            <span class="lang">HTML</span>
+            <span class="stars">5.8k</span>
+            <span class="tag t-make">动效</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">腾讯开源的 PAG 动效渲染库，直接播 After Effects 导出的文件。美术在 AE 里做完动画直接交付，程序不用把动画重新实现一遍。</p>
+          <div class="src-line">最近更新 2026-09-08 · NOASSERTION · <a href="#r693">信源 [693]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/airbnb/lottie-web" target="_blank">lottie-web</a></span>
+            <span class="lang">JavaScript</span>
+            <span class="stars">32.1k</span>
+            <span class="tag t-make">动效</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">同样是播 AE 动画，但走 JSON 格式，网页生态最通用。做 H5 游戏和宣传页的动效基本是标配。</p>
+          <div class="src-line">最近更新 2025-09-01 · MIT · <a href="#r694">信源 [694]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 压缩与编解码 · 包体大小的地基（6 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">不打交道的底层库，但卡住的时候往往就是它们。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/facebook/zstd" target="_blank">zstd</a></span>
+            <span class="lang">C</span>
+            <span class="stars">27.7k</span>
+            <span class="tag t-make">压缩</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">现代通用压缩算法：压缩比接近 gzip，速度快几十倍，还支持自定义字典。游戏资源打包和热更差分补丁的当前最优解。</p>
+          <div class="src-line">最近更新 2026-09-01 · NOASSERTION · <a href="#r695">信源 [695]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/lz4/lz4" target="_blank">lz4</a></span>
+            <span class="lang">C</span>
+            <span class="stars">12.1k</span>
+            <span class="tag t-make">压缩</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">追求极致解压速度的压缩算法。包体会比 zstd 大一点，但读得飞快，做开放世界的边跑边加载很合适。</p>
+          <div class="src-line">最近更新 2026-07-01 · NOASSERTION · <a href="#r696">信源 [696]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/libjpeg-turbo/libjpeg-turbo" target="_blank">libjpeg-turbo</a></span>
+            <span class="lang">C</span>
+            <span class="stars">4.4k</span>
+            <span class="tag t-make">图像编解码</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">JPEG 的高速实现，比系统自带 libjpeg 快 2–6 倍。处理大量截图、贴图时差别非常明显。</p>
+          <div class="src-line">最近更新 2026-08-27 · NOASSERTION · <a href="#r697">信源 [697]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/pnggroup/libpng" target="_blank">libpng</a></span>
+            <span class="lang">C</span>
+            <span class="stars">1.7k</span>
+            <span class="tag t-make">图像编解码</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">PNG 格式官方参考实现。UI、图集、图标基本都走 PNG，是最基础的无损图像库。</p>
+          <div class="src-line">最近更新 2026-09-07 · NOASSERTION · <a href="#r698">信源 [698]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/xiph/opus" target="_blank">opus</a></span>
+            <span class="lang">C</span>
+            <span class="stars">3.3k</span>
+            <span class="tag t-make">音频编解码</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">现代音频编码，语音和音乐都压得又小又清晰。游戏内语音和网页音频的事实标准。</p>
+          <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r699">信源 [699]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/xiph/vorbis" target="_blank">vorbis</a></span>
+            <span class="lang">C</span>
+            <span class="stars">580</span>
+            <span class="tag t-make">音频编解码</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Ogg Vorbis 的参考实现，老牌有损音频格式。很多开源游戏和引擎至今仍用它压 BGM。</p>
+          <div class="src-line">最近更新 2026-08-04 · BSD-3-Clause · <a href="#r700">信源 [700]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 构建与解析 · 编译慢和读配置卡的两个解药（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">工程一大，这两项就开始拖后腿。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ninja-build/ninja" target="_blank">ninja</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">13.2k</span>
+            <span class="tag t-make">构建系统</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">极小的构建系统，只做「按依赖关系把编译排到最快」这一件事。大型 C++ 引擎工程基本都靠它把编译时间压下来。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r701">信源 [701]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/simdjson/simdjson" target="_blank">simdjson</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">24.2k</span>
+            <span class="tag t-make">JSON 解析</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用 SIMD 指令加速的 JSON 库，每秒能解析数 GB。游戏里如果满地是 JSON 配置表或存档，换它能明显减少读盘卡顿。</p>
+          <div class="src-line">最近更新 2026-09-07 · Apache-2.0 · <a href="#r702">信源 [702]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 策划与生产力 · 把想法画出来（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">设计文档、流程图、关卡草图，别只靠嘴说。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/mermaid-js/mermaid" target="_blank">mermaid</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">90.2k</span>
+            <span class="tag t-make">绘图</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用类 Markdown 的文本写流程图、时序图、甘特图，能直接渲染在网页和文档里。好处是「图」能跟文字一起进版本管理。</p>
+          <div class="src-line">最近更新 2026-09-08 · MIT · <a href="#r703">信源 [703]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/excalidraw/excalidraw" target="_blank">excalidraw</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">131.4k</span>
+            <span class="tag t-make">白板</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">手绘风格的虚拟白板，随手画草图、做脑暴。跟人讨论关卡布局时，比敲一堆文字直观太多。</p>
+          <div class="src-line">最近更新 2026-09-08 · MIT · <a href="#r704">信源 [704]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/jgraph/drawio" target="_blank">drawio</a></span>
+            <span class="lang">JavaScript</span>
+            <span class="stars">8.0k</span>
+            <span class="tag t-make">绘图</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">开源流程图与架构图编辑器，网页版就能用。画玩法流程图、状态机、关卡结构时最省事的选择。</p>
+          <div class="src-line">最近更新 2026-09-07 · Apache-2.0 · <a href="#r705">信源 [705]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 图形学学习 · 想读懂引擎里的渲染代码（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">按这个顺序啃完，再看任何引擎的渲染模块都不慌。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/JoeyDeVries/LearnOpenGL" target="_blank">LearnOpenGL</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">12.6k</span>
+            <span class="tag t-make">学习路径</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">全网最著名的 OpenGL 教程配套代码，从画一个三角形一路讲到 PBR、阴影、延迟渲染。代码仓库本身已 2 年未更新，但教程内容到今天仍是最好的入门路径。</p>
+          <div class="src-line">最近更新 2024-08-06 · NOASSERTION · <a href="#r706">信源 [706]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 开源完整游戏 · 第四批（8 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">能读能改的正经商业级作品，是最好的老师。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/diasurgical/devilutionX" target="_blank">devilutionX</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">9.7k</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">《暗黑破坏神 1》的跨平台重实现，靠反汇编还原出原始逻辑。既能在现代系统玩到，也是研究老游戏架构的活标本。</p>
+          <div class="src-line">最近更新 2026-09-04 · NOASSERTION · <a href="#r707">信源 [707]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/HarbourMasters/Shipwright" target="_blank">Shipwright</a></span>
+            <span class="lang">C</span>
+            <span class="stars">5.3k</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">《塞尔达传说 时之笛》的 PC 移植工程，通过反编译把 N64 机器码变成可编译的 C。想看「3D 游戏怎么在 4MB 内存的机器上跑起来」，这是最有名的案例。</p>
+          <div class="src-line">最近更新 2026-09-08 · NOASSERTION · <a href="#r708">信源 [708]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/scummvm/scummvm" target="_blank">scummvm</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.8k</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">让上百款经典冒险游戏在现代系统运行的虚拟机。它不模拟硬件，而是重写游戏解释器——「引擎重实现」这一思路的集大成者。</p>
+          <div class="src-line">最近更新 2026-09-08 · GPL-3.0 · <a href="#r709">信源 [709]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/OpenXcom/OpenXcom" target="_blank">OpenXcom</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.2k</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">《X-COM》的开源重制，保留原作全部机制并修了大量 bug。证明了「忠实重制 + 现代操作手感」这条路走得通。</p>
+          <div class="src-line">最近更新 2026-06-05 · GPL-3.0 · <a href="#r710">信源 [710]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/teeworlds/teeworlds" target="_blank">teeworlds</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.6k</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">复古横版多人射击，代码量小、结构清晰。想完整读一份联机游戏源码，它是最友好的入口之一。</p>
+          <div class="src-line">最近更新 2025-07-12 · NOASSERTION · <a href="#r711">信源 [711]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/arx/ArxLibertatis" target="_blank">ArxLibertatis</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">1.1k</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">《Arx Fatalis》的跨平台移植，把当年依赖 DirectX 的老代码搬到现代系统。研究「怎么给老游戏换渲染后端」很合适。</p>
+          <div class="src-line">最近更新 2024-08-22 · GPL-3.0 · <a href="#r712">信源 [712]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/n64decomp/sm64" target="_blank">sm64</a></span>
+            <span class="lang">C</span>
+            <span class="stars">8.8k</span>
+            <span class="tag t-make">经典源码</span>
+            <span class="tag t-warn">历史源码</span>
+          </div>
+          <p class="plain">《超级马力欧 64》的完整反编译项目，每一行 C 都对应原始机器码。游戏工程史上的里程碑，也是学 N64 时代 3D 编程的最佳教材；多年未更新是因为它已是完成态。</p>
+          <div class="src-line">最近更新 2024-02-04 · CC0-1.0 · <a href="#r713">信源 [713]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/0ad/0ad" target="_blank">0ad</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.8k</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-warn">已归档</span>
+          </div>
+          <p class="plain">古代战争题材的即时战略，完成度对标商业作品。注意：GitHub 仓库已于 2024 年归档，官方迁到了自家 Gitea，要拿源码请去新地址。</p>
+          <div class="src-line">最近更新 2024-08-17 · NOASSERTION · <a href="#r714">信源 [714]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 开源游戏补缺 · 横版、物理沙盒与 Pascal 引擎（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">几个专精方向的可读源码。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/DCurrent/openbor" target="_blank">openbor</a></span>
+            <span class="lang">C</span>
+            <span class="stars">1.2k</span>
+            <span class="tag t-make">游戏引擎</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">开源横版格斗 / 清版游戏引擎，写脚本就能做出《怒之铁拳》那类游戏。2D 动作游戏想省掉引擎开发，它是最专精的选择。</p>
+          <div class="src-line">最近更新 2026-08-30 · BSD-3-Clause · <a href="#r715">信源 [715]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/openclonk/openclonk" target="_blank">openclonk</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">401</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">《百战天虫》式的物理沙盒，支持联机，地形可以被炸开重构。想做「可破坏地形」玩法，它的实现值得直接参考。</p>
+          <div class="src-line">最近更新 2026-04-28 · NOASSERTION · <a href="#r716">信源 [716]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/castle-engine/castle-engine" target="_blank">castle-engine</a></span>
+            <span class="lang">Pascal</span>
+            <span class="stars">1.2k</span>
+            <span class="tag t-make">游戏引擎</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用 Object Pascal 写的 3D 游戏引擎，支持 VR 和移动端。小众但完整，是 Delphi / Lazarus 用户做 3D 的唯一现代选项。</p>
+          <div class="src-line">最近更新 2026-09-08 · NOASSERTION · <a href="#r717">信源 [717]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · Doom 源端口补缺 · 现代语言重写经典（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">Doom 源码之外的两种读法。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Helion-Engine/Helion" target="_blank">Helion</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">569</span>
+            <span class="tag t-make">源端口</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用 C# 重写的现代 Doom 引擎，跑在 .NET 上，帧率极高。既能直接玩，也是「怎么用现代语言重写经典引擎」的完整参考。</p>
+          <div class="src-line">最近更新 2026-09-08 · GPL-3.0 · <a href="#r718">信源 [718]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/fabiangreffrath/woof" target="_blank">woof</a></span>
+            <span class="lang">C</span>
+            <span class="stars">321</span>
+            <span class="tag t-make">源端口</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">延续 Boom / MBF 血统的 Doom 源端口，主打「原汁原味 + 现代系统能跑」。想读 Doom 源码又要能直接编译运行，它比原始代码好上手。</p>
+          <div class="src-line">最近更新 2026-09-08 · GPL-2.0 · <a href="#r719">信源 [719]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 经典游戏重实现 · 第五批（6 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">六种玩法，六套完整可运行的架构参考。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/XProger/OpenLara" target="_blank">OpenLara</a></span>
+            <span class="lang">C</span>
+            <span class="stars">5.1k</span>
+            <span class="tag t-make">开源重制</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">《古墓丽影》的开源重实现，跨平台且直接读原始关卡数据。研究第三人称动作游戏的角色控制与碰撞很合适。</p>
+          <div class="src-line">最近更新 2026-07-26 · BSD-2-Clause · <a href="#r720">信源 [720]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/CorsixTH/CorsixTH" target="_blank">CorsixTH</a></span>
+            <span class="lang">Lua</span>
+            <span class="stars">4.6k</span>
+            <span class="tag t-make">开源重制</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">《主题医院》的开源重制，Lua + C++ 复刻原作逻辑。模拟经营游戏的寻路、状态机和员工 AI 都写得很清楚。</p>
+          <div class="src-line">最近更新 2026-09-07 · NOASSERTION · <a href="#r721">信源 [721]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/freeciv/freeciv" target="_blank">freeciv</a></span>
+            <span class="lang">C</span>
+            <span class="stars">1.6k</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">《文明》式的回合制策略开源实现，规则几乎全部可配置。做策略游戏时，它的规则引擎和 AI 对手设计是免费参考。</p>
+          <div class="src-line">最近更新 2026-09-08 · GPL-2.0 · <a href="#r722">信源 [722]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Novum/vkQuake" target="_blank">vkQuake</a></span>
+            <span class="lang">C</span>
+            <span class="stars">2.3k</span>
+            <span class="tag t-make">源端口</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Quake 的 Vulkan 版本，把 1996 年的渲染换成现代图形 API。跟原版 Quake 对照着读，能直观看到「同一款游戏在两种 API 下的差别」。</p>
+          <div class="src-line">最近更新 2026-09-07 · GPL-2.0 · <a href="#r723">信源 [723]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/RigsOfRods/rigs-of-rods" target="_blank">rigs-of-rods</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">1.2k</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">开源车辆物理沙盒，用软体物理模拟车架形变。想做真实载具手感，它的物理实现比多数引擎自带方案更硬核。</p>
+          <div class="src-line">最近更新 2026-08-28 · GPL-3.0 · <a href="#r724">信源 [724]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/etlegacy/etlegacy" target="_blank">etlegacy</a></span>
+            <span class="lang">C</span>
+            <span class="stars">713</span>
+            <span class="tag t-make">开源游戏</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">《重返德军总部：深入敌后》的开源续作，基于 id Tech 3。想看一套完整的 FPS 服务端 + 客户端架构，它比 Quake 系更现代。</p>
+          <div class="src-line">最近更新 2026-08-26 · GPL-3.0 · <a href="#r725">信源 [725]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · Minecraft 生态补缺 · 启动器、客户端与机器人（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">体素游戏最省事的一条学习路径。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/PrismLauncher/PrismLauncher" target="_blank">PrismLauncher</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">10.3k</span>
+            <span class="tag t-make">启动器</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Minecraft 第三方启动器，多实例、MOD 隔离、版本管理做得很干净。要同时维护几套不同 MOD 组合的整合包，它是当前最好用的。</p>
+          <div class="src-line">最近更新 2026-09-07 · GPL-3.0 · <a href="#r726">信源 [726]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ClassiCube/ClassiCube" target="_blank">ClassiCube</a></span>
+            <span class="lang">C</span>
+            <span class="stars">2.0k</span>
+            <span class="tag t-make">体素客户端</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用 C 从零写的 Minecraft Classic 客户端，体积只有几 MB。想读「体素游戏最简实现」的源码，比啃 Java 版现实得多。</p>
+          <div class="src-line">最近更新 2026-09-07 · NOASSERTION · <a href="#r727">信源 [727]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/MCCTeam/Minecraft-Console-Client" target="_blank">Minecraft-Console-Client</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">2.1k</span>
+            <span class="tag t-make">机器人</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Minecraft 的命令行客户端，能自动聊天、执行命令、挂机。做服务器管理和自动化测试很方便。</p>
+          <div class="src-line">最近更新 2026-09-06 · NOASSERTION · <a href="#r728">信源 [728]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 联机网络补缺 · C# 的可靠 UDP（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">TCP 太重、纯 UDP 太糙，中间这一层就是它。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/RevenantX/LiteNetLib" target="_blank">LiteNetLib</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">3.6k</span>
+            <span class="tag t-make">网络库</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">.NET 的可靠 UDP 网络库，轻量无依赖。做 C# 游戏联机比直接用 TCP 简单得多，可靠与不可靠通道还能混着用。</p>
+          <div class="src-line">最近更新 2026-06-18 · MIT · <a href="#r729">信源 [729]</a></div>
+        </div>
+      </div>
 <div class="group">
         <div class="group-title">🆕 第九版新增 · 经典源码阅读：站在巨人肩膀上（2 项）</div>
         <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">这两份不是工具，是<b>教材</b>。读它们不为了抄，为了知道「原来这个问题当年的解法是这样的」。</div>
@@ -5882,6 +7018,235 @@ footer a{color:var(--text-2)}
           </div>
           <p class="plain">微软的文字冒险游戏生成环境，能自动生成互动小说并让 AI 去玩。做叙事型游戏 AI 研究时的常用平台。</p>
           <div class="src-line">最近更新 2026-09-01 · NOASSERTION · <a href="#r621">信源 [621]</a></div>
+        </div>
+      </div>
+<div class="group">
+        <div class="group-title">🆕 第十二版新增 · AI 编程与 Agent 补缺 · 编辑器与国产框架（5 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">闭源工具之外，这几个能接你本地已经跑起来的模型。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/sst/opencode" target="_blank">opencode</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">205.8k</span>
+            <span class="tag t-make">AI 编程</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">开源终端 AI 编程 Agent，支持多家模型。跟闭源工具最大的区别是能接本地模型——配合你机器上已经在跑的 Ollama 就能直接用。</p>
+          <div class="src-line">最近更新 2026-09-08 · MIT · <a href="#r730">信源 [730]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/block/goose" target="_blank">goose</a></span>
+            <span class="lang">Rust</span>
+            <span class="stars">54.0k</span>
+            <span class="tag t-make">AI Agent</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Block（Square）开源的 AI Agent，能自己装工具、跑命令、执行测试。它的设计重点是「给 AI 配一个工具箱」，做游戏项目自动化时很顺手。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r731">信源 [731]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/zed-industries/zed" target="_blank">zed</a></span>
+            <span class="lang">Rust</span>
+            <span class="stars">89.9k</span>
+            <span class="tag t-make">编辑器</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用 Rust 写的高性能代码编辑器，自带 AI 协作和多人协同编辑。启动极快，配置不高的机器上也能边写边问 AI。</p>
+          <div class="src-line">最近更新 2026-09-08 · NOASSERTION · <a href="#r732">信源 [732]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/modelscope/agentscope" target="_blank">agentscope</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">31.1k</span>
+            <span class="tag t-make">多 Agent</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">阿里 ModelScope 的多 Agent 开发框架，中文文档和示例齐全。想搭「一个策划 AI + 一个美术 AI + 一个程序 AI」这种分工流程，上手门槛最低。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r733">信源 [733]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/QwenLM/Qwen-Agent" target="_blank">Qwen-Agent</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">17.1k</span>
+            <span class="tag t-make">Agent 框架</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">通义千问官方 Agent 框架，原生支持 Function Calling、MCP 和代码解释器。本地跑 qwen3 时，这是最配套的 Agent 层。</p>
+          <div class="src-line">最近更新 2026-03-04 · Apache-2.0 · <a href="#r734">信源 [734]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · Agent 评测基准 · 到底哪个 AI 更能干活（6 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">所有「AI 编程能力」的宣传都应该拿这几把尺子量一遍。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/SWE-bench/SWE-bench" target="_blank">SWE-bench</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">5.8k</span>
+            <span class="tag t-make">评测基准</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用真实 GitHub issue 考 AI 修 bug 的基准，是现在所有 AI 编程能力宣传的通用标尺。你自己选模型时也该看它。</p>
+          <div class="src-line">最近更新 2026-09-02 · MIT · <a href="#r735">信源 [735]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/laude-institute/terminal-bench" target="_blank">terminal-bench</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">2.6k</span>
+            <span class="tag t-make">评测基准</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">考 AI 在终端里完成复杂任务的基准。比 SWE-bench 更贴近「让 Agent 干完一整件事」的真实场景。</p>
+          <div class="src-line">最近更新 2026-07-11 · Apache-2.0 · <a href="#r736">信源 [736]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/LiveCodeBench/LiveCodeBench" target="_blank">LiveCodeBench</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">937</span>
+            <span class="tag t-make">评测基准</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">持续用新竞赛题评测，避免模型「背过旧题」导致分数虚高。想看真实编程水平，它的数字比很多榜单可信。</p>
+          <div class="src-line">最近更新 2025-07-16 · MIT · <a href="#r737">信源 [737]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/web-arena-x/webarena" target="_blank">webarena</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">1.6k</span>
+            <span class="tag t-make">评测基准</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">在真实网站环境里考 AI Agent 完成任务。做「AI 帮你查资料、抓游戏数据、填表」这类工具时，是标准测试床。</p>
+          <div class="src-line">最近更新 2025-11-26 · Apache-2.0 · <a href="#r738">信源 [738]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/mem0ai/mem0" target="_blank">mem0</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">64.9k</span>
+            <span class="tag t-make">Agent 记忆</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">给 AI Agent 加长期记忆的中间件。做有连续性的游戏 NPC 或助手时，「记得上次聊过什么」靠它解决。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r739">信源 [739]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/qodo-ai/pr-agent" target="_blank">pr-agent</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">12.9k</span>
+            <span class="tag t-make">代码审查</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">开源 PR 自动审查工具，能读改动、写评论、提修改建议。团队协作做游戏时，等于多一个不休息的审查员。</p>
+          <div class="src-line">最近更新 2026-09-08 · MIT · <a href="#r740">信源 [740]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · AI 视频生成 · 过场动画与宣传片（5 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">消费级显卡上真能跑起来的几个。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Tencent/HunyuanVideo" target="_blank">HunyuanVideo</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">12.5k</span>
+            <span class="tag t-make">视频生成</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">腾讯开源的视频生成大模型，画质和时长都属于第一梯队。做游戏宣传片和过场概念片的主力。</p>
+          <div class="src-line">最近更新 2026-06-29 · NOASSERTION · <a href="#r741">信源 [741]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/hpcaitech/Open-Sora" target="_blank">Open-Sora</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">29.7k</span>
+            <span class="tag t-make">视频生成</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">国产开源视频生成方案，主打「用更少算力做出可用视频」。是少数能在消费级显卡上跑出可用结果的开源项目。</p>
+          <div class="src-line">最近更新 2026-04-09 · Apache-2.0 · <a href="#r742">信源 [742]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/THUDM/CogVideo" target="_blank">CogVideo</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">13.0k</span>
+            <span class="tag t-make">视频生成</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">清华智谱的文生 / 图生视频模型，CogVideoX 版本效果提升明显。中文提示词支持好，国内团队用起来更顺。</p>
+          <div class="src-line">最近更新 2025-11-04 · Apache-2.0 · <a href="#r743">信源 [743]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/lllyasviel/FramePack" target="_blank">FramePack</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">17.2k</span>
+            <span class="tag t-make">视频生成</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">让视频扩散模型在普通显卡上也能生成长视频的方案。显存不够时，靠它把「本来跑不动」的模型跑起来。</p>
+          <div class="src-line">最近更新 2025-10-16 · Apache-2.0 · <a href="#r744">信源 [744]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Tencent/Hunyuan3D-2" target="_blank">Hunyuan3D-2</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">14.8k</span>
+            <span class="tag t-make">3D 生成</span>
+            <span class="tag t-ok">低频更新</span>
+          </div>
+          <p class="plain">腾讯的 3D 资产生成模型，一张图生成高分辨率带贴图的网格。做 3D 游戏时「先生成再手工修」，能省掉大量建模时间。</p>
+          <div class="src-line">最近更新 2025-10-28 · NOASSERTION · <a href="#r745">信源 [745]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · AI 玩游戏补缺 · 会玩而不只是会打（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">让 AI 自己定目标、攒技能的那一类研究。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/MineDojo/Voyager" target="_blank">Voyager</a></span>
+            <span class="lang">JavaScript</span>
+            <span class="stars">7.2k</span>
+            <span class="tag t-make">游戏智能体</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">在 Minecraft 里用大模型驱动的开放式智能体，能自己定目标、学技能、攒工具库。是「AI 会玩」而非「AI 会打」的代表作；注意已近 2 年半未更新。</p>
+          <div class="src-line">最近更新 2024-04-03 · MIT · <a href="#r746">信源 [746]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Microsoft/malmo" target="_blank">malmo</a></span>
+            <span class="lang">Java</span>
+            <span class="stars">4.3k</span>
+            <span class="tag t-make">研究平台</span>
+            <span class="tag t-warn">已归档</span>
+          </div>
+          <p class="plain">微软基于 Minecraft 的 AI 实验平台，比 MineRL 更底层、更灵活。已归档，但至今仍是很多论文的基础设施；新项目建议改看 MineDojo。</p>
+          <div class="src-line">最近更新 2025-09-03 · MIT · <a href="#r747">信源 [747]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 本地 AI 客户端 · 不敲命令行也能聊（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">接本地模型最省事的图形界面。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Bin-Huang/chatbox" target="_blank">chatbox</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">41.7k</span>
+            <span class="tag t-make">AI 客户端</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">跨平台 AI 客户端，云端和本地模型（含 Ollama）都能接。不想开命令行跟本地模型对话时，它是最好用的图形界面。</p>
+          <div class="src-line">最近更新 2026-09-04 · GPL-3.0 · <a href="#r748">信源 [748]</a></div>
         </div>
       </div>
 <section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
@@ -8835,6 +10200,73 @@ footer a{color:var(--text-2)}
           <div class="src-line">最近更新 2026-09-08 · AGPL-3.0 · <a href="#r638">信源 [638]</a></div>
         </div>
       </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 逆向补缺 · .NET 调试器（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">拆 C# 写的游戏时，「边运行边看源码」这一步无人替代。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/dnSpyEx/dnSpy" target="_blank">dnSpy</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">11.0k</span>
+            <span class="tag t-mod">逆向调试</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">dnSpy 停更后的社区续作，.NET 程序的反编译器 + 调试器。能直接给游戏打断点、看变量、改完再存回去，是 C# 游戏逆向的标配。</p>
+          <div class="src-line">最近更新 2026-08-25 · GPL-3.0 · <a href="#r749">信源 [749]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · 模拟器补缺 · TAS 与老机器（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">研究老游戏机制、做速通、读资源格式这三件事的专用工具。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/TASVideos/BizHawk" target="_blank">BizHawk</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">2.7k</span>
+            <span class="tag t-mod">模拟器</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">多机种模拟器，主打 TAS（工具辅助速通）——支持逐帧操作、录像回放、内存查看。研究老游戏的具体机制或做速通必备。</p>
+          <div class="src-line">最近更新 2026-09-03 · NOASSERTION · <a href="#r750">信源 [750]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/grumpycoders/pcsx-redux" target="_blank">pcsx-redux</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">993</span>
+            <span class="tag t-mod">模拟器</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">PS1 模拟器，但更准确说是「PS1 开发工具包」：自带调试器、反汇编器和内存查看器。研究 PS1 游戏资源格式时，比单纯玩游戏的模拟器有用得多。</p>
+          <div class="src-line">最近更新 2026-09-04 · GPL-2.0 · <a href="#r751">信源 [751]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/stella-emu/stella" target="_blank">stella</a></span>
+            <span class="lang">C</span>
+            <span class="stars">760</span>
+            <span class="tag t-mod">模拟器</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Atari 2600 模拟器，历史最久也最准确。想研究 8 位机时代的游戏逻辑，它是标准环境。</p>
+          <div class="src-line">最近更新 2026-09-03 · GPL-2.0 · <a href="#r752">信源 [752]</a></div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group-title">🆕 第十二版新增 · MOD 管理器补缺 · 装十个以上 MOD 就离不开（1 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">MOD 一多，手动管理必然出错。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ebkr/r2modmanPlus" target="_blank">r2modmanPlus</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">2.2k</span>
+            <span class="tag t-mod">MOD 管理</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">基于 Thunderstore 的 MOD 管理器，支持一键装、一键切换配置、给不同玩法存不同 MOD 组合。Unity MOD 生态里最主流的管理工具。</p>
+          <div class="src-line">最近更新 2026-09-08 · MIT · <a href="#r753">信源 [753]</a></div>
+        </div>
+      </div>
 <div class="group">
         <div class="group-title">🆕 第九版新增 · 串流与开源重制补缺（2 项）</div>
         <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">最后补两个：一个让你<b>远程接着玩</b>，一个是<b>社区接手商业游戏继续开发</b>的活样本。</div>
@@ -8883,7 +10315,7 @@ footer a{color:var(--text-2)}
     </div>
   </section>
   <!-- ============ 四、组合路线 ============ -->
-  <section id="s4" data-page-node-id="kEJ212CRj38dDNHE2ICY02">
+        <section id="s4" data-page-node-id="kEJ212CRj38dDNHE2ICY02">
     <div class="sec-head" data-page-node-id="bwAZdcWkmWQUA00KIe0Ped">
       <span class="sec-num" style="background:var(--accent)" data-page-node-id="DJFBAzXszMZM63DnNT38Dv">4</span>
       <h2 data-page-node-id="uuERusJvO7FXXoncqM6lMh">推荐组合与落地路线</h2>
@@ -9671,8 +11103,123 @@ footer a{color:var(--text-2)}
       <div id="r636">[636] <a href="https://github.com/clementgallet/libTAS" target="_blank">clementgallet/libTAS</a> — 593 · 2026-08-11 · GPL-3.0</div>
       <div id="r637">[637] <a href="https://github.com/bottlesdevs/Bottles" target="_blank">bottlesdevs/Bottles</a> — 8789 · 2026-09-08 · GPL-3.0</div>
       <div id="r638">[638] <a href="https://github.com/rommapp/romm" target="_blank">rommapp/romm</a> — 12668 · 2026-09-08 · AGPL-3.0</div>
+      <div id="r639">[639] <a href="https://github.com/TrinityCore/TrinityCore" target="_blank">TrinityCore/TrinityCore</a> — 10756 · 2026-09-07 · GPL-2.0</div>
+      <div id="r640">[640] <a href="https://github.com/rathena/rathena" target="_blank">rathena/rathena</a> — 3553 · 2026-09-04 · GPL-3.0</div>
+      <div id="r641">[641] <a href="https://github.com/cmangos/mangos-classic" target="_blank">cmangos/mangos-classic</a> — 1075 · 2026-08-31 · GPL-2.0</div>
+      <div id="r642">[642] <a href="https://github.com/HerculesWS/Hercules" target="_blank">HerculesWS/Hercules</a> — 1005 · 2026-08-23 · GPL-3.0</div>
+      <div id="r643">[643] <a href="https://github.com/official-stockfish/Stockfish" target="_blank">official-stockfish/Stockfish</a> — 16533 · 2026-09-05 · GPL-3.0</div>
+      <div id="r644">[644] <a href="https://github.com/official-pikafish/Pikafish" target="_blank">official-pikafish/Pikafish</a> — 2017 · 2026-09-06 · GPL-3.0</div>
+      <div id="r645">[645] <a href="https://github.com/lightvector/KataGo" target="_blank">lightvector/KataGo</a> — 5091 · 2026-09-07 · NOASSERTION</div>
+      <div id="r646">[646] <a href="https://github.com/LeelaChessZero/lc0" target="_blank">LeelaChessZero/lc0</a> — 3203 · 2026-09-07 · GPL-3.0</div>
+      <div id="r647">[647] <a href="https://github.com/oxwhirl/smac" target="_blank">oxwhirl/smac</a> — 1367 · 2024-02-18 · MIT</div>
+      <div id="r648">[648] <a href="https://github.com/aduros/wasm4" target="_blank">aduros/wasm4</a> — 1527 · 2026-08-28 · ISC</div>
+      <div id="r649">[649] <a href="https://github.com/RamiLego4Game/LIKO-12" target="_blank">RamiLego4Game/LIKO-12</a> — 1179 · 2024-01-24 · MIT</div>
+      <div id="r650">[650] <a href="https://github.com/blender/blender" target="_blank">blender/blender</a> — 20180 · 2026-09-08 · NOASSERTION</div>
+      <div id="r651">[651] <a href="https://github.com/armory3d/armorpaint" target="_blank">armory3d/armorpaint</a> — 4114 · 2026-09-04 · NOASSERTION</div>
+      <div id="r652">[652] <a href="https://github.com/vengi-voxel/vengi" target="_blank">vengi-voxel/vengi</a> — 1407 · 2026-09-03 · NOASSERTION</div>
+      <div id="r653">[653] <a href="https://github.com/Ardour/ardour" target="_blank">Ardour/ardour</a> — 5267 · 2026-09-08 · NOASSERTION</div>
+      <div id="r654">[654] <a href="https://github.com/zrythm/zrythm" target="_blank">zrythm/zrythm</a> — 3114 · 2026-09-07 · NOASSERTION</div>
+      <div id="r655">[655] <a href="https://github.com/openmpt/openmpt" target="_blank">openmpt/openmpt</a> — 771 · 2026-08-29 · BSD-3-Clause</div>
+      <div id="r656">[656] <a href="https://github.com/milkytracker/MilkyTracker" target="_blank">milkytracker/MilkyTracker</a> — 2096 · 2026-06-22 · NOASSERTION</div>
+      <div id="r657">[657] <a href="https://github.com/schismtracker/schismtracker" target="_blank">schismtracker/schismtracker</a> — 1555 · 2026-08-28 · GPL-2.0</div>
+      <div id="r658">[658] <a href="https://github.com/liabru/matter-js" target="_blank">liabru/matter-js</a> — 18397 · 2024-08-17 · MIT</div>
+      <div id="r659">[659] <a href="https://github.com/goldfire/howler.js" target="_blank">goldfire/howler.js</a> — 25341 · 2025-11-23 · MIT</div>
+      <div id="r660">[660] <a href="https://github.com/Tonejs/Tone.js" target="_blank">Tonejs/Tone.js</a> — 14717 · 2026-09-03 · MIT</div>
+      <div id="r661">[661] <a href="https://github.com/pyglet/pyglet" target="_blank">pyglet/pyglet</a> — 2212 · 2026-09-08 · BSD-3-Clause</div>
+      <div id="r662">[662] <a href="https://github.com/LWJGL/lwjgl3" target="_blank">LWJGL/lwjgl3</a> — 5443 · 2026-09-03 · BSD-3-Clause</div>
+      <div id="r663">[663] <a href="https://github.com/axmolengine/axmol" target="_blank">axmolengine/axmol</a> — 1448 · 2026-09-06 · NOASSERTION</div>
+      <div id="r664">[664] <a href="https://github.com/gideros/gideros" target="_blank">gideros/gideros</a> — 613 · 2026-09-03 · NOASSERTION</div>
+      <div id="r665">[665] <a href="https://github.com/veldrid/veldrid" target="_blank">veldrid/veldrid</a> — 2700 · 2026-03-17 · MIT</div>
+      <div id="r666">[666] <a href="https://github.com/inkle/inky" target="_blank">inkle/inky</a> — 2732 · 2026-05-05 · NOASSERTION</div>
+      <div id="r667">[667] <a href="https://github.com/snozbot/fungus" target="_blank">snozbot/fungus</a> — 1949 · 2025-01-16 · MIT</div>
+      <div id="r668">[668] <a href="https://github.com/DanielSWolf/rhubarb-lip-sync" target="_blank">DanielSWolf/rhubarb-lip-sync</a> — 2598 · 2026-06-16 · NOASSERTION</div>
+      <div id="r669">[669] <a href="https://github.com/emilianavt/OpenSeeFace" target="_blank">emilianavt/OpenSeeFace</a> — 2045 · 2025-12-28 · BSD-2-Clause</div>
+      <div id="r670">[670] <a href="https://github.com/nerfstudio-project/nerfstudio" target="_blank">nerfstudio-project/nerfstudio</a> — 11985 · 2025-07-29 · Apache-2.0</div>
+      <div id="r671">[671] <a href="https://github.com/NVlabs/instant-ngp" target="_blank">NVlabs/instant-ngp</a> — 17542 · 2026-02-02 · NOASSERTION</div>
+      <div id="r672">[672] <a href="https://github.com/pocketbase/pocketbase" target="_blank">pocketbase/pocketbase</a> — 60985 · 2026-09-07 · MIT</div>
+      <div id="r673">[673] <a href="https://github.com/supabase/supabase" target="_blank">supabase/supabase</a> — 108963 · 2026-09-08 · Apache-2.0</div>
+      <div id="r674">[674] <a href="https://github.com/appwrite/appwrite" target="_blank">appwrite/appwrite</a> — 57312 · 2026-09-08 · BSD-3-Clause</div>
+      <div id="r675">[675] <a href="https://github.com/ClassicOldSong/Apollo" target="_blank">ClassicOldSong/Apollo</a> — 10836 · 2026-05-21 · GPL-3.0</div>
+      <div id="r676">[676] <a href="https://github.com/games-on-whales/wolf" target="_blank">games-on-whales/wolf</a> — 2154 · 2026-09-07 · MIT</div>
+      <div id="r677">[677] <a href="https://github.com/mtkennerly/ludusavi" target="_blank">mtkennerly/ludusavi</a> — 6248 · 2026-09-06 · MIT</div>
+      <div id="r678">[678] <a href="https://github.com/itchio/itch" target="_blank">itchio/itch</a> — 2822 · 2026-09-06 · MIT</div>
+      <div id="r679">[679] <a href="https://github.com/gibbed/SteamAchievementManager" target="_blank">gibbed/SteamAchievementManager</a> — 9038 · 2026-03-19 · Zlib</div>
+      <div id="r680">[680] <a href="https://github.com/asweigart/pyautogui" target="_blank">asweigart/pyautogui</a> — 12683 · 2024-08-20 · BSD-3-Clause</div>
+      <div id="r681">[681] <a href="https://github.com/RaiMan/SikuliX1" target="_blank">RaiMan/SikuliX1</a> — 3247 · 2026-07-24 · MIT</div>
+      <div id="r682">[682] <a href="https://github.com/AntiMicroX/antimicrox" target="_blank">AntiMicroX/antimicrox</a> — 3968 · 2026-08-18 · GPL-3.0</div>
+      <div id="r683">[683] <a href="https://github.com/Davidobot/BetterJoy" target="_blank">Davidobot/BetterJoy</a> — 4764 · 2024-07-19 · NOASSERTION</div>
+      <div id="r684">[684] <a href="https://github.com/JibbSmart/JoyShockMapper" target="_blank">JibbSmart/JoyShockMapper</a> — 868 · 2024-06-25 · NOASSERTION</div>
+      <div id="r685">[685] <a href="https://github.com/python-babel/babel" target="_blank">python-babel/babel</a> — 1464 · 2026-09-08 · BSD-3-Clause</div>
+      <div id="r686">[686] <a href="https://github.com/janet-lang/janet" target="_blank">janet-lang/janet</a> — 4407 · 2026-09-07 · MIT</div>
+      <div id="r687">[687] <a href="https://github.com/bakpakin/Fennel" target="_blank">bakpakin/Fennel</a> — 2750 · 2026-02-08 · MIT</div>
+      <div id="r688">[688] <a href="https://github.com/Kode/Kha" target="_blank">Kode/Kha</a> — 1633 · 2026-09-01 · Zlib</div>
+      <div id="r689">[689] <a href="https://github.com/floooh/sokol" target="_blank">floooh/sokol</a> — 10272 · 2026-09-08 · Zlib</div>
+      <div id="r690">[690] <a href="https://github.com/nicbarker/clay" target="_blank">nicbarker/clay</a> — 18093 · 2026-05-20 · Zlib</div>
+      <div id="r691">[691] <a href="https://github.com/Immediate-Mode-UI/Nuklear" target="_blank">Immediate-Mode-UI/Nuklear</a> — 11382 · 2026-09-05 · NOASSERTION</div>
+      <div id="r692">[692] <a href="https://github.com/google/filament" target="_blank">google/filament</a> — 20467 · 2026-09-05 · Apache-2.0</div>
+      <div id="r693">[693] <a href="https://github.com/Tencent/libpag" target="_blank">Tencent/libpag</a> — 5778 · 2026-09-08 · NOASSERTION</div>
+      <div id="r694">[694] <a href="https://github.com/airbnb/lottie-web" target="_blank">airbnb/lottie-web</a> — 32084 · 2025-09-01 · MIT</div>
+      <div id="r695">[695] <a href="https://github.com/facebook/zstd" target="_blank">facebook/zstd</a> — 27739 · 2026-09-01 · NOASSERTION</div>
+      <div id="r696">[696] <a href="https://github.com/lz4/lz4" target="_blank">lz4/lz4</a> — 12053 · 2026-07-01 · NOASSERTION</div>
+      <div id="r697">[697] <a href="https://github.com/libjpeg-turbo/libjpeg-turbo" target="_blank">libjpeg-turbo/libjpeg-turbo</a> — 4425 · 2026-08-27 · NOASSERTION</div>
+      <div id="r698">[698] <a href="https://github.com/pnggroup/libpng" target="_blank">pnggroup/libpng</a> — 1654 · 2026-09-07 · NOASSERTION</div>
+      <div id="r699">[699] <a href="https://github.com/xiph/opus" target="_blank">xiph/opus</a> — 3307 · 2026-09-06 · NOASSERTION</div>
+      <div id="r700">[700] <a href="https://github.com/xiph/vorbis" target="_blank">xiph/vorbis</a> — 580 · 2026-08-04 · BSD-3-Clause</div>
+      <div id="r701">[701] <a href="https://github.com/ninja-build/ninja" target="_blank">ninja-build/ninja</a> — 13207 · 2026-09-08 · Apache-2.0</div>
+      <div id="r702">[702] <a href="https://github.com/simdjson/simdjson" target="_blank">simdjson/simdjson</a> — 24243 · 2026-09-07 · Apache-2.0</div>
+      <div id="r703">[703] <a href="https://github.com/mermaid-js/mermaid" target="_blank">mermaid-js/mermaid</a> — 90163 · 2026-09-08 · MIT</div>
+      <div id="r704">[704] <a href="https://github.com/excalidraw/excalidraw" target="_blank">excalidraw/excalidraw</a> — 131408 · 2026-09-08 · MIT</div>
+      <div id="r705">[705] <a href="https://github.com/jgraph/drawio" target="_blank">jgraph/drawio</a> — 7987 · 2026-09-07 · Apache-2.0</div>
+      <div id="r706">[706] <a href="https://github.com/JoeyDeVries/LearnOpenGL" target="_blank">JoeyDeVries/LearnOpenGL</a> — 12619 · 2024-08-06 · NOASSERTION</div>
+      <div id="r707">[707] <a href="https://github.com/diasurgical/devilutionX" target="_blank">diasurgical/devilutionX</a> — 9723 · 2026-09-04 · NOASSERTION</div>
+      <div id="r708">[708] <a href="https://github.com/HarbourMasters/Shipwright" target="_blank">HarbourMasters/Shipwright</a> — 5328 · 2026-09-08 · NOASSERTION</div>
+      <div id="r709">[709] <a href="https://github.com/scummvm/scummvm" target="_blank">scummvm/scummvm</a> — 2803 · 2026-09-08 · GPL-3.0</div>
+      <div id="r710">[710] <a href="https://github.com/OpenXcom/OpenXcom" target="_blank">OpenXcom/OpenXcom</a> — 2214 · 2026-06-05 · GPL-3.0</div>
+      <div id="r711">[711] <a href="https://github.com/teeworlds/teeworlds" target="_blank">teeworlds/teeworlds</a> — 2642 · 2025-07-12 · NOASSERTION</div>
+      <div id="r712">[712] <a href="https://github.com/arx/ArxLibertatis" target="_blank">arx/ArxLibertatis</a> — 1088 · 2024-08-22 · GPL-3.0</div>
+      <div id="r713">[713] <a href="https://github.com/n64decomp/sm64" target="_blank">n64decomp/sm64</a> — 8760 · 2024-02-04 · CC0-1.0</div>
+      <div id="r714">[714] <a href="https://github.com/0ad/0ad" target="_blank">0ad/0ad</a> — 2821 · 2024-08-17 · NOASSERTION</div>
+      <div id="r715">[715] <a href="https://github.com/DCurrent/openbor" target="_blank">DCurrent/openbor</a> — 1243 · 2026-08-30 · BSD-3-Clause</div>
+      <div id="r716">[716] <a href="https://github.com/openclonk/openclonk" target="_blank">openclonk/openclonk</a> — 401 · 2026-04-28 · NOASSERTION</div>
+      <div id="r717">[717] <a href="https://github.com/castle-engine/castle-engine" target="_blank">castle-engine/castle-engine</a> — 1242 · 2026-09-08 · NOASSERTION</div>
+      <div id="r718">[718] <a href="https://github.com/Helion-Engine/Helion" target="_blank">Helion-Engine/Helion</a> — 569 · 2026-09-08 · GPL-3.0</div>
+      <div id="r719">[719] <a href="https://github.com/fabiangreffrath/woof" target="_blank">fabiangreffrath/woof</a> — 321 · 2026-09-08 · GPL-2.0</div>
+      <div id="r720">[720] <a href="https://github.com/XProger/OpenLara" target="_blank">XProger/OpenLara</a> — 5073 · 2026-07-26 · BSD-2-Clause</div>
+      <div id="r721">[721] <a href="https://github.com/CorsixTH/CorsixTH" target="_blank">CorsixTH/CorsixTH</a> — 4553 · 2026-09-07 · NOASSERTION</div>
+      <div id="r722">[722] <a href="https://github.com/freeciv/freeciv" target="_blank">freeciv/freeciv</a> — 1590 · 2026-09-08 · GPL-2.0</div>
+      <div id="r723">[723] <a href="https://github.com/Novum/vkQuake" target="_blank">Novum/vkQuake</a> — 2270 · 2026-09-07 · GPL-2.0</div>
+      <div id="r724">[724] <a href="https://github.com/RigsOfRods/rigs-of-rods" target="_blank">RigsOfRods/rigs-of-rods</a> — 1237 · 2026-08-28 · GPL-3.0</div>
+      <div id="r725">[725] <a href="https://github.com/etlegacy/etlegacy" target="_blank">etlegacy/etlegacy</a> — 713 · 2026-08-26 · GPL-3.0</div>
+      <div id="r726">[726] <a href="https://github.com/PrismLauncher/PrismLauncher" target="_blank">PrismLauncher/PrismLauncher</a> — 10340 · 2026-09-07 · GPL-3.0</div>
+      <div id="r727">[727] <a href="https://github.com/ClassiCube/ClassiCube" target="_blank">ClassiCube/ClassiCube</a> — 2050 · 2026-09-07 · NOASSERTION</div>
+      <div id="r728">[728] <a href="https://github.com/MCCTeam/Minecraft-Console-Client" target="_blank">MCCTeam/Minecraft-Console-Client</a> — 2126 · 2026-09-06 · NOASSERTION</div>
+      <div id="r729">[729] <a href="https://github.com/RevenantX/LiteNetLib" target="_blank">RevenantX/LiteNetLib</a> — 3616 · 2026-06-18 · MIT</div>
+      <div id="r730">[730] <a href="https://github.com/sst/opencode" target="_blank">sst/opencode</a> — 205845 · 2026-09-08 · MIT</div>
+      <div id="r731">[731] <a href="https://github.com/block/goose" target="_blank">block/goose</a> — 54028 · 2026-09-08 · Apache-2.0</div>
+      <div id="r732">[732] <a href="https://github.com/zed-industries/zed" target="_blank">zed-industries/zed</a> — 89946 · 2026-09-08 · NOASSERTION</div>
+      <div id="r733">[733] <a href="https://github.com/modelscope/agentscope" target="_blank">modelscope/agentscope</a> — 31104 · 2026-09-08 · Apache-2.0</div>
+      <div id="r734">[734] <a href="https://github.com/QwenLM/Qwen-Agent" target="_blank">QwenLM/Qwen-Agent</a> — 17077 · 2026-03-04 · Apache-2.0</div>
+      <div id="r735">[735] <a href="https://github.com/SWE-bench/SWE-bench" target="_blank">SWE-bench/SWE-bench</a> — 5804 · 2026-09-02 · MIT</div>
+      <div id="r736">[736] <a href="https://github.com/laude-institute/terminal-bench" target="_blank">laude-institute/terminal-bench</a> — 2570 · 2026-07-11 · Apache-2.0</div>
+      <div id="r737">[737] <a href="https://github.com/LiveCodeBench/LiveCodeBench" target="_blank">LiveCodeBench/LiveCodeBench</a> — 937 · 2025-07-16 · MIT</div>
+      <div id="r738">[738] <a href="https://github.com/web-arena-x/webarena" target="_blank">web-arena-x/webarena</a> — 1605 · 2025-11-26 · Apache-2.0</div>
+      <div id="r739">[739] <a href="https://github.com/mem0ai/mem0" target="_blank">mem0ai/mem0</a> — 64905 · 2026-09-08 · Apache-2.0</div>
+      <div id="r740">[740] <a href="https://github.com/qodo-ai/pr-agent" target="_blank">qodo-ai/pr-agent</a> — 12897 · 2026-09-08 · MIT</div>
+      <div id="r741">[741] <a href="https://github.com/Tencent/HunyuanVideo" target="_blank">Tencent/HunyuanVideo</a> — 12503 · 2026-06-29 · NOASSERTION</div>
+      <div id="r742">[742] <a href="https://github.com/hpcaitech/Open-Sora" target="_blank">hpcaitech/Open-Sora</a> — 29688 · 2026-04-09 · Apache-2.0</div>
+      <div id="r743">[743] <a href="https://github.com/THUDM/CogVideo" target="_blank">THUDM/CogVideo</a> — 13003 · 2025-11-04 · Apache-2.0</div>
+      <div id="r744">[744] <a href="https://github.com/lllyasviel/FramePack" target="_blank">lllyasviel/FramePack</a> — 17248 · 2025-10-16 · Apache-2.0</div>
+      <div id="r745">[745] <a href="https://github.com/Tencent/Hunyuan3D-2" target="_blank">Tencent/Hunyuan3D-2</a> — 14762 · 2025-10-28 · NOASSERTION</div>
+      <div id="r746">[746] <a href="https://github.com/MineDojo/Voyager" target="_blank">MineDojo/Voyager</a> — 7183 · 2024-04-03 · MIT</div>
+      <div id="r747">[747] <a href="https://github.com/Microsoft/malmo" target="_blank">Microsoft/malmo</a> — 4271 · 2025-09-03 · MIT</div>
+      <div id="r748">[748] <a href="https://github.com/Bin-Huang/chatbox" target="_blank">Bin-Huang/chatbox</a> — 41691 · 2026-09-04 · GPL-3.0</div>
+      <div id="r749">[749] <a href="https://github.com/dnSpyEx/dnSpy" target="_blank">dnSpyEx/dnSpy</a> — 11035 · 2026-08-25 · GPL-3.0</div>
+      <div id="r750">[750] <a href="https://github.com/TASVideos/BizHawk" target="_blank">TASVideos/BizHawk</a> — 2749 · 2026-09-03 · NOASSERTION</div>
+      <div id="r751">[751] <a href="https://github.com/grumpycoders/pcsx-redux" target="_blank">grumpycoders/pcsx-redux</a> — 993 · 2026-09-04 · GPL-2.0</div>
+      <div id="r752">[752] <a href="https://github.com/stella-emu/stella" target="_blank">stella-emu/stella</a> — 760 · 2026-09-03 · GPL-2.0</div>
+      <div id="r753">[753] <a href="https://github.com/ebkr/r2modmanPlus" target="_blank">ebkr/r2modmanPlus</a> — 2235 · 2026-09-08 · MIT</div>
 </div>
-    <p style="margin-top:20px" data-page-node-id="O37gF01g8Bs02zaZO7NjbT">报告生成时间：2026-09-08（第十一版）· 上一版：2026-09-08（第十版）· 再上一版：2026-09-08（第八版）· 再上一版：2026-09-06 · 再上一版：2026-09-04 · 再上一版：2026-09-03 · 上上版：2026-09-02 · 上上上版：2026-09-01 · 本页为静态单文件 HTML，无外部依赖。</p>
+    <p style="margin-top:20px" data-page-node-id="O37gF01g8Bs02zaZO7NjbT">报告生成时间：2026-09-08（第十二版）· 上一版：2026-09-08（第十一版）· 再上一版：2026-09-08（第十版）· 再上一版：2026-09-06 · 再上一版：2026-09-04 · 再上一版：2026-09-03 · 上上版：2026-09-02 · 上上上版：2026-09-01 · 本页为静态单文件 HTML，无外部依赖。</p>
   </footer>
 </div>
 </body>
