@@ -2501,6 +2501,425 @@ footer a{color:var(--text-2)}
       </div>
     </div>
 
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 图形调试与 Shader 链路：看见「画面是怎么画出来的」（5 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">前面几版讲了引擎、物理、音频，唯独漏了<b>图形这块</b>。做游戏你迟早会遇到「为什么这一帧是黑的」「为什么手机上贴图炸了」——靠猜是猜不出来的。这一组是标准答案：截帧工具、Shader 编译与反编译、纹理压缩、矢量字体。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/baldurk/renderdoc" target="_blank">RenderDoc</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">11k</span>
+            <span class="tag t-make">图形调试</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><em>显卡界的「录像机」</em>——一键把游戏某一帧完整录下来，之后可以逐条回放每一句绘制指令、看每个像素是怎么算出来的、贴图长什么样。<b>不开源引擎也能用</b>，只要它是 DirectX / Vulkan / OpenGL 的。对你解包分析也有用：跑一遍就知道某个模型用了哪些贴图、什么 Shader。</p>
+          <div class="src-line">最近更新 2026-09-06 · MIT · <a href="#r320">信源 [320]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/KhronosGroup/SPIRV-Cross" target="_blank">SPIRV-Cross</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.5k</span>
+            <span class="tag t-make">Shader 转换</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把编译后的 SPIR-V 字节码<b>反解回可读的 GLSL / HLSL / MSL</b>。用处有两个：一是游戏移植到不同平台时自动转 Shader，二是逆向时把不可读的字节码还原成能看懂的着色器代码。Vulkan 生态的基础件。</p>
+          <div class="src-line">最近更新 2026-09-07 · Apache-2.0 · <a href="#r321">信源 [321]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/KhronosGroup/glslang" target="_blank">glslang</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">3.6k</span>
+            <span class="tag t-make">编译前端</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">官方的 <b>GLSL → SPIR-V 编译器</b>。你自己写 Vulkan 渲染器时用它把 Shader 编译成字节码；反过来，看到别人游戏里的 SPIR-V，也能靠它对照语法还原结构。属于「不常用但离不开」的地基件。</p>
+          <div class="src-line">最近更新 2026-09-07 · 自定义协议 · <a href="#r322">信源 [322]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/BinomialLLC/basis_universal" target="_blank">Basis Universal</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">3.1k</span>
+            <span class="tag t-make">纹理压缩</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>一次压缩，全平台通用</b>的 GPU 纹理格式。以前同一张贴图要给 PC、手机、主机各压一份，包体直接翻几倍；用了它只压一份，运行时再转成当地显卡认的格式。做手游或者包体敏感的独立游戏，这是最划算的一刀。</p>
+          <div class="src-line">最近更新 2026-09-01 · Apache-2.0 · <a href="#r323">信源 [323]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Chlumsky/msdf-atlas-gen" target="_blank">msdf-atlas-gen</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">1.3k</span>
+            <span class="tag t-make">字体渲染</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把矢量字体转成「多通道有符号距离场」图集。效果：<b>文字放大到任何倍数都不糊</b>，一张小图集搞定所有字号。UI 要做多语言、要做 4K 屏适配，这基本是现在的标准做法。</p>
+          <div class="src-line">最近更新 2026-05-16 · MIT · <a href="#r324">信源 [324]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 底层基座：窗口、输入、数学与打包（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">这几样是引擎之下的<b>地基</b>。你可能一辈子不直接用，但知道它们是干什么的，看引擎源码时就不会懵——而且想自己写个小工具、小 Demo，从它们起步比从引擎起步轻得多。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/libsdl-org/SDL" target="_blank">SDL3</a></span>
+            <span class="lang">C</span>
+            <span class="stars">17k</span>
+            <span class="tag t-make">跨平台基座</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>几乎所有 PC 游戏的地基</b>。开窗口、接手柄、播声音、读键鼠，一套代码跑 Windows/macOS/Linux/安卓/iOS。Valve 的很多移植、大量模拟器和独立游戏都靠它。语言是 C，接口干净，拿它写第一个「能动的窗口」非常合适。</p>
+          <div class="src-line">最近更新 2026-09-07 · Zlib · <a href="#r325">信源 [325]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/glfw/glfw" target="_blank">GLFW</a></span>
+            <span class="lang">C</span>
+            <span class="stars">15k</span>
+            <span class="tag t-make">窗口与输入</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">比 SDL 更克制的版本：<b>只管窗口和输入</b>，不管音频不管渲染。学 OpenGL / Vulkan 时的默认搭档，代码量小到一天能读完。想搞懂「游戏窗口到底是怎么出来的」，读它比读引擎现实。</p>
+          <div class="src-line">最近更新 2026-08-04 · Zlib · <a href="#r326">信源 [326]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/emscripten-core/emscripten" target="_blank">Emscripten</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">28k</span>
+            <span class="tag t-make">网页移植</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把 C/C++ 代码<b>编译成网页能跑的 WebAssembly</b>。手上有个 C++ 写的游戏想放网页上给人试玩？它就是那条路。itch.io 上大量能直接在浏览器里玩的独立游戏，背后都是它。对老游戏移植到网页同样有效。</p>
+          <div class="src-line">最近更新 2026-09-07 · 自定义协议 · <a href="#r327">信源 [327]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/xmake-io/xmake" target="_blank">xmake</a></span>
+            <span class="lang">Lua</span>
+            <span class="stars">12k</span>
+            <span class="tag t-make">构建工具</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">国产的 C/C++ 构建工具，<b>配置语法比 CMake 好懂得多</b>，还自带包管理（一行命令拉依赖）。中文文档齐全。如果你被 CMakeLists.txt 折磨过，换它会明显轻松。</p>
+          <div class="src-line">最近更新 2026-09-06 · Apache-2.0 · <a href="#r328">信源 [328]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 物理与动画的最后一公里（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">上一版把三大物理引擎讲完了，但还有两块没覆盖：<b>业界老牌物理</b>和<b>骨骼动画的处理</b>。角色动作卡不卡、内存占多少，八成出在这一层。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/NVIDIA-Omniverse/PhysX" target="_blank">PhysX</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">4.8k</span>
+            <span class="tag t-make">物理引擎</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>Unreal 引擎内置的物理就是它</b>，也是无数 3A 的默认选择。NVIDIA 已开源，BSD 协议可商用。特点是刚体、载具、布料、 destructible 一套齐全，GPU 加速强。想做「车」「堆箱子」「炸墙」这类手感，它比通用引擎自带的稳。</p>
+          <div class="src-line">最近更新 2026-09-03 · BSD-3-Clause · <a href="#r329">信源 [329]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/slembcke/Chipmunk2D" target="_blank">Chipmunk2D</a></span>
+            <span class="lang">C</span>
+            <span class="stars">2.4k</span>
+            <span class="tag t-make">2D 物理</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">轻量 2D 物理库，<b>代码只有 Box2D 的三分之一</b>，读得完。做 2D 小游戏、平台跳跃、弹球这类不需要复杂关节的项目，它比 Box2D 更容易塞进自己的框架里。MIT 协议，随便改。</p>
+          <div class="src-line">最近更新 2026-05-05 · MIT · <a href="#r330">信源 [330]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/guillaumeblanc/ozz-animation" target="_blank">ozz-animation</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.9k</span>
+            <span class="tag t-make">骨骼动画</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">专做<b>骨骼动画的运行时</b>：播放、混合、IK（反向动力学）、压缩。引擎自带的动画系统往往在「两个动作怎么自然过渡」「脚怎么踩在地上不滑」上偷懒，这类库补的正是这个。C++ 写成，可以单独抠出来接到任何引擎上。</p>
+          <div class="src-line">最近更新 2026-08-01 · 自定义协议 · <a href="#r331">信源 [331]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/nfrechette/acl" target="_blank">Animation Compression Library</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">1.6k</span>
+            <span class="tag t-make">动画压缩</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">只做一件事：<b>把动画数据压到极小</b>。3A 游戏一个角色几万帧动画，不压缩内存直接爆。它号称比引擎自带方案再省一半，且解压速度更快。属于「项目做大了才会需要，需要时救你一命」的类型。</p>
+          <div class="src-line">最近更新 2025-11-26 · MIT · <a href="#r332">信源 [332]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 叙事层补缺：写分支剧情的三把刀（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">你做视觉小说，Ren'Py 之外其实还有几条路。这一组是<b>纯叙事层</b>的工具——只管故事怎么分叉，不管画面，可以接进任何引擎。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/inkle/ink" target="_blank">ink</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">4.9k</span>
+            <span class="tag t-make">叙事脚本</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>业界公认最好的分支叙事语言</b>，《八十天》《天堂之穹》都用它。写法像 Markdown 加一点条件判断，非程序员也能上手；有官方编辑器 inky 可以实时预览分支图。最大优点：剧情和代码彻底分开，改台词不用碰引擎。有 Unity 和 Godot 的插件。</p>
+          <div class="src-line">最近更新 2026-05-05 · MIT · <a href="#r333">信源 [333]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/klembot/twinejs" target="_blank">Twine</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">2.9k</span>
+            <span class="tag t-make">互动小说</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>零代码做互动小说</b>：打开网页，连几个框，导出一个 HTML 就能发出去。独立叙事游戏圈大量作品的第一版都是 Twine 做的。适合「先验证故事好不好玩」，验证完再搬进 Ren'Py 或 Godot 做美化。</p>
+          <div class="src-line">最近更新 2026-09-05 · GPL-3.0 · <a href="#r334">信源 [334]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/DRincs-Productions/pixi-vn" target="_blank">Pixi'VN</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">144</span>
+            <span class="tag t-make">视觉小说引擎</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用网页技术做视觉小说的新框架，基于 PixiJS。<b>好处是天然跨平台</b>——做完直接扔服务器就是个网页游戏，也能打包成桌面/手机应用。体量比 Ren'Py 轻，适合想加小游戏、加动效的互动叙事项目。</p>
+          <div class="src-line">最近更新 2026-09-01 · LGPL-2.1 · <a href="#r335">信源 [335]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 中文引擎生态：热更新与脚本层（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">这一组是<b>中国游戏工业的真实做法</b>：把玩法逻辑写在脚本里，运营时不下包就能改。顺带说一句——这也正是你解包时能看到可读逻辑层的原因，两边是一回事。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Tencent/xlua" target="_blank">xLua</a></span>
+            <span class="lang">C</span>
+            <span class="stars">10k</span>
+            <span class="tag t-make">Unity 热更新</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>Unity 热更新的事实标准</b>，腾讯开源，国内手游大量在用。原理：C# 写好框架，玩法用 Lua 写，运营期直接下发 Lua 脚本改内容，不用重新过审。对独立开发者同样有用——改数值、改活动不用重新打包。</p>
+          <div class="src-line">最近更新 2025-11-21 · 自定义协议 · <a href="#r336">信源 [336]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Tencent/puerts" target="_blank">PuerTS</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">6.2k</span>
+            <span class="tag t-make">TypeScript 脚本</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把 <b>TypeScript 塞进 Unreal 和 Unity</b>。和 Lua 方案的取舍很直接：Lua 轻但工具链弱，TypeScript 重一点但有类型检查、有智能提示，团队大了更好维护。腾讯内部主推的新方向。</p>
+          <div class="src-line">最近更新 2026-09-05 · 自定义协议 · <a href="#r337">信源 [337]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Tencent/UnLua" target="_blank">UnLua</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.8k</span>
+            <span class="tag t-make">UE 脚本</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>Unreal 引擎的 Lua 方案</b>。UE 原生只认 C++ 和蓝图，蓝图复杂了会变成一团线；UnLua 让你用 Lua 写玩法，改完即生效，不用等 C++ 编译（UE 编译一次十几分钟是常态）。</p>
+          <div class="src-line">最近更新 2026-04-02 · 自定义协议 · <a href="#r338">信源 [338]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Ourpalm/ILRuntime" target="_blank">ILRuntime</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">3.1k</span>
+            <span class="tag t-make">C# 热更新</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">纯 C# 的 Unity 热更新方案——<b>不用学新语言</b>，直接拿 C# 写热更逻辑。性能不如 HybridCLR（上一版收过），但胜在简单、坑少、纯托管。小团队够用。</p>
+          <div class="src-line">最近更新 2026-08-20 · 自定义协议 · <a href="#r339">信源 [339]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 联机与匹配补缺（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">上一版说了房间服和帧同步，还差两块：<b>怎么把水平相近的玩家凑一桌</b>，以及 <b>C# 阵营的现代网络库</b>。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/googleforgames/open-match" target="_blank">Open Match</a></span>
+            <span class="lang">Go</span>
+            <span class="stars">3.4k</span>
+            <span class="tag t-make">匹配服务</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Google 开源的游戏匹配框架，跑在 Kubernetes 上。说人话：<b>「按段位/延迟/地区把玩家凑一局」这件事别自己写</b>。它把匹配逻辑做成可插拔的函数，你自己定规则（比如「段位差不超过 200 分且延迟低于 80ms」）。做多人对战游戏，这块的复杂度经常被严重低估。</p>
+          <div class="src-line">最近更新 2026-07-12 · Apache-2.0 · <a href="#r340">信源 [340]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/FirstGearGames/FishNet" target="_blank">FishNet</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">2k</span>
+            <span class="tag t-make">Unity 网络</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Unity 上的现代网络方案，<b>Mirror 之后的新一代</b>。支持客户端预测、服务器回滚、兴趣管理（只同步玩家附近的东西）。社区活跃、文档完整，做多人动作游戏比从零写同步省几个月。</p>
+          <div class="src-line">最近更新 2026-09-02 · 自定义协议 · <a href="#r341">信源 [341]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 工具与周边生产力（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">做游戏之外还有一堆杂活：做个关卡编辑器、做个 MOD 管理器、录个演示视频。这四样是干这些活最趁手的家伙。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/emilk/egui" target="_blank">egui</a></span>
+            <span class="lang">Rust</span>
+            <span class="stars">30k</span>
+            <span class="tag t-make">即时模式 UI</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Rust 生态的<b>即时模式 GUI</b>，几行代码出一个面板。最适合做游戏内的调试面板、关卡编辑器、存档查看器。Bevy 生态基本都用它。相比传统 UI 框架，它的心智负担低很多——不用管状态同步，每帧重画就行。</p>
+          <div class="src-line">最近更新 2026-09-07 · Apache-2.0 · <a href="#r342">信源 [342]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/tauri-apps/tauri" target="_blank">Tauri</a></span>
+            <span class="lang">Rust</span>
+            <span class="stars">110.9k</span>
+            <span class="tag t-make">桌面应用</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用网页技术写桌面软件，但<b>不用打包一个几百 MB 的浏览器</b>（说的就是 Electron）——它调系统自带的渲染引擎，成品只有几 MB。想给自己做个 MOD 管理器、游戏启动器、素材批处理工具，这是目前最优解。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r343">信源 [343]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/juce-framework/JUCE" target="_blank">JUCE</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">8.9k</span>
+            <span class="tag t-make">音频与工具</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">音频领域的老牌框架，<b>无数商业音频插件和宿主软件是它做的</b>。做音乐游戏、做游戏内的音频工具、做虚拟乐器，它一套搞定，跨平台且性能过硬。注意商用授权要付费，开源项目免费。</p>
+          <div class="src-line">最近更新 2026-09-07 · 自定义协议 · <a href="#r344">信源 [344]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/obsproject/obs-studio" target="_blank">OBS Studio</a></span>
+            <span class="lang">C</span>
+            <span class="stars">76k</span>
+            <span class="tag t-make">录制与直播</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">免费开源的录屏直播软件，<b>做游戏的人几乎人人装了</b>。为什么值得单独列：它支持插件和脚本（Lua/Python），可以自动化录演示、批量出宣传素材、甚至接进你的自动化测试流程。</p>
+          <div class="src-line">最近更新 2026-09-05 · GPL-2.0 · <a href="#r345">信源 [345]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 开源完整游戏 · 第二批：能读能改的正经商业级作品（6 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">上一版收过一批开源游戏，这次换六个<b>类型完全不同</b>的：塔防、音游、生存、竞速、平台跳跃、RTS。它们都是「打完了还卖得动」的级别，源码质量远高于玩具项目，是你那份 73 款游戏最好的对照组。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Anuken/Mindustry" target="_blank">Mindustry</a></span>
+            <span class="lang">Java</span>
+            <span class="stars">29k</span>
+            <span class="tag t-make">塔防/自动化</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>开源游戏里的质量天花板之一</b>：工厂自动化 + 塔防，Steam 上几万好评，代码结构清晰。它是「一个人（主要作者 Anuken）如何把独立游戏做到商业成功」的活教材，而且 Java 写的，读起来不吃力。</p>
+          <div class="src-line">最近更新 2026-09-08 · GPL-3.0 · <a href="#r346">信源 [346]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ppy/osu" target="_blank">osu!</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">19k</span>
+            <span class="tag t-make">音乐游戏</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">全球最大的开源音游，<b>C# + 自研框架</b>。对做音游或节奏玩法的人几乎是唯一选择级的参考：判定、谱面格式、回放系统、皮肤系统全是现成答案。社区生态极大，谱面编辑器也是开源的。</p>
+          <div class="src-line">最近更新 2026-09-07 · MIT · <a href="#r347">信源 [347]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/CleverRaven/Cataclysm-DDA" target="_blank">Cataclysm: DDA</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">13k</span>
+            <span class="tag t-make">生存 Roguelike</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">开发了十几年的<b>硬核僵尸生存</b>，几十万行 C++，社区驱动。它的价值在于「如何用数据驱动的方式做超复杂系统」——物品、合成、怪物、受伤部位全在 JSON 里定义，加内容不用改代码。这套思路对小团队做内容量大的游戏极其重要。</p>
+          <div class="src-line">最近更新 2026-09-08 · 自定义协议 · <a href="#r348">信源 [348]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ddnet/ddnet" target="_blank">DDNet</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">822</span>
+            <span class="tag t-make">多人动作</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Teeworlds 的活跃分支，<b>2D 多人竞速 + 对战</b>，核心是网络同步（客户端预测 + 服务器回滚）。代码量适中，是学习「多人动作游戏怎么做同步」最好的完整样本之一，比读论文实在。</p>
+          <div class="src-line">最近更新 2026-09-08 · 自定义协议 · <a href="#r349">信源 [349]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/SuperTux/supertux" target="_blank">SuperTux</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">3.1k</span>
+            <span class="tag t-make">平台跳跃</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">经典 2D 横版跳跃，<b>麻雀虽小五脏俱全</b>：关卡编辑器、瓦片地图、物理手感、过场都有。想搞懂「跳跃手感为什么要调 coyote time、土狼时间」这类细节，读它比读引擎源码快得多。</p>
+          <div class="src-line">最近更新 2026-09-07 · GPL-3.0 · <a href="#r350">信源 [350]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Warzone2100/warzone2100" target="_blank">Warzone 2100</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">3.9k</span>
+            <span class="tag t-make">即时战略</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">1999 年商业 RTS，2004 年开源后社区维护至今。<b>完整商业 RTS 的源码</b>：寻路、编队、科技树、3D 地形全在。对想做 RTS 或大规模单位调度的人是难得的参考资料。</p>
+          <div class="src-line">最近更新 2026-09-08 · GPL-2.0 · <a href="#r351">信源 [351]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 经典源码阅读：站在巨人肩膀上（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">这两份不是工具，是<b>教材</b>。读它们不为了抄，为了知道「原来这个问题当年的解法是这样的」。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/id-Software/DOOM" target="_blank">DOOM (1993 源码)</a></span>
+            <span class="lang">C</span>
+            <span class="stars">20k</span>
+            <span class="tag t-make">历史源码</span>
+            <span class="tag t-warn">已冻结</span>
+          </div>
+          <p class="plain">1997 年卡马克放出的初代 DOOM 源码，<b>现代 3D 游戏的源头</b>。BSP 树、光线投射渲染、网络同步的原始版本都在里面，代码不到 4 万行。仓库已冻结不再更新（这是它本来的状态，不是弃坑），但作为教材永不过时。建议配合 Fabien Sanglard 的《Game Engine Black Book: DOOM》一起看。</p>
+          <div class="src-line">最近更新 2024-05-24 · GPL-2.0 · <a href="#r352">信源 [352]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Unity-Technologies/UnityCsReference" target="_blank">Unity C# 源码参考</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">13k</span>
+            <span class="tag t-make">引擎源码</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>Unity 引擎 C# 层的官方源码</b>。Unity 本体闭源，但这一层是公开的：引擎各个模块、Editor 代码、API 实现都在。用处很直接——你想知道某个 Unity API 到底干了什么、为什么这么慢，来这里查；解包 Unity 游戏时也能对照理解结构。</p>
+          <div class="src-line">最近更新 2026-09-07 · 自定义协议 · <a href="#r353">信源 [353]</a></div>
+        </div>
+      </div>
+
 <div class="group" data-page-node-id="UK97uWdhSa6q6kmw2y5azB">
       <div class="group-title" data-page-node-id="LQQmRKk50AORgZL4CyASiN">游戏制作速查 · 其余值得一试的</div>
       <div class="tbl-wrap" data-page-node-id="jVq2ljM4cIl8GYNbH5qB6v">
@@ -2793,7 +3212,274 @@ footer a{color:var(--text-2)}
       </div>
       </div>
       </div>
-    <section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
+          <div class="group">
+        <div class="group-title">🆕 第九版新增 · F. 本地跑模型：不花钱把 AI 接进游戏（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">你已经在本地跑 Ollama + qwen3 了，这一组就是把这条路走通：<b>不上云、不花钱、数据不出本机</b>，照样能用上大模型做 NPC 对话、剧情生成、素材批处理。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ollama/ollama" target="_blank">Ollama</a></span>
+            <span class="lang">Go</span>
+            <span class="stars">180.5k</span>
+            <span class="tag t-make">本地推理</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>本地跑大模型最简单的入口</b>——一条命令装好，一个端口提供 OpenAI 兼容接口。你已经装了 qwen3:8b 和 14b，它就是把模型变成「能被调用的服务」的那层。所有支持 OpenAI 接口的工具（包括下面那些 agent 框架）都能直接接上它。</p>
+          <div class="src-line">最近更新 2026-09-07 · MIT · <a href="#r354">信源 [354]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ggml-org/llama.cpp" target="_blank">llama.cpp</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">127.5k</span>
+            <span class="tag t-make">推理引擎</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Ollama 底下的那台发动机，<b>纯 C++ 实现，CPU 也能跑</b>。意义在于：它让「在玩家电脑上本地跑一个小模型」成为可能——未来游戏里的 NPC 可以完全离线运行。支持量化（把模型压到几 GB），你的 16GB 内存机器就是靠它跑起来的。</p>
+          <div class="src-line">最近更新 2026-09-08 · MIT · <a href="#r355">信源 [355]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/hiyouga/LLaMA-Factory" target="_blank">LLaMA-Factory</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">75k</span>
+            <span class="tag t-make">模型微调</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>零代码微调大模型</b>：有网页界面，选模型、传语料、点开始。想让 NPC 说话带你的世界观设定、带特定角色的口吻，就得微调。中文文档和中文模型支持都很好，是目前国内最主流的微调工具。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r356">信源 [356]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/unslothai/unsloth" target="_blank">Unsloth</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">76k</span>
+            <span class="tag t-make">高效微调</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把微调<b>提速 2 倍、显存省 70%</b>。同一张卡，原本只能跑 7B 模型，用它可能能跑 14B。显存是本地玩微调最大的坎，这工具基本是必备。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r357">信源 [357]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · G. 模型调度与多 Agent 协作（6 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">单个模型能干的事有限，真正好用的是<b>把多个模型、多个 agent 编排起来</b>——这也是 CCGS 那套 49 个 agent 思路的通用版本。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/langgenius/dify" target="_blank">Dify</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">154.9k</span>
+            <span class="tag t-make">LLM 应用平台</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>国产、中文、可视化编排 LLM 应用</b>的头部项目。拖拖拽拽就能搭出一个带知识库、带工具调用、带多轮对话的 AI 应用，还能直接接本地 Ollama。想给游戏做个「智能客服 NPC」或「剧情助手」，从这里起步最快。</p>
+          <div class="src-line">最近更新 2026-09-08 · 自定义协议 · <a href="#r358">信源 [358]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/crewAIInc/crewAI" target="_blank">crewAI</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">58k</span>
+            <span class="tag t-make">多 Agent</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把多个 AI 角色组成一个「团队」：<b>一个写剧本、一个写对话、一个检查逻辑冲突</b>，互相交付产物。这正是 CCGS「49 个 agent 分工」的通用实现，可以拿来复刻那套流程，而且不绑定任何一家模型。</p>
+          <div class="src-line">最近更新 2026-09-08 · MIT · <a href="#r359">信源 [359]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/BerriAI/litellm" target="_blank">LiteLLM</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">58k</span>
+            <span class="tag t-make">模型网关</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">一个接口<b>统一调用 100+ 家模型</b>（OpenAI、Claude、通义、DeepSeek、本地 Ollama 全算）。今天用 A 家明天换 B 家，代码一行不用改。对要在多个模型之间横跳对比的人来说是刚需。</p>
+          <div class="src-line">最近更新 2026-09-08 · 自定义协议 · <a href="#r360">信源 [360]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/vllm-project/vllm" target="_blank">vLLM</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">91k</span>
+            <span class="tag t-make">高性能推理</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">服务端推理的业界标准，<b>吞吐比朴素方案高几十倍</b>。适用场景：你要给很多玩家同时提供 AI NPC 对话，或者批量生成几千条游戏文本。本地单机一般用不上，一旦要做服务就绕不开。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r361">信源 [361]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/songquanpeng/one-api" target="_blank">One API</a></span>
+            <span class="lang">JavaScript</span>
+            <span class="stars">37k</span>
+            <span class="tag t-make">API 聚合</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把所有模型 API <b>聚合到一个 OpenAI 格式的入口</b>，带额度管理、渠道切换、负载均衡。国产项目，中文界面。适合手上有一堆 API Key、想统一管理又能随时切换的场景。</p>
+          <div class="src-line">最近更新 2026-01-09 · MIT · <a href="#r362">信源 [362]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/google-gemini/gemini-cli" target="_blank">Gemini CLI</a></span>
+            <span class="lang">TypeScript</span>
+            <span class="stars">106.9k</span>
+            <span class="tag t-make">终端 Agent</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Google 官方的命令行 AI 助手，<b>在终端里直接读代码、改文件、跑命令</b>。和 Claude Code 是同一类东西。你提到学校有 Gemini 算力平台——如果这个渠道可用，这是把额度变成实际生产力的直接方式。</p>
+          <div class="src-line">最近更新 2026-09-08 · Apache-2.0 · <a href="#r363">信源 [363]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · H. 图像高清化与 OCR：汉化和老素材修复（5 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">做汉化和老游戏素材整理，绕不开两件事：<b>把图上的字认出来</b>，和<b>把糊掉的图修清楚</b>。这一组是干这两件事的标准工具。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/PaddlePaddle/PaddleOCR" target="_blank">PaddleOCR</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">89k</span>
+            <span class="tag t-make">文字识别</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">百度开源的 OCR，<b>中文识别效果公认最好</b>，日本語・韩语也强。相比通用 OCR，它对竖排、艺术字、游戏 UI 里的特殊字体更耐受。做汉化时用来批量提取原文，比手打快一个数量级。自带轻量模型，CPU 能跑。</p>
+          <div class="src-line">最近更新 2026-07-22 · Apache-2.0 · <a href="#r364">信源 [364]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/xinntao/Real-ESRGAN" target="_blank">Real-ESRGAN</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">37k</span>
+            <span class="tag t-make">图像超分</span>
+            <span class="tag t-warn">低频维护</span>
+          </div>
+          <p class="plain"><b>把糊图放大变清晰</b>的老牌方案，至今仍是很多工具的内置引擎。老游戏 CG、旧立绘放大 4 倍的效果明显好于传统插值。仓库近两年更新很少（已经成熟稳定），生态里有大量开箱即用的封装版（如 Real-ESRGAN-ncnn-vulkan）可替代。</p>
+          <div class="src-line">最近更新 2024-08-06 · BSD-3-Clause · <a href="#r365">信源 [365]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/TencentARC/GFPGAN" target="_blank">GFPGAN</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">38k</span>
+            <span class="tag t-make">人脸修复</span>
+            <span class="tag t-warn">低频维护</span>
+          </div>
+          <p class="plain">专修<b>人脸</b>：模糊、压缩噪点、老照片质感都能救回来。给老 Galgame 立绘做高清化时，它和 Real-ESRGAN 经常连用——先整体放大，再单独修脸。同样已趋于稳定，更新不多。</p>
+          <div class="src-line">最近更新 2024-07-26 · 自定义协议 · <a href="#r366">信源 [366]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/sczhou/CodeFormer" target="_blank">CodeFormer</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">18k</span>
+            <span class="tag t-make">人脸复原</span>
+            <span class="tag t-warn">低频维护</span>
+          </div>
+          <p class="plain">比 GFPGAN 更「会脑补」的人脸修复模型，<b>严重退化时能猜出更合理的五官</b>，但有改变原画风的风险（会把脸修得偏写实）。做修图时建议和 GFPGAN 对比着用，选更贴近原作那个。</p>
+          <div class="src-line">最近更新 2025-11-18 · 自定义协议 · <a href="#r367">信源 [367]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/kohya-ss/sd-scripts" target="_blank">sd-scripts</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">7.2k</span>
+            <span class="tag t-make">LoRA 训练</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">训练 <b>LoRA（画风小模型）</b>的标配脚本。用途很实际：先喂 20-50 张你游戏主角的立绘，训出一个专属 LoRA，之后 AI 出图就能稳定保持同一个角色、同一种画风。这是「用 AI 做游戏美术」能不能落地的关键一步。</p>
+          <div class="src-line">最近更新 2026-08-02 · Apache-2.0 · <a href="#r368">信源 [368]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · I. 中文配音第二批：2026 年真正能用的四个（4 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">上一版收过 GPT-SoVITS 和 IndexTTS，这一版补四个<b>中文效果更好、推理更快、许可更清楚</b>的。做 Galgame，配音质量直接决定成品观感。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/FunAudioLLM/CosyVoice" target="_blank">CosyVoice</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">24k</span>
+            <span class="tag t-make">语音合成</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">阿里通义的开源 TTS，<b>中文自然度和情感表现在开源里属第一梯队</b>。支持几秒音频克隆音色，还能用自然语言描述语气（「开心地说」「生气地喊」）。Apache-2.0 协议，商用友好。</p>
+          <div class="src-line">最近更新 2026-05-25 · Apache-2.0 · <a href="#r369">信源 [369]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/fishaudio/fish-speech" target="_blank">Fish-Speech</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">33k</span>
+            <span class="tag t-make">语音合成</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>开源 TTS 里综合质量最高的之一</b>，支持中英日韩等多语言，克隆相似度高。模型不大，消费级显卡能跑。社区活跃，是很多 AI 配音工具的底层。</p>
+          <div class="src-line">最近更新 2026-09-07 · 自定义协议 · <a href="#r370">信源 [370]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/SWivid/F5-TTS" target="_blank">F5-TTS</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">15k</span>
+            <span class="tag t-make">语音合成</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">近一年口碑上升最快的开源 TTS，<b>零样本克隆 + 极快推理</b>，MIT 协议（商用最省心）。适合要做大量台词、等不起长耗时的项目。</p>
+          <div class="src-line">最近更新 2026-07-23 · MIT · <a href="#r371">信源 [371]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/myshell-ai/MeloTTS" target="_blank">MeloTTS</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">7.6k</span>
+            <span class="tag t-make">语音合成</span>
+            <span class="tag t-warn">低频维护</span>
+          </div>
+          <p class="plain">特点是<b>CPU 上就能实时合成</b>，中文和英语混合效果好，MIT 协议。质量不如上面三个，但胜在轻、快、好部署——做原型、做临时配音、或者玩家机器上要跑实时语音，它合适。</p>
+          <div class="src-line">最近更新 2024-12-24 · MIT · <a href="#r372">信源 [372]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · J. 图像与 3D 生成补缺（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">上一版的 AI 生成集中在图和音频，这里补<b>最主流的出图界面</b>和<b>两个单图转 3D</b>的方案。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank">Stable Diffusion WebUI</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">164.9k</span>
+            <span class="tag t-make">图像生成</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>用的人最多的 AI 出图界面</b>，插件生态最全（ControlNet、局部重绘、LoRA 管理都靠它）。ComfyUI 更灵活但门槛高，它更适合先上手。注意：<b>AGPL-3.0 协议</b>，如果你把它集成进自己的商业产品需要开源相应部分，仅用它生成图片素材则不受影响。</p>
+          <div class="src-line">最近更新 2026-03-02 · AGPL-3.0 · <a href="#r373">信源 [373]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/VAST-AI-Research/TripoSR" target="_blank">TripoSR</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">6.9k</span>
+            <span class="tag t-make">图像转 3D</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>一张图 → 一个 3D 网格</b>，几秒钟出结果，MIT 协议。生成的模型精度比不上手工建模，但做 placeholder（占位模型）、做道具、做背景物件完全够用。是这条路线里速度最快的代表。</p>
+          <div class="src-line">最近更新 2026-06-04 · MIT · <a href="#r374">信源 [374]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/TencentARC/InstantMesh" target="_blank">InstantMesh</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">4.5k</span>
+            <span class="tag t-make">图像转 3D</span>
+            <span class="tag t-warn">低频维护</span>
+          </div>
+          <p class="plain">腾讯 ARC 的多视角 3D 生成，<b>质量比单图方案更稳</b>，适合需要干净拓扑的模型。仓库更新较少（发布后趋于稳定）。做角色/道具的初版网格，再进 Blender 精修，是现在比较现实的工作流。</p>
+          <div class="src-line">最近更新 2025-01-03 · Apache-2.0 · <a href="#r375">信源 [375]</a></div>
+        </div>
+      </div>
+
+<section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
     <div class="sec-head" data-page-node-id="KqPcSUzx4I5yaVNTCjJjRR">
       <span class="sec-num" data-page-node-id="mCQ7flcAuePG05u4HEiQP1">3</span>
       <h2 data-page-node-id="TteAZMf7G9DnA7Yijo2JQQ">游戏拓展与解包</h2>
@@ -4920,6 +5606,294 @@ footer a{color:var(--text-2)}
       </div>
     </div>
 
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 画质增强与注入式改造：不改游戏文件也能改画面（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">有一类改造<b>完全不动游戏本体</b>：在游戏和显卡之间插一层，把画面接过来处理完再输出。风险最低、可逆、不容易被封。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/crosire/reshade" target="_blank">ReShade</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">5.5k</span>
+            <span class="tag t-mod">画质增强</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>玩家圈最常用的画质增强框架</b>：加景深、加光晕、调色、锐化，还能写自己的 Shader。它工作在显卡驱动层，不改游戏任何文件，所以大多数联网游戏也认。对你做分析还有个用处——能用它看渲染管线中间结果。</p>
+          <div class="src-line">最近更新 2026-09-02 · BSD-3-Clause · <a href="#r376">信源 [376]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Kaldaien/SpecialK" target="_blank">Special K</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">356</span>
+            <span class="tag t-mod">修复与增强</span>
+            <span class="tag t-warn">已停更</span>
+          </div>
+          <p class="plain">比 ReShade 更激进的注入框架，<b>专治「老游戏在新电脑上跑不动」</b>：修帧率上限、修 HDR、修鼠标、修崩溃。作者 Kaldaien 在 PC 移植圈很有名。仓库 2022 年起未更新，但仍能用于老游戏；新项目建议优先 ReShade 或下面那类方案。</p>
+          <div class="src-line">最近更新 2022-01-29 · 未标注 · <a href="#r377">信源 [377]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ThirteenAG/Ultimate-ASI-Loader" target="_blank">Ultimate ASI Loader</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.2k</span>
+            <span class="tag t-mod">MOD 装载</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把自定义 DLL <b>在游戏启动时自动加载进去</b>的通用装载器。它本身不改任何东西，是几乎所有老游戏 MOD 的「入场券」——先有它，你的 DLL 才有机会跑起来。MIT 协议，被无数 MOD 项目内嵌。</p>
+          <div class="src-line">最近更新 2026-08-28 · MIT · <a href="#r378">信源 [378]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · UE 游戏改造与 MOD 配置（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">Unreal 引擎的游戏这几年越来越多，但改造门槛比 Unity 高。这两项是打开门的钥匙。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/UE4SS-RE/RE-UE4SS" target="_blank">RE-UE4SS</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.9k</span>
+            <span class="tag t-mod">UE 注入框架</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>Unreal 游戏的「BepInEx」</b>：Lua 脚本、SDK 生成、蓝图 Mod、实时控制台、对象查看器全都有。UE4/UE5 通吃。有了它，改 UE 游戏不用碰 C++ 也不用反编译——这是 UE 改造生态里最关键的基建。</p>
+          <div class="src-line">最近更新 2026-09-08 · MIT · <a href="#r379">信源 [379]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/BepInEx/BepInEx.ConfigurationManager" target="_blank">Configuration Manager</a></span>
+            <span class="lang">C#</span>
+            <span class="stars">407</span>
+            <span class="tag t-mod">MOD 配置</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">BepInEx 的官方配置界面插件，<b>让玩家在游戏里按 F1 就能改 MOD 参数</b>，不用去翻 cfg 文件。装 MOD 的人多了就知道：有没有这个界面，体验差一个档次。做 MOD 时顺手带上。</p>
+          <div class="src-line">最近更新 2026-06-29 · LGPL-3.0 · <a href="#r380">信源 [380]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 兼容层：让老游戏在现代系统跑起来（3 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">Windows 游戏跑在 Linux/Steam Deck 上这事，一度被认为不可能，后来被这一套做成了。<b>它们的价值不只是「能玩」——跑起来就意味着你多了一个完全可控的分析环境。</b></div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ValveSoftware/Proton" target="_blank">Proton</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">33k</span>
+            <span class="tag t-mod">兼容层</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">Valve 做的 <b>Windows 游戏在 Linux 上运行的兼容层</b>，Steam Deck 的全部魔法都来自它。三万多个 Windows 游戏靠它在 Linux 上跑通。对你有个额外好处：在 Linux 下跑游戏，系统和驱动层更透明，抓包、hook、内存观察都比 Windows 方便。</p>
+          <div class="src-line">最近更新 2026-09-08 · 自定义协议 · <a href="#r381">信源 [381]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/doitsujin/dxvk" target="_blank">DXVK</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">18k</span>
+            <span class="tag t-mod">图形转译</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">把 Direct3D 9/10/11 <b>实时翻译成 Vulkan</b>。Proton 能跑游戏主要靠它。技术含量很高的一层：它不是模拟，是把 Windows 的绘图指令逐个翻译成 Vulkan 等价物。分析老游戏的渲染逻辑时，这层翻译结果本身就是极好的文档。</p>
+          <div class="src-line">最近更新 2026-09-04 · Zlib · <a href="#r382">信源 [382]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/HansKristian-Work/vkd3d-proton" target="_blank">vkd3d-proton</a></span>
+            <span class="lang">C</span>
+            <span class="stars">2.9k</span>
+            <span class="tag t-mod">图形转译</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">DXVK 的兄弟，专管 <b>Direct3D 12 → Vulkan</b>。新游戏基本都上 D3D12 了，所以它现在是 Proton 能跑新作的关键。和 DXVK 一起用，覆盖了从老到新的全部 Windows 图形接口。</p>
+          <div class="src-line">最近更新 2026-09-07 · LGPL-2.1 · <a href="#r383">信源 [383]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 逆向分析框架：比 Ghidra 更适合批量干活（5 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">Ghidra 和 IDA 是<b>手动看</b>的工具；这一组是<b>自动干</b>的——写脚本批量分析、跑符号执行、模拟执行。真要处理几十个游戏时，省的是数量级的人力。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/radareorg/radare2" target="_blank">radare2</a></span>
+            <span class="lang">C</span>
+            <span class="stars">25k</span>
+            <span class="tag t-mod">逆向框架</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>命令行版的全能逆向工具</b>，反汇编、调试、二进制 diff、patch 全包，而且一切都能脚本化。相比 Ghidra 的图形界面，它更适合「写个脚本把 50 个 exe 全部扫一遍」。学习曲线陡，但一旦上手效率极高。</p>
+          <div class="src-line">最近更新 2026-09-08 · 自定义协议 · <a href="#r384">信源 [384]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/rizinorg/cutter" target="_blank">Cutter</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">20k</span>
+            <span class="tag t-mod">逆向 GUI</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">给 radare2/rizin 套了<b>一个像样的图形界面</b>，功能对标 IDA。免费开源，跨平台。想用图形界面看反汇编又不想装盗版 IDA，它是首选。</p>
+          <div class="src-line">最近更新 2026-08-22 · GPL-3.0 · <a href="#r385">信源 [385]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/angr/angr" target="_blank">angr</a></span>
+            <span class="lang">Python</span>
+            <span class="stars">9.1k</span>
+            <span class="tag t-mod">二进制分析</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">用 Python 写<b>自动化二进制分析</b>的框架：符号执行、控制流图、自动找漏洞、自动解混淆。典型用法是「找出这个函数在什么输入下会走到那个分支」。学术圈和 CTF 圈的标准件，写论文级别的分析也靠它。</p>
+          <div class="src-line">最近更新 2026-09-08 · BSD-2-Clause · <a href="#r386">信源 [386]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/unicorn-engine/unicorn" target="_blank">Unicorn</a></span>
+            <span class="lang">C</span>
+            <span class="stars">9.3k</span>
+            <span class="tag t-mod">CPU 模拟</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">基于 QEMU 的<b>轻量级 CPU 模拟器</b>：把一段机器码喂进去，让它单独跑起来，不用真的启动进程。抓到游戏的加解密函数后，用 Unicorn 单独跑这个函数批量解资源，是最经典的解包套路之一。</p>
+          <div class="src-line">最近更新 2026-08-28 · GPL-2.0 · <a href="#r387">信源 [387]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/capstone-engine/capstone" target="_blank">Capstone</a></span>
+            <span class="lang">C</span>
+            <span class="stars">9k</span>
+            <span class="tag t-mod">反汇编引擎</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>几乎所有逆向工具底下的反汇编引擎</b>：x86、ARM、MIPS、PowerPC……喂它字节，吐你汇编。上面提到的 radare2、Ghidra、Unicorn 都在用它或它的同类。想自己写个小工具扫二进制，从它开始。</p>
+          <div class="src-line">最近更新 2026-09-06 · 未标注 · <a href="#r388">信源 [388]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · Hook 与注入：改游戏行为的最小单元（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">「在游戏某个函数执行时插入自己的代码」——这是 MOD、辅助、外挂、调试工具的<b>共同起点</b>。这两库是做这件事的标准件。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/TsudaKageyu/minhook" target="_blank">MinHook</a></span>
+            <span class="lang">C</span>
+            <span class="stars">6k</span>
+            <span class="tag t-mod">API Hook</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>最轻量的 Windows API Hook 库</b>，几百 KB，几行代码就能截获任意函数。上面说的 ReShade、各类 MOD 装载器，底层基本都是这种机制。想改游戏里某个行为（比如改伤害计算），先 hook 住那个函数。</p>
+          <div class="src-line">最近更新 2026-09-07 · 自定义协议 · <a href="#r389">信源 [389]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/microsoft/Detours" target="_blank">Detours</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">6.4k</span>
+            <span class="tag t-mod">API Hook</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">微软官方的 Hook 库，<b>稳定性和 x64 支持最好</b>，MIT 协议。相比 MinHook 更重、更保守，但适合做生产级工具。微软自己的很多诊断工具就基于它。</p>
+          <div class="src-line">最近更新 2026-08-24 · MIT · <a href="#r390">信源 [390]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 模拟器第二批：街机、DC、NDS 与多机种前端（6 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">上一版补了主机模拟器，这一版补齐<b>街机</b>和<b>两个掌机</b>，外加一个能统一管理全部模拟器的前端。对你的 73 款游戏库来说，模拟器意味着「同一个游戏可以拿到完全透明的开源环境里跑」。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/libretro/RetroArch" target="_blank">RetroArch</a></span>
+            <span class="lang">C</span>
+            <span class="stars">14k</span>
+            <span class="tag t-mod">模拟器前端</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>一个前端管几十个模拟器</b>：统一的按键、存档、滤镜、即时存档、网络对战。那些模拟器本体（叫 libretro core）是以插件形式跑在它上面的。装它等于一次装了整个复古游戏生态。</p>
+          <div class="src-line">最近更新 2026-09-08 · GPL-3.0 · <a href="#r391">信源 [391]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/mamedev/mame" target="_blank">MAME</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">10k</span>
+            <span class="tag t-mod">街机模拟</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>街机模拟与归档的终极项目</b>，目标是把历史上每一台街机主板精确地跑起来，已收录上万款。它的意义远超「玩游戏」——MAME 是保存电子游戏历史的最重要工程，驱动代码里写满了硬件规格，是逆向老硬件的第一手资料。</p>
+          <div class="src-line">最近更新 2026-09-08 · 自定义协议 · <a href="#r392">信源 [392]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/flyinghead/flycast" target="_blank">Flycast</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">2.5k</span>
+            <span class="tag t-mod">DC 模拟</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>世嘉 Dreamcast / Naomi 街机</b>模拟器，兼容性和画面增强都做得很好。Dreamcast 是很多经典（莎木、罪恶装备、生化危机代号维罗妮卡）的独占平台，想玩/想分析只能靠它。</p>
+          <div class="src-line">最近更新 2026-09-08 · GPL-2.0 · <a href="#r393">信源 [393]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/ares-emulator/ares" target="_blank">ares</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">1.8k</span>
+            <span class="tag t-mod">多机种模拟</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">以<b>「精确模拟」为最高目标</b>的多机种模拟器（higan 的后继）。它宁可慢也要保证硬件行为完全一致，所以是研究老硬件时序、做 TAS、验证模拟器准确性的基准。普通玩家可能更爱用快的，做分析的人更信它。</p>
+          <div class="src-line">最近更新 2026-09-06 · 自定义协议 · <a href="#r394">信源 [394]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/melonDS-emu/melonDS" target="_blank">melonDS</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">5k</span>
+            <span class="tag t-mod">NDS 模拟</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>任天堂 DS 模拟器里兼容性最好的</b>，还能模拟 Wi-Fi 联机和实体卡带。NDS 上有大量 Galgame 移植和 AVG 名作（你那批游戏里如果有 NDS 版，这是首选工具）。</p>
+          <div class="src-line">最近更新 2026-08-23 · GPL-3.0 · <a href="#r395">信源 [395]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/Xemu-project/xemu" target="_blank">Xemu</a></span>
+            <span class="lang">C</span>
+            <span class="stars">4.1k</span>
+            <span class="tag t-mod">初代 Xbox</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain">目前<b>唯一能跑初代 Xbox 游戏</b>的开源模拟器，从零逆向做出来的。技术难度极高，兼容性还在爬坡。价值在于：初代 Xbox 是很多 PC 游戏的同源版本，对比两边差异是分析移植策略的好素材。</p>
+          <div class="src-line">最近更新 2026-09-08 · 自定义协议 · <a href="#r396">信源 [396]</a></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">🆕 第九版新增 · 串流与开源重制补缺（2 项）</div>
+        <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">最后补两个：一个让你<b>远程接着玩</b>，一个是<b>社区接手商业游戏继续开发</b>的活样本。</div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/streetpea/chiaki-ng" target="_blank">Chiaki-ng</a></span>
+            <span class="lang">C</span>
+            <span class="stars">2.7k</span>
+            <span class="tag t-mod">远程串流</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>开源版 PS Remote Play</b>：把 PS4/PS5 画面串流到电脑或 Steam Deck，支持比官方更高的码率和自定义按键映射。适合人不在主机旁边时继续玩，也能录屏。</p>
+          <div class="src-line">最近更新 2026-09-07 · AGPL-3.0 · <a href="#r397">信源 [397]</a></div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <span class="card-name"><a href="https://github.com/OpenStarbound/OpenStarbound" target="_blank">OpenStarbound</a></span>
+            <span class="lang">C++</span>
+            <span class="stars">1.3k</span>
+            <span class="tag t-mod">社区重制</span>
+            <span class="tag t-ok">持续更新</span>
+          </div>
+          <p class="plain"><b>《Starbound》的开源社区续作</b>：原作者停更后，社区反编译并重写了引擎层，持续加功能、修 bug、上新版。它是「一个商业游戏在官方放弃后如何靠社区活下去」的绝佳样本，也是「逆向 + 重实现」这条路径最直观的成果展示。</p>
+          <div class="src-line">最近更新 2026-09-06 · 未标注 · <a href="#r398">信源 [398]</a></div>
+        </div>
+      </div>
+
 <div class="group" data-page-node-id="xUQ3G1HUxM8Q9WyNAspQzc">
       <div class="group-title" data-page-node-id="cFFl2p4ysJZhou9AyTR5RC">游戏拓展速查 · 其余与替代方案</div>
       <div class="tbl-wrap" data-page-node-id="T8b06ZBQdHvmeGHqmNNxCm">
@@ -5410,8 +6384,87 @@ footer a{color:var(--text-2)}
       <div id="r317">[317] <a href="https://github.com/balamod/balamod" target="_blank">balamod/balamod</a> — 158 · 2025-01-11 · Apache-2.0</div>
       <div id="r318">[318] <a href="https://github.com/RimWorld-zh/RimTrans" target="_blank">RimWorld-zh/RimTrans</a> — 83 · 2022-12-10 · MIT</div>
       <div id="r319">[319] <a href="https://github.com/PrismarineJS/mineflayer" target="_blank">PrismarineJS/mineflayer</a> — 7.4k · 2026-09-07 · MIT</div>
+      <div id="r320">[320] <a href="https://github.com/baldurk/renderdoc" target="_blank">baldurk/renderdoc</a> — 11k · 2026-09-06 · MIT</div>
+      <div id="r321">[321] <a href="https://github.com/KhronosGroup/SPIRV-Cross" target="_blank">KhronosGroup/SPIRV-Cross</a> — 2.5k · 2026-09-07 · Apache-2.0</div>
+      <div id="r322">[322] <a href="https://github.com/KhronosGroup/glslang" target="_blank">KhronosGroup/glslang</a> — 3.6k · 2026-09-07 · 自定义协议</div>
+      <div id="r323">[323] <a href="https://github.com/BinomialLLC/basis_universal" target="_blank">BinomialLLC/basis_universal</a> — 3.1k · 2026-09-01 · Apache-2.0</div>
+      <div id="r324">[324] <a href="https://github.com/Chlumsky/msdf-atlas-gen" target="_blank">Chlumsky/msdf-atlas-gen</a> — 1.3k · 2026-05-16 · MIT</div>
+      <div id="r325">[325] <a href="https://github.com/libsdl-org/SDL" target="_blank">libsdl-org/SDL</a> — 17k · 2026-09-07 · Zlib</div>
+      <div id="r326">[326] <a href="https://github.com/glfw/glfw" target="_blank">glfw/glfw</a> — 15k · 2026-08-04 · Zlib</div>
+      <div id="r327">[327] <a href="https://github.com/emscripten-core/emscripten" target="_blank">emscripten-core/emscripten</a> — 28k · 2026-09-07 · 自定义协议</div>
+      <div id="r328">[328] <a href="https://github.com/xmake-io/xmake" target="_blank">xmake-io/xmake</a> — 12k · 2026-09-06 · Apache-2.0</div>
+      <div id="r329">[329] <a href="https://github.com/NVIDIA-Omniverse/PhysX" target="_blank">NVIDIA-Omniverse/PhysX</a> — 4.8k · 2026-09-03 · BSD-3-Clause</div>
+      <div id="r330">[330] <a href="https://github.com/slembcke/Chipmunk2D" target="_blank">slembcke/Chipmunk2D</a> — 2.4k · 2026-05-05 · MIT</div>
+      <div id="r331">[331] <a href="https://github.com/guillaumeblanc/ozz-animation" target="_blank">guillaumeblanc/ozz-animation</a> — 2.9k · 2026-08-01 · 自定义协议</div>
+      <div id="r332">[332] <a href="https://github.com/nfrechette/acl" target="_blank">nfrechette/acl</a> — 1.6k · 2025-11-26 · MIT</div>
+      <div id="r333">[333] <a href="https://github.com/inkle/ink" target="_blank">inkle/ink</a> — 4.9k · 2026-05-05 · MIT</div>
+      <div id="r334">[334] <a href="https://github.com/klembot/twinejs" target="_blank">klembot/twinejs</a> — 2.9k · 2026-09-05 · GPL-3.0</div>
+      <div id="r335">[335] <a href="https://github.com/DRincs-Productions/pixi-vn" target="_blank">DRincs-Productions/pixi-vn</a> — 144 · 2026-09-01 · LGPL-2.1</div>
+      <div id="r336">[336] <a href="https://github.com/Tencent/xlua" target="_blank">Tencent/xlua</a> — 10k · 2025-11-21 · 自定义协议</div>
+      <div id="r337">[337] <a href="https://github.com/Tencent/puerts" target="_blank">Tencent/puerts</a> — 6.2k · 2026-09-05 · 自定义协议</div>
+      <div id="r338">[338] <a href="https://github.com/Tencent/UnLua" target="_blank">Tencent/UnLua</a> — 2.8k · 2026-04-02 · 自定义协议</div>
+      <div id="r339">[339] <a href="https://github.com/Ourpalm/ILRuntime" target="_blank">Ourpalm/ILRuntime</a> — 3.1k · 2026-08-20 · 自定义协议</div>
+      <div id="r340">[340] <a href="https://github.com/googleforgames/open-match" target="_blank">googleforgames/open-match</a> — 3.4k · 2026-07-12 · Apache-2.0</div>
+      <div id="r341">[341] <a href="https://github.com/FirstGearGames/FishNet" target="_blank">FirstGearGames/FishNet</a> — 2k · 2026-09-02 · 自定义协议</div>
+      <div id="r342">[342] <a href="https://github.com/emilk/egui" target="_blank">emilk/egui</a> — 30k · 2026-09-07 · Apache-2.0</div>
+      <div id="r343">[343] <a href="https://github.com/tauri-apps/tauri" target="_blank">tauri-apps/tauri</a> — 110.9k · 2026-09-08 · Apache-2.0</div>
+      <div id="r344">[344] <a href="https://github.com/juce-framework/JUCE" target="_blank">juce-framework/JUCE</a> — 8.9k · 2026-09-07 · 自定义协议</div>
+      <div id="r345">[345] <a href="https://github.com/obsproject/obs-studio" target="_blank">obsproject/obs-studio</a> — 76k · 2026-09-05 · GPL-2.0</div>
+      <div id="r346">[346] <a href="https://github.com/Anuken/Mindustry" target="_blank">Anuken/Mindustry</a> — 29k · 2026-09-08 · GPL-3.0</div>
+      <div id="r347">[347] <a href="https://github.com/ppy/osu" target="_blank">ppy/osu</a> — 19k · 2026-09-07 · MIT</div>
+      <div id="r348">[348] <a href="https://github.com/CleverRaven/Cataclysm-DDA" target="_blank">CleverRaven/Cataclysm-DDA</a> — 13k · 2026-09-08 · 自定义协议</div>
+      <div id="r349">[349] <a href="https://github.com/ddnet/ddnet" target="_blank">ddnet/ddnet</a> — 822 · 2026-09-08 · 自定义协议</div>
+      <div id="r350">[350] <a href="https://github.com/SuperTux/supertux" target="_blank">SuperTux/supertux</a> — 3.1k · 2026-09-07 · GPL-3.0</div>
+      <div id="r351">[351] <a href="https://github.com/Warzone2100/warzone2100" target="_blank">Warzone2100/warzone2100</a> — 3.9k · 2026-09-08 · GPL-2.0</div>
+      <div id="r352">[352] <a href="https://github.com/id-Software/DOOM" target="_blank">id-Software/DOOM</a> — 20k · 2024-05-24 · GPL-2.0</div>
+      <div id="r353">[353] <a href="https://github.com/Unity-Technologies/UnityCsReference" target="_blank">Unity-Technologies/UnityCsReference</a> — 13k · 2026-09-07 · 自定义协议</div>
+      <div id="r354">[354] <a href="https://github.com/ollama/ollama" target="_blank">ollama/ollama</a> — 180.5k · 2026-09-07 · MIT</div>
+      <div id="r355">[355] <a href="https://github.com/ggml-org/llama.cpp" target="_blank">ggml-org/llama.cpp</a> — 127.5k · 2026-09-08 · MIT</div>
+      <div id="r356">[356] <a href="https://github.com/hiyouga/LLaMA-Factory" target="_blank">hiyouga/LLaMA-Factory</a> — 75k · 2026-09-08 · Apache-2.0</div>
+      <div id="r357">[357] <a href="https://github.com/unslothai/unsloth" target="_blank">unslothai/unsloth</a> — 76k · 2026-09-08 · Apache-2.0</div>
+      <div id="r358">[358] <a href="https://github.com/langgenius/dify" target="_blank">langgenius/dify</a> — 154.9k · 2026-09-08 · 自定义协议</div>
+      <div id="r359">[359] <a href="https://github.com/crewAIInc/crewAI" target="_blank">crewAIInc/crewAI</a> — 58k · 2026-09-08 · MIT</div>
+      <div id="r360">[360] <a href="https://github.com/BerriAI/litellm" target="_blank">BerriAI/litellm</a> — 58k · 2026-09-08 · 自定义协议</div>
+      <div id="r361">[361] <a href="https://github.com/vllm-project/vllm" target="_blank">vllm-project/vllm</a> — 91k · 2026-09-08 · Apache-2.0</div>
+      <div id="r362">[362] <a href="https://github.com/songquanpeng/one-api" target="_blank">songquanpeng/one-api</a> — 37k · 2026-01-09 · MIT</div>
+      <div id="r363">[363] <a href="https://github.com/google-gemini/gemini-cli" target="_blank">google-gemini/gemini-cli</a> — 106.9k · 2026-09-08 · Apache-2.0</div>
+      <div id="r364">[364] <a href="https://github.com/PaddlePaddle/PaddleOCR" target="_blank">PaddlePaddle/PaddleOCR</a> — 89k · 2026-07-22 · Apache-2.0</div>
+      <div id="r365">[365] <a href="https://github.com/xinntao/Real-ESRGAN" target="_blank">xinntao/Real-ESRGAN</a> — 37k · 2024-08-06 · BSD-3-Clause</div>
+      <div id="r366">[366] <a href="https://github.com/TencentARC/GFPGAN" target="_blank">TencentARC/GFPGAN</a> — 38k · 2024-07-26 · 自定义协议</div>
+      <div id="r367">[367] <a href="https://github.com/sczhou/CodeFormer" target="_blank">sczhou/CodeFormer</a> — 18k · 2025-11-18 · 自定义协议</div>
+      <div id="r368">[368] <a href="https://github.com/kohya-ss/sd-scripts" target="_blank">kohya-ss/sd-scripts</a> — 7.2k · 2026-08-02 · Apache-2.0</div>
+      <div id="r369">[369] <a href="https://github.com/FunAudioLLM/CosyVoice" target="_blank">FunAudioLLM/CosyVoice</a> — 24k · 2026-05-25 · Apache-2.0</div>
+      <div id="r370">[370] <a href="https://github.com/fishaudio/fish-speech" target="_blank">fishaudio/fish-speech</a> — 33k · 2026-09-07 · 自定义协议</div>
+      <div id="r371">[371] <a href="https://github.com/SWivid/F5-TTS" target="_blank">SWivid/F5-TTS</a> — 15k · 2026-07-23 · MIT</div>
+      <div id="r372">[372] <a href="https://github.com/myshell-ai/MeloTTS" target="_blank">myshell-ai/MeloTTS</a> — 7.6k · 2024-12-24 · MIT</div>
+      <div id="r373">[373] <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank">AUTOMATIC1111/stable-diffusion-webui</a> — 164.9k · 2026-03-02 · AGPL-3.0</div>
+      <div id="r374">[374] <a href="https://github.com/VAST-AI-Research/TripoSR" target="_blank">VAST-AI-Research/TripoSR</a> — 6.9k · 2026-06-04 · MIT</div>
+      <div id="r375">[375] <a href="https://github.com/TencentARC/InstantMesh" target="_blank">TencentARC/InstantMesh</a> — 4.5k · 2025-01-03 · Apache-2.0</div>
+      <div id="r376">[376] <a href="https://github.com/crosire/reshade" target="_blank">crosire/reshade</a> — 5.5k · 2026-09-02 · BSD-3-Clause</div>
+      <div id="r377">[377] <a href="https://github.com/Kaldaien/SpecialK" target="_blank">Kaldaien/SpecialK</a> — 356 · 2022-01-29 · 未标注</div>
+      <div id="r378">[378] <a href="https://github.com/ThirteenAG/Ultimate-ASI-Loader" target="_blank">ThirteenAG/Ultimate-ASI-Loader</a> — 2.2k · 2026-08-28 · MIT</div>
+      <div id="r379">[379] <a href="https://github.com/UE4SS-RE/RE-UE4SS" target="_blank">UE4SS-RE/RE-UE4SS</a> — 2.9k · 2026-09-08 · MIT</div>
+      <div id="r380">[380] <a href="https://github.com/BepInEx/BepInEx.ConfigurationManager" target="_blank">BepInEx/BepInEx.ConfigurationManager</a> — 407 · 2026-06-29 · LGPL-3.0</div>
+      <div id="r381">[381] <a href="https://github.com/ValveSoftware/Proton" target="_blank">ValveSoftware/Proton</a> — 33k · 2026-09-08 · 自定义协议</div>
+      <div id="r382">[382] <a href="https://github.com/doitsujin/dxvk" target="_blank">doitsujin/dxvk</a> — 18k · 2026-09-04 · Zlib</div>
+      <div id="r383">[383] <a href="https://github.com/HansKristian-Work/vkd3d-proton" target="_blank">HansKristian-Work/vkd3d-proton</a> — 2.9k · 2026-09-07 · LGPL-2.1</div>
+      <div id="r384">[384] <a href="https://github.com/radareorg/radare2" target="_blank">radareorg/radare2</a> — 25k · 2026-09-08 · 自定义协议</div>
+      <div id="r385">[385] <a href="https://github.com/rizinorg/cutter" target="_blank">rizinorg/cutter</a> — 20k · 2026-08-22 · GPL-3.0</div>
+      <div id="r386">[386] <a href="https://github.com/angr/angr" target="_blank">angr/angr</a> — 9.1k · 2026-09-08 · BSD-2-Clause</div>
+      <div id="r387">[387] <a href="https://github.com/unicorn-engine/unicorn" target="_blank">unicorn-engine/unicorn</a> — 9.3k · 2026-08-28 · GPL-2.0</div>
+      <div id="r388">[388] <a href="https://github.com/capstone-engine/capstone" target="_blank">capstone-engine/capstone</a> — 9k · 2026-09-06 · 未标注</div>
+      <div id="r389">[389] <a href="https://github.com/TsudaKageyu/minhook" target="_blank">TsudaKageyu/minhook</a> — 6k · 2026-09-07 · 自定义协议</div>
+      <div id="r390">[390] <a href="https://github.com/microsoft/Detours" target="_blank">microsoft/Detours</a> — 6.4k · 2026-08-24 · MIT</div>
+      <div id="r391">[391] <a href="https://github.com/libretro/RetroArch" target="_blank">libretro/RetroArch</a> — 14k · 2026-09-08 · GPL-3.0</div>
+      <div id="r392">[392] <a href="https://github.com/mamedev/mame" target="_blank">mamedev/mame</a> — 10k · 2026-09-08 · 自定义协议</div>
+      <div id="r393">[393] <a href="https://github.com/flyinghead/flycast" target="_blank">flyinghead/flycast</a> — 2.5k · 2026-09-08 · GPL-2.0</div>
+      <div id="r394">[394] <a href="https://github.com/ares-emulator/ares" target="_blank">ares-emulator/ares</a> — 1.8k · 2026-09-06 · 自定义协议</div>
+      <div id="r395">[395] <a href="https://github.com/melonDS-emu/melonDS" target="_blank">melonDS-emu/melonDS</a> — 5k · 2026-08-23 · GPL-3.0</div>
+      <div id="r396">[396] <a href="https://github.com/Xemu-project/xemu" target="_blank">Xemu-project/xemu</a> — 4.1k · 2026-09-08 · 自定义协议</div>
+      <div id="r397">[397] <a href="https://github.com/streetpea/chiaki-ng" target="_blank">streetpea/chiaki-ng</a> — 2.7k · 2026-09-07 · AGPL-3.0</div>
+      <div id="r398">[398] <a href="https://github.com/OpenStarbound/OpenStarbound" target="_blank">OpenStarbound/OpenStarbound</a> — 1.3k · 2026-09-06 · 未标注</div>
 </div>
-    <p style="margin-top:20px" data-page-node-id="O37gF01g8Bs02zaZO7NjbT">报告生成时间：2026-09-08（第八版）· 上一版：2026-09-08（第七版）· 再上一版：2026-09-06 · 再上一版：2026-09-04 · 再上一版：2026-09-03 · 上上版：2026-09-02 · 上上上版：2026-09-01 · 本页为静态单文件 HTML，无外部依赖。</p>
+    <p style="margin-top:20px" data-page-node-id="O37gF01g8Bs02zaZO7NjbT">报告生成时间：2026-09-08（第九版）· 上一版：2026-09-08（第八版）· 再上一版：2026-09-06 · 再上一版：2026-09-04 · 再上一版：2026-09-03 · 上上版：2026-09-02 · 上上上版：2026-09-01 · 本页为静态单文件 HTML，无外部依赖。</p>
   </footer>
 </div>
 </body>
