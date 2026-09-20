@@ -215,10 +215,10 @@ footer a{color:var(--text-2)}
     <h1 data-page-node-id="AiHFaPLbdzWhs4cJxbPaCG">游戏制作 × 游戏拓展 · 重点：AI 制作游戏<br data-page-node-id="7picbxz1uDgskpVGBQndAe">三条线上的开源工具地图</h1>
     <p class="sub" data-page-node-id="LVHhXAo5FhfwKnCSkj9LXr">从 GitHub 上筛出真正活跃、能落地的项目，用人话讲清楚它们各自解决什么问题、能不能二次开发、值不值得花时间。不是罗列链接，是帮你做取舍。</p>
     <div class="meta" data-page-node-id="xhBz9HP4CMitXa7DRJmiCE">
-      <span data-page-node-id="U5SVC0zIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第十六版增补 2026-09-20</span>
-      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1065 个项目</span>
+      <span data-page-node-id="U5SVC0zIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第十七版增补 2026-09-20</span>
+      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1071 个项目</span>
       <span data-page-node-id="DCE1SCzjW3tXhAFVtReJ7C">星级 / 更新时间 / License 逐项实测</span>
-      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项（均与上版零重复）</span>
+      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项（均与上版零重复）</span>
     </div>
   </div>
 </header>
@@ -10563,6 +10563,117 @@ footer a{color:var(--text-2)}
 
     </div>
 
+    <div class="group" data-page-node-id="rpm17g">
+      <div class="group-title" data-page-node-id="rpm17gt">🆕 第十七版增补 · 把「AI 做游戏」拆开看（6 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm17gd">这一批的关键词是<strong>「拆开」</strong>：把 agent 框架拆成零件做消融实验（含一篇 arXiv 论文的官方仓库）、把中文语音合成拆到能离线跑（本项目的配音就是靠它落地的）、把图生 3D 拆到本地桌面、把「给既有游戏接 LLM」拆成一个个可开关的扩展。<strong>星级跨度从 5 到 14864，别按星看，按「它拆开了什么」看</strong>。星级 / 语言 / 协议为 2026-09-20 用 GitHub API 实测。</p>
+
+      <div class="card" data-page-node-id="rpm17c1">
+        <div class="card-top" data-page-node-id="rpm17c1t">
+          <span class="card-name" data-page-node-id="rpm17c1mn"><a href="https://github.com/Flesymeb/HarnessOfHarness" target="_blank" data-page-node-id="rpm17c1n">HarnessOfHarness（多日自主开发的改进环）</a></span>
+          <span class="lang" data-page-node-id="rpm17c1l">论文配套代码</span>
+          <span class="stars" data-page-node-id="rpm17c1s">138</span>
+          <span class="tag t-make" data-page-node-id="rpm17c1t1">Agent 工程</span>
+          <span class="tag t-ok" data-page-node-id="rpm17c1t2">有对照实验</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm17c1p">arXiv:2609.01481 的官方仓库。它不造新的 agent 框架，而是<strong>操作现有的框架</strong>（Codex+GPT-5.5 / OpenCode+DeepSeek-V4-Pro / Pi+MiniMax-M3），把它们的执行组织成迭代的「计划-编码-测试」环，靠五条机制跨环保持改进：平衡「修」与「长能力」、把开发切成<strong>小而可验证的增量</strong>、把实现期测试与独立评估分开、约束可验证的产出而不是规定工作流、渐进式暴露工具与技能并鼓励复用。</p>
+        <div class="analogy" data-page-node-id="rpm17c1a"><b data-page-node-id="rpm17c1ab">打个比方：</b>别的项目在教你「怎么让 AI 更强」，这个在教你<strong>「怎么让 AI 连续干很多天还不跑偏」</strong>。三个基准、三对模型组合，平均相对提升 52.25%、最大 82.86%；多日部署跑到 70+ 轮迭代时，它自主做出了一款第一人称射击游戏。</div>
+        <div class="grid2" data-page-node-id="rpm17c1g">
+          <div class="mini" data-page-node-id="rpm17c1m1"><span class="lbl" data-page-node-id="rpm17c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm17c1m1b"><div class="bar-track" data-page-node-id="rpm17c1m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm17c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm17c1m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c1m1v">不绑定某个框架，换模型 / 换 harness 都能套；五条机制里前两条可以直接抄</div></div>
+          <div class="mini" data-page-node-id="rpm17c1m2"><span class="lbl" data-page-node-id="rpm17c1m2l">实用性</span><div class="bar" data-page-node-id="rpm17c1m2b"><div class="bar-track" data-page-node-id="rpm17c1m2t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm17c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm17c1m2n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c1m2v">对「一次只做一晚上」的用法收益有限（差异在第三次迭代后才拉开）；对长期项目的方法论价值很高</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm17c1c">最近推送 2026-09-08 · MIT · 信源 [1065]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm17c2">
+        <div class="card-top" data-page-node-id="rpm17c2t">
+          <span class="card-name" data-page-node-id="rpm17c2mn"><a href="https://github.com/thewh1teagle/kokoro-onnx" target="_blank" data-page-node-id="rpm17c2n">kokoro-onnx（含中文语音包）</a></span>
+          <span class="lang" data-page-node-id="rpm17c2l">Python</span>
+          <span class="stars" data-page-node-id="rpm17c2s">2736</span>
+          <span class="tag t-make" data-page-node-id="rpm17c2t1">本地 TTS</span>
+          <span class="tag t-ok" data-page-node-id="rpm17c2t2">离线零成本</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm17c2p">ONNX 版 Kokoro 语音合成。它的 <code>model-files-v1.1</code> release 里放了<strong>中文专用模型</strong>：<code>kokoro-v1.1-zh.onnx</code>（310MB）/ <code>.fp16</code>（156MB）/ <code>.int8</code>（108MB）+ <code>voices-v1.1-zh.bin</code>（51MB）。本机实测加载后 <code>get_voices()</code> 返回 <strong>103 个音色</strong>，中文部分是 55 个 <code>zf_*</code>（女）+ 48 个 <code>zm_*</code>（男）。</p>
+        <div class="analogy" data-page-node-id="rpm17c2a"><b data-page-node-id="rpm17c2ab">打个比方：</b>中文配音的开源方案过去问题不是「没有」，是「只有一个声音」——<strong>一个声音就分不出角色</strong>。这个的意义是「够多、能挑、还离线」。本项目第 6 轮就是用它给《翁法罗斯吐槽实录》配的音。</div>
+        <div class="analogy" data-page-node-id="rpm17c2w"><b data-page-node-id="rpm17c2wb">注意：</b>清华 PyPI 镜像里没有这个包（from versions: none），必须走默认源；运行前要 unset PYTHONPATH（否则 WorkBuddy 的 safe-delete 保护会把 HuggingFace / onnx 的临时文件清理误判成批量删除）。另外：<b>中英混排选 Kokoro 而不是纯中文模型</b>（判据来自 sherpa-onnx 的文档，那个项目本索引第 [466] 条已收）。</div>
+        <div class="grid2" data-page-node-id="rpm17c2g">
+          <div class="mini" data-page-node-id="rpm17c2m1"><span class="lbl" data-page-node-id="rpm17c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm17c2m1b"><div class="bar-track" data-page-node-id="rpm17c2m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm17c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm17c2m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c2m1v">MIT，模型和代码分离，可以只拿模型接自己的推理；103 个音色够按角色分声</div></div>
+          <div class="mini" data-page-node-id="rpm17c2m2"><span class="lbl" data-page-node-id="rpm17c2m2l">实用性</span><div class="bar" data-page-node-id="rpm17c2m2b"><div class="bar-track" data-page-node-id="rpm17c2m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm17c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm17c2m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c2m2v">CPU 就能跑（本机实测约 3 秒/句），零 API 成本、可无限重跑。选音色要按<strong>量出来的高频能量</strong>挑，别按角色性别挑——实测女声普遍有电音、男声干净</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm17c2c">最近推送 2026-09-01 · MIT · 信源 [1066]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm17c4">
+        <div class="card-top" data-page-node-id="rpm17c4t">
+          <span class="card-name" data-page-node-id="rpm17c4mn"><a href="https://github.com/lightningpixel/modly" target="_blank" data-page-node-id="rpm17c4n">Modly（本地图生 3D 桌面工具）</a></span>
+          <span class="lang" data-page-node-id="rpm17c4l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm17c4s">7635</span>
+          <span class="tag t-make" data-page-node-id="rpm17c4t1">3D 资产</span>
+          <span class="tag t-ok" data-page-node-id="rpm17c4t2">离线不上传</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm17c4p">把「图生 3D」做成<strong>桌面程序</strong>：本地 GPU 跑模型，图片不出本机；扩展系统可接 <strong>Hunyuan3D / TripoSG / Trellis2</strong> 等开源 3D 生成模型；输出 GLB / OBJ / STL；Windows / Linux / Apple Silicon 都有安装包。</p>
+        <div class="analogy" data-page-node-id="rpm17c4a"><b data-page-node-id="rpm17c4ab">打个比方：</b>AI 3D 资产一直有个别扭的地方：要么把素材传上去，要么按量付费。它把这两件事一起解决掉——<strong>一次性装好，之后随便用</strong>。对「用 AI 出 2D 做游戏、想顺手试试 3D」的人是零风险入口。</div>
+        <div class="analogy" data-page-node-id="rpm17c4w"><b data-page-node-id="rpm17c4wb">注意：</b>GitHub API 返回的 license 是 NOASSERTION（不是标准协议文本）。商用前请自己核一遍 LICENSE。</div>
+        <div class="grid2" data-page-node-id="rpm17c4g">
+          <div class="mini" data-page-node-id="rpm17c4m1"><span class="lbl" data-page-node-id="rpm17c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm17c4m1b"><div class="bar-track" data-page-node-id="rpm17c4m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm17c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm17c4m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c4m1v">插件式架构，能换不同开源 3D 生成模型；输出通用格式，不锁工具链</div></div>
+          <div class="mini" data-page-node-id="rpm17c4m2"><span class="lbl" data-page-node-id="rpm17c4m2l">实用性</span><div class="bar" data-page-node-id="rpm17c4m2b"><div class="bar-track" data-page-node-id="rpm17c4m2t"><div class="bar-fill" style="width:45%;background:var(--make)" data-page-node-id="rpm17c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm17c4m2n">4.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c4m2v">要本地 GPU；视觉小说用不上。登记它是方向信号：3D 资产「离线 + 免费」这一档已经有人做了</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm17c4c">最近推送 2026-09-19 · NOASSERTION · 信源 [1067]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm17c5">
+        <div class="card-top" data-page-node-id="rpm17c5t">
+          <span class="card-name" data-page-node-id="rpm17c5mn"><a href="https://github.com/ArsNativa/Degrees-of-Lewdity-Intelligence" target="_blank" data-page-node-id="rpm17c5n">D.O.L.I（给既有游戏接 LLM）</a></span>
+          <span class="lang" data-page-node-id="rpm17c5l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm17c5s">25</span>
+          <span class="tag t-mod" data-page-node-id="rpm17c5t1">Modding × AI</span>
+          <span class="tag t-ok" data-page-node-id="rpm17c5t2">活的 mod</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm17c5p">给一款成熟的既有游戏接上 LLM：提供<strong>智能 Agent 对话</strong>和 <strong>AI 战斗文本生成</strong>。今天（2026-09-20）还在推。</p>
+        <div class="analogy" data-page-node-id="rpm17c5a"><b data-page-node-id="rpm17c5ab">打个比方：</b>这类 mod 的正确姿势是<strong>「在外面套一层」，不是「重做游戏」</strong>——因为原版的数值体系本身就是最好的规格说明书，你不用重新发明平衡。对做游戏的人来说，这比任何「AI 原生引擎」的 demo 都更有参考价值。</div>
+        <div class="grid2" data-page-node-id="rpm17c5g">
+          <div class="mini" data-page-node-id="rpm17c5m1"><span class="lbl" data-page-node-id="rpm17c5m1l">可拓展性</span><div class="bar" data-page-node-id="rpm17c5m1b"><div class="bar-track" data-page-node-id="rpm17c5m1t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm17c5m1f"></div></div><span class="bar-num" data-page-node-id="rpm17c5m1n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c5m1v">TypeScript 写，接在既有游戏上，可以只开一部分功能（比如只要战斗文本）</div></div>
+          <div class="mini" data-page-node-id="rpm17c5m2"><span class="lbl" data-page-node-id="rpm17c5m2l">实用性</span><div class="bar" data-page-node-id="rpm17c5m2b"><div class="bar-track" data-page-node-id="rpm17c5m2t"><div class="bar-fill" style="width:35%;background:var(--make)" data-page-node-id="rpm17c5m2f"></div></div><span class="bar-num" data-page-node-id="rpm17c5m2n">3.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c5m2v">25★ 且是特定游戏的 mod，不能直接拿来用。价值在「怎么把 LLM 塞进已有玩法而不破坏平衡」这个问题上的现成答案</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm17c5c">最近推送 2026-09-20 · NOASSERTION · 信源 [1068]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm17c6">
+        <div class="card-top" data-page-node-id="rpm17c6t">
+          <span class="card-name" data-page-node-id="rpm17c6mn"><a href="https://github.com/Kanna-hanabi/WovenRealm" target="_blank" data-page-node-id="rpm17c6n">WovenRealm 织境空间（AI 剧情扩展层）</a></span>
+          <span class="lang" data-page-node-id="rpm17c6l">Ren'Py · Python</span>
+          <span class="stars" data-page-node-id="rpm17c6s">5</span>
+          <span class="tag t-mod" data-page-node-id="rpm17c6t1">AI 剧情层</span>
+          <span class="tag t-ok" data-page-node-id="rpm17c6t2">同引擎</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm17c6p"><strong>Ren'Py 项目</strong>（同一款引擎）的 AI 剧情扩展：在原版的世界、人物和数值体系之上加一层「可控的 AI 剧情扩展」——动态剧情、场景配图、<strong>剧情记忆</strong>、道具与补位装备；本体是主模组，另有生活 / 料理 / 战斗等辅助扩展陆续开放。</p>
+        <div class="analogy" data-page-node-id="rpm17c6a"><b data-page-node-id="rpm17c6ab">打个比方：</b>注意它的用词：<strong>「可控的」</strong>。它不吹「世界观无限生成」，而是给了剧情记忆和装备补位这两件很具体的事。对同引擎的项目来说，这是「AI 扩展怎么做才不崩」的第一个可读样本。</div>
+        <div class="grid2" data-page-node-id="rpm17c6g">
+          <div class="mini" data-page-node-id="rpm17c6m1"><span class="lbl" data-page-node-id="rpm17c6m1l">可拓展性</span><div class="bar" data-page-node-id="rpm17c6m1b"><div class="bar-track" data-page-node-id="rpm17c6m1t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm17c6m1f"></div></div><span class="bar-num" data-page-node-id="rpm17c6m1n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c6m1v">MIT；同引擎（Ren'Py）+ Python，架构可以直接读；模块化拆成了多个扩展模组</div></div>
+          <div class="mini" data-page-node-id="rpm17c6m2"><span class="lbl" data-page-node-id="rpm17c6m2l">实用性</span><div class="bar" data-page-node-id="rpm17c6m2b"><div class="bar-track" data-page-node-id="rpm17c6m2t"><div class="bar-fill" style="width:30%;background:var(--make)" data-page-node-id="rpm17c6m2f"></div></div><span class="bar-num" data-page-node-id="rpm17c6m2n">3.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c6m2v">5★、面向特定游戏，只登记不采用。本项目 ROADMAP 的「明确不做」里已经写过：吐槽向短篇的台词是手写的笑点，交给模型生成只会变平</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm17c6c">最近推送 2026-09-16 · MIT · 信源 [1069]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm17c7">
+        <div class="card-top" data-page-node-id="rpm17c7t">
+          <span class="card-name" data-page-node-id="rpm17c7mn"><a href="https://github.com/Jeffallan/claude-skills" target="_blank" data-page-node-id="rpm17c7n">claude-skills（含 game-developer）</a></span>
+          <span class="lang" data-page-node-id="rpm17c7l">Python</span>
+          <span class="stars" data-page-node-id="rpm17c7s">11546</span>
+          <span class="tag t-ok" data-page-node-id="rpm17c7t1">Skills 合集</span>
+          <span class="tag t-warn" data-page-node-id="rpm17c7t2">通用 3D 向</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm17c7p">一个 Claude Code / Codex 的 Skills 合集。其中 <code>game-developer</code> 那个的结构值得抄：<strong>每个阶段带 validation checkpoint</strong>（实现 → 跑 Profiler 确认帧时间 ≤16ms 再往下），以及两张明确到可判定的表——MUST DO / MUST NOT DO（不在 Update 里 Instantiate、不用字符串比较 tag 而用 CompareTag、不在循环里调 Find、不硬编码数值）。</p>
+        <div class="analogy" data-page-node-id="rpm17c7a"><b data-page-node-id="rpm17c7ab">打个比方：</b>它的价值在<strong>结构</strong>：把「不许做什么」写成能判定的句子，而不是写成叮嘱。这正是本项目房规在做的事（判据取属性，不取名字）。</div>
+        <div class="analogy" data-page-node-id="rpm17c7w"><b data-page-node-id="rpm17c7wb">注意：</b>这类通用引擎 skill 容易给人一种「装了就懂游戏开发」的错觉。实测判断：它写的都是正确的常识，但常识不是你的项目。先想清楚要它解决什么，再装。</div>
+        <div class="grid2" data-page-node-id="rpm17c7g">
+          <div class="mini" data-page-node-id="rpm17c7m1"><span class="lbl" data-page-node-id="rpm17c7m1l">可拓展性</span><div class="bar" data-page-node-id="rpm17c7m1b"><div class="bar-track" data-page-node-id="rpm17c7m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm17c7m1f"></div></div><span class="bar-num" data-page-node-id="rpm17c7m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c7m1v">MIT，skill 之间独立，可以只拿其中一个；文件结构本身是可复用的模板</div></div>
+          <div class="mini" data-page-node-id="rpm17c7m2"><span class="lbl" data-page-node-id="rpm17c7m2l">实用性</span><div class="bar" data-page-node-id="rpm17c7m2b"><div class="bar-track" data-page-node-id="rpm17c7m2t"><div class="bar-fill" style="width:30%;background:var(--make)" data-page-node-id="rpm17c7m2f"></div></div><span class="bar-num" data-page-node-id="rpm17c7m2n">3.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm17c7m2v">内容对本项目基本不适用——它面向 Unity / Unreal、60FPS、对象池、联机补偿，Ren'Py 视觉小说一条都用不上。抄的是「怎么组织约束」，不是「约束了什么」</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm17c7c">最近推送 2026-08-07 · MIT · 信源 [1070]</div>
+      </div>
+
+    </div>
+
 <section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
     <div class="sec-head" data-page-node-id="KqPcSUzx4I5yaVNTCjJjRR">
       <span class="sec-num" data-page-node-id="mCQ7flcAuePG05u4HEiQP1">3</span>
@@ -15205,7 +15316,13 @@ footer a{color:var(--text-2)}
     <div id="r789">[789] <a href="https://github.com/sagiegurari/cargo-make" target="_blank">sagiegurari/cargo-make</a> — 2950 · 2026-02-05 · Apache-2.0</div>
     <div id="r790">[790] <a href="https://github.com/vlang/v" target="_blank">vlang/v</a> — 37826 · 2026-09-09 · MIT</div>
     <div id="r791">[791] <a href="https://github.com/assemblyscript/assemblyscript" target="_blank">assemblyscript/assemblyscript</a> — 18006 · 2026-09-03 · Apache-2.0</div>
-    <div id="r792">[792] <a href="https://github.com/mono/mono" target="_blank">mono/mono</a> — 11465 · 2024-08-27 · NOASSERTION</div>
+    <div id="r792">[792] <a href="https://github.com/mono/mo
+      <div id="r1065" data-page-node-id="rpm17r1065">[1065] <a href="https://github.com/Flesymeb/HarnessOfHarness" target="_blank" data-page-node-id="rpm17ra1065">Flesymeb/HarnessOfHarness</a> — 138 · 2026-09-08 · MIT</div>
+      <div id="r1066" data-page-node-id="rpm17r1066">[1066] <a href="https://github.com/thewh1teagle/kokoro-onnx" target="_blank" data-page-node-id="rpm17ra1066">thewh1teagle/kokoro-onnx</a> — 2736 · 2026-09-01 · MIT</div>
+      <div id="r1067" data-page-node-id="rpm17r1067">[1067] <a href="https://github.com/lightningpixel/modly" target="_blank" data-page-node-id="rpm17ra1067">lightningpixel/modly</a> — 7635 · 2026-09-19 · NOASSERTION</div>
+      <div id="r1068" data-page-node-id="rpm17r1068">[1068] <a href="https://github.com/ArsNativa/Degrees-of-Lewdity-Intelligence" target="_blank" data-page-node-id="rpm17ra1068">ArsNativa/Degrees-of-Lewdity-Intelligence</a> — 25 · 2026-09-20 · NOASSERTION</div>
+      <div id="r1069" data-page-node-id="rpm17r1069">[1069] <a href="https://github.com/Kanna-hanabi/WovenRealm" target="_blank" data-page-node-id="rpm17ra1069">Kanna-hanabi/WovenRealm</a> — 5 · 2026-09-16 · MIT</div>
+      <div id="r1070" data-page-node-id="rpm17r1070">[1070] <a href="https://github.com/Jeffallan/claude-skills" target="_blank" data-page-node-id="rpm17ra1070">Jeffallan/claude-skills</a> — 11546 · 2026-08-07 · MIT</div>no" target="_blank">mono/mono</a> — 11465 · 2024-08-27 · NOASSERTION</div>
     <div id="r793">[793] <a href="https://github.com/lua/lua" target="_blank">lua/lua</a> — 10288 · 2026-08-28 · NOASSERTION</div>
     <div id="r794">[794] <a href="https://github.com/nathanhoad/godot_dialogue_manager" target="_blank">nathanhoad/godot_dialogue_manager</a> — 3841 · 2026-09-04 · MIT</div>
     <div id="r795">[795] <a href="https://github.com/nefarius/hidhide" target="_blank">nefarius/hidhide</a> — 1518 · 2026-07-05 · MIT</div>
