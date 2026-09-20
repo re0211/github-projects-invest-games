@@ -215,10 +215,10 @@ footer a{color:var(--text-2)}
     <h1 data-page-node-id="AiHFaPLbdzWhs4cJxbPaCG">游戏制作 × 游戏拓展 · 重点：AI 制作游戏<br data-page-node-id="7picbxz1uDgskpVGBQndAe">三条线上的开源工具地图</h1>
     <p class="sub" data-page-node-id="LVHhXAo5FhfwKnCSkj9LXr">从 GitHub 上筛出真正活跃、能落地的项目，用人话讲清楚它们各自解决什么问题、能不能二次开发、值不值得花时间。不是罗列链接，是帮你做取舍。</p>
     <div class="meta" data-page-node-id="xhBz9HP4CMitXa7DRJmiCE">
-      <span data-page-node-id="U5SVC0zIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第十五版增补 2026-09-20</span>
-      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1060 个项目</span>
+      <span data-page-node-id="U5SVC0zIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第十六版增补 2026-09-20</span>
+      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1065 个项目</span>
       <span data-page-node-id="DCE1SCzjW3tXhAFVtReJ7C">星级 / 更新时间 / License 逐项实测</span>
-      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项（均与上版零重复）</span>
+      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项（均与上版零重复）</span>
     </div>
   </div>
 </header>
@@ -10469,6 +10469,100 @@ footer a{color:var(--text-2)}
 
     </div>
 
+    <div class="group" data-page-node-id="rpm16g">
+      <div class="group-title" data-page-node-id="rpm16gt">🆕 第十六版增补 · AI agent 直接驱动引擎（Unity / Ren'Py 的 MCP 接入，5 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm16gd">这一批和前几版的方向不一样：不再是「用 AI 写代码」，而是<strong>让 AI agent 直接操作引擎</strong>。五个都是 MCP 服务器，而且第一次出现了 Ren'Py 的 MCP 生态。共同点：<strong>星都不多（4~60），价值在方向信号，不在成熟度</strong>；三个 Ren'Py 项目里有 1 个已知的字体授权坑（见第 2 张卡）。星级 / 语言 / 协议为 2026-09-20 用 GitHub API 实测。</p>
+
+      <div class="card" data-page-node-id="rpm16c1">
+        <div class="card-top" data-page-node-id="rpm16c1t">
+          <span class="card-name" data-page-node-id="rpm16c1mn"><a href="https://github.com/banjtheman/renpy_mcp_server" target="_blank" data-page-node-id="rpm16c1n">renpy_mcp_server</a></span>
+          <span class="lang" data-page-node-id="rpm16c1l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm16c1s">60</span>
+          <span class="tag t-make" data-page-node-id="rpm16c1t1">视觉小说</span>
+          <span class="tag t-ok" data-page-node-id="rpm16c1t2">4 个同类里星最多</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm16c1p">Ren'Py 的 MCP 服务器：让 AI 助手直接建项目、出背景、出带 5 档表情的立绘、写分支剧本、再编译成网页版预览。走的是 Gemini 2.5 Flash Image 出图，立绘<b>自带背景移除</b>，所以出来就是透明底。一条 setup.sh 把 SDK 和 web 支持模块一起装好。</p>
+        <div class="analogy" data-page-node-id="rpm16c1a"><b data-page-node-id="rpm16c1ab">打个比方：</b>它把<b>视觉小说这一套流水线整条端上来了</b>——我们做《翁法罗斯吐槽实录》时，绿幕生图、抠图、写脚本、lint、打包是五六个手工环节拼起来的，它是把它们串成一串工具调用。</div>
+        <div class="grid2" data-page-node-id="rpm16c1g">
+          <div class="mini" data-page-node-id="rpm16c1m1"><span class="lbl" data-page-node-id="rpm16c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm16c1m1b"><div class="bar-track" data-page-node-id="rpm16c1m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm16c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm16c1m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c1m1v">MIT，工具按环节切分，能只用其中几步（比如只要出图那两步）；不锁死客户端</div></div>
+          <div class="mini" data-page-node-id="rpm16c1m2"><span class="lbl" data-page-node-id="rpm16c1m2l">实用性</span><div class="bar" data-page-node-id="rpm16c1m2b"><div class="bar-track" data-page-node-id="rpm16c1m2t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm16c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm16c1m2n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c1m2v">60★ 是这批里最成熟的；但最后推送是 2026-02，比其它几个旧，用前先看它认不认你的 SDK 版本</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm16c1c">最近推送 2026-02-01 · MIT · 信源 [1060]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm16c2">
+        <div class="card-top" data-page-node-id="rpm16c2t">
+          <span class="card-name" data-page-node-id="rpm16c2mn"><a href="https://github.com/Muanchen2/renpy-mcp" target="_blank" data-page-node-id="rpm16c2n">Muanchen2/renpy-mcp（CJK 自动配字体）</a></span>
+          <span class="lang" data-page-node-id="rpm16c2l">Python</span>
+          <span class="stars" data-page-node-id="rpm16c2s">21</span>
+          <span class="tag t-make" data-page-node-id="rpm16c2t1">中文字体</span>
+          <span class="tag t-warn" data-page-node-id="rpm16c2t2">字体授权有坑</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm16c2p">7 个工具、570 行纯 Python 的 Ren'Py MCP：列 label、读某个 label 的全文、<b>按 7 种定位模式注入代码</b>、编译、lint、拷素材、量图片尺寸。它的卖点是<b>检测到中文就自动配字体</b>。</p>
+        <div class="analogy" data-page-node-id="rpm16c2a"><b data-page-node-id="rpm16c2ab">打个比方：</b>本项目踩过的第 1 号坑就是“中文满屏豆腐块”，看到“自动配字体”很容易想装。<b>实测结论是别装</b>：它的判据是“字体名不在我的白名单里就需要修”，于是把我们合规的思源黑体换成了系统的中易黑体（simhei）—— 后者是商业字体，拷进游戏发行 = 版权风险。详见下面的自测结论。</div>
+        <div class="analogy" data-page-node-id="rpm16c2w"><b data-page-node-id="rpm16c2wb">注意：</b>实测：把 gui.rpy 里 3 处 `fonts/SourceHanSansLite.ttf` 全部替换成 `simhei.ttf`，并从 C:\Windows\Fonts 拷贝该字体进 game/。**能跑，但商用有版权风险。**（它改了会先写 gui.rpy.bak 备份，这点比多数工具强）</div>
+        <div class="grid2" data-page-node-id="rpm16c2g">
+          <div class="mini" data-page-node-id="rpm16c2m1"><span class="lbl" data-page-node-id="rpm16c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm16c2m1b"><div class="bar-track" data-page-node-id="rpm16c2m1t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm16c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm16c2m1n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c2m1v">工具切得干净（读 / 写 / 编译 / lint 各自独立），exec_rpy 的 7 种定位模式值得抄</div></div>
+          <div class="mini" data-page-node-id="rpm16c2m2"><span class="lbl" data-page-node-id="rpm16c2m2l">实用性</span><div class="bar" data-page-node-id="rpm16c2m2b"><div class="bar-track" data-page-node-id="rpm16c2m2t"><div class="bar-fill" style="width:35%;background:var(--make)" data-page-node-id="rpm16c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm16c2m2n">3.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c2m2v">对**已经配好 CJK 字体**的项目是负收益；它真正有用的场景是“从零新建一个中文项目”，而且必须自己把字体换成 OFL 的</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm16c2c">最近推送 2026-06-01 · MIT · 信源 [1061]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm16c3">
+        <div class="card-top" data-page-node-id="rpm16c3t">
+          <span class="card-name" data-page-node-id="rpm16c3mn"><a href="https://github.com/fracturedring/renpy-mcp" target="_blank" data-page-node-id="rpm16c3n">fracturedring/renpy-mcp（带浏览器编辑器）</a></span>
+          <span class="lang" data-page-node-id="rpm16c3l">Python</span>
+          <span class="stars" data-page-node-id="rpm16c3s">16</span>
+          <span class="tag t-make" data-page-node-id="rpm16c3t1">74 工具</span>
+          <span class="tag t-warn" data-page-node-id="rpm16c3t2">AGPL-3.0 有传染性</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm16c3p">Ren'Py 的“<b>三条路都能走</b>”工具包：一个浏览器里的 Ren'Py 编辑器，加一个 74 个工具的 MCP 服务器。喜欢点鼠标的用编辑器，喜欢写代码的写代码，喜欢说话的就跟 Claude Code / Cursor 说。</p>
+        <div class="analogy" data-page-node-id="rpm16c3a"><b data-page-node-id="rpm16c3ab">打个比方：</b>很多工具会逼你选一种姿势（要么全自动、要么全手写）。它是<b>在同一个项目上留下三种入口</b>——改一个场景用编辑器、批量改五十处用代码、想不清楚的时候问 AI。</div>
+        <div class="grid2" data-page-node-id="rpm16c3g">
+          <div class="mini" data-page-node-id="rpm16c3m1"><span class="lbl" data-page-node-id="rpm16c3m1l">可拓展性</span><div class="bar" data-page-node-id="rpm16c3m1b"><div class="bar-track" data-page-node-id="rpm16c3m1t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm16c3m1f"></div></div><span class="bar-num" data-page-node-id="rpm16c3m1n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c3m1v">74 个工具的覆盖面是这批里最宽的；但 AGPL-3.0 传染性强，**商用前一定要确认自己的用法**</div></div>
+          <div class="mini" data-page-node-id="rpm16c3m2"><span class="lbl" data-page-node-id="rpm16c3m2l">实用性</span><div class="bar" data-page-node-id="rpm16c3m2b"><div class="bar-track" data-page-node-id="rpm16c3m2t"><div class="bar-fill" style="width:50%;background:var(--make)" data-page-node-id="rpm16c3m2f"></div></div><span class="bar-num" data-page-node-id="rpm16c3m2n">5.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c3m2v">16★、最后推送 2026-04；当“Ren'Py 能被 MCP 玩到什么程度”的参考样本更合适</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm16c3c">最近推送 2026-04-26 · AGPL-3.0 · 信源 [1062]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm16c4">
+        <div class="card-top" data-page-node-id="rpm16c4t">
+          <span class="card-name" data-page-node-id="rpm16c4mn"><a href="https://github.com/youichi-uda/renpy-mcp-pro-public" target="_blank" data-page-node-id="rpm16c4n">renpy-mcp-pro-public</a></span>
+          <span class="lang" data-page-node-id="rpm16c4l">Python · 另有网页版</span>
+          <span class="stars" data-page-node-id="rpm16c4s">4</span>
+          <span class="tag t-make" data-page-node-id="rpm16c4t1">剧情地图</span>
+          <span class="tag t-warn" data-page-node-id="rpm16c4t2">无 LICENSE 文件</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm16c4p">60 个工具的 Ren'Py MCP，外加**剧情地图**、实时面板和一个独立 CLI。它的定位不是“帮我写代码”，而是<b>“让我看清楚这个项目长什么样”</b>——分支走到哪、哪条线还没写、谁的台词占比最高。</p>
+        <div class="analogy" data-page-node-id="rpm16c4a"><b data-page-node-id="rpm16c4ab">打个比方：</b>写剧本写到第七天，人已经记不清“第三天那个选项到底通向哪里”。剧情地图就是<b>把脑内那张图搬到屏幕上</b>——这类工具解决的不是产能，是失控。</div>
+        <div class="analogy" data-page-node-id="rpm16c4w"><b data-page-node-id="rpm16c4wb">注意：</b>无许可证文件 = 默认版权归作者所有，不授予使用许可。想用先联系作者。</div>
+        <div class="grid2" data-page-node-id="rpm16c4g">
+          <div class="mini" data-page-node-id="rpm16c4m1"><span class="lbl" data-page-node-id="rpm16c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm16c4m1b"><div class="bar-track" data-page-node-id="rpm16c4m1t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm16c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm16c4m1n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c4m1v">有独立 CLI，不接 MCP 也能用；有公开的网页版可以直接看界面</div></div>
+          <div class="mini" data-page-node-id="rpm16c4m2"><span class="lbl" data-page-node-id="rpm16c4m2l">实用性</span><div class="bar" data-page-node-id="rpm16c4m2b"><div class="bar-track" data-page-node-id="rpm16c4m2t"><div class="bar-fill" style="width:40%;background:var(--make)" data-page-node-id="rpm16c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm16c4m2n">4.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c4m2v">4★、**仓库里没有 LICENSE 文件**（默认保留全部权利），当参考可以，别直接拿来嵌进产品</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm16c4c">最近推送 2026-03-17 · 无 LICENSE · 信源 [1063]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm16c5">
+        <div class="card-top" data-page-node-id="rpm16c5t">
+          <span class="card-name" data-page-node-id="rpm16c5mn"><a href="https://github.com/MosaicXR-AI/mosaic-bridge" target="_blank" data-page-node-id="rpm16c5n">mosaic-bridge（Unity，约 290 个工具）</a></span>
+          <span class="lang" data-page-node-id="rpm16c5l">C#</span>
+          <span class="stars" data-page-node-id="rpm16c5s">10</span>
+          <span class="tag t-make" data-page-node-id="rpm16c5t1">Unity</span>
+          <span class="tag t-ok" data-page-node-id="rpm16c5t2">工具面最大</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm16c5p">Unity 编辑器插件 + MCP 服务器，<b>约 290 个专门化工具</b>，覆盖程序化生成、模拟、物理、渲染、AI 行为，很多来自已发表的论文。支持 Claude / Cursor / Gemini 等 MCP 客户端。</p>
+        <div class="analogy" data-page-node-id="rpm16c5a"><b data-page-node-id="rpm16c5ab">打个比方：</b>别的 Unity MCP 给你“建对象、改材质”这类积木，它给的是<b>“跑一遍这套物理、按这篇论文生成这个行为”</b>这种已经组装好的模块。工具多到 290 个也意味着：模型选错工具的概率同步上升。</div>
+        <div class="analogy" data-page-node-id="rpm16c5w"><b data-page-node-id="rpm16c5wb">注意：</b>GitHub API 返回的 license 是 NOASSERTION（仓库自述 Apache 2.0，但仓库里可能不是标准文本）。商用前请自己核一遍 LICENSE。</div>
+        <div class="grid2" data-page-node-id="rpm16c5g">
+          <div class="mini" data-page-node-id="rpm16c5m1"><span class="lbl" data-page-node-id="rpm16c5m1l">可拓展性</span><div class="bar" data-page-node-id="rpm16c5m1b"><div class="bar-track" data-page-node-id="rpm16c5m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm16c5m1f"></div></div><span class="bar-num" data-page-node-id="rpm16c5m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c5m1v">工具按域切分且有论文出处，可以只要自己那一个域；仓库自述 Apache 2.0</div></div>
+          <div class="mini" data-page-node-id="rpm16c5m2"><span class="lbl" data-page-node-id="rpm16c5m2l">实用性</span><div class="bar" data-page-node-id="rpm16c5m2b"><div class="bar-track" data-page-node-id="rpm16c5m2t"><div class="bar-fill" style="width:45%;background:var(--make)" data-page-node-id="rpm16c5m2f"></div></div><span class="bar-num" data-page-node-id="rpm16c5m2n">4.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm16c5m2v">10★、2026-04 建。工具面大是优点也是负担——**先想清楚要它做什么，再装**，否则光是工具选择就把上下文吃光</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm16c5c">最近推送 2026-09-16 · 自述 Apache 2.0 · 信源 [1064]</div>
+      </div>
+
+    </div>
+
 <section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
     <div class="sec-head" data-page-node-id="KqPcSUzx4I5yaVNTCjJjRR">
       <span class="sec-num" data-page-node-id="mCQ7flcAuePG05u4HEiQP1">3</span>
@@ -15204,7 +15298,12 @@ footer a{color:var(--text-2)}
     <div id="r882">[882] <a href="https://github.com/sjtu-ipads/powerinfer" target="_blank">sjtu-ipads/powerinfer</a> — 9783 · 2026-05-11 · MIT</div>
     <div id="r883">[883] <a href="https://github.com/internlm/lmdeploy" target="_blank">internlm/lmdeploy</a> — 8050 · 2026-09-08 · Apache-2.0</div>
     <div id="r884">[884] <a href="https://github.com/turboderp-org/exllamav2" target="_blank">turboderp-org/exllamav2</a> — 4616 · 2026-03-04 · MIT</div>
-    <div id="r885">[885] <a href="https://github.com/huggingface/text-generation-inference" target="_blank">huggingface/text-generation-inference</a> — 10889 · 2026-03-21 · Apache-2.0</div>
+    <div id="r885">[885] <a href="https://github.com/
+      <div id="r1060" data-page-node-id="rpm16r1060">[1060] <a href="https://github.com/banjtheman/renpy_mcp_server" target="_blank" data-page-node-id="rpm16ra1060">banjtheman/renpy_mcp_server</a> — 60 · 2026-02-01 · MIT</div>
+      <div id="r1061" data-page-node-id="rpm16r1061">[1061] <a href="https://github.com/Muanchen2/renpy-mcp" target="_blank" data-page-node-id="rpm16ra1061">Muanchen2/renpy-mcp</a> — 21 · 2026-06-01 · MIT</div>
+      <div id="r1062" data-page-node-id="rpm16r1062">[1062] <a href="https://github.com/fracturedring/renpy-mcp" target="_blank" data-page-node-id="rpm16ra1062">fracturedring/renpy-mcp</a> — 16 · 2026-04-26 · AGPL-3.0</div>
+      <div id="r1063" data-page-node-id="rpm16r1063">[1063] <a href="https://github.com/youichi-uda/renpy-mcp-pro-public" target="_blank" data-page-node-id="rpm16ra1063">youichi-uda/renpy-mcp-pro-public</a> — 4 · 2026-03-17 · 无 LICENSE</div>
+      <div id="r1064" data-page-node-id="rpm16r1064">[1064] <a href="https://github.com/MosaicXR-AI/mosaic-bridge" target="_blank" data-page-node-id="rpm16ra1064">MosaicXR-AI/mosaic-bridge</a> — 10 · 2026-09-16 · 自述 Apache 2.0</div>huggingface/text-generation-inference" target="_blank">huggingface/text-generation-inference</a> — 10889 · 2026-03-21 · Apache-2.0</div>
     <div id="r886">[886] <a href="https://github.com/intel-analytics/ipex-llm" target="_blank">intel-analytics/ipex-llm</a> — 8856 · 2026-01-28 · Apache-2.0</div>
     <div id="r887">[887] <a href="https://github.com/langchain-ai/langchain" target="_blank">langchain-ai/langchain</a> — 145978 · 2026-09-09 · MIT</div>
     <div id="r888">[888] <a href="https://github.com/significant-gravitas/autogpt" target="_blank">significant-gravitas/autogpt</a> — 187214 · 2026-09-09 · NOASSERTION</div>

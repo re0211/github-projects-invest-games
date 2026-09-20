@@ -2,3 +2,6 @@ index_prev.html
 index.html.bak
 *.bak
 __pycache__/
+
+# 第三方参考实现（克隆来实测的，源在 GitHub，不进本仓库）
+/refs/
