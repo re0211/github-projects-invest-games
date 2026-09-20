@@ -215,10 +215,10 @@ footer a{color:var(--text-2)}
     <h1 data-page-node-id="AiHFaPLbdzWhs4cJxbPaCG">游戏制作 × 游戏拓展 · 重点：AI 制作游戏<br data-page-node-id="7picbxz1uDgskpVGBQndAe">三条线上的开源工具地图</h1>
     <p class="sub" data-page-node-id="LVHhXAo5FhfwKnCSkj9LXr">从 GitHub 上筛出真正活跃、能落地的项目，用人话讲清楚它们各自解决什么问题、能不能二次开发、值不值得花时间。不是罗列链接，是帮你做取舍。</p>
     <div class="meta" data-page-node-id="xhBz9HP4CMitXa7DRJmiCE">
-      <span data-page-node-id="U5SVC0zIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第十七版增补 2026-09-20</span>
-      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1071 个项目</span>
+      <span data-page-node-id="U5SVC0zIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第十八版增补 2026-09-20</span>
+      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1073 个项目</span>
       <span data-page-node-id="DCE1SCzjW3tXhAFVtReJ7C">星级 / 更新时间 / License 逐项实测</span>
-      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项（均与上版零重复）</span>
+      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项 + 第十八版增补 2 项（均与上版零重复）</span>
     </div>
   </div>
 </header>
@@ -10674,6 +10674,48 @@ footer a{color:var(--text-2)}
 
     </div>
 
+    <div class="group" data-page-node-id="rpm18g">
+      <div class="group-title" data-page-node-id="rpm18gt">🆕 第十八版增补 · 验证侧：程序管状态、截图当眼睛（2 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm18gd">这一批只有两张卡，关键词是<strong>「验证侧」</strong>：一个把世界模型的状态交给程序管（像素只负责渲染），一个给沙盒 NPC 装上「自己的眼睛」（截图当感知输入）。<strong>星级都不高（183 / 0），价值在方向信号不在成熟度</strong>——它们和本工作区一直在做的「闸门 + 截图证据」是同一件事在不同尺度上的样子。星级 / 语言 / 协议为 2026-09-20 用 GitHub API 实测。</p>
+
+      <div class="card" data-page-node-id="rpm18c1">
+        <div class="card-top" data-page-node-id="rpm18c1t">
+          <span class="card-name" data-page-node-id="rpm18c1mn"><a href="https://github.com/AlayaLab/pwm" target="_blank" data-page-node-id="rpm18c1n">pwm（Programmable World Model）</a></span>
+          <span class="lang" data-page-node-id="rpm18c1l">论文配套代码</span>
+          <span class="stars" data-page-node-id="rpm18c1s">183</span>
+          <span class="tag t-make" data-page-node-id="rpm18c1t1">世界模型</span>
+          <span class="tag t-ok" data-page-node-id="rpm18c1t2">方向信号</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm18c1p">arXiv:2609.10540 的官方仓库。视频世界模型玩久了会「变糊」——状态只存在于生成的像素里。它的路线很决绝：<strong>别让像素管状态，让程序管</strong>。agent 把规则翻译成可执行程序，轻量引擎维护显式、持久的全局世界状态（含屏幕外实体和背包），预训练视频模型只当渲染器。</p>
+        <div class="analogy" data-page-node-id="rpm18c1a"><b data-page-node-id="rpm18c1ab">打个比方：</b>和第十辑那条「AI 的『合理』基于视觉常识、游戏的『可行走』基于数学碰撞」是<strong>同一个命题的另一面</strong>：状态也一样，靠概率模型记逻辑账必然漂。CombatStateBench 上自报 94% 计数 / 98% 状态准确率（自报数字，等独立复现）。</div>
+        <div class="analogy" data-page-node-id="rpm18c1w"><b data-page-node-id="rpm18c1wb">注意：</b>GitHub API 未返回标准 license 文本，商用前自己核 LICENSE。</div>
+        <div class="grid2" data-page-node-id="rpm18c1g">
+          <div class="mini" data-page-node-id="rpm18c1m1"><span class="lbl" data-page-node-id="rpm18c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm18c1m1b"><div class="bar-track" data-page-node-id="rpm18c1m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm18c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm18c1m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm18c1m1v">「程序管状态 + 模型管渲染」的分工可以直接抄到任何 LLM 驱动的模拟里；CombatStateBench 一起开源</div></div>
+          <div class="mini" data-page-node-id="rpm18c1m2"><span class="lbl" data-page-node-id="rpm18c1m2l">实用性</span><div class="bar" data-page-node-id="rpm18c1m2b"><div class="bar-track" data-page-node-id="rpm18c1m2t"><div class="bar-fill" style="width:25%;background:var(--make)" data-page-node-id="rpm18c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm18c1m2n">2.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm18c1m2v">要 GPU、偏研究，视觉小说用不上。登记它是方向信号：世界模型这条线的下一步是「可编程」，不是「更大」</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm18c1c">最近推送 2026-09-10 · 无协议文本 · 信源 [1071]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm18c2">
+        <div class="card-top" data-page-node-id="rpm18c2t">
+          <span class="card-name" data-page-node-id="rpm18c2mn"><a href="https://github.com/CrazyDashTool/AI-sandbox" target="_blank" data-page-node-id="rpm18c2n">AI-sandbox（Gemma 4 NPC 沙盒）</a></span>
+          <span class="lang" data-page-node-id="rpm18c2l">GDScript</span>
+          <span class="stars" data-page-node-id="rpm18c2s">0</span>
+          <span class="tag t-make" data-page-node-id="rpm18c2t1">游戏 × AI</span>
+          <span class="tag t-ok" data-page-node-id="rpm18c2t2">附图提示词实证</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm18c2p">Gemma 4 挑战赛参赛作：Godot 4 沙盒里住着一个 AI NPC。每次思考都把世界状态、玩家近期行为、对话记忆、天气，<strong>加一张 NPC 自己视角的 1280×720 截图</strong>发给 Gemma 4 31B，换回一个 JSON 决策（speech / action / emotion），解析成真实游戏行为。</p>
+        <div class="analogy" data-page-node-id="rpm18c2a"><b data-page-node-id="rpm18c2ab">打个比方：</b>「截图进提示词」在这里被用来当 <strong>NPC 的眼睛</strong>——按钮美术改了它也认识，不用写死坐标。和第十辑学的「附图 &gt; 写话」是同一个道理，这次是在感知侧。</div>
+        <div class="analogy" data-page-node-id="rpm18c2w"><b data-page-node-id="rpm18c2wb">注意：</b>仓库推送日期是 2026-05-20，比挑战赛文章早——项目是老的，贴是补的宣传。按 M-0002 纪律照实记录。</div>
+        <div class="grid2" data-page-node-id="rpm18c2g">
+          <div class="mini" data-page-node-id="rpm18c2m1"><span class="lbl" data-page-node-id="rpm18c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm18c2m1b"><div class="bar-track" data-page-node-id="rpm18c2m1t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm18c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm18c2m1n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm18c2m1v">MIT、Godot 4 + GDScript，NPC 感知-决策-执行这条链路的实现可读；提示词模板完整</div></div>
+          <div class="mini" data-page-node-id="rpm18c2m2"><span class="lbl" data-page-node-id="rpm18c2m2l">实用性</span><div class="bar" data-page-node-id="rpm18c2m2b"><div class="bar-track" data-page-node-id="rpm18c2m2t"><div class="bar-fill" style="width:30%;background:var(--make)" data-page-node-id="rpm18c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm18c2m2n">3.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm18c2m2v">0★ 挑战赛作业，NPC 要 31B 模型，本机跑不动。抄的是「截图当感知输入 + JSON 当动作接口」这个结构，不是代码</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm18c2c">最近推送 2026-05-20 · MIT · 信源 [1072]</div>
+      </div>
+
+    </div>
+
 <section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
     <div class="sec-head" data-page-node-id="KqPcSUzx4I5yaVNTCjJjRR">
       <span class="sec-num" data-page-node-id="mCQ7flcAuePG05u4HEiQP1">3</span>
@@ -15290,7 +15332,9 @@ footer a{color:var(--text-2)}
     <div id="r763">[763] <a href="https://github.com/mlange-42/ark" target="_blank">mlange-42/ark</a> — 300 · 2026-08-17 · Apache-2.0</div>
     <div id="r764">[764] <a href="https://github.com/dragonbones/dragonbonesjs" target="_blank">dragonbones/dragonbonesjs</a> — 849 · 2026-01-23 · MIT</div>
     <div id="r765">[765] <a href="https://github.com/live2d/cubismnativeframework" target="_blank">live2d/cubismnativeframework</a> — 262 · 2026-06-26 · NOASSERTION</div>
-    <div id="r766">[766] <a href="https://github.com/isl-org/open3d" target="_blank">isl-org/open3d</a> — 13945 · 2026-09-08 · NOASSERTION</div>
+    <div id="r766">[766] <a href="https://github.com/isl-org/open3d" target="_blank">isl-org/open3d</a> — 13945 · 2026-09-08 · NO
+      <div id="r1071" data-page-node-id="rpm18r1071">[1071] <a href="https://github.com/AlayaLab/pwm" target="_blank" data-page-node-id="rpm18ra1071">AlayaLab/pwm</a> — 183 · 2026-09-10 · 无协议文本</div>
+      <div id="r1072" data-page-node-id="rpm18r1072">[1072] <a href="https://github.com/CrazyDashTool/AI-sandbox" target="_blank" data-page-node-id="rpm18ra1072">CrazyDashTool/AI-sandbox</a> — 0 · 2026-05-20 · MIT</div>ASSERTION</div>
     <div id="r767">[767] <a href="https://github.com/facebookresearch/pytorch3d" target="_blank">facebookresearch/pytorch3d</a> — 9965 · 2026-09-03 · NOASSERTION</div>
     <div id="r768">[768] <a href="https://github.com/pixaranimationstudios/openusd" target="_blank">pixaranimationstudios/openusd</a> — 7481 · 2026-09-08 · NOASSERTION</div>
     <div id="r769">[769] <a href="https://github.com/NVIDIAGameWorks/kaolin" target="_blank">NVIDIAGameWorks/kaolin</a> — 5168 · 2026-09-03 · Apache-2.0</div>
