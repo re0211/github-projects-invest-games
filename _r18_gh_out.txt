@@ -1,0 +1,153 @@
+### context engineering agent created:>2026-09-18
+harish-042002/harish-skills | 2 | 0 | mit | 2026-09-23 | Adaptive engineering control plane for AI coding agents — the right specialist depth for e
+Coddyum/context-engineering | 1 | 0 | mit | 2026-09-21 | How I run coding agents on large projects: routed memory, rules loaded on demand, mechanic
+uos1231234/agent-harness-skeleton | 1 | 0 | mit | 2026-09-21 |  A minimal, safe, terminable agent-loop skeleton — OpenAI protocol client + runtime guard 
+uos1231234/agent-shell | 1 | 0 | other | 2026-09-23 | 用harness的上下文工程来模仿人脑的记忆功能，让LLM具备状态记忆和精准回忆的能力。Using Harness-based Context Engineering to emu
+Tariatan/ContextEngineering | 0 | 0 |  | 2026-09-21 | Reusable, project-agnostic agents and skills
+vartikavr/ContextGateway | 0 | 0 |  | 2026-09-21 | Outcome-driven context selection for engineering agents.
+jtehrani84/context-engineering-part-7 | 0 | 0 |  | 2026-09-22 | Context Engineering Part 7 — Evolution: an agent harness that operates, verifies, and evol
+ssthakuraa/context-foundry | 0 | 0 | apache-2.0 | 2026-09-21 | Open-source, evidence-backed enterprise engineering context for AI agents
+rajfnu/agent-engineering-standard | 0 | 0 | apache-2.0 | 2026-09-23 | Agent Engineering Standard is an open-source set of portable engineering Skills for AI cod
+gomayur/traco-engineering | 0 | 0 |  | 2026-09-20 | Engineering case study of Traco — AI-powered coordination, agent architecture, context eng
+
+### agent skills created:>2026-09-18
+wuyoscar/jev-skill | 460 | 30 | mit | 2026-09-23 | An awesome collection of Jev use cases, workflows, and agent skills.
+lhlGitHub/threejs-architecture-effects | 164 | 34 | mit | 2026-09-22 | An Agent Skill for building interactive, self-assembling 3D architecture with Three.js.  一
+wdobry/laya-playground | 144 | 30 | mit | 2026-09-20 | A website, two games, a benchmark and an agent skill for Laya, the open-source decision mo
+sno-ai/sno-station | 85 | 85 | apache-2.0 | 2026-09-22 | Sno Station — your Claude Code and Codex working as one squad on your own machine. Shared 
+Mayuqi-crypto/everything-search-skill | 57 | 2 | mit | 2026-09-20 | ⚡ Ultra-fast, index-powered local file search skill for AI agents (Cursor, Codex, PI-Deskt
+nahid-sparktales/agent-dispatcher | 49 | 3 | mit | 2026-09-23 | Repository retrieval and context engine for Claude Code and Codex: finds relevant code, re
+iamyoki/qwen-image-2.1-skill | 45 | 4 | apache-2.0 | 2026-09-22 | 🎨 Agentic skill for Qwen-Image-2.1: Rewrites and optimizes text-to-image and multi-image e
+minorun365/agent-builder-skills | 40 | 0 | apache-2.0 | 2026-09-21 | AWSでAIエージェントのWebアプリを作るためのスキル集
+safzanpirani/pi-jev-skill-picker | 29 | 3 | mit | 2026-09-20 | Rank Pi Agent Skills for the current task with TypeSafe Jev
+liyupi/ai-desktop-outfit-video | 29 | 1 | mit | 2026-09-20 | AI 桌面换装视频怎么做？把全网刷屏的「桌面动态壁纸换装」逐帧拆解，整理成一条可直接复制的提示词模板：一条提示词直出 30 秒成片，固定机位一镜到底，中文对白和字幕全部由模型生成，
+
+### game engine MCP created:>2026-09-18
+adrian-wulf/gamewache | 0 | 0 | mit | 2026-09-20 | Autonomous GameOps Engine for Game Developers: Crash Sentinel, Deterministic Blackbox Repl
+yi00it/blender-asset-mcp | 0 | 0 | mit | 2026-09-23 | MCP server for building game assets in Blender. The agent renders its work, checks it and 
+built-by-rafi/universal-cloud-3d-asset-mcp | 0 | 0 | mit | 2026-09-23 | A universal MCP server for AI-powered 3D asset generation, multi-model routing, API key ma
+
+### visual novel AI created:>2026-09-10
+Ulysses7741/qq-ai-responder | 1 | 0 | mit | 2026-09-20 | 把 QQ 聊天变成 galgame：抓取当前会话上下文，用任意 OpenAI 兼容接口生成 4 个风格互斥的回复选项，点一下填入或发送。Turn every QQ chat int
+zenzenzense520-bit/aihong-renpy | 0 | 0 |  | 2026-09-18 | Aihong RenPy visual novel
+naczo5/air-web | 0 | 0 | mit | 2026-09-17 | Experimental AIR Standard Edition visual novel by KEY web player, bring your own game data
+adityaharikeshyadav-gif/veezy | 0 | 0 |  | 2026-09-17 | An interactive, AI-driven visual novel and storyboard studio. Collaborate via conversation
+mawen0317/renpy-vn-engineering | 0 | 0 | mit | 2026-09-22 | A Claude Code skill: engineering discipline for large Ren'Py / visual-novel projects worke
+
+### renpy created:>2026-09-10
+JXZ666/slgking | 41 | 0 | gpl-3.0 | 2026-09-23 | SLG黄游之王：自由方便的挑选你喜欢的SLG游戏
+FernandoHT10/renpy-inspector | 1 | 0 | mit | 2026-09-19 | 
+Tolgrim-arch/renpy-director-studio | 1 | 0 |  | 2026-09-20 | 
+JXZ666/SLG-Renpy-Toolkit | 1 | 0 | mit | 2026-09-19 | 给基于Ren'Py引擎的SLG 游戏装各种实用补丁的神奇妙妙工具
+rootwin-project/Tool-to-automatically-migrate-RenPy | 1 | 0 |  | 2026-09-19 | 
+q956085398-netizen/RenpyTranslatorNG | 0 | 0 |  | 2026-09-20 | Ren'Py 汉化工作台——可靠、可解释、可恢复:稳定项目身份、出现位置级译文记录、事务式应用与恢复点、外部 tl 变更检测
+atharva123aa/heaven | 0 | 0 |  | 2026-09-23 | a renpy tutorial
+CamilleCOLL/MementoMori_RenpyGameProject | 0 | 0 |  | 2026-09-22 | Visual Novel développé avec Ren'Py — Un récit sur la mémoire et l'oubli.
+zenzenzense520-bit/aihong-renpy | 0 | 0 |  | 2026-09-18 | Aihong RenPy visual novel
+liaisdagreatest/renpydialogue | 0 | 0 |  | 2026-09-21 | 
+
+### context window token created:>2026-09-18
+alexgetmancom/claudecut | 37 | 1 | mit | 2026-09-20 | Run Claude Code with almost everything cut away: one shell tool, a 36-token system prompt,
+siliconflow-dev/siliconflow-dev.github.io | 10 | 0 |  | 2026-09-22 | SiliconFlow puts open and commercial models behind one inference API. A practitioner reads
+gpt-5-3-codex-spark/gpt-5-3-codex-spark.github.io | 10 | 0 |  | 2026-09-22 | GPT-5.3-Codex-Spark clears 1,000 tokens per second on Cerebras hardware, with a 128k conte
+chenlongapps/opencode-token-usage | 1 | 0 | mit | 2026-09-23 | OpenCode 2 plugin for session-tree token usage, context window, estimated cost, TPS, and T
+vinay10082/11-llm-context-window-builder | 0 | 0 | mit | 2026-09-23 | A precision token-aware context construction and compaction pipeline for advanced LLM inte
+Lakshit-Chiranjiv/ContextLab | 0 | 0 |  | 2026-09-20 | ContextLab — A Streamlit chat app comparing three LLM context-management strategies — slid
+githubvv/TokenMeterJS | 0 | 0 |  | 2026-09-21 | TokenMeterJS — provider-agnostic token counting, cost estimation, context-window validatio
+topaisaas-dev/tokenslimmer-api | 0 | 0 |  | 2026-09-20 | Sub-Millisecond Token Compression & Context Window Optimizer for AI Agents & LLMs (Slash O
+SuyogSubedi21/context-budget-manager | 0 | 0 |  | 2026-09-21 | A token counter and context-window budget manager that trims conversation history intellig
+AngelCantugr/context-inspector | 0 | 0 | mit | 2026-09-23 | See what is actually eating your AI agent's context window — per-message, per-category, pe
+
+### copilot agent vscode created:>2026-09-15
+defaultuser233/rust-expert-kit | 0 | 0 | mit | 2026-09-22 | Agent-neutral Rust coding conventions + one-shot environment bootstrap (China-mirror aware
+
+### deepseek harness plugin created:>2026-09-10
+Clearailhc/clearai-dsh | 381 | 17 | apache-2.0 | 2026-09-23 | ClearAI is a native DSH plugin that brings the Epistemic Loop to DeepSeek Harness.
+Devin-AXIS/jev-dsh-decision | 136 | 46 |  | 2026-09-20 | Jev DSH 决策引擎｜面向 Agent Harness 的结构化决策插件。原生支持 DeepSeek Harness，通过 iPolloWork 支持 OpenCode、Cod
+a86582751/dsh-nexttavern | 103 | 13 | gpl-3.0 | 2026-09-23 | DeepSeek Harness 长篇角色扮演agent（DSH酒馆插件）：SillyTavern 角色卡导入、行动选项卡、分支对话管理、长篇记忆、关键词与语义混合检索、交互式角色
+LuxUmbra697/DSH-Desktop | 62 | 3 | mit | 2026-09-14 | 把 DeepSeek Harness 装进一个独立窗口：双击即用、免终端、免浏览器，支持插件改造，载荷可裁到 210 MB（便携包 74.8 MB），内置运行环境探测与 DSH 就
+huangziyuan-general/dsh-novel-forge | 13 | 3 | mit | 2026-09-21 | DSH 小说锻炉：把 AI 长篇写作通病变成代码强制的硬约束（事实账本/上下文包/阶段门禁/零费用去AI味扫描/确定性审计/提案制修订）。Novel-writing guardra
+Lance-QwQ/DSH-SEP | 12 | 0 | mit | 2026-09-21 | DEEPSEEK HARNESS SYSTEM ENHANCEMENT PACKAGE — Windows Alpha. Memory, controlled updates, r
+yzi1b/whale-craft | 11 | 1 | mit | 2026-09-20 | A plugin for DeepSeek Harness, allowing your agent to play in Minecraft Java Edition serve
+cholf5/dsh-plugin-job-panel | 8 | 0 | mit | 2026-09-20 | A right-sidebar job panel for the DeepSeek Harness web GUI.
+madeye/dsh-session-cost | 8 | 0 | mit | 2026-09-11 | DeepSeek Harness client plugin: live session cost in CNY on the Web GUI session header
+tianyaojiudi-prog/dsh-djy-xttsc | 7 | 0 | mit | 2026-09-18 | DSH(DeepSeek Harness) 插件：把一段可在设置页随时改写的文字，作为全局系统提示词段注入到所有会话，含子代理与工作流内部子代理；文本与开关即时生效，无需重启。
+
+### llm benchmark evaluation created:>2026-09-15
+zeeshan8281/slo-router | 8 | 1 |  | 2026-09-23 | SLO-aware LLM inference router with Jev decisions, live queue metrics, counterfactual eval
+adityasupag1/agent-evaluation-lab | 2 | 0 | mit | 2026-09-19 | Deterministic benchmark harness for evaluating command-line coding agents through observab
+pyrroskoussios/PetriBench | 2 | 0 | mit | 2026-09-18 | PetriBench is a benchmark for evaluating LLM reasoning through procedurally generated Petr
+aryanchauhanoffical/no-hallucination | 2 | 0 | mit | 2026-09-20 | Three measured experiments on RAG hallucination: quote-checking, TypeSafe's Jev, and IBM's
+experimentalwork7-lang/-LLM-EdgeCase-Benchmarks- | 1 | 0 |  | 2026-09-20 | This repository tracks real-world LLM evaluations, system prompt optimizations, and edge-c
+GrayTell/citation-integrity-llm | 1 | 0 | apache-2.0 | 2026-09-18 | Empirical evaluation of citation accuracy in frontier LLMs (DeepSeek, Claude, ChatGPT) und
+aethelriclin-ctrl/llm-eval-pipeline | 1 | 0 |  | 2026-09-22 | 大模型评测流水线：11题4类测试集 + 多类型评分器 + 失败案例归因
+tonboy968-afk/agent-deployment-benchmark | 1 | 0 | mit | 2026-09-17 | A standardized benchmark for evaluating LLM agents on end-to-end software deployment from 
+Cynthia-Amelie/TCMTheoryEval | 1 | 0 | other | 2026-09-16 | Evaluation code and supplementary materials for TCMTheoryEval: a benchmark dataset for eva
+saurabnigam/llm-evals-engineering-course | 1 | 0 |  | 2026-09-23 | A 17-module, ~48-hour course on building LLM evaluation systems: LLM-as-judge design, agen
+
+### game dev AI agent pushed:>2026-09-20
+Donchitos/Claude-Code-Game-Studios | 25375 | 3620 | mit | 2026-09-23 | Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a com
+toilanguyen2910/game-dev-studio | 1 | 0 | mit | 2026-09-21 | Game development toolkit for AI coding agents: 10 skills, 10 agent roles, 7 templates, and
+uratemiafreshwaterfish5429/game-development-studio | 0 | 0 |  | 2026-09-23 | Build, package, and debug game assets with local-first automation, CLI tools, and AI-drive
+api-evangelist/snhp-dev | 0 | 0 |  | 2026-09-22 | SNHP (snhp.dev, operated by gametheory.dev / github.com/ryuxik and listed in the a2aregist
+
+### prompt caching agent created:>2026-09-15
+JeikCode/JeikCode | 2 | 0 | mit | 2026-09-23 | ⚡ 原生代码索引 · 极致速度 · 极简提示词 | Blazing-fast Rust AI coding agent with native AST semantic code 
+agungor2/bedrock-prompt-caching-agentic-demos | 1 | 1 | mit | 2026-09-19 | 
+GooDAnDReaDY/dsh-agent-orchestrator | 1 | 0 | mit | 2026-09-19 | Multi-agent task decomposition, DAG workflow orchestration, and prompt caching optimizer f
+wojciechwiesner/jit-context-os | 1 | 0 | other | 2026-09-23 | Epistemic context runtime & 3-tier memory cascade (L0/L1/L2) with deterministic prompt-cac
+santiquiroz/claude-prompt-cache-keepalive | 1 | 0 | mit | 2026-09-22 | Agent skill for Claude Code: keep the 1-hour prompt cache warm while you are away, with a 
+croakingtoad/pwa-development | 1 | 0 | mit | 2026-09-19 | AI agent skill for Progressive Web App development; service workers, caching strategies, o
+NextProbe/aiprobe | 1 | 0 | mit | 2026-09-20 | AIProbe reads the session transcripts your AI coding agent already writes to disk (Claude 
+rajatslakhina/prompt-cache-kit | 0 | 0 | mit | 2026-09-21 | Plan prompt-prefix caching for LLM agents: canonical layout by volatility, break-even brea
+DamianPala/promptreplay | 0 | 0 | mit | 2026-09-21 | Record real agent-harness API traffic, replay it byte-for-byte against LLM providers, comp
+robinwintertaylor/Prompt-Router | 0 | 0 | mit | 2026-09-23 | Sub-120ms smart LLM gateway & real-time optics dashboard using TypeSafe Jev System One. De
+
+### AI code review created:>2026-09-15
+devagrawal09/jev-review | 573 | 36 | mit | 2026-09-17 | A staged code-review workflow and local dashboard built with TypeSafe Jev.
+NiazMorshed2007/jev-review | 211 | 19 | mit | 2026-09-17 | Local-first MCP plugin for continuous software-quality review by AI coding agents, powered
+kimi-cli/kimi-cli.github.io | 16 | 0 |  | 2026-09-22 | Kimi CLI is Moonshot AI's terminal coding agent, published on GitHub and bundled with Kimi
+47thtechcorner/RayCodes_HyMT2 | 14 | 4 |  | 2026-09-17 | Destroys Google Translate? Tencent’s New 440MB AI Runs 100% Offline (Hy-MT2 Review) - Offl
+rork-ai/rork-ai.github.io | 12 | 0 |  | 2026-09-22 | A plain Rork AI review: chat-built mobile apps, the Max, Android and Web tracks, the backe
+vrajpal-jhala/langgraph-harness | 12 | 0 | mit | 2026-09-23 | Self-hosted AI coding agent platform for GitLab, built with LangGraph. Reviews merge reque
+frostney/clean-code-review | 10 | 1 | mit | 2026-09-23 | Every code file in a pull request, judged against Uncle Bob's Clean Code by TypeSafe's Jev
+gemini-code-assist-dev/gemini-code-assist-dev.github.io | 8 | 0 |  | 2026-09-22 | Gemini Code Assist is Google's free AI coding extension, past 5.3 million VS Code installs
+buchmark/claude-jev | 5 | 0 | mit | 2026-09-21 | Claude Code plugin that scores review findings, debug hypotheses and design options with T
+Oak-AN/DocOps | 5 | 0 | mit | 2026-09-16 | Drop a card on the board, pick Claude Code, Codex CLI, OpenCode or the Hermes agent, and w
+
+### agent sandbox orchestrator created:>2026-09-10
+playeon/opsyra | 2 | 0 | other | 2026-09-19 | Autonomous AI Agent & DevOps workspace manager for Telegram. Connects Claude Code, Codex, 
+kaitokuroba2503/pocketops | 1 | 0 | mit | 2026-09-13 | AI agent orchestrator chạy 100% trên điện thoại Android qua Termux — sandbox an toàn + điề
+colinzhao/cogent-agent | 1 | 0 | mit | 2026-09-15 | An enterprise-grade, plugin-based AI coding agent fusing Codex CLI's execution rigor with 
+orpheus-agents/orpheus | 0 | 0 | mit | 2026-09-23 | The orchestrator of AI-agents working in sandboxes.
+blogle/anvil | 0 | 0 |  | 2026-09-23 | OpenCode orchestration on Kubernetes Agent Sandbox
+shubhanshuboyat/devops-agent-orchestrator | 0 | 0 |  | 2026-09-20 | Autonomous Multi-Agent Governance Platform featuring tier-based risk scoring, sandbox pyte
+abhineet09/dorje-cli | 0 | 0 | mit | 2026-09-23 | Distributed orchestration runtime for sandboxed AI agents
+kjkyes/Agent-orchestrator | 0 | 0 |  | 2026-09-22 | 从低复杂度业务开发中解放出来！多 Agent 编码编排控制面，集成 PostgreSQL 持久化任务、Agent Sandbox执行、Git Gateway 分支发布与飞书人工审批
+Yasir-Alazmi/enterprise-workforce-agents | 0 | 0 | mit | 2026-09-17 | Autonomous Enterprise Multi-Agent Workforce Orchestrator with Human-in-the-Loop, Sandboxed
+marnor7413/AgentLab | 0 | 0 | apache-2.0 | 2026-09-21 | Sandbox for multi-agent orchestration patterns with Microsoft Agent Framework (.NET) and l
+
+### memory agent markdown created:>2026-09-10
+Edwar-Sanz/llmmemory | 2 | 0 | mit | 2026-09-19 | Shared project memory for AI coding agents: a Claude Code skill that stores decisions and 
+IotA-asce/oldhand | 2 | 0 | mit | 2026-09-18 | Git-tracked institutional memory for coding agents: reviewed constraints, decisions, faile
+gaoqidong67-source/agent-memory-2.0 | 1 | 0 |  | 2026-09-22 | 面向 AI Agent 的本地长期记忆、项目路由与可移植知识库
+yangshun2005/agent-memory-cn | 1 | 0 | mit | 2026-09-16 | [中文化] Long-term memory runtime for AI agents — plain Markdown as the source of truth, loca
+firat-elbey/Muninn | 1 | 0 | mit | 2026-09-22 | Shared, persistent Markdown memory for AI agents.
+aniklavida/agent-assemble | 1 | 0 | mit | 2026-09-23 | A company your agent can work inside — role, workflow and memory as a skill. Markdown only
+Yousaf-khan-se/opencode-auto-mem | 1 | 0 | other | 2026-09-11 | Markdown-based persistent memory plugin for OpenCode — background memory-keeper agent, con
+marcopeg/backlog-skills | 1 | 0 | mit | 2026-09-16 | 13 agent skills for a Markdown backlog: draft, clarify, plan, execute, and preserve projec
+Mapl6/agent-kit | 1 | 0 | mit | 2026-09-16 | Give Cursor, Claude Code, and Copilot a real project brain. Scans your repo and scaffolds 
+itsabk/prefrontal-context | 1 | 0 | mit | 2026-09-16 | Project context that stays with the repository. Five markdown files your coding agents rea
+
+### git worktree agent created:>2026-09-01
+penso/herdr-gpui | 114 | 10 | apache-2.0 | 2026-09-23 | Native macOS client for Herdr, built with Rust and GPUI. View terminal sessions, workspace
+axonel/axonel | 38 | 4 | apache-2.0 | 2026-09-22 | Run coding agents autonomously with isolated Git worktrees, independent verification, and 
+TennnisAI/Agency | 9 | 0 | apache-2.0 | 2026-09-17 | A desktop app for running coding agents in parallel, each isolated in its own git worktree
+r2luna/floe | 6 | 0 | other | 2026-09-23 | Run a colony of coding agents in parallel git worktrees, keyboard first.
+OndrejDrapalik/worktree-management-skills | 5 | 0 | mit | 2026-09-08 | Worktree management skills: a wt CLI plus agent skills for creating, opening, removing, an
+xseman/pando | 5 | 0 | apache-2.0 | 2026-09-23 | Terminal workspace for AI agent sessions: one daemon owns PTY sessions in git worktrees, t
+Mrjwj34/berth | 5 | 0 | mit | 2026-09-21 | Fast, daemonless local workspaces for parallel coding agents: one Git worktree per agent, 
+antoniociccia/aidcrew | 5 | 0 | mit | 2026-09-10 | A team of coding agents, each on its own model, every job in a git worktree of its own, in
+Oak-AN/DocOps | 5 | 0 | mit | 2026-09-16 | Drop a card on the board, pick Claude Code, Codex CLI, OpenCode or the Hermes agent, and w
+maximilientyc/wts | 4 | 0 | mit | 2026-09-20 | Git worktree + tmux session launcher for parallel Claude Code agents
+

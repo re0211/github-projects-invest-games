@@ -215,10 +215,10 @@ footer a{color:var(--text-2)}
     <h1 data-page-node-id="AiHFaPLbdzWhs4cJxbPaCG">游戏制作 × 游戏拓展 · 重点：AI 制作游戏<br data-page-node-id="7picbxz1uDgskpVGBQndAe">三条线上的开源工具地图</h1>
     <p class="sub" data-page-node-id="LVHhXAo5FhfwKnCSkj9LXr">从 GitHub 上筛出真正活跃、能落地的项目，用人话讲清楚它们各自解决什么问题、能不能二次开发、值不值得花时间。不是罗列链接，是帮你做取舍。</p>
     <div class="meta" data-page-node-id="xhBz9HP4CMitXa7DRJmiCE">
-      <span data-page-node-id="U5SVC0zIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第十八版增补 2026-09-20</span>
-      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1073 个项目</span>
+      <span data-page-node-id="U5SVCzIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第二十四版增补 2026-09-23</span>
+      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1104 个项目</span>
       <span data-page-node-id="DCE1SCzjW3tXhAFVtReJ7C">星级 / 更新时间 / License 逐项实测</span>
-      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项 + 第十八版增补 2 项（均与上版零重复）</span>
+      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项 + 第十八版增补 2 项 + 第十九版增补 1 项 + 第二十版增补 1 项 + 第二十一版增补 4 项 + 第二十二版增补 6 项 + 第二十三版增补 9 项 + 第二十四版增补 10 项（均与上版零重复）</span>
     </div>
   </div>
 </header>
@@ -10716,6 +10716,407 @@ footer a{color:var(--text-2)}
 
     </div>
 
+    <div class="group" data-page-node-id="rpm19g">
+      <div class="group-title" data-page-node-id="rpm19gt">🆕 第十九版增补 · 让 agent 看得见自己的输出（1 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm19gd">这一批只有一张卡：一套教 agent 做 Three.js 浏览器游戏的 <strong>Agent Skill</strong>。星级（2,103）比主题更打眼，但真正值得记的是它 commit 历史里那句 <code>Fix headless Playwright rendering</code> —— <strong>「让 agent 看得见自己的输出」这段基础设施</strong>，和本辑主线（可达性）、以及本工作区一直在做的 <code>testcases.rpy</code> + <code>_shots/</code>，是同一件事。星级 / 语言 / 协议 / forks 为 2026-09-21 用 GitHub API 实测。</p>
+
+      <div class="card" data-page-node-id="rpm19c1">
+        <div class="card-top" data-page-node-id="rpm19c1t">
+          <span class="card-name" data-page-node-id="rpm19c1mn"><a href="https://github.com/majidmanzarpour/threejs-game-skills" target="_blank" data-page-node-id="rpm19c1n">threejs-game-skills（Agent 技能包）</a></span>
+          <span class="lang" data-page-node-id="rpm19c1l">Python / Markdown</span>
+          <span class="stars" data-page-node-id="rpm19c1s">2,103</span>
+          <span class="tag t-make" data-page-node-id="rpm19c1t1">游戏 × AI</span>
+          <span class="tag t-ok" data-page-node-id="rpm19c1t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm19c1p">一套给 Claude Code / Codex 用的 <strong>Agent Skill</strong>：分步骤教 agent 做一个「可玩且打磨过」的 Three.js 浏览器游戏，覆盖玩法、AAA 式画面、UI、质量保证，以及可选的 AI 生成 3D / 图像 / 音频资产。它不生成游戏——它给 agent 一张<strong>工作清单和验收顺序</strong>：先把车开起来、比赛能跑，再加赛道、灯光、菜单、音效，最后查手机上效果、运行报错和性能。</p>
+        <div class="analogy" data-page-node-id="rpm19c1a"><b data-page-node-id="rpm19c1ab">打个比方：</b>和本工作区攒了十三辑的 <code>game-production-pipeline.md</code> 是<strong>同一个东西的不同写法</strong>——把「先做小闭环、再叠表现」这条经验固化成 agent 每步都会读的文档。区别是它的载体是 skill（跟着仓库走），我们的载体是一份持续更新的 markdown。</div>
+        <div class="analogy" data-page-node-id="rpm19c1w"><b data-page-node-id="rpm19c1wb">注意：</b>23 天涨到 2,103★（创建 2026-06-14、最近推送 2026-09-05）说明这个方向热度极高，但<strong>热度不是适配度</strong>：它的验收标准是「能在浏览器里跑起来、手机上不卡」，对纯文本游戏没有任何约束力。</div>
+        <div class="grid2" data-page-node-id="rpm19c1g">
+          <div class="mini" data-page-node-id="rpm19c1m1"><span class="lbl" data-page-node-id="rpm19c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm19c1m1b"><div class="bar-track" data-page-node-id="rpm19c1m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm19c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm19c1m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm19c1m1v">结构可抄：把「玩法→表现→验收」拆成有序阶段、每阶段给可判定的出口。这套组织方式与引擎无关，本工作区的 skills 目录可以直接借</div></div>
+          <div class="mini" data-page-node-id="rpm19c1m2"><span class="lbl" data-page-node-id="rpm19c1m2l">实用性</span><div class="bar" data-page-node-id="rpm19c1m2b"><div class="bar-track" data-page-node-id="rpm19c1m2t"><div class="bar-fill" style="width:20%;background:var(--make)" data-page-node-id="rpm19c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm19c1m2n">2.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm19c1m2v">本作是 Ren'Py 视觉小说，没有 Three.js 那一层；而它真正值钱的那部分（让 agent 看见自己的输出）我们早就有了——<code>testcases.rpy</code> + <code>_shots/</code>。只登记不安装</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm19c1c">创建 2026-06-14 · 最近推送 2026-09-05 · 213 forks · MIT · 信源 [1073]</div>
+      </div>
+
+    </div>
+
+    <div class="group" data-page-node-id="rpm20g">
+      <div class="group-title" data-page-node-id="rpm20gt">🆕 第二十版增补 · 把人工环节交给工具（1 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm20gd">这一批只有一张卡：一个 Ren'Py 视觉小说的<strong>多引擎自动翻译器</strong>。收录它的理由不是"它能替我们干活"，而是 —— <strong>第 10 轮做英文版时我们手工对账了 586 条中文字面量、其中 166 条 SDK 提取不到</strong>，而这种"提取不到"的边角（角色名、<code>textbutton</code>、<code>renpy.input</code>、screen 里的 <code>text</code>、数据表）<strong>任何同类工具都必须面对同一批</strong>。读它怎么处理，比再读一遍官方文档快。星级 / 语言 / 协议 / forks 为 2026-09-21 用 GitHub API 实测。</p>
+
+      <div class="card" data-page-node-id="rpm20c1">
+        <div class="card-top" data-page-node-id="rpm20c1t">
+          <span class="card-name" data-page-node-id="rpm20c1mn"><a href="https://github.com/Lord0fTurk/RenLocalizer" target="_blank" data-page-node-id="rpm20c1n">RenLocalizer（Ren'Py 多引擎翻译器）</a></span>
+          <span class="lang" data-page-node-id="rpm20c1l">Python</span>
+          <span class="stars" data-page-node-id="rpm20c1s">35</span>
+          <span class="tag t-make" data-page-node-id="rpm20c1t1">游戏 × AI</span>
+          <span class="tag t-ok" data-page-node-id="rpm20c1t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm20c1p">一个<strong>桌面软件</strong>（不是命令行脚本）：打开就能自动翻译 Ren'Py 视觉小说的 <code>.rpy</code> 文件，可以切换多个翻译引擎，也支持走<strong>本地模型</strong>。换句话说，它把本工作区第 10 轮手工做过的那条链——「从 <code>.rpy</code> 里抽出所有要翻的字 → 翻译 → 回填」——做成了工具。</p>
+        <div class="analogy" data-page-node-id="rpm20c1a"><b data-page-node-id="rpm20c1ab">打个比方：</b>它和本作的 <code>tl/english/</code> 官方翻译层是<strong>两条路</strong>：它省力（一键跑完），我们可维护（走引擎的翻译层 + 五道闸门验漏）。已经在做的项目继续走官方层更划算，新项目可以拿它省第一遍的力。</div>
+        <div class="analogy" data-page-node-id="rpm20c1w"><b data-page-node-id="rpm20c1wb">注意：</b>协议是 <code>NOASSERTION</code>（仓库里没有标准 license 文件）——自己用没问题，<strong>要分发或商用之前先看清它的授权说明</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm20c1g">
+          <div class="mini" data-page-node-id="rpm20c1m1"><span class="lbl" data-page-node-id="rpm20c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm20c1m1b"><div class="bar-track" data-page-node-id="rpm20c1m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm20c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm20c1m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm20c1m1v">「多翻译引擎可切换」这个设计值得抄：我们现在要换翻译模型就等于改流程，换成引擎层之后只改一个配置</div></div>
+          <div class="mini" data-page-node-id="rpm20c1m2"><span class="lbl" data-page-node-id="rpm20c1m2l">实用性</span><div class="bar" data-page-node-id="rpm20c1m2b"><div class="bar-track" data-page-node-id="rpm20c1m2t"><div class="bar-fill" style="width:30%;background:var(--make)" data-page-node-id="rpm20c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm20c1m2n">3.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm20c1m2v">本作英文版已翻完且过了 R1~R5 五道闸门，再用它跑一遍只会覆盖掉已经人工校对过的译文。正确用法是「下一个项目的第一遍」或「新增大量台词后的初翻」</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm20c1c">创建 2025-09-10 · 最近推送 2026-09-13 · 35★ · 11 forks · Python · 信源 [1074]</div>
+      </div>
+
+    </div>
+
+    <div class="group" data-page-node-id="rpm21g">
+      <div class="group-title" data-page-node-id="rpm21gt">🆕 第二十一版增补 · 与前十四辑在做的四件事正面照面（4 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm21gd">第十五辑的 GitHub 那一路一共产出 21 条候选，<strong>全部做过 grep 去重 + <code>gh api</code> 逐条核实</strong>（stars / license / language / pushed_at / archived，无一虚构）。这里只登记<strong>与本工作区直接对话的 4 条</strong>，其余 17 条以链接形式留在 <code>csdn-social-summary.md</code> 第十五辑里 —— <strong>索引的容量不该被「顺手看到的」占满</strong>：这 4 条各自回答了一个我们已经在做的事情（客户端与模型解耦 / 引擎设计 / agent 房规 / 闸门自己也要被验）。</p>
+
+      <div class="card" data-page-node-id="rpm21c1">
+        <div class="card-top" data-page-node-id="rpm21c1t">
+          <span class="card-name" data-page-node-id="rpm21c1mn"><a href="https://github.com/lidge-jun/opencodex" target="_blank" data-page-node-id="rpm21c1n">opencodex（客户端与模型解耦的代理网关）</a></span>
+          <span class="lang" data-page-node-id="rpm21c1l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm21c1s">15,728</span>
+          <span class="tag t-make" data-page-node-id="rpm21c1t1">AI × 工具链</span>
+          <span class="tag t-ok" data-page-node-id="rpm21c1t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm21c1p">一个<strong>代理网关</strong>：把 Codex / Claude Code 这类编码 agent 发出的请求，转发到<strong>任意模型</strong>上。换句话说，它把「用哪个 agent 客户端」和「用哪个模型」这两件事<strong>拆开了</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm21c1a"><b data-page-node-id="rpm21c1ab">打个比方：</b>本工作区的 <code>ccgs-cn-config</code> 解决的是<strong>同一件事</strong> —— 把 Claude Code 桥接到上财的远程模型上。区别是：我们在本机自建、只为自己的场景；它是给所有人的通用网关。</div>
+        <div class="analogy" data-page-node-id="rpm21c1w"><b data-page-node-id="rpm21c1wb">注意：</b><strong>15,728★ 这种体量意味着它的迭代非常快</strong> —— 接口、支持的客户端版本都会变。要接的话先确认它支持哪个版本的哪个客户端，别照着半年前的教程配。</div>
+        <div class="grid2" data-page-node-id="rpm21c1g">
+          <div class="mini" data-page-node-id="rpm21c1m1"><span class="lbl" data-page-node-id="rpm21c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm21c1m1b"><div class="bar-track" data-page-node-id="rpm21c1m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm21c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm21c1m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm21c1m1v">「客户端与模型解耦」这个思路我们可以直接借：现在桥的目标是写死的，做成可配置的引擎层之后换模型只改一行</div></div>
+          <div class="mini" data-page-node-id="rpm21c1m2"><span class="lbl" data-page-node-id="rpm21c1m2l">实用性</span><div class="bar" data-page-node-id="rpm21c1m2b"><div class="bar-track" data-page-node-id="rpm21c1m2t"><div class="bar-fill" style="width:50%;background:var(--make)" data-page-node-id="rpm21c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm21c1m2n">5.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm21c1m2v">本机已有 <code>ccgs-cn-config</code> 且端到端验过，<strong>现在不换</strong>；但它是同一问题的另一个实现，值得对照读一遍</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm21c1c">创建 2026 年 · 最近推送 2026-09-21 · 15,728★ · MIT · TypeScript · 信源 [1075]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm21c2">
+        <div class="card-top" data-page-node-id="rpm21c2t">
+          <span class="card-name" data-page-node-id="rpm21c2mn"><a href="https://github.com/Icemic/moyu" target="_blank" data-page-node-id="rpm21c2n">moyu（跨平台视觉小说引擎）</a></span>
+          <span class="lang" data-page-node-id="rpm21c2l">Rust</span>
+          <span class="stars" data-page-node-id="rpm21c2s">97</span>
+          <span class="tag t-make" data-page-node-id="rpm21c2t1">游戏引擎</span>
+          <span class="tag t-ok" data-page-node-id="rpm21c2t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm21c2p">一个<strong>跨平台视觉小说引擎</strong>：用 React 写界面、用 QuickJS 跑脚本逻辑，输出到多个平台。作者是 Icemic（AVG.js / 「异次元」系列的作者），在这个方向上做了很多年。</p>
+        <div class="analogy" data-page-node-id="rpm21c2a"><b data-page-node-id="rpm21c2ab">打个比方：</b>它和 Ren'Py 是<strong>解决同一个问题的两条技术路线</strong> —— Ren'Py 是 Python + 自有脚本语言、生态成熟；它是 JS/Web 生态、偏前端思路。本作不会换引擎，但「<strong>别人怎么设计一个 VN 引擎</strong>」值得看。</div>
+        <div class="grid2" data-page-node-id="rpm21c2g">
+          <div class="mini" data-page-node-id="rpm21c2m1"><span class="lbl" data-page-node-id="rpm21c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm21c2m1b"><div class="bar-track" data-page-node-id="rpm21c2m1t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm21c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm21c2m1n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm21c2m1v">可以对照它的「渲染与逻辑分层」看我们的 <code>00_config.rpy</code> / <code>script.rpy</code> 切得对不对</div></div>
+          <div class="mini" data-page-node-id="rpm21c2m2"><span class="lbl" data-page-node-id="rpm21c2m2l">实用性</span><div class="bar" data-page-node-id="rpm21c2m2b"><div class="bar-track" data-page-node-id="rpm21c2m2t"><div class="bar-fill" style="width:20%;background:var(--make)" data-page-node-id="rpm21c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm21c2m2n">2.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm21c2m2v">本作已用 Ren'Py 跑到 v1.9（含中英双语 + 五道闸门），<strong>不会换</strong>；作为引擎设计的参照物收录</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm21c2c">创建 2025 年 · 最近推送 2026-09-19 · 97★ · MPL-2.0 · Rust · 信源 [1076]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm21c3">
+        <div class="card-top" data-page-node-id="rpm21c3t">
+          <span class="card-name" data-page-node-id="rpm21c3mn"><a href="https://github.com/iamfakeguru/agent-md" target="_blank" data-page-node-id="rpm21c3n">agent-md（生产级 agent 指令集）</a></span>
+          <span class="lang" data-page-node-id="rpm21c3l">Shell</span>
+          <span class="stars" data-page-node-id="rpm21c3s">968</span>
+          <span class="tag t-make" data-page-node-id="rpm21c3t1">AI × 工作流</span>
+          <span class="tag t-ok" data-page-node-id="rpm21c3t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm21c3p">一套<strong>写给编码 agent 的生产级指令集</strong>（<code>CLAUDE.md</code> / <code>AGENTS.md</code> 那一类），主流 agent 客户端即插即用。</p>
+        <div class="analogy" data-page-node-id="rpm21c3a"><b data-page-node-id="rpm21c3ab">打个比方：</b>和本工作区的 <code>agent-house-rules.md</code>（<strong>32 条房规</strong>）是同一个东西 —— 只不过它是<strong>公开分发的通用版</strong>，我们的是<strong>踩着自己的坑长出来的定制版</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm21c3g">
+          <div class="mini" data-page-node-id="rpm21c3m1"><span class="lbl" data-page-node-id="rpm21c3m1l">可拓展性</span><div class="bar" data-page-node-id="rpm21c3m1b"><div class="bar-track" data-page-node-id="rpm21c3m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm21c3m1f"></div></div><span class="bar-num" data-page-node-id="rpm21c3m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm21c3m1v"><strong>拿它的条目当外部对照</strong>：看「别人普遍会踩什么」我们漏了哪些形态 —— 这是给房规做一次外部审计的现成材料</div></div>
+          <div class="mini" data-page-node-id="rpm21c3m2"><span class="lbl" data-page-node-id="rpm21c3m2l">实用性</span><div class="bar" data-page-node-id="rpm21c3m2b"><div class="bar-track" data-page-node-id="rpm21c3m2t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm21c3m2f"></div></div><span class="bar-num" data-page-node-id="rpm21c3m2n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm21c3m2v">我们的房规更贴身（每条都对应一次真实踩坑），但<strong>通用版能补上「我们没遇到过的坑」</strong>，值得花半小时对一遍</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm21c3c">创建 2025 年 · 最近推送 2026-09-21 · 968★ · MIT · Shell · 信源 [1077]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm21c4">
+        <div class="card-top" data-page-node-id="rpm21c4t">
+          <span class="card-name" data-page-node-id="rpm21c4mn"><a href="https://github.com/kphutt/gdmutant" target="_blank" data-page-node-id="rpm21c4n">gdmutant（变异测试：闸门自己也要被验）</a></span>
+          <span class="lang" data-page-node-id="rpm21c4l">Python</span>
+          <span class="stars" data-page-node-id="rpm21c4s">3</span>
+          <span class="tag t-make" data-page-node-id="rpm21c4t1">测试 × 工具</span>
+          <span class="tag t-ok" data-page-node-id="rpm21c4t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm21c4p"><strong>变异测试</strong>工具：自动往代码里塞一个个小改动（“变异”），看测试还能不能抓住。抓不住 —— 说明那行代码<strong>根本没被真正测到</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm21c4a"><b data-page-node-id="rpm21c4ab">打个比方：</b>这正是本工作区一直在做的事的<strong>自动化版本</strong>：第 9 轮我们手工把 <code>snark()</code> 的默认值从 2 改回 1，看 <code>check_balance.py</code> 会不会报红；第 10 轮写了 <code>_tools/negcase_i18n.py</code> 做同样的事。<strong>「闸门报绿」这件事本身要有证据</strong> —— 它把这个思路变成了通用工具。</div>
+        <div class="analogy" data-page-node-id="rpm21c4w"><b data-page-node-id="rpm21c4wb">注意：</b>star 只有 3 —— 这不是「没人用」，是「刚起步」。收录它是因为<strong>变异测试这件事本身</strong>，不是因为它现在好用。</div>
+        <div class="grid2" data-page-node-id="rpm21c4g">
+          <div class="mini" data-page-node-id="rpm21c4m1"><span class="lbl" data-page-node-id="rpm21c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm21c4m1b"><div class="bar-track" data-page-node-id="rpm21c4m1t"><div class="bar-fill" style="width:90%;background:var(--make)" data-page-node-id="rpm21c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm21c4m1n">9.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm21c4m1v"><strong>这是本批里最值得借的一条思路</strong>：把「反例实测」从手工脚本升级成「自动变异 + 看闸门抓不抓得住」，我们的 <code>check_*.py</code> 体系可以直接用这个方法体检</div></div>
+          <div class="mini" data-page-node-id="rpm21c4m2"><span class="lbl" data-page-node-id="rpm21c4m2l">实用性</span><div class="bar" data-page-node-id="rpm21c4m2b"><div class="bar-track" data-page-node-id="rpm21c4m2t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm21c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm21c4m2n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm21c4m2v">它是 GDScript 专用（本作用不了），<strong>但方法论是通用的</strong>；3★ 说明还很新，别指望工具成熟 —— <strong>价值在方法论，不在工具本身</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm21c4c">创建 2026 年 · 最近推送 2026-09-21 · 3★ · MIT · Python · 信源 [1078]</div>
+      </div>
+
+    </div>
+
+    <div class="group" data-page-node-id="rpm22g">
+      <div class="group-title" data-page-node-id="rpm22gt">🆕 第二十二版增补 · 同题海啸里，怎么分辨（6 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm22gd">第十六辑的 GitHub 那一路跑了 <strong>19 个查询、268 条原始候选</strong>，自动去重 + 相关性筛后剩 160 条，<strong>再逐条 grep 过 14 份存档 + 1079 项索引</strong>。剔掉的：4 条已收录（uebox / OptiScaler / DroidSpy / Godot-MCP）、14 个同模板 SEO 站（<code>*-dev.github.io</code>，09-21/22 批量创建、约 10★）。这里只登记<strong>与本工作区直接对话的 6 条</strong>，其余以链接形式留在 <code>csdn-social-summary.md</code> 第十六辑里 —— <strong>索引的容量不该被「顺手看到的」占满</strong>。</p>
+
+      <div class="card" data-page-node-id="rpm22c1">
+        <div class="card-top" data-page-node-id="rpm22c1t">
+          <span class="card-name" data-page-node-id="rpm22c1mn"><a href="https://github.com/ikermoel/open-alternative-jev" target="_blank" data-page-node-id="rpm22c1n">open-alternative-jev（把 System 1 决策搬回本地）</a></span>
+          <span class="lang" data-page-node-id="rpm22c1l">Python</span>
+          <span class="stars" data-page-node-id="rpm22c1s">51</span>
+          <span class="tag t-make" data-page-node-id="rpm22c1t1">AI × 模型</span>
+          <span class="tag t-ok" data-page-node-id="rpm22c1t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm22c1p">一个<strong>开源版 System 1 模型层</strong>：让手上已有的开源权重模型，在<strong>一次前向</strong>里给出「有类型的、带校准概率的」决策 —— <strong>不生成文本</strong>，只从下一个 token 的分布里，在你给的选项上取概率。</p>
+        <div class="analogy" data-page-node-id="rpm22c1a"><b data-page-node-id="rpm22c1ab">打个比方：</b>第七辑我们完整实测过 `laya`（421M，纯 CPU，0.64s/次）。它是<strong>同一个位置上的另一条路线</strong>：laya 是「训一个小模型专门做判断」，它是「<strong>不改模型，只改调用方式</strong>」——把共享的上下文<strong>只写一遍</strong>，N 个问题都从同一个位置取答案。</div>
+        <div class="analogy" data-page-node-id="rpm22c1w"><b data-page-node-id="rpm22c1wb">注意：</b><strong>⚠️ 文档写了 `pip install open-alternative-jev`，但 PyPI 上根本没有这个包</strong> —— 本辑实测：PyPI JSON 返回 404，`pip install` 直接报「No matching distribution found」。要装只能从仓库 `pip install git+…`，或用它的 Hugging Face Space 在线 demo。<strong>「README 里写着」不等于「能装」</strong>，这条已记进 `mistakes/`。</div>
+        <div class="grid2" data-page-node-id="rpm22c1g">
+          <div class="mini" data-page-node-id="rpm22c1m1"><span class="lbl" data-page-node-id="rpm22c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm22c1m1b"><div class="bar-track" data-page-node-id="rpm22c1m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm22c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm22c1m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c1m1v">「<strong>共享状态只写一遍</strong>」是通用手法：我们有大量「读同一份材料、问 N 个问题」的脚本（闸门报告、翻译探针），packing 能把 token 降下来（作者实测 <strong>2.5x</strong>）</div></div>
+          <div class="mini" data-page-node-id="rpm22c1m2"><span class="lbl" data-page-node-id="rpm22c1m2l">实用性</span><div class="bar" data-page-node-id="rpm22c1m2b"><div class="bar-track" data-page-node-id="rpm22c1m2t"><div class="bar-fill" style="width:30%;background:var(--make)" data-page-node-id="rpm22c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm22c1m2n">3.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c1m2v"><strong>要 CUDA 显卡</strong>（作者实测跑在 H200 MIG / 35GB）；本机 16GB 无独显。<strong>先记着这条路线，等有卡再试</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm22c1c">创建 2026-09-18 · 最近推送 2026-09-22 · 51★ · Apache-2.0 · Python · 信源 [1079]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm22c2">
+        <div class="card-top" data-page-node-id="rpm22c2t">
+          <span class="card-name" data-page-node-id="rpm22c2mn"><a href="https://github.com/JakeSelby/agent-harness" target="_blank" data-page-node-id="rpm22c2n">agent-harness（让每条规则自己报「我触发了几次」）</a></span>
+          <span class="lang" data-page-node-id="rpm22c2l">Python</span>
+          <span class="stars" data-page-node-id="rpm22c2s">15</span>
+          <span class="tag t-make" data-page-node-id="rpm22c2t1">AI × 工作流</span>
+          <span class="tag t-ok" data-page-node-id="rpm22c2t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm22c2p">一句话：<strong>查出你的 agent 规则里，哪几条真的生效过。</strong> 它的铁规矩 —— 每条规则要么配一个<strong>确定性检测器</strong>（在 agent 自己的对话记录里可判定的东西），要么<strong>在规则里写明「转录里没有东西能判定它」</strong>，两者都没有 → lint 直接让提交失败。然后 `harness usage --rules` 报出每条规则<strong>触发了几次</strong>，按仓库分组。</p>
+        <div class="analogy" data-page-node-id="rpm22c2a"><b data-page-node-id="rpm22c2ab">打个比方：</b>本工作区的 `agent-house-rules.md` 是 <strong>32 条「写了就指望它生效」的规则</strong> —— 和它开篇吐槽的一模一样（原话：*Every project in this field writes instructions and hopes*）。它把这句吐槽<strong>做成了工具</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm22c2w"><b data-page-node-id="rpm22c2wb">注意：</b>它自曝：用这套工具<strong>抓出自己仓库里两个「上线了但其实什么都没做」的功能</strong>，并且把它们挂成 issue 而不是藏起来 —— 又一个「闸门自己也要有证据」的实证。</div>
+        <div class="grid2" data-page-node-id="rpm22c2g">
+          <div class="mini" data-page-node-id="rpm22c2m1"><span class="lbl" data-page-node-id="rpm22c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm22c2m1b"><div class="bar-track" data-page-node-id="rpm22c2m1t"><div class="bar-fill" style="width:90%;background:var(--make)" data-page-node-id="rpm22c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm22c2m1n">9.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c2m1v"><strong>本批最值得借的一条</strong>：房规可以照它的方式补一列 —— 「检测器」或「判定不了的原因」；本辑已按这个口径给 32 条房规做了登记</div></div>
+          <div class="mini" data-page-node-id="rpm22c2m2"><span class="lbl" data-page-node-id="rpm22c2m2l">实用性</span><div class="bar" data-page-node-id="rpm22c2m2b"><div class="bar-track" data-page-node-id="rpm22c2m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm22c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm22c2m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c2m2v">它是 Claude Code / Codex 专用（要把 hooks 装进 runtime），<strong>我们的 runtime 不是它</strong>；但<strong>方法论当天就吸收</strong>了</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm22c2c">创建 2026-09-16 · 最近推送 2026-09-23 · 15★ · MIT · Python · 信源 [1080]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm22c3">
+        <div class="card-top" data-page-node-id="rpm22c3t">
+          <span class="card-name" data-page-node-id="rpm22c3mn"><a href="https://github.com/liyupi/ai-model-world" target="_blank" data-page-node-id="rpm22c3n">ai-model-world（556 个大模型拟人化成像素小人）</a></span>
+          <span class="lang" data-page-node-id="rpm22c3l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm22c3s">171</span>
+          <span class="tag t-make" data-page-node-id="rpm22c3t1">模型对比</span>
+          <span class="tag t-ok" data-page-node-id="rpm22c3t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm22c3p">一个<strong>中文的模型对比可视化站</strong>：把 <strong>556 个大模型</strong>做成像素小人 —— 进来一眼看到「此刻谁最聪明 / 谁最会写代码 / 谁最便宜 / 谁刚发布」，往下是国内与国外分区的厂商广场、完整发布时间线、多维排行榜；搜索认模型名、厂商和能力。</p>
+        <div class="analogy" data-page-node-id="rpm22c3a"><b data-page-node-id="rpm22c3ab">打个比方：</b>我们一直靠「逐条读官方发布 + 记进备注」来选型（Qwen3-Max 管创意、DeepSeek 管代码、本地 Ollama 管离线）。它<strong>把这个动作做成了一个可查询的界面</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm22c3w"><b data-page-node-id="rpm22c3wb">注意：</b>作者是「鱼皮」（国内知名编程教育博主），<strong>这个站是给大众看的概览，不是评测</strong> —— 当「索引」用，别当「证据」用。</div>
+        <div class="grid2" data-page-node-id="rpm22c3g">
+          <div class="mini" data-page-node-id="rpm22c3m1"><span class="lbl" data-page-node-id="rpm22c3m1l">可拓展性</span><div class="bar" data-page-node-id="rpm22c3m1b"><div class="bar-track" data-page-node-id="rpm22c3m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm22c3m1f"></div></div><span class="bar-num" data-page-node-id="rpm22c3m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c3m1v">它的<strong>数据源</strong>（Epoch AI / models.dev / LiveBench / HuggingFace）值得单独记下来 —— 以后要自己拉模型数据，就用这几家</div></div>
+          <div class="mini" data-page-node-id="rpm22c3m2"><span class="lbl" data-page-node-id="rpm22c3m2l">实用性</span><div class="bar" data-page-node-id="rpm22c3m2b"><div class="bar-track" data-page-node-id="rpm22c3m2t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm22c3m2f"></div></div><span class="bar-num" data-page-node-id="rpm22c3m2n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c3m2v">选型时当下就能用；但它是<strong>第三方聚合</strong>，关键结论仍要回到官方页复核（M-0002）</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm22c3c">创建 2026-09-17 · 最近推送 2026-09-23 · 171★ · MIT · TypeScript · 信源 [1081]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm22c4">
+        <div class="card-top" data-page-node-id="rpm22c4t">
+          <span class="card-name" data-page-node-id="rpm22c4mn"><a href="https://github.com/26048608982lp-ai/gamenumerics" target="_blank" data-page-node-id="rpm22c4n">gamenumerics（游戏数值的确定性引擎）</a></span>
+          <span class="lang" data-page-node-id="rpm22c4l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm22c4s">0</span>
+          <span class="tag t-make" data-page-node-id="rpm22c4t1">游戏 × 数值</span>
+          <span class="tag t-ok" data-page-node-id="rpm22c4t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm22c4p">一句话：<strong>把「游戏数值」从「凭感觉调」变成「可复算」</strong> —— 一个 <strong>17 个工具的 MCP 服务</strong>：导入 xlsx 数值表、<strong>审曲线</strong>（成长曲线、掉落概率是否合理）、跑战斗与抽卡模拟。</p>
+        <div class="analogy" data-page-node-id="rpm22c4a"><b data-page-node-id="rpm22c4ab">打个比方：</b>本作第 9 轮找到的那个「结局四走不到」的 bug，本质就是<strong>数值区间与产出上限没对上</strong>（我们补了 `check_balance.py`）。它把这个思路从「我们自己写一条断言」扩展成<strong>一整套可复用的数值审查口径</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm22c4g">
+          <div class="mini" data-page-node-id="rpm22c4m1"><span class="lbl" data-page-node-id="rpm22c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm22c4m1b"><div class="bar-track" data-page-node-id="rpm22c4m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm22c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm22c4m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c4m1v">「<strong>数值要可复算</strong>」可以直接接到 `check_balance.py`：以后若要加数值系统（掉落 / 成长），先过一遍它的曲线审查口径</div></div>
+          <div class="mini" data-page-node-id="rpm22c4m2"><span class="lbl" data-page-node-id="rpm22c4m2l">实用性</span><div class="bar" data-page-node-id="rpm22c4m2b"><div class="bar-track" data-page-node-id="rpm22c4m2t"><div class="bar-fill" style="width:40%;background:var(--make)" data-page-node-id="rpm22c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm22c4m2n">4.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c4m2v">本作是纯叙事 VN，<strong>现在没有数值系统</strong>（吐槽值是叙事计数，不是数值设计）；0★ + 很新，别指望成熟</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm22c4c">创建 2026-09-13 · 最近推送 2026-09-16 · 0★ · MIT · TypeScript · 信源 [1082]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm22c5">
+        <div class="card-top" data-page-node-id="rpm22c5t">
+          <span class="card-name" data-page-node-id="rpm22c5mn"><a href="https://github.com/sayic/game-apk-reverse-engineering" target="_blank" data-page-node-id="rpm22c5n">game-apk-reverse-engineering（把 APK 逆向写成 AI 能跑的清单）</a></span>
+          <span class="lang" data-page-node-id="rpm22c5l">—</span>
+          <span class="stars" data-page-node-id="rpm22c5s">9</span>
+          <span class="tag t-make" data-page-node-id="rpm22c5t1">游戏 × 逆向</span>
+          <span class="tag t-ok" data-page-node-id="rpm22c5t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm22c5p">一句话：一套<strong>可复用的手游 APK 逆向工作流</strong> —— 资源提取、代码还原、数值表分析、Unity 资产导入，<strong>每一步配好 AI skill 与任务模板</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm22c5a"><b data-page-node-id="rpm22c5ab">打个比方：</b>你的强项正是<strong>解包 + 跨引擎对比</strong>（73 款游戏的积累）。它的价值不是「教你解包」，而是<strong>把解包经验沉淀成「AI 能照着跑的清单」</strong> —— 第六辑「把人工流程写成 skill」的同一条思路，换到逆向这个场景。</div>
+        <div class="analogy" data-page-node-id="rpm22c5w"><b data-page-node-id="rpm22c5wb">注意：</b>9★、<strong>无 license、无语言标识</strong>（多半是 prompt / skill 集合而非代码） → 当「笔记」看，别当「工具」用。</div>
+        <div class="grid2" data-page-node-id="rpm22c5g">
+          <div class="mini" data-page-node-id="rpm22c5m1"><span class="lbl" data-page-node-id="rpm22c5m1l">可拓展性</span><div class="bar" data-page-node-id="rpm22c5m1b"><div class="bar-track" data-page-node-id="rpm22c5m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm22c5m1f"></div></div><span class="bar-num" data-page-node-id="rpm22c5m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c5m1v">「把成手经验写成 AI skill」这个形式，可以照搬到我们自己的「立绘绿幕流水线 / 配音流水线」上</div></div>
+          <div class="mini" data-page-node-id="rpm22c5m2"><span class="lbl" data-page-node-id="rpm22c5m2l">实用性</span><div class="bar" data-page-node-id="rpm22c5m2b"><div class="bar-track" data-page-node-id="rpm22c5m2t"><div class="bar-fill" style="width:50%;background:var(--make)" data-page-node-id="rpm22c5m2f"></div></div><span class="bar-num" data-page-node-id="rpm22c5m2n">5.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c5m2v">面向 Unity 手游；与本作（Ren'Py）不同引擎，<strong>当方法论模板收</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm22c5c">创建 2026-09-22 · 最近推送 2026-09-22 · 9★ · 无 license · 信源 [1083]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm22c6">
+        <div class="card-top" data-page-node-id="rpm22c6t">
+          <span class="card-name" data-page-node-id="rpm22c6mn"><a href="https://github.com/envy-ai/sprite-generator" target="_blank" data-page-node-id="rpm22c6n">sprite-generator（四方向角色精灵图生成）</a></span>
+          <span class="lang" data-page-node-id="rpm22c6l">Python</span>
+          <span class="stars" data-page-node-id="rpm22c6s">0</span>
+          <span class="tag t-make" data-page-node-id="rpm22c6t1">美术 × 管线</span>
+          <span class="tag t-ok" data-page-node-id="rpm22c6t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm22c6p">一句话：用 <strong>ComfyUI</strong> 生成<strong>四方向（上 / 下 / 左 / 右）角色精灵图与动画</strong>，有网页界面也有命令行。</p>
+        <div class="analogy" data-page-node-id="rpm22c6a"><b data-page-node-id="rpm22c6ab">打个比方：</b>我们的立绘走的是「AI 生成绿幕图 → 抠图去绿边 → 体型归一」这条自建管线（第 3 轮）。差别在于：<strong>我们做的是「立绘」，它做的是「行走图 / 精灵表」</strong> —— 正好是「本作若加小人 / 像素角色」那类需求的前置工具。</div>
+        <div class="grid2" data-page-node-id="rpm22c6g">
+          <div class="mini" data-page-node-id="rpm22c6m1"><span class="lbl" data-page-node-id="rpm22c6m1l">可拓展性</span><div class="bar" data-page-node-id="rpm22c6m1b"><div class="bar-track" data-page-node-id="rpm22c6m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm22c6m1f"></div></div><span class="bar-num" data-page-node-id="rpm22c6m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c6m1v">「<strong>四方向</strong>」这个约束很实用：四方向是最小可用集，比八方向省一半成本，又能支撑一批玩法</div></div>
+          <div class="mini" data-page-node-id="rpm22c6m2"><span class="lbl" data-page-node-id="rpm22c6m2l">实用性</span><div class="bar" data-page-node-id="rpm22c6m2b"><div class="bar-track" data-page-node-id="rpm22c6m2t"><div class="bar-fill" style="width:30%;background:var(--make)" data-page-node-id="rpm22c6m2f"></div></div><span class="bar-num" data-page-node-id="rpm22c6m2n">3.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm22c6m2v">依赖 ComfyUI（本机没装）；本作 v1.9 是立绘 VN，<strong>不需要行走图</strong> —— 先登记，等真做像素玩法再说</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm22c6c">创建 2026-09-19 · 最近推送 2026-09-19 · 0★ · AGPL-3.0 · Python · 信源 [1084]</div>
+      </div>
+
+    </div>
+
+    <div class="group" data-page-node-id="rpm23g">
+      <div class="group-title" data-page-node-id="rpm23gt">🆕 第二十三版增补 · 上下文是预算，不是仓库（9 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm23gd">第十七辑的 GitHub 那一路跑了 <strong>25 个查询 / 274 行候选</strong>，逐条走 REST API 实测 stars / forks / license / language / pushed / created，<strong>再逐条 grep 过 16 份存档 + 1085 项索引</strong>。剔掉的：8 条已收录（grokbot-field-notes / JakeSelby-agent-harness / fennara-godot-ai / hybridindie-godot-mcp / tallslab-threeforge / ruc-datalab-EvoOntology / CoplayDev-unity-mcp / lovetimo0421-yumina-oss）与一批 0★ 空壳。<strong>本版主线是「上下文」—— 一个外壳怎么决定你花多少钱、能记多久、以及你能不能验证自己测出来的数。</strong></p>
+
+      <div class="card" data-page-node-id="rpm23c1">
+        <div class="card-top" data-page-node-id="rpm23c1t">
+          <span class="card-name" data-page-node-id="rpm23c1mn"><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" data-page-node-id="rpm23c1n">deepseek-harness（DSH 本体：万物皆插件）</a></span>
+          <span class="lang" data-page-node-id="rpm23c1l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm23c1s">233,987</span>
+          <span class="tag t-make" data-page-node-id="rpm23c1t1">AI × 外壳</span>
+          <span class="tag t-ok" data-page-node-id="rpm23c1t2">本机已在用</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm23c1p"><strong>DSH 就是「外壳」（harness）本身</strong>：它不训练模型，只把<strong>模型放进一张工作台</strong>里 —— 读文件、执行命令、调插件、拆子任务，最后产出可运行的代码改动。它的设计口号只有一句：<strong>Everything is a Plugin</strong> —— 连桌面端、Web 端、插件市场都是插件。启动方式 = 在 `$DSH_HOME/profiles` 下叠一串<strong>插件包补丁层</strong>，再叠你自己的覆盖层（`dsh --profile web` / `--profile headless "run the tests"`）。</p>
+        <div class="analogy" data-page-node-id="rpm23c1a"><b data-page-node-id="rpm23c1ab">打个比方：</b>我们一直用「桥 → 上财千问 → 本地 Ollama」这套自建路线（`ccgs-cn-config`）。DSH 是<strong>同一条命题的官方版本</strong>：外壳决定固定开销、决定工具怎么暴露、决定上下文怎么回收 —— 第十六辑量到的 harness tax，这里就是那个「外壳」的正式形态。</div>
+        <div class="analogy" data-page-node-id="rpm23c1w"><b data-page-node-id="rpm23c1wb">注意：</b><strong>「可插拔」的另一面是供应链</strong>：`dsh plugin` 走的是 pnpm 装包，插件会以<strong>当前 dsh 进程的权限</strong>运行（社区插件 README 原话）。装之前先读它的 SKILL.md / 脚本 / 有没有非必要网络请求 —— 与门房规 #33 同一条理。</div>
+        <div class="grid2" data-page-node-id="rpm23c1g">
+          <div class="mini" data-page-node-id="rpm23c1m1"><span class="lbl" data-page-node-id="rpm23c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm23c1m1b"><div class="bar-track" data-page-node-id="rpm23c1m1t"><div class="bar-fill" style="width:90%;background:var(--make)" data-page-node-id="rpm23c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm23c1m1n">9.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c1m1v"><strong>本辑第一顺位</strong>：本机已装 `dsh 0.1.0-rc.6` 并跑通过，插件系统（`dsh plugin add @scope/name`，底层就是 pnpm）意味着「上下文管理」可以按需换装，而不用改自己写的桥</div></div>
+          <div class="mini" data-page-node-id="rpm23c1m2"><span class="lbl" data-page-node-id="rpm23c1m2l">实用性</span><div class="bar" data-page-node-id="rpm23c1m2b"><div class="bar-track" data-page-node-id="rpm23c1m2t"><div class="bar-fill" style="width:85%;background:var(--make)" data-page-node-id="rpm23c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm23c1m2n">8.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c1m2v"><strong>真在用</strong>：本工作区的技能库里已有 `dsh-session-log-repair`（修 DSH 会话日志损坏 / 工作区迁移）—— 说明这条链路是活的，不是纸上的</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm23c1c">创建 2026-08-13 · 最近推送 2026-09-22 · 233,987★ · MIT · TypeScript · 信源 [1085]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm23c2">
+        <div class="card-top" data-page-node-id="rpm23c2t">
+          <span class="card-name" data-page-node-id="rpm23c2mn"><a href="https://github.com/awesome-dsh-plugin/awesome-dsh-plugin" target="_blank" data-page-node-id="rpm23c2n">awesome-dsh-plugin（DSH 插件精选）</a></span>
+          <span class="lang" data-page-node-id="rpm23c2l">Python</span>
+          <span class="stars" data-page-node-id="rpm23c2s">16,705</span>
+          <span class="tag t-make" data-page-node-id="rpm23c2t1">AI × 目录</span>
+          <span class="tag t-ok" data-page-node-id="rpm23c2t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm23c2p"><strong>DSH 生态的目录</strong>：一份按用途分类的插件精选列表。对一个「万物皆插件」的外壳来说，<strong>目录本身就是基础设施</strong> —— 第十六辑的教训是「一周能长出二十个 `godot-mcp` 空壳」，那么「哪几个值得装」这件事必须有地方回答。</p>
+        <div class="analogy" data-page-node-id="rpm23c2a"><b data-page-node-id="rpm23c2ab">打个比方：</b>我们有自己的 `index.html`（1094 项）在做同一件事，只是<strong>对象不同</strong>：我们索引的是「开源项目」，它索引的是「同一个外壳里的插件」。</div>
+        <div class="grid2" data-page-node-id="rpm23c2g">
+          <div class="mini" data-page-node-id="rpm23c2m1"><span class="lbl" data-page-node-id="rpm23c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm23c2m1b"><div class="bar-track" data-page-node-id="rpm23c2m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm23c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm23c2m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c2m1v"><strong>分类法可以抄</strong>：它怎么把插件分组（上下文 / 工具 / UI / 路由 / 安全），可以直接挪来给 `index.html` 的 AI 那一区做二级分类</div></div>
+          <div class="mini" data-page-node-id="rpm23c2m2"><span class="lbl" data-page-node-id="rpm23c2m2l">实用性</span><div class="bar" data-page-node-id="rpm23c2m2b"><div class="bar-track" data-page-node-id="rpm23c2m2t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm23c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm23c2m2n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c2m2v">16,705★ 但 <strong>CC0-1.0 = 只收列表不背书</strong>；按 M-0002，条目进榜 ≠ 可用，仍要逐条回仓库核实</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm23c2c">创建 2026-08-13 · 最近推送 2026-09-23 · 16,705★ · CC0-1.0 · Python · 信源 [1086]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm23c3">
+        <div class="card-top" data-page-node-id="rpm23c3t">
+          <span class="card-name" data-page-node-id="rpm23c3mn"><a href="https://github.com/CooperZhuang/dsh-context-window" target="_blank" data-page-node-id="rpm23c3n">dsh-context-window（用「换窗」代替「摘要压缩」）</a></span>
+          <span class="lang" data-page-node-id="rpm23c3l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm23c3s">0</span>
+          <span class="tag t-make" data-page-node-id="rpm23c3t1">AI × 上下文</span>
+          <span class="tag t-ok" data-page-node-id="rpm23c3t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm23c3p"><strong>本辑最反直觉的一个设计</strong>：上下文满了不要「摘要压缩」，而要<strong>交接式换窗</strong> —— 给模型一个<strong>可自己调用的 `new_context`</strong>，让它把「下一步要干什么」写成交接说明，然后<strong>开一个新窗口</strong>接着干。附 token 预算提示。作者说是复刻 Codex 最新的做法。</p>
+        <div class="analogy" data-page-node-id="rpm23c3a"><b data-page-node-id="rpm23c3ab">打个比方：</b>本辑读到的四篇上下文管理文章（掘金 / CSDN / 菜鸟 / PEC）<strong>全都把方向指向同一个点</strong>：摘要会<strong>改写事实</strong>（那份测试日志被摘要成「之前导出测试失败了」，`order-export.test.ts` / `5000ms` / `orderExport.ts:42:19` 全丢了）。「换窗 + 交接」是<strong>保真</strong>的，摘要不是。</div>
+        <div class="analogy" data-page-node-id="rpm23c3w"><b data-page-node-id="rpm23c3wb">注意：</b>同类还有四个（`PlxloYzb/dsh-context-management` 窗口化+可逆 / `yindf/taskfold` 把工作折进具名任务 / `kolawong/fast-compaction-dsh` 判定式压缩 / `dvaJi/dsh-codex-context`）—— <strong>全都 ≤7★</strong>。这一片是「方向已对、实现未稳」，<strong>别当成熟工具用</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm23c3g">
+          <div class="mini" data-page-node-id="rpm23c3m1"><span class="lbl" data-page-node-id="rpm23c3m1l">可拓展性</span><div class="bar" data-page-node-id="rpm23c3m1b"><div class="bar-track" data-page-node-id="rpm23c3m1t"><div class="bar-fill" style="width:85%;background:var(--make)" data-page-node-id="rpm23c3m1f"></div></div><span class="bar-num" data-page-node-id="rpm23c3m1n">8.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c3m1v"><strong>方向上最值钱的一张</strong>：可直接对照我们工作区的「一个章节一个入口 label + 快照基线」（第 9 轮那条「跨『开始新游戏』边界 store 必被重置」的教训，本质就是一次换窗）</div></div>
+          <div class="mini" data-page-node-id="rpm23c3m2"><span class="lbl" data-page-node-id="rpm23c3m2l">实用性</span><div class="bar" data-page-node-id="rpm23c3m2b"><div class="bar-track" data-page-node-id="rpm23c3m2t"><div class="bar-fill" style="width:30%;background:var(--make)" data-page-node-id="rpm23c3m2f"></div></div><span class="bar-num" data-page-node-id="rpm23c3m2n">3.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c3m2v"><strong>0★ / 09-09 创建 / 单人</strong>，代码还没被任何人用过；而且它绑 DSH 的插件接口（rc 阶段，接口随时变）→ <strong>先抄概念，后装代码</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm23c3c">创建 2026-09-09 · 最近推送 2026-09-09 · 0★ · MIT · TypeScript · 信源 [1087]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm23c4">
+        <div class="card-top" data-page-node-id="rpm23c4t">
+          <span class="card-name" data-page-node-id="rpm23c4mn"><a href="https://github.com/nmlemus/harness-token-efficiency" target="_blank" data-page-node-id="rpm23c4n">harness-token-efficiency（把 harness 差异做成可复现实验）</a></span>
+          <span class="lang" data-page-node-id="rpm23c4l">Python</span>
+          <span class="stars" data-page-node-id="rpm23c4s">0</span>
+          <span class="tag t-make" data-page-node-id="rpm23c4t1">AI × 评测</span>
+          <span class="tag t-ok" data-page-node-id="rpm23c4t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm23c4p"><strong>一个预注册（PREREGISTRATION.md）的 harness 消融实验</strong>：模型<strong>锁死同一个</strong>（`claude-sonnet-5`），只换外壳（Claude Code vs Pi），4 个数据科学任务 × 3 次重复，24/24 全过。第一次 pilot 报出的倍率是 <strong>7.0x~13.7x</strong>；作者随后<strong>自己推翻</strong>了这个数 —— 因为 `run_trial.py` 调的是<strong>没隔离的 `claude` 二进制</strong>，本机 `~/.claude/` 里的110 个工具 / 10 个插件 / 7 个 MCP / 68 个自定义 agent / 全局 `CLAUDE.md` <strong>全都漏进了每一次 trial 的上下文</strong>，把 Claude Code 的 token 抬高了 <strong>39~52%</strong>。修法：`isolated_claude_environment()`。<strong>改正后倍率是 4.2x~8.3x。</strong></p>
+        <div class="analogy" data-page-node-id="rpm23c4a"><b data-page-node-id="rpm23c4ab">打个比方：</b>第十六辑引的 HarnessTax（UC Berkeley + Arena）说「同模型换外壳，成本差约 2 倍」。这个仓库把同一件事<strong>做成了能跑的实验，并且顺手证伪了自己的第一版结果</strong> —— <strong>「测出来的差值里，有多少是你的个人配置，有多少才是外壳」</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm23c4w"><b data-page-node-id="rpm23c4wb">注意：</b>作者自己在 README 里把「污染的那一版」留在 `runs-pilot1-contaminated/` 并<strong>标注清楚了</strong>，而不是删掉 —— 这比任何漂亮的结论都更值得抄（<strong>失败的样本要留档</strong>）。</div>
+        <div class="grid2" data-page-node-id="rpm23c4g">
+          <div class="mini" data-page-node-id="rpm23c4m1"><span class="lbl" data-page-node-id="rpm23c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm23c4m1b"><div class="bar-track" data-page-node-id="rpm23c4m1t"><div class="bar-fill" style="width:85%;background:var(--make)" data-page-node-id="rpm23c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm23c4m1n">8.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c4m1v"><strong>方法论直接可用</strong>：任何「A 工具 vs B 工具」的对比，先加一步「隔离个人配置」；否则量的是<strong>自己的机器</strong>，不是工具。作者还留了可复用的口径：<strong>同一单元格内 Pi 的 CV≈0.2%、Claude Code 的 CV≈15~27%</strong> → 比 Claude Code 需要更多重复次数</div></div>
+          <div class="mini" data-page-node-id="rpm23c4m2"><span class="lbl" data-page-node-id="rpm23c4m2l">实用性</span><div class="bar" data-page-node-id="rpm23c4m2b"><div class="bar-track" data-page-node-id="rpm23c4m2t"><div class="bar-fill" style="width:35%;background:var(--make)" data-page-node-id="rpm23c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm23c4m2n">3.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c4m2v"><strong>0★</strong>，作者自述这是 pilot；要跑真实验需要 API key + 时间。<strong>但它给的判据当天就能落地</strong>（房规 #35）</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm23c4c">创建 2026-09-06 · 最近推送 2026-09-08 · 0★ · MIT · Python · 信源 [1088]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm23c5">
+        <div class="card-top" data-page-node-id="rpm23c5t">
+          <span class="card-name" data-page-node-id="rpm23c5mn"><a href="https://github.com/ayghri/i-have-adhd" target="_blank" data-page-node-id="rpm23c5n">i-have-adhd（把答案放到第一行）</a></span>
+          <span class="lang" data-page-node-id="rpm23c5l">Python</span>
+          <span class="stars" data-page-node-id="rpm23c5s">50,519</span>
+          <span class="tag t-make" data-page-node-id="rpm23c5t1">AI × 输出</span>
+          <span class="tag t-ok" data-page-node-id="rpm23c5t2">已登记未采纳完</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm23c5p"><strong>50,519★，一天涨 4,650★。</strong> 它是一条<strong>输出形态</strong>规则（不是工具）：假装读者有 ADHD —— ① <strong>第一行就是可执行动作</strong>（不是背景、不是计划）；② 多步工作要编号，每步一个动作；③ 结尾给<strong>一个两分钟内能做完的下一步</strong>；④ 抑制岔题（第二个问题留到最后单独问）；⑤ <strong>每一轮都重述状态</strong>（「5 步里的第 3 步完成了」）；⑥ 时间要给<strong>具体单位</strong>；⑦ <strong>把完成的活显式写出来</strong>；⑧ 报错用<strong>陈述语气</strong>（不用「啊哦」「好像有点问题」）。</p>
+        <div class="analogy" data-page-node-id="rpm23c5a"><b data-page-node-id="rpm23c5ab">打个比方：</b>这几乎是<strong>你本人偏好的书面版</strong>：你反复要的是「简洁直接」「plain-language 总结优先于技术 jargon」「不要反复确认」。差别在于它把「简洁」拆成了<strong>八条可检查的动作</strong>，而不是一句形容词。</div>
+        <div class="analogy" data-page-node-id="rpm23c5w"><b data-page-node-id="rpm23c5wb">注意：</b>`disable-model-invocation: true` —— 它是<strong>手动开关</strong>（`/i-have-adhd`），不会自己生效。同类还有 `charlie947/answer-first`（19★，拆成 10 条通用规则）。</div>
+        <div class="grid2" data-page-node-id="rpm23c5g">
+          <div class="mini" data-page-node-id="rpm23c5m1"><span class="lbl" data-page-node-id="rpm23c5m1l">可拓展性</span><div class="bar" data-page-node-id="rpm23c5m1b"><div class="bar-track" data-page-node-id="rpm23c5m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm23c5m1f"></div></div><span class="bar-num" data-page-node-id="rpm23c5m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c5m1v"><strong>八条里最该抄的是 ⑤ 和 ③</strong>：「重述状态」解决的是「跨轮次丢失进度」，「一个具体下一步」解决的是「知道了但没动手」</div></div>
+          <div class="mini" data-page-node-id="rpm23c5m2"><span class="lbl" data-page-node-id="rpm23c5m2l">实用性</span><div class="bar" data-page-node-id="rpm23c5m2b"><div class="bar-track" data-page-node-id="rpm23c5m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm23c5m2f"></div></div><span class="bar-num" data-page-node-id="rpm23c5m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c5m2v"><strong>注意口径</strong>：它是给「读输出的人」用的，不是给「写代码的 agent」用的。我们的产出常常是<strong>报告和索引</strong>（要能当资料查），<strong>不能无条件套 8 条</strong> —— 会牺牲可检索性</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm23c5c">创建 2026-05-13 · 最近推送 2026-09-19 · 50,519★ · MIT · Python · 信源 [1089]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm23c6">
+        <div class="card-top" data-page-node-id="rpm23c6t">
+          <span class="card-name" data-page-node-id="rpm23c6mn"><a href="https://github.com/hi-godot/godot-ai" target="_blank" data-page-node-id="rpm23c6n">godot-ai（生产级 Godot MCP）</a></span>
+          <span class="lang" data-page-node-id="rpm23c6l">GDScript</span>
+          <span class="stars" data-page-node-id="rpm23c6s">2,563</span>
+          <span class="tag t-make" data-page-node-id="rpm23c6t1">游戏 × 引擎</span>
+          <span class="tag t-ok" data-page-node-id="rpm23c6t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm23c6p"><strong>本批 Godot MCP 里唯一「生产级」提法的那个</strong>：一个 Snap 就能装的 MCP 服务 + AI 工具集，让 AI 助手<strong>直接驱动 Godot 编辑器</strong> —— 建节点、写脚本、跑场景。</p>
+        <div class="analogy" data-page-node-id="rpm23c6a"><b data-page-node-id="rpm23c6ab">打个比方：</b>第六辑收过 `tomyud1`（32 工具）与 <strong>Godot MCP Omni</strong>（1820 操作 / 59 域），第十六辑又看到<strong>一周冒出约 20 个 `godot-mcp` 空壳</strong>。这一条是那片洪水里<strong>星数最高、且还在推</strong>的那个 —— 洪水里要挑「有人真的在用」的。</div>
+        <div class="grid2" data-page-node-id="rpm23c6g">
+          <div class="mini" data-page-node-id="rpm23c6m1"><span class="lbl" data-page-node-id="rpm23c6m1l">可拓展性</span><div class="bar" data-page-node-id="rpm23c6m1b"><div class="bar-track" data-page-node-id="rpm23c6m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm23c6m1f"></div></div><span class="bar-num" data-page-node-id="rpm23c6m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c6m1v">配套值得一起看的是 `Erodenn/godot-mcp-runtime`（77★，<strong>零足迹</strong> TypeScript MCP）与 `NPGameDev/godot-mcp-toolkit`（44★，编辑器内插件）</div></div>
+          <div class="mini" data-page-node-id="rpm23c6m2"><span class="lbl" data-page-node-id="rpm23c6m2l">实用性</span><div class="bar" data-page-node-id="rpm23c6m2b"><div class="bar-track" data-page-node-id="rpm23c6m2t"><div class="bar-fill" style="width:45%;background:var(--make)" data-page-node-id="rpm23c6m2f"></div></div><span class="bar-num" data-page-node-id="rpm23c6m2n">4.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c6m2v"><strong>本作是 Ren'Py，不是 Godot</strong>；且游戏线 2026-09-23 已终止 → <strong>当「引擎侧 AI 接入的当前最佳形态」收着</strong>，等重启或换引擎再用</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm23c6c">创建 2026-04-12 · 最近推送 2026-09-23 · 2,563★ · MIT · GDScript · 信源 [1090]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm23c7">
+        <div class="card-top" data-page-node-id="rpm23c7t">
+          <span class="card-name" data-page-node-id="rpm23c7mn"><a href="https://github.com/beckettlab/beckett-godot-mcp" target="_blank" data-page-node-id="rpm23c7n">beckett-godot-mcp（编辑器内，能「看见」结果的 MCP）</a></span>
+          <span class="lang" data-page-node-id="rpm23c7l">GDScript</span>
+          <span class="stars" data-page-node-id="rpm23c7s">23</span>
+          <span class="tag t-make" data-page-node-id="rpm23c7t1">游戏 × 验证</span>
+          <span class="tag t-ok" data-page-node-id="rpm23c7t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm23c7p">一句话卖点里藏着本辑最该抄的四个动词：<strong>inspect / author / run / SEE</strong> —— <strong>零 sidecar</strong>（不需要外挂进程，MCP 服务活在 Godot 编辑器<strong>里面</strong>），让 Claude Code、Cursor 这类 agent 检查、编写、运行，并且<strong>看到</strong>结果。</p>
+        <div class="analogy" data-page-node-id="rpm23c7a"><b data-page-node-id="rpm23c7ab">打个比方：</b>第十四辑的主线是<strong>「可达性」</strong>，第十一辑的教训是「<strong>试玩只对会读结果的模型有用</strong>」（GPT-5.6 Terra 跑了 6 次试玩、一次结果都没读）。它把「<strong>SEE</strong>」直接写进了工具的能力列表 —— <strong>能力清单里有没有「看」，是个分水岭</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm23c7g">
+          <div class="mini" data-page-node-id="rpm23c7m1"><span class="lbl" data-page-node-id="rpm23c7m1l">可拓展性</span><div class="bar" data-page-node-id="rpm23c7m1b"><div class="bar-track" data-page-node-id="rpm23c7m1t"><div class="bar-fill" style="width:85%;background:var(--make)" data-page-node-id="rpm23c7m1f"></div></div><span class="bar-num" data-page-node-id="rpm23c7m1n">8.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c7m1v">「<strong>零 sidecar + 能力列表里含 SEE</strong>」这两条可以当<strong>引擎接入的选型判据</strong>：凡是只给「写」不给「读 / 看 / 跑」的 MCP，都还是半成品</div></div>
+          <div class="mini" data-page-node-id="rpm23c7m2"><span class="lbl" data-page-node-id="rpm23c7m2l">实用性</span><div class="bar" data-page-node-id="rpm23c7m2b"><div class="bar-track" data-page-node-id="rpm23c7m2t"><div class="bar-fill" style="width:30%;background:var(--make)" data-page-node-id="rpm23c7m2f"></div></div><span class="bar-num" data-page-node-id="rpm23c7m2n">3.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c7m2v">23★ / 06-19 创建；与本作引擎不同。<strong>当判据收，不当工具装</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm23c7c">创建 2026-06-19 · 最近推送 2026-09-19 · 23★ · MIT · GDScript · 信源 [1091]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm23c8">
+        <div class="card-top" data-page-node-id="rpm23c8t">
+          <span class="card-name" data-page-node-id="rpm23c8mn"><a href="https://github.com/cnfatal/rpycdec" target="_blank" data-page-node-id="rpm23c8n">rpycdec（Ren'Py .rpyc / .rpymc 反编译）</a></span>
+          <span class="lang" data-page-node-id="rpm23c8l">Python</span>
+          <span class="stars" data-page-node-id="rpm23c8s">58</span>
+          <span class="tag t-make" data-page-node-id="rpm23c8t1">游戏 × 逆向</span>
+          <span class="tag t-ok" data-page-node-id="rpm23c8t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm23c8p"><strong>专门反编译 Ren'Py 编译产物</strong>（`.rpyc` / `.rpymc`）的工具 —— 也就是把发布版游戏里的脚本还原回可读源码。</p>
+        <div class="analogy" data-page-node-id="rpm23c8a"><b data-page-node-id="rpm23c8ab">打个比方：</b><strong>你的强项正在这里</strong>（73 款游戏解包、跨引擎对比）。而这一条对我们有额外一层意义：本作自己就是 Ren'Py 项目 —— 上一轮我们把 `game/` 交付成发行包时，<strong>自己的 `.rpyc` 也在里面</strong>。<strong>同一个工具既是研究工具，也是「我的发行包能被反编译到什么程度」的体检工具</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm23c8w"><b data-page-node-id="rpm23c8wb">注意：</b>同类但方向相反的两个（都用 <strong>AI 做翻译而不是逆向</strong>）：`DezFix/OctopusBridge`（3★，GPL-3.0，Windows，Twine/Ren'Py/RPG Maker/Tyrano <strong>AI 辅助翻译 + 改 Mod</strong>）与 `dihuangdebitebi/Renpy_RT_Tool`（0★，「选中 exe 就能边玩边翻」）。<strong>都还很新，别指望稳。</strong></div>
+        <div class="grid2" data-page-node-id="rpm23c8g">
+          <div class="mini" data-page-node-id="rpm23c8m1"><span class="lbl" data-page-node-id="rpm23c8m1l">可拓展性</span><div class="bar" data-page-node-id="rpm23c8m1b"><div class="bar-track" data-page-node-id="rpm23c8m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm23c8m1f"></div></div><span class="bar-num" data-page-node-id="rpm23c8m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c8m1v">可以加一条<strong>自查</strong>：拿它对着自己的 `amphoreus-roast` 发行包跑一次，看<strong>哪些东西是藏不住的</strong>（这比读文档有用）</div></div>
+          <div class="mini" data-page-node-id="rpm23c8m2"><span class="lbl" data-page-node-id="rpm23c8m2l">实用性</span><div class="bar" data-page-node-id="rpm23c8m2b"><div class="bar-track" data-page-node-id="rpm23c8m2t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm23c8m2f"></div></div><span class="bar-num" data-page-node-id="rpm23c8m2n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c8m2v"><strong>58★、MIT、Python、2026-09-20 还在推</strong> → 是这项里少见的<strong>活跃</strong>项目。<strong>列进下一轮待办</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm23c8c">创建 2023-08-20 · 最近推送 2026-09-20 · 58★ · MIT · Python · 信源 [1092]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm23c9">
+        <div class="card-top" data-page-node-id="rpm23c9t">
+          <span class="card-name" data-page-node-id="rpm23c9mn"><a href="https://github.com/liuyejinghong/game-design-review" target="_blank" data-page-node-id="rpm23c9n">game-design-review（四把尺子 + 阶段校准 + 红队）</a></span>
+          <span class="lang" data-page-node-id="rpm23c9l">Python</span>
+          <span class="stars" data-page-node-id="rpm23c9s">0</span>
+          <span class="tag t-make" data-page-node-id="rpm23c9t1">游戏 × 评审</span>
+          <span class="tag t-ok" data-page-node-id="rpm23c9t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm23c9p"><strong>游戏策划视角的「试玩评审」agent skill</strong>：给开发者一套<strong>四把尺子</strong>打分，按<strong>阶段校准</strong>（文字期 → 像素期，标准不同），并带一个<strong>红队模式</strong>（专门攻击你的设计，而不是夸它）。</p>
+        <div class="analogy" data-page-node-id="rpm23c9a"><b data-page-node-id="rpm23c9ab">打个比方：</b>我们的验收一直是<strong>机械闸门</strong>（lint / test / 五道 `check_*.py`）。房规 #31 已经写明：<strong>闸门保证的是「没坏」，不是「好」</strong> —— 「这个能看了」这句判断一直没有人（或工具）来给。<strong>它试图给这一句定标准。</strong></div>
+        <div class="analogy" data-page-node-id="rpm23c9w"><b data-page-node-id="rpm23c9wb">注意：</b>同类三个都是 09-17~09-20 新建的 0★：`rakaascode/game-design-council`（正/反/主持三角辩）、`RomainYing/Game-design-theory`（玩家欲望 → 满足手法 → 系统）、`GabrielBigardi/gamedev-ai-skills`。<strong>它们合起来说明一件事：「评审」是 AI 游戏工具链里最后一块还没定型的环节。</strong></div>
+        <div class="grid2" data-page-node-id="rpm23c9g">
+          <div class="mini" data-page-node-id="rpm23c9m1"><span class="lbl" data-page-node-id="rpm23c9m1l">可拓展性</span><div class="bar" data-page-node-id="rpm23c9m1b"><div class="bar-track" data-page-node-id="rpm23c9m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm23c9m1f"></div></div><span class="bar-num" data-page-node-id="rpm23c9m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c9m1v">「<strong>阶段校准</strong>」这条最值得抄：同一个作品在「文字期」和「成品期」<strong>该被用不同的尺子量</strong> —— 我们的闸门现在是<strong>一套尺子从头用到尾</strong></div></div>
+          <div class="mini" data-page-node-id="rpm23c9m2"><span class="lbl" data-page-node-id="rpm23c9m2l">实用性</span><div class="bar" data-page-node-id="rpm23c9m2b"><div class="bar-track" data-page-node-id="rpm23c9m2t"><div class="bar-fill" style="width:25%;background:var(--make)" data-page-node-id="rpm23c9m2f"></div></div><span class="bar-num" data-page-node-id="rpm23c9m2n">2.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm23c9m2v"><strong>0★ / 创建与推送同日（09-19）/ 无 license</strong> → 按 M-0002 <strong>只登记，不采用</strong>；它的价值在「有人在做这件事了」这个信号</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm23c9c">创建 2026-09-19 · 最近推送 2026-09-20 · 0★ · 无 license · Python · 信源 [1093]</div>
+      </div>
+
+    </div>
+
 <section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
     <div class="sec-head" data-page-node-id="KqPcSUzx4I5yaVNTCjJjRR">
       <span class="sec-num" data-page-node-id="mCQ7flcAuePG05u4HEiQP1">3</span>
@@ -10729,7 +11130,193 @@ footer a{color:var(--text-2)}
       <p data-page-node-id="IMSXbFxkHeJD6VCF4AEHOQ">本报告只介绍工具能力与适用场景，<b data-page-node-id="FbWEr2mkfeelkqgFKR1jBH">请仅对你拥有合法使用权的游戏使用</b>，并遵守各游戏的 EULA 与所在地法规。</p>
     </div>
 
-    <div class="group" data-page-node-id="OzQE47GHjbV2GNGH4ijNIf">
+        <div class="group" data-page-node-id="rpm24g">
+      <div class="group-title" data-page-node-id="rpm24gt">🆕 第二十四版增补 · 账到期（10 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm24gd">第十八辑的 GitHub 那一路跑了 <strong>15 个查询 / 147 行候选</strong>，逐条走 REST API 实测 stars / forks / license / language / pushed / created，<strong>再逐条 grep 过 17 份存档 + 1094 项索引</strong>。本版主线是「<strong>账到期</strong>」—— 三笔同时到期的账：vibe coding 的维护账（第三个月崩）、摘要压缩的失真账（「只打分不写」的逐字压缩阵营成型）、模型发布的口径账（20 个真实已合并 commit 重放，Opus 5.5 零回归 vs Sol 五次回归）。<strong>本辑唯一实测：自己的 harness tax —— 调用侧固定前缀 20,900 token，其中 MCP 工具定义占 50%（95 个工具 / 10,519 token）。</strong></p>
+
+      <div class="card" data-page-node-id="rpm24c1">
+        <div class="card-top" data-page-node-id="rpm24c1t">
+          <span class="card-name" data-page-node-id="rpm24c1mn"><a href="https://github.com/Clearailhc/clearai-dsh" target="_blank" data-page-node-id="rpm24c1n">clearai-dsh（把「认识论循环」装进 DSH）</a></span>
+          <span class="lang" data-page-node-id="rpm24c1l">JavaScript</span>
+          <span class="stars" data-page-node-id="rpm24c1s">381</span>
+          <span class="tag t-make" data-page-node-id="rpm24c1t1">AI × 认识论</span>
+          <span class="tag t-ok" data-page-node-id="rpm24c1t2">只登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c1p"><strong>DSH 生态里星最高的第三方插件</strong>（381★）。它给的不是某个功能，是一条<strong>纪律</strong>：<strong>frame（框定）→ hypothesize（假设）→ plan → observe（观察）→ verify（验证）→ evaluate（评估）→ record（记录）</strong> 七段循环。产物叫<strong>领域本体</strong> —— 你这个项目自己的词汇表和知识条目，下轮能按概念取回。README 原话：<strong>每条边都要被证据和独立评估检验过</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm24c1a"><b data-page-node-id="rpm24c1ab">打个比方：</b>我们的 `mistakes/`（18 条错误记忆）和 `agent-house-rules.md`（39 条房规）其实在做同一件事的下半段 —— <strong>记录</strong>。它补的是上半段：<strong>先有假设、再有观察、然后才许记录。</strong></div>
+        <div class="analogy" data-page-node-id="rpm24c1w"><b data-page-node-id="rpm24c1wb">注意：</b><strong>Apache-2.0，但它是「研究型」插件</strong>：它假定你在做探索性工作。日常改 bug 这种明确任务用它七段循环，是<strong>拿牛刀杀鸡且会拖慢节奏</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm24c1g">
+          <div class="mini" data-page-node-id="rpm24c1m1"><span class="lbl" data-page-node-id="rpm24c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c1m1b"><div class="bar-track" data-page-node-id="rpm24c1m1t"><div class="bar-fill" style="width:88%;background:var(--make)" data-page-node-id="rpm24c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c1m1n">8.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c1m1v"><strong>七段循环可以拆开单独用</strong>：即使不装它，「frame → hypothesize → verify」这三段也足够改掉「让 AI 直接给结论」的坏习惯</div></div>
+          <div class="mini" data-page-node-id="rpm24c1m2"><span class="lbl" data-page-node-id="rpm24c1m2l">实用性</span><div class="bar" data-page-node-id="rpm24c1m2b"><div class="bar-track" data-page-node-id="rpm24c1m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm24c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c1m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c1m2v"><strong>只登记未安装</strong>：本轮没有 DSH 会话在跑，装了测不出东西。而且它产出的「本体」需要连续多轮研究才长得起来</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c1c">创建 2026-09-12 · 最近推送 2026-09-23 · 381★ · Apache-2.0 · JavaScript · 信源 [1094]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm24c2">
+        <div class="card-top" data-page-node-id="rpm24c2t">
+          <span class="card-name" data-page-node-id="rpm24c2mn"><a href="https://github.com/bowenliang123/dsh-context" target="_blank" data-page-node-id="rpm24c2n">dsh-context（把上下文账单摊开给你看）</a></span>
+          <span class="lang" data-page-node-id="rpm24c2l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm24c2s">1,502</span>
+          <span class="tag t-make" data-page-node-id="rpm24c2t1">AI × 上下文</span>
+          <span class="tag t-ok" data-page-node-id="rpm24c2t2">强烈建议第一步装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c2p"><strong>给 DSH 装一块「电表」</strong>。它把每一次请求的上下文拆成六色：系统提示 / <strong>工具 Schema</strong> / 你的消息 / 注入的上下文 / 助手回复 / 工具结果，直接显示「<strong>77.6k / 262.1k（30%）</strong>」，还会列出<strong>最贵的 5 个工具 Schema</strong> —— 因为很多会话的隐形成本就藏在那儿。另有逐请求演进图、注入与压缩事件标记、以及一个跨会话的仪表盘（用量、成本、<strong>缓存命中率</strong>、活动热力图）。</p>
+        <div class="analogy" data-page-node-id="rpm24c2a"><b data-page-node-id="rpm24c2ab">打个比方：</b><strong>这就是第十八辑自测那件事的现成版本。</strong> 我们用自己写的 `_tools/harness_tax_probe.py` 量出「调用侧固定前缀 20,900 token，其中 MCP 占 50%」，它做的是同一件事，只不过<strong>长在会话里、能看历史曲线</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm24c2w"><b data-page-node-id="rpm24c2wb">注意：</b><strong>它读的是官方计量数据</strong>（和输入框那个占用环同源），所以<strong>数字不会打架</strong> —— 这一点比自己估的强。但它只解决「看得见」，不解决「怎么省」。</div>
+        <div class="grid2" data-page-node-id="rpm24c2g">
+          <div class="mini" data-page-node-id="rpm24c2m1"><span class="lbl" data-page-node-id="rpm24c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c2m1b"><div class="bar-track" data-page-node-id="rpm24c2m1t"><div class="bar-fill" style="width:92%;background:var(--make)" data-page-node-id="rpm24c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c2m1n">9.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c2m1v"><strong>本辑第一顺位</strong>：1,502★ / Apache-2.0 / 免构建免重启（`dsh plugin --profile web add dsh-context`）。「最贵的 5 个工具 Schema」这一栏直接对应我们的发现</div></div>
+          <div class="mini" data-page-node-id="rpm24c2m2"><span class="lbl" data-page-node-id="rpm24c2m2l">实用性</span><div class="bar" data-page-node-id="rpm24c2m2b"><div class="bar-track" data-page-node-id="rpm24c2m2t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm24c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c2m2n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c2m2v"><strong>本机 `dsh 0.1.0-rc.6` 已装，随时可上</strong>。建议顺序：先装它把账单看清楚，再决定要不要上压缩类插件</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c2c">创建 2026-08-14 · 最近推送 2026-09-23 · 1,502★ · Apache-2.0 · TypeScript · 信源 [1095]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm24c3">
+        <div class="card-top" data-page-node-id="rpm24c3t">
+          <span class="card-name" data-page-node-id="rpm24c3mn"><a href="https://github.com/ccompactor/ccompactor" target="_blank" data-page-node-id="rpm24c3n">ccompactor（把会话压成一份能交接的档案）</a></span>
+          <span class="lang" data-page-node-id="rpm24c3l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm24c3s">21</span>
+          <span class="tag t-make" data-page-node-id="rpm24c3t1">AI × 交接</span>
+          <span class="tag t-ok" data-page-node-id="rpm24c3t2">思路直接可抄</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c3p"><strong>把任意一个 coding agent 的会话（Claude Code / Codex / Pi）提取成「紧凑、可验证、带出处」的交接件</strong>，让另一个 agent 能直接接着干。四条命令：`list` 看有哪些会话 / `find "auth migration"` 按话题找 / `extract claude:last` 出档案 / `handoff claude:last --to codex --run` 直接换工具续跑。它是 `handyutils/sctxx` 的 TypeScript 版（同一思路的第二个实现）。</p>
+        <div class="analogy" data-page-node-id="rpm24c3a"><b data-page-node-id="rpm24c3ab">打个比方：</b><strong>第十八辑那批中文帖说的「50% 交接规则」，缺的就是这么一个东西。</strong> 我们现在是靠「写 memory 文件」手工交接 —— 有损失，但至少是可控的损失。</div>
+        <div class="analogy" data-page-node-id="rpm24c3w"><b data-page-node-id="rpm24c3wb">注意：</b><strong>它压的是别人的会话格式</strong>。如果有一天我们自己写的东西要长期跑，「带出处的交接件」这个格式值得先抄过来 —— <strong>出处是关键</strong>，没有出处的摘要就是我们第十七辑踩过的坑。</div>
+        <div class="grid2" data-page-node-id="rpm24c3g">
+          <div class="mini" data-page-node-id="rpm24c3m1"><span class="lbl" data-page-node-id="rpm24c3m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c3m1b"><div class="bar-track" data-page-node-id="rpm24c3m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm24c3m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c3m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c3m1v"><strong>跨工具换手是它的独门点</strong>：`--to codex` 意味着「这个 agent 干到一半，换个 agent 接着干」不再是手工活</div></div>
+          <div class="mini" data-page-node-id="rpm24c3m2"><span class="lbl" data-page-node-id="rpm24c3m2l">实用性</span><div class="bar" data-page-node-id="rpm24c3m2b"><div class="bar-track" data-page-node-id="rpm24c3m2t"><div class="bar-fill" style="width:62%;background:var(--make)" data-page-node-id="rpm24c3m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c3m2n">6.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c3m2v"><strong>只登记未安装</strong>：本机没有 Claude Code / Codex 的会话文件（我们走的是 WorkBuddy + 自己的桥），`claude:last` 取不到东西</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c3c">创建 2026-09-12 · 最近推送 2026-09-14 · 21★ · MIT · TypeScript · 信源 [1096]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm24c4">
+        <div class="card-top" data-page-node-id="rpm24c4t">
+          <span class="card-name" data-page-node-id="rpm24c4mn"><a href="https://github.com/Waxmell114514/jev-compaction" target="_blank" data-page-node-id="rpm24c4n">jev-compaction（只打分、不写字的压缩器）</a></span>
+          <span class="lang" data-page-node-id="rpm24c4l">Python</span>
+          <span class="stars" data-page-node-id="rpm24c4s">3</span>
+          <span class="tag t-make" data-page-node-id="rpm24c4t1">AI × 上下文</span>
+          <span class="tag t-new" data-page-node-id="rpm24c4t2">本辑最新原理</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c4p"><strong>一句话纲领（README 原话）</strong>：*一个只能打分、永远不能写字的上下文压缩器 —— 这样 agent 的记忆里就不可能有原始记录中没有的事实。*这就是<strong>逐字压缩</strong>和<strong>摘要压缩</strong>的分界线：摘要是<strong>生成</strong>，生成就会改写；逐字压缩只做<strong>选择</strong> —— 打分、把低分行挪出去，保留下来的每一行<strong>逐字节原样</strong>，而且 append-only 的前缀<strong>从不让 prompt cache 失效</strong>。作者自测：一段 `npm install` 输出 749 → 391 token（−48%），整趟打分成本 $0.000031。</p>
+        <div class="analogy" data-page-node-id="rpm24c4a"><b data-page-node-id="rpm24c4ab">打个比方：</b><strong>第十七辑那句「摘要会把 `orderExport.ts:42:19` 变成『之前失败了』」，这一辑终于有人给出了替代方案。</strong> 我们的 `mistakes/` 其实也是这个思路 —— <strong>只记录发生了什么，不润色。</strong></div>
+        <div class="analogy" data-page-node-id="rpm24c4w"><b data-page-node-id="rpm24c4wb">注意：</b><strong>$0.000031 是打分成本，不是省下的钱。</strong> 真正的收益在「保留行逐字节原样」—— <strong>可复查</strong>才是它相对摘要的核心优势，不是那 48%。</div>
+        <div class="grid2" data-page-node-id="rpm24c4g">
+          <div class="mini" data-page-node-id="rpm24c4m1"><span class="lbl" data-page-node-id="rpm24c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c4m1b"><div class="bar-track" data-page-node-id="rpm24c4m1t"><div class="bar-fill" style="width:85%;background:var(--make)" data-page-node-id="rpm24c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c4m1n">8.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c4m1v"><strong>原理比星数重要</strong>：「只打分不写」是一条可以自己实现的判据，不依赖它这个仓库。我们的闸门全是这个路子</div></div>
+          <div class="mini" data-page-node-id="rpm24c4m2"><span class="lbl" data-page-node-id="rpm24c4m2l">实用性</span><div class="bar" data-page-node-id="rpm24c4m2b"><div class="bar-track" data-page-node-id="rpm24c4m2t"><div class="bar-fill" style="width:45%;background:var(--make)" data-page-node-id="rpm24c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c4m2n">4.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c4m2v"><strong>3★、作者自测、需要 Jev 服务</strong>：数字没有第三方复核，本机也没有在跑的 agent 会话可以挂上去试</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c4c">创建 2026-09-19 · 最近推送 2026-09-23 · 3★ · MIT · Python · 信源 [1097]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm24c5">
+        <div class="card-top" data-page-node-id="rpm24c5t">
+          <span class="card-name" data-page-node-id="rpm24c5mn"><a href="https://github.com/KaryawanSurga/mcp-context-budget" target="_blank" data-page-node-id="rpm24c5n">mcp-context-budget（开 MCP 之前先称一下）</a></span>
+          <span class="lang" data-page-node-id="rpm24c5l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm24c5s">1</span>
+          <span class="tag t-make" data-page-node-id="rpm24c5t1">AI × 上下文</span>
+          <span class="tag t-ok" data-page-node-id="rpm24c5t2">已用自研等价物</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c5p"><strong>连上你的 MCP 服务器，读出所有工具定义，按上下文 token 给每个工具排名</strong> —— 名字、描述、输入 schema 一起算。官方建议的三个使用时机：<strong>启用一个服务器之前</strong> / <strong>觉得 agent 变慢的时候</strong> / <strong>放进 CI 防止工具膨胀</strong>。它自己的定位是「TokenSaver 管出去的，Context Budget 管进来的」。</p>
+        <div class="analogy" data-page-node-id="rpm24c5a"><b data-page-node-id="rpm24c5ab">打个比方：</b><strong>和我们的自测结论撞在同一处。</strong> 实测：本机 7 个 MCP 服务器 / 95 个工具 = <strong>10,519 token，占调用侧固定前缀的 50%</strong>，其中 GitHub 一个就 45 个工具 / 2,293 token —— <strong>连上就付，不用也付</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm24c5w"><b data-page-node-id="rpm24c5wb">注意：</b><strong>1★ = 没有任何第三方用过。</strong> 但它的<strong>姊妹项目 TokenSaver</strong> 提示了一个对称关系：<strong>进来的要称，出去的也要省</strong> —— 我们只做了前半边。</div>
+        <div class="grid2" data-page-node-id="rpm24c5g">
+          <div class="mini" data-page-node-id="rpm24c5m1"><span class="lbl" data-page-node-id="rpm24c5m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c5m1b"><div class="bar-track" data-page-node-id="rpm24c5m1t"><div class="bar-fill" style="width:78%;background:var(--make)" data-page-node-id="rpm24c5m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c5m1n">7.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c5m1v"><strong>「启用前先量」这个动作是通用的</strong>，不依赖它这个实现。我们已用 `_tools/harness_tax_probe.py` 覆盖了同一需求</div></div>
+          <div class="mini" data-page-node-id="rpm24c5m2"><span class="lbl" data-page-node-id="rpm24c5m2l">实用性</span><div class="bar" data-page-node-id="rpm24c5m2b"><div class="bar-track" data-page-node-id="rpm24c5m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm24c5m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c5m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c5m2v"><strong>1★、Node ≥ 20、需要真的连上服务器</strong>：价值在提醒，不在工具本身。但「放进 CI 防膨胀」这条对我们是个新角度</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c5c">创建 2026-09-18 · 最近推送 2026-09-18 · 1★ · MIT · TypeScript · 信源 [1098]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm24c6">
+        <div class="card-top" data-page-node-id="rpm24c6t">
+          <span class="card-name" data-page-node-id="rpm24c6mn"><a href="https://github.com/huangziyuan-general/dsh-novel-forge" target="_blank" data-page-node-id="rpm24c6n">dsh-novel-forge（把长篇写作的通病变成硬约束）</a></span>
+          <span class="lang" data-page-node-id="rpm24c6l">JavaScript</span>
+          <span class="stars" data-page-node-id="rpm24c6s">13</span>
+          <span class="tag t-make" data-page-node-id="rpm24c6t1">AI × 写作</span>
+          <span class="tag t-ok" data-page-node-id="rpm24c6t2">与 check_dialogue 同源</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c6p"><strong>小说锻炉</strong>：把 AI 长篇写作的通病做成<strong>代码强制的硬约束</strong> —— <strong>事实账本</strong>（设定不许自相矛盾）/ 上下文包 / <strong>阶段门禁</strong> / <strong>零费用去 AI 味扫描</strong> / 确定性审计 / 提案制修订。「零费用」这三个字是关键：<strong>去 AI 味靠确定性规则扫，不靠再叫一次模型。</strong></p>
+        <div class="analogy" data-page-node-id="rpm24c6a"><b data-page-node-id="rpm24c6ab">打个比方：</b><strong>和我们第 5 轮的 `check_dialogue.py`（六条规则：编辑脚注 / 旁白套话 / 填充词连用 / 朗读测试 42 字 / 角色口癖 / 口吻分化）是同一条路线的另一头</strong> —— 它管小说，我们管对白，但<strong>都拒绝「再叫一次模型来判断」</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm24c6w"><b data-page-node-id="rpm24c6wb">注意：</b><strong>13★ 且是个人项目</strong>，规则质量取决于作者自己踩过多少坑。抄<strong>结构</strong>（账本 / 门禁 / 确定性扫描），不要直接抄<strong>规则表</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm24c6g">
+          <div class="mini" data-page-node-id="rpm24c6m1"><span class="lbl" data-page-node-id="rpm24c6m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c6m1b"><div class="bar-track" data-page-node-id="rpm24c6m1t"><div class="bar-fill" style="width:82%;background:var(--make)" data-page-node-id="rpm24c6m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c6m1n">8.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c6m1v"><strong>「事实账本 + 阶段门禁」这两个是我们可以直接抄的结构</strong>：我们的 `ENDINGS` / `ACHIEVEMENTS` / `CHAPTERS` 三张表其实就是事实账本</div></div>
+          <div class="mini" data-page-node-id="rpm24c6m2"><span class="lbl" data-page-node-id="rpm24c6m2l">实用性</span><div class="bar" data-page-node-id="rpm24c6m2b"><div class="bar-track" data-page-node-id="rpm24c6m2t"><div class="bar-fill" style="width:58%;background:var(--make)" data-page-node-id="rpm24c6m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c6m2n">5.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c6m2v"><strong>只登记未安装</strong>：面向长篇小说，游戏线已终止。但它的<strong>零费用扫描</strong>思路对「对白 AI 味」这条未闭合缺口是现成参照</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c6c">创建 2026-09-11 · 最近推送 2026-09-21 · 13★ · MIT · JavaScript · 信源 [1099]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm24c7">
+        <div class="card-top" data-page-node-id="rpm24c7t">
+          <span class="card-name" data-page-node-id="rpm24c7mn"><a href="https://github.com/a86582751/dsh-nexttavern" target="_blank" data-page-node-id="rpm24c7n">dsh-nexttavern（DSH 长篇角色扮演，带长篇记忆）</a></span>
+          <span class="lang" data-page-node-id="rpm24c7l">JavaScript</span>
+          <span class="stars" data-page-node-id="rpm24c7s">103</span>
+          <span class="tag t-make" data-page-node-id="rpm24c7t1">AI × 角色扮演</span>
+          <span class="tag t-new" data-page-node-id="rpm24c7t2">角色一致性老问题</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c7p"><strong>把 DSH 变成酒馆</strong>：SillyTavern 角色卡导入、行动选项卡、分支对话管理、<strong>长篇记忆</strong>、<strong>关键词与语义混合检索</strong>、交互式角色卡创作。这些东西合起来回答的是一个具体问题：<strong>角色在很长的时间里怎么不跑偏。</strong></p>
+        <div class="analogy" data-page-node-id="rpm24c7a"><b data-page-node-id="rpm24c7ab">打个比方：</b><strong>和第 3 轮「角色一致性三档方案」是同一道题。</strong> 我们最后走的是「参考图 + 图生图」的<strong>视觉</strong>一致性（9/9 零漂移，没上 LoRA）；它解决的是<strong>性格与记忆</strong>的一致性 —— 另一半。</div>
+        <div class="analogy" data-page-node-id="rpm24c7w"><b data-page-node-id="rpm24c7wb">注意：</b><strong>GPL-3.0 + 个人项目</strong>。而且角色扮演类插件最容易踩的是<strong>内容合规</strong> —— 即便将来要用，也只能是「读它的记忆结构」。</div>
+        <div class="grid2" data-page-node-id="rpm24c7g">
+          <div class="mini" data-page-node-id="rpm24c7m1"><span class="lbl" data-page-node-id="rpm24c7m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c7m1b"><div class="bar-track" data-page-node-id="rpm24c7m1t"><div class="bar-fill" style="width:72%;background:var(--make)" data-page-node-id="rpm24c7m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c7m1n">7.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c7m1v"><strong>GPL-3.0 是硬约束</strong>：传染性协议，不能并进 MIT 系项目。但「关键词 + 语义混合检索」这个做法可以自己实现</div></div>
+          <div class="mini" data-page-node-id="rpm24c7m2"><span class="lbl" data-page-node-id="rpm24c7m2l">实用性</span><div class="bar" data-page-node-id="rpm24c7m2b"><div class="bar-track" data-page-node-id="rpm24c7m2t"><div class="bar-fill" style="width:48%;background:var(--make)" data-page-node-id="rpm24c7m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c7m2n">4.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c7m2v"><strong>只登记未安装</strong>：游戏线已终止，当下没有角色扮演需求。留着是因为 <strong>NPC 记忆是我们列了六辑都没解决的题</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c7c">创建 2026-09-11 · 最近推送 2026-09-23 · 103★ · GPL-3.0 · JavaScript · 信源 [1100]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm24c8">
+        <div class="card-top" data-page-node-id="rpm24c8t">
+          <span class="card-name" data-page-node-id="rpm24c8mn"><a href="https://github.com/holokat/AetherFX" target="_blank" data-page-node-id="rpm24c8n">AetherFX（AI 能署名的游戏特效）</a></span>
+          <span class="lang" data-page-node-id="rpm24c8l">Python</span>
+          <span class="stars" data-page-node-id="rpm24c8s">1</span>
+          <span class="tag t-make" data-page-node-id="rpm24c8t1">游戏 × 特效</span>
+          <span class="tag t-new" data-page-node-id="rpm24c8t2">可署名三件套</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c8p"><strong>游戏 VFX，但作者可以是 agent</strong>：描述一个效果（或把概念图丢给 agent），它用<strong>带类型的积木块</strong>拼出效果、<strong>看自己的渲染</strong>、自己迭代，产物是<strong>一个小 JSON 文件</strong>，到处都能播。三个设计点很硬：<strong>每一个编辑动作都是 MCP 工具</strong>（附带 agent 需要的说明）/ <strong>确定性可移植</strong>（不写 shader、无二进制资产，贴图和网格全是程序化的）/ 同一个模拟在 studio、导出、游戏里（一个小 C 库）跑出来一样。</p>
+        <div class="analogy" data-page-node-id="rpm24c8a"><b data-page-node-id="rpm24c8ab">打个比方：</b><strong>这就是我们一直说的「闸门要放在真实路径上」的正面样本。</strong> 它把「效果」变成<strong>文本 + 确定性模拟</strong>，于是<strong>可 diff、可版本管理、可断言</strong> —— 对比美术资产那种「生成完只能靠眼睛看」的东西，是另一个物种。</div>
+        <div class="analogy" data-page-node-id="rpm24c8w"><b data-page-node-id="rpm24c8wb">注意：</b><strong>1★ = 没人验证过。</strong> 但「贴图和网格全程序化 → 无二进制资产」这一条，对我们第 7 轮那个 <strong>62MB 发行包瘦身</strong>的题是正面答案。</div>
+        <div class="grid2" data-page-node-id="rpm24c8g">
+          <div class="mini" data-page-node-id="rpm24c8m1"><span class="lbl" data-page-node-id="rpm24c8m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c8m1b"><div class="bar-track" data-page-node-id="rpm24c8m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm24c8m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c8m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c8m1v"><strong>1★，但三件套（agent 可署名 / 确定性 / 可移植）是通用范式</strong>：任何「让 AI 产出资产」的环节都该往这个方向靠</div></div>
+          <div class="mini" data-page-node-id="rpm24c8m2"><span class="lbl" data-page-node-id="rpm24c8m2l">实用性</span><div class="bar" data-page-node-id="rpm24c8m2b"><div class="bar-track" data-page-node-id="rpm24c8m2t"><div class="bar-fill" style="width:35%;background:var(--make)" data-page-node-id="rpm24c8m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c8m2n">3.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c8m2v"><strong>本机无 GPU 预览条件，且游戏线已终止</strong>。纯登记</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c8c">创建 2026-09-17 · 最近推送 2026-09-20 · 1★ · MIT · Python · 信源 [1101]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm24c9">
+        <div class="card-top" data-page-node-id="rpm24c9t">
+          <span class="card-name" data-page-node-id="rpm24c9mn"><a href="https://github.com/song-chaoyang/UnityAssetDB" target="_blank" data-page-node-id="rpm24c9n">UnityAssetDB（把资产引用变成可查询的数据库）</a></span>
+          <span class="lang" data-page-node-id="rpm24c9l">Rust</span>
+          <span class="stars" data-page-node-id="rpm24c9s">49</span>
+          <span class="tag t-make" data-page-node-id="rpm24c9t1">游戏 × 工程化</span>
+          <span class="tag t-ok" data-page-node-id="rpm24c9t2">思路直接可抄</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c9p"><strong>Rust + SQLite + tree-sitter</strong>：把工程里<strong>所有 Unity 资产引用</strong>变成一个可查询的数据库，提供 CLI 和 Web 界面。它解决的是一件很具体的事：<strong>当 AI 问「这个 prefab 被谁用了」，别让它 grep 整个工程。</strong></p>
+        <div class="analogy" data-page-node-id="rpm24c9a"><b data-page-node-id="rpm24c9ab">打个比方：</b><strong>和我们的 `check_font_coverage.py` 是同一个思路的不同应用</strong>：把「需要全工程扫描才知道的事实」<strong>预先算成一张表</strong>，然后让 agent 查表而不是读文件 —— <strong>省下的正是上下文。</strong></div>
+        <div class="analogy" data-page-node-id="rpm24c9w"><b data-page-node-id="rpm24c9wb">注意：</b><strong>它是「查询工具」不是「AI 工具」</strong> —— 没有模型调用。这反而是优点：<strong>确定性、零 token、可进 CI。</strong></div>
+        <div class="grid2" data-page-node-id="rpm24c9g">
+          <div class="mini" data-page-node-id="rpm24c9m1"><span class="lbl" data-page-node-id="rpm24c9m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c9m1b"><div class="bar-track" data-page-node-id="rpm24c9m1t"><div class="bar-fill" style="width:76%;background:var(--make)" data-page-node-id="rpm24c9m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c9m1n">7.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c9m1v"><strong>「预计算成表 + 让 agent 查」是省上下文的正解</strong>，与引擎无关。我们的 `CHAPTERS` / `ENDINGS` 表已经在做这件事</div></div>
+          <div class="mini" data-page-node-id="rpm24c9m2"><span class="lbl" data-page-node-id="rpm24c9m2l">实用性</span><div class="bar" data-page-node-id="rpm24c9m2b"><div class="bar-track" data-page-node-id="rpm24c9m2t"><div class="bar-fill" style="width:40%;background:var(--make)" data-page-node-id="rpm24c9m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c9m2n">4.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c9m2v"><strong>本机无 Unity 工程</strong>，纯登记。但 49★ / MIT / Rust 说明它是正经工具</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c9c">创建 2026-08-21 · 最近推送 2026-09-22 · 49★ · MIT · Rust · 信源 [1102]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm24c10">
+        <div class="card-top" data-page-node-id="rpm24c10t">
+          <span class="card-name" data-page-node-id="rpm24c10mn"><a href="https://github.com/Jadis0x/URKit" target="_blank" data-page-node-id="rpm24c10n">URKit（Unity Mono 与 IL2CPP 通用 modding 框架）</a></span>
+          <span class="lang" data-page-node-id="rpm24c10l">C++</span>
+          <span class="stars" data-page-node-id="rpm24c10s">25</span>
+          <span class="tag t-make" data-page-node-id="rpm24c10t1">游戏 × Modding</span>
+          <span class="tag t-ok" data-page-node-id="rpm24c10t2">与 DroidSpy 互补</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm24c10p"><strong>原生 C++ 的 Unity modding 框架，同时支持 Mono 和 IL2CPP 两种后端</strong>。IL2CPP 这一半是难点：它把 C# 编译成了原生代码，常规的反射式注入在 IL2CPP 上不管用。</p>
+        <div class="analogy" data-page-node-id="rpm24c10a"><b data-page-node-id="rpm24c10ab">打个比方：</b><strong>和第七辑收的 DroidSpy（手机端 dnSpy，Unity Mono 解包 + MCP）正好是一对</strong>：<strong>DroidSpy 负责「拆开看」，URKit 负责「装回去」。</strong> 对一个有 73 款游戏解包积累的人来说，这两半合起来才是完整链路。</div>
+        <div class="analogy" data-page-node-id="rpm24c10w"><b data-page-node-id="rpm24c10wb">注意：</b><strong>modding 框架天然踩在合规边界上</strong>（第七辑的 Harbour Masters 争议、房规里的同人三条边界）。<strong>自用分析可以，分发要慎重。</strong></div>
+        <div class="grid2" data-page-node-id="rpm24c10g">
+          <div class="mini" data-page-node-id="rpm24c10m1"><span class="lbl" data-page-node-id="rpm24c10m1l">可拓展性</span><div class="bar" data-page-node-id="rpm24c10m1b"><div class="bar-track" data-page-node-id="rpm24c10m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm24c10m1f"></div></div><span class="bar-num" data-page-node-id="rpm24c10m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c10m1v"><strong>IL2CPP 支持是稀缺能力</strong>：Unity 新版本默认 IL2CPP，只支持 Mono 的工具会越来越不够用</div></div>
+          <div class="mini" data-page-node-id="rpm24c10m2"><span class="lbl" data-page-node-id="rpm24c10m2l">实用性</span><div class="bar" data-page-node-id="rpm24c10m2b"><div class="bar-track" data-page-node-id="rpm24c10m2t"><div class="bar-fill" style="width:42%;background:var(--make)" data-page-node-id="rpm24c10m2f"></div></div><span class="bar-num" data-page-node-id="rpm24c10m2n">4.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm24c10m2v"><strong>只登记未安装</strong>：本机没有在做的 mod 工程，且 C++ 框架的构建门槛高于脚本类工具</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm24c10c">创建 2026-07-17 · 最近推送 2026-09-23 · 25★ · MIT · C++ · 信源 [1103]</div>
+      </div>
+
+    </div>
+
+<div class="group" data-page-node-id="OzQE47GHjbV2GNGH4ijNIf">
       <div class="group-title" data-page-node-id="7VUN03w2GaELTJctdM8WHv">通用资源浏览器 · 先把游戏"打开"看看</div>
 
       <div class="card" data-page-node-id="0ysrTuwAgKrSyi7QZ367qC">
@@ -14498,7 +15085,7 @@ footer a{color:var(--text-2)}
           <li data-page-node-id="HBqogrEq8bVkkw0eAUf7va">第 4 步：在 <code data-page-node-id="JXALvV6O9qyYObaMEt4Qqy">Ren\'Py</code> 或 <code data-page-node-id="goTumYbvXvwsNwanW9CfHH">WebGAL</code> 上重做出第一个可玩 demo。</li>
         </ul>
         <p data-page-node-id="IjDqGbfl5RMEsbjvilbjfR">做出来后顺手放到 Steam / itch.io 看反馈，是最便宜的可行性验证。</p>
-</div></div></div>
+      </div></div>
     </div>
   </section>
 
@@ -14796,7 +15383,17 @@ footer a{color:var(--text-2)}
       <div id="r228">[228] <a href="https://github.com/TokisanGames/Terrain3D" target="_blank">TokisanGames/Terrain3D</a> — 4.2k · 2026-08-29 · MIT</div>
       <div id="r229">[229] <a href="https://github.com/gdquest-demos/godot-shaders" target="_blank">gdquest-demos/godot-shaders</a> — 4.1k · 2026-05-16 · 未声明</div>
       <div id="r230">[230] <a href="https://github.com/godotengine/godot-demo-projects" target="_blank">godotengine/godot-demo-projects</a> — 9.5k · 2026-08-25 · MIT</div>
-      <div id="r231">[231] <a href="https://github.com/qiao/PathFinding.js" target="_blank">qiao/PathFinding.js</a> — 8.7k · 2024-06-20 · 未声明</div>
+      <div id="r231">[231] <a href="https://github.com/qiao/PathFinding.js" target="_blank">qiao/PathFinding.js</a> — 8
+      <div id="r1094" data-page-node-id="rpm24r1094">[1094] <a href="https://github.com/Clearailhc/clearai-dsh" target="_blank" data-page-node-id="rpm24ra1094">Clearailhc/clearai-dsh</a> — 381 · 2026-09-23 · Apache-2.0 · JavaScript</div>
+      <div id="r1095" data-page-node-id="rpm24r1095">[1095] <a href="https://github.com/bowenliang123/dsh-context" target="_blank" data-page-node-id="rpm24ra1095">bowenliang123/dsh-context</a> — 1,502 · 2026-09-23 · Apache-2.0 · TypeScript</div>
+      <div id="r1096" data-page-node-id="rpm24r1096">[1096] <a href="https://github.com/ccompactor/ccompactor" target="_blank" data-page-node-id="rpm24ra1096">ccompactor/ccompactor</a> — 21 · 2026-09-14 · MIT · TypeScript</div>
+      <div id="r1097" data-page-node-id="rpm24r1097">[1097] <a href="https://github.com/Waxmell114514/jev-compaction" target="_blank" data-page-node-id="rpm24ra1097">Waxmell114514/jev-compaction</a> — 3 · 2026-09-23 · MIT · Python</div>
+      <div id="r1098" data-page-node-id="rpm24r1098">[1098] <a href="https://github.com/KaryawanSurga/mcp-context-budget" target="_blank" data-page-node-id="rpm24ra1098">KaryawanSurga/mcp-context-budget</a> — 1 · 2026-09-18 · MIT · TypeScript</div>
+      <div id="r1099" data-page-node-id="rpm24r1099">[1099] <a href="https://github.com/huangziyuan-general/dsh-novel-forge" target="_blank" data-page-node-id="rpm24ra1099">huangziyuan-general/dsh-novel-forge</a> — 13 · 2026-09-21 · MIT · JavaScript</div>
+      <div id="r1100" data-page-node-id="rpm24r1100">[1100] <a href="https://github.com/a86582751/dsh-nexttavern" target="_blank" data-page-node-id="rpm24ra1100">a86582751/dsh-nexttavern</a> — 103 · 2026-09-23 · GPL-3.0 · JavaScript</div>
+      <div id="r1101" data-page-node-id="rpm24r1101">[1101] <a href="https://github.com/holokat/AetherFX" target="_blank" data-page-node-id="rpm24ra1101">holokat/AetherFX</a> — 1 · 2026-09-20 · MIT · Python</div>
+      <div id="r1102" data-page-node-id="rpm24r1102">[1102] <a href="https://github.com/song-chaoyang/UnityAssetDB" target="_blank" data-page-node-id="rpm24ra1102">song-chaoyang/UnityAssetDB</a> — 49 · 2026-09-22 · MIT · Rust</div>
+      <div id="r1103" data-page-node-id="rpm24r1103">[1103] <a href="https://github.com/Jadis0x/URKit" target="_blank" data-page-node-id="rpm24ra1103">Jadis0x/URKit</a> — 25 · 2026-09-23 · MIT · C++</div>.7k · 2024-06-20 · 未声明</div>
       <div id="r232">[232] <a href="https://github.com/AirtestProject/Airtest" target="_blank">AirtestProject/Airtest</a> — 9.6k · 2026-03-23 · Apache-2.0</div>
       <div id="r233">[233] <a href="https://github.com/0xFA11/MultiplayerNetworkingResources" target="_blank">0xFA11/MultiplayerNetworkingResources</a> — 8.7k · 2026-08-27 · 未声明</div>
       <div id="r234">[234] <a href="https://github.com/michidk/Unity-Script-Collection" target="_blank">michidk/Unity-Script-Collection</a> — 6.4k · 2025-08-20 · GPL-3.0</div>
@@ -14965,7 +15562,16 @@ footer a{color:var(--text-2)}
       <div id="r397">[397] <a href="https://github.com/streetpea/chiaki-ng" target="_blank">streetpea/chiaki-ng</a> — 2.7k · 2026-09-07 · AGPL-3.0</div>
       <div id="r398">[398] <a href="https://github.com/OpenStarbound/OpenStarbound" target="_blank">OpenStarbound/OpenStarbound</a> — 1.3k · 2026-09-06 · 未标注</div>
       <div id="r399">[399] <a href="https://github.com/mikke89/RmlUi" target="_blank">mikke89/RmlUi</a> — 4.4k · 2026-08-29 · MIT</div>
-      <div id="r400">[400] <a href="https://github.com/CedricGuillemet/ImGuizmo" target="_blank">CedricGuillemet/ImGuizmo</a> — 4k · 2026-08-08 · MIT</div>
+      <div id="r400">[400] <a href="https://github.com/CedricGuillemet/ImGuizmo" target="_blank
+      <div id="r1085" data-page-node-id="rpm23r1085">[1085] <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" data-page-node-id="rpm23ra1085">deepseek-ai/deepseek-harness</a> — 233,987 · 2026-09-22 · MIT · TypeScript</div>
+      <div id="r1086" data-page-node-id="rpm23r1086">[1086] <a href="https://github.com/awesome-dsh-plugin/awesome-dsh-plugin" target="_blank" data-page-node-id="rpm23ra1086">awesome-dsh-plugin/awesome-dsh-plugin</a> — 16,705 · 2026-09-23 · CC0-1.0 · Python</div>
+      <div id="r1087" data-page-node-id="rpm23r1087">[1087] <a href="https://github.com/CooperZhuang/dsh-context-window" target="_blank" data-page-node-id="rpm23ra1087">CooperZhuang/dsh-context-window</a> — 0 · 2026-09-09 · MIT · TypeScript</div>
+      <div id="r1088" data-page-node-id="rpm23r1088">[1088] <a href="https://github.com/nmlemus/harness-token-efficiency" target="_blank" data-page-node-id="rpm23ra1088">nmlemus/harness-token-efficiency</a> — 0 · 2026-09-08 · MIT · Python</div>
+      <div id="r1089" data-page-node-id="rpm23r1089">[1089] <a href="https://github.com/ayghri/i-have-adhd" target="_blank" data-page-node-id="rpm23ra1089">ayghri/i-have-adhd</a> — 50,519 · 2026-09-19 · MIT · Python</div>
+      <div id="r1090" data-page-node-id="rpm23r1090">[1090] <a href="https://github.com/hi-godot/godot-ai" target="_blank" data-page-node-id="rpm23ra1090">hi-godot/godot-ai</a> — 2,563 · 2026-09-23 · MIT · GDScript</div>
+      <div id="r1091" data-page-node-id="rpm23r1091">[1091] <a href="https://github.com/beckettlab/beckett-godot-mcp" target="_blank" data-page-node-id="rpm23ra1091">beckettlab/beckett-godot-mcp</a> — 23 · 2026-09-19 · MIT · GDScript</div>
+      <div id="r1092" data-page-node-id="rpm23r1092">[1092] <a href="https://github.com/cnfatal/rpycdec" target="_blank" data-page-node-id="rpm23ra1092">cnfatal/rpycdec</a> — 58 · 2026-09-20 · MIT · Python</div>
+      <div id="r1093" data-page-node-id="rpm23r1093">[1093] <a href="https://github.com/liuyejinghong/game-design-review" target="_blank" data-page-node-id="rpm23ra1093">liuyejinghong/game-design-review</a> — 0 · 2026-09-20 · 无 license · Python</div>">CedricGuillemet/ImGuizmo</a> — 4k · 2026-08-08 · MIT</div>
       <div id="r401">[401] <a href="https://github.com/MyGUI/mygui" target="_blank">MyGUI/mygui</a> — 840 · 2026-09-07 · 自定义协议</div>
       <div id="r402">[402] <a href="https://github.com/cegui/cegui" target="_blank">cegui/cegui</a> — 576 · 2024-10-06 · MIT</div>
       <div id="r403">[403] <a href="https://github.com/raysan5/raygui" target="_blank">raysan5/raygui</a> — 5.1k · 2026-08-26 · Zlib</div>
@@ -15126,7 +15732,13 @@ footer a{color:var(--text-2)}
       <div id="r558">[558] <a href="https://github.com/langchain-ai/langgraph" target="_blank">langchain-ai/langgraph</a> — 41253 · 2026-09-06 · MIT</div>
       <div id="r559">[559] <a href="https://github.com/microsoft/autogen" target="_blank">microsoft/autogen</a> — 60866 · 2026-04-15 · CC-BY-4.0</div>
       <div id="r560">[560] <a href="https://github.com/microsoft/semantic-kernel" target="_blank">microsoft/semantic-kernel</a> — 28546 · 2026-09-07 · MIT</div>
-      <div id="r561">[561] <a href="https://github.com/agentscope-ai/agentscope" target="_blank">agentscope-ai/agentscope</a> — 31098 · 2026-09-08 · Apache-2.0</div>
+      <div id="r561">[561] <a href="https://github.com/agentscope-ai/agentscope" target="_blank">agentscope-ai/agentscope</a> — 31098 · 2026-09-08
+      <div id="r1079" data-page-node-id="rpm22r1079">[1079] <a href="https://github.com/ikermoel/open-alternative-jev" target="_blank" data-page-node-id="rpm22ra1079">ikermoel/open-alternative-jev</a> — 51 · 2026-09-22 · Apache-2.0 · Python</div>
+      <div id="r1080" data-page-node-id="rpm22r1080">[1080] <a href="https://github.com/JakeSelby/agent-harness" target="_blank" data-page-node-id="rpm22ra1080">JakeSelby/agent-harness</a> — 15 · 2026-09-23 · MIT · Python</div>
+      <div id="r1081" data-page-node-id="rpm22r1081">[1081] <a href="https://github.com/liyupi/ai-model-world" target="_blank" data-page-node-id="rpm22ra1081">liyupi/ai-model-world</a> — 171 · 2026-09-23 · MIT · TypeScript</div>
+      <div id="r1082" data-page-node-id="rpm22r1082">[1082] <a href="https://github.com/26048608982lp-ai/gamenumerics" target="_blank" data-page-node-id="rpm22ra1082">26048608982lp-ai/gamenumerics</a> — 0 · 2026-09-16 · MIT · TypeScript</div>
+      <div id="r1083" data-page-node-id="rpm22r1083">[1083] <a href="https://github.com/sayic/game-apk-reverse-engineering" target="_blank" data-page-node-id="rpm22ra1083">sayic/game-apk-reverse-engineering</a> — 9 · 2026-09-22 · 无 license</div>
+      <div id="r1084" data-page-node-id="rpm22r1084">[1084] <a href="https://github.com/envy-ai/sprite-generator" target="_blank" data-page-node-id="rpm22ra1084">envy-ai/sprite-generator</a> — 0 · 2026-09-19 · AGPL-3.0 · Python</div> · Apache-2.0</div>
       <div id="r562">[562] <a href="https://github.com/FoundationAgents/MetaGPT" target="_blank">FoundationAgents/MetaGPT</a> — 70262 · 2026-01-21 · MIT</div>
       <div id="r563">[563] <a href="https://github.com/FoundationAgents/OpenManus" target="_blank">FoundationAgents/OpenManus</a> — 58238 · 2026-08-22 · MIT</div>
       <div id="r564">[564] <a href="https://github.com/camel-ai/camel" target="_blank">camel-ai/camel</a> — 17685 · 2026-09-07 · Apache-2.0</div>
@@ -15225,7 +15837,11 @@ footer a{color:var(--text-2)}
       <div id="r657">[657] <a href="https://github.com/schismtracker/schismtracker" target="_blank">schismtracker/schismtracker</a> — 1555 · 2026-08-28 · GPL-2.0</div>
       <div id="r658">[658] <a href="https://github.com/liabru/matter-js" target="_blank">liabru/matter-js</a> — 18397 · 2024-08-17 · MIT</div>
       <div id="r659">[659] <a href="https://github.com/goldfire/howler.js" target="_blank">goldfire/howler.js</a> — 25341 · 2025-11-23 · MIT</div>
-      <div id="r660">[660] <a href="https://github.com/Tonejs/Tone.js" target="_blank">Tonejs/Tone.js</a> — 14717 · 2026-09-03 · MIT</div>
+      <div id="r660"
+      <div id="r1075" data-page-node-id="rpm21r1075">[1075] <a href="https://github.com/lidge-jun/opencodex" target="_blank" data-page-node-id="rpm21ra1075">lidge-jun/opencodex</a> — 15,728 · 2026-09-21 · MIT · TypeScript</div>
+      <div id="r1076" data-page-node-id="rpm21r1076">[1076] <a href="https://github.com/Icemic/moyu" target="_blank" data-page-node-id="rpm21ra1076">Icemic/moyu</a> — 97 · 2026-09-19 · MPL-2.0 · Rust</div>
+      <div id="r1077" data-page-node-id="rpm21r1077">[1077] <a href="https://github.com/iamfakeguru/agent-md" target="_blank" data-page-node-id="rpm21ra1077">iamfakeguru/agent-md</a> — 968 · 2026-09-21 · MIT · Shell</div>
+      <div id="r1078" data-page-node-id="rpm21r1078">[1078] <a href="https://github.com/kphutt/gdmutant" target="_blank" data-page-node-id="rpm21ra1078">kphutt/gdmutant</a> — 3 · 2026-09-21 · MIT · Python</div>>[660] <a href="https://github.com/Tonejs/Tone.js" target="_blank">Tonejs/Tone.js</a> — 14717 · 2026-09-03 · MIT</div>
       <div id="r661">[661] <a href="https://github.com/pyglet/pyglet" target="_blank">pyglet/pyglet</a> — 2212 · 2026-09-08 · BSD-3-Clause</div>
       <div id="r662">[662] <a href="https://github.com/LWJGL/lwjgl3" target="_blank">LWJGL/lwjgl3</a> — 5443 · 2026-09-03 · BSD-3-Clause</div>
       <div id="r663">[663] <a href="https://github.com/axmolengine/axmol" target="_blank">axmolengine/axmol</a> — 1448 · 2026-09-06 · NOASSERTION</div>
@@ -15292,7 +15908,8 @@ footer a{color:var(--text-2)}
       <div id="r724">[724] <a href="https://github.com/RigsOfRods/rigs-of-rods" target="_blank">RigsOfRods/rigs-of-rods</a> — 1237 · 2026-08-28 · GPL-3.0</div>
       <div id="r725">[725] <a href="https://github.com/etlegacy/etlegacy" target="_blank">etlegacy/etlegacy</a> — 713 · 2026-08-26 · GPL-3.0</div>
       <div id="r726">[726] <a href="https://github.com/PrismLauncher/PrismLauncher" target="_blank">PrismLauncher/PrismLauncher</a> — 10340 · 2026-09-07 · GPL-3.0</div>
-      <div id="r727">[727] <a href="https://github.com/ClassiCube/ClassiCube" target="_blank">ClassiCube/ClassiCube</a> — 2050 · 2026-09-07 · NOASSERTION</div>
+      <div id="r727">[727] <a href="https://github.com/ClassiCube/ClassiCube" target="_blank">ClassiCube/ClassiCube</a> — 2050 · 2026-09-07 · NOASSERTION</di
+      <div id="r1074" data-page-node-id="rpm20r1074">[1074] <a href="https://github.com/Lord0fTurk/RenLocalizer" target="_blank" data-page-node-id="rpm20ra1074">Lord0fTurk/RenLocalizer</a> — 35 · 2026-09-13 · Python · 11 forks</div>v>
       <div id="r728">[728] <a href="https://github.com/MCCTeam/Minecraft-Console-Client" target="_blank">MCCTeam/Minecraft-Console-Client</a> — 2126 · 2026-09-06 · NOASSERTION</div>
       <div id="r729">[729] <a href="https://github.com/RevenantX/LiteNetLib" target="_blank">RevenantX/LiteNetLib</a> — 3616 · 2026-06-18 · MIT</div>
       <div id="r730">[730] <a href="https://github.com/sst/opencode" target="_blank">sst/opencode</a> — 205845 · 2026-09-08 · MIT</div>
@@ -15311,7 +15928,8 @@ footer a{color:var(--text-2)}
       <div id="r743">[743] <a href="https://github.com/THUDM/CogVideo" target="_blank">THUDM/CogVideo</a> — 13003 · 2025-11-04 · Apache-2.0</div>
       <div id="r744">[744] <a href="https://github.com/lllyasviel/FramePack" target="_blank">lllyasviel/FramePack</a> — 17248 · 2025-10-16 · Apache-2.0</div>
       <div id="r745">[745] <a href="https://github.com/Tencent/Hunyuan3D-2" target="_blank">Tencent/Hunyuan3D-2</a> — 14762 · 2025-10-28 · NOASSERTION</div>
-      <div id="r746">[746] <a href="https://github.com/MineDojo/Voyager" target="_blank">MineDojo/Voyager</a> — 7183 · 2024-04-03 · MIT</div>
+      <div id="r746">[746] <a href="https://github.com/MineDojo/Voyager" target="_blank">MineDojo/Voyager</a> — 7183 · 
+      <div id="r1073" data-page-node-id="rpm19r1073">[1073] <a href="https://github.com/majidmanzarpour/threejs-game-skills" target="_blank" data-page-node-id="rpm19ra1073">majidmanzarpour/threejs-game-skills</a> — 2,103 · 2026-09-05 · MIT · 213 forks</div>2024-04-03 · MIT</div>
       <div id="r747">[747] <a href="https://github.com/Microsoft/malmo" target="_blank">Microsoft/malmo</a> — 4271 · 2025-09-03 · MIT</div>
       <div id="r748">[748] <a href="https://github.com/Bin-Huang/chatbox" target="_blank">Bin-Huang/chatbox</a> — 41691 · 2026-09-04 · GPL-3.0</div>
       <div id="r749">[749] <a href="https://github.com/dnSpyEx/dnSpy" target="_blank">dnSpyEx/dnSpy</a> — 11035 · 2026-08-25 · GPL-3.0</div>

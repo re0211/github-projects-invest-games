@@ -1,0 +1,33 @@
+mksglu/context-mode | 23982 | 1729 | NOASSERTION | TypeScript | 2026-09-23 | 2026-02-23 | Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memo
+addyosmani/agent-skills | 98643 | 10365 | MIT | JavaScript | 2026-09-23 | 2026-02-15 | Production-grade engineering skills for AI coding agents.
+max-sixty/worktrunk | 8365 | 294 | NOASSERTION | Rust | 2026-09-23 | 2025-10-17 | Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows
+alibaba/open-code-review | 40091 | 2880 | Apache-2.0 | Go | 2026-09-23 | 2026-05-18 | Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic
+cloudflare/security-audit-skill | 20680 | 1173 | MIT | JavaScript | 2026-09-14 | 2026-06-18 | A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings
+microsoft/skills | 3049 | 349 | MIT | TypeScript | 2026-09-23 | 2026-01-16 | Skills, MCP servers, Custom Agents, Agents.md for SDKs to ground Coding Agents
+anthropics/knowledge-work-plugins | 25479 | 3022 | Apache-2.0 | Python | 2026-09-23 | 2026-01-23 | Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork
+tigerless-labs/agent-memory | 966 | 64 | MIT | Python | 2026-09-23 | 2026-09-01 | Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an
+tinyhumansai/openhuman | 40058 | 3953 | GPL-3.0 | Rust | 2026-09-23 | 2026-02-18 | OpenHuman is an open source agent harness with local-first memory, agent orchestration, and workflows
+FunplayAI/funplay-unity-mcp | 251 | 19 | MIT | C# | 2026-09-17 | 2026-03-12 | The Most Advanced MCP Server for Unity Editor with execute_code, prompts/resources, input simulation, screensh
+IvanMurzak/Godot-MCP | 251 | 24 | Apache-2.0 | C# | 2026-09-23 | 2026-06-04 | Godot-MCP — Model Context Protocol (MCP) integration for the Godot Engine. AI tools for the Godot Editor in C#
+Donchitos/Claude-Code-Game-Studios | 25375 | 3620 | MIT | Shell | 2026-09-23 | 2026-02-12 | Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination s
+wuyoscar/jev-skill | 460 | 30 | MIT | Python | 2026-09-23 | 2026-09-20 | An awesome collection of Jev use cases, workflows, and agent skills.
+sno-ai/sno-station | 85 | 85 | Apache-2.0 | TypeScript | 2026-09-22 | 2026-09-19 | Sno Station — your Claude Code and Codex working as one squad on your own machine. Shared encrypted memory, ag
+Clearailhc/clearai-dsh | 381 | 17 | Apache-2.0 | JavaScript | 2026-09-23 | 2026-09-12 | ClearAI is a native DSH plugin that brings the Epistemic Loop to DeepSeek Harness.
+a86582751/dsh-nexttavern | 103 | 13 | GPL-3.0 | JavaScript | 2026-09-23 | 2026-09-11 | DeepSeek Harness 长篇角色扮演agent（DSH酒馆插件）：SillyTavern 角色卡导入、行动选项卡、分支对话管理、长篇记忆、关键词与语义混合检索、交互式角色卡创作、世界书、多角色 Agent 集群
+LuxUmbra697/DSH-Desktop | 62 | 3 | MIT | C# | 2026-09-14 | 2026-09-11 | 把 DeepSeek Harness 装进一个独立窗口：双击即用、免终端、免浏览器，支持插件改造，载荷可裁到 210 MB（便携包 74.8 MB），内置运行环境探测与 DSH 就地更新。
+huangziyuan-general/dsh-novel-forge | 13 | 3 | MIT | JavaScript | 2026-09-21 | 2026-09-11 | DSH 小说锻炉：把 AI 长篇写作通病变成代码强制的硬约束（事实账本/上下文包/阶段门禁/零费用去AI味扫描/确定性审计/提案制修订）。Novel-writing guardrails plugin for DeepS
+alexgetmancom/claudecut | 37 | 1 | MIT | Shell | 2026-09-20 | 2026-09-20 | Run Claude Code with almost everything cut away: one shell tool, a 36-token system prompt, and a capped contex
+AngelCantugr/context-inspector | 0 | 0 | MIT | Python | 2026-09-23 | 2026-09-22 | See what is actually eating your AI agent's context window — per-message, per-category, per-tool token analysi
+mawen0317/renpy-vn-engineering | 0 | 0 | MIT | Python | 2026-09-22 | 2026-09-22 | A Claude Code skill: engineering discipline for large Ren'Py / visual-novel projects worked on with an AI agen
+adrian-wulf/gamewache | 0 | 0 | MIT | Rust | 2026-09-20 | 2026-09-20 | Autonomous GameOps Engine for Game Developers: Crash Sentinel, Deterministic Blackbox Replay, Remote CAS & Nat
+yi00it/blender-asset-mcp | 0 | 0 | MIT | Python | 2026-09-23 | 2026-09-23 | MCP server for building game assets in Blender. The agent renders its work, checks it and fixes it, then valid
+vitas/dsh-model-pricing | 1 | 1 | Apache-2.0 | TypeScript | 2026-09-16 | 2026-09-09 | Model pricing & capability board for DeepSeek Harness: ~7,250 models across 213 providers, honest lowest-liste
+Devin-AXIS/jev-dsh-decision | 136 | 46 | - | JavaScript | 2026-09-20 | 2026-09-20 | Jev DSH 决策引擎｜面向 Agent Harness 的结构化决策插件。原生支持 DeepSeek Harness，通过 iPolloWork 支持 OpenCode、Codex Harness。
+devagrawal09/jev-review | 573 | 36 | MIT | TypeScript | 2026-09-17 | 2026-09-16 | A staged code-review workflow and local dashboard built with TypeSafe Jev.
+axonel/axonel | 38 | 4 | Apache-2.0 | Rust | 2026-09-22 | 2026-09-12 | Run coding agents autonomously with isolated Git worktrees, independent verification, and human-controlled int
+wdobry/laya-playground | 144 | 30 | MIT | JavaScript | 2026-09-20 | 2026-09-20 | A website, two games, a benchmark and an agent skill for Laya, the open-source decision model. Runs on your ma
+lhlGitHub/threejs-architecture-effects | 164 | 34 | MIT | TypeScript | 2026-09-22 | 2026-09-22 | An Agent Skill for building interactive, self-assembling 3D architecture with Three.js.  一个用 Three.js 生成可交互、可动
+madeye/dsh-session-cost | 8 | 0 | MIT | JavaScript | 2026-09-11 | 2026-09-11 | DeepSeek Harness client plugin: live session cost in CNY on the Web GUI session header
+Lance-QwQ/DSH-SEP | 12 | 0 | MIT | JavaScript | 2026-09-21 | 2026-09-21 | DEEPSEEK HARNESS SYSTEM ENHANCEMENT PACKAGE — Windows Alpha. Memory, controlled updates, recovery and plugin e
+yzi1b/whale-craft | 11 | 1 | MIT | JavaScript | 2026-09-20 | 2026-09-16 | A plugin for DeepSeek Harness, allowing your agent to play in Minecraft Java Edition servers.
+cholf5/dsh-plugin-job-panel | 8 | 0 | MIT | JavaScript | 2026-09-20 | 2026-09-19 | A right-sidebar job panel for the DeepSeek Harness web GUI.

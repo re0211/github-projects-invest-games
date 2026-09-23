@@ -1,0 +1,55 @@
+deepseek-ai/deepseek-harness | 233987 | 28113 | MIT | TypeScript | 2026-09-22 | 2026-08-13 | DeepSeek Harness: Everything is a Plugin.
+anywhere-labs/dsh-desktop | 28652 | 1362 | MIT | TypeScript | 2026-09-23 | 2026-08-13 | 为 DeepSeek Harness (DSH) 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。
+awesome-dsh-plugin/awesome-dsh-plugin | 16705 | 3229 | CC0-1.0 | Python | 2026-09-23 | 2026-08-13 | A curated list of plugins for DeepSeek Harness (dsh) · DeepSeek Harness 插件精选列表
+dsh-tauri/deepseek-harness-desktop | 2535 | 171 | MIT | TypeScript | 2026-09-23 | 2026-08-14 | DeepSeek Harness Tauri 桌面版 | Only 5mb installer, zero environment setup, preset plugins, Windows / macOS / Lin
+dsh-market/dsh-market | 4425 | 223 | MIT | TypeScript | 2026-09-23 | 2026-08-14 | The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场
+zhu1090093659/dsh-web | 7950 | 545 | Apache-2.0 | TypeScript | 2026-09-23 | 2026-08-12 | DeepSeek Harness (DSH) Web 插件聚合生态 · 万物皆插件，通过创意工坊分发｜｜DeepSeek Harness (DSH) Web Plugin Aggregation Ecosystem · 
+qiz029/dscode | 349 | 1 | MIT | JavaScript | 2026-09-23 | 2026-09-11 | A DeepSeek coding agent harness: persistent shell, Ultra subagents, auto approval, Chrome MCP and session tele
+yindf/taskfold | 7 | 0 | MIT | JavaScript | 2026-09-23 | 2026-09-02 | Context folding for DeepSeek Harness (DSH): wrap work in named tasks, fold finished spans into short summaries
+kolawong/fast-compaction-dsh | 3 | 0 | NOASSERTION | TypeScript | 2026-09-20 | 2026-09-20 | Verdict-based context compaction for DeepSeek Harness — replaces lossy LLM summaries with fast keep/truncate/d
+PlxloYzb/dsh-context-management | 1 | 0 | MIT | TypeScript | 2026-09-08 | 2026-09-08 | Windowed, reversible context management for DeepSeek Harness (DSH): compression, historical retrieval, and nat
+CooperZhuang/dsh-context-window | 0 | 0 | MIT | TypeScript | 2026-09-09 | 2026-09-09 | DSH 插件：复刻 Codex 最新上下文窗口管理 — token 预算提示 / 模型可调用的 new_context / 交接式换窗替代摘要压缩 | DSH plugin reimplementing Codex's 
+SAXEM1997/specpowers | 2 | 1 | MIT | JavaScript | 2026-09-21 | 2026-09-17 | SpecPowers — SDD+TDD engineering methodology as a DeepSeek Harness (DSH) plugin and Claude Code skill group: 6
+hi-godot/godot-ai | 2563 | 155 | MIT | GDScript | 2026-09-23 | 2026-04-12 | Production-grade MCP server and AI tools for the Godot engine. A Snap to install. Totally free and fun.
+Erodenn/godot-mcp-runtime | 77 | 17 | MIT | TypeScript | 2026-09-20 | 2026-02-28 | A lightweight, zero-footprint TypeScript MCP server that lets AI assistants drive the Godot 4.x game engine.
+NPGameDev/godot-mcp-toolkit | 44 | 4 | NOASSERTION | GDScript | 2026-09-21 | 2026-04-14 | A Godot 4.2+ editor plugin that lets AI coding assistants work inside the editor over the Model Context Protoc
+aigengame/godot-agent | 41 | 7 | MIT | Python | 2026-09-22 | 2026-06-08 | Godot automation for AI agents to build and verify projects through a CLI, Agent Skill, or MCP server, with st
+beckettlab/beckett-godot-mcp | 23 | 1 | MIT | GDScript | 2026-09-19 | 2026-06-19 | Zero-sidecar MCP server inside the Godot editor. AI agents (Claude Code, Cursor) inspect, author, run and SEE 
+hatayama/unity-cli-loop | 568 | 48 | MIT | C# | 2026-09-23 | 2025-06-15 | Let AI Drive Unity, from Editor to Play Mode.
+cnfatal/rpycdec | 58 | 6 | MIT | Python | 2026-09-20 | 2023-08-20 | Tools to decompile renpy .rpyc .rpymc files.
+the-asind/RenPy-VisualEditor | 25 | 3 | Apache-2.0 | TypeScript | 2026-09-22 | 2025-03-21 | Plotmio is an open-source visual editor for exploring, editing, and exporting Ren'Py projects on one canvas.
+DezFix/OctopusBridge | 3 | 1 | GPL-3.0 | Python | 2026-09-21 | 2026-08-04 | Windows tool for translating and modding Twine / Ren'Py / RPG Maker / Tyrano games: AI-assisted translation (O
+liuyejinghong/game-design-review | 0 | 0 | - | Python | 2026-09-20 | 2026-09-19 | 游戏策划视角的试玩评审 skill：四把尺子 / 阶段校准(文字期→像素期) / 红队模式。Game design review skill for AI agents.
+rakaascode/game-design-council | 0 | 0 | MIT | Python | 2026-09-19 | 2026-09-19 | Open-source AI agent skills to debate game ideas through Pro, Opposition, and Moderator roles, then turn decis
+RomainYing/Game-design-theory | 0 | 0 | MIT | Python | 2026-09-20 | 2026-09-20 | Structural game-design theory for any genre: named player desire → satisfaction methods → systems, plus UX, UI
+GabrielBigardi/gamedev-ai-skills | 0 | 0 | MIT | - | 2026-09-17 | 2026-09-17 | A curated repository of original AI game development skills, authored and maintained by me. Engineered to guid
+Thepizzapie/BuildersGate | 27 | 6 | MIT | Python | 2026-09-23 | 2026-07-17 | Agentic game development for building games with AI Agents. Run one session per seat: art, gameplay, narrative
+GiampaoloConti/spellforge | 1 | 0 | - | Python | 2026-09-18 | 2026-09-17 | A roguelike where you invent the spells and a team of AI agents writes them into the game at runtime.
+NoBrainNoGame/devgame | 1 | 0 | MIT | TypeScript | 2026-09-23 | 2026-09-22 | Browser roguelike whose dungeon is a Git graph written as you play: fill tickets by hand or with the AI, pass 
+alchaincyf/3d-vibe-coding-handbook | 264 | 38 | - | HTML | 2026-09-15 | 2026-09-13 | 《3D Vibe Coding 手册》配套仓库：书的 HTML 版、demo 源码、工具脚本与资源包索引
+pliablepixels/gap-trap | 177 | 10 | MIT | JavaScript | 2026-09-17 | 2026-09-13 | Turns vibe coding into high quality code. Sets up rules and gates in your repo so AI-written code stays correc
+Xu123-Bob/Baize | 72 | 1 | MIT | JavaScript | 2026-09-22 | 2026-09-12 | 白泽 —— 中国古代神话中通晓万物的瑞兽，如今化身为 Vibe Coding 助手。  一个开源的 AI Coding Agent CLI，支持多后端（DeepSeek / OpenAI 兼容 / Ollama 本地），
+awarexone/AXguard | 17 | 5 | MIT | Python | 2026-09-21 | 2026-09-14 | Open-source AI security tool to scan and fix vulnerabilities in your vibe-coded projects before you ship. AXgu
+nmlemus/harness-token-efficiency | 0 | 0 | MIT | Python | 2026-09-08 | 2026-09-06 | Does coding-agent harness choice change task success or tokens, with the model pinned identical? Claude Code v
+prapaa-ai/evalix | 1 | 0 | Apache-2.0 | - | 2026-09-23 | 2026-09-23 | An open-source benchmark for evaluating AI agent harnesses on tool use, long-horizon tasks, and cost/token eff
+ARahim3/cachebeat | 59 | 6 | - | Shell | 2026-09-22 | 2026-09-14 | A tiny Claude Code skill that keeps your prompt cache warm during idle sessions, so your next message reads fr
+255308153/CtxGuard | 29 | 3 | MIT | Python | 2026-09-19 | 2026-09-14 | 面向 AI Agent 的高并发、低延迟上下文治理与 Prompt Cache 守护网关 (Tree-sitter AST / Tool Delta / 50%~80% Token 削减)
+SerenQi/llm-cache-gateway | 1 | 0 | MIT | Python | 2026-09-11 | 2026-09-11 | OpenAI-compatible proxy that maximizes Anthropic prompt cache hits — 99.16% measured on real traffic
+RedRobotKK/Replay | 3 | 0 | NOASSERTION | Go | 2026-09-21 | 2026-09-02 | If the agent bill went up and nothing errored, a prompt cache broke. Replay Doctor names the turn it broke on,
+handyutils/sctxx | 19 | 14 | Apache-2.0 | Rust | 2026-09-11 | 2026-09-10 | sctxx — coding agent Session Context Extractor. standalone, agent-agnostic CLI (plus a thin Agent Skill wrappe
+Waxmell114514/jev-compaction | 3 | 1 | MIT | Python | 2026-09-23 | 2026-09-19 | A context compactor that can only score, never write — so an agent's memory can't hold a fact the transcript n
+YoadElkayam/windowkeeper | 0 | 0 | MIT | TypeScript | 2026-09-16 | 2026-09-02 | Lossless context management for AI agent harnesses. The archive is the truth, the window is a view, the ledger
+beyondworks/castra | 33 | 3 | MIT | Python | 2026-09-16 | 2026-09-10 | Execution posture harness for Claude Code. Your coding agent stops one step early; Castra is the step.
+DefiTanjiro/ai-slop-detector | 2 | 0 | MIT | - | 2026-09-22 | 2026-09-20 | A Claude Code and Codex skill that audits websites, UI, decks, and writing for AI-slop patterns (generic layou
+LwkMoon/SlopScan | 1 | 0 | MIT | Python | 2026-09-07 | 2026-09-07 | CLI heuristic analyzer for detecting AI-associated design and code patterns in websites, repositories, and loc
+doeixd/jev-pref | 7 | 0 | MIT | JavaScript | 2026-09-18 | 2026-09-17 | Turn your AGENTS.md preferences into a fast, Jev-powered AI linter.
+kerpopule/hermes-jev-skills | 672 | 61 | MIT | Python | 2026-09-22 | 2026-09-18 | Jev-powered model routing, memory, compaction, skill selection, computer and browser use for Hermes agents (al
+Dicklesworthstone/skillranker | 114 | 8 | NOASSERTION | Rust | 2026-09-23 | 2026-09-17 | Rust CLI powered by Jev from TypeSafe.ai that ranks agent skills for the next step using live session context.
+riesaexe/r-doc | 46 | 0 | MIT | Python | 2026-09-20 | 2026-09-14 | AI agent skill for maintaining project AGENTS.md and docs/ documentation systems.
+GarvitAgrawal04/SENTINEL | 12 | 1 | Apache-2.0 | Python | 2026-09-23 | 2026-09-16 | Sentinel shows what a file would make your AI coding agent do. Static analyzer, merge gate and signed lockfile
+nahid-sparktales/agent-dispatcher | 48 | 2 | MIT | Python | 2026-09-23 | 2026-09-19 | Repository retrieval and context engine for Claude Code and Codex: finds relevant code, reuses project knowled
+ScriptedAlchemy/pstack-codex | 62 | 4 | MIT | TypeScript | 2026-09-18 | 2026-09-17 | Codex-native port of Lauren Tan's pstack: 47 skills, 23 playbooks, agent personas, multi-agent workflows, and 
+trustfuture/investigation-video-skill | 70 | 16 | MIT | JavaScript | 2026-09-20 | 2026-09-20 | 不露脸商业/消费调查长片的完整生产流程：一句话出 10 分钟成片，以 Claude Code skill 形式开源（TTS 逐字时间戳、素材覆盖、Remotion 拼贴、闪避混音、封面与八平台文案）
+op7418/guizang-product-video-skill | 226 | 19 | AGPL-3.0 | Python | 2026-09-22 | 2026-09-18 | 归藏 product video skill：复用真实产品组件和设计语言，用代码制作软件更新宣传片。包含分镜文案、原创配乐、动作音效与视频渲染，支持 Claude Code 和 Codex。
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}i-have-adhd/adhd | ERR
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}hyperframes-ai/hyperframes | ERR

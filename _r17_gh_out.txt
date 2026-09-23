@@ -1,0 +1,274 @@
+### context engineering agent created:>2026-09-10
+RectangleStory/Superpowers_Multi_AI | 100 | bsd-3-clause | 2026-09-14 | ⚡ Modular prompt-engineering framework for AI Agents (Cursor, Claude Code, Copilot). Forces structur
+steepy-it/steepy-apex | 9 | apache-2.0 | 2026-09-18 | Context engineering and governed workflows for AI coding agents. Keep project knowledge coherent, ro
+lamhotsiagian/context-engineering | 5 |  | 2026-09-12 | Official companion code & test harness for "Context Engineering for AI Engineers: Interview Preparat
+RichmondAlake/llmcamp_ai_hub | 4 |  | 2026-09-18 | Hands-on agent memory notebooks and an interactive appbook for context engineering.
+GabrielKqw/weave | 3 | mit | 2026-09-21 | Dependency-free engineering layer for AI coding agents: terminal-output intelligence, context contin
+Wazifati/loka-context-harness | 2 | mit | 2026-09-17 | Agent-neutral context-engineering frameworks for reliable AI work: ACE, V10–V13, Guard, Build, Skill
+OngsooLabs/agentic-development | 1 |  | 2026-09-20 | OngsooLabs notes on agentic development, context engineering, and AI-assisted workflows.
+uos1231234/agent-harness-skeleton | 1 | mit | 2026-09-21 |  A minimal, safe, terminable agent-loop skeleton — OpenAI protocol client + runtime guard shell + pl
+harish-042002/harish-skills | 1 | mit | 2026-09-23 | Adaptive engineering control plane for AI coding agents — the right specialist depth for every task,
+learnwithparam/software-factory | 1 | mit | 2026-09-23 | The engineering system around a coding agent: boundary, execution, context, skills, verification and
+
+### vibe coding created:>2026-09-10
+alchaincyf/3d-vibe-coding-handbook | 264 |  | 2026-09-15 | 《3D Vibe Coding 手册》配套仓库：书的 HTML 版、demo 源码、工具脚本与资源包索引
+pliablepixels/gap-trap | 177 | mit | 2026-09-17 | Turns vibe coding into high quality code. Sets up rules and gates in your repo so AI-written code st
+RectangleStory/Superpowers_Multi_AI | 100 | bsd-3-clause | 2026-09-14 | ⚡ Modular prompt-engineering framework for AI Agents (Cursor, Claude Code, Copilot). Forces structur
+mutonby/vibetube | 78 | mit | 2026-09-15 | Desktop multicam recorder for macOS: records your screen and webcam in sync, then Claude Code or Cod
+Xu123-Bob/Baize | 72 | mit | 2026-09-22 | 白泽 —— 中国古代神话中通晓万物的瑞兽，如今化身为 Vibe Coding 助手。  一个开源的 AI Coding Agent CLI，支持多后端（DeepSeek / OpenAI 兼容 / O
+awarexone/AXguard | 17 | mit | 2026-09-21 | Open-source AI security tool to scan and fix vulnerabilities in your vibe-coded projects before you 
+Kurohiko-id/Kitab-Link-Self-Hosted | 16 | mit | 2026-09-21 | Gw dulu user Linktree, yang dari awal emang kurang puas. Dan sekarang ternyata udah ada iklan nya, d
+taurus42119-stack/GODKILLER-ZERO | 14 | mit | 2026-09-17 | Vibe-coding ends here.
+nermalcat69/nermal-ide | 14 | mit | 2026-09-20 | lightweight code editor for programmers who vibe code.(wip)
+MaxHaiCom/VibeGauge | 13 | mit | 2026-09-23 | 🧠 Native macOS menu-bar dashboard for AI coding: Claude / Codex / Gemini / Grok / Kimi quotas and of
+
+### deepseek harness created:>2026-08-01
+deepseek-ai/deepseek-harness | 233986 | mit | 2026-09-22 | DeepSeek Harness: Everything is a Plugin.
+anywhere-labs/dsh-desktop | 28649 | mit | 2026-09-23 | 为 DeepSeek Harness (DSH) 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。
+awesome-dsh-plugin/awesome-dsh-plugin | 16705 | cc0-1.0 | 2026-09-23 | A curated list of plugins for DeepSeek Harness (dsh) · DeepSeek Harness 插件精选列表
+dataelement/dsh-desktop | 8604 | mit | 2026-09-23 | DSHDesktop：DeepSeek Harness Desktop / DeepSeek Harness 桌面版
+zhu1090093659/dsh-web | 7950 | apache-2.0 | 2026-09-23 | DeepSeek Harness (DSH) Web 插件聚合生态 · 万物皆插件，通过创意工坊分发｜｜DeepSeek Harness (DSH) Web Plugin Aggregation Ec
+dsh-market/dsh-market | 4425 | mit | 2026-09-23 | The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场
+xiaobright/dsh-anchored-standard | 3800 | other | 2026-09-10 | Two-phase DeepSeek Harness preset: Minimal-aligned bootstrap, then full Standard tools (Project2 98/
+MeteorNOX/DeepSeek-Balance-Whale-Widget | 3005 | mit | 2026-09-22 | DeepSeek Harness（DSH）一只住在 DSH 界面右下角的小鲸鱼娘，帮你盯着DeepSeek账户余额。QQ弹弹，支持拖拽吸附、左吸附翻转、数字滚动动画，随界面自动启用，建议直接喊来你的d
+dsh-tauri/deepseek-harness-desktop | 2535 | mit | 2026-09-23 | DeepSeek Harness Tauri 桌面版 | Only 5mb installer, zero environment setup, preset plugins, Windows / m
+Small-tailqwq/dsh-deep-whale | 2186 | other | 2026-09-21 | Whale Girl skin series for DeepSeek Harness. 适用于 DeepSeek Harness 的，鲸鱼娘系列皮肤。
+
+### agent memory context created:>2026-09-10
+heymi/aldus-palace | 25 | apache-2.0 | 2026-09-19 | A trustworthy context layer for AI that remembers, plans and acts — free text into typed commitments
+PebbleLog/SimonAgent | 11 |  | 2026-09-14 | SimonAgent — A lightweight, security-first AI Agent runtime built from scratch in pure Python. Featu
+poiuyjie/jev_project_context | 9 | mit | 2026-09-22 | Evidence-first long-term experiment memory skill for AI coding agents, with optional Jev decision-mo
+lamhotsiagian/context-engineering | 5 |  | 2026-09-12 | Official companion code & test harness for "Context Engineering for AI Engineers: Interview Preparat
+RichmondAlake/llmcamp_ai_hub | 4 |  | 2026-09-18 | Hands-on agent memory notebooks and an interactive appbook for context engineering.
+xzgzszrh/MemPulse | 4 | apache-2.0 | 2026-09-19 | Topic-centered memory for agents: persistent context across sessions, an independent memory core, an
+Avinash-Amudala/weftgate | 4 | apache-2.0 | 2026-09-15 | New session. Same project brain. Local memory, compact context and handoffs for coding agents, with 
+Waxmell114514/jev-compaction | 3 | mit | 2026-09-23 | A context compactor that can only score, never write — so an agent's memory can't hold a fact the tr
+vikas-1rai/contextforge | 2 | other | 2026-09-11 | Persistent memory & context management for AI agents and users. Empowers developers with real-time k
+Kyouko5/kyobot | 2 |  | 2026-09-23 | 关注于Agent Loop、Context、Memory、RAG 与 Tool 系统的agent框架设计与学习
+
+### copilot vscode agent created:>2026-09-10
+bytesbrains/cruise-vscode | 1 | other | 2026-09-22 | BytesBrains Cruise for VS Code: every model your Cruise key can reach, in Copilot Chat and agent mod
+Rig-local/rig-plugin | 0 | apache-2.0 | 2026-09-13 | One plugin. Every coding agent. Cloud MCP + skills for Claude, Cursor, Gemini, Copilot, Codex, Winds
+defaultuser233/rust-expert-kit | 0 | mit | 2026-09-22 | Agent-neutral Rust coding conventions + one-shot environment bootstrap (China-mirror aware). Works w
+
+### claude code skills created:>2026-09-14
+kerpopule/hermes-jev-skills | 672 | mit | 2026-09-22 | Jev-powered model routing, memory, compaction, skill selection, computer and browser use for Hermes 
+Oldcircle/geo-sleuth | 284 | mit | 2026-09-21 | An agent skill that finds where a photo was taken — OpenStreetMap geometry, elevation skylines, sate
+op7418/guizang-product-video-skill | 226 | agpl-3.0 | 2026-09-22 | 归藏 product video skill：复用真实产品组件和设计语言，用代码制作软件更新宣传片。包含分镜文案、原创配乐、动作音效与视频渲染，支持 Claude Code 和 Codex。
+witnesstodark/mr-mak-workspace | 137 | mit | 2026-09-23 | A local desktop workspace for Codex and Claude Code, with project reports, creative skills and optio
+Dicklesworthstone/skillranker | 114 | other | 2026-09-23 | Rust CLI powered by Jev from TypeSafe.ai that ranks agent skills for the next step using live sessio
+kishormorol/cli-faq-shortcuts | 101 | apache-2.0 | 2026-09-22 | An Agent Skill that turns the asks you keep typing into short commands, mined from your own Claude C
+sno-ai/sno-station | 75 | apache-2.0 | 2026-09-22 | Sno Station — your Claude Code and Codex working as one squad on your own machine. Shared encrypted 
+sevenevesai/riso-windowseat | 73 | other | 2026-09-23 | Procedural risograph films in single HTML files (Window Seat, Roost and more), with the Claude Code 
+trustfuture/investigation-video-skill | 70 | mit | 2026-09-20 | 不露脸商业/消费调查长片的完整生产流程：一句话出 10 分钟成片，以 Claude Code skill 形式开源（TTS 逐字时间戳、素材覆盖、Remotion 拼贴、闪避混音、封面与八平台文案）
+nahid-sparktales/agent-dispatcher | 48 | mit | 2026-09-23 | Repository retrieval and context engine for Claude Code and Codex: finds relevant code, reuses proje
+
+### context compaction LLM created:>2026-08-20
+handyutils/sctxx | 19 | apache-2.0 | 2026-09-11 | sctxx — coding agent Session Context Extractor. standalone, agent-agnostic CLI (plus a thin Agent Sk
+ZKiteLM/pi-trace-viewer | 14 | mit | 2026-09-06 | A live microscope for Pi agents: inspect session branches, compaction, tool calls, and the exact con
+yindf/taskfold | 7 | mit | 2026-09-23 | Context folding for DeepSeek Harness (DSH): wrap work in named tasks, fold finished spans into short
+pickleshell/next-level-agent | 6 | mit | 2026-09-22 | Managed multi-agent system for OpenCode with one coordinator, risk-based routing, specialized roles,
+muratmirgun/owncode | 6 | mit | 2026-09-23 | An experimental terminal coding agent with configurable models, Witch orchestration, and multiple co
+thebabush/pi-memento | 5 | mit | 2026-08-29 | Agents that edit their own memory: nested context transactions for the pi coding agent. Commit, comp
+hraness/gobstopper | 4 | other | 2026-09-23 | Automatic context compaction for Codex and Claude Code sessions
+Waxmell114514/jev-compaction | 3 | mit | 2026-09-23 | A context compactor that can only score, never write — so an agent's memory can't hold a fact the tr
+kolawong/fast-compaction-dsh | 3 | other | 2026-09-20 | Verdict-based context compaction for DeepSeek Harness — replaces lossy LLM summaries with fast keep/
+aalexren/pi-compaction-control | 2 | mit | 2026-09-23 | Pi Coding Agent extension to cap context windows per model and choose a dedicated compaction model.
+
+### AI game dev created:>2026-09-14
+Jenkoshot/Godot-AI-GameDev-Framework | 2 | other | 2026-09-22 | 
+keanetheory/AI_GameDev | 1 |  | 2026-09-22 | 
+NoBrainNoGame/devgame | 1 | mit | 2026-09-23 | Browser roguelike whose dungeon is a Git graph written as you play: fill tickets by hand or with the
+yavik14/learn-aidevexpert-gamebook | 0 |  | 2026-09-21 | App de notas para game designers y devs.
+Birb0922/TONK | 0 |  | 2026-09-20 | Project for AI in Game Dev
+Cooperzheng/ai-game-dev-framework | 0 | mit | 2026-09-23 | Keep AI-assisted game development aligned with your design: preserve requirements, separate AI propo
+Alir8413/AI-Assisted-Game-Development-Experiment | 0 |  | 2026-09-17 | A self-guided experiment exploring AI-assisted game development as a beginner using Unity and C#.
+kitbyfez/ai-game-dev-radar-dashboard | 0 |  | 2026-09-23 | Public dashboard: daily radar on AI-built games & 3D experiences vs IWSDK
+FrankieChan0312/idx-games-ai-development-exercise | 0 |  | 2026-09-22 | 
+hashemr-bxsci/Rehans-Game-1 | 0 |  | 2026-09-22 | a pygame with amateur code for AI and Game Dev with my FACE!
+
+### game AI agent created:>2026-09-14
+tallslab/threeforge | 15 | mit | 2026-09-21 | Frame-budget compiler and diagnostics for three.js games: batches naive scenes, measures every frame
+Xeakaes/computer-use-for-all-agents | 2 | mit | 2026-09-17 | Give any AI agent general-purpose computer use: live screen perception (OCR, vision frames, MJPEG st
+zadescoxp/RL-Racing-Hub | 2 | apache-2.0 | 2026-09-16 | 5 AI Agents trained with reinforement learning on different algorithms compete againt each other
+UpstandPlatform/OpenRive | 2 | other | 2026-09-22 | Build inetractive UIs, motion, and game experiences in the OpenRive Editor, or let an AI agent gener
+reilabot/game-creation-agent-ai-skills | 1 | apache-2.0 | 2026-09-18 | Bilingual AI-created game-development Agent Skills stack for Codex, Antigravity, Claude, Cursor, Gem
+docot04/snake-ai | 1 |  | 2026-09-21 | DQN Agent to play Snake Game
+rengcor/SwordFactory-LuauAI | 1 | mit | 2026-09-20 | An open-source Roblox multiplayer game (Sword Factory) designed as a testbed and blueprint for AI co
+avirzayev/IkarAI | 1 | mit | 2026-09-18 | Autonomous Claude Code agent that runs an empire in the browser game Ikariam via direct HTTP (no bro
+tailsmonster/arch-nemesis-reload | 1 | mit | 2026-09-23 | Convince an AI Arch Linux zealot to install Windows. A multi-agent persuasion game built around fact
+GiampaoloConti/spellforge | 1 |  | 2026-09-18 | A roguelike where you invent the spells and a team of AI agents writes them into the game at runtime
+
+### prompt cache LLM created:>2026-09-01
+ARahim3/cachebeat | 59 |  | 2026-09-22 | A tiny Claude Code skill that keeps your prompt cache warm during idle sessions, so your next messag
+255308153/CtxGuard | 29 | mit | 2026-09-19 | 面向 AI Agent 的高并发、低延迟上下文治理与 Prompt Cache 守护网关 (Tree-sitter AST / Tool Delta / 50%~80% Token 削减)
+alphaparkinc/genpark-agentic-cache-semantic-deduplicator-skill | 8 |  | 2026-09-14 | Semantic prompt cache deduplicator calculating Jaccard token overlap to prevent redundant LLM cost
+Forgesaroj/prompt-cache-lab | 7 | mit | 2026-09-20 | Interactive LLM prompt-caching calculator with editable rates, savings and break-even analysis.
+Alpha-Park/genpark-agentic-cache-semantic-deduplicator-skill | 7 |  | 2026-09-14 | Semantic prompt cache deduplicator calculating Jaccard token overlap to prevent redundant LLM cost
+v-nightwolf/tonst | 5 | mit | 2026-09-18 | Token optimization and security tool — local caching, PII redaction, and prompt trimming for LLM API
+RedRobotKK/Replay | 3 | other | 2026-09-21 | If the agent bill went up and nothing errored, a prompt cache broke. Replay Doctor names the turn it
+Sufiyan71/tokAN-token-analyzer | 2 |  | 2026-09-02 | Local AI Token Analyzer & Token Calculator for Claude Code, Antigravity, opencode & LLMs. Track toke
+SerenQi/llm-cache-gateway | 1 | mit | 2026-09-11 | OpenAI-compatible proxy that maximizes Anthropic prompt cache hits — 99.16% measured on real traffic
+julie-elkins/elkins-llm-promptcache | 1 | mit | 2026-09-20 | Shared prompt-caching helpers for Anthropic (direct API) and Amazon Bedrock — one mental model, two 
+
+### harness llm created:>2026-09-01
+TokenRhythm/NeoHorse | 845 | apache-2.0 | 2026-09-16 | NeoHorse-1: Towards Recursive Self-Improvement via Agentic Post-Training with Routing Harness.
+ruc-datalab/EvoOntology | 361 | mit | 2026-09-22 | EvoOntology: A Self-Evolving Ontology Layer for Data Agents ⚙️ EvoOntology插件为Claude Code/Codex 建立&进化
+qiz029/dscode | 349 | mit | 2026-09-23 | A DeepSeek coding agent harness: persistent shell, Ultra subagents, auto approval, Chrome MCP and se
+TianyuCodings/JevHarness | 156 |  | 2026-09-21 | LLM-authored task-specific Jev harnesses with optional full-trajectory reward reflection and GEPA ev
+cv-superding/dsh-deepseek-web-login | 125 | apache-2.0 | 2026-09-23 | Unofficial DSH (DeepSeek Harness) plugin: use chat.deepseek.com web models as an LLM provider - brow
+agentscope-ai-java/agentscope-java | 108 | apache-2.0 | 2026-09-22 | Build distributed, production-grade, long-running agents.
+mouteee/autonomous-offensive-llm-handbook | 68 | other | 2026-09-10 | This is an ongoing research on a proposed deterministic harnessing for offensive security agents
+ops120/official-llm-zhazhiji | 37 | mit | 2026-09-12 | 官方LLM榨汁机：用 harness 驱动官方 Web LLM，把每一滴能力都榨出来。
+yinyuepingguo/linktokenview-docs | 37 | apache-2.0 | 2026-09-11 | LinkTokenView（联视未来）国产大模型 Token API 聚合平台，提供 OpenAI 兼容接口，统一调用 DeepSeek v4.1、Kimi、GLM、通义千问 等模型，支持 Token
+beyondworks/castra | 33 | mit | 2026-09-16 | Execution posture harness for Claude Code. Your coding agent stops one step early; Castra is the ste
+
+### context window management created:>2026-09-01
+PlxloYzb/dsh-context-management | 1 | mit | 2026-09-08 | Windowed, reversible context management for DeepSeek Harness (DSH): compression, historical retrieva
+dvaJi/dsh-codex-context | 1 | mit | 2026-09-06 | Codex-style windowed context management with live notes and cold history search for DeepSeek Harness
+Auto-Scalers/Fabrica | 1 | mit | 2026-09-22 | The Next AI Exit | Desktop CLI Agent Management Platform. Manage your CLI agents. Run your business.
+xjy486/dsh-context-management | 0 | mit | 2026-09-09 | Same-session context windows, persistent Notes and History for DeepSeek Harness
+CooperZhuang/dsh-context-window | 0 | mit | 2026-09-09 | DSH 插件：复刻 Codex 最新上下文窗口管理 — token 预算提示 / 模型可调用的 new_context / 交接式换窗替代摘要压缩 | DSH plugin reimplementin
+harsh-shrivas/Windows-10-Context-Menu-Restorer | 0 |  | 2026-09-05 | A lightweight registry script and guide for Windows 11 to instantly restore the classic Windows 10 r
+Lakshit-Chiranjiv/ContextLab | 0 |  | 2026-09-20 | ContextLab — A Streamlit chat app comparing three LLM context-management strategies — sliding window
+YoadElkayam/windowkeeper | 0 | mit | 2026-09-16 | Lossless context management for AI agent harnesses. The archive is the truth, the window is a view, 
+hanifalkauni/context-architect | 0 | mit | 2026-09-09 | 🧠⚡ Universal Autonomous Context Window Management, Prompt Caching, Token Optimization & Live Observa
+avanishprasad2026-source/multi-turn-llm-chatbot | 0 | mit | 2026-09-08 | Multi-turn AI Chatbot with context window management using Gemini API
+
+### agent skill marketplace created:>2026-09-14
+ScriptedAlchemy/pstack-codex | 62 | mit | 2026-09-18 | Codex-native port of Lauren Tan's pstack: 47 skills, 23 playbooks, agent personas, multi-agent workf
+kushalsl-nous/kdata-agent-skills | 1 | other | 2026-09-17 | Dual Codex and Claude Code marketplace for curated data engineering agent skills.
+swissarmyhammer/skills | 1 |  | 2026-09-22 | The swissarmyhammer-skills marketplace: agent skills as Stencil templates for FoundationModelsSkills
+GeniusBotsLab/Neuromedia-Media-Skills | 1 | mit | 2026-09-17 | Portable web, marketplace, SEO, content and launch skills for AI agents.
+klikmarkettt-dotcom/nexus-ai | 1 |  | 2026-09-17 | Autonomous AI agent marketplace — 20+ crypto skills. MCP/A2A compatible. No KYC.
+DarkMatte09/SkillHub | 1 | other | 2026-09-17 | Universal Skill Engine & Offline Marketplace for Claude Code, Cursor, and Autonomous AI Agents. Inde
+colinzhao/cogent-agent | 1 | mit | 2026-09-15 | An enterprise-grade, plugin-based AI coding agent fusing Codex CLI's execution rigor with modular or
+ghl213/gairr | 1 | apache-2.0 | 2026-09-16 | GAIRR - Local-First AI Development Agent for Windows: conversational coding, semantic code search, s
+Tadapay-ai/marketplace-skill | 0 | mit | 2026-09-22 | Agent skill for discovering TadaPay Marketplace merchants and products
+surajit003/agent-skills | 0 |  | 2026-09-21 | Reusable Codex agent skills and plugin marketplace
+
+### AI slop detector created:>2026-09-01
+mreflow/ai-slop-detector | 5 |  | 2026-09-09 | Experimental video AI indicator detector for YouTube, Instagram, TikTok, X, and uploads. Run locally
+DefiTanjiro/ai-slop-detector | 2 | mit | 2026-09-22 | A Claude Code and Codex skill that audits websites, UI, decks, and writing for AI-slop patterns (gen
+libragik/AI-Slop-Detector-Pro | 1 |  | 2026-09-10 | AI Slop Detector Pro - Agentic Deepfake & AI Video Intelligence Forensic Detector
+LwkMoon/SlopScan | 1 | mit | 2026-09-07 | CLI heuristic analyzer for detecting AI-associated design and code patterns in websites, repositorie
+jxxfdgd/jev-ai-slop-detector | 1 | mit | 2026-09-22 | Chrome extension that flags AI-slop posts on X, LinkedIn and Reddit in real time using the JEV Class
+modamaan/LinkedIn-AI-Slop-Detector | 1 |  | 2026-09-20 | 
+Henzen3d/Deslop-ptBR | 1 | mit | 2026-09-20 | Guia definitivo e Agent Skill para detectar e remover vícios de IA (AI slop) em Português do Brasil.
+matwate/ai-slop | 0 |  | 2026-09-13 | Ai text detector based on distributional features
+shriyadesai150-cpu/ai-slop-detector | 0 |  | 2026-09-07 | 
+kosavka223/AI-Slop-detector | 0 | gpl-3.0 | 2026-09-22 | 
+
+### steam publishing tool created:>2026-08-01
+sazonische/steam-publishing-tool | 0 | apache-2.0 | 2026-09-14 | 
+
+### godot mcp pushed:>2026-09-18
+hi-godot/godot-ai | 2563 | mit | 2026-09-23 | Production-grade MCP server and AI tools for the Godot engine. A Snap to install. Totally free and f
+fennaraOfficial/fennara-godot-ai | 294 | mit | 2026-09-22 | AI chat and agent tooling for Godot, with both MCP support and in-built native chat window.
+bagidea/bagidea-office | 228 | mit | 2026-09-23 | A living AI-agent office on your desktop wallpaper — Claude Code agents that walk, work, delegate, l
+Erodenn/godot-mcp-runtime | 77 | mit | 2026-09-20 | A lightweight, zero-footprint TypeScript MCP server that lets AI assistants drive the Godot 4.x game
+NPGameDev/godot-mcp-toolkit | 44 | other | 2026-09-21 | A Godot 4.2+ editor plugin that lets AI coding assistants work inside the editor over the Model Cont
+aigengame/godot-agent | 41 | mit | 2026-09-22 | Godot automation for AI agents to build and verify projects through a CLI, Agent Skill, or MCP serve
+yanhuifair/Godot-MCP | 35 | agpl-3.0 | 2026-09-21 | 
+Thepizzapie/BuildersGate | 27 | mit | 2026-09-23 | Agentic game development for building games with AI Agents. Run one session per seat: art, gameplay,
+beckettlab/beckett-godot-mcp | 23 | mit | 2026-09-19 | Zero-sidecar MCP server inside the Godot editor. AI agents (Claude Code, Cursor) inspect, author, ru
+hybridindie/godot-mcp | 22 | mit | 2026-09-23 | Combination of Godot Addon and MCP server for AI driven development — drive a live Godot editor from
+
+### renpy tool pushed:>2026-09-10
+cnfatal/rpycdec | 58 | mit | 2026-09-20 | Tools to decompile renpy .rpyc .rpymc files.
+the-asind/RenPy-VisualEditor | 25 | apache-2.0 | 2026-09-22 | Plotmio is an open-source visual editor for exploring, editing, and exporting Ren'Py projects on one
+Love-in-idleness/rscript2renpy | 3 | mit | 2026-09-14 | Experimental Ren'Py runtime and conversion tools for CodeX RScript games
+DezFix/OctopusBridge | 3 | gpl-3.0 | 2026-09-21 | Windows tool for translating and modding Twine / Ren'Py / RPG Maker / Tyrano games: AI-assisted tran
+JXZ666/SLG-Renpy-Toolkit | 1 | mit | 2026-09-19 | 给基于Ren'Py引擎的SLG 游戏装各种实用补丁的神奇妙妙工具
+rootwin-project/Tool-to-automatically-migrate-RenPy | 1 |  | 2026-09-19 | 
+sqcyx123-cmyk/Visual-Novel-Resource-Tool | 1 | mit | 2026-09-11 | 面向新手的 Windows 视觉小说资源识别、预览与安全提取工具 | Beginner-friendly visual novel resource extractor
+xdnkhnn/RPYtoEXCEL | 1 |  | 2026-09-18 | GUI tool for extracting Ren'Py .rpy files to Excel and merging them back.
+dihuangdebitebi/Renpy_RT_Tool | 0 |  | 2026-09-22 | 昴娘个人独立开发：Ren'Py 游戏实时翻译工具（免费开源）。选中游戏 exe 即可边玩边翻，把游戏文字实时翻译为中文。离线运行，无需联网。
+y20263un-del/renpy-localization-toolkit-site | 0 |  | 2026-09-12 | Official site for Ren'Py Localization Toolkit — offline CSV workflow and QA for Ren'Py localization.
+
+### unity mcp pushed:>2026-09-18
+CoplayDev/unity-mcp | 14426 | mit | 2026-09-22 | Unity MCP acts as a bridge between AI assistants and your Unity Editor. Give your LLM tools to manag
+hatayama/unity-cli-loop | 568 | mit | 2026-09-23 | Let AI Drive Unity, from Editor to Play Mode.
+databrickslabs/ontobricks | 380 | other | 2026-09-22 | Transforms Databricks Unity Catalog tables into a materialized knowledge graph, with ontology design
+pardeike/DecompilerServer | 97 | mit | 2026-09-19 | A powerful MCP (Model Context Protocol) server for decompiling and analyzing .NET assemblies, with s
+thrixel/build-world | 83 | apache-2.0 | 2026-09-22 | Build interactive 3D worlds with high-quality assets from Thrixel and your AI agent of choice.
+song-chaoyang/UnityAssetDB | 47 | mit | 2026-09-22 | 🗄️ Every Unity asset reference in one queryable database. Rust + SQLite + tree-sitter. CLI + Web UI 
+akiojin/unity-mcp-server | 34 | mit | 2026-09-21 | [DEPRECATED] Unity MCP server — successor: akiojin/unity-cli
+Jadis0x/URKit | 25 | mit | 2026-09-23 | A native C++ modding framework for Unity Mono and IL2CPP games.
+jeonghwanko/mimi-seed-sdk | 22 | other | 2026-09-21 | Release Doctor: check Expo, React Native and Unity release risks before connecting app stores. CLI +
+kitwright/unity-mcp | 21 | mit | 2026-09-22 | The Most Advanced MCP Server for Unity Editor
+
+### AI dialogue detection created:>2026-08-20
+chiemahp/AI-Prompt-Engineer-Portfolio | 0 |  | 2026-09-18 | AI Prompt Engineer Portfolio showcasing domain‑specific projects: 🌱 Agriculture – crop yield insight
+adi2025a/Bhava-Voice-agent | 0 |  | 2026-08-26 | Bhava-Voice-Agent is a real-time, modular, multi-agent voice pipeline built on FastAPI, WebSockets, 
+xanthiawang/ALLEF-CCD | 0 | other | 2026-09-16 | Codebook-Conditioned Distillation (CCD) for cognitive-offloading detection in student-AI dialogue: t
+dhirsurti/medical-scribe | 0 |  | 2026-09-06 | A real-time AI medical scribe that captures clinician-patient dialogues via intelligent Voice Activi
+kishorr3/RoastCam | 0 |  | 2026-09-12 | **RoastCam** is a playful, client-side AI web experience that uses your webcam to detect facial emot
+
+### spec driven development created:>2026-09-10
+ArisGuimera/Curso-SDD-Mobile | 59 |  | 2026-09-14 | SDD enfocado en Mobile -> "SDMD -> Spec Driven Mobile Development"
+zekiriabd/SDD-Agents | 7 |  | 2026-09-22 | Spec-Driven Development for Agentic App
+Poom5741/ai-sdlc-playbook | 4 |  | 2026-09-14 | Multi-agent software development playbook: 8-phase SDLC, spec-driven workflows, and battle-tested le
+mathaix/claramap-builder | 4 | mit | 2026-09-23 | Open-source agent skill for orchestrating Claude Code and Codex workers, with spec-driven developmen
+artursopelnik/spec-kit-design-system | 2 | mit | 2026-09-23 | Design System extension for Spec Kit – a Spec-Driven Development toolkit
+soloveev/agentic-lab-project-example | 2 |  | 2026-09-14 | Пример организации папки проекта для Agentic Lab: версии с spec-driven development и без него
+SAXEM1997/specpowers | 2 | mit | 2026-09-21 | SpecPowers — SDD+TDD engineering methodology as a DeepSeek Harness (DSH) plugin and Claude Code skil
+VictorL0pes/speckit | 2 | mit | 2026-09-21 | Spec-driven development kit for AI coding agents: a constitution, a product spec with a feature map,
+juan-cerda-gonzalez/sdd-harness | 1 |  | 2026-09-13 | Template Spec Driven Development Harness
+PavelGolitsyn/speccaster | 1 | mit | 2026-09-20 | Tool for Spec Driven Development (SDD)
+
+### AGENTS.md created:>2026-09-01
+unicodef1wn/grokbot-field-notes | 503 | mit | 2026-09-20 | Rules, playbooks, bot roles and a failure log from the xAI Grok Bot team's 72-hour live build. Drop 
+Da1sypetals/AGENTS.md | 80 |  | 2026-09-22 | my AGENTS.md
+riesaexe/r-doc | 46 | mit | 2026-09-20 | AI agent skill for maintaining project AGENTS.md and docs/ documentation systems.
+SirRuggie/claude-code-orchestration-kit | 27 | mit | 2026-09-13 | One expensive model orchestrates, five pinned cheaper subagents do the work. Drop-in CLAUDE.md, agen
+JakeSelby/agent-harness | 15 | mit | 2026-09-23 | Find out which of your agent rules actually fire. An agentic coding harness for Claude Code and Code
+rudrakshkarpe/agentsmd-cli | 12 | apache-2.0 | 2026-09-10 | Version-controlled authoring and self-improvement for AGENTS.md
+GarvitAgrawal04/SENTINEL | 12 | apache-2.0 | 2026-09-23 | Sentinel shows what a file would make your AI coding agent do. Static analyzer, merge gate and signe
+AgriciDaniel/web-mcp | 11 | mit | 2026-09-06 | Decide whether your site should expose WebMCP tools to AI agents, design them safely, and refuse the
+break-even-roas-calculator/codex-computer-use-examples | 10 |  | 2026-09-22 | Codex computer use examples: prompt templates, an AGENTS.md snippet for surface choice, and a safety
+doeixd/jev-pref | 7 | mit | 2026-09-18 | Turn your AGENTS.md preferences into a fast, Jev-powered AI linter.
+
+### subagent orchestration created:>2026-09-14
+codejunkie99/union-crew | 16 |  | 2026-09-17 | Codex skill: Union Alpha orchestration with DeepSeek V4.1 Flash subagents
+sanad-source/agent-teams | 5 | mit | 2026-09-20 | Autonomous multi-agent skill for AI agents. Cut token costs by 40–80% with structured workflows, qua
+EricArcha/Codex-Copilot | 2 | mit | 2026-09-16 | Codex Desktop orchestration: quota-aware routing, bounded subagents, and independent verification. /
+demon5395/pi-subagent | 1 | mit | 2026-09-21 | Pi 子代理 SDK —— 用 createAgentSession + SessionManager.inMemory() 取代子进程 spawn：subagent 工具（single/parall
+sarimmohib/opencode-swarm-integration | 1 |  | 2026-09-18 | Multi-agent swarm kit for opencode: orchestrator + planner/coder/reviewer/tester subagents, skills, 
+ChampiP/Cliostra | 1 | mit | 2026-09-20 | Cliostra is a universal MCP-based subagent orchestrator for AI coding CLIs, designed to delegate tas
+awslew/codex-job-orchestrator | 1 | mit | 2026-09-23 | Codex-led async MCP job orchestrator: your Codex session dispatches long-running jobs to Claude Code
+shengbuding/subagent-orchestration | 0 |  | 2026-09-21 | DSH agent preset: the shipped standard coding agent, plus a main-agent subagent-orchestration guide 
+MustafaMese/subagent-loop | 0 | mit | 2026-09-23 | Orchestrator–judge loop for Claude Code: subagent devs implement, adversarial reviewers try to break
+jontstaz/pi-interactive-subagents-herdr | 0 | mit | 2026-09-21 | Interactive subagents for pi - spawn, orchestrate, and manage sub-agent sessions in herdr terminals
+
+### token efficiency agent created:>2026-09-01
+Dillardz/TokenThrift | 1 |  | 2026-09-02 | TokenThrift is a smart AI routing agent that minimizes API costs by dynamically analyzing task compl
+prapaa-ai/evalix | 1 | apache-2.0 | 2026-09-23 | An open-source benchmark for evaluating AI agent harnesses on tool use, long-horizon tasks, and cost
+nmlemus/harness-token-efficiency | 0 | mit | 2026-09-08 | Does coding-agent harness choice change task success or tokens, with the model pinned identical? Cla
+vitalyscherban/token-maximizer-demo | 0 |  | 2026-09-14 | Reference agentic application demonstrating LLM token-efficiency patterns
+belloaminu234/cost-efficiency-analyser | 0 |  | 2026-09-14 | Analytics engine calculating financial cost (tokens) vs. completion speed vs. accuracy across agent 
+dnikolayev/sol-pi-inspired-agent-loops | 0 |  | 2026-09-21 | Independent experiments inspired by SoL-Pi: agent-loop efficiency, token accounting, and verificatio
+ca-mantis-shrimp/agent-workspace | 0 |  | 2026-09-23 | central system for agentic llm claims/observations to reduce token consumption and increase cold-sta
+curlcomplex/coding-optimisations | 0 |  | 2026-09-17 | Audit and test agentic coding speed up and token usage efficiency strategies
+AmmarQwaider/agent-coder-harness | 0 |  | 2026-09-11 | A universal boilerplate and configuration harness for AI Agents (Claude, Codex, Gemini) to maximize 
+Tanmaysinha-codes/agentflow | 0 |  | 2026-09-08 | Production-ready, lightweight AI orchestration engine powered by Gemini 2.5 Flash and Pydantic v2. D
+
+### interactive fiction AI created:>2026-09-14
+lovetimo0421/yumina-oss | 5 | agpl-3.0 | 2026-09-23 | AI native world engine for interactive fiction.
+Unjuno/kiro | 0 |  | 2026-09-20 | Voice-native branching stories, ported from interactive fiction and playable through live AI agents.
+minigomaster/shiyue-18-minutes | 0 |  | 2026-09-16 | 十八分鐘·山月盤 EIGHTEEN MINUTES — interactive fiction game, 88 scenes, 9 endings, 128 AI illustrations
+v744883-ship-it/Pluto- | 0 |  | 2026-09-19 | Pluto an Ai Interactive Fiction web app which allows  you to select your favourite genre and builds 
+Luissalet/ScheherazadesHoard | 0 | mit | 2026-09-23 | A world-state and continuity keeper for interactive fiction and tabletop play: it remembers who's al
+
+### game design AI created:>2026-09-14
+rengcor/SwordFactory-LuauAI | 1 | mit | 2026-09-20 | An open-source Roblox multiplayer game (Sword Factory) designed as a testbed and blueprint for AI co
+pocketagent98-ai/GameResearch-AI | 0 | other | 2026-09-22 | GameResearch AI — autonomous AAA mobile-game deep research and original game design agent. Research.
+MahnoorAli165/Design-of-AI-Systems | 0 |  | 2026-09-18 | The course assignemnt that covers the AI in Gaming,recommendation systems, sematic segmentation, med
+rakaascode/game-design-council | 0 | mit | 2026-09-19 | Open-source AI agent skills to debate game ideas through Pro, Opposition, and Moderator roles, then 
+RomainYing/Game-design-theory | 0 | mit | 2026-09-20 | Structural game-design theory for any genre: named player desire → satisfaction methods → systems, p
+liuyejinghong/game-design-review | 0 |  | 2026-09-20 | 游戏策划视角的试玩评审 skill：四把尺子 / 阶段校准(文字期→像素期) / 红队模式。Game design review skill for AI agents.
+FrascoSal/Linka_asbtractgame_prototype | 0 |  | 2026-09-17 | Abstract game I designed, play vs AI :)
+Cooperzheng/ai-game-dev-framework | 0 | mit | 2026-09-23 | Keep AI-assisted game development aligned with your design: preserve requirements, separate AI propo
+GabrielBigardi/gamedev-ai-skills | 0 | mit | 2026-09-17 | A curated repository of original AI game development skills, authored and maintained by me. Engineer
+SoltyC/BladeVision | 0 |  | 2026-09-21 | A RL bot designed to test AI in gaming scenarios.
+
