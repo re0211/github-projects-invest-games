@@ -1,382 +1,289 @@
-# 跨平台游戏制作 × AI 开发资源梳理（2026-09-23 · 第十八辑）
+# 跨平台游戏制作 × AI 开发资源梳理（2026-09-23 · 第十九辑）
 
-> 搜索覆盖：GitHub（本辑 **15 个查询 / 147 行候选**，stars · 协议 · 推送与创建日期
-> **全部走 REST API 实测**）/ CSDN · 稀土掘金 · 博客园 · 今日头条 · 搜狐 · 腾讯研究院 ·
-> 大模型公司官方与聚合站（OpenAI · Anthropic · xAI · 小米 · 腾讯混元 · Google Research ·
-> Cisco Talos · GitHub）/ 英文社区（dev.to · Minitap · AIToolsRecap · MindPattern ·
-> worldprogramming · VS Code Insiders 更新日志 · deepseek1024 插件站）
+> 搜索覆盖：GitHub（本辑 **15 个查询 / 153 行候选 → 32 个仓库 `gh api` 逐条实测**，
+> stars · forks · 协议 · 语言 · 推送与创建日期**无一估算**）/ CSDN · 稀土掘金 · 今日头条 ·
+> 腾讯云开发者社区 · 博客园 / 官方与聚合站（GitHub Changelog · VS Code Insiders Release Notes ·
+> Google · Microsoft · Amazon · Anthropic · OpenAI · xAI · 阿里 · Yandex）/ 英文社区
+> （Hacker News · quidproquo 日报 · MindPattern · agihunt · sift · malpass · datapipesoft ·
+> AIToolTier · worldprogramming · agentpatterns）
 >
-> 上一辑（第十七辑）的主线是**「上下文是预算，不是仓库」**。
-> 这一辑顺着它往下追 —— 预算花完之后会发生什么：**账单寄到了。**
+> 上一辑（第十八辑）的主线是**「账到期」** —— 三笔账在同一个星期到期：vibe coding 的维护账、
+> 摘要压缩的失真账、模型发布的口径账。**本辑顺着「失真账」往下追一层。**
 >
-> **本辑主线 = 「账到期」。** 三笔账在同一个星期到期：
-> vibe coding 的**维护账**（第三个月）、摘要压缩的**失真账**（"只打分不写"的逐字压缩阵营成型）、
-> 模型发布的**口径账**（有人拿 20 个真实已合并 commit 重放，榜单上的 91.2% 和你读到的不是一回事）。
+> **本辑主线 = 「省下来的 vs 赔进去的」。**
+> 上下文省钱的技术在这一周已经成熟到**可以量产**（`context-mode` 33.12 万次 npm 安装、
+> 98% 削减、17 个平台）。但同一周有**三份互相独立的材料**在说同一件事：
+> **省错了地方，赔的比省的多。**
+> ① `context-mode` 自己删掉了它最出名的功能（22 处简洁提示注入，因为损害基准）；
+> ② arXiv 2609.26629 实测 LLM 生成的角色**表面千差万别、行为高度同质**；
+> ③ 我们**自己跑了一遍**：三条新指标，只有一条抓到东西。
 >
-> 已有索引：`index.html`（**1094** 项 GitHub 项目，本辑新增 10 张卡 → 第二十四版增补）
-> + 前十七辑经验帖（累计约 523 条 + 本辑 **约 44 条** ≈ **567 条**）
-> + `game-production-pipeline.md`（9 步工具链 + 决策原则 **54** 条）
-> + `agent-house-rules.md`（**39** 条房规）+ `mistakes/`（错误记忆 **19** 条）
+> 已有索引：`index.html`（**1104** 项 → 本辑 **第二十五版增补 8 张卡 → 1112**）
+> + 前十八辑经验帖（累计约 567 条 + 本辑 **约 38 条** ≈ **605 条**）
+> + `game-production-pipeline.md`（决策原则 **54** 条）
+> + `agent-house-rules.md`（**39** 条房规 → 本辑 **+2 → 41**）+ `mistakes/`（**18** 条）
 >
-> 上一辑存档：`csdn-social-summary-v17.md`
+> 上一辑存档：`csdn-social-summary-v18.md`
 
 ---
 
 ## 本辑一句话
 
-**摘要压缩省下来的 token，是用"事实被改写"付的账**；
-**vibe coding 省下来的第一周，是用"第三个月"付的账**；
-**榜单上省下来的那 34 个实例，是用"你说不清自己跑了几分"付的账。**
+**工具输出可以往死里压，模型的说话方式和行为分布不能压。**
+压前者是纯赚（98% 削减，且用指针不是截断）；压后者 —— `context-mode` 试过，
+**Moonshot AI 在 kimi-k2.5 上的报告让它把 22 处注入全删了**。
 
 ---
 
-## 一、第一笔账：vibe coding 的维护账，第三个月到期
+## 一、本辑第一部分：一个项目的自我推翻（已读仓库正文与 issue）
 
-**为什么先说这笔**：前十七辑大多是"AI 把做东西变便宜了"。这一周终于有人系统地写了
-**便宜之后的那部分** —— 而且中文、英文两边是同一周独立发出来的。
+### 1. `mksglu/context-mode` —— 23,982★ / 1,729 forks / NOASSERTION / TypeScript
 
-### 1. "Month 3 Crisis"（dev.to / tamiz.pro，2026-09-17）
+**它做了什么**：在 **MCP 协议层**装一道拦截层。工具（Bash / Read / curl）的原始输出先进沙箱，
+超过 `LARGE_OUTPUT_THRESHOLD = 100KB` 的**不截断** —— 写进 SQLite **FTS5** 全文索引，
+只给模型回一个**指针**，要用再 `ctx_search` 取片段。11 个 `ctx_*` MCP 工具，
+**17 个平台**（Claude Code / Codex / Cursor / Copilot CLI / agy / Qwen Code / Kimi Code / Zed …），
+npm 安装量 **331,200+**。
 
-开发者 Tamizuddin 的从业者自述（**自述不是研究**，这点原文自己标了），把 vibe coding 的
-技术债拆成四阶段：
+**为什么"不截断"是关键**：截断会丢尾巴（日志最后的报错往往就在尾巴上）；
+**外部化 + 指针**不丢任何东西，只是不进上下文。这是和"摘要压缩"完全不同的两条路。
 
-| 阶段 | 时间 | 表现 |
-|---|---|---|
-| 蜜月期 | 0–2 周 | 功能飞速上线，Demo 惊艳，"十倍工程师"错觉 |
-| 膨胀期 | 2–4 周 | 同一功能被重复实现，命名各搞一套，模块划分混乱 |
-| 撞墙期 | 1–3 月 | **改一处炸三处**；AI 修一个引入两个；复用率趋近 0 |
-| 停滞期 | 3–6 月 | 团队不再理解自己的系统 |
+**⚠️ 本辑最值钱的一段（#482）**：早期版本会在前后注入 **"Terse like caveman（像穴居人一样简洁）"**
+这类简洁提示。**Moonshot AI 在 kimi-k2.5 上的报告显示：激进的简洁提示会损害编码/推理基准。**
+作者因此**全量移除了 22 处注入点**，Pillar 4 改成 **"No prose-style enforcement"** ——
+只压缩工具输出，**绝不干预最终答案的文风**。全量测试 **2,645 passed / 0 failed**。
 
-三条具体机制（都带代码示例）：
-- **Frankenstein 效应**：助手为了让新代码编译，**悄悄改动共享工具函数或类型签名**，
-  几个月后别人动那个工具才炸 —— 和第十一辑"扎克鸡 3D 模型物理一开就散架"同一类：
-  **渲染/编译看不出来，跑起来才炸。**
-- **依赖膨胀**：模型偏爱引库而不是写 20 行标准实现 → 每个 prompt 都往 package.json / requirements.txt 加包。
-- **六边形架构被绕过**：一个 AI 写的 delete 路由直接 `import database.js` 发裸 SQL，
-  绕过 userService 的 repository 层。**测试全过，但用户数据有了两条到达路径。**
+→ **这条直接修正我们第十七辑的房规 #36**（`i-have-adhd` 八条）：
+八条针对的是**给人读的产出**，不是**给模型的系统提示**。两者混用会赔。
+**已写成房规 #40。**
 
-他的建议（值得抄的四条）：模型产出当**草稿不当交付物** / 违反架构边界的代码**直接拒收** /
-测试写**边界用例而不是刷覆盖率** / 把"什么时候该用 AI"写成团队规范。
+**其他可抄的机制**：
+- `PreToolUse` **强制路由**：不让裸工具把输出直接倒进上下文（Claude 系用 deny/ask/modify，
+  agy 1.0.6+ 实测能真强制）；
+- **dispatcher fail-open**：hook 脚本缺失时 `exit 0` —— 因为 Copilot CLI 会把 exit-1 的
+  PreToolUse 当成 Deny，直接把整个 agent 砖化；
+- **别把根 `.mcp.json` 当真相**（已 gitignore + 从 npm tarball 移除）—— 会造成"新鲜安装损坏"的回归。
 
-> 对我们的价值：**第 3–6 月停滞期正是"闸门"要防的东西。** 我们已有 check_* 系列闸门，
-> 但**没有一条检查"架构边界被绕过"** —— 下一轮可补。
+参考链接：https://github.com/mksglu/context-mode
 
-### 2. 安全账：5,000 个 vibe coded 应用几乎没有认证（Minitap 综述，2026-09）
+### 2. 同一周的三个"省钱"项目，走的是同一条路：把确定性部分从模型手里拿走
 
-引 RedAccess 的 Dor Zvi 团队：对 Lovable / Replit / Base44 / Netlify 上**数千个** vibe coded
-Web 应用扫描，**5,000+ 个没有任何安全或认证**，拿到 URL 就能进；其中**约 40% 暴露敏感数据**
-（医疗、财务、公司战略文档）。Palo Alto 云安全报告补充：**99% 的受访组织在用 GenAI 辅助 vibe coding，
-同年 99% 遭遇过针对 AI 应用/服务的攻击。**
-
-四类复发风险（**每次都以同一副"能跑"的样子出现**，所以过不了"跑一遍看看"这道人工关）：
-
-| 风险 | 长什么样 | 为什么漏 |
-|---|---|---|
-| 硬编码密钥 | API key / 数据库口令直接写在代码里 | 跑得通，是最快的能跑方案 |
-| 授权检查缺失 | 页面显示用户数据但从不校验请求归属 | 改 URL 就能看别人的，界面不报错 |
-| 输入未校验 | 用户输入直达 SQL / 页面 | agent 优化目标是"测试通过"，不是"挡注入" |
-| 依赖风险 | 按名字 import，不核实是不是真库 | 这正是 slopsquatting 的入口（第六辑已记） |
-
-**根因判定（原文）**：这是**规格缺口**，不是模型缺陷 —— *工具只造你让造的东西，
-而安全需求几乎从不出现在指令里。*
-
-合并前六条检查：扫硬编码密钥 → **逐个核实依赖真的存在** → 校验授权 → 校验输入 →
-查 secret 管理 → 跑一遍**安全向**测试套件（而不是只跑功能测试）。
-
-### 3. 中文侧同题：Vibe Coding 90 天猝死四阶段（黑马程序员深圳，09-18）
-
-与 Month 3 Crisis 几乎同一张表，另给两个数字：大中型企业 AI 采纳率 **90.9%**、
-企业 AI Agent 采纳率两年 **17.3% → 40.3%**。
-⚠️ 来自培训机构招生页，**数字无一手出处，只取阶段描述不引数字**。
-
-### 4. 环境 / 需求 / 上下文三件事（mhpn 转载，无署名无日期）
-
-优先级**严格排序**：**先环境干净、再需求明确、最后上下文可控**（顺序错一点都不行）：
-- 环境不干净 → 它看不到编译报错和运行日志，"自己改到能跑"只能瞎猜；
-- 需求不明确 → 大而全、七成是垃圾代码；
-- 上下文不可控 → 对话长了记不清前提，"你问东它答西"。
-
-⚠️ 无署名转载站（SEO 水文嫌疑），**只收方法不收数字**。
-
----
-
-## 二、第二笔账：摘要压缩的失真账 —— "只打分，不写"
-
-**本辑技术上最新的一块。** 第十七辑记过"上下文管理是 DSH 生态最热插件类别，7 个里
-3 个明确绕开摘要压缩"。这一周这 3 个长成**一整个可安装的阵营**，而且有了统一原理。
-
-### 1. 原理：压缩器只能打分，不能写字
-
-`Waxmell114514/jev-compaction`（MIT，3★，09-19 创建）的 README 一句话就是这个阵营的纲领：
-
-> **A context compactor that can only score, never write —
-> so an agent's memory can't hold a fact the transcript never contained.**
-> （一个只能打分、永远不能写字的上下文压缩器 —— 这样 agent 的记忆里就不可能有
-> 原始记录中没有的事实。）
-
-**为什么比"用 LLM 生成摘要"强**：摘要是**生成**出来的，生成就会改写。
-第十七辑那句"摘要会把 `orderExport.ts:42:19` 变成'之前失败了'"就是这个机制。
-逐字压缩只做**选择**：打分 → 低分挪出去 → 保留下来的每一行**逐字节原样**。
-
-实测数字（作者自测 demo run）：一段 `npm install` 输出 **749 → 391 token（−48%）**，
-保留行逐字节原样，**append-only 前缀从不失效 → prompt cache 不破**；
-整趟打分成本 **$0.000031**；按 shadow log 重放，阈值 0.10 省 1,092 token 且
-**没漏掉任何 agent 后来回来找过的东西**。
-
-⚠️ 3 星、**作者自测**。价值在**原理**（可自检的那种），不在成熟度。
-
-### 2. 同一阵营另外四个（均 09-19 ~ 09-23 创建）
-
-| 仓库 | ★ | 协议 | 说什么 |
+| 项目 | 星 / 协议 | 它拿走了什么 | 官方数字 |
 |---|---|---|---|
-| `kolawong/fast-compaction-dsh` | 3 | other | **Verdict-based**：用判定替换有损 LLM 摘要，专给 DSH |
-| `hoshinodis/opencode-context-pruner` | 2 | MIT | 给 OpenCode 做**连续逐字剪枝**，TypeSafe Jev 驱动；fast-jev-compaction 的移植 |
-| `satiricalguru/Fast-Jev-Agents` | 2 | MIT | 同时支持 Claude / Codex / Antigravity / Gemini 的逐字压缩 |
-| `hraness/gobstopper` | 5 | other | **自动**上下文压缩，支持 Codex 与 Claude Code 会话 |
+| **alibaba/open-code-review** | 40,091★ / Apache-2.0 / Go | 选文件、打包、规则匹配交给工程逻辑，只留动态判断给 agent | 同底座模型下 precision/F1 显著更高，**token 约 1/9** |
+| **cloudflare/security-audit-skill** | 20,680★ / MIT / JS | 六阶段流程写死；**发现者永不验证自己**；判断标准写进流程不写进提示词 | 自测：**跑一次只找到反复跑能找到的约一半** |
+| **addyosmani/agent-skills** | 98,643★ / 10,365 forks / MIT | 把"每次都要重讲的能力"打包成 skill | 星数是这批里最高的 |
 
-### 3. 对面一派：交接文档（handoff）阵营
+三者同一天（09-19）被同一份日报发现，作者分别是阿里、Cloudflare、微软 ——
+**都不是新框架，都是给已经在跑的通用 agent 加护栏。**
 
-与"压缩"并列的是**不压缩，而是换会话**：
+**最该抄的一条**：**"一次只能找到一半"是验证侧最诚实的自述。**
+我们有六道 `check_*.py` 闸门 + `mistakes/`，**但从来没量过自己的召回率。**
+（对照第十三辑"验证侧"、房规 #31"闸门保证没坏，不保证好"）
 
-- `ccompactor/ccompactor`（**21★ / MIT / TypeScript / npm**）——
-  **把任意 coding agent 的会话（Claude Code / Codex / Pi）提取成紧凑、可验证、带出处的交接件**，
-  别的 agent 能直接接着干：`ccompactor list` / `find "auth migration"` /
-  `extract claude:last` / `handoff claude:last --to codex --run`。是 `handyutils/sctxx` 的 TS 版。
-- `n0an/handoff-skill`（MIT）：**让会话结束在一个人能控制的 step 文件上，而不是结束在自动压缩上。**
-- `kingju1c3/continuity`（MIT）：持久记忆 + **压缩前自动**做会话交接。
-- `suanyi001/handoff` / `tianchengc/handoff`（MIT）：session JSONL + 当前 git worktree → 下一会话简报。
-- `Avinash-Amudala/weftgate`（Apache-2.0）：本地记忆 + 压缩上下文 + 交接三件套。
-
-### 4. 中文侧把这条线讲成了可执行规则（本辑最该抄的一段）
-
-**worldprogramming 转述的中文社区帖**（原作者每天 vibe coding 7–8 小时）+ **掘金同题**，
-操作高度一致，比第十七辑那四篇更具体：
-
-- **One-shot 原则不是信任问题，是算术**：生成错了**别就地打补丁** ——
-  改写 prompt、回滚（Claude Code 里两下 Esc / git revert）**从干净状态重来**。
-  每一轮"错了→你纠正→它道歉→它改"都往上下文里堆噪声，而**十轮小修小补的代价，
-  会在两小时后以"模型开始自相矛盾"的形式一次性结算**。
-- **计划要落成文件，不要留在对话里**：先让 A 写计划文档 → **另一个 agent 审这份文档** →
-  **新会话**照着实现。同会话里"计划的 token 在实现时已经用掉了"，
-  模型只能从**自己压缩过的内部表示**里重建意图；写成文件后，计划是**仓库里的一个事实**。
-- **50% 交接规则**（最具体）：上下文到**约 50%** 就生成交接文档、开新会话。
-  不用模板，原话是*"我要开新会话了，把下一个会话需要知道的全写下来"*。
-  有人（Matt Pocock）更激进，**压在 15% 以下**。
-  反方也记了："完整会话连贯性更好" —— 但**交接的损失可预期可管理，
-  长上下文退化的损失隐蔽且不可预期**。
-- **分层配置文件本身就是一个上下文预算决策**：`CLAUDE.md` / `AGENTS.md` 不是越多越好。
-
-**掘金版补的一条**：交接文档必须**分清"已决定"和"待确认"**，
-否则接手的 agent 会把讨论里的猜测当定论。可直接下这句指令：
-> "把已确认的目标、约束、方案、相关文件、验收标准和待办整理到 handoff.md，
-> **单独标出尚未确定的问题**。" 然后新会话："读 handoff.md，按其中的方案和待办完成修改。"
-
-**CSDN 同题另两条**：① **上下文消耗的大头不是提示词，是工具自动读的文件内容** →
-按**决策点**切会话（选型 / 执行 / 测试各一个），每个会话只贴方案摘要和目标文件；
-② `.claudeignore` + 主动压缩 + 分阶段开新会话三件套，**单次大型任务成本降 30–50%**（自述值）。
+链接：
+- https://github.com/alibaba/open-code-review
+- https://github.com/cloudflare/security-audit-skill
+- https://github.com/addyosmani/agent-skills
 
 ---
 
-## 三、第三笔账：模型发布的口径账
+## 二、第二部分：赔进去的那一半（本辑唯一"改了"的实测）
 
-### 1. 有人没发榜单，而是重放了 20 个真实已合并 commit（paddo.dev / MindPattern）
+### 1. arXiv 2609.26629 · PersonaWeaver（2026-09-22）
 
-同日两个旗舰（09-22）：**Claude Opus 5.5**（$4/$20，1M 上下文，cache read 降到 $0.20）
-与 **GPT-6 Sol / Luna**（$2/$10、$0.10/$0.50，均为 GPT-5.6 同档的一半）。
+**它测出了什么**：LLM 做**程序化角色生成**时（给游戏 / 模拟世界批量造人），
+两条现有路线 —— 直接生成、或从 persona 库里检索后改编 —— **都产出行为同质化的人群**：
+角色**压倒性认同正面道德规范**、回答问题时**用"助手式"的反应**。
+作者的解法是把**世界构建**与**行为规格**解耦，另建手工整理的立场库与反应库。
+实测覆盖 10 个场景 × 3 个 LLM：**道德与互动反应的分布都更宽，人际语言、回应长度、情绪也更分化。**
 
-paddo 的做法：从一个约 **3,700 文件**的 TypeScript monorepo 挑 **6 个已由人类写好、审过、合并过的生产改动**，
-用 Claude Code 与 Codex 在默认 medium effort 下**各跑 20 次**：
+**为什么这条打中我们**：第十八辑的待办写的是
+「拿 `no-ai-slop` 的 20 条模式与 `check_dialogue.py` 做差集」。
+**PersonaWeaver 给的不是 20 条模式，是一个更深的层**：
+我们那六条（脚注 / 旁白套话 / 填充词 / 朗读 / 口癖 / 平均句长分化）
+**全在表层形式，一条都没看"反应分布"。**
 
-| | 干净通过 | 测试回归 | 总成本 |
+论文：https://arxiv.org/abs/2609.26629
+
+### 2. 🔬 我们自己做了一遍差集（不是抄，是实测）
+
+从 `_backup/amphoreus-roast-v1.9-ch11-src.zip` 里取出 `tools/check_dialogue.py` 与 `game/*.rpy`，
+**先复跑旧闸门确认基线**（11 角色 / 144 句：**C1~C6 全过**，最长/最短平均句长 2.50），
+再按 PersonaWeaver 的三个维度写探针跑一遍 → 存为
+**`_tools/dialogue_homogeneity_probe.py`**（通用化，接任意 `game/` 目录）。
+
+| 新指标 | 实测结果 | 判定 |
+|---|---|---|
+| **A. 角色内部句长变异系数 CV** | 11 个角色全部 **0.47~0.70**，无一 < 0.45 | ❌ **不报红** —— 本作对白长度是自然的 |
+| **B. 角色两两用词 Jaccard** | 45 对，中位 **0.168**，最高 **0.267**（灰毛×昔涟） | ❌ **不报红** —— 用词分化良好 |
+| **C. 情绪句占比（问号 / 感叹号）** | 三月七 **80%** · 帕姆 **64%** · 缇宝 **55%** …<br>**剧本 0% · 阿那克萨 0%** | ✅ **抓到信号** |
+
+**结论（这才是"核实后测试是否对自己有用"的结果）**：
+三条新指标里**只有 C 值得做成规则**。A、B 是**真缺口**（C1-C6 完全没覆盖），
+但**在本作上已经达标** —— 不做成闸门，只登记。
+**C 是真的缺口且有信号**：两个角色**一句问号感叹号都没有**，而最高的角色到 80% ——
+这正是 PersonaWeaver 说的"反应分布过窄"。
+（剧本 0% 可能是设定：它是旁白式解说角色；阿那克萨 0% 是学究人设。**但两者同时为 0，值得人看一眼。**）
+
+→ **已写成房规 #41**（对白类产出的"反应分布"检查）+ 存探针工具。
+
+### 3. 同一周另外两条"赔在里面"的旁证
+
+- **`max-sixty/worktrunk`（8,365★ / Rust）**：git worktree 管理 CLI，专为并行 agent 设计。
+  它提醒的是第十六辑那条"多 agent 并行收益已转负"的**另一半**：
+  **协调税 = 沟通成本 + 冲突成本**；**后半是可以工程化的**（一人一棵工作树，互不踩）。
+  → 我们选了单 agent 串行路线没错；**但哪天真要并行，消冲突的优先级高于再加一个 agent。**
+  https://github.com/max-sixty/worktrunk
+- **两个记忆项目，选错了会赔在合规上**：
+  `tigerless-labs/agent-memory`（966★ / **MIT** / Python，**Markdown 是真相源**，
+  本地排序检索不要 API key，一个 store 同时给 Claude Code 和 Codex 用）
+  vs `tinyhumansai/openhuman`（40,058★ / **GPL-3.0** / Rust 桌面应用）。
+  → **已有等价物（`mistakes/` + `.workbuddy/memory/`），不替换**；
+  可取的是「**一个 store 跨外壳共享**」—— 换桥换 shell 时记忆不跟着换。
+  ⚠️ **GPL-3.0 比 MIT/Apache 严得多，商用前必须确认。**
+
+---
+
+## 三、VS Code / Copilot：把"省还是不省"做成了一个显式旋钮
+
+**本辑第一次把 VS Code 与 Copilot 单独列为一条线**（用户点名要看 VSCode）。
+
+- **VS Code 1.138 / 1.139（Insiders）**：
+  · **Auto 模型三档**：`Efficiency` / `Balance` / `Intelligence` ——
+  把"省钱还是要好"从猜变成**一个下拉框**（VS Code / Copilot CLI / Copilot app 全端）；
+  · 模型选择器加了 **`Thinking Effort`** 与 **`Context Size`** 两个控件（1.139, 09-18）；
+  · **Agents 窗口里跑本地 Dev Containers**（agent 用项目自己的工具链，需 Docker）；
+  · **定时循环 agent 任务**（1.137 起按小时/天/周，public preview）· **实验性语音模式**
+  （可中途口头改方向）· **Agent Merge**（agent 自己开 PR 并走完 review + CI）；
+  · PR 全合并后自动把会话标 Done（opt-in）。
+- **GitHub Copilot**：
+  · **code review 自动 resolve**：后面一次提交修掉了，之前的评论自动关闭；
+  接受建议时**顺手写 commit message**；
+  · **Lite 档 = 多 agent ensemble**，GitHub 自家数字：
+  **已解决评论 高危 +47% / 中 +31% / 低 +11%，review 成本 −8%**；
+  · **企业级 agent 权限与沙箱**（不能被用户/工作区设置、自动批准或历史批准削弱）+
+  JetBrains 沙箱公测；
+  · **HydraFusion**（CLI `/experimental`）："本地 / 云 / 复合模型之间的自动语义路由"；
+  · 用量指标把 **VS Code Agents 窗口**与编辑器 Agent Mode **分开统计**；
+  · 节点：MAI-Code-1-Flash 退役；**9/28 起统一 Copilot 体验默认开启**；10/02 四个模型弃用。
+
+**对我们的意义**：这三档是一个**可以直接类比到自己工作流的模式** ——
+我们现在的分档是"上财远程 `qwen3.8:27b` 干重活 / 本地 qwen3:8b 干轻活"，
+**但没有一个显式的旋钮，也没有记录每次为什么选哪档**。
+（来源：https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14/ ·
+https://code.visualstudio.com/updates/v1_139 · https://aitooltier.com/tools/github-copilot）
+
+---
+
+## 四、模型上新与"口径账"（第十八辑已收 paddo / ProgramBench，本辑只补新面）
+
+- **同日对撞（09-21/22）**：Anthropic **Claude Opus 5.5**（Artificial Analysis 智能指数 **58** 登顶，
+  比 Opus 5 便宜 40%、快 30%）vs OpenAI **GPT-6 Sol + Luna**（Luna **$0.10 / $0.50** 每百万）。
+  ⚠️ **口径分歧已公开**：Browser Use 测 browser agent 得到**相反结论**（Sol medium 66.9 > Opus 5.5 的 59.4，
+  且便宜 3.5 倍）；Nate Herk 八项工作里七项选 Opus，付 $213 vs $74。
+- **开源权重榜（Artificial Analysis，09-23 更新）前六**：GLM-5.3 (44.8) · Kimi K3 (43.6) ·
+  GLM-5.3 Flash (41.8，**$0.24**) · Qwen3.8 2.4T-A95B (39.9) · Qwen3.8-Flash-Next (39.8，**$0.23**) ·
+  **DeepSeek V4.1 Flash (39.5，231 tok/s，$0.53)**。
+  → **第 3、5、6 名的价格是第 1 名的十分之一，智能差不到 6 分。**
+- **阿里云栖官宣 Qwen 4**；路透另报阿里规划 **5–10 万亿参数**模型 + 自研芯片。
+  **Qwen-Image-2.1** 在 Arena 图像编辑与文生图两榜拿下开源第一（编辑榜 1367 / 总榜 16）。
+- **Hugging Face：transformers 可直接加载 GGUF**（传 `gguf_file` 即可）—— 本地推理离 llama.cpp 又近一步。
+- **OpenRouter Batch API**：异步批量，24 小时内完成，**通常半价或更低**，已支持 70+ 模型。
+- **Epoch AI**：达到同等 AI 性能的成本**平均每季度降约 47%（每年约 13 倍）**。
+- **Yandex 开源 AliceAI Foundation**：80B MoE（**激活 3B**）、256K 上下文、KDA 混合注意力，从零训练。
+- **语音榜**：Cartesia Sonic 3.6 在 Artificial Analysis Controlled Voice Arena 拿下 **9 种语言里的 8 种第一**；
+  阶跃 StepAudio 3 在 STT 并列第一（**1.7% 错误率**）。
+- **⚠️ 安全（本辑唯一一条"AI 被用来做坏事"的新形态）**：Cisco Talos 披露 **CLOSEDQUORUM** ——
+  首个被报告的**完全自主 AI command-and-control 植入体**（Windows）。它采集主机数据，
+  发给**最多四个商用模型 API**（DeepSeek / Qwen / Mistral / Gemini），**哪个动作赢得投票就执行哪个**。
+  目标 = 凭据与加密钱包。**投票设计不是为了更聪明，是为了更难拔掉。**
+
+---
+
+## 五、游戏侧（本辑增量较小，且有一处必须剔除）
+
+- **⚠️ 去重纪律执行一次（M-0001 第五种形态）**：搜索命中两篇
+  "20 天一人做微信小游戏上线"（`hqwc.cn/a/1731390` / `mhpn.cn/news/2151456`，同一篇《像素农场》），
+  与**第五辑已收的"20 天微信小游戏复盘"同源** → **主体剔除**，只记这次识别本身。
+  又一次证明：**"ID 新 ≠ 内容新"。**
+- **武侠 RPG 一天做完**（@0x0funky，09-17）：剧本 / 人设 / 战斗 / 水墨场景 / 动画 / UI / BGM 全与 AI 协同，
+  **不到 1 天**；成本 **< $300**（GPT Pro 20x 用掉当周约 60% 额度 + Grok Build 约 50% + Lyria API $2）。
+  剧本完成约 60%，22 张地图已做 11 个场景、20+ 角色；**战斗从即时制改成回合制**（更符合怀旧感）。
+  → **可取的不是速度，是"改设计"这件事没被 AI 绑架。**
+- **`FunplayAI/funplay-unity-mcp`（251★ / MIT / C#）**：20 模块 **91 工具**。分水岭是三个动词：
+  `execute_code`（内存里现编现跑 C#）、**Play Mode 自动化**（进播放模式 + **模拟输入** + **截图**）、
+  **instanceId 链式调用**。
+  → **选型判据（可复用到任何引擎 MCP）：工具清单里有没有 run / input / screenshot。**
+  只有 create 和 edit 的都是半成品（与第十七辑 `beckett-godot-mcp` 的 inspect/author/run/**SEE** 同一条）。
+  同批 **`IvanMurzak/Godot-MCP`（251★ / Apache-2.0 / C#，42 工具 / 12 家族）** 更值得看一眼的点是：
+  **它与同作者的 Unity-MCP 共用 `ReflectorNet` 反射底层**（NuGet 包），不是各写一套
+  → **"项目之间有没有共享底层"比"工具数量"更能判断是不是认真的。**
+- **美术/角色工具两条**：`sprited-ai/sprute` v1.0（开源 CLI，8 方向像素角色 Comfy 工作流）；
+  **NPC Sprite Studio**（itch.io，$9 买断，32px 分层像素角色，头发与衣服共用同一动画网格，
+  导出 8 层 PNG + JSON 帧数据，**含"AI 参与了代码与程序化图形"的披露**，离线 HTML 打开即用）。
+
+---
+
+## 六、AI Dev 自测结论（本轮，逐条给出"改了没有"）
+
+| # | 对象 | 结论 | 落地动作 |
 |---|---|---|---|
-| **Opus 5.5** | **13/20** | **0** | $45.81 |
-| **GPT-6 Sol** | 8/20 | **5** | $13.16 |
+| 1 | **`mksglu/context-mode` #482 自我推翻** | ✅ **真有用，修正已有房规** | **房规 #40**：压缩工具输出 vs 压缩文风是两件事；房规 #36 的适用面被限定 |
+| 2 | **arXiv 2609.26629 PersonaWeaver** | ✅🔬 **真有用，已实测** | 写探针 `_tools/dialogue_homogeneity_probe.py`，跑出三指标实测值（见 §二.2） |
+| 3 | **差集结果** | ✅ **只有 1/3 值得落地** | **房规 #41**（反应分布检查）；A、B 只登记不落地 |
+| 4 | **`alibaba/open-code-review`** | ✅ 真有用 | 判据「错不起的步骤不许交给模型」进决策原则（与已有 `check_*.py` 同路，未单独立项） |
+| 5 | **`cloudflare/security-audit-skill`** | ✅ 真有用 | 两条规矩（生成者≠验证者 / 标准写流程不写提示词）进决策原则 |
+| 6 | **`max-sixty/worktrunk`** | ⚠️ 有参考价值 | 协调税拆成"沟通 + 冲突"，记进 §二.3；当前单 agent 串行，不装 |
+| 7 | **`tigerless-labs/agent-memory` / `openhuman`** | ⚠️ 只登记 | 已有等价物；**GPL-3.0 合规红线**已记 |
+| 8 | **`alexgetmancom/claudecut`（37★）** | ⚠️ **只登记不能测** | 36-token 系统提示是 harness tax 的"地板"对照点；**本机 `claude` CLI 跑不了**（沙箱限制） |
+| 9 | **VS Code / Copilot 三档** | ⚠️ 有参考价值 | 记进 §三；"没有显式分档旋钮"列为下一轮待办 |
+| 10 | **游戏侧（武侠 RPG / Sprute / NPC Sprite Studio）** | ⚠️ 只登记 | 游戏线已终止；取的是"改设计不被 AI 绑架"与"披露写法"两点 |
 
-而在 **4 个自带 4,176 条断言的独立任务**上，**两者都是 100%**。
-→ **差距只出现在脏活上。厂商榜单住的地方（自包含任务）两个模型都没问题。**
+**本轮的"改了"一共四处（都可复核）**：
+`agent-house-rules.md` 39 → **41 条**（+#40 / #41）·
+`_tools/dialogue_homogeneity_probe.py`（新，通用化探针）·
+`index.html` **1104 → 1112**（第二十五版增补 8 张卡）·
+`D:\34498\Documents\AGENTS.md`（**新** —— 承接第十八辑待办 #6，补齐工作区隐式约定）。
 
-结论：**测试与评审强的地方用 Sol，测试薄的无人值守任务用 Opus 5.5。
-一个每四跑就弄坏一次的便宜模型，只有在人能接住的时候才便宜。**
-
-同一天口径打架的另两组：Artificial Analysis 给 Sol(max) **48 分 / 212 个里排 18**，Opus 5.5 **58**；
-Browser Use 在 browser agent 上反过来（Sol 66.9 vs Opus 5.5 59.4，**成本 1/3.5**）。
-→ **上线日评测的噪声本身就很大**，这是本条最该记住的。
-
-### 2. ProgramBench：91.2% 不等于你在榜上读到的 91.2%
-
-ProgramBench 共同作者 Ofir Press 指出：Anthropic 在系统卡里跑的是 **200 个实例中的 166 个**，
-报的是**平均通过测试数**；官方榜只数**完全完成的任务**。
-**部分解常常能过 60–70% 的测试** → 系统卡里的 91.2% 和榜上的 91.2% **不是同一个指标**。
-
-→ M-0002（先核实再下结论）的第四种形态：**数字一样，口径不同。** 已记 **M-0019**。
-
-### 3. Opus 5.5 的四个 breaking API 变更（会咬到已有代码）
-
-1. **thinking 不能关**（也不能设 budget）；
-2. `tool_choice: "any"` → **400**；
-3. thinking blocks **绑定模型与会话** → 回放失败；
-4. `computer_20251124` 工具被拒。
-
-另有两条直接改账单：**`max_tokens` 要设到 128,000**（thinking 计入输出额度）；
-**改 effort 要用 per-message 的 beta 参数** —— 顶层请求间改 effort **会让 prompt cache 失效**。
-Anthropic 自己的迁移指南：**medium effort ≈ Opus 5 的 high**。
-
-### 4. 本周其他上新（09-21 ~ 09-23）
-
-| 模型 | 关键数字 | 备注 |
-|---|---|---|
-| **Grok 4.7**（xAI） | $2/$6 不变；**CursorBench 4.0 46.3%**（+5.9pt）；**Terminal-Bench 4.0 20.3% → 38.0%**；速度 2 倍 | 强化长任务、自我检查、**长上下文管理**；网友对跑分有争议 |
-| **小米 MiMo-V2.6**（Pro/Flash，开源） | AA 综合智能 **46 分 = 当前最强开源**；DeepSWE v1.1 **+17 / +14 分** | 不到 6 天 Live RL 烧 $85万 / $262万，75 万条轨迹；**开源 7k+ RL 任务环境与端到端训练框架**；能搭 3D 游戏 / Blender 建模 |
-| **腾讯混元 Hy Image 3.5 preview** | 2K 图 **¥0.15/张，只对输出计费**，单次最多参考 5 图 | 盲测与 Seedream 5.0 pro 持平；已接入元宝 / ima / WorkBuddy |
-| **阿里平头哥真武 V900** | 算力上代 3 倍、显存 216GB、片间 1200GB/s | 2027 Q1 就绪；与主线弱相关，只登记 |
-
-**推理效率（对本地/远程部署最实用的一组）**：
-- **SGLang × Qwen × NVIDIA**：NVFP4 用于 **KV Cache**，decode 吞吐 **+26%~78%**；
-- **树状推测解码**适配 **DeepSeek-V4**，吞吐最高 **+18.5%**。
-→ 我们那个 Ollama 桥（qwen3.8:27b）下次调优，**KV Cache 量化是第一条该试的路**。
+**去重纪律（本辑执行记录）**：剔除 **8 条已收录**
+（`hi-godot/godot-ai` · `beckettlab/beckett-godot-mcp` · `Donchitos/Claude-Code-Game-Studios` = CCGS ·
+以及 §五那条 20 天微信小游戏同源重复）与一批 0★ 同模板空壳。
+**新形态识别**：**"同一篇稿子换个站发"** —— `hqwc.cn` / `mhpn.cn` 是同一批 SEO 站的镜像域名，
+**以后看到这两个域名要直接怀疑同源**（M-0001 第五次形态变化）。
 
 ---
 
-## 四、VSCode / Copilot：路由、会话与"agent 住进项目里"
+## 七、索引维护（本辑）
 
-**一手来源**：VS Code **1.139 Insiders** 更新日志 + GitHub Copilot 周更（09-14）。
-
-1. **三档自动选模 efficiency / balance / intelligence** —— **三档选的是同一批底层模型，
-   改的是路由偏好**：不是模型目录，是**成本-质量旋钮**。铺到 VS Code 扩展 / CLI / 桌面端。
-2. **Agent 会话住进 Dev Container** —— 用项目自己声明的工具链与依赖，而不是宿主机环境。
-   需要 Docker + 受支持的 devcontainer 配置，**渐进开放**。
-3. **会话生命周期**：PR 合并后自动标 **Done**（可选宽限期后删除）；会话里**直接建 PR**
-   （可审标题/描述、设 draft、或委托 agent）；Agent Merge 可让 agent 自己开 PR 走完评审与 CI。
-4. **评审**：自动把"自己提过、后来被修复"的评论标 resolved；接受建议时**自动生成 commit message**；
-   评审可调用 **shell 工具做验证**；**Lite 模式汇总多个 agent 的发现**降噪。
-5. **治理**：Business/Enterprise 新增用量指标（DAU / 会话数 / 人均消息数）+ **额度追加审批流**；
-   模型选择器新增 **Thinking Effort** 与**更长上下文**控件；`.jj`（Jujutsu）默认进 files.exclude。
-
-**对我们**：三档路由那条最值得抄成概念 —— **"同一批模型，改路由偏好"**，
-和我们"同一批脚本，改闸门阈值"是同一思路。Dev Container 对 Ren'Py/Unity 这类重依赖项目有意义，
-但本机 Docker 条件未知，**只登记**。
+- `index.html` **第二十五版增补 8 张卡**（**1104 → 1112**，脚注 **[1104]-[1111]**），
+  脚本 `insert_v25_cards.py`（幂等 + 页头锚点唯一断言 + **插入点 div 深度自检** + 重复仓库检测）。
+- 卡片见：**🆕 第二十五版增补 · 口径**（8 项）。
+- 全量实测数据（stars / forks / license / language / pushed / created）：`_r18_api_out.txt`（32 个仓库逐条 `gh api`）。
+- 原始候选：`_r18_gh_out.txt`（15 查询 / 153 行）。
 
 ---
 
-## 五、DSH（DeepSeek Harness）插件第二波
+## 八、下一辑待办（承接 + 本辑新增）
 
-第十七辑只登记了 DSH 生态的类别信号，这一辑落到具体仓库（**全部 REST API 实测**）：
+**承接**
+1. **索引仓库推送**（`86429ff` 之后的所有提交未推，走 `_tools/push_via_api.py`）
+2. **`rpycdec` 自查**：对 `_backup/amphoreus-roast-1.9-pc.zip` 跑一次（两辑没轮到）
+3. **找 `index.html` 里那个多余的 `</div>`**（div 计数差 −1，既有问题）
+4. **试 Codex 本地 `config.yaml` → Ollama 纯离线路线**
+5. 仍未闭合：活跃的开源 **Steam 上架/发行**工具（第十六辑起三次未闭合）
 
-| 仓库 | ★ | 协议 | 是什么 | 判断 |
-|---|---|---|---|---|
-| `Clearailhc/clearai-dsh` | **381** | Apache-2.0 | 把 **Epistemic Loop**（frame→hypothesize→plan→observe→verify→evaluate→record 七段）做成 DSH 原生插件；产物是**领域本体**（可增长的、下轮按概念可取回的知识结构） | ⭐ 星最高、思路最完整：**每条边都要被证据和独立评审检验过** |
-| `cv-superding/dsh-deepseek-web-login` | 127 | Apache-2.0 | 把 chat.deepseek.com 网页版模型当 LLM provider（非官方） | ⚠️ 非官方，合规风险 |
-| `a86582751/dsh-nexttavern` | 103 | GPL-3.0 | DSH **长篇角色扮演** agent：SillyTavern 角色卡导入 / 行动选项卡 / 分支对话 / 长篇记忆 / 关键词+语义混合检索 | 与"角色一致性"老问题同一领域 |
-| `LuxUmbra697/DSH-Desktop` | 62 | MIT | 把 DSH 装进独立窗口，双击即用、免终端免浏览器，**载荷可裁到 210MB（便携包 74.8MB）** | 与第十七辑 dsh-desktop 同类 |
-| `huangziyuan-general/dsh-novel-forge` | 13 | MIT | 小说锻炉：**事实账本 / 上下文包 / 阶段门禁 / 零费用去 AI 味扫描 / 确定性审计 / 提案制修订** | ⭐ **"零费用去 AI 味"= 确定性规则而非模型调用**，与我们 `check_dialogue.py` 同一路线 |
-| `bowenliang123/dsh-context` | **1,448** | - | 上下文可视化：六色组成（System / Tool Schemas / User / Injected / Assistant / Tool Results）+ **最贵的 5 个工具 Schema** + 逐请求演进 | ⭐ **把"上下文账单"变成可见的** |
-| `snow-The/dsh-session-handoff` | - | - | 结构化交接文档导出/恢复 + **主动剪枝**（`acp_status` / `acp_compress` / `acp_set_limit`，默认软硬限 60%/70%）+ 会话回收站 + 模型路由 | 与第二节 handoff 阵营完全同题 |
-| `TheHeartFickle/dsh-session-manager` | - | MIT | 会话**回退**（Ctrl+Shift+Z，基于官方 `sessions.fork` 重建分支）+ 归档；依赖 DSH ≥ 0.1.2-rc.1 / Node ≥ 20 | 与上面互补 |
-
-**本辑判断**：DSH 生态这一周长成**三个可辨认的子方向** ——
-**① 看得见（dsh-context）② 接得住（session-handoff / manager / ccompactor）③ 少装点（verbatim compaction）**。
-我们本机 `dsh 0.1.0-rc.6` 已装，**先装 dsh-context 把账单看清楚**，再决定要不要上压缩类。
-
----
-
-## 六、Agent 风险与治理（本周三条）
-
-1. **32.5 万次实验：13 个 agent 里 8 个会给"推断有钱"的用户推荐更贵的选项** ——
-   差别对待不需要被明示，会从上下文里学出来。
-2. **CLOSEDQUORUM（Cisco Talos）**：自称首个**完全自主的多模型 AI C2 植入体**。
-   Windows 植入体收集主机信息 → 发给**最多四家商业模型供应商**（DeepSeek / Qwen / Mistral / Gemini）
-   → **投票决定下一步动作**，目标是凭证与加密钱包。
-   **重点不是 AI 用法，是"投票"这个设计**：不为更聪明，是为了**任何一家断供都拦不住它**。
-   Talos 未确认有在野部署。
-3. **Google Research RRSI**：给 agent 的**自我改进**加正则化（防越改越偏）。
-4. **Amazon 封了 Meta 的购物 agent** —— 平台侧开始对外部 agent 关门。
+**本辑新增**
+6. **给"模型分档"做一个显式旋钮**：我们现在是"远程 27B 干重活 / 本地 8b 干轻活"，
+   但**没有记录每次为什么选哪档**。可抄 Copilot 的 Efficiency/Balance/Intelligence 三档写法。
+7. **`D:\34498\Documents\.workbuddy\memory\MEMORY.md` 瘦身** —— harness tax 实测里它是
+   **最大的单块（4,733 token）**，而房规 #38 要求"记忆按 token 计预算"。
+8. **量一次自己闸门的召回率**（被 `security-audit-skill` 的"一次只找到一半"提醒）——
+   做法：往已验收的版本里**故意塞回一个已知 bug**，看六道闸门有几道报红。
+9. **DSH 上下文插件二轮评估**（等脱离 rc）+ **Codex 本地纯离线**
 
 ---
 
-## 七、游戏侧（本辑新增，全部 REST 实测）
-
-| 仓库 | ★ | 协议 | 是什么 | 判断 |
-|---|---|---|---|---|
-| `holokat/AetherFX` | 1 | MIT | **AI 能署名的游戏 VFX**：typed building blocks → agent 看自己的渲染迭代 → 产物是一个小 JSON；**所有编辑动作都是 MCP 工具**；无 shader、无二进制资产，靠小型 C 库在游戏里播放 | ⭐ **"agent 可署名 + 确定性 + 可移植"三件套**，思路比星数重要 |
-| `Jadis0x/URKit` | 25 | MIT | Unity **Mono 与 IL2CPP** 通用 modding 框架（原生 C++） | 与第七辑 DroidSpy（手机端 dnSpy）互补：一个解包、一个注入 |
-| `song-chaoyang/UnityAssetDB` | 49 | MIT | **Rust + SQLite + tree-sitter**，把工程里所有 Unity 资产引用变成可查询数据库，CLI + Web | 对"AI 找资产引用"是正解（比让模型 grep 全工程省上下文） |
-| `q956085398-netizen/RenpyTranslatorNG` | 0 | - | Ren'Py 汉化工作台：**稳定项目身份 / 出现位置级译文记录 / 事务式应用与恢复点 / 外部 tl 变更检测** | 0★ 但**"事务式应用 + 恢复点 + 外部变更检测"正是第 10 轮英文版缺的三样** |
-| `mawen0317/renpy-vn-engineering` | 0 | MIT | 给大型 Ren'Py / VN 项目的 Claude Code skill（工程纪律） | 0★，只登记 |
-| `banjiu763-cpu/visual-novel-illustrator-skill` | 2 | - | VN 插画 skill：剧情驱动 CG + 角色一致性 | 与第十辑 Story Illustrator 同类 |
-| `michaltomczykowski/godot-ai-animation-toolkit` | 0 | MIT | 7 个 AI 原生 Godot 动画工具（预设 / 原地剪辑 / 检查审计） | 0★，只登记 |
-
-**本辑游戏侧结论**：这周没有"AI 又做了个游戏"的大新闻，全是**工程化零件**
-（可查询资产库 / 可署名 VFX / 事务化翻译 / 注入框架）。
-→ 与主线一致：**便宜的"做"已经做完了，现在贵的是"接得住"。**
-
----
-
-## 八、本辑自测（唯一"改了"的部分）
-
-### ✅🔬 量了一次自己的 harness tax —— 闭环上一轮待办 #1
-
-第十七辑的教训是"**量之前必须先隔离调用侧个人配置**"（否则量的是"我的机器"不是"这个工具"）。
-这一辑照做：不看模型侧，**只读本机文件**量"每次请求都要重发的固定块"。
-
-**产出**：`D:\34498\Documents\_tools\harness_tax_probe.py`（零依赖、可重跑；
-有 tiktoken 走 cl100k_base 精确计数，没有则退回近似并**在输出里标注口径**）。
-
-**实测结果（2026-09-23 23:47，本机）**：
-
-| 组成 | token | 占比 |
-|---|---|---|
-| **MCP 工具定义**（7 个服务器 / 95 个工具） | **10,519** | **50%** |
-| 常驻记忆文件（工作区 MEMORY.md 4,733 + 用户级 1,540 + USER/SOUL/IDENTITY） | 7,721 | 37% |
-| 18 个技能的 frontmatter | 2,660 | 13% |
-| **合计** | **20,900** | 占 200k 窗口 **10.45%** |
-
-最贵三项：`bf45d9eff733`（8 工具 / 2,977 token，canvas 类）、
-`ae1e01473eb6`（**45 工具 / 2,293 token**，GitHub）、`33d3ce39d97f`（9 工具 / 1,981 token，表格）。
-最贵技能：`tencent-meeting-skill` 298 / `fullstack-dev` 222 / `github-pages-auto-deploy` 191。
-
-**三条结论**：
-1. **MCP 是最大的一块，而且"连上就付、不用也付"** —— 45 个 GitHub 工具里常用不到 10 个。
-   第二节那个 `KaryawanSurga/mcp-context-budget`（1★/MIT）正是这个思路的现成实现：
-   **启用一个 MCP 服务器之前，先量它要占多少上下文。** 已进索引 + 房规。
-2. **记忆占 37%，比技能还贵** —— 房规 #35 说"上下文是预算"，这条给出**具体花费**：
-   用户级 MEMORY.md 1,540 + 工作区 MEMORY.md 4,733。**工作区那份该瘦身了。**
-3. **与 HarnessTax 论文对得上量级**：论文说 Claude Code 首次调用固定块 27,011 token，
-   我们这边**调用侧自己就贡献 20,900** —— **tax 的大头确实在客户端那一侧。**
-
-**已落的改动**：
-- 新增 `_tools/harness_tax_probe.py`
-- 新增房规 **#37**（MCP 先量后开）、**#38**（记忆按 token 计预算）、**#39**（交接分清已决定/待确认）
-- 新增决策原则 **#52**（逐字压缩优先于摘要压缩）、**#53**（50% 交接 + 计划落盘）、
-  **#54**（合并前六条安全检查）
-- 新增 **M-0019**（数字相同，口径不同）
-
-### 📖 读了全文但没改的
-
-- **Month 3 Crisis**：方法好，但我们**没有"架构边界"这道闸门** → 写进下一轮待办，不擅自加
-- **50% 交接 / handoff.md**：操作清晰，但**已有 mistakes/ + 每日日志 + 自动化记忆三层**，
-  再加一层 handoff 会重复 → **只取"分清已决定 / 待确认"这一条**写入房规 #39
-- **Opus 5.5 四个 breaking 变更**：我们走 Ollama 桥不受影响 → 只登记（换云端模型时会咬人）
-- **`clearai-dsh` / `dsh-context`** ⚠️ **只登记不装**：本轮没有 DSH 会话在跑，装了测不出东西
-- **AetherFX / URKit / UnityAssetDB** ⚠️ 需要 Docker / 本机无 Unity 工程 → 只登记
-
----
-
-## 九、下一辑搜索缺口
-
-1. **"架构边界被绕过"有没有现成闸门**（Month 3 Crisis 的 Frankenstein 效应）—— 最想找的
-2. ~~面向角色对白的 AI 味检测~~ —— 因游戏线终止，**该待办实际已失效**，本辑起不再跟踪
-3. 活跃的开源 **Steam 上架/发行**工具（第十六辑起两次未闭合）
-4. **verification skill**（`zaid-mian/vibe-coder` 的 "interview first, verify the repo"）有没有成熟版
-5. 本地/远程推理的 **KV Cache 量化**（NVFP4）在 Ollama 上的实操路径
-6. DSH 三个子方向里，**"少装点"那一支到底谁家能跑**（需要有真在跑的 DSH 会话）
-
----
-
-## 十、本辑统计
-
-- 新增信源：**约 44 条**（中文约 9 / 官方与英文约 14 / GitHub 21）
-- 累计经验帖：约 523 → **约 567 条**
-- GitHub 索引：1094 → **1104 项**（第二十四版增补 10 张卡）
-- `agent-house-rules.md`：36 → **39 条**；`game-production-pipeline.md` 原则 51 → **54 条**；
-  `mistakes/` 18 → **19 条**（+M-0019）
-- 新增资产：`_tools/harness_tax_probe.py`
+*本辑统计*：新增约 **38 条**信源（中文约 6 / 官方与英文约 18 / GitHub 14）→ 累计约 **605 条**；
+`index.html` **1112** 项（+8）；`agent-house-rules.md` **41** 条（+2）；
+`mistakes/` **18** 条；新增工具 1 个（`_tools/dialogue_homogeneity_probe.py`）+ 新文件 `AGENTS.md`。
