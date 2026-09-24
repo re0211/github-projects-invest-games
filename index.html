@@ -215,10 +215,10 @@ footer a{color:var(--text-2)}
     <h1 data-page-node-id="AiHFaPLbdzWhs4cJxbPaCG">游戏制作 × 游戏拓展 · 重点：AI 制作游戏<br data-page-node-id="7picbxz1uDgskpVGBQndAe">三条线上的开源工具地图</h1>
     <p class="sub" data-page-node-id="LVHhXAo5FhfwKnCSkj9LXr">从 GitHub 上筛出真正活跃、能落地的项目，用人话讲清楚它们各自解决什么问题、能不能二次开发、值不值得花时间。不是罗列链接，是帮你做取舍。</p>
     <div class="meta" data-page-node-id="xhBz9HP4CMitXa7DRJmiCE">
-      <span data-page-node-id="U5SVCzIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第二十七版增补 2026-09-24</span>
-      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1128 个项目</span>
+      <span data-page-node-id="U5SVCzIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第二十八版增补 2026-09-24</span>
+      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1141 个项目</span>
       <span data-page-node-id="DCE1SCzjW3tXhAFVtReJ7C">星级 / 更新时间 / License 逐项实测</span>
-      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项 + 第十八版增补 2 项 + 第十九版增补 1 项 + 第二十版增补 1 项 + 第二十一版增补 4 项 + 第二十二版增补 6 项 + 第二十三版增补 9 项 + 第二十四版增补 10 项 + 第二十五版增补 8 项 + 第二十六版增补 8 项 + 第二十七版增补 8 项（均与上版零重复）</span>
+      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项 + 第十八版增补 2 项 + 第十九版增补 1 项 + 第二十版增补 1 项 + 第二十一版增补 4 项 + 第二十二版增补 6 项 + 第二十三版增补 9 项 + 第二十四版增补 10 项 + 第二十五版增补 8 项 + 第二十六版增补 8 项 + 第二十七版增补 8 项 + 第二十八版增补 13 项（均与上版零重复）</span>
     </div>
   </div>
 </header>
@@ -11550,6 +11550,233 @@ footer a{color:var(--text-2)}
 
     </div>
 
+    <div class="group" data-page-node-id="rpm28g">
+      <div class="group-title" data-page-node-id="rpm28gt">🆕 第二十八版增补 · 待办闭环 + 一手源（13 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm28gd">第二十二辑的 GitHub 路逐仓库走 REST API 实测（stars / license / language / updated 无一估算），再逐条 grep 过 19 份存档 + 1128 项索引。本辑候选池是历史最大（42 个），本版收紧到 13 项，其余在第二十二辑的「下一辑待办」里逐条登记。<strong>本辑主线是「待办闭环 + 一手源」—— 追了两轮的《DeepSeek Harness：从开机到拆开》一手源找到了（★1302），并顺带查出整个橙皮书 / skill 生态。</strong></p>
+
+      <div class="card" data-page-node-id="rpm28c1">
+        <div class="card-top" data-page-node-id="rpm28c1t">
+          <span class="card-name" data-page-node-id="rpm28c1mn"><a href="https://github.com/headroomlabs-ai/headroom" target="_blank" data-page-node-id="rpm28c1n">headroom（把「压缩」挪到进上下文之前）</a></span>
+          <span class="lang" data-page-node-id="rpm28c1l">Python</span>
+          <span class="stars" data-page-node-id="rpm28c1s">73669</span>
+          <span class="tag t-make" data-page-node-id="rpm28c1t1">AI × 上下文</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c1t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c1p"><strong>本批星数第一（73669★ / Python / Apache-2.0）。</strong> 在工具输出、日志、文件、RAG 片段<strong>进入 LLM 之前</strong>先压缩它们。官方数据：编码 agent 省约 <strong>20% token</strong>、<strong>JSON 省 60~95%</strong>、答案不变。提供<strong>库 / 代理 / MCP server 三种形态</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm28c1a"><b data-page-node-id="rpm28c1ab">打个比方：</b>我们现有的压缩手段都是<strong>进了上下文之后才想办法</strong>（会话摘要、手工裁剪）。这个是在<strong>门口拦</strong> —— 位置比「改 prompt」更通用。对 16GB 机器跑小模型收益尤其明显：省下的窗口直接变成能多塞的代码。</div>
+        <div class="grid2" data-page-node-id="rpm28c1g">
+          <div class="mini" data-page-node-id="rpm28c1m1"><span class="lbl" data-page-node-id="rpm28c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c1m1b"><div class="bar-track" data-page-node-id="rpm28c1m1t"><div class="bar-fill" style="width:78%;background:var(--make)" data-page-node-id="rpm28c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c1m1n">7.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c1m1v"><strong>库 / 代理 / MCP 三形态，接法不挑客户端</strong>；先拿 JSON 与日志两类试收益，再决定要不要全局开</div></div>
+          <div class="mini" data-page-node-id="rpm28c1m2"><span class="lbl" data-page-node-id="rpm28c1m2l">实用性</span><div class="bar" data-page-node-id="rpm28c1m2b"><div class="bar-track" data-page-node-id="rpm28c1m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm28c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c1m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c1m2v">Apache-2.0 干净。⚠️ 两条：①<strong>7 万星这种量级的增长速度本身要另核</strong>（本辑未做「是否真人关注」的核实，只看 issue/PR 结构）；②压缩产物是<strong>替身不是本体</strong>（第二十一辑已定），原始字节要自己留底</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c1c">最近推送 2026-09-24 · 73669★ · Apache-2.0 · Python · 信源 [1128]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c2">
+        <div class="card-top" data-page-node-id="rpm28c2t">
+          <span class="card-name" data-page-node-id="rpm28c2mn"><a href="https://github.com/omnigent-ai/omnigent" target="_blank" data-page-node-id="rpm28c2n">omnigent（harness 之上的统一调度层）</a></span>
+          <span class="lang" data-page-node-id="rpm28c2l">Python</span>
+          <span class="stars" data-page-node-id="rpm28c2s">10197</span>
+          <span class="tag t-make" data-page-node-id="rpm28c2t1">AI × 外壳</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c2t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c2p">开源 agent 框架兼<strong>「元 harness」</strong>：把 Claude Code、Codex、Cursor、Pi 与自定义 agent 编排到一起，<strong>换 harness 不用重写代码</strong>，可加策略与沙箱、跨设备实时协作。Apache-2.0。</p>
+        <div class="analogy" data-page-node-id="rpm28c2a"><b data-page-node-id="rpm28c2ab">打个比方：</b>我们的痛点是<strong>同一套约定要在 dsh / Claude Code / 多个 CLI 之间各抄一遍</strong>。它把这一层抽出来。但「元 harness」本身<strong>是新增的一层复杂度</strong> —— 对单机 16GB 偏重，先读架构再决定引不引入。</div>
+        <div class="grid2" data-page-node-id="rpm28c2g">
+          <div class="mini" data-page-node-id="rpm28c2m1"><span class="lbl" data-page-node-id="rpm28c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c2m1b"><div class="bar-track" data-page-node-id="rpm28c2m1t"><div class="bar-fill" style="width:68%;background:var(--make)" data-page-node-id="rpm28c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c2m1n">6.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c2m1v"><strong>adapter 接口设计可抄</strong>：把「换外壳不改约定」做成一层显式接口，比我们现在靠人肉同步强</div></div>
+          <div class="mini" data-page-node-id="rpm28c2m2"><span class="lbl" data-page-node-id="rpm28c2m2l">实用性</span><div class="bar" data-page-node-id="rpm28c2m2b"><div class="bar-track" data-page-node-id="rpm28c2m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm28c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c2m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c2m2v">Apache-2.0、概念干净。⚠️ <strong>不要因为星数高就装</strong> —— 按 M-0002，先确认它在 16GB 上能不能跑起来再谈价值</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c2c">最近推送 2026-09-24 · 10197★ · Apache-2.0 · Python · 信源 [1129]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c3">
+        <div class="card-top" data-page-node-id="rpm28c3t">
+          <span class="card-name" data-page-node-id="rpm28c3mn"><a href="https://github.com/Gentleman-Programming/engram" target="_blank" data-page-node-id="rpm28c3n">engram（agent 自己读写的持久记忆，Go 单二进制）</a></span>
+          <span class="lang" data-page-node-id="rpm28c3l">Go</span>
+          <span class="stars" data-page-node-id="rpm28c3s">6786</span>
+          <span class="tag t-make" data-page-node-id="rpm28c3t1">AI × 记忆</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c3t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c3p">面向 AI 编码 agent 的<strong>持久记忆系统</strong>：agent 无关的 <strong>Go 单二进制</strong>，内含 <strong>SQLite + FTS5</strong>、MCP server、HTTP API、CLI 与 TUI。与同作者的 `gentle-ai` 是配套生态。</p>
+        <div class="analogy" data-page-node-id="rpm28c3a"><b data-page-node-id="rpm28c3ab">打个比方：</b>我们的 `mistakes/` + `MEMORY.md` 是<strong>人写给人看的记忆</strong>；它是<strong>agent 自己读写</strong>的记忆。两者不冲突 —— 但它的<strong>写入去重</strong>与<strong>检索</strong>那套，是我们「只增不合并」的现状最缺的一半。</div>
+        <div class="grid2" data-page-node-id="rpm28c3g">
+          <div class="mini" data-page-node-id="rpm28c3m1"><span class="lbl" data-page-node-id="rpm28c3m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c3m1b"><div class="bar-track" data-page-node-id="rpm28c3m1t"><div class="bar-fill" style="width:72%;background:var(--make)" data-page-node-id="rpm28c3m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c3m1n">7.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c3m1v"><strong>单二进制 + SQLite 在 16GB Windows 上几乎零负担</strong>；先接 dsh 看跨会话召回是不是真的有用，别一上来就迁记忆</div></div>
+          <div class="mini" data-page-node-id="rpm28c3m2"><span class="lbl" data-page-node-id="rpm28c3m2l">实用性</span><div class="bar" data-page-node-id="rpm28c3m2b"><div class="bar-track" data-page-node-id="rpm28c3m2t"><div class="bar-fill" style="width:74%;background:var(--make)" data-page-node-id="rpm28c3m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c3m2n">7.4/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c3m2v">Go 二进制直接跑、MIT。⚠️ 记忆类工具的通病：<strong>装之前先想清楚「谁的记忆、给谁看、失效了怎么退」</strong>，否则会多一份互相矛盾的记忆源</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c3c">最近推送 2026-09-24 · 6786★ · MIT · Go · 信源 [1130]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c4">
+        <div class="card-top" data-page-node-id="rpm28c4t">
+          <span class="card-name" data-page-node-id="rpm28c4mn"><a href="https://github.com/alchaincyf/darwin-skill" target="_blank" data-page-node-id="rpm28c4n">darwin-skill（让 skill 自己进化：评估→改进→测试→保留或回滚）</a></span>
+          <span class="lang" data-page-node-id="rpm28c4l">Markdown</span>
+          <span class="stars" data-page-node-id="rpm28c4s">6086</span>
+          <span class="tag t-make" data-page-node-id="rpm28c4t1">AI × 约定</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c4t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c4p">把 <strong>skill 的进化做成棘轮</strong>：评估 → 改进 → 测试 → <strong>保留或回滚</strong>（autoresearch 式自主优化）。作者是花叔，与本批 `huashu-skills` / 橙皮书同一生态。</p>
+        <div class="analogy" data-page-node-id="rpm28c4a"><b data-page-node-id="rpm28c4ab">打个比方：</b>正好对上我们挂了很久的一条待办 —— <strong>「列出没被用过的 skill / skill 该不该活」</strong>。它的关键不是「生成新 skill」，而是<strong>每次改动都必须先能测、且回滚是默认动作</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm28c4g">
+          <div class="mini" data-page-node-id="rpm28c4m1"><span class="lbl" data-page-node-id="rpm28c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c4m1b"><div class="bar-track" data-page-node-id="rpm28c4m1t"><div class="bar-fill" style="width:74%;background:var(--make)" data-page-node-id="rpm28c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c4m1n">7.4/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c4m1v"><strong>流程可抄</strong>：给我们 19 个技能补上「评估 → 测试 → 保留/回滚」这一环，比继续加新技能重要</div></div>
+          <div class="mini" data-page-node-id="rpm28c4m2"><span class="lbl" data-page-node-id="rpm28c4m2l">实用性</span><div class="bar" data-page-node-id="rpm28c4m2b"><div class="bar-track" data-page-node-id="rpm28c4m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm28c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c4m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c4m2v">纯 skill 仓库（Markdown），零运行成本。⚠️ <strong>它假设的是 Claude Code 的 skill 格式</strong>，本机是 `SKILL.md` + 自建闸门 → <strong>必须自己适配</strong>，不能照搬</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c4c">最近推送 2026-09-24 · 6086★ · Markdown · 信源 [1131]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c5">
+        <div class="card-top" data-page-node-id="rpm28c5t">
+          <span class="card-name" data-page-node-id="rpm28c5mn"><a href="https://github.com/PawanOsman/OpenCursor" target="_blank" data-page-node-id="rpm28c5n">OpenCursor（VS Code 里直连本地 Ollama 的开源编码 agent）</a></span>
+          <span class="lang" data-page-node-id="rpm28c5l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm28c5s">6024</span>
+          <span class="tag t-make" data-page-node-id="rpm28c5t1">AI × 外壳</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c5t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c5p">开源版「类 Cursor」的 <strong>VS Code 扩展</strong>：agent 式对话、<strong>多 provider（含 OpenAI / Ollama / llama.cpp）</strong>、语义搜索、MCP 支持。</p>
+        <div class="analogy" data-page-node-id="rpm28c5a"><b data-page-node-id="rpm28c5ab">打个比方：</b>明确支持<strong>本地 Ollama</strong> —— 对「不付订阅、也不上云」这条路是直接可用的选项，而且<strong>装法是一次点击</strong>，不是从源码构建（这点决定了它会不会真的被用起来）。</div>
+        <div class="grid2" data-page-node-id="rpm28c5g">
+          <div class="mini" data-page-node-id="rpm28c5m1"><span class="lbl" data-page-node-id="rpm28c5m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c5m1b"><div class="bar-track" data-page-node-id="rpm28c5m1t"><div class="bar-fill" style="width:66%;background:var(--make)" data-page-node-id="rpm28c5m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c5m1n">6.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c5m1v">和我们「VS Code + 本地模型做 agent」的画像完全重合；可用来替代一部分 Cursor 场景</div></div>
+          <div class="mini" data-page-node-id="rpm28c5m2"><span class="lbl" data-page-node-id="rpm28c5m2l">实用性</span><div class="bar" data-page-node-id="rpm28c5m2b"><div class="bar-track" data-page-node-id="rpm28c5m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm28c5m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c5m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c5m2v">⚠️ <strong>license 未核实</strong>（`gh api` 返回 null）→ 引用时<strong>不要写许可证名</strong>；按房规先在测试目录里验一次再接管真实仓库</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c5c">最近推送 2026-09-24 · 6024★ · 未声明协议 · TypeScript · 信源 [1132]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c6">
+        <div class="card-top" data-page-node-id="rpm28c6t">
+          <span class="card-name" data-page-node-id="rpm28c6mn"><a href="https://github.com/Dataojitori/nocturne_memory" target="_blank" data-page-node-id="rpm28c6n">nocturne_memory（可回滚 + 可视化的 MCP 长期记忆）</a></span>
+          <span class="lang" data-page-node-id="rpm28c6l">Python</span>
+          <span class="stars" data-page-node-id="rpm28c6s">1371</span>
+          <span class="tag t-make" data-page-node-id="rpm28c6t1">AI × 记忆</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c6t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c6p">轻量、<strong>可回滚、可视化</strong>的 MCP 长期记忆服务器，用<strong>图状结构化记忆替代向量 RAG</strong>，号称任何模型 / 会话 / 工具都能持久；是 OpenClaw 的 drop-in 替代。</p>
+        <div class="analogy" data-page-node-id="rpm28c6a"><b data-page-node-id="rpm28c6ab">打个比方：</b>记忆系统普遍缺的两块它都有：<strong>可回滚</strong>（被污染能退回上一状态）与<strong>可视化</strong>（能看见里面到底存了什么）。我们的 `mistakes/` 现在是<strong>只增不合并、也不能回滚</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm28c6g">
+          <div class="mini" data-page-node-id="rpm28c6m1"><span class="lbl" data-page-node-id="rpm28c6m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c6m1b"><div class="bar-track" data-page-node-id="rpm28c6m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm28c6m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c6m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c6m1v">「图状记忆 vs 向量 RAG」是一种可对照的路线；先只看它的<strong>回滚与可视化</strong>两个机制，别整套换</div></div>
+          <div class="mini" data-page-node-id="rpm28c6m2"><span class="lbl" data-page-node-id="rpm28c6m2l">实用性</span><div class="bar" data-page-node-id="rpm28c6m2b"><div class="bar-track" data-page-node-id="rpm28c6m2t"><div class="bar-fill" style="width:66%;background:var(--make)" data-page-node-id="rpm28c6m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c6m2n">6.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c6m2v">Python + MCP，本地起服务即可、MIT。⚠️ 新项目、单人维护，<strong>别把唯一一份记忆押上去</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c6c">最近推送 2026-09-24 · 1371★ · MIT · Python · 信源 [1133]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c7">
+        <div class="card-top" data-page-node-id="rpm28c7t">
+          <span class="card-name" data-page-node-id="rpm28c7mn"><a href="https://github.com/alchaincyf/huashu-skills" target="_blank" data-page-node-id="rpm28c7n">huashu-skills（52 个 skill 的总目录 + 机器可读清单）</a></span>
+          <span class="lang" data-page-node-id="rpm28c7l">Markdown</span>
+          <span class="stars" data-page-node-id="rpm28c7s">1607</span>
+          <span class="tag t-make" data-page-node-id="rpm28c7t1">AI × 约定</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c7t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c7p">花叔全部开源 Agent Skills 总目录：<strong>16 旗舰 + 14 人物视角 + 22 内置 = 52 个</strong>，分层分类 + AI Agent 安装协议 + <strong>机器可读 `skills.json`</strong> + 更新检查机制。</p>
+        <div class="analogy" data-page-node-id="rpm28c7a"><b data-page-node-id="rpm28c7ab">打个比方：</b>我们的技能是<strong>散装</strong>的：没有机器可读清单、没有版本、没有更新检查，而且<strong>刚被提醒「技能目录该整理了」</strong>。52 个 skill 的分层与命名方式可以直接当对照表用。</div>
+        <div class="grid2" data-page-node-id="rpm28c7g">
+          <div class="mini" data-page-node-id="rpm28c7m1"><span class="lbl" data-page-node-id="rpm28c7m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c7m1b"><div class="bar-track" data-page-node-id="rpm28c7m1t"><div class="bar-fill" style="width:68%;background:var(--make)" data-page-node-id="rpm28c7m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c7m1n">6.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c7m1v"><strong>`skills.json` + 更新检查</strong>这两样是我们 19 个技能缺的基础设施，照它的形状补一份比继续加技能划算</div></div>
+          <div class="mini" data-page-node-id="rpm28c7m2"><span class="lbl" data-page-node-id="rpm28c7m2l">实用性</span><div class="bar" data-page-node-id="rpm28c7m2b"><div class="bar-track" data-page-node-id="rpm28c7m2t"><div class="bar-fill" style="width:62%;background:var(--make)" data-page-node-id="rpm28c7m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c7m2n">6.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c7m2v">纯 Markdown / JSON，零成本可读。⚠️ 里面大量是「人物视角」类 skill，与我们的用法不同 —— <strong>只抄结构，不抄内容</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c7c">最近推送 2026-09-24 · 1607★ · Markdown · 信源 [1134]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c8">
+        <div class="card-top" data-page-node-id="rpm28c8t">
+          <span class="card-name" data-page-node-id="rpm28c8mn"><a href="https://github.com/alchaincyf/deepseek-harness-orange-book" target="_blank" data-page-node-id="rpm28c8n">deepseek-harness-orange-book（追了两轮的一手源，闭环）</a></span>
+          <span class="lang" data-page-node-id="rpm28c8l">HTML</span>
+          <span class="stars" data-page-node-id="rpm28c8s">1302</span>
+          <span class="tag t-make" data-page-node-id="rpm28c8t1">AI × 上下文</span>
+          <span class="tag t-new" data-page-node-id="rpm28c8t2">本轮头条</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c8p">橙皮书《<strong>DeepSeek Harness：从开机到拆开</strong>》。含<strong>完整系统提示词</strong>、<strong>129 行默认启动清单</strong>、<strong>三份未编辑原始会话日志</strong>、AI 给自己造工具的 <strong>19 步现场记录</strong>（工具清单 32 → 33 行）、四种运行模式、技能与插件机制、代码库考古与事故复盘。PDF / EPUB / HTML 免费下载。作者花叔在 <strong>DSH 开源日（2026-08-13，MIT）后 24 小时内</strong>写完。</p>
+        <div class="analogy" data-page-node-id="rpm28c8a"><b data-page-node-id="rpm28c8ab">打个比方：</b><strong>官方文档没有的部分</strong>（系统提示词原文、默认启动清单、原始日志）正好补上我们「读源码」之外最缺的一环：<strong>运行时真实长什么样</strong>。前两辑一直把它标成「被两篇文引为一手实测、但取不到 URL」—— 本轮取到了，<strong>待办闭环</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm28c8g">
+          <div class="mini" data-page-node-id="rpm28c8m1"><span class="lbl" data-page-node-id="rpm28c8m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c8m1b"><div class="bar-track" data-page-node-id="rpm28c8m1t"><div class="bar-fill" style="width:72%;background:var(--make)" data-page-node-id="rpm28c8m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c8m1n">7.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c8m1v"><strong>先读「129 行启动清单」与三份原始日志</strong>这两块 —— 它们能直接对照我们自己 harness 的启动开销（本机固定前缀实测 18,828 token）</div></div>
+          <div class="mini" data-page-node-id="rpm28c8m2"><span class="lbl" data-page-node-id="rpm28c8m2l">实用性</span><div class="bar" data-page-node-id="rpm28c8m2b"><div class="bar-track" data-page-node-id="rpm28c8m2t"><div class="bar-fill" style="width:68%;background:var(--make)" data-page-node-id="rpm28c8m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c8m2n">6.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c8m2v">免费 PDF/EPUB/HTML。⚠️ 两条边界：①<strong>CC BY-NC-SA 4.0</strong>（非商用）；②本辑<strong>只核实到 README 自述，正文未逐页读</strong> → 引用时标清来源层级</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c8c">建于 2026-08-14 · 最近推送 2026-09-24 · 1302★ · CC BY-NC-SA 4.0 · HTML · 信源 [1135]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c9">
+        <div class="card-top" data-page-node-id="rpm28c9t">
+          <span class="card-name" data-page-node-id="rpm28c9mn"><a href="https://github.com/ysr666/dsh-vision-router" target="_blank" data-page-node-id="rpm28c9n">dsh-vision-router（给纯文本 agent 装上眼睛）</a></span>
+          <span class="lang" data-page-node-id="rpm28c9l">JavaScript</span>
+          <span class="stars" data-page-node-id="rpm28c9s">1116</span>
+          <span class="tag t-make" data-page-node-id="rpm28c9t1">AI × 外壳</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c9t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c9p">给「纯文本」的 DSH agent 装上眼睛：内置<strong>免 key 的视觉链</strong>，外加像素级视觉工具（问答、grounding、裁剪、<strong>像素 diff</strong>、取色、<strong>OCR</strong>、SVG 描摹、抠图、截图）。一条命令装，<strong>无需 Python</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm28c9a"><b data-page-node-id="rpm28c9ab">打个比方：</b>我们做视觉小说时最缺的正是<strong>「让 agent 自己看图对不对」</strong> —— 现有做法是人工看截图（还踩过「按缩放看会吞掉低对比度小字」的坑）。「把图片轮次当成普通工具调用轮」这个设计很巧。</div>
+        <div class="grid2" data-page-node-id="rpm28c9g">
+          <div class="mini" data-page-node-id="rpm28c9m1"><span class="lbl" data-page-node-id="rpm28c9m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c9m1b"><div class="bar-track" data-page-node-id="rpm28c9m1t"><div class="bar-fill" style="width:76%;background:var(--make)" data-page-node-id="rpm28c9m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c9m1n">7.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c9m1v"><strong>像素 diff + OCR 可以直接接进我们的界面验收</strong>（现在还在靠人眼看截图）</div></div>
+          <div class="mini" data-page-node-id="rpm28c9m2"><span class="lbl" data-page-node-id="rpm28c9m2l">实用性</span><div class="bar" data-page-node-id="rpm28c9m2b"><div class="bar-track" data-page-node-id="rpm28c9m2t"><div class="bar-fill" style="width:72%;background:var(--make)" data-page-node-id="rpm28c9m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c9m2n">7.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c9m2v">MIT、免 key、<strong>无需 Python</strong> → Windows 环境友好，装错成本低。⚠️ 单人维护，当辅助别当唯一防线</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c9c">最近推送 2026-09-24 · 1116★ · MIT · JavaScript · 信源 [1136]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c10">
+        <div class="card-top" data-page-node-id="rpm28c10t">
+          <span class="card-name" data-page-node-id="rpm28c10mn"><a href="https://github.com/okf-memory/okf-agent-memory" target="_blank" data-page-node-id="rpm28c10n">okf-agent-memory（Git 原生记忆：记忆即文件，可 diff 可版本化）</a></span>
+          <span class="lang" data-page-node-id="rpm28c10l">Go</span>
+          <span class="stars" data-page-node-id="rpm28c10s">722</span>
+          <span class="tag t-make" data-page-node-id="rpm28c10t1">AI × 记忆</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c10t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c10p"><strong>Git 原生</strong>的 agent 持久记忆，实现 Google <strong>OKF v0.2</strong> 规范；纯 Go、内嵌 MCP server，内存内 BM25 搜索<strong>亚 300µs</strong>、渐进式披露，宣称省 <strong>80%</strong> 上下文膨胀，<strong>零外部数据库</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm28c10a"><b data-page-node-id="rpm28c10ab">打个比方：</b>「Git 原生」意味着<strong>记忆可 diff、可版本化、可同步</strong> —— 正好贴合我们「一切产出进仓库 + 靠 `git status` 收尾对账」的习惯。记忆要是能进 git，「谁改了什么、什么时候改的」就不用靠自觉了。</div>
+        <div class="grid2" data-page-node-id="rpm28c10g">
+          <div class="mini" data-page-node-id="rpm28c10m1"><span class="lbl" data-page-node-id="rpm28c10m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c10m1b"><div class="bar-track" data-page-node-id="rpm28c10m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm28c10m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c10m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c10m1v"><strong>「记忆即文件 + 进 git」这条路线对我们兼容性最好</strong>，不用引入一个新的数据库</div></div>
+          <div class="mini" data-page-node-id="rpm28c10m2"><span class="lbl" data-page-node-id="rpm28c10m2l">实用性</span><div class="bar" data-page-node-id="rpm28c10m2b"><div class="bar-track" data-page-node-id="rpm28c10m2t"><div class="bar-fill" style="width:68%;background:var(--make)" data-page-node-id="rpm28c10m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c10m2n">6.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c10m2v">MIT、纯 Go 无依赖、Windows 友好。⚠️ 注意它记的是<strong>事实</strong>，而我们的 `mistakes/` 记的是<strong>教训</strong> —— 两类不该混在一个文件里</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c10c">最近推送 2026-09-23 · 722★ · MIT · Go · 信源 [1137]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c11">
+        <div class="card-top" data-page-node-id="rpm28c11t">
+          <span class="card-name" data-page-node-id="rpm28c11mn"><a href="https://github.com/alchaincyf/huashu-report" target="_blank" data-page-node-id="rpm28c11n">huashu-report（报告规范是从 41 份真报告反推的）</a></span>
+          <span class="lang" data-page-node-id="rpm28c11l">Markdown</span>
+          <span class="stars" data-page-node-id="rpm28c11s">422</span>
+          <span class="tag t-make" data-page-node-id="rpm28c11t1">AI × 约定</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c11t2">已登记未安装</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c11p"><strong>机构级研究报告 skill</strong>：规范从 2026 年顶级机构报告<strong>反向提炼</strong>（<strong>42 份采集 / 41 份进量化基线</strong>：Stanford / McKinsey / BCG / OpenAI / PwC / World Bank），<strong>6 种报告原型 + 8 种图表模式</strong> + 可复用生产流水线，跨 agent 通用。</p>
+        <div class="analogy" data-page-node-id="rpm28c11a"><b data-page-node-id="rpm28c11ab">打个比方：</b>我们在做的事就是「调研 → 单文件 HTML 报告」。它的做法是<strong>不凭空写规范，而是从 41 份真报告反推</strong> —— 这正是我们「判据外移、先核实再落笔」的同构做法。<strong>拿它当对标，比拿它当模板更有用。</strong></div>
+        <div class="grid2" data-page-node-id="rpm28c11g">
+          <div class="mini" data-page-node-id="rpm28c11m1"><span class="lbl" data-page-node-id="rpm28c11m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c11m1b"><div class="bar-track" data-page-node-id="rpm28c11m1t"><div class="bar-fill" style="width:74%;background:var(--make)" data-page-node-id="rpm28c11m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c11m1n">7.4/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c11m1v"><strong>6 种报告原型可以直接对照我们现有的报告结构</strong>，问「我们为什么一直是同一种形状」</div></div>
+          <div class="mini" data-page-node-id="rpm28c11m2"><span class="lbl" data-page-node-id="rpm28c11m2l">实用性</span><div class="bar" data-page-node-id="rpm28c11m2b"><div class="bar-track" data-page-node-id="rpm28c11m2t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm28c11m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c11m2n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c11m2v">纯 skill / Markdown，零运行成本。⚠️ <strong>「41 份进量化基线」是作者自述，本辑未抽样验证</strong> → 别把它的数字当结论引用</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c11c">最近推送 2026-09-24 · 422★ · Markdown · 信源 [1138]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c12">
+        <div class="card-top" data-page-node-id="rpm28c12t">
+          <span class="card-name" data-page-node-id="rpm28c12mn"><a href="https://github.com/rouges78/GameStringer" target="_blank" data-page-node-id="rpm28c12n">GameStringer（识别引擎 → 抽文本 → AI 翻译 → 打回补丁）</a></span>
+          <span class="lang" data-page-node-id="rpm28c12l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm28c12s">119</span>
+          <span class="tag t-make" data-page-node-id="rpm28c12t1">AI × 游戏</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c12t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c12p">桌面程序：自动<strong>识别单机游戏的引擎、抽取文本、用本地或云端 AI 翻译、再把译文补丁打回游戏</strong>。支持 <strong>20+ 引擎、20+ AI 提供方、11 种界面语言</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm28c12a"><b data-page-node-id="rpm28c12ab">打个比方：</b>和视觉小说本地化<strong>直接对口</strong>；「识别引擎 → 抽文本 → 翻译 → 回填」这条流水线本身就是可抄的架构，而且<strong>可接本地 Ollama 不上云</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm28c12g">
+          <div class="mini" data-page-node-id="rpm28c12m1"><span class="lbl" data-page-node-id="rpm28c12m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c12m1b"><div class="bar-track" data-page-node-id="rpm28c12m1t"><div class="bar-fill" style="width:62%;background:var(--make)" data-page-node-id="rpm28c12m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c12m1n">6.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c12m1v"><strong>回填逻辑</strong>最值得看：我们现在改文本是手工改 `.rpy`，它的「补丁回填」思路可以借</div></div>
+          <div class="mini" data-page-node-id="rpm28c12m2"><span class="lbl" data-page-node-id="rpm28c12m2l">实用性</span><div class="bar" data-page-node-id="rpm28c12m2b"><div class="bar-track" data-page-node-id="rpm28c12m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm28c12m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c12m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c12m2v">⚠️ <strong>source-available，不是标准 OSI 许可</strong> → <strong>商用前必须看条款</strong>；只当参考实现，别把它的代码搬进项目</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c12c">最近推送 2026-09-23 · 119★ · NOASSERTION · TypeScript · 信源 [1139]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm28c13">
+        <div class="card-top" data-page-node-id="rpm28c13t">
+          <span class="card-name" data-page-node-id="rpm28c13mn"><a href="https://github.com/ojuschugh1/sqz" target="_blank" data-page-node-id="rpm28c13n">sqz（零 LLM 调用的上下文压缩器）</a></span>
+          <span class="lang" data-page-node-id="rpm28c13l">Rust</span>
+          <span class="stars" data-page-node-id="rpm28c13s">629</span>
+          <span class="tag t-make" data-page-node-id="rpm28c13t1">AI × 上下文</span>
+          <span class="tag t-ok" data-page-node-id="rpm28c13t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm28c13p">Rust 写的上下文压缩器，在工具输出进入模型前压缩，把<strong>重复内容去重成 13-token 的引用</strong>；Claude Code / Cursor / Codex / Zed 及任意 MCP 客户端可用，<strong>零 LLM 调用</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm28c13a"><b data-page-node-id="rpm28c13ab">打个比方：</b><strong>零 LLM 调用</strong>是关键：不额外占本地算力、不引入延迟、不需要第二个模型。对 16GB 机器这是「<strong>先上它、看 0 成本能省多少</strong>」的那一步 —— 省不动再考虑上模型压缩。</div>
+        <div class="grid2" data-page-node-id="rpm28c13g">
+          <div class="mini" data-page-node-id="rpm28c13m1"><span class="lbl" data-page-node-id="rpm28c13m1l">可拓展性</span><div class="bar" data-page-node-id="rpm28c13m1b"><div class="bar-track" data-page-node-id="rpm28c13m1t"><div class="bar-fill" style="width:66%;background:var(--make)" data-page-node-id="rpm28c13m1f"></div></div><span class="bar-num" data-page-node-id="rpm28c13m1n">6.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c13m1v"><strong>确定性去重</strong>符合我们「判据外移到确定性代码」的主线；可作 headroom 之外的低成本对照</div></div>
+          <div class="mini" data-page-node-id="rpm28c13m2"><span class="lbl" data-page-node-id="rpm28c13m2l">实用性</span><div class="bar" data-page-node-id="rpm28c13m2b"><div class="bar-track" data-page-node-id="rpm28c13m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm28c13m2f"></div></div><span class="bar-num" data-page-node-id="rpm28c13m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm28c13m2v">Rust 单二进制、本地零开销。⚠️ <strong>license 未核实</strong>（`gh api` 返回 null）→ 引用时不要写许可证名</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm28c13c">最近推送 2026-09-24 · 629★ · 未声明协议 · Rust · 信源 [1140]</div>
+      </div>
+
+    </div>
+
 <section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
     <div class="sec-head" data-page-node-id="KqPcSUzx4I5yaVNTCjJjRR">
       <span class="sec-num" data-page-node-id="mCQ7flcAuePG05u4HEiQP1">3</span>
@@ -15149,7 +15376,20 @@ footer a{color:var(--text-2)}
           <p class="plain">自建的 ROM 管理平台，网页界面漂亮，自动抓取封面、简介、评分，支持多设备和存档同步。适合把手里的老游戏资源整理成库。</p>
           <div class="src-line">最近更新 2026-09-08 · AGPL-3.0 · <a href="#r638">信源 [638]</a></div>
         </div>
-      </div>
+ 
+      <div id="r1128" data-page-node-id="rpm28r1128">[1128] <a href="https://github.com/headroomlabs-ai/headroom" target="_blank" data-page-node-id="rpm28ra1128">headroomlabs-ai/headroom</a> — 73669★ · Apache-2.0 · Python · 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1129" data-page-node-id="rpm28r1129">[1129] <a href="https://github.com/omnigent-ai/omnigent" target="_blank" data-page-node-id="rpm28ra1129">omnigent-ai/omnigent</a> — 10197★ · Apache-2.0 · Python · 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1130" data-page-node-id="rpm28r1130">[1130] <a href="https://github.com/Gentleman-Programming/engram" target="_blank" data-page-node-id="rpm28ra1130">Gentleman-Programming/engram</a> — 6786★ · MIT · Go · 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1131" data-page-node-id="rpm28r1131">[1131] <a href="https://github.com/alchaincyf/darwin-skill" target="_blank" data-page-node-id="rpm28ra1131">alchaincyf/darwin-skill</a> — 6086★ · Markdown · 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1132" data-page-node-id="rpm28r1132">[1132] <a href="https://github.com/PawanOsman/OpenCursor" target="_blank" data-page-node-id="rpm28ra1132">PawanOsman/OpenCursor</a> — 6024★ · license=null（未核实）· TypeScript · 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1133" data-page-node-id="rpm28r1133">[1133] <a href="https://github.com/Dataojitori/nocturne_memory" target="_blank" data-page-node-id="rpm28ra1133">Dataojitori/nocturne_memory</a> — 1371★ · MIT · Python · 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1134" data-page-node-id="rpm28r1134">[1134] <a href="https://github.com/alchaincyf/huashu-skills" target="_blank" data-page-node-id="rpm28ra1134">alchaincyf/huashu-skills</a> — 1607★ · Markdown · 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1135" data-page-node-id="rpm28r1135">[1135] <a href="https://github.com/alchaincyf/deepseek-harness-orange-book" target="_blank" data-page-node-id="rpm28ra1135">alchaincyf/deepseek-harness-orange-book</a> — 1302★ · 正文声明 CC BY-NC-SA 4.0（license 字段为 null）· 建于 2026-08-14 · HTML · 2026-09-24 实测</div>
+      <div id="r1136" data-page-node-id="rpm28r1136">[1136] <a href="https://github.com/ysr666/dsh-vision-router" target="_blank" data-page-node-id="rpm28ra1136">ysr666/dsh-vision-router</a> — 1116★ · MIT · JavaScript · 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1137" data-page-node-id="rpm28r1137">[1137] <a href="https://github.com/okf-memory/okf-agent-memory" target="_blank" data-page-node-id="rpm28ra1137">okf-memory/okf-agent-memory</a> — 722★ · MIT · Go · 2026-09-23 · GitHub REST API 实测</div>
+      <div id="r1138" data-page-node-id="rpm28r1138">[1138] <a href="https://github.com/alchaincyf/huashu-report" target="_blank" data-page-node-id="rpm28ra1138">alchaincyf/huashu-report</a> — 422★ · Markdown · 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1139" data-page-node-id="rpm28r1139">[1139] <a href="https://github.com/rouges78/GameStringer" target="_blank" data-page-node-id="rpm28ra1139">rouges78/GameStringer</a> — 119★ · NOASSERTION · TypeScript · 2026-09-23 · GitHub REST API 实测</div>
+      <div id="r1140" data-page-node-id="rpm28r1140">[1140] <a href="https://github.com/ojuschugh1/sqz" target="_blank" data-page-node-id="rpm28ra1140">ojuschugh1/sqz</a> — 629★ · license=null（未核实）· Rust · 2026-09-24 · GitHub REST API 实测</div>     </div>
       <div class="group">
         <div class="group-title">🆕 第十二版新增 · 逆向补缺 · .NET 调试器（1 项）</div>
         <div class="sec-desc" style="margin:8px 0 14px 0;font-size:14px">拆 C# 写的游戏时，「边运行边看源码」这一步无人替代。</div>

