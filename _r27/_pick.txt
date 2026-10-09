@@ -1,0 +1,201 @@
+### ### 01. live2d-py（EasyLive2D/live2d-py）
+- 链接：https://github.com/EasyLive2D/live2d-py
+- 核实：⭐ 576 · MIT · C++ · updated_at 2026-10-01（pushed_at 2026-09-30）（命令：`gh api repos/EasyLive2D/live2d-py`）
+- 一句话：用 Python C Extension 直接封装 Live2D Native SDK，在 Pygame / PySide6 / GLFW 等任何 OpenGL 窗口里加载并操作模型，支持 Cubism 2.1 与 3.0+。
+- 可拓展性：**本轮对用户画像适配度最高的一条**。用户会 Python 不熟前端/着色器，而这是整个 GitHub 上唯一把 Live2D 运行时拉进 Python 主线的活跃项目（README 明确兼容 Pygame / PyQt5 / PySide2/6 / GLFW / pyopengltk / FreeGlut）。功能正好覆盖 VN 需要的东西：视线跟踪、口型同步、部件级透明度、**精确到部件的点击检测**、动作播放回调。和 Ollama 的接法很直接：qwen3 输出文本 → 自己写一层「情绪 → 参数名」映射 → `SetParameterValue` 推表情；这比 Open-LLM-VTuber（上一辑已收）那整套 Web 前端轻一个数量级。注意坑：README 明说**不含 Cubism Core 与 Framework**，需自行从官网下载（Core 免费，见开头说明），源码编译要 C++17 + CMake 3.26 + Python 3.11+。
+- 实用性：**落地** —— 唯一与用户语言栈对得上的运行时，且 2026-09-30 仍在 push，MIT。
+
+
+### ### 02. live2d-motion3（EasyLive2D/live2d-motion3）
+- 链接：https://github.com/EasyLive2D/live2d-motion3
+- 核实：⭐ 31 · MIT · Python · updated_at 2026-08-10（pushed_at 2026-05-15）（命令：`gh api repos/EasyLive2D/live2d-motion3`）
+- 一句话：纯 Python 读写 `motion3.json`，附一个 PySide6 曲线编辑器，还能用 matplotlib 把动作曲线可视化。
+- 可拓展性：**直接补上用户"买不起 Cubism Pro"的最大缺口**——Pro 授权买的是 Editor，而做动作动画的 Editor 功能被这个 31 star 的项目拆成了三块 Python 脚本：`motion_interpolate.py`（读 motion3 并用 `live2d-py` 的 `SetParameterValue` 播放）、`motion_visualize.py`（matplotlib 画曲线）、`Main.py`（能新建/打开/保存 `.motion3.json` 的动作编辑器，支持直线/三次贝塞尔/水平插值四种段类型）。意味着**不改一行前端、不装 Editor，就能给现成模型加自定义动作**。和 01 是同一作者的上下游，配合食用。依赖 PySide6 + live2d-py + matplotlib，Python 3.10+。
+- 实用性：**落地** —— 用户是「会 Python 但没钱买 Editor」的典型受害者，这条就是他的解法；star 低不代表价值低。
+
+
+### ### 20. RenpyLive2DEyeFollowDemo（rc14193/RenpyLive2DEyeFollowDemo）
+- 链接：https://github.com/rc14193/RenpyLive2DEyeFollowDemo
+- 核实：⭐ 4 · MIT · Ren'Py · updated_at 2026-06-18（pushed_at **2025-09-26**）（命令：`gh api repos/rc14193/RenpyLive2DEyeFollowDemo`）
+- 一句话：Ren'Py + Live2D 下让**模型眼睛跟随鼠标光标**、点击时切换动作的演示工程。
+- 可拓展性：**本轮最"小而准"的一条**。4 star 但它是 2025 年的、MIT 的、纯 Ren'Py 脚本的——正好填上一辑 renpy-live2d（2021 停更）留下的空档，证明"Ren'Py 8 时代仍然有人在做这件事"。眼睛跟随 + 点击反馈是 VN 里性价比最高的两种"活起来"效果（不需要绑骨、不需要动捕，只要有模型参数就能做）。用户会 Python/Ren'Py 脚本，这个 demo 的 `rpy` 文件可以直接抄进自己的工程。
+- 实用性：**落地** —— 许可干净、年份新、与用户栈 100% 对口、改动量小。star 数低在这里是纯噪声。
+
+
+### ### 21. RenpyLive2DTraceSample（kojimio/RenpyLive2DTraceSample）
+- 链接：https://github.com/kojimio/RenpyLive2DTraceSample
+- 核实：⭐ 1 · Apache-2.0 · C#（仓库主体实为 Ren'Py 脚本 + 外部进程集成）· updated_at 2026-08-15（pushed_at 2025-07-04）（命令：`gh api repos/kojimio/RenpyLive2DTraceSample`）
+- 一句话：用 Pymouth（口型）+ OpenSeeFace（面捕）通过**端口通信**驱动 Ren'Py 里的 Live2D 模型的示例工程。
+- 可拓展性：**把用户的三件家当串成一条线的接线图**——Ren'Py（他的引擎）+ OpenSeeFace（免费面捕，上一辑已在去重基线里）+ 端口通信。README 说明思路是"在 Pymouth / OpenSeeFace 侧处理好动作数据后，通过端口把数据送进 Ren'Py"。这意味着他可以照同样的结构，把 Ollama（qwen3）当成一个"数据源"塞进同一个端口协议里：LLM 输出情绪标签 → 转成参数 → 推给 Ren'Py 的 Live2D。Apache-2.0 是同类里最宽松的许可之一。1 star、2025-07 后未更新，工程规模是 demo 级。
+- 实用性：**落地** —— 与其说是成品，不如说是一张"Ren'Py ← 外部进程"的拓扑图；对想接 Ollama 的用户，这张图比代码值钱。
+
+
+### ### 22. seethrough-live2d-pipeline（Kota-Ohno/seethrough-live2d-pipeline）
+- 链接：https://github.com/Kota-Ohno/seethrough-live2d-pipeline
+- 核实：⭐ 9 · MIT · Python · updated_at 2026-10-08（pushed_at 2026-09-21）（命令：`gh api repos/Kota-Ohno/seethrough-live2d-pipeline`）
+- 一句话：把 ComfyUI-See-through 的粗糙分层输出，加工成**Cubism 能读、能绑骨的高质量分层 PSD**（再投影 → 边缘细化 → 面部清理 → ag-psd 写 PSD）。
+- 可拓展性：**本轮对用户"静态立绘 → 会动的 Live2D"这个核心诉求贡献最大的一条**。上一辑只收了 `ComfyUI-See-through`（产出分层 PSD 的那一半），而实践中的共识是：**See-through 的直接产物离"能绑骨"还差三步**——这个 9 star 的 Python 项目就是那三步（`reproject.py` 用原图像素重投影 + 按 Live2D 标准图层顺序重组 + 放大到 4096px；`refine_edges.py` 原图软遮罩替换轮廓 alpha 去光晕；`clean_face.py` 清 face 层细线/污点），最后用 Node 的 `ag-psd` 写出 Cubism 一定读得开的 PSD。README 里还留了一条**花钱买不到的硬知识**：「Python 的 pytoshop 写出的 PSD，在 Cubism Editor 里会出现『图层名能识别但什么都不显示』，动/静 PSD 结构 diff 后发现分水岭是 header channels=4 / layer_count 为负 / global layer mask info 的有无」。文档另外还有失败排查表与检查点模板。作者诚实声明"并非全工程自动实现，也不保证静止 PSD 的绑骨品质"。依赖 Python（作者 3.14 验证）+ Node（v26）+ Real-ESRGAN ncnn-vulkan。
+- 实用性：**落地** —— 用户会 Python、想从单张立绘起步、买不起 Editor 手工重绘；这条正好补上一辑断掉的那半截链路，且 MIT。
+
+
+### ### 28. open-vt（erodozer/open-vt）
+- 链接：https://github.com/erodozer/open-vt
+- 核实：⭐ 282 · MIT · GDScript · updated_at 2026-10-06（pushed_at 2026-09-25，open issues 10）（命令：`gh api repos/erodozer/open-vt`）
+- 一句话：**Godot 写的开源 2D VTuber 软件**，支持 OpenSeeFace 与 VTubeStudio（Wi-Fi TCP）两种追踪源，透明窗口便于 OBS 采集。
+- 可拓展性：本轮方向 7「Open-LLM-VTuber 的替代品」里最值得写的一条，理由有四点：① **MIT + 2026-09-25 仍在 push**，是活项目；② 用 **Godot 而非 Unity** 构建——用户 16GB 内存跑不动 Unity 那套，Godot 是几十 MB 的事；③ **与 VTube Studio 资产兼容**（README 明确说两边可共用同一套文件、OpenVT 特有设置单独命名空间存放），意味着他不绑定任何商业软件；④ 支持 OpenSeeFace（免费面捕）与 VTS 两种输入。和 Ollama 的接法：把 qwen3 的输出经 29（pyvts）或 OpenSeeFace 通道送进来即可。与其 README 自称追求"feature parity with VTS"但不含插件生态与 VNet。
+- 实用性：**落地** —— 如果用户的目标从"VN 立绘"外扩到"能动的角色 + 直播/录屏"，这是成本最低的开源宿主。
+
+
+### ### 01. 《数字人应用技术探索（三）》—— 中文圈少见的一手排错流水账
+- 链接：https://adg.csdn.net/695333b95b9f5f31781bcb3f.html
+- 出处：CSDN · 火山引擎 ADG 社区 · 作者 **大志哥123** · **2025-06-26 12:30:27 发布**（页面所见）
+- 核实方式：`WebFetch <url>` 得到正文全文（注意：`blog.csdn.net` 域名本轮被「安全验证」拦截，只有 `adg.csdn.net` 这个子域可直取）
+- 一句话：作者把「装 Cubism → 打开分层 PSD → 直接导出 moc3 报错 → 排错 → 再导出 → 放进 Web Demo 人物不显示 → 换官方 SDK 才跑通」的完整失败链原样贴出来了，连 F12 控制台日志都贴了。
+- 具体内容（可复用）：
+  - 报错 1：**「invoke after texture atlas is generated」**——纹理集没生成就导出。解法：弹出后点 OK，选中左侧区域按回车确认，再导出即可。
+  - 报错 2：`Uncaught TypeError: Cannot set properties of undefined (setting '_currentFrameNo')`，发生在 `cubism4.min.js` 的 `updateWebGLContext`。
+  - 版本信息（页面所见）：`Live2D 2.1.00_1` / `Live2D Cubism Core version: 05.00.0000` / `Live2D Cubism SDK Core Version 5.0.0`——**同一个页面里同时跑了 2.1 和 5.0 两套 core**，这是最典型的新手踩坑形态。
+  - 最终解法：弃用第三方拼装 demo，直接下官方 `CubismSdkForWeb-5-r.4.zip`，进 `Samples/TypeScript/Demo` 目录 `npm install && npm start`，把模型放进资源目录（**注意名字一致**）才显示出来。
+- 可拓展性：这条可以抽成一张「Web 端 Live2D 三连排查表」：先看纹理集 → 再看 core 版本是否统一 → 最后换官方 SDK 最小闭环验证。对画像用户（会一点 Python）来说，`npm install` 这条路径是唯一能自己复现的路。
+- 实用性：**落地**。理由：本轮唯一一条「报错原文 + 解法 + 最终有效路径」三者齐全的中文一手记录，且作者不是营销号（文里有「效果还是没出来……奇怪」这种真实语气）。
+
+
+### ### 02. AITuberKit 故障排除 · Live2D 模型加载 TypeError（中文文档）
+- 链接：https://docs.aituberkit.com/zh/guide/troubleshooting
+- 出处：AITuberKit 官方文档（中文版）· 作者/机构未核实 · **发布日期未核实**
+- 核实方式：`WebFetch <url>` 得到正文全文
+- 一句话：官方把「自制模型在 AITuberKit 里渲染不出来」这个高频问题的**根因和绕法**写清楚了，是中文圈少见的、给出确切导出参数组合的排错文档。
+- 具体内容（逐字）：
+  - 报错：`TypeError: Cannot set properties of undefined (setting '_currentFrameNo')` at `Cubism4InternalModel.updateWebGLContext`
+  - 根因：`pixi-live2d-display` 系库的已知 bug——**模型里没有任何一个 ArtMesh 开启「生成蒙版」时，`_clippingManager` 不会被创建，变成 `undefined`**；另外，**Cubism 5 格式（.moc3 v4）导出的模型与该库不兼容**。
+  - 解法（三步）：① 选任意 ArtMesh → [检查器] ▶ [绘制] ▶ **生成蒙版** 打开；② [文件] ▶ [导出] ▶ 模型(.moc3)，导出设置选 **SDK: SDK for Web / 版本: Cubism 4.2（或 4.0/4.1）**；③ model3.json 的 **Groups 里加 `EyeBlink` 和 `LipSync`**（不加不报错，但表情和口型不生效）。
+  - 提示：只需在眉毛或高光这类轻量网格上开蒙版即可；也可建一个不可见的小网格专门开蒙版。
+- 可拓展性：**这条与条目 01 是同一个 `_currentFrameNo` 报错的两个独立解法**（01 是换官方 SDK，02 是开蒙版+降版本导出）。两条合起来就是一个完整的决策树：先试开蒙版（1 分钟），不行再换 SDK（1 小时）。另外「Cubism 5 导出的模型第三方库未必吃」这条，和上一辑条目 08 里卡米雷特的警告互相印证。
+- 实用性：**落地**。理由：这是本轮最可直接抄的一条——任何人导出模型给第三方播放器/引擎前，都应该先看「有没有至少一个蒙版」和「导出 SDK 版本选没选对」。
+
+
+### ### 03. 《【live2d教程】从零开始做模型吧 合集》（B站 25 集合集，附练手 PSD）
+- 链接：https://www.bilibili.com/video/BV1c4411s7NR/
+- 出处：哔哩哔哩 · UP 主 **縁の翼** · **2019-05-25 10:12:21**（页面所见）· 合集共 25 条视频 · 播放 682,063
+- 核实方式：`WebFetch <url>` 得到标题、发布时间、简介全文
+- 一句话：一个 25 集的完整建模视频课，简介里**直接给了分好层的练手立绘百度网盘**（提取码 gy2u），以及微信公众号「翼之空间」回复「下载」拿软件。
+- 具体内容（页面所见）：前置技能 PS 基础；QQ 交流群 **498151140**（已满）、**962136353**（2 群）。
+- 可拓展性：这个 QQ 群号 498151140 与上一辑条目 27 里「缘翼live2d 三个群（498151140 / 962136353 / 423587446）」**完全对上**——等于上一辑从官方社区页拿到的群号，本轮反查到了它的主人就是这位 UP 主，两个来源互相印证，群号可信度提高。「分好层的练手 PSD」正是上一辑条目 12 说的那种稀缺资源。
+- 实用性：**落地**。理由：画像用户要的是「先有一个能拆的图练手」，这条直接给；且 25 集体量够他从 0 走到能做。风险：网盘链接 2019 年的，**是否失效未核实**；版本是 Cubism 3/4 时代，菜单名与 5.3 有差异。
+
+
+### ### 04. 《Live2D模型的简单制作》（知乎专栏）
+- 链接：https://zhuanlan.zhihu.com/p/440533766
+- 出处：知乎专栏 · 作者 **BearChild** · **编辑于 2025-03-24 17:27 · 广东**（页面所见）· 文首声明「本文转载自个人网站」，原站 bearchild.top
+- 核实方式：`WebFetch <url>` 得到正文全文（**知乎正文可直取，无需登录**；但 `zhihu.com/api/v4/search_v3` 接口返回空 `{"HitLabels":null}`，搜索必须走搜索引擎）
+- 一句话：一条「用官方模板功能偷懒」的最短路径：导入 PSD → 文件 ▶ 应用模板 → 在「应用模板预览」里手动绑定错位部位（点一侧、点另一侧、点「对应所选元素」）→ 可编辑纹理集并导出 → 文件 ▶ 导出运作档 ▶ 导出为 moc3。
+- 可拓展性：这条的真正价值是它点出了 **「应用模板」这个官方自动化入口**——上一辑 28 条里没有一条提到模板功能。对画像用户（不想手 K 九轴、只想立绘会眨眼会呼吸）来说，模板 + 手动修正是性价比最高的路径。另外「自动绑定不一定合适，要手动对应」这句和条目 01/02 的「自动出来的东西要人验收」是同一个道理。
+- 实用性：**参考**。理由：步骤全但颗粒度粗（没有参数值、没有网格密度、没说版本），属于「知道有这条路」而非「照着能做出来」。版本未核实（文内只写下载 Cubism，未标版本号）。
+
+
+### ### 12. 物理摆锤参数的官方口径（用于校正中文圈的野数字）
+- 链接：https://docs.live2d.com/en/cubism-editor-manual/physical-operation-setting/
+- 出处：Live2D 官方手册（英文版）· **发布日期未核实**
+- 核实方式：搜索片段（官方手册正文长片段）
+- 一句话：官方对四个摆锤参数给出了**明确的方向性描述和一个经验区间**：`Length`（周期，值越大摆得越慢）、`Ease of swinging`（摆动量，**官方给的经验法则是设在 0.7~0.99 区间**）、`Reaction time`（=1 为标准，>1 更灵敏、<1 更迟钝）、`Speed of convergence`（=1 为标准，>1 收敛更快）。
+- 可拓展性：**这条最重要的用途是当「照妖镜」**。上一辑条目 03（CSDN 避坑指南）给的「发梢阻尼 0.3-0.5 重力 2.5-3.5、胸部阻尼 0.7-0.9 重力 1.2-1.8、配饰阻尼 0.5-0.7 重力 4.0-5.0」——**官方手册里根本没有「阻尼 / 重力」这两个参数名**（官方是 Length / Ease of swinging / Reaction time / Speed of convergence），两者口径对不上。结合上一辑对该文的「疑似 AI 生成稿」判定，本轮可以进一步确认：**那些中文数字不可信，请一律以官方这四个参数名为准**。
+- 实用性：**落地**（作为参数校正基准）。理由：画像用户调物理时如果拿中文博客的数字去软件里找「阻尼」字段，会找半天找不到——**因为参数名就不叫这个**。这一条能省掉的正是这种时间。
+- 注：**非中文页面**，中文站对应路径未逐一核实。
+
+
+### ### 5.1 ★★ 官方确实把 AI 做进了 Cubism 生态：**素材分け Photoshop 插件（用 DeepLearning）**
+
+- 链接：https://docs.live2d.com/en/cubism-editor-manual/material-separation-ps-plugin-download/
+- 出处：**Live2D Inc. 官方 Editor 手册** · 页标注 **Updated: 10/28/2025**
+- 核实方式：`WebFetch`（全文取到）
+- 一句话：官方有一个 Photoshop 插件，用 **DeepLearning** 做「切抜き（Cut Out）」与「Color Fill / Transparency Fill」，专门用来自动化 Live2D 建模的**前工程（素材分け）**。
+- **官方对 AI 的原话（逐句照抄）**：
+  > "The Material Separation Photoshop Plugin utilizes two types of AI techniques: 'Cut Out' and 'Color Fill / Transparency Fill.'"
+  > "These AI techniques employ **DeepLearning** technology that infers the color and alpha values of newly created layers from information surrounding the selected area, and **do not use image generation AI based on diffusion models**."
+  > "Therefore, **there is no possibility of infringing on the copyright of the learning data**, so please feel free to use it."
+- **训练数据（官方原话）**：来自 **nizima** 投稿作品中**取得 AI 研究使用许可**的那些；政策页 https://docs.nizima.com/en/ai-research-policy/ （**该 URL 本轮未打开，未核实**）。
+- **版本史（本页实测）**：
+  | 版本 | 日期 | 要点 |
+  |---|---|---|
+  | **R1** | **2025.10.28** | 初始化可独立执行；新增「合并 Color Fill / Transparency Fill 与所选图层」选项；安装器可**从中国镜像站下载部分库** |
+  | R1_beta2 | 2025.06.26 | 支持 macOS |
+  | R1_beta1 | 2025.02.27 | 可批量选择多个图层/组做切抜き与透明度填充 |
+  | R1_alpha3 | 2024.08.06 | 可选 CPU/GPU；**分辨率上限改为「选区外接矩形 ≤400 万像素」** |
+  | R1_alpha2 | 2024.05.13 | **显存 ≥16GB 时分辨率上限改为 2000px**；修 Kepler 架构 GPU 不可用 |
+  | R1_alpha1 | 2024.03.18 | 首次发布 |
+- **硬性门槛（对用户最要紧）**：
+  - **必须有已激活的 Cubism PRO license**（42 天试用期内也可用）。未激活时报错，且**输出图层会带 Live2D logo 水印**（但功能可验证）。
+  - 需预装 **Photoshop 2024 / 2025**；安装需约 **6GB 空闲空间**；需要联网激活。
+  - **GPU：推荐 NVIDIA 8GB 显存以上**；官方原话 "If no GPU is available, processing will be performed by the CPU. Processing with a GPU will take more time."（原文如此，语义为 CPU 会更慢）→ **无独显也能跑，只是慢**。
+  - Windows 10/11 x64；macOS Ventura 及以上（Apple M 系列）。
+- **可验证吗？** ✅ **完全可验证** —— 官方手册页，版本号、日期、AI 技术类型、硬件门槛全部白纸黑字。
+- **对 16GB 本地机器有用吗？** ⚠️ **有条件的有用**：
+  - 16GB 是**系统内存**不是显存。插件看的是**显存**（推荐 NVIDIA 8GB+）。若机器是核显或 4GB 显存 → **能跑但慢**（CPU/低显存路径官方明确支持）。
+  - 另一个 16GB 相关的点是 alpha2 的注记：**显存 ≥16GB 时分辨率上限可到 2000px** —— 说明它对显存敏感。
+  - **最大的门槛不是硬件而是 license**：必须有 PRO（试用 42 天也算）。**学生走 80% OFF 三年 PRO 之后，这个插件是白送的 AI 拆图能力** → 对预算有限的学生，这是**官方给的、不涉及扩散模型版权风险的**正确路径。
+- 实用性：**落地（本轮 AI 方向第二名，且是唯一"官方 + 无版权风险"的一条）**。
+
+
+### ### 3.2 ★ AI 一张图 → 可动 Live2D 全记录（含 4 个具体报错的解法）
+
+- 链接：https://zenn.dev/shakebenn/articles/e9b4c797d103ed
+- 出处：Zenn · shakebenn · **2026/07/08 公開**
+- 核实方式：`WebFetch`（全文取到）
+- 一句话：不会画画的人，用 **See-through + ComfyUI** 把 1 张 AI 立绘做成 **VTube Studio 里能动的 Live2D 模型**，耗时 **2 天**，GPU 实费 **不到 4 美元**；文章核心价值是**把 4 个搜不到的坑写成了可检索的报错文本**。
+- 可拓展性（原文实测数据，逐条）：
+  - **See-through 输出**：1024 分辨率 → **23 层**；2048 → **20 层**（层列表：face / front hair / back hair / headwear / 眉・まつ毛・白目・虹彩（左右各一）/ nose / mouth / ears / neck / topwear / bottomwear / handwear / legwear / footwear）。**被遮挡部分（前髪下的额头、裙子下的大腿）是补画出来的**，不是抠图。
+  - **⚠️ 坑 A — `CUDA error: invalid configuration argument`**：不是输入图太大（缩到 700×2048 仍复现），真因是 `resolution_depth=-1` 会跟随 `resolution` 变成 2048 让 Marigold 深度估计爆掉。→ **显式设 `resolution_depth=1280`，`resolution` 保持 2048**。深度只用于层序判定，掉画质无所谓。
+  - **⚠️ 坑 B — pytoshop 写的 PSD 在 Cubism 里「认得出部件名但画布空白」**。作者做了二进制 diff：能读的（ag-psd 写的）`header channels=4`、`layer_count=-20`（负值=首通道为 alpha 的 Photoshop 惯例）、有 global layer mask info；坏掉的（pytoshop）是 3 / +20 / 无。→ **结论：第三方消费者（这里是 Cubism）对 PSD 的要求不是「符合规范」而是「和 Photoshop 写出来的一模一样」；用 ag-psd（Node.js）写。**
+  - **⚠️ 坑 C — `psd-tools` 的 `composite()` + `.convert('RGB')` 会把半透明像素的未合成原色烧进预览图**（出现原色噪点）。→ 修正：手动白底 alpha 合成（文中给了 Pillow 最小实现）。教训：**同一份数据要用两个独立渲染器交叉验证**（作者是在 macOS sips 里才复现的）。
+  - **⚠️ 坑 D — VTube Studio 读不了 Cubism 5.3 默认导出的 moc3**（2026-07 时点，VTS 官方在 X 上明言未适配，理由是 SDK 侧兼容性破坏）。→ **判定方法（本条最可复用的技巧）**：看 moc3 文件**第 5 个字节**：
+    ```
+    xxd -g 1 -l 8 model.moc3
+    # 4d 4f 43 33 05 ...  → 版本字节 5 = SDK 5.0〜5.2 系（VTS 可读）
+    # 4d 4f 43 33 06 ...  → 版本字节 6 = SDK 5.3（VTS 读不了）
+    ```
+    → **解法：Cubism 导出对话框里把「書き出しバージョン」显式指定为 SDK 5.0。**
+  - **坑 E（流程）**：改完纹理再导入 Cubism，必须选「**差し替え**」；若选「新規アートメッシュとして追加」，未绑 rig 的生图层会以描画顺 500 盖满整个模型。
+  - **质量策略（最聪明的一步）**：See-through 输出**所有像素都是 SDXL 重生成的**，可见部分反而比原图糊 → 作者写了 `reproject.py`：**可见区用原图 4× 超分（Real-ESRGAN x4plus-anime）的像素覆盖，只保留遮挡区的 AI 像素**；配准用 bbox 拟合 + IoU 网格精化，实测 **scale=1.15488, offset=(674,-1), IoU=0.987**。最终 4096×4096 / 20 层 PSD。
+  - **成本**：RunComfy GPU 按量计费 4 次（1024 试跑 1 + 2048 失败 2 + 成功 1）**合计不到 US$4**；对比个人外注（分层立绘 + 建模）**约 4〜10 万日元**、制作公司（插画 16〜20 万 + 建模 20 万起）。
+  - **⚠️ 合规红线**：作者引用 **nizima 的 AI ガイドライン**（https://docs.nizima.com/guide/ai-policy/ ，2026-07 时点）称 **AI 生成插画来源的 Live2D 作品一律禁止投稿/上架/接单**，人工加笔修正版、AI 描摹也一样。但**自己做的模型用于自己的直播是允许的**。→ **该政策 URL 本轮未直接打开，属转述，标「未核实」**（见 §六）。
+- 实用性：**落地（本轮 AI 方向第一名）** —— 对「预算有限 + 16GB 本机」的用户，这条给了**可复制的低价路径**（云 GPU 几美元即可，本地只跑脚本）；同时坑 D 的「moc3 第 5 字节判定法」是**任何人导出模型都该知道的一条**。
+
+
+### ### 3.3 ★ Electron + Python + Live2D 桌面宠物（**明确写了 Ollama**）
+
+- 链接：https://zenn.dev/zeur/articles/7bfe5936f3b765
+- 出处：Zenn · Zeur · **2026/01/19 公開**
+- 核实方式：`WebFetch`（全文取到）
+- 一句话：一个**离线可用的 Live2D 桌面宠物**，技术栈是 **Electron + PIXI.js + Live2D Cubism SDK（前端）/ Python（FastAPI + WebSockets，后端）/ VOICEVOX（语音）/ Google Gemini 或 Ollama（对话）**。
+- 可拓展性（原文技术栈表 + 关键点）：
+  - **AI（Chat）一行原文写的是 `Google Gemini / Ollama`**，理由原文：「高精度なクラウドAIとローカルLLMを用途に応じてハイブリッド運用するため」→ **这是本轮唯一一篇日文一手文里明确把 Ollama 写进架构图的**。
+  - **Python 侧**（FastAPI/WebSockets）每 0.1 秒广播一次 `{"type":"lipsync","audio_level":…,"emotion":…}`；**Electron 侧**收到后直接 `model.internalModel.coreModel.setParameterValueById('ParamMouthOpenY', data.audio_level)` → **这就是「Python 驱动 Live2D 参数」的最小可抄骨架**。
+  - **离线兜底**：作者踩过「断网时 CDN 上的 Live2D 库加载不了 → 白屏」，于是**把依赖全部下载到本地 + 启动时做网络探测**。
+  - 画面认识只在**用户按按钮的那一瞬间**截图（隐私设计）。
+  - 模型用的是 Booth 上的「うさメイド」（https://booth.pm/ja/items/4499262 ）。
+- 实用性：**落地** —— 对「会一点 Python、不熟前端、本机跑 Ollama」的用户，这条几乎是**量身定做**：前端 Electron 壳子 + 后端 Python 干活 + Live2D 只是个渲染层。虽然目标是桌宠不是 VN，但**「Python ↔ WebSocket ↔ Live2D 参数」这条通路可以直接搬到 Ren'Py 之外的任何用途**（比如本地 AI 角色对话 demo）。
+
+
+### ### 4.4 ★ easy-live2d（Web，MIT，活跃）
+
+- 链接：https://github.com/Panzer-Jack/easy-live2d
+- 出处：GitHub · Panzer-Jack · 本轮 **2026-10-10** `gh api` 实测
+- 核实方式：`gh api "repos/Panzer-Jack/easy-live2d"` + HN 条目交叉验证
+- 一句话：把 Live2D Web SDK 包成 Pixi.js sprite 一样好用的轻量库，README 中英双语。
+- 可拓展性（实测值）：**213 star / 12 fork / 许可证 MIT / 创建 2025-04-27 / 最近推送 2026-09-24（活跃）**。
+  - HN 上有两次记录：`2026-04-04 Easy-Live2d v0.4.0: A Milestone Release for Live2D on the Web`（https://news.ycombinator.com/item?id=47639734 ）与 `2025-06-03 Easy-Live2d`（id=44171943），**两次都只有 2 分** → 社区热度很低，别被 star 数误导。
+- 实用性：**参考** —— 用户主路径是 Ren'Py，**不需要**；但如果想给 VN 做一个**网页版试玩/预览页**，这是 MIT + 活跃 + 有中文文档的最优候选（比 r26 提到的 pixi-live2d-display 更"开箱即用"）。**不知道前端也能用**（封装目标是"像操控 pixi sprite 一样"）。
+
+
+### ### 4.1 ★★ 官方 Live2D Creators Forum：16GB 内存用户在导出 moc3 时 OOM
+
+- 链接：https://community.live2d.com/discussion/comment/4259
+- 出处：**Live2D 官方 Creators Forum**（community.live2d.com，官方自建）· 提问者 Teddy_Turle · **August 2025** · 官方 staff 已回复
+- 核实方式：`WebFetch`（全文取到，含官方回复原文）
+- 一句话：**一个 Windows 10 / i5-12400F / GTX1650 / 16GB RAM 的用户，导出 moc3 时直接 `java.lang.OutOfMemoryError: Java heap space`** —— 官方给了 3 条排查方向，但**帖子没有给出最终解决方案（未结帖）**。
+- 可拓展性（逐条）：
+  - **报错原文**：`[ERROR] Exception in thread "Thread-169" java.lang.OutOfMemoryError: Java heap space` + 一长串 `com.live2d.serialize...` / `com.live2d.cubism.doc.model.exporter...` 栈。删掉 4 个有问题的图层就能导出。
+  - **官方 staff 的三条**（原文要点）：① 纹理集（texture atlas）太大/图太多 → 把相同设计的 art mesh 只留一个再复制、尽量合并纹理集；② 那几个 art mesh 本身可能有问题 → 过去有用户靠**换纹理 + 重建 art mesh** 解决（给了参考帖 https://community.live2d.com/discussion/2205/ ）；③ art mesh / deformer / parameter 的建法会让计算变重 → 该模型的 **warp deformer 分割数过大**，建议用统计信息与 deformer 校验功能重整结构。
+  - **社区回复里最刺眼的一句**："…having **16gb of ram doesn't help much** and the render process it can use a lot!!! (so yes the best solution would be to increase to like 32gb or 64gb your pc)"。
+  - **注意**：这条是**社区用户**的说法，不是官方；官方只给了上面三条优化方向，**没说必须加内存**。
+- 实用性：**落地（本轮对用户最"扎心"的一条）** —— 直接回答了「16GB 够不够」：**Editor 本身官方推荐才 8GB（够），但导出阶段可能吃满 16GB**。可操作的预防是**控制纹理集大小与 warp deformer 分割数**。帖子**未解决**，请按「已知风险」而非「已知解药」记。

@@ -1,0 +1,89 @@
+=== _r27_gh.md ===
+### 01. live2d-py（EasyLive2D/live2d-py）
+### 02. live2d-motion3（EasyLive2D/live2d-motion3）
+### 03. Mocari（Eatgrapes/Mocari）
+### 04. live2d-cubism-core-sys（jz315/live2d-cubism-core-sys）
+### 05. live2d-web（Heonys/live2d-web）
+### 06. untitled-pixi-live2d-engine（Untitled-Story/untitled-pixi-live2d-engine）
+### 07. live2d-moc3（LitStronger/live2d-moc3）
+### 08. Live2dV3（HCLonely/Live2dV3）
+### 09. live2d-interactive-viewer（jason71708/live2d-interactive-viewer）
+### 10. live2d-lipsync-viewer（NyarchLinux/live2d-lipsync-viewer）
+### 11. renderkit（KurisuMakise004/renderkit）
+### 12. moc3-reader-re（QiE2035/moc3-reader-re）
+### 13. LpkUnpacker（ihopenot/LpkUnpacker）
+### 14. CubismNativeSamples（Live2D/CubismNativeSamples）
+### 15. UnrealLive2D（Arisego/UnrealLive2D）
+### 16. Live2dForCocosCreator（playnb/Live2dForCocosCreator）
+### 17. GDLive2D（Watunder/GDLive2D）
+### 18. Tyrano-Live2d-Plugin（FlowerCat-chen/Tyrano-Live2d-Plugin）
+### 19. rievegh（lightlyss/rievegh）
+### 20. RenpyLive2DEyeFollowDemo（rc14193/RenpyLive2DEyeFollowDemo）
+### 21. RenpyLive2DTraceSample（kojimio/RenpyLive2DTraceSample）
+### 22. seethrough-live2d-pipeline（Kota-Ohno/seethrough-live2d-pipeline）
+### 23. puppet-part-splitter（0ran/puppet-part-splitter）
+### 24. bongo-cat-next（liwenka1/bongo-cat-next）
+### 25. petto（funnycups/petto）
+### 26. nep-live2d（guansss/nep-live2d）
+### 27. aklive2d（Halyul/aklive2d）
+### 28. open-vt（erodozer/open-vt）
+### 29. pyvts（Genteki/pyvts）
+### 30. live-ascii（Arcelyth/live-ascii）
+### 31. CubismViewer（Live2D/CubismViewer）
+### 32. Cubism3-ARKit（matsune/Cubism3-ARKit）
+### 2.1 去重执行情况
+### 2.2 统计
+### 2.3 给主 agent 的三句话总结
+### 2.4 本轮未核实到的空白（如实记录）
+=== _r27_cn.md ===
+### 01. 《数字人应用技术探索（三）》—— 中文圈少见的一手排错流水账
+### 02. AITuberKit 故障排除 · Live2D 模型加载 TypeError（中文文档）
+### 03. 《【live2d教程】从零开始做模型吧 合集》（B站 25 集合集，附练手 PSD）
+### 04. 《Live2D模型的简单制作》（知乎专栏）
+### 05. Live2D 官方创作者论坛：moc3 导出失败 `java.lang.OutOfMemoryError: Java heap space`
+### 06. 《live2d_Ren'Py引擎从入门到放弃（支线6）——还在探索阶段的Live2D》
+### 07. 免费版上限的实战账：104 层压进 98 个 ArtMesh
+### 08. 《虚拟主播三条技术路线决定生死：Live2D、3D混合、纯AI》
+### 09. 百度贴吧「live2d吧」—— 确认存在，但信息密度极低
+### 10. 知乎问答《如果想学live2d，又不会画画，该怎么练习建模呢？》
+### 11. CSDN 问答《Renpy集成Live2D模型下载后动作不流畅?》
+### 12. 物理摆锤参数的官方口径（用于校正中文圈的野数字）
+### 13. CSDN《手把手教你为Live2D模型添加物理摆动：从参数创建到导出.pmx文件》
+=== _r27_official.md ===
+### 1.1 编辑器（Cubism Editor）—— 以官方「Product Info」分类页为准
+### 1.2 Cubism SDK 各分支现状（本轮复核：**没有比 R5 更新的正式版**）
+### 1.3 Cubism 5.4 到底有没有正式版？—— **没有（截至 2026-10-10）**
+### 1.4 促销 / 活动 / 价格（2026 新增项）
+### 1.5 ★ 价格/授权的另一处「官方自相矛盾」—— 本轮拿到**第三个** URL 证据
+### 1.6 SDK 下载页实测：**它不写版本号**
+### 1.7 首页新发现的两个官方产品/入口（本轮新核到）
+### 1.8 Cubism 编辑器版本号的旁证（第三方，带标签）
+### 3.0 索引页本身（下轮可直接复用）
+### 3.1 ★【Unity URP】Live2D 纹理不显示 = 忘了加 Renderer Feature
+### 3.2 ★ AI 一张图 → 可动 Live2D 全记录（含 4 个具体报错的解法）
+### 3.3 ★ Electron + Python + Live2D 桌面宠物（**明确写了 Ollama**）
+### 3.4 「AI 图转 SVG 还是动不了」—— 把「ベクタ化」和「素材分け」分清楚
+### 3.5 【Unity × Live2D】Android 打包后模型全白
+### 3.6 只有标题、正文未取到（如实标注）
+### 3.7 Qiita：本轮的**负发现**
+### 4.1 ★★ 官方 Live2D Creators Forum：16GB 内存用户在导出 moc3 时 OOM
+### 4.2 官方 Forum：导出 moc3 报 "invoke after texture atlas is generated"
+### 4.3 官方 Forum 的分类入口（下轮可挖）
+### 4.4 ★ easy-live2d（Web，MIT，活跃）
+### 4.5 hermes-live2d（Tauri + pixi-live2d-display 桌宠）
+### 4.6 Hacker News：Live2D 相关的**可核条目**
+### 4.7 剔除：johal.in（本轮新识别的内容农场）
+### 5.1 ★★ 官方确实把 AI 做进了 Cubism 生态：**素材分け Photoshop 插件（用 DeepLearning）**
+### 5.2 官方有没有做「自动布点 / 自动拆分 / AI 补间」？—— 本轮的**负结论**
+### 5.3 海外 AI 拆图 → Live2D 的**可复现实测**（日本，一手）
+### 5.4 ⚠️ 转述未核实：VTube Studio 不支持 Cubism 5.3 的 moc3
+### 5.5 转述未核实：nizima 的 AI 政策禁止 AI 来源 Live2D 上架
+### 5.6 HanaVerse：**Ollama + Python + Live2D** 的网页聊天 UI
+### 5.7 Miru：跨平台 AI 伴侣（**Ollama 兼容性未核实**）
+### 5.8 L2MAS：把 Live2D 做成 MCP / A2A 多智能体（**原型，别当工具**）
+### 5.9 本轮顺带复核：AI × Live2D 的**存量**条目不重复报
+### 6.1 明确「没核到 / 打不开」的
+### 6.2 明确**剔除**的
+### 6.3 本轮**更正 r26** 的地方（写进索引时请同步修订）
+### 7.1 统计
+### 7.2 三句话总结

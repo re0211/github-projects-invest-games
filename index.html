@@ -215,10 +215,10 @@ footer a{color:var(--text-2)}
     <h1 data-page-node-id="AiHFaPLbdzWhs4cJxbPaCG">游戏制作 × 游戏拓展 · 重点：AI 制作游戏<br data-page-node-id="7picbxz1uDgskpVGBQndAe">三条线上的开源工具地图</h1>
     <p class="sub" data-page-node-id="LVHhXAo5FhfwKnCSkj9LXr">从 GitHub 上筛出真正活跃、能落地的项目，用人话讲清楚它们各自解决什么问题、能不能二次开发、值不值得花时间。不是罗列链接，是帮你做取舍。</p>
     <div class="meta" data-page-node-id="xhBz9HP4CMitXa7DRJmiCE">
-      <span data-page-node-id="U5SVCzIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第三十版增补 2026-09-24</span>
-      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1168 个项目</span>
+      <span data-page-node-id="U5SVCzIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第三十二版增补 2026-10-10</span>
+      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1199 个项目</span>
       <span data-page-node-id="DCE1SCzjW3tXhAFVtReJ7C">星级 / 更新时间 / License 逐项实测</span>
-      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项 + 第十八版增补 2 项 + 第十九版增补 1 项 + 第二十版增补 1 项 + 第二十一版增补 4 项 + 第二十二版增补 6 项 + 第二十三版增补 9 项 + 第二十四版增补 10 项 + 第二十五版增补 8 项 + 第二十六版增补 8 项 + 第二十七版增补 8 项 + 第二十八版增补 13 项 + 第二十九版增补 12 项 + 第三十版增补 15 项（均与上版零重复）</span>
+      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项 + 第十八版增补 2 项 + 第十九版增补 1 项 + 第二十版增补 1 项 + 第二十一版增补 4 项 + 第二十二版增补 6 项 + 第二十三版增补 9 项 + 第二十四版增补 10 项 + 第二十五版增补 8 项 + 第二十六版增补 8 项 + 第二十七版增补 8 项 + 第二十八版增补 13 项 + 第二十九版增补 12 项 + 第三十版增补 15 项 + 第三十一版增补 15 项 + 第三十二版增补 16 项（均与上版零重复）</span>
     </div>
   </div>
 </header>
@@ -12248,6 +12248,571 @@ footer a{color:var(--text-2)}
 
     </div>
 
+    <div class="group" data-page-node-id="rpm31g">
+      <div class="group-title" data-page-node-id="rpm31gt">🆕 第三十一版增补 · Live2D 制作与立绘动效（15 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm31gd">第二十六辑三路调研（GitHub 32 / 中文社媒 28 / 官方与海外 26），本版取 15 项，主题 **Live2D 制作**：优先「省拆图与绑骨人力」+「接得进游戏/网页/直播的运行时」+「AI × Live2D」。所有 ★ / 许可证 / 语言 / 推送日均走 `gh api repos/<r>` 实测，主 agent 另抽 5 个复核。<strong>本辑主线：Live2D 的钱不是花在软件上，是花在拆图上</strong> ——官方免费版（30 参数 / 100 ArtMesh）对「只播预设表情和动作」够用；真正贵的是把画完的立绘拆成能动的图层（画师实录：画 7 小时、拆 14 小时）。</p>
+
+      <div class="card" data-page-node-id="rpm31c1">
+        <div class="card-top" data-page-node-id="rpm31c1t">
+          <span class="card-name" data-page-node-id="rpm31c1mn"><a href="https://github.com/tsunehimatoi/psd2live" target="_blank" data-page-node-id="rpm31c1n">psd2live（PSD 直接出 Cubism 工程，省掉最贵的一段人力）</a></span>
+          <span class="lang" data-page-node-id="rpm31c1l">Kotlin</span>
+          <span class="stars" data-page-node-id="rpm31c1s">598</span>
+          <span class="tag t-make" data-page-node-id="rpm31c1t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c1t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c1p">把分好层的 <strong>PSD 直接转成 .cmo3 工程</strong>并自动做一部分绑定，是「画完 → 能动」之间最短的那条路。Kotlin / ★598 / 最近推送 2026-10-09，本辑 GitHub 路里活跃度最高的一条。</p>
+        <div class="analogy" data-page-node-id="rpm31c1a"><b data-page-node-id="rpm31c1ab">打个比方：</b>手工做 Live2D 像把一张画<strong>剪成几十片再逐片缝上线</strong>；它是给你一把<strong>自动裁剪+预缝线的机器</strong>。省的不是技巧，是那 14 小时的重复劳动。</div>
+        <div class="analogy" data-page-node-id="rpm31c1w"><b data-page-node-id="rpm31c1wb">注意：</b><strong>GPL-3.0</strong>：你自己用没问题，若要把它的代码并进商业发行物，需要先想清楚传染性。</div>
+        <div class="grid2" data-page-node-id="rpm31c1g">
+          <div class="mini" data-page-node-id="rpm31c1m1"><span class="lbl" data-page-node-id="rpm31c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c1m1b"><div class="bar-track" data-page-node-id="rpm31c1m1t"><div class="bar-fill" style="width:85%;background:var(--make)" data-page-node-id="rpm31c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c1m1n">8.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c1m1v">接在「分层规范 → 自动绑骨 → 导出」这条链的最前段；与 AI 拆层工具（本组 See-through）串起来就是半自动流水线</div></div>
+          <div class="mini" data-page-node-id="rpm31c1m2"><span class="lbl" data-page-node-id="rpm31c1m2l">实用性</span><div class="bar" data-page-node-id="rpm31c1m2b"><div class="bar-track" data-page-node-id="rpm31c1m2t"><div class="bar-fill" style="width:78%;background:var(--make)" data-page-node-id="rpm31c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c1m2n">7.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c1m2v">建议路线：先用免费版 Cubism 手动做一次搞懂原理，再用它批量化；⚠️ 未本机实测</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c1c">最近推送 2026-10-09 · 598★ · GPL-3.0 · Kotlin · 信源 [1168]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c2">
+        <div class="card-top" data-page-node-id="rpm31c2t">
+          <span class="card-name" data-page-node-id="rpm31c2mn"><a href="https://github.com/asfdfdfd/renpy-live2d" target="_blank" data-page-node-id="rpm31c2n">renpy-live2d（唯一正对 Ren'Py 的 Live2D 模块，但已停更）</a></span>
+          <span class="lang" data-page-node-id="rpm31c2l">C</span>
+          <span class="stars" data-page-node-id="rpm31c2s">89</span>
+          <span class="tag t-make" data-page-node-id="rpm31c2t1">动画</span>
+          <span class="tag t-warn" data-page-node-id="rpm31c2t2">已停更</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c2p">给 Ren'Py 加 Live2D 支持的第三方模块（C 扩展）。★89 / <strong>最近推送停在 2021-03-02</strong>（已五年不动）。</p>
+        <div class="analogy" data-page-node-id="rpm31c2a"><b data-page-node-id="rpm31c2ab">打个比方：</b>这条的价值是<strong>反面路标</strong>：它证明「Ren'Py 接 Live2D」这条路早就有人走过，但今天<strong>不该再走这条</strong> —— Ren'Py 官方从 8.x 起已原生支持 Cubism 3/4/5（见本辑经验帖 §三）。</div>
+        <div class="analogy" data-page-node-id="rpm31c2w"><b data-page-node-id="rpm31c2wb">注意：</b><strong>别直接装</strong>：pushed_at 停在 2021，且官方方案已在文档里。留作「旧项目迁移」时的参考实现。</div>
+        <div class="grid2" data-page-node-id="rpm31c2g">
+          <div class="mini" data-page-node-id="rpm31c2m1"><span class="lbl" data-page-node-id="rpm31c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c2m1b"><div class="bar-track" data-page-node-id="rpm31c2m1t"><div class="bar-fill" style="width:40%;background:var(--make)" data-page-node-id="rpm31c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c2m1n">4.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c2m1v">接口设计（在 Ren'Py 里怎么声明模型、怎么播动作）仍有参考价值</div></div>
+          <div class="mini" data-page-node-id="rpm31c2m2"><span class="lbl" data-page-node-id="rpm31c2m2l">实用性</span><div class="bar" data-page-node-id="rpm31c2m2b"><div class="bar-track" data-page-node-id="rpm31c2m2t"><div class="bar-fill" style="width:30%;background:var(--make)" data-page-node-id="rpm31c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c2m2n">3.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c2m2v">已停更 + 官方原生方案在位 → <strong>不采用</strong>，只登记</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c2c">最近更新 2026-04-09（推送停在 2021-03-02）· 89★ · NOASSERTION · C · 信源 [1169]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c3">
+        <div class="card-top" data-page-node-id="rpm31c3t">
+          <span class="card-name" data-page-node-id="rpm31c3mn"><a href="https://github.com/Live2D/CubismWebFramework" target="_blank" data-page-node-id="rpm31c3n">CubismWebFramework（官方 Web 运行时，网页里放立绘的正路）</a></span>
+          <span class="lang" data-page-node-id="rpm31c3l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm31c3s">237</span>
+          <span class="tag t-make" data-page-node-id="rpm31c3t1">运行时</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c3t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c3p">Live2D <strong>官方</strong>的 TypeScript/Web 运行时：把 .moc3 模型加载进网页、播动作、跟随鼠标。★237 / 最近更新 2026-10-06。</p>
+        <div class="analogy" data-page-node-id="rpm31c3a"><b data-page-node-id="rpm31c3ab">打个比方：</b>做网页版立绘时，它是<strong>官方出的发动机</strong>；社区那些「看板娘挂件」都是在它上面套的壳。</div>
+        <div class="grid2" data-page-node-id="rpm31c3g">
+          <div class="mini" data-page-node-id="rpm31c3m1"><span class="lbl" data-page-node-id="rpm31c3m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c3m1b"><div class="bar-track" data-page-node-id="rpm31c3m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm31c3m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c3m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c3m1v">任何 Web 场景（官网角色、itch.io 页面、Ren'Py Web 版）都绕不开它</div></div>
+          <div class="mini" data-page-node-id="rpm31c3m2"><span class="lbl" data-page-node-id="rpm31c3m2l">实用性</span><div class="bar" data-page-node-id="rpm31c3m2b"><div class="bar-track" data-page-node-id="rpm31c3m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm31c3m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c3m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c3m2v">⚠️ <strong>Cubism Core 不在 GitHub</strong>：只 clone 这个仓库编译不出能跑的东西，必须去官网下载分发包（本辑官方路核实）</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c3c">最近更新 2026-10-06 · 237★ · NOASSERTION · TypeScript · 信源 [1170]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c4">
+        <div class="card-top" data-page-node-id="rpm31c4t">
+          <span class="card-name" data-page-node-id="rpm31c4mn"><a href="https://github.com/Live2D/CubismUnityComponents" target="_blank" data-page-node-id="rpm31c4n">CubismUnityComponents（官方 Unity SDK 部件，旧仓库名已 404）</a></span>
+          <span class="lang" data-page-node-id="rpm31c4l">C#</span>
+          <span class="stars" data-page-node-id="rpm31c4s">263</span>
+          <span class="tag t-make" data-page-node-id="rpm31c4t1">运行时</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c4t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c4p">Live2D 官方 Unity SDK 的组件仓库。★263 / 最近更新 2026-09-29。</p>
+        <div class="analogy" data-page-node-id="rpm31c4a"><b data-page-node-id="rpm31c4ab">打个比方：</b>网上教程里到处引用的 `Live2D/CubismSdkForUnity` <strong>现在已经是 404</strong> —— 官方把 SDK 拆成了若干部件仓库。照着老教程找仓库，第一步就撞墙。</div>
+        <div class="analogy" data-page-node-id="rpm31c4w"><b data-page-node-id="rpm31c4wb">注意：</b><strong>避坑</strong>：SDK 已改名拆分，且 Cubism Core 需官网单独下载；老教程的 clone 命令基本都失效。</div>
+        <div class="grid2" data-page-node-id="rpm31c4g">
+          <div class="mini" data-page-node-id="rpm31c4m1"><span class="lbl" data-page-node-id="rpm31c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c4m1b"><div class="bar-track" data-page-node-id="rpm31c4m1t"><div class="bar-fill" style="width:72%;background:var(--make)" data-page-node-id="rpm31c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c4m1n">7.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c4m1v">Unity 是 Live2D 最成熟的落点，组件齐全（口型、视线跟随、动作淡入淡出）</div></div>
+          <div class="mini" data-page-node-id="rpm31c4m2"><span class="lbl" data-page-node-id="rpm31c4m2l">实用性</span><div class="bar" data-page-node-id="rpm31c4m2b"><div class="bar-track" data-page-node-id="rpm31c4m2t"><div class="bar-fill" style="width:62%;background:var(--make)" data-page-node-id="rpm31c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c4m2n">6.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c4m2v">只在做 Unity 项目时才需要；做 Ren'Py / Web 的用不到</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c4c">最近更新 2026-09-29 · 263★ · NOASSERTION · C# · 信源 [1171]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c5">
+        <div class="card-top" data-page-node-id="rpm31c5t">
+          <span class="card-name" data-page-node-id="rpm31c5mn"><a href="https://github.com/guansss/pixi-live2d-display" target="_blank" data-page-node-id="rpm31c5n">pixi-live2d-display（把 Live2D 塞进 PixiJS，社区事实标准）</a></span>
+          <span class="lang" data-page-node-id="rpm31c5l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm31c5s">1507</span>
+          <span class="tag t-make" data-page-node-id="rpm31c5t1">运行时</span>
+          <span class="tag t-warn" data-page-node-id="rpm31c5t2">低频更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c5p">在 <strong>PixiJS（2D 网页渲染引擎）</strong>里显示并驱动 Live2D 模型的插件，★1507 / MIT。社区里做网页 Live2D 游戏最常用的一个。</p>
+        <div class="analogy" data-page-node-id="rpm31c5a"><b data-page-node-id="rpm31c5ab">打个比方：</b>官方 Web 框架是发动机，它是<strong>装好座椅和方向盘的整车</strong> —— 你只管踩油门（写播哪段动作）。</div>
+        <div class="analogy" data-page-node-id="rpm31c5w"><b data-page-node-id="rpm31c5wb">注意：</b>最近推送 2024-08-20，但 ★1507 的存量说明生态还在用；MIT 比多数同类宽松。</div>
+        <div class="grid2" data-page-node-id="rpm31c5g">
+          <div class="mini" data-page-node-id="rpm31c5m1"><span class="lbl" data-page-node-id="rpm31c5m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c5m1b"><div class="bar-track" data-page-node-id="rpm31c5m1t"><div class="bar-fill" style="width:82%;background:var(--make)" data-page-node-id="rpm31c5m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c5m1n">8.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c5m1v">PixiJS 生态可直接接粒子、滤镜、UI，做 2D 网页游戏时一层搞定</div></div>
+          <div class="mini" data-page-node-id="rpm31c5m2"><span class="lbl" data-page-node-id="rpm31c5m2l">实用性</span><div class="bar" data-page-node-id="rpm31c5m2b"><div class="bar-track" data-page-node-id="rpm31c5m2t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm31c5m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c5m2n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c5m2v">MIT + 文档全 + 用的人多 → 网页路线的<strong>首选</strong>；⚠️ 未本机实测</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c5c">最近更新 2026-10-08（推送 2024-08-20）· 1507★ · MIT · TypeScript · 信源 [1172]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c6">
+        <div class="card-top" data-page-node-id="rpm31c6t">
+          <span class="card-name" data-page-node-id="rpm31c6mn"><a href="https://github.com/MizunagiKB/gd_cubism" target="_blank" data-page-node-id="rpm31c6n">gd_cubism（Godot 4 的 Live2D 原生插件）</a></span>
+          <span class="lang" data-page-node-id="rpm31c6l">C++</span>
+          <span class="stars" data-page-node-id="rpm31c6s">301</span>
+          <span class="tag t-make" data-page-node-id="rpm31c6t1">运行时</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c6t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c6p">让 <strong>Godot 4</strong> 直接加载和驱动 Cubism 3/4 模型的 GDExtension 插件（C++）。★301 / 推送 2025-04-01。</p>
+        <div class="analogy" data-page-node-id="rpm31c6a"><b data-page-node-id="rpm31c6ab">打个比方：</b>Godot 官方一直没有 Live2D 支持，它是社区补上的那块拼图 —— 如果你想用 Godot 做带 Live2D 立绘的视觉小说，这是<strong>唯一像样的选项</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm31c6w"><b data-page-node-id="rpm31c6wb">注意：</b><strong>NOASSERTION</strong>（许可证不明确）：商用前必须去仓库确认授权条款，别默认 MIT。</div>
+        <div class="grid2" data-page-node-id="rpm31c6g">
+          <div class="mini" data-page-node-id="rpm31c6m1"><span class="lbl" data-page-node-id="rpm31c6m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c6m1b"><div class="bar-track" data-page-node-id="rpm31c6m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm31c6m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c6m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c6m1v">Godot 4 是眼下最热的开源引擎，插件 + 引擎全链路开源，可改造空间大</div></div>
+          <div class="mini" data-page-node-id="rpm31c6m2"><span class="lbl" data-page-node-id="rpm31c6m2l">实用性</span><div class="bar" data-page-node-id="rpm31c6m2b"><div class="bar-track" data-page-node-id="rpm31c6m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm31c6m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c6m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c6m2v">只在你选 Godot 时才成立；我们是 Ren'Py 路线 → 参考级</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c6c">最近更新 2026-10-03（推送 2025-04-01）· 301★ · NOASSERTION · C++ · 信源 [1173]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c7">
+        <div class="card-top" data-page-node-id="rpm31c7t">
+          <span class="card-name" data-page-node-id="rpm31c7mn"><a href="https://github.com/Inochi2D/inochi-creator" target="_blank" data-page-node-id="rpm31c7n">inochi-creator（Live2D 的开源平替，D 语言写的）</a></span>
+          <span class="lang" data-page-node-id="rpm31c7l">D</span>
+          <span class="stars" data-page-node-id="rpm31c7s">1240</span>
+          <span class="tag t-mod" data-page-node-id="rpm31c7t1">替代方案</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c7t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c7p"><strong>Inochi2D</strong> 的官方创作工具：一套与 Live2D 思路相同（图层+网格变形）但<strong>完全开源</strong>的方案，BSD-2-Clause / ★1240。</p>
+        <div class="analogy" data-page-node-id="rpm31c7a"><b data-page-node-id="rpm31c7ab">打个比方：</b>Live2D 是 Adobe  Photoshop（贵、闭源、行业标准）；Inochi2D 是它的<strong>免费开源远亲</strong>，文件格式不同、生态小很多，但<strong>没有授权费这回事</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm31c7w"><b data-page-node-id="rpm31c7wb">注意：</b>生态与教程量级远小于 Live2D；想接 Ren'Py 得自己写一层（没有现成模块）。</div>
+        <div class="grid2" data-page-node-id="rpm31c7g">
+          <div class="mini" data-page-node-id="rpm31c7m1"><span class="lbl" data-page-node-id="rpm31c7m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c7m1b"><div class="bar-track" data-page-node-id="rpm31c7m1t"><div class="bar-fill" style="width:68%;background:var(--make)" data-page-node-id="rpm31c7m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c7m1n">6.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c7m1v">BSD-2 授权 + 格式公开 → 想做<strong>商业发行且完全不想谈授权</strong>时，它是唯一干净的路</div></div>
+          <div class="mini" data-page-node-id="rpm31c7m2"><span class="lbl" data-page-node-id="rpm31c7m2l">实用性</span><div class="bar" data-page-node-id="rpm31c7m2b"><div class="bar-track" data-page-node-id="rpm31c7m2t"><div class="bar-fill" style="width:45%;background:var(--make)" data-page-node-id="rpm31c7m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c7m2n">4.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c7m2v">教程少、工具链窄；建议<strong>先学会 Live2D 的思路再来看它</strong>，迁移成本才看得清</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c7c">最近更新 2026-10-08 · 1240★ · BSD-2-Clause · D · 信源 [1174]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c8">
+        <div class="card-top" data-page-node-id="rpm31c8t">
+          <span class="card-name" data-page-node-id="rpm31c8mn"><a href="https://github.com/nana7chi/CubismExternalEditMCP" target="_blank" data-page-node-id="rpm31c8n">CubismExternalEditMCP（让 AI 通过 MCP 直接操作 Cubism）</a></span>
+          <span class="lang" data-page-node-id="rpm31c8l">Python</span>
+          <span class="stars" data-page-node-id="rpm31c8s">33</span>
+          <span class="tag t-make" data-page-node-id="rpm31c8t1">AI × 建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c8t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c8p">一个 <strong>MCP 服务器</strong>：把 Cubism Editor 的操作暴露给 AI 客户端，让模型能读工程结构、改参数、批量做重复操作。★33（很新）/ MIT / Python / 推送 2026-08-03。</p>
+        <div class="analogy" data-page-node-id="rpm31c8a"><b data-page-node-id="rpm31c8ab">打个比方：</b>以前让 AI 帮你做 Live2D，只能是<strong>它说你做</strong>（复制粘贴教程）；有了 MCP 是<strong>它伸手进软件里做</strong> —— 这才是「AI 建模」该有的形态。</div>
+        <div class="analogy" data-page-node-id="rpm31c8w"><b data-page-node-id="rpm31c8wb">注意：</b>⚠️ 本辑中文路有一手反例：有人问 AI 解 Live2D 的坑，AI <strong>持续编造软件里根本没有的选项</strong>（见 `M-0028`）。让 AI 操作软件前，先确认它调用的<strong>是真接口，不是想象的接口</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm31c8g">
+          <div class="mini" data-page-node-id="rpm31c8m1"><span class="lbl" data-page-node-id="rpm31c8m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c8m1b"><div class="bar-track" data-page-node-id="rpm31c8m1t"><div class="bar-fill" style="width:78%;background:var(--make)" data-page-node-id="rpm31c8m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c8m1n">7.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c8m1v">MCP 是可组合的：接上自家 Ollama 就能本地跑，不必依赖云端模型</div></div>
+          <div class="mini" data-page-node-id="rpm31c8m2"><span class="lbl" data-page-node-id="rpm31c8m2l">实用性</span><div class="bar" data-page-node-id="rpm31c8m2b"><div class="bar-track" data-page-node-id="rpm31c8m2t"><div class="bar-fill" style="width:58%;background:var(--make)" data-page-node-id="rpm31c8m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c8m2n">5.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c8m2v">★33 说明还在很早期；<strong>值得盯</strong>，但现在别押宝（且需 Cubism Pro 才能导出）</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c8c">最近推送 2026-08-03 · 33★ · MIT · Python · 信源 [1175]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c9">
+        <div class="card-top" data-page-node-id="rpm31c9t">
+          <span class="card-name" data-page-node-id="rpm31c9mn"><a href="https://github.com/jtydhr88/ComfyUI-See-through" target="_blank" data-page-node-id="rpm31c9n">ComfyUI-See-through（AI 把一张平图拆成带遮挡补全的分层）</a></span>
+          <span class="lang" data-page-node-id="rpm31c9l">Jupyter Notebook</span>
+          <span class="stars" data-page-node-id="rpm31c9s">832</span>
+          <span class="tag t-make" data-page-node-id="rpm31c9t1">AI × 建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c9t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c9p"><strong>See-through</strong>（SIGGRAPH 2026）的 ComfyUI 节点封装：输入单张插画，输出<strong>分层且补好了被遮挡部分</strong>的图层栈。★832 / 最近更新 2026-10-09。</p>
+        <div class="analogy" data-page-node-id="rpm31c9a"><b data-page-node-id="rpm31c9ab">打个比方：</b>拆图最痛苦的不是「切开」，是<strong>切开后头发后面的脸得自己补画</strong>。它补的正是这一刀 —— 这也是全自动 Live2D 流水线里唯一刚需的 AI 环节。</div>
+        <div class="grid2" data-page-node-id="rpm31c9g">
+          <div class="mini" data-page-node-id="rpm31c9m1"><span class="lbl" data-page-node-id="rpm31c9m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c9m1b"><div class="bar-track" data-page-node-id="rpm31c9m1t"><div class="bar-fill" style="width:88%;background:var(--make)" data-page-node-id="rpm31c9m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c9m1n">8.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c9m1v">ComfyUI 节点 = 可插进任意工作流；与本组 psd2live 串起来就是「平图 → 工程」</div></div>
+          <div class="mini" data-page-node-id="rpm31c9m2"><span class="lbl" data-page-node-id="rpm31c9m2l">实用性</span><div class="bar" data-page-node-id="rpm31c9m2b"><div class="bar-track" data-page-node-id="rpm31c9m2t"><div class="bar-fill" style="width:72%;background:var(--make)" data-page-node-id="rpm31c9m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c9m2n">7.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c9m2v">⚠️ 需要能跑 ComfyUI 的显卡（16GB 内存机器可以，慢）；建议先跑官方 demo 验证效果</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c9c">最近更新 2026-10-09 · 832★ · NOASSERTION · Jupyter Notebook · 信源 [1176]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c10">
+        <div class="card-top" data-page-node-id="rpm31c10t">
+          <span class="card-name" data-page-node-id="rpm31c10mn"><a href="https://github.com/TencentARC/AnimeSR" target="_blank" data-page-node-id="rpm31c10n">AnimeSR（二次元立绘超分，把小图修成大图）</a></span>
+          <span class="lang" data-page-node-id="rpm31c10l">Python</span>
+          <span class="stars" data-page-node-id="rpm31c10s">373</span>
+          <span class="tag t-make" data-page-node-id="rpm31c10t1">AI × 素材</span>
+          <span class="tag t-warn" data-page-node-id="rpm31c10t2">低频更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c10p">腾讯 ARC 的<strong>二次元图像超分</strong>：把低分辨率动漫图修复放大。★373 / 推送停在 2023-08-18。</p>
+        <div class="analogy" data-page-node-id="rpm31c10a"><b data-page-node-id="rpm31c10ab">打个比方：</b>Live2D 对纹理尺寸很敏感（免费版单张上限 2048）。素材不够大时，它是<strong>把图放大又不变糊</strong>的那一档工具。</div>
+        <div class="analogy" data-page-node-id="rpm31c10w"><b data-page-node-id="rpm31c10wb">注意：</b>推送停在 2023，属「成熟但不再更新」；对 Windows 用户环境配置有一定门槛。</div>
+        <div class="grid2" data-page-node-id="rpm31c10g">
+          <div class="mini" data-page-node-id="rpm31c10m1"><span class="lbl" data-page-node-id="rpm31c10m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c10m1b"><div class="bar-track" data-page-node-id="rpm31c10m1t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm31c10m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c10m1n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c10m1v">超分是素材管线的通用一环，不只服务 Live2D（UI、立绘、CG 都用得上）</div></div>
+          <div class="mini" data-page-node-id="rpm31c10m2"><span class="lbl" data-page-node-id="rpm31c10m2l">实用性</span><div class="bar" data-page-node-id="rpm31c10m2b"><div class="bar-track" data-page-node-id="rpm31c10m2t"><div class="bar-fill" style="width:52%;background:var(--make)" data-page-node-id="rpm31c10m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c10m2n">5.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c10m2v">非必需：<strong>画的时候就按 2048 以上画</strong>比事后超分更省事</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c10c">最近更新 2026-10-06（推送 2023-08-18）· 373★ · NOASSERTION · Python · 信源 [1177]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c11">
+        <div class="card-top" data-page-node-id="rpm31c11t">
+          <span class="card-name" data-page-node-id="rpm31c11mn"><a href="https://github.com/hacxy/l2d-widget" target="_blank" data-page-node-id="rpm31c11n">l2d-widget（一行代码把看板娘挂上网页，MIT）</a></span>
+          <span class="lang" data-page-node-id="rpm31c11l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm31c11s">639</span>
+          <span class="tag t-make" data-page-node-id="rpm31c11t1">网页挂件</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c11t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c11p">网页<strong>看板娘挂件</strong>：一个函数调用把 Live2D 模型放到页面角落，会跟随鼠标、可换装。★639 / <strong>MIT</strong> / 最近更新 2026-10-09。</p>
+        <div class="analogy" data-page-node-id="rpm31c11a"><b data-page-node-id="rpm31c11ab">打个比方：</b>同类最有名的 `stevenjoezhang/live2d-widget` 有 ★10986，但它是 <strong>GPL-3.0</strong> ——往商业站点里挂会有传染性。这条是<strong>同功能的 MIT 替代</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm31c11g">
+          <div class="mini" data-page-node-id="rpm31c11m1"><span class="lbl" data-page-node-id="rpm31c11m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c11m1b"><div class="bar-track" data-page-node-id="rpm31c11m1t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm31c11m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c11m1n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c11m1v">适合做游戏官网/itch.io 页面的角色；换模型、换对话都能改</div></div>
+          <div class="mini" data-page-node-id="rpm31c11m2"><span class="lbl" data-page-node-id="rpm31c11m2l">实用性</span><div class="bar" data-page-node-id="rpm31c11m2b"><div class="bar-track" data-page-node-id="rpm31c11m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm31c11m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c11m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c11m2v">MIT + 轻量 + 活跃 → 想给自己的游戏站加个会动的角色时<strong>首选</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c11c">最近更新 2026-10-09 · 639★ · MIT · TypeScript · 信源 [1178]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c12">
+        <div class="card-top" data-page-node-id="rpm31c12t">
+          <span class="card-name" data-page-node-id="rpm31c12mn"><a href="https://github.com/guansss/live2d-viewer-web" target="_blank" data-page-node-id="rpm31c12n">live2d-viewer-web（拖进去就能看的模型检查器）</a></span>
+          <span class="lang" data-page-node-id="rpm31c12l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm31c12s">175</span>
+          <span class="tag t-make" data-page-node-id="rpm31c12t1">工具</span>
+          <span class="tag t-warn" data-page-node-id="rpm31c12t2">低频更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c12p"><strong>网页版 Live2D 模型查看器</strong>：把模型文件拖进浏览器就能看动作、表情、参数，不用开 Cubism。★175 / MIT / 推送 2023-02-03。</p>
+        <div class="analogy" data-page-node-id="rpm31c12a"><b data-page-node-id="rpm31c12ab">打个比方：</b>它是 Live2D 界的<strong>图片查看器</strong> —— 你不会用它修图，但你会天天用它「先看看这模型对不对」。</div>
+        <div class="grid2" data-page-node-id="rpm31c12g">
+          <div class="mini" data-page-node-id="rpm31c12m1"><span class="lbl" data-page-node-id="rpm31c12m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c12m1b"><div class="bar-track" data-page-node-id="rpm31c12m1t"><div class="bar-fill" style="width:58%;background:var(--make)" data-page-node-id="rpm31c12m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c12m1n">5.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c12m1v">接模型管理/批量预览时可直接复用其渲染内核</div></div>
+          <div class="mini" data-page-node-id="rpm31c12m2"><span class="lbl" data-page-node-id="rpm31c12m2l">实用性</span><div class="bar" data-page-node-id="rpm31c12m2b"><div class="bar-track" data-page-node-id="rpm31c12m2t"><div class="bar-fill" style="width:66%;background:var(--make)" data-page-node-id="rpm31c12m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c12m2n">6.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c12m2v">零安装、MIT、够用 → <strong>建议装一个备用</strong>；⚠️ 推送停在 2023，功能已够</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c12c">最近更新 2026-09-29（推送 2023-02-03）· 175★ · MIT · TypeScript · 信源 [1179]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c13">
+        <div class="card-top" data-page-node-id="rpm31c13t">
+          <span class="card-name" data-page-node-id="rpm31c13mn"><a href="https://github.com/Perfare/UnityLive2DExtractor" target="_blank" data-page-node-id="rpm31c13n">UnityLive2DExtractor（从 Unity 游戏里提取 Live2D 资源）</a></span>
+          <span class="lang" data-page-node-id="rpm31c13l">C#</span>
+          <span class="stars" data-page-node-id="rpm31c13s">634</span>
+          <span class="tag t-mod" data-page-node-id="rpm31c13t1">逆向/资产</span>
+          <span class="tag t-warn" data-page-node-id="rpm31c13t2">低频更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c13p">从 <strong>Unity 打包好的游戏</strong>里把 Live2D 的 .moc3 / 贴图 / 动作文件<strong>还原出来</strong>的工具。★634 / MIT / 推送 2023-05-17。</p>
+        <div class="analogy" data-page-node-id="rpm31c13a"><b data-page-node-id="rpm31c13ab">打个比方：</b>跟你解包 73 款游戏是一个工种 —— 只是这次的目标换成了<strong>别人的 Live2D 模型</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm31c13w"><b data-page-node-id="rpm31c13wb">注意：</b>⚠️ <strong>只用于学习你自己有权处理的资源</strong>。提取他人作品的模型再分发，授权上是另一回事。</div>
+        <div class="grid2" data-page-node-id="rpm31c13g">
+          <div class="mini" data-page-node-id="rpm31c13m1"><span class="lbl" data-page-node-id="rpm31c13m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c13m1b"><div class="bar-track" data-page-node-id="rpm31c13m1t"><div class="bar-fill" style="width:62%;background:var(--make)" data-page-node-id="rpm31c13m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c13m1n">6.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c13m1v">作为「看别人怎么分层、怎么绑骨」的学习样本来源，价值高于工具本身</div></div>
+          <div class="mini" data-page-node-id="rpm31c13m2"><span class="lbl" data-page-node-id="rpm31c13m2l">实用性</span><div class="bar" data-page-node-id="rpm31c13m2b"><div class="bar-track" data-page-node-id="rpm31c13m2t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm31c13m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c13m2n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c13m2v">对口现有技能（解包）；⚠️ 用途边界要自己守住</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c13c">最近更新 2026-10-05（推送 2023-05-17）· 634★ · MIT · C# · 信源 [1180]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c14">
+        <div class="card-top" data-page-node-id="rpm31c14t">
+          <span class="card-name" data-page-node-id="rpm31c14mn"><a href="https://github.com/Open-LLM-VTuber/Open-LLM-VTuber" target="_blank" data-page-node-id="rpm31c14n">Open-LLM-VTuber（本地大模型 + Live2D 的 AI 虚拟主播）</a></span>
+          <span class="lang" data-page-node-id="rpm31c14l">Python</span>
+          <span class="stars" data-page-node-id="rpm31c14s">14025</span>
+          <span class="tag t-make" data-page-node-id="rpm31c14t1">AI × Live2D</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c14t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c14p"><strong>本辑 ★ 最高</strong>的一条：本地跑的 AI 虚拟主播，前端是 Live2D，后端可接<strong>本地 Ollama</strong> 等推理后端，带语音识别与合成。★14025 / Python / 最近更新 2026-10-09。</p>
+        <div class="analogy" data-page-node-id="rpm31c14a"><b data-page-node-id="rpm31c14ab">打个比方：</b>它把「本地模型 + 会动的立绘 + 能听会说」这三件事<strong>整套拼好了</strong> ——即便你不做 VTuber，这也是<strong>本地 LLM 怎么驱动一个角色</strong>的最佳现成参考。</div>
+        <div class="analogy" data-page-node-id="rpm31c14w"><b data-page-node-id="rpm31c14wb">注意：</b><strong>NOASSERTION</strong>：许可证未在 GitHub 上标明，商用前必须核实。</div>
+        <div class="grid2" data-page-node-id="rpm31c14g">
+          <div class="mini" data-page-node-id="rpm31c14m1"><span class="lbl" data-page-node-id="rpm31c14m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c14m1b"><div class="bar-track" data-page-node-id="rpm31c14m1t"><div class="bar-fill" style="width:90%;background:var(--make)" data-page-node-id="rpm31c14m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c14m1n">9.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c14m1v">前端调度、动作触发、语音流水线都可拆出来复用；与本地 Ollama 路线同构</div></div>
+          <div class="mini" data-page-node-id="rpm31c14m2"><span class="lbl" data-page-node-id="rpm31c14m2l">实用性</span><div class="bar" data-page-node-id="rpm31c14m2b"><div class="bar-track" data-page-node-id="rpm31c14m2t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm31c14m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c14m2n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c14m2v">★14025 + 活跃 + 可接本地模型 → 本辑<strong>最该先跑一遍</strong>的一条</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c14c">最近更新 2026-10-09（推送 2026-05-15）· 14025★ · NOASSERTION · Python · 信源 [1181]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm31c15">
+        <div class="card-top" data-page-node-id="rpm31c15t">
+          <span class="card-name" data-page-node-id="rpm31c15mn"><a href="https://github.com/adrianiainlam/facial-landmarks-for-cubism" target="_blank" data-page-node-id="rpm31c15n">facial-landmarks-for-cubism（用摄像头驱动 Live2D 表情）</a></span>
+          <span class="lang" data-page-node-id="rpm31c15l">C++</span>
+          <span class="stars" data-page-node-id="rpm31c15s">75</span>
+          <span class="tag t-make" data-page-node-id="rpm31c15t1">面捕</span>
+          <span class="tag t-ok" data-page-node-id="rpm31c15t2">已核实待试</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm31c15p">把<strong>摄像头人脸关键点</strong>映射成 Cubism 参数，用自己的表情驱动模型。★75 / MIT / C++。</p>
+        <div class="analogy" data-page-node-id="rpm31c15a"><b data-page-node-id="rpm31c15ab">打个比方：</b>VTube Studio 那套「你眨眼它也眨眼」的能力，拆开来看就是这个 —— 它给你的是<strong>最小可改的实现</strong>，不是黑盒软件。</div>
+        <div class="grid2" data-page-node-id="rpm31c15g">
+          <div class="mini" data-page-node-id="rpm31c15m1"><span class="lbl" data-page-node-id="rpm31c15m1l">可拓展性</span><div class="bar" data-page-node-id="rpm31c15m1b"><div class="bar-track" data-page-node-id="rpm31c15m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm31c15m1f"></div></div><span class="bar-num" data-page-node-id="rpm31c15m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c15m1v">接上以后可长出自家面捕方案；也可降级成「录音 → 口型」的轻量版</div></div>
+          <div class="mini" data-page-node-id="rpm31c15m2"><span class="lbl" data-page-node-id="rpm31c15m2l">实用性</span><div class="bar" data-page-node-id="rpm31c15m2b"><div class="bar-track" data-page-node-id="rpm31c15m2t"><div class="bar-fill" style="width:58%;background:var(--make)" data-page-node-id="rpm31c15m2f"></div></div><span class="bar-num" data-page-node-id="rpm31c15m2n">5.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm31c15m2v">★75 属小众但干净（MIT）；做 VTuber 或直播时值得挖，做单机游戏用不上</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm31c15c">最近更新 2026-07-11 · 75★ · MIT · C++ · 信源 [1182]</div>
+      </div>
+
+    </div>
+
+    <div class="group" data-page-node-id="rpm32g">
+      <div class="group-title" data-page-node-id="rpm32gt">🆕 第三十二版增补 · Live2D 深化：Python 侧工具与排错实录（16 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm32gd">第二十六辑三路调研（GitHub 32 / 中文社媒 28 / 官方与海外 26），本版取 15 项，主题 **Live2D 制作**：优先「省拆图与绑骨人力」+「接得进游戏/网页/直播的运行时」+「AI × Live2D」。所有 ★ / 许可证 / 语言 / 推送日均走 `gh api repos/<r>` 实测，主 agent 另抽 5 个复核。<strong>本辑主线：Editor 授权买的是「绑骨」，不是「渲染」——渲染用的 Core 免费</strong> ——所以票投给「绕开 Editor 也能干活」的东西：Python 读写 motion3 编动作、Python 直接跑运行时、以及官方用深度学习做「素材分け」的 PS 插件（唯一无版权风险的 AI 路径）。另一条主线是排错：Cubism 5 的 moc3 第三方库不吃、纹理集未生成、16GB 导出 OOM。</p>
+
+      <div class="card" data-page-node-id="rpm32c1">
+        <div class="card-top" data-page-node-id="rpm32c1t">
+          <span class="card-name" data-page-node-id="rpm32c1mn"><a href="https://github.com/EasyLive2D/live2d-py" target="_blank" data-page-node-id="rpm32c1n">live2d-py（把 Live2D 运行时搬进 Python：不用写前端）</a></span>
+          <span class="lang" data-page-node-id="rpm32c1l">C++</span>
+          <span class="stars" data-page-node-id="rpm32c1s">576</span>
+          <span class="tag t-make" data-page-node-id="rpm32c1t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm32c1t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c1p">用 Python 扩展直接封装 <strong>Live2D Native SDK</strong>，在 Pygame / PySide6 / GLFW 这类OpenGL 窗口里加载并驱动模型，同时支持 Cubism 2.1 与 3.0+。</p>
+        <div class="analogy" data-page-node-id="rpm32c1a"><b data-page-node-id="rpm32c1ab">打个比方：</b>上一辑给你的是「网页里显示 Live2D」的零件（要懂 JS）；这条是把同一件事<strong>装进 Python 的壳子里</strong>——你会 Python，就等于已经会用它了。</div>
+        <div class="analogy" data-page-node-id="rpm32c1w"><b data-page-node-id="rpm32c1wb">注意：</b><strong>不含 Cubism Core 与 Framework</strong>，需自己从官网下载（<strong>Core 免费</strong>）；源码编译要 C++17 + CMake 3.26 + Python 3.11+。</div>
+        <div class="grid2" data-page-node-id="rpm32c1g">
+          <div class="mini" data-page-node-id="rpm32c1m1"><span class="lbl" data-page-node-id="rpm32c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c1m1b"><div class="bar-track" data-page-node-id="rpm32c1m1t"><div class="bar-fill" style="width:90%;background:var(--make)" data-page-node-id="rpm32c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c1m1n">9.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c1m1v">接 Ollama 的最短通路：qwen3 出文本 → 自己写「情绪 → 参数名」映射 → SetParameterValue 推表情；比整套 Web 前端轻一个数量级</div></div>
+          <div class="mini" data-page-node-id="rpm32c1m2"><span class="lbl" data-page-node-id="rpm32c1m2l">实用性</span><div class="bar" data-page-node-id="rpm32c1m2b"><div class="bar-track" data-page-node-id="rpm32c1m2t"><div class="bar-fill" style="width:85%;background:var(--make)" data-page-node-id="rpm32c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c1m2n">8.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c1m2v">本辑对用户画像适配度最高的一条；2026-09-30 仍在推送 · MIT · ⚠️ 未本机编译过</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c1c">推送 2026-09-30 · 576★ · MIT · C++ · 信源 [1183]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c2">
+        <div class="card-top" data-page-node-id="rpm32c2t">
+          <span class="card-name" data-page-node-id="rpm32c2mn"><a href="https://github.com/EasyLive2D/live2d-motion3" target="_blank" data-page-node-id="rpm32c2n">live2d-motion3（不买 Cubism Editor 也能编动作）</a></span>
+          <span class="lang" data-page-node-id="rpm32c2l">Python</span>
+          <span class="stars" data-page-node-id="rpm32c2s">31</span>
+          <span class="tag t-make" data-page-node-id="rpm32c2t1">建模</span>
+          <span class="tag t-warn" data-page-node-id="rpm32c2t2">星少但有用</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c2p">纯 Python 读写 `motion3.json`，带一个 PySide6 曲线编辑器，还能用 matplotlib 把动作曲线画出来看。</p>
+        <div class="analogy" data-page-node-id="rpm32c2a"><b data-page-node-id="rpm32c2ab">打个比方：</b>Pro 授权买的是 Editor 这个<strong>整体</strong>；这个项目把其中「做动作」那一块<strong>拆成了三个 Python 脚本</strong>——你只缺做动作的话，就不必为整套买单。</div>
+        <div class="analogy" data-page-node-id="rpm32c2w"><b data-page-node-id="rpm32c2wb">注意：</b>依赖 PySide6 + live2d-py + matplotlib，Python 3.10+；项目 2026-05 后未再推送。</div>
+        <div class="grid2" data-page-node-id="rpm32c2g">
+          <div class="mini" data-page-node-id="rpm32c2m1"><span class="lbl" data-page-node-id="rpm32c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c2m1b"><div class="bar-track" data-page-node-id="rpm32c2m1t"><div class="bar-fill" style="width:88%;background:var(--make)" data-page-node-id="rpm32c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c2m1n">8.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c2m1v">与上一张卡同一作者、上下游关系：它编动作 → live2d-py 播放；四种插值段（直线/三次贝塞尔/水平）齐全</div></div>
+          <div class="mini" data-page-node-id="rpm32c2m2"><span class="lbl" data-page-node-id="rpm32c2m2l">实用性</span><div class="bar" data-page-node-id="rpm32c2m2b"><div class="bar-track" data-page-node-id="rpm32c2m2t"><div class="bar-fill" style="width:82%;background:var(--make)" data-page-node-id="rpm32c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c2m2n">8.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c2m2v"><strong>直接补上「预算有限」的最大缺口</strong>；star 低不代表价值低，⚠️ 未本机实测</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c2c">推送 2026-05-15 · 31★ · MIT · Python · 信源 [1184]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c3">
+        <div class="card-top" data-page-node-id="rpm32c3t">
+          <span class="card-name" data-page-node-id="rpm32c3mn"><a href="https://github.com/rc14193/RenpyLive2DEyeFollowDemo" target="_blank" data-page-node-id="rpm32c3n">RenpyLive2DEyeFollowDemo（Ren'Py 8 时代的眼随+点击换动作）</a></span>
+          <span class="lang" data-page-node-id="rpm32c3l">Ren'Py</span>
+          <span class="stars" data-page-node-id="rpm32c3s">4</span>
+          <span class="tag t-make" data-page-node-id="rpm32c3t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm32c3t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c3p">Ren'Py + Live2D 下让<strong>模型眼睛跟着鼠标走</strong>、点击时切换动作的演示工程。</p>
+        <div class="analogy" data-page-node-id="rpm32c3a"><b data-page-node-id="rpm32c3ab">打个比方：</b>眼睛跟随和点击反馈是视觉小说里<strong>性价比最高的两种「活起来」</strong>——不需要绑骨、不需要动捕，只要模型有这两个参数就能做。</div>
+        <div class="analogy" data-page-node-id="rpm32c3w"><b data-page-node-id="rpm32c3wb">注意：</b>只有 4 星、demo 级规模；2025-09-26 后未再推送。</div>
+        <div class="grid2" data-page-node-id="rpm32c3g">
+          <div class="mini" data-page-node-id="rpm32c3m1"><span class="lbl" data-page-node-id="rpm32c3m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c3m1b"><div class="bar-track" data-page-node-id="rpm32c3m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm32c3m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c3m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c3m1v">填上一辑 renpy-live2d（2021 停更）留下的空档，证明 Ren'Py 8 时代仍有人在做</div></div>
+          <div class="mini" data-page-node-id="rpm32c3m2"><span class="lbl" data-page-node-id="rpm32c3m2l">实用性</span><div class="bar" data-page-node-id="rpm32c3m2b"><div class="bar-track" data-page-node-id="rpm32c3m2t"><div class="bar-fill" style="width:86%;background:var(--make)" data-page-node-id="rpm32c3m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c3m2n">8.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c3m2v">许可干净（MIT）、年份新、与用户栈 100% 对口、改动量小；.rpy 可直接抄</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c3c">推送 2025-09-26 · 4★ · MIT · Ren'Py · 信源 [1185]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c4">
+        <div class="card-top" data-page-node-id="rpm32c4t">
+          <span class="card-name" data-page-node-id="rpm32c4mn"><a href="https://github.com/kojimio/RenpyLive2DTraceSample" target="_blank" data-page-node-id="rpm32c4n">RenpyLive2DTraceSample（Ren'Py ← 外部进程 的接线图）</a></span>
+          <span class="lang" data-page-node-id="rpm32c4l">Ren'Py</span>
+          <span class="stars" data-page-node-id="rpm32c4s">1</span>
+          <span class="tag t-make" data-page-node-id="rpm32c4t1">建模</span>
+          <span class="tag t-warn" data-page-node-id="rpm32c4t2">demo 级</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c4p">用 Pymouth（口型）+ OpenSeeFace（免费面捕）通过<strong>端口通信</strong>驱动 Ren'Py 里的 Live2D 模型。</p>
+        <div class="analogy" data-page-node-id="rpm32c4a"><b data-page-node-id="rpm32c4ab">打个比方：</b>与其说它是成品，不如说它是一张<strong>拓扑图</strong>：外部程序算好动作数据 → 走端口 → Ren'Py 收下。把 Ollama 塞进同一个端口协议，就是「本地 LLM 驱动立绘」。</div>
+        <div class="analogy" data-page-node-id="rpm32c4w"><b data-page-node-id="rpm32c4wb">注意：</b>1 星、2025-07 后未更新，工程规模是 demo 级；但 Apache-2.0 是同类里最宽松的。</div>
+        <div class="grid2" data-page-node-id="rpm32c4g">
+          <div class="mini" data-page-node-id="rpm32c4m1"><span class="lbl" data-page-node-id="rpm32c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c4m1b"><div class="bar-track" data-page-node-id="rpm32c4m1t"><div class="bar-fill" style="width:84%;background:var(--make)" data-page-node-id="rpm32c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c4m1n">8.4/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c4m1v">对想接 Ollama 的人，这张图比代码值钱</div></div>
+          <div class="mini" data-page-node-id="rpm32c4m2"><span class="lbl" data-page-node-id="rpm32c4m2l">实用性</span><div class="bar" data-page-node-id="rpm32c4m2b"><div class="bar-track" data-page-node-id="rpm32c4m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm32c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c4m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c4m2v">当作架构参考抄思路，不要当成品依赖</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c4c">推送 2025-07-04 · 1★ · Apache-2.0 · Ren'Py · 信源 [1186]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c5">
+        <div class="card-top" data-page-node-id="rpm32c5t">
+          <span class="card-name" data-page-node-id="rpm32c5mn"><a href="https://github.com/Kota-Ohno/seethrough-live2d-pipeline" target="_blank" data-page-node-id="rpm32c5n">seethrough-live2d-pipeline（把 AI 粗分层修到能绑骨）</a></span>
+          <span class="lang" data-page-node-id="rpm32c5l">Python</span>
+          <span class="stars" data-page-node-id="rpm32c5s">9</span>
+          <span class="tag t-make" data-page-node-id="rpm32c5t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm32c5t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c5p">把 ComfyUI-See-through 的粗糙分层输出，加工成 <strong>Cubism 能读、能绑骨的高质量分层 PSD</strong>（重投影 → 边缘细化 → 面部清理 → 写 PSD）。</p>
+        <div class="analogy" data-page-node-id="rpm32c5a"><b data-page-node-id="rpm32c5ab">打个比方：</b>上一辑的 See-through 只能把立绘<strong>撕成几片</strong>；这条负责把撕下来的片<strong>修边、排序、放大到 4096</strong>，让它真的能缝。是那半截链路的补完。</div>
+        <div class="analogy" data-page-node-id="rpm32c5w"><b data-page-node-id="rpm32c5wb">注意：</b>README 留了一条花钱买不到的硬知识：<strong>Python pytoshop 写出的 PSD 在 Cubism 里会「图层名能识别但什么都不显示」</strong>，分水岭在 header channels / layer_count / global layer mask info。作者诚实声明不保证静止 PSD 的绑骨品质。</div>
+        <div class="grid2" data-page-node-id="rpm32c5g">
+          <div class="mini" data-page-node-id="rpm32c5m1"><span class="lbl" data-page-node-id="rpm32c5m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c5m1b"><div class="bar-track" data-page-node-id="rpm32c5m1t"><div class="bar-fill" style="width:87%;background:var(--make)" data-page-node-id="rpm32c5m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c5m1n">8.7/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c5m1v">单张立绘 → 可动模型 的完整链路上唯一补齐中间三步的项目；依赖 Node + Real-ESRGAN</div></div>
+          <div class="mini" data-page-node-id="rpm32c5m2"><span class="lbl" data-page-node-id="rpm32c5m2l">实用性</span><div class="bar" data-page-node-id="rpm32c5m2b"><div class="bar-track" data-page-node-id="rpm32c5m2t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm32c5m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c5m2n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c5m2v">MIT、Python 写的、2026-09-21 仍在推送；⚠️ 未本机跑过</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c5c">推送 2026-09-21 · 9★ · MIT · Python · 信源 [1187]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c6">
+        <div class="card-top" data-page-node-id="rpm32c6t">
+          <span class="card-name" data-page-node-id="rpm32c6mn"><a href="https://github.com/erodozer/open-vt" target="_blank" data-page-node-id="rpm32c6n">open-vt（Godot 写的开源 2D VTuber 宿主）</a></span>
+          <span class="lang" data-page-node-id="rpm32c6l">GDScript</span>
+          <span class="stars" data-page-node-id="rpm32c6s">282</span>
+          <span class="tag t-make" data-page-node-id="rpm32c6t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm32c6t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c6p"><strong>Godot 写的开源 2D VTuber 软件</strong>，支持 OpenSeeFace 与 VTubeStudio（Wi-Fi TCP）两种追踪源，透明窗口便于 OBS 采集。</p>
+        <div class="analogy" data-page-node-id="rpm32c6a"><b data-page-node-id="rpm32c6ab">打个比方：</b>目标若从「VN 立绘」外扩到「能动的角色 + 录屏/直播」，这是开源侧成本最低的宿主。用 <strong>Godot 而不是 Unity</strong>——16GB 机器跑 Unity 那一套是负担。</div>
+        <div class="analogy" data-page-node-id="rpm32c6w"><b data-page-node-id="rpm32c6wb">注意：</b>README 自称追求与 VTS 的功能对等，但不含插件生态与 VNet。</div>
+        <div class="grid2" data-page-node-id="rpm32c6g">
+          <div class="mini" data-page-node-id="rpm32c6m1"><span class="lbl" data-page-node-id="rpm32c6m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c6m1b"><div class="bar-track" data-page-node-id="rpm32c6m1t"><div class="bar-fill" style="width:78%;background:var(--make)" data-page-node-id="rpm32c6m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c6m1n">7.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c6m1v">与 VTube Studio 资产兼容（VTS 与 OpenVT 可共用同一套文件），不绑定商业软件</div></div>
+          <div class="mini" data-page-node-id="rpm32c6m2"><span class="lbl" data-page-node-id="rpm32c6m2l">实用性</span><div class="bar" data-page-node-id="rpm32c6m2b"><div class="bar-track" data-page-node-id="rpm32c6m2t"><div class="bar-fill" style="width:76%;background:var(--make)" data-page-node-id="rpm32c6m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c6m2n">7.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c6m2v">MIT + 2026-09-25 仍在推送 + 支持免费面捕 OpenSeeFace；⚠️ 未本机实测</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c6c">推送 2026-09-25 · 282★ · MIT · GDScript · 信源 [1188]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c7">
+        <div class="card-top" data-page-node-id="rpm32c7t">
+          <span class="card-name" data-page-node-id="rpm32c7mn"><a href="https://adg.csdn.net/695333b95b9f5f31781bcb3f.html" target="_blank" data-page-node-id="rpm32c7n">《数字人应用技术探索（三）》—— 报错原文+解法+最终路径三者齐全</a></span>
+          <span class="lang" data-page-node-id="rpm32c7l">中文</span>
+          <span class="stars" data-page-node-id="rpm32c7s">—</span>
+          <span class="tag t-make" data-page-node-id="rpm32c7t1">建模</span>
+          <span class="tag t-warn" data-page-node-id="rpm32c7t2">排错</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c7p">作者把「装 Cubism → 打开分层 PSD → 导出 moc3 报错 → 排错 → 再导出 → 放进 Web Demo 人物不显示 → 换官方 SDK 才跑通」的<strong>完整失败链</strong>原样贴出，连 F12 控制台日志都在。</p>
+        <div class="analogy" data-page-node-id="rpm32c7a"><b data-page-node-id="rpm32c7ab">打个比方：</b>教程教你<strong>顺风时怎么走</strong>；这种帖子教的是<strong>逆风时怎么爬出来</strong>——对第一次做的人，后者省的时间是前者的十倍。</div>
+        <div class="analogy" data-page-node-id="rpm32c7w"><b data-page-node-id="rpm32c7wb">注意：</b>作者不是营销号（文里有「效果还是没出来……奇怪」这种真实语气）。注意 `blog.csdn.net` 主站被安全验证拦截，只有 `adg.csdn.net` 子域能直取。</div>
+        <div class="grid2" data-page-node-id="rpm32c7g">
+          <div class="mini" data-page-node-id="rpm32c7m1"><span class="lbl" data-page-node-id="rpm32c7m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c7m1b"><div class="bar-track" data-page-node-id="rpm32c7m1t"><div class="bar-fill" style="width:82%;background:var(--make)" data-page-node-id="rpm32c7m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c7m1n">8.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c7m1v">可抽成一张「Web 端 Live2D 三连排查表」：先看纹理集 → 再看 core 版本是否统一 → 换官方 SDK 最小闭环</div></div>
+          <div class="mini" data-page-node-id="rpm32c7m2"><span class="lbl" data-page-node-id="rpm32c7m2l">实用性</span><div class="bar" data-page-node-id="rpm32c7m2b"><div class="bar-track" data-page-node-id="rpm32c7m2t"><div class="bar-fill" style="width:88%;background:var(--make)" data-page-node-id="rpm32c7m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c7m2n">8.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c7m2v"><strong>本轮唯一一条三者齐全的中文一手排错记录</strong>，2025-06-26 发布</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c7c">CSDN · 大志哥123 · 2025-06-26 · WebFetch 全文 · 信源 [1189]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c8">
+        <div class="card-top" data-page-node-id="rpm32c8t">
+          <span class="card-name" data-page-node-id="rpm32c8mn"><a href="https://docs.aituberkit.com/zh/guide/troubleshooting" target="_blank" data-page-node-id="rpm32c8n">AITuberKit 中文排错文档（导出参数组合给得很具体）</a></span>
+          <span class="lang" data-page-node-id="rpm32c8l">中文</span>
+          <span class="stars" data-page-node-id="rpm32c8s">—</span>
+          <span class="tag t-make" data-page-node-id="rpm32c8t1">建模</span>
+          <span class="tag t-warn" data-page-node-id="rpm32c8t2">排错</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c8p">官方把「自制模型在 AITuberKit 里渲染不出来」的根因和绕法写清楚了：<strong>给任一 ArtMesh 开「生成蒙版」+ 导出时选 SDK for Web / Cubism 4.2</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm32c8a"><b data-page-node-id="rpm32c8ab">打个比方：</b>和上一张卡是<strong>同一个报错的两个独立解法</strong>（一个换 SDK、一个开蒙版），合起来就是一棵决策树：先试开蒙版（1 分钟），不行再降版本导出。</div>
+        <div class="analogy" data-page-node-id="rpm32c8w"><b data-page-node-id="rpm32c8wb">注意：</b>⚠️ 这条里最关键的一句：<strong>Cubism 5 导出的 .moc3（v4）第三方库不兼容</strong>。所以「用最新版导出」这个直觉在这件事上是错的。</div>
+        <div class="grid2" data-page-node-id="rpm32c8g">
+          <div class="mini" data-page-node-id="rpm32c8m1"><span class="lbl" data-page-node-id="rpm32c8m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c8m1b"><div class="bar-track" data-page-node-id="rpm32c8m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm32c8m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c8m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c8m1v">与官方论坛帖、Zenn 实录三方互证同一结论</div></div>
+          <div class="mini" data-page-node-id="rpm32c8m2"><span class="lbl" data-page-node-id="rpm32c8m2l">实用性</span><div class="bar" data-page-node-id="rpm32c8m2b"><div class="bar-track" data-page-node-id="rpm32c8m2t"><div class="bar-fill" style="width:90%;background:var(--make)" data-page-node-id="rpm32c8m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c8m2n">9.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c8m2v"><strong>任何人导出模型给第三方播放器/引擎前都该先看一眼</strong>，可直接抄</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c8c">AITuberKit 官方文档（中文）· 发布日期未核实 · WebFetch 全文 · 信源 [1190]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c9">
+        <div class="card-top" data-page-node-id="rpm32c9t">
+          <span class="card-name" data-page-node-id="rpm32c9mn"><a href="https://www.bilibili.com/video/BV1c4411s7NR/" target="_blank" data-page-node-id="rpm32c9n">《【live2d教程】从零开始做模型吧》25 集合集（附分好层的练手立绘）</a></span>
+          <span class="lang" data-page-node-id="rpm32c9l">中文</span>
+          <span class="stars" data-page-node-id="rpm32c9s">—</span>
+          <span class="tag t-make" data-page-node-id="rpm32c9t1">建模</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c9p">25 集完整建模视频课，简介里<strong>直接给了分好层的练手立绘网盘</strong>（提取码 gy2u）。播放 68.2 万。</p>
+        <div class="analogy" data-page-node-id="rpm32c9a"><b data-page-node-id="rpm32c9ab">打个比方：</b>学 Live2D 最卡的一步是<strong>没有能拆的图</strong>——教程再多，手里只有一张成品立绘也无从下手。这条直接把练手素材递给你。</div>
+        <div class="analogy" data-page-node-id="rpm32c9w"><b data-page-node-id="rpm32c9wb">注意：</b>⚠️ 网盘链接是 2019 年的，<strong>是否失效未核实</strong>；版本是 Cubism 3/4 时代，菜单名与 5.3 有差异，照做时要自己翻译。</div>
+        <div class="grid2" data-page-node-id="rpm32c9g">
+          <div class="mini" data-page-node-id="rpm32c9m1"><span class="lbl" data-page-node-id="rpm32c9m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c9m1b"><div class="bar-track" data-page-node-id="rpm32c9m1t"><div class="bar-fill" style="width:72%;background:var(--make)" data-page-node-id="rpm32c9m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c9m1n">7.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c9m1v">UP 主 縁の翼 的 QQ 群号与上一辑从官方社区页拿到的群号完全对上 —— 两个来源互证</div></div>
+          <div class="mini" data-page-node-id="rpm32c9m2"><span class="lbl" data-page-node-id="rpm32c9m2l">实用性</span><div class="bar" data-page-node-id="rpm32c9m2b"><div class="bar-track" data-page-node-id="rpm32c9m2t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm32c9m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c9m2n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c9m2v">25 集体量够从 0 走到能做；先解决「没素材练」这个真瓶颈</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c9c">B站 · UP 主 縁の翼 · 2019-05-25 · WebFetch 页面 · 信源 [1191]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c10">
+        <div class="card-top" data-page-node-id="rpm32c10t">
+          <span class="card-name" data-page-node-id="rpm32c10mn"><a href="https://docs.live2d.com/en/cubism-editor-manual/physical-operation-setting/" target="_blank" data-page-node-id="rpm32c10n">Live2D 官方手册：物理摆锤参数的**正名**（照妖镜）</a></span>
+          <span class="lang" data-page-node-id="rpm32c10l">官方文档</span>
+          <span class="stars" data-page-node-id="rpm32c10s">—</span>
+          <span class="tag t-make" data-page-node-id="rpm32c10t1">建模</span>
+          <span class="tag t-warn" data-page-node-id="rpm32c10t2">校正基准</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c10p">官方对四个摆锤参数给了方向性描述与经验区间：`Length`（周期）、`Ease of swinging`（摆动量，<strong>经验法则 0.7~0.99</strong>）、`Reaction time`（=1 为标准）、`Speed of convergence`（=1 为标准）。</p>
+        <div class="analogy" data-page-node-id="rpm32c10a"><b data-page-node-id="rpm32c10ab">打个比方：</b>中文圈流传的「发梢阻尼 0.3-0.5、重力 2.5-3.5」这类数字，<strong>在官方手册里根本找不到叫「阻尼」「重力」的参数</strong>——名字就不存在。</div>
+        <div class="analogy" data-page-node-id="rpm32c10w"><b data-page-node-id="rpm32c10wb">注意：</b><strong>这条最大的用途是当照妖镜</strong>：拿中文博客的数字去软件里找「阻尼」字段，会找半天找不到，因为参数名就不叫这个。上一辑那条 CSDN「避坑指南」疑似 AI 生成的判断，本轮据此进一步坐实。</div>
+        <div class="grid2" data-page-node-id="rpm32c10g">
+          <div class="mini" data-page-node-id="rpm32c10m1"><span class="lbl" data-page-node-id="rpm32c10m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c10m1b"><div class="bar-track" data-page-node-id="rpm32c10m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm32c10m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c10m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c10m1v">作为参数校正基准，可批量验伪中文圈的野数字</div></div>
+          <div class="mini" data-page-node-id="rpm32c10m2"><span class="lbl" data-page-node-id="rpm32c10m2l">实用性</span><div class="bar" data-page-node-id="rpm32c10m2b"><div class="bar-track" data-page-node-id="rpm32c10m2t"><div class="bar-fill" style="width:92%;background:var(--make)" data-page-node-id="rpm32c10m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c10m2n">9.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c10m2v"><strong>省的是「照着错误数字找半天」的时间</strong>；调物理前先看这一页</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c10c">Live2D 官方 Editor 手册（英文）· 发布日期未核实 · 搜索片段核实 · 信源 [1192]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c11">
+        <div class="card-top" data-page-node-id="rpm32c11t">
+          <span class="card-name" data-page-node-id="rpm32c11mn"><a href="https://docs.live2d.com/en/cubism-editor-manual/material-separation-ps-plugin-download/" target="_blank" data-page-node-id="rpm32c11n">官方「素材分け」Photoshop 插件（唯一无版权风险的 AI 路径）</a></span>
+          <span class="lang" data-page-node-id="rpm32c11l">官方文档</span>
+          <span class="stars" data-page-node-id="rpm32c11s">—</span>
+          <span class="tag t-make" data-page-node-id="rpm32c11t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm32c11t2">官方</span>
+          <span class="tag t-warn" data-page-node-id="rpm32c11t3">需 PRO</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c11p"><strong>Live2D 官方自己出的</strong> Photoshop 插件，用 DeepLearning 做「切抜き（Cut Out）」与「Color Fill / Transparency Fill」，专门自动化建模的前工程——也就是最费人力那段。</p>
+        <div class="analogy" data-page-node-id="rpm32c11a"><b data-page-node-id="rpm32c11ab">打个比方：</b>别的 AI 拆图方案都在用扩散模型（训练数据来源说不清）；<strong>官方这个明确声明不用扩散模型、无训练数据版权风险</strong>——等于官方替你把「这图能不能商用在作品里」这个问题答了。</div>
+        <div class="analogy" data-page-node-id="rpm32c11w"><b data-page-node-id="rpm32c11wb">注意：</b>⚠️ 需要 <strong>PRO license</strong> + Photoshop 2024/2025；官方推荐 NVIDIA 8GB 显存，CPU 也能跑（会慢）。页标注 Updated: 10/28/2025。</div>
+        <div class="grid2" data-page-node-id="rpm32c11g">
+          <div class="mini" data-page-node-id="rpm32c11m1"><span class="lbl" data-page-node-id="rpm32c11m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c11m1b"><div class="bar-track" data-page-node-id="rpm32c11m1t"><div class="bar-fill" style="width:86%;background:var(--make)" data-page-node-id="rpm32c11m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c11m1n">8.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c11m1v">官方 + 深度学习 + 无版权风险，三者交集里唯一的一条</div></div>
+          <div class="mini" data-page-node-id="rpm32c11m2"><span class="lbl" data-page-node-id="rpm32c11m2l">实用性</span><div class="bar" data-page-node-id="rpm32c11m2b"><div class="bar-track" data-page-node-id="rpm32c11m2t"><div class="bar-fill" style="width:84%;background:var(--make)" data-page-node-id="rpm32c11m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c11m2n">8.4/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c11m2v">本轮 AI 方向第二名；对「要发行、怕版权」的场景尤其关键</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c11c">Live2D 官方 Editor 手册 · Updated 2025-10-28 · WebFetch 全文 · 信源 [1193]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c12">
+        <div class="card-top" data-page-node-id="rpm32c12t">
+          <span class="card-name" data-page-node-id="rpm32c12mn"><a href="https://zenn.dev/shakebenn/articles/e9b4c797d103ed" target="_blank" data-page-node-id="rpm32c12n">Zenn 实录：一张 AI 立绘 → VTube Studio 能动的模型，实费不到 4 美元</a></span>
+          <span class="lang" data-page-node-id="rpm32c12l">日文</span>
+          <span class="stars" data-page-node-id="rpm32c12s">—</span>
+          <span class="tag t-make" data-page-node-id="rpm32c12t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm32c12t2">一手实测</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c12p">不会画画的人用 <strong>See-through + ComfyUI</strong> 把 1 张 AI 立绘做成 VTube Studio 里能动的Live2D 模型，耗时 <strong>2 天</strong>，GPU 实费 <strong>不到 4 美元</strong>；文章把 4 个搜不到的坑写成了可检索的报错文本。</p>
+        <div class="analogy" data-page-node-id="rpm32c12a"><b data-page-node-id="rpm32c12ab">打个比方：</b>别的教程给你<strong>愿景</strong>，这篇给你<strong>账单</strong>：2 天 + 4 美元 + 4 个具体报错。有账单的经验才是能拿来估自己要花多少的经验。</div>
+        <div class="analogy" data-page-node-id="rpm32c12w"><b data-page-node-id="rpm32c12wb">注意：</b>最通用的那条知识是 <strong>moc3 第 5 字节判版本</strong>（05 = SDK 5.0~5.2 / 06 = SDK 5.3）——任何人导出模型都该知道；里面还提到 Cubism 5.3 的 moc3 在 VTube Studio 上存疑。</div>
+        <div class="grid2" data-page-node-id="rpm32c12g">
+          <div class="mini" data-page-node-id="rpm32c12m1"><span class="lbl" data-page-node-id="rpm32c12m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c12m1b"><div class="bar-track" data-page-node-id="rpm32c12m1t"><div class="bar-fill" style="width:88%;background:var(--make)" data-page-node-id="rpm32c12m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c12m1n">8.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c12m1v">对「预算有限 + 16GB 本机」给了可复制的低价路径：云 GPU 花几美元，本地只跑脚本</div></div>
+          <div class="mini" data-page-node-id="rpm32c12m2"><span class="lbl" data-page-node-id="rpm32c12m2l">实用性</span><div class="bar" data-page-node-id="rpm32c12m2b"><div class="bar-track" data-page-node-id="rpm32c12m2t"><div class="bar-fill" style="width:90%;background:var(--make)" data-page-node-id="rpm32c12m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c12m2n">9.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c12m2v"><strong>本轮 AI 方向第一名</strong>；日文机翻可读，报错原文是跨语言通用的</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c12c">Zenn · shakebenn · 2026-07-08 · WebFetch 全文 · 信源 [1194]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c13">
+        <div class="card-top" data-page-node-id="rpm32c13t">
+          <span class="card-name" data-page-node-id="rpm32c13mn"><a href="https://zenn.dev/zeur/articles/7bfe5936f3b765" target="_blank" data-page-node-id="rpm32c13n">Zenn：Electron + Python + Ollama + Live2D 桌面宠物（几乎量身定做）</a></span>
+          <span class="lang" data-page-node-id="rpm32c13l">日文</span>
+          <span class="stars" data-page-node-id="rpm32c13s">—</span>
+          <span class="tag t-make" data-page-node-id="rpm32c13t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm32c13t2">一手实测</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c13p">一个<strong>离线可用</strong>的 Live2D 桌面宠物：Electron + PIXI.js 前端 / <strong>Python（FastAPI + WebSockets）后端</strong> / 语音 VOICEVOX / 对话 <strong>Google Gemini 或 Ollama</strong>。Python 端每 0.1s 广播 `lipsync`，前端 `setParameterValueById('ParamMouthOpenY', …)`。</p>
+        <div class="analogy" data-page-node-id="rpm32c13a"><b data-page-node-id="rpm32c13ab">打个比方：</b>前端只是个<strong>壳子</strong>，干活的全在 Python，Live2D 只是渲染层——「会一点 Python、不熟前端、本机跑 Ollama」的人看到这个架构会觉得很亲切。</div>
+        <div class="analogy" data-page-node-id="rpm32c13w"><b data-page-node-id="rpm32c13wb">注意：</b>目标是桌宠不是视觉小说，但<strong>「Python ↔ WebSocket ↔ Live2D 参数」这条通路可以整体搬走</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm32c13g">
+          <div class="mini" data-page-node-id="rpm32c13m1"><span class="lbl" data-page-node-id="rpm32c13m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c13m1b"><div class="bar-track" data-page-node-id="rpm32c13m1t"><div class="bar-fill" style="width:85%;background:var(--make)" data-page-node-id="rpm32c13m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c13m1n">8.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c13m1v">架构图里明写 Ollama；本地 LLM 驱动 Live2D 的现成参考实现</div></div>
+          <div class="mini" data-page-node-id="rpm32c13m2"><span class="lbl" data-page-node-id="rpm32c13m2l">实用性</span><div class="bar" data-page-node-id="rpm32c13m2b"><div class="bar-track" data-page-node-id="rpm32c13m2t"><div class="bar-fill" style="width:87%;background:var(--make)" data-page-node-id="rpm32c13m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c13m2n">8.7/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c13m2v">本轮对画像最贴合的一条工程范例；⚠️ 未本机搭建</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c13c">Zenn · Zeur · 2026-01-19 · WebFetch 全文 · 信源 [1195]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c14">
+        <div class="card-top" data-page-node-id="rpm32c14t">
+          <span class="card-name" data-page-node-id="rpm32c14mn"><a href="https://github.com/Panzer-Jack/easy-live2d" target="_blank" data-page-node-id="rpm32c14n">easy-live2d（把 Web SDK 封装成像 Pixi sprite 一样好用的轻量库）</a></span>
+          <span class="lang" data-page-node-id="rpm32c14l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm32c14s">213</span>
+          <span class="tag t-make" data-page-node-id="rpm32c14t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm32c14t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c14p">把 Live2D Web SDK 包成 Pixi.js sprite 一样好用的轻量库，README 中英双语。</p>
+        <div class="analogy" data-page-node-id="rpm32c14a"><b data-page-node-id="rpm32c14ab">打个比方：</b>上一辑的 pixi-live2d-display 是<strong>零件</strong>，这个是<strong>装好的模块</strong>——目标是「不知道前端也能用」。</div>
+        <div class="analogy" data-page-node-id="rpm32c14w"><b data-page-node-id="rpm32c14wb">注意：</b>创建 2025-04-27，比较新；生态与长期维护性待观察。</div>
+        <div class="grid2" data-page-node-id="rpm32c14g">
+          <div class="mini" data-page-node-id="rpm32c14m1"><span class="lbl" data-page-node-id="rpm32c14m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c14m1b"><div class="bar-track" data-page-node-id="rpm32c14m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm32c14m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c14m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c14m1v">若要做网页版试玩/预览页，这是 MIT + 活跃 + 有中文文档的最优候选</div></div>
+          <div class="mini" data-page-node-id="rpm32c14m2"><span class="lbl" data-page-node-id="rpm32c14m2l">实用性</span><div class="bar" data-page-node-id="rpm32c14m2b"><div class="bar-track" data-page-node-id="rpm32c14m2t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm32c14m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c14m2n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c14m2v">用户主路径是 Ren'Py，<strong>当前不需要</strong>；登记备用</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c14c">推送 2026-09-24 · 213★ · MIT · TypeScript · 信源 [1196]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c15">
+        <div class="card-top" data-page-node-id="rpm32c15t">
+          <span class="card-name" data-page-node-id="rpm32c15mn"><a href="https://community.live2d.com/discussion/comment/4259" target="_blank" data-page-node-id="rpm32c15n">官方论坛：16GB 内存用户导出 moc3 直接 OOM（帖子未结）</a></span>
+          <span class="lang" data-page-node-id="rpm32c15l">官方论坛</span>
+          <span class="stars" data-page-node-id="rpm32c15s">—</span>
+          <span class="tag t-warn" data-page-node-id="rpm32c15t1">硬风险</span>
+          <span class="tag t-make" data-page-node-id="rpm32c15t2">建模</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c15p"><strong>Windows 10 / i5-12400F / GTX1650 / 16GB RAM</strong> 的用户导出 moc3 时报 `java.lang.OutOfMemoryError: Java heap space`；官方给了 3 条排查方向，但<strong>帖子没有最终解决方案（未结帖）</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm32c15a"><b data-page-node-id="rpm32c15ab">打个比方：</b>官方推荐 8GB 就够用——<strong>那是跑编辑器的数，不是导出时的数</strong>。导出阶段可能把 16GB 吃满。这条直接回答了「我这台 16GB 够不够」。</div>
+        <div class="analogy" data-page-node-id="rpm32c15w"><b data-page-node-id="rpm32c15wb">注意：</b>⚠️ 请按「<strong>已知风险</strong>」而不是「已知解药」记：帖子未解决。可操作的预防是<strong>控制纹理集大小与 warp deformer 分割数</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm32c15g">
+          <div class="mini" data-page-node-id="rpm32c15m1"><span class="lbl" data-page-node-id="rpm32c15m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c15m1b"><div class="bar-track" data-page-node-id="rpm32c15m1t"><div class="bar-fill" style="width:68%;background:var(--make)" data-page-node-id="rpm32c15m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c15m1n">6.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c15m1v">官方自建论坛，一手；可继续追帖</div></div>
+          <div class="mini" data-page-node-id="rpm32c15m2"><span class="lbl" data-page-node-id="rpm32c15m2l">实用性</span><div class="bar" data-page-node-id="rpm32c15m2b"><div class="bar-track" data-page-node-id="rpm32c15m2t"><div class="bar-fill" style="width:88%;background:var(--make)" data-page-node-id="rpm32c15m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c15m2n">8.8/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c15m2v"><strong>本轮对用户最扎心的一条</strong>——和他机器配置几乎一致</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c15c">Live2D 官方 Creators Forum · 2025-08 · WebFetch 全文（含官方回复）· 信源 [1197]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm32c16">
+        <div class="card-top" data-page-node-id="rpm32c16t">
+          <span class="card-name" data-page-node-id="rpm32c16mn"><a href="https://docs.renpy.org/en/stable/live2d.html" target="_blank" data-page-node-id="rpm32c16n">Ren'Py 官方 Live2D Cubism 文档（**本机实测**：支持 Cubism 3/4/5）</a></span>
+          <span class="lang" data-page-node-id="rpm32c16l">官方文档</span>
+          <span class="stars" data-page-node-id="rpm32c16s">—</span>
+          <span class="tag t-make" data-page-node-id="rpm32c16t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm32c16t2">本机验证</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm32c16p">Ren'Py <strong>原生</strong>支持 Live2D，官方文档原话「Ren'Py supports Live2D animations in the Cubism 3, 4 and 5 formats」。本机 SDK 实测：`renpy/gl2/live2d.py` 与 `live2dcsm.pxi` 在，`config.gl2 = True`（`renpy/config.py:1050`），`has_live2d()` 用 try/except 优雅降级。</p>
+        <div class="analogy" data-page-node-id="rpm32c16a"><b data-page-node-id="rpm32c16ab">打个比方：</b>上一辑说「Cubism 5 的 moc3 第三方库不吃」——<strong>那是第三方库的问题</strong>，Ren'Py 用的是官方 Native SDK，<strong>5 也吃</strong>。走 Ren'Py 这条正路正好绕开第三方兼容坑。</div>
+        <div class="analogy" data-page-node-id="rpm32c16w"><b data-page-node-id="rpm32c16wb">注意：</b>⚠️ <strong>本机实测的前置条件</strong>：`lib/` 下没有 `Live2DCubismCore.dll`（`live2d.py:67` 会去找它）→ 必须先按文档把 `CubismSdkForNative-5-r.1.zip` 放进 SDK 目录，再用 launcher 的「Install Live2D Cubism SDK for Native」装一次，否则 `has_live2d()` 恒为 False。另：文档提示商用可能需要购买 Live2D 授权。</div>
+        <div class="grid2" data-page-node-id="rpm32c16g">
+          <div class="mini" data-page-node-id="rpm32c16m1"><span class="lbl" data-page-node-id="rpm32c16m1l">可拓展性</span><div class="bar" data-page-node-id="rpm32c16m1b"><div class="bar-track" data-page-node-id="rpm32c16m1t"><div class="bar-fill" style="width:92%;background:var(--make)" data-page-node-id="rpm32c16m1f"></div></div><span class="bar-num" data-page-node-id="rpm32c16m1n">9.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c16m1v">唯一一条<strong>本机验证过</strong>的入口；也是唯一能绕开第三方库版本坑的官方路径</div></div>
+          <div class="mini" data-page-node-id="rpm32c16m2"><span class="lbl" data-page-node-id="rpm32c16m2l">实用性</span><div class="bar" data-page-node-id="rpm32c16m2b"><div class="bar-track" data-page-node-id="rpm32c16m2t"><div class="bar-fill" style="width:86%;background:var(--make)" data-page-node-id="rpm32c16m2f"></div></div><span class="bar-num" data-page-node-id="rpm32c16m2n">8.6/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm32c16m2v">上轮欠账 #2 的部分闭环：可行性与前置条件已核实，真跑还差一个 .moc3 文件</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm32c16c">Ren'Py 8.5.3 SDK 本机验证 + 官方文档 · 2026-10-10 · 信源 [1198]</div>
+      </div>
+
+    </div>
+
 <section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
     <div class="sec-head" data-page-node-id="KqPcSUzx4I5yaVNTCjJjRR">
       <span class="sec-num" data-page-node-id="mCQ7flcAuePG05u4HEiQP1">3</span>
@@ -13854,7 +14419,23 @@ footer a{color:var(--text-2)}
 
       <div class="card" data-page-node-id="ePawvSNE2CZ9CMPb2loS72">
         <div class="card-top" data-page-node-id="r1UUbfHEqcaXJjOLyws4ny">
-          <span class="card-name" data-page-node-id="ZwcFBNDkNN1sC2v6kBfqvu"><a href="https://github.com/gmh5225/awesome-game-security" target="_blank" data-page-node-id="SMRCceCkoUEErC85iGf2ZW">awesome-game-security</a></span>
+          <span class="card-name" data-page-node-id="ZwcFBNDkNN1sC2v6kBfqvu"><a href="https://github.com/gmh5225/awesome-game-security" target="_blank" data-page-node-id="SMRCceCkoUEErC85iGf2ZW">awesome-game-security</a>
+      <div id="r1183" data-page-node-id="rpm32r1183">[1183] <a href="https://github.com/EasyLive2D/live2d-py" target="_blank" data-page-node-id="rpm32ra1183">EasyLive2D/live2d-py</a> — 576★ · MIT · C++ · 推送 2026-09-30 · GitHub REST API 实测</div>
+      <div id="r1184" data-page-node-id="rpm32r1184">[1184] <a href="https://github.com/EasyLive2D/live2d-motion3" target="_blank" data-page-node-id="rpm32ra1184">EasyLive2D/live2d-motion3</a> — 31★ · MIT · Python · 推送 2026-05-15 · GitHub REST API 实测</div>
+      <div id="r1185" data-page-node-id="rpm32r1185">[1185] <a href="https://github.com/rc14193/RenpyLive2DEyeFollowDemo" target="_blank" data-page-node-id="rpm32ra1185">rc14193/RenpyLive2DEyeFollowDemo</a> — 4★ · MIT · Ren'Py · 推送 2025-09-26 · GitHub REST API 实测</div>
+      <div id="r1186" data-page-node-id="rpm32r1186">[1186] <a href="https://github.com/kojimio/RenpyLive2DTraceSample" target="_blank" data-page-node-id="rpm32ra1186">kojimio/RenpyLive2DTraceSample</a> — 1★ · Apache-2.0 · Ren'Py · 推送 2025-07-04 · GitHub REST API 实测</div>
+      <div id="r1187" data-page-node-id="rpm32r1187">[1187] <a href="https://github.com/Kota-Ohno/seethrough-live2d-pipeline" target="_blank" data-page-node-id="rpm32ra1187">Kota-Ohno/seethrough-live2d-pipeline</a> — 9★ · MIT · Python · 推送 2026-09-21 · GitHub REST API 实测</div>
+      <div id="r1188" data-page-node-id="rpm32r1188">[1188] <a href="https://github.com/erodozer/open-vt" target="_blank" data-page-node-id="rpm32ra1188">erodozer/open-vt</a> — 282★ · MIT · GDScript · 推送 2026-09-25 · GitHub REST API 实测</div>
+      <div id="r1189" data-page-node-id="rpm32r1189">[1189] <a href="https://adg.csdn.net/695333b95b9f5f31781bcb3f.html" target="_blank" data-page-node-id="rpm32ra1189">CSDN《数字人应用技术探索（三）》</a> — 2025-06-26 · 大志哥123 · WebFetch 全文</div>
+      <div id="r1190" data-page-node-id="rpm32r1190">[1190] <a href="https://docs.aituberkit.com/zh/guide/troubleshooting" target="_blank" data-page-node-id="rpm32ra1190">AITuberKit 故障排除（中文）</a> — 官方中文文档 · WebFetch 全文</div>
+      <div id="r1191" data-page-node-id="rpm32r1191">[1191] <a href="https://www.bilibili.com/video/BV1c4411s7NR/" target="_blank" data-page-node-id="rpm32ra1191">B站《从零开始做模型吧》25 集合集</a> — UP 主 縁の翼 · 2019-05-25 · 播放 682,063 · WebFetch</div>
+      <div id="r1192" data-page-node-id="rpm32r1192">[1192] <a href="https://docs.live2d.com/en/cubism-editor-manual/physical-operation-setting/" target="_blank" data-page-node-id="rpm32ra1192">Live2D 官方手册 · Physical Operation Setting</a> — 官方 Editor 手册 · 搜索片段核实</div>
+      <div id="r1193" data-page-node-id="rpm32r1193">[1193] <a href="https://docs.live2d.com/en/cubism-editor-manual/material-separation-ps-plugin-download/" target="_blank" data-page-node-id="rpm32ra1193">Live2D 官方「素材分け」Photoshop 插件</a> — 官方手册 · Updated 2025-10-28 · WebFetch 全文</div>
+      <div id="r1194" data-page-node-id="rpm32r1194">[1194] <a href="https://zenn.dev/shakebenn/articles/e9b4c797d103ed" target="_blank" data-page-node-id="rpm32ra1194">Zenn · AI 一张图做可动 Live2D 全记录</a> — shakebenn · 2026-07-08 · WebFetch 全文</div>
+      <div id="r1195" data-page-node-id="rpm32r1195">[1195] <a href="https://zenn.dev/zeur/articles/7bfe5936f3b765" target="_blank" data-page-node-id="rpm32ra1195">Zenn · Electron+Python+Ollama+Live2D 桌宠</a> — Zeur · 2026-01-19 · WebFetch 全文</div>
+      <div id="r1196" data-page-node-id="rpm32r1196">[1196] <a href="https://github.com/Panzer-Jack/easy-live2d" target="_blank" data-page-node-id="rpm32ra1196">Panzer-Jack/easy-live2d</a> — 213★ · MIT · TypeScript · 推送 2026-09-24 · GitHub REST API 实测</div>
+      <div id="r1197" data-page-node-id="rpm32r1197">[1197] <a href="https://community.live2d.com/discussion/comment/4259" target="_blank" data-page-node-id="rpm32ra1197">Live2D 官方论坛 · 16GB 导出 OOM</a> — 2025-08 · 官方 staff 已回复 · 帖子未结 · WebFetch 全文</div>
+      <div id="r1198" data-page-node-id="rpm32r1198">[1198] <a href="https://docs.renpy.org/en/stable/live2d.html" target="_blank" data-page-node-id="rpm32ra1198">Ren'Py 官方文档 · Live2D Cubism</a> — Ren'Py 8.5.3 SDK 本机验证 2026-10-10</div></span>
           <span class="lang" data-page-node-id="rjVec8hS2s2AipO8f2Ex2M">—</span>
           <span class="stars" data-page-node-id="B9EWOPbaWrYgL0nCC7t6aE">3.5k</span>
           <span class="tag t-mod" data-page-node-id="B50km09NbG7EX4nbQLYIIM">索引</span>
@@ -14201,7 +14782,22 @@ footer a{color:var(--text-2)}
       </div>
       <div class="card">
         <div class="card-top">
-          <span class="card-name"><a href="https://github.com/ace-step/ACE-Step" target="_blank">ace-step/ACE-Step</a></span>
+          <span class="card-name"><a hr
+      <div id="r1168" data-page-node-id="rpm31r1168">[1168] <a href="https://github.com/tsunehimatoi/psd2live" target="_blank" data-page-node-id="rpm31ra1168">tsunehimatoi/psd2live</a> — 598★ · GPL-3.0 · Kotlin · 2026-10-09 · GitHub REST API 实测</div>
+      <div id="r1169" data-page-node-id="rpm31r1169">[1169] <a href="https://github.com/asfdfdfd/renpy-live2d" target="_blank" data-page-node-id="rpm31ra1169">asfdfdfd/renpy-live2d</a> — 89★ · NOASSERTION · C · 推送 2021-03-02 · GitHub REST API 实测</div>
+      <div id="r1170" data-page-node-id="rpm31r1170">[1170] <a href="https://github.com/Live2D/CubismWebFramework" target="_blank" data-page-node-id="rpm31ra1170">Live2D/CubismWebFramework</a> — 237★ · NOASSERTION · TypeScript · 2026-10-06 · GitHub REST API 实测</div>
+      <div id="r1171" data-page-node-id="rpm31r1171">[1171] <a href="https://github.com/Live2D/CubismUnityComponents" target="_blank" data-page-node-id="rpm31ra1171">Live2D/CubismUnityComponents</a> — 263★ · NOASSERTION · C# · 2026-09-29 · GitHub REST API 实测</div>
+      <div id="r1172" data-page-node-id="rpm31r1172">[1172] <a href="https://github.com/guansss/pixi-live2d-display" target="_blank" data-page-node-id="rpm31ra1172">guansss/pixi-live2d-display</a> — 1507★ · MIT · TypeScript · 推送 2024-08-20 · GitHub REST API 实测</div>
+      <div id="r1173" data-page-node-id="rpm31r1173">[1173] <a href="https://github.com/MizunagiKB/gd_cubism" target="_blank" data-page-node-id="rpm31ra1173">MizunagiKB/gd_cubism</a> — 301★ · NOASSERTION · C++ · 推送 2025-04-01 · GitHub REST API 实测</div>
+      <div id="r1174" data-page-node-id="rpm31r1174">[1174] <a href="https://github.com/Inochi2D/inochi-creator" target="_blank" data-page-node-id="rpm31ra1174">Inochi2D/inochi-creator</a> — 1240★ · BSD-2-Clause · D · 2026-10-08 · GitHub REST API 实测</div>
+      <div id="r1175" data-page-node-id="rpm31r1175">[1175] <a href="https://github.com/nana7chi/CubismExternalEditMCP" target="_blank" data-page-node-id="rpm31ra1175">nana7chi/CubismExternalEditMCP</a> — 33★ · MIT · Python · 推送 2026-08-03 · GitHub REST API 实测</div>
+      <div id="r1176" data-page-node-id="rpm31r1176">[1176] <a href="https://github.com/jtydhr88/ComfyUI-See-through" target="_blank" data-page-node-id="rpm31ra1176">jtydhr88/ComfyUI-See-through</a> — 832★ · NOASSERTION · Jupyter Notebook · 2026-10-09 · GitHub REST API 实测</div>
+      <div id="r1177" data-page-node-id="rpm31r1177">[1177] <a href="https://github.com/TencentARC/AnimeSR" target="_blank" data-page-node-id="rpm31ra1177">TencentARC/AnimeSR</a> — 373★ · NOASSERTION · Python · 推送 2023-08-18 · GitHub REST API 实测</div>
+      <div id="r1178" data-page-node-id="rpm31r1178">[1178] <a href="https://github.com/hacxy/l2d-widget" target="_blank" data-page-node-id="rpm31ra1178">hacxy/l2d-widget</a> — 639★ · MIT · TypeScript · 2026-10-09 · GitHub REST API 实测</div>
+      <div id="r1179" data-page-node-id="rpm31r1179">[1179] <a href="https://github.com/guansss/live2d-viewer-web" target="_blank" data-page-node-id="rpm31ra1179">guansss/live2d-viewer-web</a> — 175★ · MIT · TypeScript · 推送 2023-02-03 · GitHub REST API 实测</div>
+      <div id="r1180" data-page-node-id="rpm31r1180">[1180] <a href="https://github.com/Perfare/UnityLive2DExtractor" target="_blank" data-page-node-id="rpm31ra1180">Perfare/UnityLive2DExtractor</a> — 634★ · MIT · C# · 推送 2023-05-17 · GitHub REST API 实测</div>
+      <div id="r1181" data-page-node-id="rpm31r1181">[1181] <a href="https://github.com/Open-LLM-VTuber/Open-LLM-VTuber" target="_blank" data-page-node-id="rpm31ra1181">Open-LLM-VTuber/Open-LLM-VTuber</a> — 14025★ · NOASSERTION · Python · 2026-10-09 · GitHub REST API 实测</div>
+      <div id="r1182" data-page-node-id="rpm31r1182">[1182] <a href="https://github.com/adrianiainlam/facial-landmarks-for-cubism" target="_blank" data-page-node-id="rpm31ra1182">adrianiainlam/facial-landmarks-for-cubism</a> — 75★ · MIT · C++ · 2026-07-11 · GitHub REST API 实测</div>ef="https://github.com/ace-step/ACE-Step" target="_blank">ace-step/ACE-Step</a></span>
           <span class="lang">Python</span>
           <span class="stars">4.8k</span>
           <span class="tag t-mod">AI 音频</span>
