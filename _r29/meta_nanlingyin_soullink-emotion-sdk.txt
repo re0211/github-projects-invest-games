@@ -1,0 +1,1 @@
+nanlingyin/soullink-emotion-sdk	144	Apache-2.0	TypeScript	2026-09-30T11:07:55Z	2026-07-18T22:23:38Z	0	https://github.com/nanlingyin/soullink-emotion-sdk	A framework-agnostic real-time Live2D expression and motion SDK for desktop companions and AI characters, powered by continuous VAD emotion, FACS/AU synthesis, layered animation, and automatic model adaptation.

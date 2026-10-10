@@ -1,0 +1,1 @@
+lk2168/vtuber-pipeline	2	MIT	Python	2026-09-23T15:05:36Z	2026-09-23T14:59:25Z	0	https://github.com/lk2168/vtuber-pipeline	把一张动漫立绘自动变成能在 VTube Studio 里直播的 Live2D 模型（See-through 与 PSD2Live 之间的对接层）

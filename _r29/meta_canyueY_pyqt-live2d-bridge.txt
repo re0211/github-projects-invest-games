@@ -1,0 +1,1 @@
+canyueY/pyqt-live2d-bridge	1	MIT	Python	2026-09-19T07:07:58Z	2026-09-14T13:21:49Z	0	https://github.com/canyueY/pyqt-live2d-bridge	在 PyQt5 里渲染 Live2D Cubism 模型，并做动作 / 表情 / 情绪绑定

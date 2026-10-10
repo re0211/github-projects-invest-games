@@ -1,0 +1,1 @@
+lmmtrr/spive2d	138	MIT	JavaScript	2026-10-09T09:32:29Z	2025-04-02T09:09:18Z	4	https://github.com/lmmtrr/spive2d	A simple Spine & Live2D viewer

@@ -1,0 +1,1 @@
+aethiopicuschan/cubism-go	32	MIT	Go	2026-09-17T23:13:04Z	2024-01-04T04:33:03Z	9	https://github.com/aethiopicuschan/cubism-go	Unofficial Live2D Cubism SDK for Golang

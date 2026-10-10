@@ -1,0 +1,1 @@
+Untitled-Story/untitled-pixi-live2d-engine	78	MIT	TypeScript	2026-09-20T05:38:22Z	2026-01-23T06:06:22Z	12	https://github.com/Untitled-Story/untitled-pixi-live2d-engine	PixiJS v8 Live2D Engine | Cubism 2–5 SDK | Native Render Pipe & Lip-sync

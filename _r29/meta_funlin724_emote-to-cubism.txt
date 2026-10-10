@@ -1,0 +1,1 @@
+funlin724/emote-to-cubism	0	MIT	Python	2026-09-19T06:29:23Z	2026-09-13T14:22:50Z	0	https://github.com/funlin724/emote-to-cubism	E-mote (PSB) → Live2D Cubism conversion toolchain & format docs. No game assets, no vendor keys — bring your own files.

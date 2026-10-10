@@ -1,0 +1,1 @@
+NekoUnix/A.R.I.A	10	MIT	Rust	2026-10-05T10:58:52Z	2026-09-11T13:45:26Z	5	https://github.com/NekoUnix/A.R.I.A	Cross-platform Avatar Studio (Alpha) in Rust: Live2D, PNG/GIF, VRM and experimental GLB, shared tracking, flexible bones, lighting, visual actions and multi-avatar OBS output.

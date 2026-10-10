@@ -1,0 +1,1 @@
+Arcelyth/live-ascii	234	MIT	Rust	2026-08-29T02:29:49Z	2026-03-25T12:35:06Z	0	https://github.com/Arcelyth/live-ascii	A Live2D Cubism model renderer for terminal, support face tracking

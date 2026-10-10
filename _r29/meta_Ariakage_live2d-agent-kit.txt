@@ -1,0 +1,1 @@
+Ariakage/live2d-agent-kit	26	MIT	Python	2026-09-12T16:28:19Z	2026-09-11T14:01:12Z	0	https://github.com/Ariakage/live2d-agent-kit	Live2D creation workflow for Codex and AI agents, with PSD/PNG rigging, anime upscaling, Core/WebGL validation, and an example model for VTube Studio.

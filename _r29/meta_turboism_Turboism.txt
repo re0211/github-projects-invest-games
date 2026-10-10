@@ -1,0 +1,1 @@
+turboism/Turboism	3	AGPL-3.0	Java	2026-10-08T12:17:43Z	2026-07-07T08:08:34Z	4	https://github.com/turboism/Turboism	Turbocharge Live2D Cubism Editor with plugins, workflow enhancements, and local automation.

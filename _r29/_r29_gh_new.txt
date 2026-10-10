@@ -1,0 +1,1239 @@
+71428	binary-husky/gpt_academic	GPL-3.0	Python	2026-01-25T12:33:10Z
+	https://github.com/binary-husky/gpt_academic
+	为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。接入通义千问, deep
+50248	moeru-ai/airi	MIT	TypeScript	2026-10-10T15:03:40Z
+	https://github.com/moeru-ai/airi
+	💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's 
+48133	GitHubDaily/GitHubDaily	NOASSERTION	-	2025-12-31T18:59:20Z
+	https://github.com/GitHubDaily/GitHubDaily
+	坚持分享 GitHub 上高质量、有趣实用的开源技术教程、开发者工具、编程网站、技术资讯。A list cool, interesting projects of GitHub.
+23889	ayangweb/BongoCat	Apache-2.0	Rust	2026-10-08T15:17:53Z
+	https://github.com/ayangweb/BongoCat
+	🐱 BongoCat — A cross-platform interactive desktop pet that brings fun to your desktop!
+13397	EverMind-AI/EverOS	Apache-2.0	Python	2026-10-10T10:38:37Z
+	https://github.com/EverMind-AI/EverOS
+	One portable memory layer for every AI agent: local-first, Markdown-native, user-owned, and self-evolving across apps, tools, and workflows.
+11158	TEN-framework/ten-framework	NOASSERTION	Python	2026-10-10T03:37:46Z
+	https://github.com/TEN-framework/ten-framework
+	 Open-source framework for conversational voice AI agents
+10980	stevenjoezhang/live2d-widget	GPL-3.0	TypeScript	2026-10-10T13:23:44Z
+	https://github.com/stevenjoezhang/live2d-widget
+	把萌萌哒的看板娘抱回家 (ノ≧∇≦)ノ | Live2D widget for web platform
+7790	anbeime/skill	NOASSERTION	Python	2026-10-10T08:11:14Z
+	https://github.com/anbeime/skill
+	收录最全、更新最快的技能Skills商店：精选原创技能包（涵盖文档处理、内容创作、编程开发、机器学习、自动化工作流），全部打包好可直接安装使用！同时自动抓取GitHub上万个Skills项目，按分类、更新时间、Star数量整理。The most comprehensive and frequentl
+6362	aymericdamien/TopDeepLearning	MIT	Python	2026-07-15T02:19:53Z
+	https://github.com/aymericdamien/TopDeepLearning
+	A list of popular github projects related to deep learning
+5720	yeemachine/kalidokit	MIT	TypeScript	2025-08-18T21:10:53Z
+	https://github.com/yeemachine/kalidokit
+	Blendshape and kinematics calculator for Mediapipe/Tensorflow.js Face, Eyes, Pose, and Finger tracking models.
+5589	solstice23/argon-theme	GPL-3.0	PHP	2026-07-21T23:40:29Z
+	https://github.com/solstice23/argon-theme
+	📖 Argon - 一个轻盈、简洁的 WordPress 主题
+4858	alvinreal/awesome-opensource-ai	CC0-1.0	Python	2026-10-10T07:05:55Z
+	https://github.com/alvinreal/awesome-opensource-ai
+	Curated list of the best truly open-source AI projects, models, tools, and infrastructure. Daily updated.
+4519	shitagaki-lab/see-through	Apache-2.0	Python	2026-10-05T18:30:26Z
+	https://github.com/shitagaki-lab/see-through
+	"Single-image Layer Decomposition for Anime Characters" (SIGGRAPH 2026 Conference Paper)
+4082	QiShaoXuan/css_tricks	NOASSERTION	CSS	2023-12-05T09:46:29Z
+	https://github.com/QiShaoXuan/css_tricks
+	Some CSS tricks - 一些 CSS 常用样式
+3929	mushan0x0/AI0x0.com	NOASSERTION	-	2025-02-06T08:01:46Z
+	https://github.com/mushan0x0/AI0x0.com
+	一个多模态多模型通用型的全局全能 AI 查询生成桌面悬浮助手应用
+3785	Hypostasis-Cat/HypoMux	AGPL-3.0	Go	2026-10-10T15:50:56Z
+	https://github.com/Hypostasis-Cat/HypoMux
+	CN Windows 多网卡聚合与网络加速工具。一键融合有线、Wi-Fi、热点等连接，实现多路径传输与智能流量调度。 EN Windows multi-NIC network accelerator. Combine Ethernet, Wi-Fi, hotspots and more for mu
+3599	vladelaina/BongoCat	AGPL-3.0	C	2026-10-10T10:42:34Z
+	https://github.com/vladelaina/BongoCat
+	🩷 💘C × SDL3 × OpenGL — Three Mysterious Forces, United as One! Bong~ Bongocat!!!Don't be shy, Join Here🧸: https://discord.gg/vf8jqnattk
+3498	huangjunsen0406/py-xiaozhi	MIT	Python	2026-09-11T02:20:50Z
+	https://github.com/huangjunsen0406/py-xiaozhi
+	Open-source AI assistant ecosystem with MCP integrations, multimodal workflows, IoT support, and cross-platform voice interaction.
+3438	Eikanya/Live2d-model	NOASSERTION	Wolfram Language	2026-10-03T03:12:44Z
+	https://github.com/Eikanya/Live2d-model
+	Live2d model collection
+3322	matrixcascade/PainterEngine	MIT	C	2026-09-22T10:30:57Z
+	https://github.com/matrixcascade/PainterEngine
+	PainterEngine is a application/game engine with software renderer,PainterEngine can be transplanted to any platform that supports C
+3140	LearnGolang/LearnGolang	NOASSERTION	-	2025-04-28T04:08:47Z
+	https://github.com/LearnGolang/LearnGolang
+	《Golang学习资源大全-只有Go语言才能改变世界》Only Golang Can Change The World.
+3043	Project-N-E-K-O/N.E.K.O	Apache-2.0	Python	2026-10-10T15:44:16Z
+	https://github.com/Project-N-E-K-O/N.E.K.O
+	A catgirl who lives with you in real time — reaching out first, sharing your media, and actually getting things done, powered by an embodied emotional
+2727	heshengtao/super-agent-party	AGPL-3.0	JavaScript	2026-10-10T13:44:49Z
+	https://github.com/heshengtao/super-agent-party
+	⭐ All-in-one AI companion! Super Agent Party = Self hosted neuro sama + openclaw! ⭐ 全能AI伴侣！超级智能体派对 = 自托管neuro sama + openclaw!
+2726	akira-cn/moyu	MIT	-	2023-04-10T07:55:37Z
+	https://github.com/akira-cn/moyu
+	Github 摸鱼大全！
+2670	ChHsiching/GitHub-Chinese-Top-Charts	GPL-3.0	Java	2025-10-16T20:29:23Z
+	https://github.com/ChHsiching/GitHub-Chinese-Top-Charts
+	🇨🇳 GitHub中文排行榜，帮助你发现高分优秀中文项目。
+2425	wan-h/awesome-digital-human-live2d	MIT	TypeScript	2026-05-18T03:29:38Z
+	https://github.com/wan-h/awesome-digital-human-live2d
+	Awesome Digital Human
+2035	zenghongtu/PPet	MIT	TypeScript	2024-06-18T00:51:35Z
+	https://github.com/zenghongtu/PPet
+	👻在你的桌面放一个萌妹子，多一点乐趣😏~（支持Mac、Win和Linux）
+2020	ppy/osu-framework	MIT	C#	2026-10-09T08:36:41Z
+	https://github.com/ppy/osu-framework
+	A game framework written with osu! in mind.
+1903	LyraVoid/Mizuki	Apache-2.0	Astro	2026-10-01T08:44:10Z
+	https://github.com/LyraVoid/Mizuki
+	Next-Gen Material Design 3 Blog Theme (Astro Powered)
+1840	MuxaJlbl4/Awesome-PlayStation-Vita	NOASSERTION	Markdown	2026-09-28T12:08:54Z
+	https://github.com/MuxaJlbl4/Awesome-PlayStation-Vita
+	List of awesome stuff for PlayStation Vita
+1628	insthync/awesome-unreal	Unlicense	-	2026-10-06T20:22:40Z
+	https://github.com/insthync/awesome-unreal
+	A categorized collection of awesome opensource Unreal Engine 4 and 5 repos
+1609	TOM88812/xiaozhi-android-client	Apache-2.0	Dart	2026-09-18T05:56:21Z
+	https://github.com/TOM88812/xiaozhi-android-client
+	一个基于小智、xiaozhi-server的Android、IOS语音对话应用,支持实时语音交互和文字对话。现在是flutter版本，打通IOS、Android端。请同志们动动小手，点点小星星，予以鼓励。
+1542	RTGS2017/NagaAgent	AGPL-3.0	Python	2026-08-11T07:55:16Z
+	https://github.com/RTGS2017/NagaAgent
+	A simple yet powerful agent framework for personal assistants, designed to enable intelligent interaction, multi-agent collaboration, and seamless too
+1478	soruly/awesome-acg	CC0-1.0	-	2026-09-21T11:32:07Z
+	https://github.com/soruly/awesome-acg
+	A curated list of awesome technologies related to Anime, Comic and Games
+1467	fghrsh/live2d_demo	GPL-2.0	JavaScript	2020-05-19T12:40:41Z
+	https://github.com/fghrsh/live2d_demo
+	Live2D 看板娘插件 前端源码
+1430	Voine/ChatWaifu_Mobile	MIT	C++	2026-09-18T02:00:36Z
+	https://github.com/Voine/ChatWaifu_Mobile
+	移动版二次元 AI 老婆聊天器
+1389	morettt/my-neuro	MIT	JavaScript	2026-10-05T14:55:22Z
+	https://github.com/morettt/my-neuro
+	This project lets you create your own AI desktop companion with customizable characters and voice conversations that respond in just 1 second. Feature
+1385	jofizcd/Soul-of-Waifu	GPL-3.0	Python	2026-08-28T10:51:57Z
+	https://github.com/jofizcd/Soul-of-Waifu
+	🌌 Give a soul to your favorite characters. Soul of Waifu is a desktop roleplay & AI companion app featuring Live2D/VRM avatars, voice chat & local LLM
+1381	elevenyellow/handcrafted-persona-engine	NOASSERTION	C#	2026-05-20T13:51:14Z
+	https://github.com/elevenyellow/handcrafted-persona-engine
+	An AI-powered interactive avatar engine using Live2D, LLM, ASR, TTS, and RVC. Ideal for VTubing, streaming, and virtual assistant applications.
+1322	fghrsh/live2d_api	MIT	PHP	2024-04-09T12:19:15Z
+	https://github.com/fghrsh/live2d_api
+	Live2D 看板娘插件 后端 API
+1312	DenchiSoft/VTubeStudio	MIT	C#	2026-09-28T23:12:53Z
+	https://github.com/DenchiSoft/VTubeStudio
+	VTube Studio API Development Page
+1276	jiran214/GPT-vup	NOASSERTION	Python	2023-10-13T10:00:01Z
+	https://github.com/jiran214/GPT-vup
+	GPT-vup BIliBili | 抖音 | AI | 虚拟主播
+1266	he55/DreamScene2	MIT	C#	2025-09-04T16:39:48Z
+	https://github.com/he55/DreamScene2
+	一个小而快并且功能强大的 Windows 动态桌面软件
+1254	SerialLain3170/AwesomeAnimeResearch	NOASSERTION	-	2026-07-20T22:49:51Z
+	https://github.com/SerialLain3170/AwesomeAnimeResearch
+	Papers, repository and other data about anime or manga research. Please let me know if you have information that the list does not include.
+1213	YUANZHUO-BNU/metahuman_overview	MIT	-	2025-01-08T10:04:36Z
+	https://github.com/YUANZHUO-BNU/metahuman_overview
+	数字人资料整理
+1194	uhub/awesome-python	NOASSERTION	-	2026-09-26T12:27:36Z
+	https://github.com/uhub/awesome-python
+	A curated list of awesome Python frameworks, libraries and software.
+1156	imuncle/live2d	NOASSERTION	JavaScript	2026-01-28T13:10:23Z
+	https://github.com/imuncle/live2d
+	live2d模型收集+展示，可直接用于静态网站
+1142	xiaoyvyv/bangumi	NOASSERTION	Kotlin	2026-09-12T06:00:12Z
+	https://github.com/xiaoyvyv/bangumi
+	Bangumi for CMP - A full-featured unofficial compose-multiplatform application for the bangumi.tv
+1119	tegnike/aituber-kit	NOASSERTION	TypeScript	2026-10-04T16:02:50Z
+	https://github.com/tegnike/aituber-kit
+	A web application for chatting with AI characters that anyone can easily set up and deploy.
+1112	garylab/MakeMoneyWithAI	NOASSERTION	Python	2026-10-10T04:14:20Z
+	https://github.com/garylab/MakeMoneyWithAI
+	A list of open-source AI projects you can use to generate income easily.
+1063	galnetwen/Live2D	NOASSERTION	JavaScript	2020-09-21T07:04:01Z
+	https://github.com/galnetwen/Live2D
+	在 Web 上展示 Live2D 吧！
+1057	taofan233/azurlane_uncensored	NOASSERTION	-	2025-12-30T07:45:18Z
+	https://github.com/taofan233/azurlane_uncensored
+	碧蓝航线反和谐
+999	sedyh/awesome-ebitengine	NOASSERTION	-	2026-10-08T21:45:24Z
+	https://github.com/sedyh/awesome-ebitengine
+	A curated list of awesome Ebitengine frameworks, libraries and software 
+991	timi-liuliang/echo	MIT	C++	2026-09-16T16:36:28Z
+	https://github.com/timi-liuliang/echo
+	A New Cross-Platform 2D 3D Game Engine
+987	devanshutak25/3d-resources	CC0-1.0	JavaScript	2026-10-05T17:37:17Z
+	https://github.com/devanshutak25/3d-resources
+	Curated, CC0 reference hub for 3D, VFX, and game dev. 3,400+ tools, assets, and tutorials across 12 sections. Searchable, filterable, free.
+971	worm128/AI-YinMei	BSD-2-Clause	Python	2026-10-06T06:56:57Z
+	https://github.com/worm128/AI-YinMei
+	AI吟美-人工智能主播-Vtuber-桌宠-智能体
+963	LIlGG/halo-theme-sakura	MIT	CSS	2026-08-21T04:36:23Z
+	https://github.com/LIlGG/halo-theme-sakura
+	Halo 版本的樱花🌸主题
+963	buttplugio/awesome-buttplug	NOASSERTION	TypeScript	2026-09-29T21:54:41Z
+	https://github.com/buttplugio/awesome-buttplug
+	A list of awesome projects that use the Buttplug Sex Toy Control Library
+948	P1kaj1uu/ChattyPlay-Agent	Apache-2.0	TypeScript	2026-10-08T10:06:34Z
+	https://github.com/P1kaj1uu/ChattyPlay-Agent
+	🚀 告别多个App！本项目主要基于Python+React+TypeScript+Hono+SQLite3+Redis，打造“All in One”智能工具集。免会员播放爱奇艺、腾讯视频、优酷、抖音、B站、小红书等20+平台视频，支持4K在线解析与无水印高速下载。集成Cloudflare Turns
+933	uhub/awesome-c-sharp	NOASSERTION	-	2026-10-10T14:00:43Z
+	https://github.com/uhub/awesome-c-sharp
+	A curated list of awesome C# frameworks, libraries and software.
+926	SakuraEngine/SakuraEngine	NOASSERTION	C++	2025-10-20T17:35:40Z
+	https://github.com/SakuraEngine/SakuraEngine
+	为高性能而生的游戏运行时与工具箱
+908	DasterProkio/awesome-ai-companion	CC0-1.0	HTML	2026-10-10T11:16:15Z
+	https://github.com/DasterProkio/awesome-ai-companion
+	Open-source AI companions, desktop pets, long-term memory & proactive chat. 人机恋开源项目大全。让你的家机能够脱离官端自主存在，拥有记忆和主动性。
+899	Dreamer-Paul/Pio	GPL-2.0	JavaScript	2023-06-19T14:14:28Z
+	https://github.com/Dreamer-Paul/Pio
+	🎃 一个支持更换 Live2D 模型的 JS 插件
+892	andysingal/llm-course	MIT	Jupyter Notebook	2026-10-10T10:02:48Z
+	https://github.com/andysingal/llm-course
+	
+871	superiorlu/AITreasureBox	GPL-3.0	Ruby	2026-10-10T14:36:05Z
+	https://github.com/superiorlu/AITreasureBox
+	🤖 Automatically collected AI repos, tools, websites, papers & tutorials. 实用AI百宝箱 💎
+854	uhub/awesome-llm	NOASSERTION	-	2026-09-19T12:03:54Z
+	https://github.com/uhub/awesome-llm
+	A curated list of awesome LLM frameworks, libraries and software.
+831	cjyaddone/ChatWaifu	MIT	Python	2024-04-08T05:19:37Z
+	https://github.com/cjyaddone/ChatWaifu
+	Combined ChatGPT with Moegoe TTS to create a Chatting Waifu
+816	AlphaAvatar/AlphaAvatar	Apache-2.0	Python	2026-10-10T12:08:10Z
+	https://github.com/AlphaAvatar/AlphaAvatar
+	An Omni Real-Time Assistant for Everyone
+815	coderonion/awesome-llm-and-aigc	NOASSERTION	-	2025-08-01T16:22:21Z
+	https://github.com/coderonion/awesome-llm-and-aigc
+	🚀🚀🚀A collection of some awesome public projects about Large Language Model(LLM), Vision Language Model(VLM), Vision Language Action(VLA), AI Generated
+810	AkagawaTsurunaki/ZerolanLiveRobot	MIT	Python	2026-04-14T12:35:13Z
+	https://github.com/AkagawaTsurunaki/ZerolanLiveRobot
+	AI VTuber with LLM, ASR, TTS, OCR, CV and more technologies to live stream or play Minecraft with you.
+788	bennyxguo/hexo-theme-obsidian	MIT	JavaScript	2023-08-17T05:26:37Z
+	https://github.com/bennyxguo/hexo-theme-obsidian
+	🎨 A dark Hexo theme, it's responsive, simple but elegant.
+779	cursedcoder/awesome-pixijs	NOASSERTION	-	2023-10-08T19:58:39Z
+	https://github.com/cursedcoder/awesome-pixijs
+	My list of awesome pixi.js related parties
+764	zhangliwei7758/unity-AI-Chat-Toolkit	MIT	-	2025-07-01T03:55:11Z
+	https://github.com/zhangliwei7758/unity-AI-Chat-Toolkit
+	使用unity实现AI聊天相关功能。目前这个库包含了对chatgpt、chatglm等大语言模型的api调用的代码实现以及实现了微软Azure以及百度AI的语音服务功能，语音服务均采用web api实现，支持Windows/WebGL/Android等平台
+752	MewCo-AI/mewco_ai_assistant_comm	GPL-3.0	Python	2026-06-12T10:00:48Z
+	https://github.com/MewCo-AI/mewco_ai_assistant_comm
+	枫云AI助手社区版
+747	offercontext/offerPilot	AGPL-3.0	Python	2026-10-10T14:06:49Z
+	https://github.com/offercontext/offerPilot
+	开源、本地优先的 AI 求职与投递管理工具，支持简历管理、刷题练习、模拟面试、面试复盘、Offer 对比与谈薪指导。Open-source, local-first AI job-search workspace and application tracker with resume managem
+747	qinhua/halo-theme-joe2.0	NOASSERTION	JavaScript	2023-06-26T15:12:05Z
+	https://github.com/qinhua/halo-theme-joe2.0
+	🌈 一款 Halo 博客主题 Joe2.0
+744	JoeyBling/hexo-theme-yilia-plus	MIT	JavaScript	2022-12-09T19:24:51Z
+	https://github.com/JoeyBling/hexo-theme-yilia-plus
+	一个简洁优雅的hexo主题 A simple and elegant theme for hexo.
+743	ComfyUI-Workflow/awesome-comfyui	GPL-3.0	Python	2025-07-24T00:15:02Z
+	https://github.com/ComfyUI-Workflow/awesome-comfyui
+	A collection of awesome custom nodes for ComfyUI
+707	Navi-Studio/Virtual-Human-for-Chatting	NOASSERTION	C#	2023-11-13T15:30:58Z
+	https://github.com/Navi-Studio/Virtual-Human-for-Chatting
+	Live2D Virtual Human for Chatting based on Unity
+696	Playa-Cyrene/Cyrene-Agent	MIT	TypeScript	2026-10-09T14:38:46Z
+	https://github.com/Playa-Cyrene/Cyrene-Agent
+	一款开源、基于昔涟开发的桌面 AI 智能体/An open-source desktop AI agent based on Cyrene.
+665	wangxijie001/yoji	MIT	TypeScript	2026-08-12T17:41:32Z
+	https://github.com/wangxijie001/yoji
+	有情绪的 AI 桌面伴侣 | 隐私优先 · 语音唤醒 · 协助办公 · MCP 无限扩展 | An AI desktop companion with emotions — privacy-first, voice wake, office assistance, and MCP extensibi
+646	KdaiP/EchoBot	MIT	Python	2026-08-16T13:44:16Z
+	https://github.com/KdaiP/EchoBot
+	EchoBot: Your Anime AI Companion
+628	halo-sigs/awesome-halo	NOASSERTION	-	2026-09-07T04:45:44Z
+	https://github.com/halo-sigs/awesome-halo
+	与 Halo 相关的周边生态资源列表
+557	mmmmmm44/VTuber-Python-Unity	MIT	C#	2022-05-17T05:34:01Z
+	https://github.com/mmmmmm44/VTuber-Python-Unity
+	An Implementation of VTuber (Both 3D and Live2D) using Python and Unity. Providing face movement tracking, eye blinking detection, iris detection and 
+522	vignetteapp/vignette	NOASSERTION	C#	2023-07-28T05:25:28Z
+	https://github.com/vignetteapp/vignette
+	The open source VTuber software. ❤
+381	momori777/Artemis	NOASSERTION	Python	2026-09-30T15:09:07Z
+	https://github.com/momori777/Artemis
+	破限本地AI女友后宫，Agent+画图语音向量数据库+live2D+桌宠+酒馆角色卡导入+webchat，QQ+Telegram双通道，8G显存可跑 uncensored Fully offline AI girlfriends harem Openclaw/Claude code+Local LL
+283	v3ucn/live2d-TTS-LLM-GPT-SoVITS-Vtuber	NOASSERTION	HTML	2024-07-04T14:51:43Z
+	https://github.com/v3ucn/live2d-TTS-LLM-GPT-SoVITS-Vtuber
+	低成本的简单基于live2d TTS文字转语音和大模型聊天的直播解决方案
+262	cqzaaa/AgentPet	NOASSERTION	TypeScript	2026-10-10T08:24:21Z
+	https://github.com/cqzaaa/AgentPet
+	AgentPet 是一款基于 Electron + React打造的桌面智能 AI 助手。它拥有生动的 Live2D 动态外观与自主决策 Agent 引擎，同时支持 SSH 远程连接与Computer User，内置工具箱与 MCP 协议，AgentPet 可以完成网页搜索、代码开发、终端操作和 O
+245	CheshireMew/PuppetLoom	AGPL-3.0	TypeScript	2026-10-05T10:27:40Z
+	https://github.com/CheshireMew/PuppetLoom
+	
+238	MIO-456/Lumi_Nox	MIT	Python	2026-08-14T12:20:10Z
+	https://github.com/MIO-456/Lumi_Nox
+	Two AI VTubers co-hosting one live show — the realtime engine & orchestration. Open-core, battle-tested by a daily stream.
+234	Arcelyth/live-ascii	MIT	Rust	2026-08-29T02:29:49Z
+	https://github.com/Arcelyth/live-ascii
+	A Live2D Cubism model renderer for terminal, support face tracking
+206	AOrbitron/Eridanus	NOASSERTION	Python	2026-10-10T13:44:53Z
+	https://github.com/AOrbitron/Eridanus
+	基于 OneBot 协议的多功能bot兼开发框架。以llm function calling为核心构建了更智能的功能调用机制。支持不接入QQ纯Live2d桌宠模式
+203	YuriCrystal/ai-avatar-bot	NOASSERTION	JavaScript	2026-07-18T16:06:27Z
+	https://github.com/YuriCrystal/ai-avatar-bot
+	Live2D／VRM voice AI avatar with lip sync, knowledge base, operations dashboard, support and analytics｜可一行嵌入網站
+200	KennardWang/VTuber-MomoseHiyori	MIT	Python	2023-11-06T05:03:32Z
+	https://github.com/KennardWang/VTuber-MomoseHiyori
+	😀 Live2D VTuber, made by Unity and Cubism. This project is based on TCP socket, OpenCV and deep learning
+151	umamoorg/umamo	GPL-3.0	Kotlin	2026-10-10T10:39:13Z
+	https://github.com/umamoorg/umamo
+	Umamo is an open-source cross-platform rigging editor for 2D puppet animation, with first class pen and touch support, built as a drop-in replacement 
+144	nanlingyin/soullink-emotion-sdk	Apache-2.0	TypeScript	2026-09-30T11:07:55Z
+	https://github.com/nanlingyin/soullink-emotion-sdk
+	A framework-agnostic real-time Live2D expression and motion SDK for desktop companions and AI characters, powered by continuous VAD emotion, FACS/AU s
+138	lmmtrr/spive2d	MIT	JavaScript	2026-10-09T09:32:29Z
+	https://github.com/lmmtrr/spive2d
+	A simple Spine & Live2D viewer
+112	luomo66ccff/Amahane-Hikari-Live2D	NOASSERTION	TypeScript	2026-09-21T15:42:38Z
+	https://github.com/luomo66ccff/Amahane-Hikari-Live2D
+	AI-led Live2D creation with OpenAI Codex: MIT TypeScript/WebGL viewer, tested tools and a reusable production Skill. Character assets are separately l
+105	Xinrea/JPet	MIT	C++	2026-10-09T16:15:11Z
+	https://github.com/Xinrea/JPet
+	Live2D桌面宠物
+99	EnoxSoftware/CVVTuberExample	NOASSERTION	C#	2026-09-26T10:32:54Z
+	https://github.com/EnoxSoftware/CVVTuberExample
+	CVVTuberExample(Computer Vision Virtual YouTuber Example) is an example project of controlling 3D humanoid model ("Unity-chan!" Model) using WebCamTex
+96	MacchaPafe/D_sakiko	GPL-3.0	Python	2026-10-08T01:17:21Z
+	https://github.com/MacchaPafe/D_sakiko
+	Live2D、AI Agent 与 GPT-SoVITS：桌面 AI 数字角色
+93	luckui/HiyoriAI	MIT	TypeScript	2026-10-10T03:10:25Z
+	https://github.com/luckui/HiyoriAI
+	A desktop AI assistant with Live2D characters, powered by modern LLMs.
+86	Konata09/Live2dOnWeb	NOASSERTION	TypeScript	2022-05-26T10:35:05Z
+	https://github.com/Konata09/Live2dOnWeb
+	Add Live2D widget in your website. Support Cubism 2, 3, 4
+84	whiteeat/ai-vtuber-alpha	MIT	Python	2023-11-23T04:33:09Z
+	https://github.com/whiteeat/ai-vtuber-alpha
+	An AI VTuber framework: ChatGPT + VITS + Live2D
+81	Halyul/aklive2d	GPL-3.0	Python	2026-10-09T17:08:22Z
+	https://github.com/Halyul/aklive2d
+	A project that builds showcase webpage for Arknights Live2D-equipped operators. Showcase webpage can be used as a wallpaper.
+81	shinkuan/Waifuland	NOASSERTION	C++	2026-04-14T04:54:33Z
+	https://github.com/shinkuan/Waifuland
+	A Linux desktop Live2D model viewer that renders characters as transparent Wayland overlay windows using wlr-layer-shell.
+78	Untitled-Story/untitled-pixi-live2d-engine	MIT	TypeScript	2026-09-20T05:38:22Z
+	https://github.com/Untitled-Story/untitled-pixi-live2d-engine
+	PixiJS v8 Live2D Engine | Cubism 2–5 SDK | Native Render Pipe & Lip-sync
+76	nkjzm/VTuberKit	MIT	C#	2018-12-09T15:01:32Z
+	https://github.com/nkjzm/VTuberKit
+	Live2Dで拡張性の高いVTuber配信システムを作成するためのプロジェクトです。
+68	huisedenanhai/XLand	NOASSERTION	C#	2019-04-12T04:29:48Z
+	https://github.com/huisedenanhai/XLand
+	Live2D VTuber(Virtual YouTuber) App with extensible node graph editor
+58	Paraworks/BangDreamAi	NOASSERTION	Python	2024-05-16T17:32:46Z
+	https://github.com/Paraworks/BangDreamAi
+	适用于2代live2d的Ai vtuber 适用于本地或网页部署
+57	zwa73/UnityLive2DExtractor-Unofficial	MIT	C#	2024-08-21T17:43:45Z
+	https://github.com/zwa73/UnityLive2DExtractor-Unofficial
+	Unity Live2D Cubism 3 Extractor
+56	matsune/Cubism3-ARKit	NOASSERTION	C++	2018-08-18T11:44:22Z
+	https://github.com/matsune/Cubism3-ARKit
+	Demo app to control Cubism3(Live2D) models with ARKit face tracking
+53	DenchiSoft/Live2DFrequencyLipSync	MIT	C#	2018-08-09T15:54:08Z
+	https://github.com/DenchiSoft/Live2DFrequencyLipSync
+	Example code for frequency-based approach to lip-syncing for use with Live2D Cubism models.
+48	DeepVTuber/OpenVTuber	NOASSERTION	Ruby	2021-03-31T11:17:25Z
+	https://github.com/DeepVTuber/OpenVTuber
+	OpenVTuber - 虚拟アイドル共享计划
+47	Eatgrapes/Mocari	MIT	Rust	2026-07-13T17:20:25Z
+	https://github.com/Eatgrapes/Mocari
+	A pure Rust Live2D/Cubism runtime experiment
+47	Veykril/cubism-rs	Apache-2.0	Rust	2020-01-16T15:06:43Z
+	https://github.com/Veykril/cubism-rs
+	A rust wrapper around the Live2D Cubism SDK with extra functionality
+46	Live2D-Garage/CubismWebARSample	NOASSERTION	TypeScript	2024-05-23T07:17:13Z
+	https://github.com/Live2D-Garage/CubismWebARSample
+	Web AR sample application combining Live2D Cubism SDK and AR.js
+44	ptghb/virtual-person	NOASSERTION	TypeScript	2026-10-08T02:59:10Z
+	https://github.com/ptghb/virtual-person
+	你的AI女友“小凡”：一个基于Live2D Cubism SDK和OpenAI API的智能对话助手项目，结合了Live2D虚拟形象、实时WebSocket通信和AI对话功能。AI女友|虚拟女友|AI虚拟女友
+44	avamoe/Avalive	NOASSERTION	-	2020-03-14T17:01:20Z
+	https://github.com/avamoe/Avalive
+	😻 A avatar role-playing software developed for VTuber, VUper, anchor, video animator, etc.
+41	Himehane/live2d_on_website	GPL-2.0	JavaScript	2019-07-16T01:52:56Z
+	https://github.com/Himehane/live2d_on_website
+	一个让Live2D展现在你的网页上的Demo 使用Cubism 3, A Live2D on your website demo use Cubism 3
+40	SakuraMotion/PurismCore	MIT	C	2026-08-21T22:52:03Z
+	https://github.com/SakuraMotion/PurismCore
+	Purism Core is an open source, Live2D-compatible runtime for loading MOC3 files
+39	LeapYa/awesome-poetize-open	AGPL-3.0	Java	2026-10-09T14:17:09Z
+	https://github.com/LeapYa/awesome-poetize-open
+	POETIZE · 打造你心中最美博客的开源增强版！
+38	A8Chann/dsh-pet-live2d	NOASSERTION	JavaScript	2026-10-10T02:20:17Z
+	https://github.com/A8Chann/dsh-pet-live2d
+	DSH Web GUI 的 Live2D 桌宠插件：可拖动、跟随鼠标、跟着会话状态换动作与表情，右键面板可换装
+38	waifuai/waifu-companion	MIT-0	JavaScript	2026-10-10T10:30:45Z
+	https://github.com/waifuai/waifu-companion
+	Browser-based AI companion with Live2D characters, voice chat and long-term memory.
+36	CmST0us/Saki	NOASSERTION	C	2020-02-05T05:18:35Z
+	https://github.com/CmST0us/Saki
+	Live2D + ARKit 实现人脸面部跟踪，打造自己的Vtuber
+35	DenchiSoft/CubismDesktopExample	MIT	C#	2019-06-08T17:14:56Z
+	https://github.com/DenchiSoft/CubismDesktopExample
+	Example Unity application that renders a Live2D Cubism model directly onto your Desktop. Windows only.
+34	brianhsu/Live2DForScala	MIT	Scala	2024-06-01T09:19:58Z
+	https://github.com/brianhsu/Live2DForScala
+	Live2D Avatar Studio for Scala (JVM / Linux / Windows / MacOS)
+34	jellydreams/VTS-Fullbody-Tracking	NOASSERTION	Python	2025-03-05T03:35:15Z
+	https://github.com/jellydreams/VTS-Fullbody-Tracking
+	Full-body tracking for Live2D Vtuber, using only a camera - Plugin for VTube Studio and Nizima LIVE
+32	aethiopicuschan/cubism-go	MIT	Go	2026-09-17T23:13:04Z
+	https://github.com/aethiopicuschan/cubism-go
+	Unofficial Live2D Cubism SDK for Golang
+32	AkagawaTsurunaki/ZerolanPlayground	NOASSERTION	C#	2025-07-01T07:25:53Z
+	https://github.com/AkagawaTsurunaki/ZerolanPlayground
+	An AR virtual character display developed using the Unity engine and the Vuforia engine, compatible with the display of Cubism Live2D models.
+32	yuri-os/YuriOS	Apache-2.0	Python	2026-10-10T01:36:54Z
+	https://github.com/yuri-os/YuriOS
+	An open-source, local-friendly runtime for agentic AI companions — an always-on brain with self-editing memory. You own the model, the memory, and the
+30	cyanfish-x/dsh-live2d-pets	NOASSERTION	TypeScript	2026-09-24T07:34:26Z
+	https://github.com/cyanfish-x/dsh-live2d-pets
+	Live2D 桌宠插件 for DeepSeek Harness：Agent 状态镜像 + 互动陪伴，内置宽松许可预设模型 / Live2D pet plugin: agent state mirror + interactive companion with curated permissive-
+29	DenchiSoft/CubismViewerGems	MIT	C#	2021-03-23T19:21:20Z
+	https://github.com/DenchiSoft/CubismViewerGems
+	Some Gems for the Live2D Cubism Viewer at https://github.com/Live2D/CubismViewer
+29	gtf35/live2d_unity_sdk_chinese_document	LGPL-2.1	-	2020-12-27T13:09:12Z
+	https://github.com/gtf35/live2d_unity_sdk_chinese_document
+	🚧施工中🚧Live2D Cubism SDK for Unity 文档中文翻译
+29	NakamuraIA/HanaNakamura-VTuber-OSS	AGPL-3.0	Python	2026-08-28T15:06:17Z
+	https://github.com/NakamuraIA/HanaNakamura-VTuber-OSS
+	Uma IA VTuber que mora no seu PC. Fala, escuta, lembra — e nada sai da sua máquina.
+28	MikuAuahDark/Live2LOVE	Zlib	C++	2020-08-08T03:12:30Z
+	https://github.com/MikuAuahDark/Live2LOVE
+	LÖVE library to show Live2D Cubism models (WIP)
+28	Andersen216/dsh-whale-girl-live2d	MIT	JavaScript	2026-10-10T14:37:25Z
+	https://github.com/Andersen216/dsh-whale-girl-live2d
+	🐋 鲸鱼娘桌宠 · Whale Girl Live2D —— DSH（DeepSeek Harness）Web 界面里的 Live2D 桌宠：跟着 agent 的真实状态换表情与动作，点一下就能直接跟 agent 说话，右键是钱包。A Live2D desktop pet for the DSH W
+28	Chaoray/AzurLane-Live2D-Viewer	NOASSERTION	JavaScript	2024-05-26T02:17:22Z
+	https://github.com/Chaoray/AzurLane-Live2D-Viewer
+	Azurlan Live2d Model Viewer
+26	Ariakage/live2d-agent-kit	MIT	Python	2026-09-12T16:28:19Z
+	https://github.com/Ariakage/live2d-agent-kit
+	Live2D creation workflow for Codex and AI agents, with PSD/PNG rigging, anime upscaling, Core/WebGL validation, and an example model for VTube Studio.
+25	stkrwork/UE-Live2D	MIT	C++	2022-08-03T09:12:34Z
+	https://github.com/stkrwork/UE-Live2D
+	Unreal Engine Plugin for integrating Live2D Cubism Native SDK into Unreal Engine
+24	Untitled-Story/pixi-live2d-display-advanced	MIT	TypeScript	2026-01-23T07:40:53Z
+	https://github.com/Untitled-Story/pixi-live2d-display-advanced
+	PixiJS v7 | Live2D plugin for PixiJS with lots of amazing functions
+24	Rukafuu/LiraVtuber	MIT	Python	2026-07-09T00:39:30Z
+	https://github.com/Rukafuu/LiraVtuber
+	Desktop-first open-source AI VTuber assistant with voice, hybrid memory, Live2D, desktop tools, and multi-provider LLM/TTS support.
+23	zeikar/charivo	MIT	TypeScript	2026-10-06T10:55:00Z
+	https://github.com/zeikar/charivo
+	Interactive Live2D AI characters — modular TypeScript framework for LLM, TTS, STT, and realtime voice.
+22	Nkyoku/CubismFrameworkCS	NOASSERTION	C#	2019-05-20T10:40:14Z
+	https://github.com/Nkyoku/CubismFrameworkCS
+	Live2D Cubism 3 SDK NativeをUnityを使わず勝手にC#移植
+21	qinyonghang/Live2D-Python	Apache-2.0	C++	2025-10-31T08:21:43Z
+	https://github.com/qinyonghang/Live2D-Python
+	PyLive2D 是对 Live2D Cubism SDK 的 Python 封装，旨在为 Python 开发者提供简单易用的 Live2D 模型渲染和交互功能。
+20	FanyinLiu/Nexus	MIT	TypeScript	2026-10-03T06:48:30Z
+	https://github.com/FanyinLiu/Nexus
+	Local-first desktop AI companion. A Live2D or Portrait Puppet character stays on your desk, remembers what matters, and talks by text or voice. Electr
+19	Moebytes/live2d-renderer	MIT	TypeScript	2025-10-07T02:00:49Z
+	https://github.com/Moebytes/live2d-renderer
+	A Live2D model renderer for the web
+17	myths-labs/prometheus-avatar	MIT	TypeScript	2026-10-09T20:52:23Z
+	https://github.com/myths-labs/prometheus-avatar
+	Open-source SDK for driving Live2D & 3D avatars with LLM output. Give your AI a face.
+16	Eatgrapes/Live2D-JavaBinding	MIT	Java	2026-06-27T09:18:37Z
+	https://github.com/Eatgrapes/Live2D-JavaBinding
+	Live2D Cubism SDK JavaBindings
+16	MrSlip777/MZ_talk_live2d_cubism4	NOASSERTION	JavaScript	2023-01-25T13:24:13Z
+	https://github.com/MrSlip777/MZ_talk_live2d_cubism4
+	display live2d models for rpgmakrMZ
+16	AiLiaa/Live2DVtuber	NOASSERTION	HTML	2024-04-01T09:17:00Z
+	https://github.com/AiLiaa/Live2DVtuber
+	基于Python+Unity实现的动捕Vtuber
+15	ailidev/LoveLive2D	GPL-3.0	-	2023-10-12T17:39:39Z
+	https://github.com/ailidev/LoveLive2D
+	Unlock Live2D Cubism Pro
+15	adrianiainlam/mouse-tracker-for-cubism	MIT	C++	2026-04-02T20:14:07Z
+	https://github.com/adrianiainlam/mouse-tracker-for-cubism
+	Uses mouse cursor location and microphone input to produce Live2D Cubism SDK parameters
+15	zeikar/iki	MIT	TypeScript	2026-10-10T12:48:37Z
+	https://github.com/zeikar/iki
+	The open Live2D alternative that AI can build — a free, MIT-licensed 2D puppet engine for the web, with an open .iki format, an AI auto-rigger and a b
+15	MetaSekaiLab/nnnotes	MIT	Python	2026-10-10T05:10:26Z
+	https://github.com/MetaSekaiLab/nnnotes
+	nnnotes？！ Offline data toolkit for BanG Dream! Our Notes game files: catalogs, bundles, masterdata, stories, Live2D, audio and live charts
+14	alatnet/Lumberyard-Cubism3-Gem	AGPL-3.0	C++	2017-11-02T02:01:02Z
+	https://github.com/alatnet/Lumberyard-Cubism3-Gem
+	An Amazon Lumberyard Gem that adds in Live2D Cubism3 functionality to LyShine.
+14	wonder-light/wl-live2d	NOASSERTION	TypeScript	2025-08-21T08:39:53Z
+	https://github.com/wonder-light/wl-live2d
+	web live2d 组件
+14	ImDuck42/Live2D-Viewer	MIT	JavaScript	2026-06-17T21:06:18Z
+	https://github.com/ImDuck42/Live2D-Viewer
+	A decent attempt at making a website to view Live2D models.
+13	MrSlip777/plugins_talk_live2d_cubism4	NOASSERTION	JavaScript	2022-05-19T13:27:32Z
+	https://github.com/MrSlip777/plugins_talk_live2d_cubism4
+	display live2d model for rpgmakerMV
+13	Birch-san/arm-editor-launcher	NOASSERTION	Java	2023-03-28T00:06:53Z
+	https://github.com/Birch-san/arm-editor-launcher
+	M1 macOS Launcher for Live2D Cubism Editor
+13	ItsDoodyTime/MotionBridgerRemix	NOASSERTION	-	2026-03-02T20:16:44Z
+	https://github.com/ItsDoodyTime/MotionBridgerRemix
+	Free motion tracking bridge for PNGTubeRemix. Turn your PNG into a VTuber using webcam face, head, eye, and mouth tracking. — No Live2D or paid softwa
+13	moonrailgun/vtubeleaf	MIT	TypeScript	2026-10-10T15:45:53Z
+	https://github.com/moonrailgun/vtubeleaf
+	Local Live2D avatar tracking for meetings, powered by Tauri and MediaPipe.
+13	Wayne1145/yachiyo-claw	GPL-3.0	TypeScript	2026-10-09T11:10:26Z
+	https://github.com/Wayne1145/yachiyo-claw
+	Open-source Android AI chat, on-device agent, local models, Live2D, Skills, MCP, and Vibe Coding
+12	James2022-rgb/live2d-cubism-core-sys	MIT	Rust	2024-04-28T12:13:37Z
+	https://github.com/James2022-rgb/live2d-cubism-core-sys
+	Rust FFI bindings for Live2D® Cubism SDK Core 🦀
+12	omniwaifu/pixi-live2d5	MIT	TypeScript	2026-10-05T14:10:43Z
+	https://github.com/omniwaifu/pixi-live2d5
+	A PixiJS plugin to display Live2D Cubism 5 models.
+11	apograss/Live2D-Cubism-5.3-patch	MIT	Python	2026-04-27T10:29:06Z
+	https://github.com/apograss/Live2D-Cubism-5.3-patch
+	Live2D PRO 试用时间修复
+11	EasyLive2D/Live2DMotion3Repair	NOASSERTION	Python	2023-09-02T09:26:05Z
+	https://github.com/EasyLive2D/Live2DMotion3Repair
+	Live2D motion3 文件修复
+11	Yancheng-s/mate-human	MulanPSL-2.0	Python	2026-03-09T13:18:13Z
+	https://github.com/Yancheng-s/mate-human
+	Mate Human 是一个将 Live2D Cubism 5 Web SDK 与 Fay 数字人 AI 框架深度集成的开源项目。通过本项目，您可以快速构建具有实时语音交互、动作表情驱动、AI 智能对话能力的 Web 数字人应用。
+11	leeyj/aegis_avata	NOASSERTION	Python	2026-03-16T02:28:16Z
+	https://github.com/leeyj/aegis_avata
+	"AEGIS: Next-gen AI Intelligence Dashboard featuring interactive Live2D avatars, Google Gemini-driven briefings, and seamless Notion integration. Buil
+11	gaetan-warin/AI-VTUBER-Twitch-Chat-Bot	MIT	Python	2026-02-08T21:24:45Z
+	https://github.com/gaetan-warin/AI-VTUBER-Twitch-Chat-Bot
+	This project implements a simple AI chatbot that interacts with Twitch chat, using a Live2D avatar to animate and speak in response to user input.
+11	sammwyy/UmiVR	NOASSERTION	ShaderLab	2023-02-26T04:55:34Z
+	https://github.com/sammwyy/UmiVR
+	Open-source VTuber software (Supports Live2D, PNGTuber)
+11	Bro77XP/Beginner-Friendly-Ai-Vtuber	NOASSERTION	Python	2026-08-06T07:24:32Z
+	https://github.com/Bro77XP/Beginner-Friendly-Ai-Vtuber
+	THE EASIEST AI VTUBER TO SETUP KNOWN TO MAN.
+11	CocoRoF/Geny	Apache-2.0	Python	2026-10-01T13:20:46Z
+	https://github.com/CocoRoF/Geny
+	Self-hosted AI agents with a face, a voice and a memory: web, desktop (avatar overlay) and phone apps on one 21-stage pipeline.
+10	lunetis/Live2D-Demo	NOASSERTION	C#	2018-02-23T09:25:57Z
+	https://github.com/lunetis/Live2D-Demo
+	Cubism SDK 3 for Unity Demo
+10	orowith2os/live2dcubismonlinux	NOASSERTION	-	2022-05-29T04:18:11Z
+	https://github.com/orowith2os/live2dcubismonlinux
+	Instructions for running Live2D Cubism on Linux
+10	organics2016/pymouth	MIT	Python	2026-02-09T12:41:03Z
+	https://github.com/organics2016/pymouth
+	Live2D lip sync library based on Python
+10	TamKungZ/VLiva	NOASSERTION	C++	2026-09-23T03:45:04Z
+	https://github.com/TamKungZ/VLiva
+	VLiva - VTuber for Linux, Is a program that can run Vtuber models created with Live2D (Closed-source)
+10	NekoUnix/A.R.I.A	MIT	Rust	2026-10-05T10:58:52Z
+	https://github.com/NekoUnix/A.R.I.A
+	Cross-platform Avatar Studio (Alpha) in Rust: Live2D, PNG/GIF, VRM and experimental GLB, shared tracking, flexible bones, lighting, visual actions and
+10	mw2wbyys6t-sudo/live2d-auto-pipeline	Apache-2.0	Python	2026-10-10T12:22:07Z
+	https://github.com/mw2wbyys6t-sudo/live2d-auto-pipeline
+	本项目聚焦 Live2D 全流程自动化制作，旨在实现从素材到可部署运行的 Live2D 模型的全自动生成。    This project focuses on end‑to‑end automated production for Live2D, aiming to fully automate 
+9	RuolinZheng08/heroku-live2d	NOASSERTION	HTML	2021-01-06T04:57:08Z
+	https://github.com/RuolinZheng08/heroku-live2d
+	A tutorial on deploying Cubism's Live2D SDK samples to Heroku
+9	maruseu/openVTuber	NOASSERTION	C++	2020-12-31T22:46:12Z
+	https://github.com/maruseu/openVTuber
+	open source face tracking software for Live2D models
+9	Niama7878/AI_Vtuber_2.0	MIT	Python	2025-04-22T07:14:29Z
+	https://github.com/Niama7878/AI_Vtuber_2.0
+	OpenAI Realtime API 实现实时语音交互，根据对话情绪分析结果控制 VTube Studio Live2D 模型的动作与表情。可选集成 Bilibili/YouTube 直播弹幕作为输入源，并通过独立的 Pygame 窗口实时显示 AI 回复文本。包含 Flask Web 界面用于状
+9	samashaw5861/2d-vtuber-vtube-studio-setup-toolkit	NOASSERTION	-	2026-09-16T13:44:07Z
+	https://github.com/samashaw5861/2d-vtuber-vtube-studio-setup-toolkit
+	2D VTuber & VTube Studio setup toolkit for Live2D avatars, face tracking, expressions, hotkeys, OBS scenes and streaming configuration.
+9	2hjaito/next-live2d	NOASSERTION	TypeScript	2026-09-03T04:46:54Z
+	https://github.com/2hjaito/next-live2d
+	Tích hợp nhân vật hoạt hình Live2D tương tác vào ứng dụng Next.js. Phù hợp cho trợ lý ảo, linh vật anime hoặc giao diện tương tác nhẹ cho website.
+9	MuBai-He/ChatWaifu-NEXT	NOASSERTION	Python	2026-10-09T01:51:25Z
+	https://github.com/MuBai-He/ChatWaifu-NEXT
+	Local-first realtime AI character runtime with voice, Live2D, memory, and Runtime Skills
+9	SherlockYzz/anime-desktop-pet	MIT	JavaScript	2026-10-06T11:22:18Z
+	https://github.com/SherlockYzz/anime-desktop-pet
+	AI Desktop Pet - Live2D desktop pet with multiple anime characters
+9	linyuchao123/digital-human-companion	NOASSERTION	Python	2026-09-30T08:31:05Z
+	https://github.com/linyuchao123/digital-human-companion
+	数字心屿｜AI 情绪陪伴数字人      一款多模态大模型驱动的智能情感陪护数字人系统。基于FunASR+MediaPipe+Qwen2.5-14B+CosyVoice+Live2D，实现语音识别~情感对话~数字人实时驱动。支持自然语音与文字对话、Live2D 表情互动、心理学知识检索和用户可控的长
+8	CVIndomitable/illust2psd	MIT	Python	2026-03-29T03:28:19Z
+	https://github.com/CVIndomitable/illust2psd
+	将动漫/游戏角色立绘自动转换为 Live2D Cubism Editor 可用的多图层 PSD 文件。开发中
+8	topshopifydev/Anime-Website	MIT	JavaScript	2026-07-13T19:52:13Z
+	https://github.com/topshopifydev/Anime-Website
+	🌸 A real Live2D anime character (Haru) in the browser — she follows your cursor, blinks & reacts. High-performance, SEO-optimized & multi-language (7 
+8	michaelchang-jpg/ff14-ai-companion	MIT	Python	2026-05-15T15:42:13Z
+	https://github.com/michaelchang-jpg/ff14-ai-companion
+	Live2D AI companion for FFXIV — reacts to combat, cutscenes & exploration with voice (VOICEVOX) and subtitles via Dalamud + Open-LLM-VTuber
+8	Tacky7788/Project-elino	MIT	TypeScript	2026-03-23T12:27:51Z
+	https://github.com/Tacky7788/Project-elino
+	AI-powered desktop companion with Live2D/VRM characters
+8	lulu930128/desktop-agent-runtime	Apache-2.0	Python	2026-09-13T13:01:14Z
+	https://github.com/lulu930128/desktop-agent-runtime
+	Local-first desktop AI companion runtime integrating launcher, Open-LLM-VTuber, GPT-SoVITS, Live2D, memory, tools, and project prompts.
+8	yigefw245/codex-live2d	NOASSERTION	Python	2026-10-10T14:59:52Z
+	https://github.com/yigefw245/codex-live2d
+	一个基于 Live2D 模型的透明桌面宠物：实时渲染、眼神跟随鼠标，并且能感知 Codex 的运行状态自动切换动作和表情；还内置了角色聊天模式，可以像朋友一样和角色对话。内置 yumi 模型，支持随时切换或导入其他 Live2D 模型。
+8	TianMengLucky/BongoCat-X	AGPL-3.0	C	2026-10-10T14:43:48Z
+	https://github.com/TianMengLucky/BongoCat-X
+	🐱 Forked from vladelaina/BongoCat (X branch) — C × SDL3 × OpenGL cross-platform desktop pet. (fork 自 vladelaina/BongoCat 的 X 分支，C × SDL3 × OpenGL 跨平台桌
+8	moonheart/mementomori-models	NOASSERTION	-	2023-11-21T14:43:33Z
+	https://github.com/moonheart/mementomori-models
+	MementoMori Live2d Models with online viewer
+8	NyarchLinux/live2d-lipsync-viewer	GPL-3.0	JavaScript	2026-08-20T10:37:47Z
+	https://github.com/NyarchLinux/live2d-lipsync-viewer
+	View Live2D Models with lipsync in browser
+8	xm2284/neuromate	MIT	JavaScript	2026-10-05T16:38:00Z
+	https://github.com/xm2284/neuromate
+	元知己 Neuromate：校园 AI 情绪陪伴应用（V1.6 完整整合版）。8 个数字人形象、装扮、语音、心情系统、API 配置与本地 Agent 接口完整整合，支持本地演示与断网体验。HTML/CSS/JS + Live2D + Three.js/VRM。
+7	suppayami/pixijs-live2d	MIT	TypeScript	2023-03-05T08:00:38Z
+	https://github.com/suppayami/pixijs-live2d
+	PIXI.js 5 + Live2D Cubism 4
+7	Maboroshinatsu/maibot-deskpet-plugin	GPL-3.0	TypeScript	2026-08-07T18:40:32Z
+	https://github.com/Maboroshinatsu/maibot-deskpet-plugin
+	基于 Electron + Vue3 + PixiJS + Live2D Cubism 4 的 MaiBot 桌面宠物插件，为 MaiBot 提供可交互的 Live2D 角色桌面伴侣。
+7	Yuuzulight/Mana	Apache-2.0	JavaScript	2026-10-10T09:00:00Z
+	https://github.com/Yuuzulight/Mana
+	Local-first AI companion for Windows with a Live2D avatar: local speech transcription, local LLM replies, local TTS, and screen awareness.
+7	namv22/GFL-Live2D-Viewer	NOASSERTION	Smalltalk	2019-11-09T15:56:29Z
+	https://github.com/namv22/GFL-Live2D-Viewer
+	A general viewer for the Live2D models of mobile game Girls Frontline
+7	RevStudio/Rev2D	MIT	TypeScript	2026-10-06T15:52:41Z
+	https://github.com/RevStudio/Rev2D
+	Live2D/Spine-style 2D rigging & animation, built for AI agents. A rig is one JSON file; a deterministic headless renderer, a CLI and an MCP server (16
+7	Nav-Joe/Xue_CyberNeko	MIT	TypeScript	2026-09-27T10:37:34Z
+	https://github.com/Nav-Joe/Xue_CyberNeko
+	A Live2D AI Neko
+6	fanyuecheng/Live2d-iOS	Apache-2.0	C++	2023-06-26T03:36:17Z
+	https://github.com/fanyuecheng/Live2d-iOS
+	Live2D Cubism SDK Demo Metal 实现的整理
+6	seanyang1983/omnilimb-face	AGPL-3.0	Python	2026-06-13T23:46:01Z
+	https://github.com/seanyang1983/omnilimb-face
+	hermes-agent plugin: a VTuber avatar (Live2D/Live3D) with hands-free voice (VAD+STT), real-time barge-in, lip-sync and expressions. Open-LLM-VTuber /c
+6	AuthourAkson/Live2D_Desktop_AI_Vtuber	MIT	JavaScript	2026-05-06T16:51:52Z
+	https://github.com/AuthourAkson/Live2D_Desktop_AI_Vtuber
+	
+6	flam-ing/vtuber-lab	NOASSERTION	JavaScript	2026-07-30T04:37:01Z
+	https://github.com/flam-ing/vtuber-lab
+	🎛️ Live2D 파츠 조립 파이프라인 및 웹캠 기반 PNGTuber 트래킹 시스템 — VTuber 아바타 제어 웹애플리케이션.
+6	KKLL2025/AILiveVTuber-Stage	MIT	Python	2026-08-05T11:35:05Z
+	https://github.com/KKLL2025/AILiveVTuber-Stage
+	A local Live2D AI streamer stage with LLM replies, TTS, memory, danmaku UI, and a custom broadcast scene.
+6	lshhhhhhh/OpenMeido	GPL-3.0	TypeScript	2026-09-27T10:38:21Z
+	https://github.com/lshhhhhhh/OpenMeido
+	Desktop AI companion with Live2D, layered memory, multi-backend, TTS, proactive observer
+5	Nya-Nya-Hoshino/minto-desktop-assistant	Apache-2.0	Python	2026-10-10T11:09:18Z
+	https://github.com/Nya-Nya-Hoshino/minto-desktop-assistant
+	Japanese-speaking Live2D desktop AI assistant / 日本語で話す Live2D デスクトップ AI アシスタント
+5	efficiencyx/JunOS	Apache-2.0	JavaScript	2026-10-09T21:52:57Z
+	https://github.com/efficiencyx/JunOS
+	JunOS is an unofficial, self-hosted AI companion that lets you talk to Jun from !Ω Factorial Omega: My Dystopian Robot Girlfriend (MDRG). It runs as a
+5	xingyichen069-ctrl/AIPet	NOASSERTION	Python	2026-10-08T14:15:35Z
+	https://github.com/xingyichen069-ctrl/AIPet
+	一个简单的AI桌宠，可以进行个性化设定，并配备了QQ端操作方法内容，目前仍在进行功能补充与完善。桌宠演示内容为桃濑日和live2D
+5	haixu8396-png/aileen-desktop	NOASSERTION	JavaScript	2026-10-06T17:10:37Z
+	https://github.com/haixu8396-png/aileen-desktop
+	AILEEN is a Windows desktop AI assistant and agent: a Live2D character, multi-provider LLM chat, long-term memory and a local knowledge base, tool cal
+4	MakeRedundant/Live2D_demo	MIT	TypeScript	2024-01-15T14:12:28Z
+	https://github.com/MakeRedundant/Live2D_demo
+	This is my first project using Live2D Models based on Cubism SDK 2.1 and Cubism SDK 4, which supports all live2d model including model3
+4	nslogmeng/swift-cubism	MIT	C++	2025-09-28T08:24:45Z
+	https://github.com/nslogmeng/swift-cubism
+	Live2D Native SDK for Swift wrapper, use Metal render.
+4	MikuAuahDark/lua-live2d-framework	NOASSERTION	Lua	2020-07-28T16:05:18Z
+	https://github.com/MikuAuahDark/lua-live2d-framework
+	(WIP) Live2D Cubism 3 Native Framework, but in Lua.
+4	Ludentes/py-moc3	MIT	Python	2026-04-08T01:00:42Z
+	https://github.com/Ludentes/py-moc3
+	Python reader/writer for Live2D Cubism .moc3 binary files
+4	ankesu/dsh-live2d-pet	NOASSERTION	JavaScript	2026-09-03T04:53:41Z
+	https://github.com/ankesu/dsh-live2d-pet
+	Live2D companion for DeepSeek Harness: render a Cubism model in the Web UI with state-driven expressions and mouse tracking. · DSH 桌宠的 Live2D 渲染插件
+4	s1fx/UnityLive2DCubismPoser	MIT	C#	2023-11-28T00:00:49Z
+	https://github.com/s1fx/UnityLive2DCubismPoser
+	With this plugin you can easily create animation keyframes for a Live2D model inside Unity Animation window and play animation in edit mode.
+4	soiwm/astrbot_plugin_vtuber	NOASSERTION	Python	2026-04-07T10:25:45Z
+	https://github.com/soiwm/astrbot_plugin_vtuber
+	AstrBot VTuber 虚拟形象插件，支持 Live2D 模型显示、表情系统、TTS 语音合成、口型同步
+4	dungnotnull/hd-open-llm-vtuber-enhanced	MIT	Python	2026-07-06T08:47:30Z
+	https://github.com/dungnotnull/hd-open-llm-vtuber-enhanced
+	🎙️🔮 Enhanced Open-LLM-VTuber | Production-grade real-time multimedia & speech AI agent. Synthesizes emotion-aware Live2D expressions while autonomousl
+4	flowingduskpro/jpg-to-live2d-workflow	MIT	Python	2026-09-14T12:41:33Z
+	https://github.com/flowingduskpro/jpg-to-live2d-workflow
+	从单张 JPG 插画到可驱动的 Live2D 模型：See-Through 拆层 → 分层 PSD → psd2live 自动绑定 → moc3 → VTube Studio。含 8GB 显存上的实测性能与精度结论。
+4	Error403xa/Airi-Miside	MIT	TypeScript	2026-08-21T09:22:10Z
+	https://github.com/Error403xa/Airi-Miside
+	Ai米塔
+4	fswolf/luna-local-agent	MIT	Python	2026-10-10T15:53:50Z
+	https://github.com/fswolf/luna-local-agent
+	A fully local, private AI voice companion you can see inside: Whisper speech in, Kokoro voice out, memory, tools, plugins and moods, plus a live view 
+4	nora3233/Free-LLM	NOASSERTION	Python	2026-10-10T07:24:01Z
+	https://github.com/nora3233/Free-LLM
+	
+3	hst1189/live2d-cubism3	NOASSERTION	JavaScript	2025-06-20T13:18:43Z
+	https://github.com/hst1189/live2d-cubism3
+	❤️<API未完了>❤️live2d-cubism3模型收集+展示
+3	demuyan/L2DCubismUE4	MIT	C++	2020-08-03T13:21:19Z
+	https://github.com/demuyan/L2DCubismUE4
+	Live2D Cubism Plugin for UnrealEngine4
+3	hivivo/live2d-react	NOASSERTION	TypeScript	2026-04-08T00:38:25Z
+	https://github.com/hivivo/live2d-react
+	React component wrapper for Live2D Cubism models
+3	turboism/Turboism	AGPL-3.0	Java	2026-10-08T12:17:43Z
+	https://github.com/turboism/Turboism
+	Turbocharge Live2D Cubism Editor with plugins, workflow enhancements, and local automation.
+3	OrdosX/live2d-mirror	MIT	Vue	2023-03-15T04:04:28Z
+	https://github.com/OrdosX/live2d-mirror
+	自建Live2D Cubism镜像下载站源码+官网链接爬虫
+3	so0420/doro-live2d-web	NOASSERTION	JavaScript	2026-08-27T04:41:33Z
+	https://github.com/so0420/doro-live2d-web
+	빌드 없는 Live2D Cubism 웹 뷰어 — 아트메시 단위 클릭 판정, 잡아당기기, 표정 토글, 투명 PNG 저장
+3	guanmingyin/live2d-daimao-fan	NOASSERTION	-	2026-08-25T14:32:58Z
+	https://github.com/guanmingyin/live2d-daimao-fan
+	Fan‑made Live2D Cubism model for VTube Studio. Monster Hunter Rise Palico (Daimao). IP copyright belongs to CAPCOM. For non‑commercial personal use on
+3	fly3366/YuraYura	NOASSERTION	Objective-C++	2026-07-26T06:59:39Z
+	https://github.com/fly3366/YuraYura
+	Live2D desktop pet for macOS with a fully self-built Metal runtime — automatic part extraction, declarative theming, music-driven dancing
+3	ramonlabs/echo	MIT	Python	2026-09-27T02:29:02Z
+	https://github.com/ramonlabs/echo
+	A Live2D AI VTuber built as a microservices monorepo
+3	esonhjz/My-Spiritual-Solace	NOASSERTION	-	2026-07-21T12:36:51Z
+	https://github.com/esonhjz/My-Spiritual-Solace
+	Making beloved characters come alive on the screen - A shared repository for Live2D models.
+3	noir-hedgehog/virtualink	MIT	TypeScript	2026-10-01T13:50:36Z
+	https://github.com/noir-hedgehog/virtualink
+	在线版的Chill with you，支持番茄钟，todo，日记和音乐，支持图片和Live2D角色切换；默认角色为弥希Miki。和弥希Miki一起自习吧！
+3	yuri-os/awesome-agentic-ai-waifus	CC0-1.0	-	2026-08-03T17:17:11Z
+	https://github.com/yuri-os/awesome-agentic-ai-waifus
+	A curated, open-source-first list of agentic AI companion ("AI waifu") frameworks, full-stack VTuber projects, memory/voice/avatar tooling, models, an
+3	XucroYuri/L2MAS	Apache-2.0	Python	2026-08-24T11:12:40Z
+	https://github.com/XucroYuri/L2MAS
+	Live2D multi-agent animation prototype with MCP, A2A, provider routing, local AI, ComfyUI/Ollama/vLLM, and FFmpeg.
+3	empty-sekai/ournotes-player	AGPL-3.0	JavaScript	2026-10-10T15:13:49Z
+	https://github.com/empty-sekai/ournotes-player
+	Browser player for BanG Dream! Our Notes: live charts, story episodes and Live2D models (WebGL2 web components)
+3	liyu-1028/mochi	NOASSERTION	Python	2026-10-10T14:02:04Z
+	https://github.com/liyu-1028/mochi
+	Mochi —— 会成长的桌面智能伙伴。捏出你的专属 AI 伙伴，让智能体拥有温暖的模样。Tauri + Live2D 前端 × LangGraph 认知核心。
+3	chengyuZou/EmaAgent	MIT	TypeScript	2026-10-10T12:03:10Z
+	https://github.com/chengyuZou/EmaAgent
+	A desktop-first AI companion agent built with Tauri + React + Fastify. Featuring a Live2D stage, local SQLite memory, and an independent Narrative RAG
+3	kyoo-147/First-Snow	NOASSERTION	TypeScript	2026-10-10T08:02:17Z
+	https://github.com/kyoo-147/First-Snow
+	First Snow - A calm, parent-guided AI learning companion for children, with child learning flows, an AI companion, and caregiver oversight.
+3	Eden006/AmaiGirl	Apache-2.0	C++	2026-10-10T07:25:13Z
+	https://github.com/Eden006/AmaiGirl
+	Provide an AI desktop assistant that supports OpenAI APIs, offers interactive workflow help, and runs on macOS 13+ and Linux (Wayland).
+3	luomo66ccff/luomo-home	MIT	TypeScript	2026-10-09T07:58:05Z
+	https://github.com/luomo66ccff/luomo-home
+	Luomo Cloud Homepage - A dreamy cloud gateway with Live2D companions, anime cyber gallery, and service constellation.
+3	igugyj/Pelr	MIT	C++	2026-10-04T15:52:07Z
+	https://github.com/igugyj/Pelr
+	Utility-oriented Windows desktop pet.
+3	yonglanws/MySekaiStoryteller-API	GPL-3.0	TypeScript	2026-10-03T20:42:25Z
+	https://github.com/yonglanws/MySekaiStoryteller-API
+	Project SEKAI 风格无头 Live2D 剧情视频渲染API框架，支持 AstrBot 插件实现 AI 剧本生成与视频导出。
+2	MrSlip777/plugins_talk_live2d_cubism3	NOASSERTION	JavaScript	2020-01-10T14:45:11Z
+	https://github.com/MrSlip777/plugins_talk_live2d_cubism3
+	
+2	orzogc/cubism-core	Apache-2.0	Rust	2021-10-10T06:25:09Z
+	https://github.com/orzogc/cubism-core
+	Rust binding of Live2D Cubism Core library
+2	tlsqlgksthsu/TS_shovel	NOASSERTION	TypeScript	2024-01-06T05:42:17Z
+	https://github.com/tlsqlgksthsu/TS_shovel
+	Cubism Live2D, WebGL2, GLSL with TypeScript React
+2	re-esper/cocos-live2d-sprite	MIT	C++	2020-05-15T01:19:43Z
+	https://github.com/re-esper/cocos-live2d-sprite
+	Easy-to-use Live2D Cubism 3 wrapper for cocos2d-x
+2	RuolinZheng08/gitbook-live2d-cookbook	NOASSERTION	-	2021-01-06T18:27:55Z
+	https://github.com/RuolinZheng08/gitbook-live2d-cookbook
+	My cookbook notes about Live2D Cubism 4.0 Model Editor and SDK
+2	MikuAuahDark/lua-live2d	MIT	C	2019-05-27T16:04:28Z
+	https://github.com/MikuAuahDark/lua-live2d
+	Barebone Lua 5.1 binding to Live2D Cubism 3 Core SDK for Native
+2	lanyu8/QLive2d	NOASSERTION	-	2020-11-02T08:14:56Z
+	https://github.com/lanyu8/QLive2d
+	Cubism live2d rewritten in Qt. (This repo contains copyrighted materials)
+2	lvhaojie456/image-to-live2d	MIT	Python	2026-09-22T10:22:03Z
+	https://github.com/lvhaojie456/image-to-live2d
+	One portrait or prompt → a first-pass Live2D model (moc3 + Cubism project): AI planning, See-through decomposition, measured expressions, psd2live rig
+2	Heonys/live2d-web	MIT	TypeScript	2026-09-01T11:05:05Z
+	https://github.com/Heonys/live2d-web
+	🎀 Unofficial Live2D Cubism runtime for JavaScript and React. Brings its own WebGL2 renderer, no Pixi required.
+2	4163/pixijs-live2d-spine-viewer	MIT	JavaScript	2026-09-30T17:49:02Z
+	https://github.com/4163/pixijs-live2d-spine-viewer
+	Standalone web-based renderer utilizing PixiJS to display Live2D (Cubism 2/3) and Spine (2.x) animations via WebGL. Includes Girls' Frontline referenc
+2	lobsterchan27/live2d-component	NOASSERTION	C++	2024-07-12T05:26:30Z
+	https://github.com/lobsterchan27/live2d-component
+	This project utilizes the Live2D Cubism SDK to create pre-rendered animations of Live2D models. It's designed for video production workflows, allowing
+2	readant/Live2D-learning	NOASSERTION	Python	2026-05-13T08:38:34Z
+	https://github.com/readant/Live2D-learning
+	基于 PyQt5 + Live2D Cubism 的桌面宠物项目，包含详细的开发学习笔记。 涵盖：GUI 编程、OpenGL 渲染、2D 动画技术、交互系统设计。
+2	stories2/Vtuber	MIT	TypeScript	2022-10-22T06:54:26Z
+	https://github.com/stories2/Vtuber
+	Yea! Fucking vtuber
+2	bearman141/ds-whale-pet	NOASSERTION	JavaScript	2026-09-27T03:39:22Z
+	https://github.com/bearman141/ds-whale-pet
+	DS鲸鱼娘 Live2D 桌面宠物 · Electron + Cubism 4 · 跟着你的键鼠做反应
+2	DCDingCong/desktopbuddy	MIT	TypeScript	2026-06-12T03:52:42Z
+	https://github.com/DCDingCong/desktopbuddy
+	Windows-first AI desktop companion pet with Live2D, physics engine, Ollama support, and one-click theme generation
+2	oaiwej/livue2d_sample	NOASSERTION	Vue	2026-02-15T09:57:33Z
+	https://github.com/oaiwej/livue2d_sample
+	Vue.js + Cubism SDK For Web を使って、Live2Dモデルを表示・制御するサンプル的なもの
+2	Yoru-KenomoVT/ayatsuri_2d	GPL-3.0	Rust	2026-09-13T12:58:51Z
+	https://github.com/Yoru-KenomoVT/ayatsuri_2d
+	操り２DーReal-time 2D puppet animation and rigging. A cross-platform open alternative to Live2D Cubism, with full end to end moc3 support from v3 to v6 
+2	ymhyyds/DesktopPet	NOASSERTION	C++	2026-07-17T06:46:24Z
+	https://github.com/ymhyyds/DesktopPet
+	基于 Qt 6 与 Live2D Cubism SDK 的 Windows 桌面宠物，支持 DeepSeek AI 对话、自包含 Edge TTS、天气感知、模型导入与个性化设置。
+2	YuTing-Fang1999/live2d-web-with-face-detection	NOASSERTION	TypeScript	2022-10-04T03:53:09Z
+	https://github.com/YuTing-Fang1999/live2d-web-with-face-detection
+	vtuber web version
+2	xzt238/ai-vtuber-fixed	NOASSERTION	Python	2026-06-11T13:07:52Z
+	https://github.com/xzt238/ai-vtuber-fixed
+	GuguGaga AI-VTuber - GPT-SoVITS voice cloning + Live2D + 3-layer memory + vision
+2	lk2168/vtuber-pipeline	MIT	Python	2026-09-23T15:05:36Z
+	https://github.com/lk2168/vtuber-pipeline
+	把一张动漫立绘自动变成能在 VTube Studio 里直播的 Live2D 模型（See-through 与 PSD2Live 之间的对接层）
+2	BlackCatOfficialytb/OpenLive2D	Apache-2.0	Python	2026-08-26T06:05:07Z
+	https://github.com/BlackCatOfficialytb/OpenLive2D
+	💖✨ Better, more perfomance Live2D for Everyone! Support all platform that supports Python, Java and Rust! (I uses Gemini to code some hard frameworks)
+2	misaalya/kana-hermes	MIT	TypeScript	2026-09-26T16:17:47Z
+	https://github.com/misaalya/kana-hermes
+	Waifu assistant for Hermes Agent: a talking Live2D anime companion with Japanese voice, lip sync, and subtitles on top of the Hermes you already run. 
+2	yuri-os/AgenticWaifuCodex	NOASSERTION	Python	2026-09-16T05:44:36Z
+	https://github.com/yuri-os/AgenticWaifuCodex
+	Agentic Waifu Engineering — a practitioner's guide to designing, building, shipping, and caring for AI companions.
+2	anandad5569/EchoBot	MIT	Python	2026-10-10T13:12:12Z
+	https://github.com/anandad5569/EchoBot
+	Deliver immersive Live2D AI assistant with roleplay, emotional support, and productivity tools for real-time web and chat platform interaction.
+2	PhyQxx/companion-hub	NOASSERTION	Python	2026-10-10T03:57:29Z
+	https://github.com/PhyQxx/companion-hub
+	Local-first AI companion hub with extensible multimodal input/output adapters, reliable event processing, memory, voice, IoT and avatar rendering.
+2	SDFA-BOOP/PetForge-A-modular-AI-desktop-pet-framework-with-voice-memory-and-Live2D.	MIT	Python	2026-10-09T10:31:05Z
+	https://github.com/SDFA-BOOP/PetForge-A-modular-AI-desktop-pet-framework-with-voice-memory-and-Live2D.
+	通用 AI 桌宠框架：套上任意角色，Live2D + 本地语音 + 记忆。最初为动画角色「小鸟游六花」（示例）打造，现抽离为通用框架 —— 邪王真眼是最强的！QAQ  |  A modular AI desktop-pet framework with voice, memory & Live2D.
+2	12sncaksh/AIssistant	MIT	Python	2026-10-08T17:17:41Z
+	https://github.com/12sncaksh/AIssistant
+	AIssistant — a Windows desktop AI assistant & Live2D pet: PyQt6, LLM chat with structured tool calling, MCP support, voice wake/input/output, and syst
+2	Rivulet138/yuizaki	MIT	Python	2026-10-07T05:25:03Z
+	https://github.com/Rivulet138/yuizaki
+	本地 Windows/Linux AI 桌宠 Agent，支持对话、语音、视觉、记忆和 Live2D/VRM
+2	yubdey/DaiMeow	MIT	JavaScript	2026-10-05T11:54:55Z
+	https://github.com/yubdey/DaiMeow
+	呆喵（DaiMeow）是一只基于 Live2D 和 AI 的 Windows 桌宠，能看懂屏幕、智能对话，并陪伴你的学习、工作与游戏。
+2	nguyen-van-phuoc/HoloCore	NOASSERTION	Python	2026-10-02T12:45:58Z
+	https://github.com/nguyen-van-phuoc/HoloCore
+	A modular, local-first AI voice assistant with LLM, STT, TTS, Live2D, MCP, memory, vision, and games.
+1	demuyan/L2DCubismUE4Example	MIT	C++	2020-07-31T13:50:18Z
+	https://github.com/demuyan/L2DCubismUE4Example
+	Live2D Cubism plugin for UnrealEngine 4 
+1	Ganeesya/Live2D-cubism3-User-Component	NOASSERTION	C#	2018-02-19T00:30:48Z
+	https://github.com/Ganeesya/Live2D-cubism3-User-Component
+	
+1	ExceptionError/starlive2d	NOASSERTION	TypeScript	2021-02-12T06:51:37Z
+	https://github.com/ExceptionError/starlive2d
+	Simple loader for Live2D Cubism 4
+1	sarap422/l2d-sdk-web	NOASSERTION	TypeScript	2022-08-09T11:26:22Z
+	https://github.com/sarap422/l2d-sdk-web
+	Live2D Cubism SDK for Web テスト
+1	charlielee206/Arduino_Controlled_Live2D_Avatar	NOASSERTION	C#	2022-02-25T13:08:39Z
+	https://github.com/charlielee206/Arduino_Controlled_Live2D_Avatar
+	IRL Vtuber project.
+1	jasonkao402/Live2D_project	NOASSERTION	C#	2020-03-16T13:27:20Z
+	https://github.com/jasonkao402/Live2D_project
+	I wanna be a vtuber XD
+1	hmr-BH/Live2dModelDataCollector	Apache-2.0	Python	2025-08-08T08:10:51Z
+	https://github.com/hmr-BH/Live2dModelDataCollector
+	Vtuber Studio Live2d Model Parameter Acquirer
+1	barnrang/Demo-live2d-face	NOASSERTION	C++	2020-06-26T07:33:52Z
+	https://github.com/barnrang/Demo-live2d-face
+	Live2d native control by face recognition (VTuber like)
+1	sihuangtech/live2d-model-genai-studio	MIT	TypeScript	2026-05-13T08:39:09Z
+	https://github.com/sihuangtech/live2d-model-genai-studio
+	AI-powered tool for generating Live2D VTuber model assets using Google Gemini
+1	Kronos1027/oxynisx-vtuber-studio	NOASSERTION	TypeScript	2026-07-24T23:20:44Z
+	https://github.com/Kronos1027/oxynisx-vtuber-studio
+	OXYNISX VTuber Studio - Live2D avatar with lip-sync, mouse tracking, and BongoCat-style keyboard overlay
+1	wangsanhong165-byte/Aurora	NOASSERTION	Python	2026-09-16T13:15:56Z
+	https://github.com/wangsanhong165-byte/Aurora
+	Local AI voice companion with Live2D avatars, real-time speech, persistent memory, and configurable local-first services.
+1	nt168/VTuber	NOASSERTION	Python	2025-10-20T10:32:34Z
+	https://github.com/nt168/VTuber
+	一个虚拟伙伴系统，结合了LLM、语言识别、语音合成、Live2D动画 能让用户和一个会说话会动能看能听的AI角色实时互动。
+1	HXDBK/VoxelTa	MIT	C#	2025-09-18T14:07:26Z
+	https://github.com/HXDBK/VoxelTa
+	🔮Bring your Live2D to life on your desktop
+1	KristopherGBaker/Live2DKit	NOASSERTION	Swift	2026-08-10T04:19:07Z
+	https://github.com/KristopherGBaker/Live2DKit
+	Swift wrapper for the Live2D Cubism SDK for Native: load Cubism models, drive parameters and motions, and render through Metal on iOS and macOS. BYO S
+1	kulat55/ai-companion	MIT	Python	2026-10-07T09:26:23Z
+	https://github.com/kulat55/ai-companion
+	Local AI companion: Letta long-term memory + Open-LLM-VTuber Live2D + DeepSeek, one-click setup on Windows
+1	e-CNY/AIVIS-tts-warashi-proxy-	MIT	Python	2026-09-26T03:19:12Z
+	https://github.com/e-CNY/AIVIS-tts-warashi-proxy-
+	Used for warashi(Open-LLM-VTuber)Live2D avatar desktop AI companion connects AivisSpeech through the GPT-SoVITS port.
+1	rubsoumor-beep/Nyra-Intelligent-VTuber-AI-Core	NOASSERTION	C#	2026-09-07T18:35:59Z
+	https://github.com/rubsoumor-beep/Nyra-Intelligent-VTuber-AI-Core
+	Nyra é uma assistente de IA multimodal criada para uma nova geração de VTubers. Unindo Unity, Live2D, Node.js, Python, Gemini e Azure Speech, ela pode
+1	Lendic42/LumaStage	NOASSERTION	TypeScript	2026-07-18T18:19:15Z
+	https://github.com/Lendic42/LumaStage
+	Open-source VTuber studio: desktop for Windows/macOS + Face ID iPhone tracker over LAN
+1	hoshisorae/ai-vision-assistant	NOASSERTION	Python	2026-06-14T14:54:43Z
+	https://github.com/hoshisorae/ai-vision-assistant
+	AI VTuber 视觉对话助手 - Live2D 二次元角色 + 摄像头视觉 + 语音交互
+1	HoshiyoShiro/yume	MIT	JavaScript	2026-08-23T19:31:14Z
+	https://github.com/HoshiyoShiro/yume
+	A Live2D desktop companion that renders in the browser, answers through an LLM, speaks aloud and listens. Successor to aimi.
+1	celestial-sora/vivian	NOASSERTION	TypeScript	2026-10-07T06:15:44Z
+	https://github.com/celestial-sora/vivian
+	A mobile-first Live2D AI companion built with Next.js, React, TypeScript, PixiJS, and Cubism 4
+1	joyparkray/agent-avatar	MIT	TypeScript	2026-09-04T23:28:12Z
+	https://github.com/joyparkray/agent-avatar
+	Live2D desktop pet that reacts to your AI coding agent — Claude Code · Codex · DeepSeek Harness · Hermes · WorkBuddy
+1	ddakju/animo-starter-kit	NOASSERTION	-	2026-02-26T09:32:24Z
+	https://github.com/ddakju/animo-starter-kit
+	Breathe a soul into your character — Tauri 2 starter kit with pixel-perfect click-through, Live2D, and LLM emotion bridge.
+1	17861102832/qing-ai-companion	NOASSERTION	Python	2026-08-24T00:22:34Z
+	https://github.com/17861102832/qing-ai-companion
+	小青 · AI 数字人伴侣：会记住你、有灵魂、能一键装进别人电脑的本地 AI 伴侣。本地记忆 / 人格蒸馏 / 全模态 / 一键安装。
+1	Agash/VTubeStudio.Client	MIT	C#	2026-10-05T16:30:26Z
+	https://github.com/Agash/VTubeStudio.Client
+	Modern .NET 10 / C# 14 client library for the VTube Studio WebSocket API. AOT-friendly, System.Text.Json source-generated, fully typed.
+1	kufu9369-cmd/ai-game-companion	NOASSERTION	Python	2026-09-19T10:53:28Z
+	https://github.com/kufu9369-cmd/ai-game-companion
+	陪打游戏的 AI 虚拟伴侣 —— 看得见你的屏幕、记得住你的事、认得你的声音。本地 LLM + Live2D + 安卓客户端，全程离线运行
+1	AmakuraRili/AmakuraRili.github.io	NOASSERTION	HTML	2026-09-18T06:42:45Z
+	https://github.com/AmakuraRili/AmakuraRili.github.io
+	天倉りぃの公式サイト。イラストレーター、グラフィッカー、Live2Dモデラー、Vtuberとして活動しています。作品や情報をこちらにまとめています。
+1	national-jamesii265/omnilimb	NOASSERTION	Python	2026-10-10T07:39:27Z
+	https://github.com/national-jamesii265/omnilimb
+	Connect Hermes agents to physical hardware with a modular device abstraction layer.
+1	xx8888888-xh/xiaoman-treehole	NOASSERTION	JavaScript	2026-10-10T15:56:37Z
+	https://github.com/xx8888888-xh/xiaoman-treehole
+	小满树洞 · 开源AI树洞陪伴App（Live2D+活人感对话+语音回复）
+1	ranran486/deskpet-studio	MIT	TypeScript	2026-10-10T14:13:54Z
+	https://github.com/ranran486/deskpet-studio
+	可扩展桌面宠物：动作模板、情绪互动、自定义台词与 DeepSeek。An extensible Windows desktop pet with reusable actions, expressive interactions, customizable dialogue, and optiona
+1	smandylee/shiro	NOASSERTION	TypeScript	2026-10-10T10:02:57Z
+	https://github.com/smandylee/shiro
+	감정 기반 디스코드 비서 시로 + Live2D 스타일 데스크톱 아바타
+1	yuhanwanli99-cpu/Live2D-Ai	NOASSERTION	Rust	2026-10-10T09:20:42Z
+	https://github.com/yuhanwanli99-cpu/Live2D-Ai
+	Minimal Live2D avatar ↔ AI dialogue platform (Rust baseline)
+1	fe1iscurc0r/scratchfield	AGPL-3.0	Python	2026-10-10T08:50:30Z
+	https://github.com/fe1iscurc0r/scratchfield
+	实验田 — 授粉方法论集成工程展示面：工具总线/射频大脑/科研工作台/NEKO 集成体 + 插件商城。NagaAgent fork + NEKO 桥接。
+1	ashleycupular313/arch-view	NOASSERTION	-	2026-10-10T07:28:24Z
+	https://github.com/ashleycupular313/arch-view
+	Visualize Clojure project architecture by mapping layered namespaces and showing dependency relationships and source file paths.
+1	VeiQiuLab/Project-Aurora	NOASSERTION	Python	2026-10-10T07:02:56Z
+	https://github.com/VeiQiuLab/Project-Aurora
+	Windows local-first AI companion: Rust/Tauri desktop, Python sidecar, Qwen/llama.cpp Vulkan, local voice, Live2D, user-controlled memory and authorize
+1	Up-to-code/edwardarwin	NOASSERTION	TypeScript	2026-10-10T05:34:06Z
+	https://github.com/Up-to-code/edwardarwin
+	Emma Darwin: a playful local macOS AI companion with F4 speech, Live2D motion, SQLite memory and desktop MCP tools. Mixed-license source release.
+1	Chenqiang-Zhang/airi-lite	MIT	JavaScript	2026-10-10T02:28:35Z
+	https://github.com/Chenqiang-Zhang/airi-lite
+	A small, self-owned Live2D companion prototype inspired by Project AIRI
+1	An-d-u/ENE	NOASSERTION	Python	2026-10-09T18:13:29Z
+	https://github.com/An-d-u/ENE
+	An AI desktop companion that lives on your screen, remembers context, and supports notes, mood, voice, and calendar workflows.
+1	M1KUAPP/Turn	MIT	TypeScript	2026-10-09T17:16:01Z
+	https://github.com/M1KUAPP/Turn
+	An AAC iPhone app that listens to a conversation partner and suggests replies from the user's own saved phrases, so they can answer in time.
+1	M1KUAPP/Kawan	MIT	TypeScript	2026-10-09T17:15:15Z
+	https://github.com/M1KUAPP/Kawan
+	A skeptical AI accountability companion that holds you to one commitment and accepts only verified evidence, never self-report, as progress.
+1	canyueY/pyqt-live2d-bridge	MIT	Python	2026-09-19T07:07:58Z
+	https://github.com/canyueY/pyqt-live2d-bridge
+	在 PyQt5 里渲染 Live2D Cubism 模型，并做动作 / 表情 / 情绪绑定
+1	impossibletea/liver	NOASSERTION	Rust	2024-07-06T10:43:35Z
+	https://github.com/impossibletea/liver
+	Live2D model viewer with support for animation
+1	jason71708/live2d-interactive-viewer	NOASSERTION	HTML	2025-11-02T06:58:43Z
+	https://github.com/jason71708/live2d-interactive-viewer
+	An interactive web-based Live2D Cubism 3 model viewer with full expression and motion control, featuring keyboard shortcuts and VTube Studio compatibi
+1	rookiestudio1/live2d-mate	NOASSERTION	C++	2026-09-09T23:08:11Z
+	https://github.com/rookiestudio1/live2d-mate
+	Live2D desktop mate built with Qt 6 / C++ — MCP server, TTS engines, LLM-driven autonomous behavior, and a standalone model viewer.
+1	danborutori/live2dPlayer	MIT	HTML	2025-12-09T07:38:46Z
+	https://github.com/danborutori/live2dPlayer
+	Live2D Player: Browser-based VTube Studio model viewer with drag-drop ZIP/folder support, gesture controls (pan/rotate/zoom), tap-triggered animations
+1	kongweiguang/xiaoya	MIT	TypeScript	2026-10-09T01:45:42Z
+	https://github.com/kongweiguang/xiaoya
+	小芽：会听、会说、会行动的中文数字人助手。实时语音对话与自然打断、Live2D 神态与口型同步、本地语音处理及 MCP 工具扩展，让 AI 从回答问题走向完成任务。
+1	YuukiHagei/Live2DPet-Workspace	MIT	JavaScript	2026-10-08T06:00:11Z
+	https://github.com/YuukiHagei/Live2DPet-Workspace
+	基于 x380kkm/Live2DPet 二次开发，新增聊天、Agent、待办、日程、复习卡片、每日简报等功能的 AI 桌面伴侣。
+1	DesktopPetXuansi/Xuansi	Apache-2.0	Python	2026-10-07T09:30:20Z
+	https://github.com/DesktopPetXuansi/Xuansi
+	玄司 Xuansi：Windows 本地 AI 桌宠，支持屏幕理解、语音对话、长期记忆与 Live2D。
+1	Gionano/live2d-ai-companion	NOASSERTION	JavaScript	2026-10-04T08:21:51Z
+	https://github.com/Gionano/live2d-ai-companion
+	Interactive Live2D AI companion with voice-to-voice conversation, synthetic face tracking, 12 Indonesian emotions, and real-time streaming vision perc
+1	wonderandyou/super-ai-workstation	MIT	Python	2026-10-03T09:00:29Z
+	https://github.com/wonderandyou/super-ai-workstation
+	超级AI工作台 · 一切奇迹的起点 —— 本地+云端一体化的 AI 工具箱：生图/生视频/写歌/翻唱/朗读/抠图/溶图/Live2D 制作
+1	misheng521/MeloMate	NOASSERTION	Python	2026-10-02T09:41:58Z
+	https://github.com/misheng521/MeloMate
+	Local AI voice companion with Live2D
+1	Gabriel0w0/Live2D-Chatbot	MIT	Python	2026-10-03T14:26:46Z
+	https://github.com/Gabriel0w0/Live2D-Chatbot
+	A local AI desktop companion featuring Live2D animations, VOICEVOX TTS, and RAG capabilities powered by Ollama and LangChain.
+0	kypanz/backend-nsa-chan	NOASSERTION	TypeScript	2025-02-14T06:29:26Z
+	https://github.com/kypanz/backend-nsa-chan
+	backend live2d vtuber handler
+0	Exlnmp/Android-data-com.denchi.vtubestudio-files-Live2DModels	NOASSERTION	-	2026-04-24T22:00:21Z
+	https://github.com/Exlnmp/Android-data-com.denchi.vtubestudio-files-Live2DModels
+	Vtuber new
+0	q15004040209-creator/open-llm-vtuber-wrap	NOASSERTION	-	2026-06-06T13:22:06Z
+	https://github.com/q15004040209-creator/open-llm-vtuber-wrap
+	????LLM+Live2D??? - ?????AI????Python??
+0	K-Jadeja/vtubergame	NOASSERTION	JavaScript	2025-08-31T16:36:26Z
+	https://github.com/K-Jadeja/vtubergame
+	game using the assets and stuff and live2d
+0	airisu-dev/experiment-rn-live2d	MIT	TypeScript	2026-10-10T16:27:11Z
+	https://github.com/airisu-dev/experiment-rn-live2d
+	
+0	RifkyA911/mirunova-live	NOASSERTION	Svelte	2026-10-10T16:24:45Z
+	https://github.com/RifkyA911/mirunova-live
+	Next-Gen Web Live2D & 3D Avatar Vision Tracker • 100% Client-Side • Powered by Bun & SvelteKit
+0	Aisakaorz/aoi-daemon	MIT	Python	2026-10-10T16:21:22Z
+	https://github.com/Aisakaorz/aoi-daemon
+	🌻 葵酱降临桌面 —— 桌面级 Live2D AI 伴侣
+0	jinsc123654/l2dpet	NOASSERTION	C++	2026-10-10T16:18:39Z
+	https://github.com/jinsc123654/l2dpet
+	A cross-platform Live2D desktop pet with interactive animations, optional LLM chat, memory, and personality. For Windows, Linux, and macOS.
+0	tonsilsprimmest-45924/Sugar-Mommied-by-a-Fox-Babe-Devlog-2026	NOASSERTION	-	2026-10-10T16:16:33Z
+	https://github.com/tonsilsprimmest-45924/Sugar-Mommied-by-a-Fox-Babe-Devlog-2026
+	A public development journal for a Live2D romance simulation in pre-alpha.
+0	leo1133/live2d	NOASSERTION	JavaScript	2026-10-10T16:01:12Z
+	https://github.com/leo1133/live2d
+	
+0	DennyWanye/simple_harness	NOASSERTION	Python	2026-10-10T14:48:17Z
+	https://github.com/DennyWanye/simple_harness
+	Cross-platform desktop AI companion — sprite-rendered pet (no Live2D) + local voice pipeline. Fork of DeskPet.
+0	sorakee/itsumo-desk	MIT	TypeScript	2026-10-10T14:31:13Z
+	https://github.com/sorakee/itsumo-desk
+	A lightweight, always-present Live2D desktop companion.
+0	XxAZVDxX/ESP32_P4_Live2D_Convert_Tools	NOASSERTION	-	2026-10-10T14:25:14Z
+	https://github.com/XxAZVDxX/ESP32_P4_Live2D_Convert_Tools
+	
+0	mhmdalsaisi/ds-pet	NOASSERTION	JavaScript	2026-10-10T13:34:56Z
+	https://github.com/mhmdalsaisi/ds-pet
+	Watch a cartoon whale on your desktop react to DeepSeek Harness sessions in real time.
+0	LimiNode/speech-animation	MIT	C++	2026-10-10T13:21:02Z
+	https://github.com/LimiNode/speech-animation
+	Engine-agnostic realtime speech animation for lip sync, visemes, and speech-driven facial cues.
+0	Bellpepperknuthamsun280/ComfyUI-See-through	NOASSERTION	-	2026-10-10T13:18:03Z
+	https://github.com/Bellpepperknuthamsun280/ComfyUI-See-through
+	Convert anime illustrations into layered 2.5D PSDs for Live2D workflows with depth-based layer splitting and export tools
+0	nyan-mikan/codex-live2d	NOASSERTION	JavaScript	2026-10-10T13:00:07Z
+	https://github.com/nyan-mikan/codex-live2d
+	Generic Live2D companion for Codex desktop with local model profiles, streamed speech and bilingual setup.
+0	n47993802-sketch/hakkaneko-live2d	NOASSERTION	HTML	2026-10-10T11:14:59Z
+	https://github.com/n47993802-sketch/hakkaneko-live2d
+	網站用二創資料圖庫
+0	throndir2/Martlet	NOASSERTION	C#	2026-10-10T11:10:15Z
+	https://github.com/throndir2/Martlet
+	Your AI companion for Windows: she talks, listens, watches your screen and lives on your desktop as an animated Live2D/VRM character.
+0	lilyco-42/lyco-ip	NOASSERTION	Python	2026-10-10T10:51:33Z
+	https://github.com/lilyco-42/lyco-ip
+	LYCO · 原创角色 IP 资源库 — 设计资产、配色指南、形象规范与挂件规范
+0	lilyco-42/ly_motion	NOASSERTION	Rust	2026-10-10T10:51:29Z
+	https://github.com/lilyco-42/ly_motion
+	🦀 Rust 动效/动画引擎：图片素材运动 · 高效骨骼绑定 · 类 PCL 的 UI 动效 · 类 manim 的声明式出片 —— 流畅 / 顺滑 / 丝滑
+0	lilyco-42/happy-sugar-life-live2d	NOASSERTION	Python	2026-10-10T10:51:23Z
+	https://github.com/lilyco-42/happy-sugar-life-live2d
+	Happy Sugar Life Sato/Shio Live2D: AI see-through layering + Stretchy Studio rigging/animation. Full pipeline docs, scripts, pitfalls log (v9).
+0	MadMike0204/live2d-playground	NOASSERTION	NSIS	2026-10-10T10:32:00Z
+	https://github.com/MadMike0204/live2d-playground
+	A repo for learning to use exapi to manage Live2DViewerEX.
+0	bbmio/meidochan	MIT	Python	2026-10-10T10:14:44Z
+	https://github.com/bbmio/meidochan
+	妹抖酱 v0.1 — 本地运行的 AI Agent 桌面应用（Python + PySide6），多工作空间 + 插件系统 + 向量知识库 + Live2D 立绘
+0	Hayliy/naixi-desktop	Apache-2.0	Python	2026-10-10T09:53:20Z
+	https://github.com/Hayliy/naixi-desktop
+	本地优先的桌面 AI 智能体：对话 / 桌宠 / 直播互动 / 工作流 / 自动化 / 知识库 / 记忆，模型调用走你自己的 Key，数据留在本机。Tauri 2 + React 19 + Python 3.13。
+0	maymehbird/live2d-mascot-onecomme-plugin	MIT	TypeScript	2026-10-10T09:40:35Z
+	https://github.com/maymehbird/live2d-mascot-onecomme-plugin
+	
+0	As4hi-K0kura/minimax-live2d-deskpet	NOASSERTION	Python	2026-10-10T09:28:02Z
+	https://github.com/As4hi-K0kura/minimax-live2d-deskpet
+	
+0	Fish-under-sea/live2d-widget	GPL-3.0	JavaScript	2026-10-10T08:55:37Z
+	https://github.com/Fish-under-sea/live2d-widget
+	可嵌入网页的 Live2D 看板娘组件（上游 stevenjoezhang/live2d-widget 的副本，仅作留档，请以上游仓库为准）
+0	jcs130/cormy-live2d	GPL-3.0	JavaScript	2026-10-10T08:45:28Z
+	https://github.com/jcs130/cormy-live2d
+	可米 Cormy Live2D 模型、表情动作与制作源文件 / Live2D avatar assets and reproducible rig
+0	firebase652/live2d-monitor2	NOASSERTION	-	2026-10-10T07:19:43Z
+	https://github.com/firebase652/live2d-monitor2
+	
+0	mathlove22/live2d-ai-chat	NOASSERTION	JavaScript	2026-10-10T06:44:17Z
+	https://github.com/mathlove22/live2d-ai-chat
+	
+0	Mikazuki-kufgr/webgal-attachment	MPL-2.0	TypeScript	2026-10-10T06:42:09Z
+	https://github.com/Mikazuki-kufgr/webgal-attachment
+	A local Live2D dynamic attachment system for WebGAL creators.
+0	pakholeung37/kasane-2d	MIT	Rust	2026-10-10T05:52:32Z
+	https://github.com/pakholeung37/kasane-2d
+	live2D modeling.
+0	sixuejun/live2d-and-galgame	NOASSERTION	JavaScript	2026-10-10T09:37:09Z
+	https://github.com/sixuejun/live2d-and-galgame
+	Contian live2d and galgame
+0	padosory5/Local-LLM-elaina-	MIT	Python	2026-10-10T04:13:20Z
+	https://github.com/padosory5/Local-LLM-elaina-
+	【 Electron x Live2D x Piper x Qwen3.6 】Elaina is a personal local AI operating system that can help the user's personal life by creating its own AI ag
+0	Hera-Berg/open-avatar-creator	NOASSERTION	TypeScript	2026-10-10T04:13:10Z
+	https://github.com/Hera-Berg/open-avatar-creator
+	A free and open-source attempt at a Live2D Cubism alternative. Drop in a layered PSD and automatically rig your 2D avatar with minimal manual setup.
+0	Primezyx/live2d-blue-character	NOASSERTION	Kotlin	2026-10-10T04:02:07Z
+	https://github.com/Primezyx/live2d-blue-character
+	奥黛塔 Live2D：手脚协调舞蹈、可编辑 PSD/CMO3 源工程与本地网页预览。角色来源由用户标注为《原神》。
+0	bakenei/-vivian-live2d	NOASSERTION	-	2026-10-10T03:37:56Z
+	https://github.com/bakenei/-vivian-live2d
+	
+0	sakura-builder1/luci-app-live2d	NOASSERTION	JavaScript	2026-10-10T02:58:54Z
+	https://github.com/sakura-builder1/luci-app-live2d
+	LuCI Live2D 看板娘插件：樱花主题 + AI 对话 + 路由器管理
+0	catkiss62/Caicai-Maid-Live2D-Accessory-Lab	NOASSERTION	Java	2026-10-10T01:17:54Z
+	https://github.com/catkiss62/Caicai-Maid-Live2D-Accessory-Lab
+	
+0	imagebuilder1837/replace-ukagaka-with-nailong	MIT	JavaScript	2026-10-10T00:48:49Z
+	https://github.com/imagebuilder1837/replace-ukagaka-with-nailong
+	把 Bangumi 右下角的 Live2D 伪春菜和左上角的站娘换成奶龙。
+0	SKT0tto/OpenNotes-Studio	NOASSERTION	JavaScript	2026-10-09T23:42:26Z
+	https://github.com/SKT0tto/OpenNotes-Studio
+	开源ournotes live2d剧情视频的半自动工具
+0	nextcombo/fully-new-leather-hood-live2d-hood-live2d-model-virtual-main	NOASSERTION	-	2026-10-09T18:35:25Z
+	https://github.com/nextcombo/fully-new-leather-hood-live2d-hood-live2d-model-virtual-main
+	Dataset / resource listing. Sponsor to obtain the full data files.
+0	M1KUAPP/Cekgu	MIT	TypeScript	2026-10-09T17:15:41Z
+	https://github.com/M1KUAPP/Cekgu
+	An answer-key checker that has two AI model families solve a multiple-choice paper blind to its key, flagging mis-keyed and ambiguous items.
+0	zhuangnan829-lang/interactive-live2d-digital-human	NOASSERTION	TypeScript	2026-10-09T16:17:17Z
+	https://github.com/zhuangnan829-lang/interactive-live2d-digital-human
+	Docker-deployed interactive Live2D digital human with Chinese TTS, audio-driven lip sync, expressions and acceptance evidence
+0	nextcombo/live2d-finished-product-shoe-skin-sales-virtual-shoe-skin-virtual-streamer-shoe	NOASSERTION	-	2026-10-09T16:15:56Z
+	https://github.com/nextcombo/live2d-finished-product-shoe-skin-sales-virtual-shoe-skin-virtual-streamer-shoe
+	Dataset / resource listing. Sponsor to obtain the full data files.
+0	RohJooHoon/Pocket-Live2d	NOASSERTION	TypeScript	2026-10-09T15:33:36Z
+	https://github.com/RohJooHoon/Pocket-Live2d
+	
+0	mting314/sekai-story-diff	NOASSERTION	Python	2026-10-09T15:28:01Z
+	https://github.com/mting314/sekai-story-diff
+	What Project Sekai's English release quietly rewrote, line by line — official-vs-official story diffs rendered over the real Live2D scenes
+0	n47993802-sketch/Live2D-	NOASSERTION	HTML	2026-10-09T14:37:46Z
+	https://github.com/n47993802-sketch/Live2D-
+	
+0	Alps-Link/deepseek-whale-Desktop-pet	NOASSERTION	Python	2026-10-09T12:28:05Z
+	https://github.com/Alps-Link/deepseek-whale-Desktop-pet
+	基于氵六青的Live2D形象制作的deepseek娘桌宠
+0	LuneRenaissante/shuying-spine-player	NOASSERTION	-	2026-10-09T11:40:15Z
+	https://github.com/LuneRenaissante/shuying-spine-player
+	A Player for Spine, Live2D, and 3D(test) Anime
+0	superflyer-0V/desktop-pet	NOASSERTION	JavaScript	2026-10-09T11:02:54Z
+	https://github.com/superflyer-0V/desktop-pet
+	Electron + Live2D 桌面桌宠 V1.0（AI 聊天 + GitHub 插件扩展）
+0	weryk153/tomoshibi	NOASSERTION	Python	2026-10-09T07:59:47Z
+	https://github.com/weryk153/tomoshibi
+	Chat and hang out with your favorite anime characters (Live2D / VRM). 跟喜歡的動漫角色聊天、互動。
+0	windblown-directionalantenna594/2d-vtuber-vtube-studio-setup-toolkit	NOASSERTION	-	2026-10-09T07:37:49Z
+	https://github.com/windblown-directionalantenna594/2d-vtuber-vtube-studio-setup-toolkit
+	Streamline your 2D VTuber setup with VTube Studio, Live2D tracking, expressions, hotkeys, OBS scenes, and streaming tools.
+0	ShadowVN1/live2d	NOASSERTION	-	2021-06-03T14:59:20Z
+	https://github.com/ShadowVN1/live2d
+	A web viewer for Live2D Cubism 3 models (.moc3)
+0	funlin724/emote-to-cubism	MIT	Python	2026-09-19T06:29:23Z
+	https://github.com/funlin724/emote-to-cubism
+	E-mote (PSB) → Live2D Cubism conversion toolchain & format docs. No game assets, no vendor keys — bring your own files.
+0	7l-ui/whalegirl-pet	MIT	Java	2026-09-12T22:10:50Z
+	https://github.com/7l-ui/whalegirl-pet
+	Real Live2D floating desktop pet for Android - auto-rigged from a single AI illustration (See-through + PSD2Live) into a standard Cubism .moc3
+0	sweetcornna/OneClick2D	NOASSERTION	Python	2026-08-08T11:39:59Z
+	https://github.com/sweetcornna/OneClick2D
+	Feasibility-first, privacy-conscious toolkit and open specification for turning rights-cleared anime illustrations into inspectable, editable 2D avata
+0	rydanee/live2drust	NOASSERTION	Rust	2026-09-23T12:28:00Z
+	https://github.com/rydanee/live2drust
+	A simple .moc3 model viewer with more to come :)
+0	1098542053/spive2d-web	NOASSERTION	JavaScript	2026-07-23T13:06:38Z
+	https://github.com/1098542053/spive2d-web
+	Spive2D Web - Live2D/Spine model viewer with Go backend
+0	meirallmains299/ChatGPT_Latex	MIT	JavaScript	2026-10-09T07:32:02Z
+	https://github.com/meirallmains299/ChatGPT_Latex
+	Detect and copy LaTeX formulas from AI chat pages to Microsoft Word or your clipboard with this browser extension.
+0	untrained-devilray248/ComfyUI-See-through	NOASSERTION	-	2026-10-09T07:23:37Z
+	https://github.com/untrained-devilray248/ComfyUI-See-through
+	Convert anime illustrations into layered 2.5D models with depth order for Live2D and PSD export in ComfyUI
+0	edliu077/Local-Voice-Interactive-AI-System	NOASSERTION	Python	2026-10-09T06:19:41Z
+	https://github.com/edliu077/Local-Voice-Interactive-AI-System
+	A local voice-interactive AI system integrating speech recognition, local LLM inference, TTS, browser audio, and Live2D interaction.
+0	MurasameCyan/ccgui-plugin-live2d-pets	NOASSERTION	TypeScript	2026-10-09T00:21:44Z
+	https://github.com/MurasameCyan/ccgui-plugin-live2d-pets
+	CC GUI Live2D 桌宠插件：可互动桌宠 + AI 会话状态镜像
+0	llc-doc/Nyx_Vtuber_project	MIT	Python	2026-10-08T15:09:48Z
+	https://github.com/llc-doc/Nyx_Vtuber_project
+	Streaming-first AI VTuber runtime for Bilibili, LLM, TTS, VTube Studio, memory, and local performance.
+0	tmtchannel69-glitch/ai-live2d-maker	NOASSERTION	-	2026-10-10T13:24:24Z
+	https://github.com/tmtchannel69-glitch/ai-live2d-maker
+	
+0	ReSerendipity/SpiritPal	Apache-2.0	TypeScript	2026-10-08T05:43:33Z
+	https://github.com/ReSerendipity/SpiritPal
+	桌边友 · 跨平台 AI 桌面宠物：Tauri v2 + React 19 + Pixi.js 8 Live2D，情感陪伴、轻交互与温和的生产力协助，本地记忆召回 | Cross-platform AI desktop pet — simple yet warm. Tauri v2 (Rust + 
+0	miaom4702-art/tsukimi-yachiyo-live2d-ai	MIT	Python	2026-10-07T06:42:09Z
+	https://github.com/miaom4702-art/tsukimi-yachiyo-live2d-ai
+	桌面 Live2D AI 伴侣「月见八千代（Tsukimi Yachiyo）」/ Desktop Live2D AI Companion：整合大语言模型、Vosk 语音识别、edge-tts/CosyVoice 声音克隆、长期记忆与情感表情系统，常驻 Windows 桌面实时对话。
+0	zha61/amadeus-ai	NOASSERTION	Python	2026-10-05T13:31:52Z
+	https://github.com/zha61/amadeus-ai
+	Local voice AI companion for macOS: Electron + Ollama (gemma4) + hybrid RAG + Whisper + Live2D, built with a measurement-first discipline.
+0	Sero01/Yuna	NOASSERTION	Python	2026-10-04T19:33:43Z
+	https://github.com/Sero01/Yuna
+	Low-latency voice AI companion with a Live2D avatar. Built on Open-LLM-VTuber.
+0	daffa-789/ai-vtuber	NOASSERTION	JavaScript	2026-10-04T19:04:17Z
+	https://github.com/daffa-789/ai-vtuber
+	Teman desktop Live2D: ngobrol lewat teks/suara, jawab pakai Gemini TTS, wajah dan rahang bergerak mengikuti pembicaraan.
+0	carrotduck/carrot-duck	MIT	JavaScript	2026-10-03T12:27:14Z
+	https://github.com/carrotduck/carrot-duck
+	AI companion research prototype exploring perceived personal recognition through memory-grounded dialogue and Live2D performance.
+0	Hikaru232572/zhuomianling	MIT	TypeScript	2026-10-03T07:28:06Z
+	https://github.com/Hikaru232572/zhuomianling
+	Windows Live2D 桌面宠物，支持 AI 对话与本地桌面操作
+0	swapnil2801/veronica	NOASSERTION	Python	2026-10-01T14:49:30Z
+	https://github.com/swapnil2801/veronica
+	VERONICA — Voice AI command center for Hermes: Live2D avatar, Whisper STT, streaming TTS, agent control bridge
+0	paraxyoz/EVA-AI-Assistant	MIT	Python	2026-09-30T15:08:07Z
+	https://github.com/paraxyoz/EVA-AI-Assistant
+	✨ EVA v5.0 — Голосовой AI-ассистент и цифровой компаньон для Windows с 3D VRM / 2D Live2D аватаром, режимом J.A.R.V.I.S., конструктором цепочек макрос
+0	LIYANG7774/nahida-pet	NOASSERTION	Python	2026-09-30T15:07:51Z
+	https://github.com/LIYANG7774/nahida-pet
+	纳西妲桌宠 - 一个基于 Python 的 Windows 桌面宠物（Live2D 风格动画 + AI 对话 + 语音）
+0	PiwPiyolett/3D-Model-AI-Assistant	NOASSERTION	JavaScript	2026-09-29T03:08:13Z
+	https://github.com/PiwPiyolett/3D-Model-AI-Assistant
+	AI assistant with Live2D 3D model avatar
+0	ItsAloka/MyAiFriend	NOASSERTION	Python	2026-09-28T11:58:59Z
+	https://github.com/ItsAloka/MyAiFriend
+	Local, offline AI companion desktop app (PyQt6): llama.cpp LLM, always-listening voice (VAD + Whisper/Moonshine), Kokoro TTS, long-term memory (Chroma
+0	Hirkadawg/FullyLocal_AI_DesktopCompanion	MIT	Python	2026-09-30T14:51:23Z
+	https://github.com/Hirkadawg/FullyLocal_AI_DesktopCompanion
+	A fully local AI desktop companion for Windows: it reads what is on your screen and talks about it, typed or spoken, in English or Turkish, and remark
+0	Pidhhh/project-animora	MIT	TypeScript	2026-09-27T13:35:46Z
+	https://github.com/Pidhhh/project-animora
+	Animora (formerly project-synthia): 2D and 3D AI companion with Live2D, Spine2D and MMD avatar support
+0	zheznanohana/pi-chan	NOASSERTION	JavaScript	2026-09-27T13:23:32Z
+	https://github.com/zheznanohana/pi-chan
+	π娘 — 基于 Pi Coding Agent 的二次元 AI 伙伴。Live2D 看板娘、桌面陪伴、语音聊天，一键把灵感接成原型。
+0	bluewakame/donguriko-live	MIT	JavaScript	2026-09-27T11:25:51Z
+	https://github.com/bluewakame/donguriko-live
+	コメントにローカルAIが返事をして、Live2Dアバターが喋る自動配信ボット。Ollama + IrodoriTTS + OBS。
+0	rusher-5/aiguide	NOASSERTION	Java	2026-09-27T11:10:53Z
+	https://github.com/rusher-5/aiguide
+	AI 智能导游数字人平台：DeepSeek RAG 流式问答 + Edge-TTS 语音合成 + Live2D 数字人 + 短链转化漏斗（Spring Boot 3 多模块）
+0	hikashakatsunori/aivtuber-2d-frontend	NOASSERTION	JavaScript	2026-09-27T05:09:51Z
+	https://github.com/hikashakatsunori/aivtuber-2d-frontend
+	Always-on-top transparent Live2D desktop companion overlay - Electron + PixiJS + pixi-live2d-display, with BotRix multistream chat (Twitch / YouTube /

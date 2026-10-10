@@ -1,0 +1,1 @@
+zeikar/charivo	23	MIT	TypeScript	2026-10-06T10:55:00Z	2025-09-16T12:16:21Z	0	https://github.com/zeikar/charivo	Interactive Live2D AI characters — modular TypeScript framework for LLM, TTS, STT, and realtime voice.

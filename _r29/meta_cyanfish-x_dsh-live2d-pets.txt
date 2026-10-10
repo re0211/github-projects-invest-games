@@ -1,0 +1,1 @@
+cyanfish-x/dsh-live2d-pets	30	NOASSERTION	TypeScript	2026-09-24T07:34:26Z	2026-08-14T10:02:23Z	1	https://github.com/cyanfish-x/dsh-live2d-pets	Live2D 桌宠插件 for DeepSeek Harness：Agent 状态镜像 + 互动陪伴，内置宽松许可预设模型 / Live2D pet plugin: agent state mirror + interactive companion with curated permissive-license presets

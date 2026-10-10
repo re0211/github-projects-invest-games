@@ -1,0 +1,1 @@
+lvhaojie456/image-to-live2d	2	MIT	Python	2026-09-22T10:22:03Z	2026-09-20T08:08:39Z	2	https://github.com/lvhaojie456/image-to-live2d	One portrait or prompt → a first-pass Live2D model (moc3 + Cubism project): AI planning, See-through decomposition, measured expressions, psd2live rigging, Cubism Core verification. 图生 Live2D 自动化流水线。

@@ -1,0 +1,1 @@
+Heonys/live2d-web	2	MIT	TypeScript	2026-09-01T11:05:05Z	2026-07-29T09:04:44Z	0	https://github.com/Heonys/live2d-web	🎀 Unofficial Live2D Cubism runtime for JavaScript and React. Brings its own WebGL2 renderer, no Pixi required.

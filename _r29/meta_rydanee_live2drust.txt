@@ -1,0 +1,1 @@
+rydanee/live2drust	0	NOASSERTION	Rust	2026-09-23T12:28:00Z	2026-09-10T15:50:39Z	0	https://github.com/rydanee/live2drust	A simple .moc3 model viewer with more to come :)

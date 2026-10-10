@@ -1,0 +1,1 @@
+XucroYuri/L2MAS	3	Apache-2.0	Python	2026-08-24T11:12:40Z	2026-05-30T02:34:42Z	10	https://github.com/XucroYuri/L2MAS	Live2D multi-agent animation prototype with MCP, A2A, provider routing, local AI, ComfyUI/Ollama/vLLM, and FFmpeg.

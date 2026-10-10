@@ -1,0 +1,1 @@
+myths-labs/prometheus-avatar	17	MIT	TypeScript	2026-10-09T20:52:23Z	2026-03-07T19:00:41Z	4	https://github.com/myths-labs/prometheus-avatar	Open-source SDK for driving Live2D & 3D avatars with LLM output. Give your AI a face.

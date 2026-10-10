@@ -1,0 +1,1 @@
+so0420/doro-live2d-web	3	NOASSERTION	JavaScript	2026-08-27T04:41:33Z	2026-08-27T04:38:05Z	0	https://github.com/so0420/doro-live2d-web	빌드 없는 Live2D Cubism 웹 뷰어 — 아트메시 단위 클릭 판정, 잡아당기기, 표정 토글, 투명 PNG 저장

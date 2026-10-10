@@ -1,0 +1,1 @@
+Hera-Berg/open-avatar-creator	0	NOASSERTION	TypeScript	2026-10-10T04:13:10Z	2026-09-10T23:28:42Z	0	https://github.com/Hera-Berg/open-avatar-creator	A free and open-source attempt at a Live2D Cubism alternative. Drop in a layered PSD and automatically rig your 2D avatar with minimal manual setup.

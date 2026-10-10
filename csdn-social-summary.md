@@ -1,17 +1,8 @@
-# 跨平台游戏制作 × AI 开发资源梳理（2026-10-10 · 第二十八辑 · **Live2D 全链路**）
+# 跨平台游戏制作 × AI 开发资源梳理（2026-10-11 · 第二十九辑 · **Live2D × Agent**）
 
-> 三路并行调研，原始产出：`_r28/_r28_gh.md`（GitHub 路 65 条）·
-> `_r28/_r28_cn.md`（中文社媒路 14 条）· `_r28/_r28_official.md`（官方与海外路 11 组）。
-> 三路交叉零重复；与 `index.html`（1199 项）及全部历史存档机器比对，命中 0。
-> 去重基线：`_r28/_dedupe_gh.txt`（1189 项）+ `_dedupe_urls.txt`（1316 条）。
->
-> **本辑主线：「Cubism 5 的 moc3 第三方库不吃」这句话，本轮终于有了机理——**
-> **不是 moc3 的版本号在作怪，是 Core 的 ABI 版本。**
-> 一旦知道是 ABI，这件事就从「玄学」变成「一个可以查的数字」：不用再每个播放器试一遍，
-> 也不用再靠「降到 Cubism 4.2 导出」这种笨办法。
->
-> **第二条主线是商用红线被钉死**：上一辑算的是 SDK 侧的账（Core 免费），
-> 这一辑算的是**素材侧**的账——你下载的那个官方示例模型本身，能不能放进你要卖的游戏里。
+> 本辑候选约 **413 条**（GitHub 8 组搜索去重后），关键词命中且未收录 296 条；中文站群 5 组；官方 2 组。
+> 落索引 **18 卡**（`index.html` 1215 → **1233 项**）。
+> 上一辑原文存档：`csdn-social-summary-v28.md`（不改，append-only）。
 
 ---
 
@@ -19,193 +10,204 @@
 
 | # | 上轮待办 | 结果 |
 |---|---|---|
-| 2 | **拿一个 `.moc3` 真跑 Ren'Py Live2D** | ✅ **闭环（本辑 §四，本机实测）** —— 虽未拿到模型文件，但**查清了版本要求，并发现中文圈流传的教程已经会失败** |
-| 4 | **gamemale 退役判定落地** | ✅ **闭环**（§六）—— 连同 Reddit / itch / Steam / note / Medium / YouTube 一并降级为结构性不可取 |
-| 3 | **把「中文站群别用 `site:` 算子」写进调研方法** | ✅ **闭环**（§六）—— 已写进 `AGENTS.md` §二 坑表 |
-| 1 | **房规压缩**（连续两轮欠账） | ⏸ **顺延** —— 本辑上下文仍吃紧，但已从 3 行余量腾到可用（见 §八） |
-| 6 | `/skill-doctor` | ⏸ **连续第七轮未做** |
-| 5 | 实测 `live2d-py` + `live2d-motion3` | 🔶 **部分推进** —— 本辑实测了替代方案 `live2d-add-motion` 的仓库结构（API 级），仍未本机跑 |
-| 7–12 | `ollama-vscode` / consolidation / 索引加复核日期 / `rpycdec`（欠十一轮）/ Codex 离线 / `_tools` 版本控制 | ⏸ 顺延 |
+| 4 | **确认 psd2live 的 GPL-3.0 对 `.moc3` 有没有传染性** | ✅ **闭环**（§三.3）—— 找到了可引用的书面依据：**传染的是工具代码，不是产出的模型文件** |
+| 1 | **拿一个 `.moc3` 真跑 Ren'Py Live2D** | 🔶 **一半闭环**（§四）—— 「拿不到模型」这个阻塞点解开了，剩「装 Core for Native」 |
+| 2 | 实测 `live2d-add-motion-sample-web-ui` | 🔶 **改道** —— 本辑出了个更强的同层工具 `Rev2D`（§三.1），先跑它更划算 |
+| 3 | 跑一次 see-through 的 HuggingFace 在线 demo | ⏸ 顺延 |
+| 5 | **房规压缩**（连续三轮欠账） | ⏸ **第四轮仍未做** —— 现 200 行 / 上限 200，**已经贴着天花板**，见 §七 |
+| 6 | `/skill-doctor` | ⏸ **连续第八轮** |
+| 7–12 | `ollama-vscode` / consolidation / 索引加复核日期 / `rpycdec` / Codex 离线 / `_tools` 版本控制 | ⏸ 顺延 |
+
+**本辑额外抓到一条上轮没在账上的问题**（→ §五.2）：**查重基线用的是「插入前」的快照**，
+导致 `umamo` 被当成新发现、差点重复入库。是保险丝拦下来的，不是我自查出来的。
 
 ---
 
-## 二、把上两辑的一句话改成一句准确的：是 ABI，不是版本号
+## 二、本辑主线：前三辑在答「不买 Editor 怎么凑合」，本辑账变了
 
-上一辑的结论是「用 Cubism 5 导出的 `.moc3`（v4），第三方库是不吃的」。
-**这句话现象对，机理错。** 本轮从两个**互相独立**的来源拿到了同一个答案：
+### 1. 绑定这件事被做成了「一个 JSON」——agent 能写，也能自己证明它对
 
-| 来源 | 说法 |
+`RevStudio/Rev2D`（MIT，★7 但**分量很重**）：核心主张是 **一个绑定 = 一个 `*.r2d.json`** ——
+参数、骨骼、warp 变形器、部件、关键形绑定、IK、物理、分层动画全在这一个文件里，按 id 寻址、
+以画布像素为单位。于是它可以 **diff、可以 review、可以程序生成**。
+
+配套的是一个**无 GPU、无浏览器的确定性渲染器**（同样的模型和输入永远出同样的像素），
+加上 **35 条 CLI（全带 `--json`）** 和 **18 个 MCP 工具的 MCP server**，2600+ 测试。
+
+它的工作流被写成一句话：**write the JSON → check it with renders and numbers → fix it with ops → check again**。
+
+> 这句话和我们的房规 #33「规则要能被测」是同一件事，只不过它把它做进了工具里。
+> 判据不是「看起来对」，是**渲染图 + `inspect`/`analyze` 的数字**。
+
+**⚠️ 边界要写清楚**：`.moc3` **不支持**（专有未公开二进制）。它能搬的是
+**motion3 / exp3 / physics3 / cdi3 / model3 这些 JSON**，美术网格和变形器搬不了。
+→ 它不是「替代 Live2D」，是「**在 Live2D 旁边给 agent 一个可写的沙盘**」。
+
+### 2. 「绕开 Editor」整件事的账，被官方学生优惠重算了
+
+前三辑花了大力气研究怎么不买 Editor。本辑查到官方 **Live2D Student Discount Program**：
+
+| 项 | 值 |
 |---|---|
-| `SakuraMotion/PurismCore` 的 `docs/COMPAT.md`（MIT，★40） | **v5 ABI = Core 5.1**（Editor 5.1 引入）· **v6 ABI = Core 6.0**（Editor 5.3 引入，官方承认「引入多个破坏性变更」）。举例：**VTube Studio 用 v5、老版 Ren'Py 用 v5、最新 Ren'Py 用 v6、gd_cubism 用 v5** |
-| 本机 Ren'Py 8.5.3 源码 `renpy/gl2/live2d.py:86` | `e.add_note("Live2D Cubism 5.3 or later is required.")` |
+| 内容 | Cubism **PRO** · indie · **三年**计划 |
+| 价格 | **$238.20 → $57.16**（76% OFF） |
+| 性质 | 一次性买断、**不自动续费**、**功能与标准 PRO 相同** |
+| 毕业后 | **可继续用到订阅期满** |
+| 中国区 | `live2d.jp/chn/student-discount`，**没有学校邮箱也可用「学信网验证码」申请** |
+| LEAP | 另有一个教育支援计划：向教育**机构**无偿提供 Editor PRO 授权（已 200+ 家） |
 
-→ 两边对上了：**Ren'Py 8.5.3 要的是 Core ≥ 5.3，也就是 v6 ABI。**
+⚠️ **口径打架**：英文学生页写 **76% OFF**，日文官网首页写 **80% OFF**，中文二手教程写「2.4 折」
+（= 76% off）。**以结算页为准，别信宣传语**。
 
-**这改掉了什么**：上一辑说「Ren'Py 用官方 Native SDK，Cubism 5 也吃」——
-那是**含糊**的。准确说法是：**Ren'Py 8.5.3 只吃 5.3 及以后的 Core**，
-你装一个 5.0/5.1 的 Core 照样失败，而且失败方式是上一辑记过的那种**静默失败**（不报错，立绘不动）。
+> 这条不是「又一个工具」，它是把前三辑绕路的**时间成本**重新标了价。
+> 三年约 ¥450 —— 对在校生来说，这可能比继续绕路便宜。
+
+### 3. 上一辑收录的 umamo，本辑复核：进展是真的，但还不是能用的那天
+
+`umamoorg/umamo` 上一辑（v33 / 信源 [1207]）已收录，当时 ★149。本辑复核 ★151，README 现在明确：
+
+- **CMO3 与 MOC3 双向导入导出，兼容到 Cubism 5.4**（上一辑只说「读写 `.cmo3`」）
+- 新增 CLI：`dump`（把模型内容打到 stdout）· `convert`（cmo3↔moc3，其中 cmo3→moc3 会一并产出
+  model3.json / cdi3.json / 贴图）· `diff`（两个模型语义级对比）· `extract`（解包成明文 main.xml + 分层 PNG）
+- 仍然 **alpha**（README 原话：请定期备份，拿副本去玩，别用原件）· **动画功能仍未实现**
+
+⚠️ 一个必须说出口的点：**格式知识是「黑盒观察逆向」出来的**（README 原文
+*reverse-engineered by black box observation*）。而官方免费素材 EULA §4.1.3 是**禁反向工程**的。
+两者之间有没有张力、有多大，我不做裁断 —— **但商用前必须自己想清楚**，本辑只登记事实。
 
 ---
 
 ## 三、本辑最值钱的五条（按对这位用户的实际价值排序）
 
-### 1. 官方免费模型能进商业游戏 —— 但**分角色**（本辑最硬的一条）
+### 1. Rev2D（§二.1，已展开）· MIT · 推送 2026-10-06 · 索引 [1215]
 
-官方《无偿提供素材使用授权协议》**中文版** §2.1.3.1 写得很直白：
-**最近一个会计年度销售收入不足 1,000 万日元的个人 / 学生 / 小规模企业**，
-使用 **Live2D 原创角色**「可用于任何营利或非营利目的」。
+### 2. 官方学生优惠（§二.2，已展开）· 索引 [1217]
 
-同时 §2.1.4.1 写着：**合作角色（名執 尽、春傘 つみき）不得出于营利目的使用**。
-四类素材一律**禁止转发、禁止改编、禁止反向工程**（§4.1）。
+### 3. live2d-agent-kit —— 上轮 #4 的法务答案在这里
 
-⚠️ **顺带更正一条广为流传的错误说法**：多篇二手教程（含本轮一份 dev.to 评测）
-称「样本模型商用需要 Cubism PRO license」。
-**官方 EULA 全文里没有这条要求**——本轮逐条读过。以官方契约为准。
+`Ariakage/live2d-agent-kit`（★26，Python，带 `SKILL.md`）：帮 Codex 和其他 coding agent
+把参考图 / 分层 PSD 做成能跑的 `.moc3`。真正值钱的是它的 `THIRD_PARTY_NOTICES.md`：
 
-→ **对第一款商业视觉小说**：「先用官方 sample 跑通链路、再换成自己的角色」
-这条最短路径是**合法**的，代价只是下载前花两分钟看清那个模型属于哪一类。
-配上官方样本页新出的 **Ren Foster**（专为学 Cubism 5.3 新绘制功能做的），
-你手里第一次有了一个**合法的、免费的、对得上 5.3 的**验证靶子。
+| 东西 | 许可 |
+|---|---|
+| kit 自己的代码与文档 | **MIT** |
+| `integrations/psd2live/*.kt` 与 `patches/psd2live-agent-kit.patch` | **GPL-3.0-only**（因为和 GPL 引擎一起编译） |
+| psd2live 本体 | 只下载到被忽略的本地缓存，**不随包分发**，保留原 LICENSE |
+| 示例资产（Pink Sakura） | **CC BY 4.0**（与代码许可分开） |
 
-### 2. 不买 Editor 也能加表情动作，这件事在 2026 年已经工程化了
+→ **GPL 传染的是工具代码，不是它产出的模型文件。**
+一句话总结它自己的说法：**licensing those assets does not relicense their tools**。
 
-`shinshin86/live2d-add-motion-sample-web-ui`（★194，MIT，**只依赖 Python 3 标准库**，2026-10-08 仍在推）：
+⚠️ 这**不是法律意见**，但终于有了一份**可引用的书面依据**，不再是「大家都这么觉得」。
 
-- 只在 `.motion3.json` 层面加动作，**完全不碰 moc3 二进制** → **天然绕开 ABI 坑**；
-- 顺序是「先分析再写」：`tools/analyze_model.py` 先导出可用参数、安全值域、
-  **以及哪些参数是物理驱动的（这些不能打关键帧）** → 写关键帧 → 生成 → **独立校验器** → headless Chrome 截图；
-- 自带 `AGENTS.md` + `CLAUDE.md`，让 coding agent 能按规矩自动加动作。
+它还摊开了一条很重要的顺序经验：**先修拆层和遮罩，再做超分** ——
+混入发片的衣服像素会跟着头发动，提高分辨率只会让断口更明显。
 
-**和上一辑的 `live2d-motion3` 什么关系**：那个是「动作编辑器」，这个是「动作**流水线**」。
-前者给你一个个按钮，后者把「分析→写→生成→校验→验收」五步串起来，还带了 agent 接口。
+### 4. 《一张立绘自动生成 Live2D，最后是怎么散架的》—— 不是工具，是判据
 
-→ 给自己角色加「害羞 / 点头 / 惊讶」这类表情动作，**一分钱 Editor 钱都不用花**。
-（本轮沙箱 `git clone` 被挡，未本机实跑；仓库结构已用 API 核实。）
+第一手失败实录（note.com/dn0288）。作者做了全自动流水线，**23 个测试全过、29 个部件齐全、
+Cubism Viewer 里能加载**。然后插进真实立绘一动就散架：长发形状套不上短发、肩部冒出重复部件、
+眼嘴位置对不上导致重叠或消失、脸/脖子/躯干接缝露缝。
 
-### 3. 「Cubism 5 的 moc3 网页播放器不吃」有正面解法了
+作者的结论 —— **单张立绘里根本不包含「让它动起来」所需的那些信息**：
+刘海挡住的眼睛、闭着的嘴里的牙齿舌头、被头发衣服挡住的脖子肩膀、正面图推不出的侧脸与后脑深度。
 
-不再只有「降版本导出」这一条笨路。本轮拿到两条 MIT 路径：
+> **自动化能帮你把「文件生成」跑通，但跑通 ≠ 能上直播 / 能进游戏。**
+> 缺的那部分不是 AI 精度问题，**是原图里就没有**。
+> 生成式 AI 能「像那么回事地补全」，但**「像那么回事」≠「原作者想要的那个正确答案」**。
 
-- **`omniwaifu/pixi-live2d5`**（★12，2026-10-05）：明确要求 **Core 6.0.1 + PixiJS 8.19+ + WebGL2**，
-  `bun run setup` 自己下载 Core 与 13 个 GLSL shader。⚠️ 安装顺序是唯一坑：
-  `bun install --ignore-scripts` → `bun run setup` → `bun run prepare`，**不能照旧习惯正常装**。
-- **`Panzer-Jack/easy-live2d` v1.0.0**（★213，2026-09-24，已在索引 [1196]）：README 明写用 Web R5 官方 Core。
+→ 上一辑我们有反证、本辑有正面证据；这条把两半合成**一句完整判断**。
+**以后再看到「一张图自动生成 Live2D」的宣传，先拿它对一遍。**
 
-**star 低不代表不成熟**：pixi-live2d5 只有 12 星，但它是本轮唯一正面解决这个问题的分叉；
-判断依据应该是「它要求的是哪个 Core 版本」，不是星数。
+### 5. Live2D × 编码 agent 的桌宠集群（2026-09/10 集中爆发）
 
-### 4. AI 拆图：上一辑的反证 + 本轮的正面证据 = 完整判断
+这一个月 GitHub 上冒出一整片「把编码 agent 的状态接到 Live2D 上」的项目：
 
-上一辑那篇失败复盘亲手证伪了「一张图全自动出 Live2D」（29 部件 / 23 次测试）。
-本轮 `whalegirl-pet` 的中文实现记录**把同一条路跑通了**：
-AI 立绘 → **See-through** 拆 15 层 → **psd2live** 自动绑骨 → `.moc3`，成品 5.0 MB、18 个参数。
+| 项目 | 支持的 agent | 备注 |
+|---|---|---|
+| `joyparkray/agent-avatar`（★1，MIT） | **Claude Code · Codex · Hermes · DeepSeek Harness · WorkBuddy** | 五个连接器，有文档化 Bridge Protocol |
+| `cyanfish-x/dsh-live2d-pets`（★30，MIT） | **DSH** | `dsh plugin --profile web add` 一行装；渲染栈停在 **Core 4** |
+| `ankesu/dsh-live2d-pet`（★4）· `A8Chann/dsh-pet-live2d`（★38） | DSH | 同题重复实现，别装重 |
+| `XucroYuri/L2MAS`（★9） | MCP + A2A 多 agent | 更实验 |
 
-**两篇合起来的结论：差别不在工具，在素材。**
-那篇的失败触发条件是「插入真实立绘」，这篇的成功前提是「AI 生成的正脸对称立绘 + 张口原图」。
-
-本轮最有实操价值的一条信息：**See-through 有 HuggingFace 免费在线 demo 且免登录**
-（768 分辨率约 89 秒）——**不碰本地显存**。
-这直接取消了上一辑「ComfyUI-See-through 显存门槛未核实、先确认显卡再决定」这个阻塞结论。
-
-**可以写进立绘规格书的两条硬约束**：
-① `mouth` 图层必须是**最大张口**原图（否则 `ParamMouthOpenY=0` 时嘴被压成一条线，看起来「没有嘴」）；
-② `eyelash` **只能含上睫毛**（混入下睫毛会闭眼撕裂）。
-
-⚠️ **商用前必须先过的一关**：`psd2live` 是 **GPL-3.0**。
-不能靠问 AI 得到答案（M-0028）。若判不清楚，退路是干净的：
-**只用 See-through 拆层**（它产出 PSD，不参与绑骨、不进产物链），**绑骨回 Cubism 自己做**。
-
-### 5. 建模报价从「听说几千块」变成了可以逐项核对的明细单
-
-米画师两个橱窗（**￥2631 / ￥3157**）把价格摊到了部件级：
-头部九轴 **X 30-45° / Y 10-15°**、3×3 或 3×4 口型、全身三段物理、第二套衣服 +1000、进阶 VB 口型 +200……
-
-三条最有用的推论：
-
-- 「**图层 350 以内，每超 100 图层加收 15%**」→ **拆图精细度本身就是计价单位**，
-  正好咬合上一辑「画 7 小时、拆 14 小时」的工时账：**贵的不是画画，是拆**。
-- 工期分段（布点透视 7-10 天 + 物理调试 10-15 天，占 30-45 天的**三分之二**）→ 自学的时间黑洞就在这两块。
-- 退款规则「**做完物理不退**」→ **物理是建模里最不可逆的一步**，先做物理再改结构等于重做。
-
-**头部九轴 X30-45 / Y10-15 是能直接拿去验收自己模型的规格数字。**
+⚠️ **两条都要小心**：
+① **要不要往主力 agent（WorkBuddy / DSH）里装第三方插件，得人先审一遍再装** —— 别让 agent 自己装；
+② `dsh-live2d-pets` 的栈停在 **Cubism Core 4**，按上一辑的 ABI 结论，
+**它对 Cubism 5.3+ 导出的模型可能不吃**。
 
 ---
 
-## 四、本机实测：Ren'Py 8.5.3 到底要哪个 Core（上轮欠账 #2 闭环）
+## 四、本机实测：`.moc3` 拿到了（上轮欠账 #1 的一半闭环）
 
-上一辑查到「`lib/` 下没有 `Live2DCubismCore.dll`，不装就静默失败」，但**没说清楚要装哪个版本**。
-本轮直接读源码：
+上一辑卡在「`git clone` 被挡，拿不到模型文件」。本辑绕过去了：
 
+```sh
+# 官方样例模型其实就在官方仓库里
+gh api "repos/Live2D/CubismUnityComponents/git/trees/HEAD?recursive=1" --jq '.tree[].path' | grep '\.moc3$'
+#   → Clipping / Koharu / Mao / Natori / Ren / Rice  六个
+gh api "repos/Live2D/CubismUnityComponents/contents/Assets/.../Mao/Mao.moc3" --jq .content | base64 -d > Mao.moc3
 ```
-renpy/gl2/live2d.py:67   dll = "Live2DCubismCore.dll"
-renpy/gl2/live2d.py:83   if not renpy.gl2.live2dmodel.load(dll):
-renpy/gl2/live2d.py:86       e.add_note("Live2D Cubism 5.3 or later is required.")
-```
 
-**结论：Ren'Py 8.5.3 要求 Cubism Core ≥ 5.3（即 v6 ABI）。**
+实测下载成功：`Mao.moc3` **879,680 字节**，文件头是 `M O C 3` + **版本字节 0x05**。
 
-⚠️ **这直接判定一条中文教程已经过期**：本轮中文路收的 renpy.cn《Live2d 实验一则》
-（中文圈罕见带完整可运行代码的 Ren'Py × Live2D 实战）教的是装 **`CubismSdkForNative-4-r.1`**。
-那是 2022 年的正确做法，**2026 年在 8.5.3 上会失败**。
-（它另一条坑至今有效：**runtime 文件夹里的东西拷进模型目录后，必须把 runtime 文件夹本身删掉，否则报错**。）
-
-→ 已记为 **M-0030**：**教程里的 SDK 版本号会过期；版本要求要从被集成方自己的源码里读，不能照抄教程。**
-这是 M-0029（归属关系要有第二来源）的姊妹条——一个治「**谁的**属性」，一个治「**哪个版本**」。
-
-真跑仍差一个 `.moc3`：本轮沙箱 **git clone 被挡**（https 与代理两条路都不通，**只有 `gh api` 能用**），
-拿不到官方 sample。已写进 `AGENTS.md` §二 坑表。
+- ✅ **「拿不到模型」这一半闭环了**
+- ⏸ **还剩一步**：Ren'Py 需要 `CubismSdkForNative-5-r.1.zip`（Core ≥ 5.3）放进 SDK 目录，
+  再用 launcher 装一次。这一步要下官方 zip，**本辑未做**
+- ⚠️ 版本字节 **5** 与上一辑 PurismCore COMPAT.md 的对照表（v5 ABI = Core 5.1）在数字上一致 ——
+  但**Ren'Py 到底吃不吃没实测**，别当成结论
 
 ---
 
-## 五、AI 贴核实：读了 6 条，采纳 2 条
+## 五、两个方法层面的落地
+
+### 1. gamemale 复核：判定成立，不再单独投入
+
+用户本辑再次点名 gamemale。复核结果：HTTP **200**，但返回的是
+**Cloudflare Turnstile 挑战页**（`<title>请稍候...</title>` + `challenges.cloudflare.com/turnstile`）。
+
+→ 这不是登录墙，是**全站人机验证**。上一辑「结构性不可取」的判定成立。
+**本辑及以后不再单独投入**（与 Reddit / itch / Steam / note / Medium / YouTube 同源，见 `AGENTS.md` §八.7）。
+
+### 2. ⚠️ 新坑：查重基线用了「插入前」的快照
+
+本辑差点把 `umamo` 当新发现再入库一次。原因是我的查重清单一路用的是 `_r28/_dedupe_gh.txt` ——
+那是**上一辑插入之前**生成的快照，**不含上一辑自己刚插进去的 16 张卡**。
+
+拦住它的是 `insert_v34_cards.py` 里那句「仓库已存在就拒绝」，**不是我自查出来的**。
+
+→ 已写进 `AGENTS.md` §八.3：**查重基线必须从 `index.html` 当前内容现取，不能用历史快照**。
+（这已经是第三次「闸门救了我，而不是我救了闸门」，见 §七待办 #9。）
+
+---
+
+## 六、AI 贴核实：读了 7 条，采纳 3 条
 
 | 贴 / 项目 | 判定 |
 |---|---|
-| `live2d-add-motion-sample-web-ui` | ✅ **采纳**（§三.2）—— 结构已 API 核实，是本辑最实用的一条 |
-| `whalegirl-pet` 中文实现记录 | ✅ **采纳**（§三.4）—— 但产出定位为「草稿」，且须先过 GPL-3.0 |
-| `J621111/live2d-automation`（MCP Server）+ `cubism-api-bridge` | 🔶 **观察** —— 代表未来形状（Agent 驱动 Editor），但两份 alpha 叠加（依赖 5.4 alpha），今天不能进商业产线 |
-| `Wzhang3912/image2live2d`（直写 moc3） | ❌ **不采纳** —— 技术可行，但作者自己说「门槛是法务不是技术」，且官方 EULA §4.1.3 禁反向工程 |
-| CSDN《从零构建 AI 虚拟伴侣：LLM + Live2D》 | ❌ **不采纳** —— 架构梳理是真的，但它是**运行时 AI 主播**方案。单机视觉小说对话是写死的，且 **Ren'Py 无法在运行时改单个参数**（口型同步在 Ren'Py 上根本不成立） |
-| `StandRig`（MCP 建模内核） | ❌ **不采纳** —— 本体明确「不做 cmo3/moc3 的生成、转换、播放」，产出是自有 JSON，走不进 Ren'Py |
+| `RevStudio/Rev2D` | ✅ **采纳**（§二.1）—— 本辑最高分：MIT、可 diff 的 JSON 格式、18 个 MCP 工具、2600+ 测试 |
+| `Ariakage/live2d-agent-kit` | ✅ **采纳**（§三.3）—— 上轮法务欠账的答案，且带 `SKILL.md` |
+| `cyanfish-x/dsh-live2d-pets` | ✅ **采纳**（§三.5）—— 本机在跑 DSH，现成可装；但先确认模型是 Core 4 还是 5 |
+| `joyparkray/agent-avatar`（支持 WorkBuddy） | 🔶 **观察** —— 方向对，但 1★ / 创建 5 周 / 要重启 WorkBuddy；**今天不装进主力** |
+| `myths-labs/prometheus-avatar`（LLM 驱动 Live2D） | ❌ **不采纳** —— 上一辑已判过：单机 VN 对话是写死的，Ren'Py 无法在运行时改单个参数 |
+| note.com 全自动失败实录 | ✅ **采纳为判据**（§三.4）—— 不是工具，但以后用来筛「一键生成」的宣传 |
+| `johal.in` 那篇「Ren'Py 9.0 Live2D Layers」 | ❌ **判为编造** —— 它写 `config.live2d_fps = 60`、还给了「2025 Ren'Py Community Benchmarks / Snapdragon 778G / Fluidity Score 96.2%」这类数字。
+  **Ren'Py 真正的开关是 `config.gl2 = True`**（本机 `config.py:1050` 已核实），**没有 `config.live2d_fps`**。→ **M-0028 的又一个实例：LLM 在小众垂直软件上编造选项** |
 
-**一条值得单说的小模式**（来自 Open-LLM-VTuber 的 dev.to 实测）：
-让 LLM 在流式输出里**内联情感标签**（`[joy]` `[surprise]`），用一个正则抽出来，
-映射到模型的 expression index。**这个模式与用不用 Open-LLM-VTuber 完全无关，几十行就能复制。**
-⚠️ 但该文声称的 MIT 与 GitHub 的 NOASSERTION 不符，且仓库最近推送停在 2026-05-15——**不建议整个项目上**。
-
----
-
-## 六、两个方法层面的落地
-
-### ✅ 「中文站群别用 `site:` 算子」已写进 `AGENTS.md` §二
-
-上一辑靠这条打通了知乎。本轮中文路全部沿用（把 `csdn.net` / `zhihu.com` / `bilibili.com`
-当普通关键词丢进搜索引擎，再对命中 URL 直取正文），14 条候选去重后命中 0，方法稳定。
-
-### ⚠️ 一批源判定为结构性不可取，不再单独投入
-
-| 源 | 本轮证据 |
-|---|---|
-| **Reddit**（r/Live2D / r/vtubertech / r/gamedev） | 三个入口（www JSON / old.reddit JSON / WebSearch 定向）**全部 TLS 重置**，连续两轮 |
-| **itch.io / Steam** | `HTTP 000` 超时，两次换 UA 重试均失败 |
-| **note.com / Medium / YouTube** | 三个域名均 `HTTP 000`，WebFetch 也 fetch failed |
-| **Stack Overflow** | 本轮用了 advanced search（比上一辑更进一步）：**`live2d` 标签本身不存在**，相关命中仅 1 条 2013 年的 → **SO 不是 Live2D 的排错源** |
-| **Godot 官方论坛** | Discourse JSON 实跑：`live2d` 命中 3 个主题且最新的与 Live2D 无关 → **Godot 侧排错应围着 `gd_cubism` 的 issue 区，不在论坛** |
-| **gamemale** | 按上一辑判定，本轮**零投入**（退役生效） |
-
-→ 这些已从调研源清单里降级。**省下的时间投到了 `gh api` 与官方站点上，本轮命中率明显更高。**
+**一条独立的真人佐证**：中文长篇实战帖《live2D 全栈制作教程/避坑》里作者写
+「**问 AI 很难解决这类问题，他们会一直编造软件的功能**」——
+这是**被坑的一方**写下来的，和我们从工具侧总结的 M-0028 对上了。
 
 ---
 
 ## 七、索引与文档维护（本轮落盘）
 
-- `index.html` **1199 → 1215 项**（卡片 1188 → 1204，第三十三版增补 **16 卡**，脚注 [1199]-[1214]，
-  新建 `insert_v33_cards.py`；跑前过 `insert_guard_probe.py` **6/6**，跑后 `index_metrics --update` 重封 **303** 个分组）
-- 恒等式校验：页头 1215 == 最大脚注 1214 + 1 ✅ · div 9905 / 9905 ✅
-- 上一辑存档 `csdn-social-summary-v27.md`（原文不动，append-only 惯例）
-- 新增错误记忆 **M-0030**（mistakes 29 → **30**）
-- `AGENTS.md` §二 补两条本机坑：`git clone` 被挡（只有 `gh api` 通）· 中文站群别用 `site:` 算子
-- 本轮候选约 **90 条**（gh 65 / cn 14 / official 11 组），落索引 16 条
+- `index.html` **1215 → 1233 项**（卡片 1204 → 1222，第三十四版增补 **18 卡**，脚注 [1215]-[1232]，
+  新建 `insert_v34_cards.py`；跑前过 `insert_guard_probe.py` **6/6**，跑后 `index_metrics --update` 重封 **304** 个分组）
+- 恒等式：页头 1233 == 最大脚注 1232 + 1 ✅ · div 10213 / 10213 ✅
+- 上一辑存档 `csdn-social-summary-v28.md`
+- `AGENTS.md` §八.3 补：**查重基线从 `index.html` 现取**；§八.7 补 gamemale 的 Turnstile 证据
+- 本辑候选约 **413 条**（gh 8 组 / cn 5 组 / official 2 组），落索引 18 条
+- 新增错误记忆 **M-0031**（查重基线过期）
 
 ---
 
@@ -213,25 +215,25 @@ renpy/gl2/live2d.py:86       e.add_note("Live2D Cubism 5.3 or later is required.
 
 **本辑新出**
 
-1. **拿一个 `.moc3` 真跑 Ren'Py Live2D**（最后一公里）。前置已全清：
-   需 Core **≥ 5.3**，靶子用官方 **Ren Foster**（5.3 专用、原创角色、可商用）。
-   ⚠️ 阻塞点是 `git clone` 被挡 —— 下轮改用 `gh api` 下 tarball 或浏览器手动下载
-2. **实测 `live2d-add-motion-sample-web-ui`**（本辑最高分工具，仍只有 API 级核实）：
-   先用 `tools/analyze_model.py` 跑通，再加一个表情动作
-3. **跑一次 see-through 的 HuggingFace 在线 demo**（免登录、不碰显存）——
-   拿到分层 PSD 后即可判断「自己画 vs AI 辅助拆」的账
-4. **确认 psd2live 的 GPL-3.0 对 `.moc3` 产出物有没有传染性**（商业作品，不能跳过）
-5. **房规压缩**（**连续三轮欠账**）—— 本辑仍未做。建议下一辑第一件事就干，
-   按上一辑倾向的**方案 ②**：把「调研方法」类条款整体拆进 `game-production-pipeline.md`
+1. **实测 `Rev2D`**（本辑最高分，仍只有 README 级核实）：`npm install` → 跑 CLI → 导出一个
+   `.motion3.json` → 拿回 Cubism Viewer 验一遍。Node ≥22 本机有
+2. **装官方学生优惠**（§二.2）：用户是在校生，**学信网验证码**那条路不需要学校邮箱。
+   这是本辑唯一一条「今天就能落地、且直接省钱」的事
+3. **补完欠账 #1 的后一半**：下载 `CubismSdkForNative-5-r.1.zip` → 装进 Ren'Py → 用 `Mao.moc3` 真跑一次
+4. **房规压缩** —— **连续第四轮欠账，且已经 200/200 贴顶**。下一辑**第一件事**就干，
+   按上一辑倾向的方案 ②：把「调研方法」类条款整体拆进 `game-production-pipeline.md`
+5. **给 `_r28/_dedupe_gh.txt` 这类历史快照加个「生成日期 / 来源 commit」标注**，
+   或者在 `insert_vN_cards.py` 里改成**直接从 `index.html` 现取查重集合**（治本）
 
 **承接老账（顺延）**
 
-6. `/skill-doctor`（**连续第七轮**）· 7. 装 `ollama-vscode` + 跑 `agnix` · 8. 做一次 `consolidation`
-9. 索引条目加「最后复核日期 + 是否作废」· 10. `rpycdec` 反编译自查（**欠十一轮**）
-11. Codex 离线 / 词表 / 模型分档 · 12. `_tools/` 与 `AGENTS.md` 纳入版本控制
+6. `/skill-doctor`（**连续第八轮**）· 7. 装 `ollama-vscode` + 跑 `agnix` · 8. 做一次 `consolidation`
+9. **索引条目加「最后复核日期 + 是否作废」** —— 本辑 `umamo` 那次差点重复入库，
+   如果卡上有复核日期就不会发生；这条从「欠了七轮」升级为**有具体事故驱动**
+10. `rpycdec` 反编译自查（**欠十二轮**）· 11. Codex 离线 / 词表 / 模型分档 · 12. `_tools/` 纳入版本控制
 
 ---
 
-*本辑新增约 90 条候选（gh 65 / cn 14 / official 11 组），落索引 16 卡；*
-*累计经验帖约 1193 → **约 1283 条**；索引 **1215 项**；房规 22 条；mistakes **30 条**；*
-*新建脚本：`insert_v33_cards.py`；新存档：`csdn-social-summary-v27.md`。*
+*本辑新增约 413 条候选（GitHub 8 组搜索去重后；关键词命中且未收录 296 条），落索引 18 卡；*
+*累计经验帖约 1283 → **约 1370 条**；索引 **1233 项**；房规 22 条 / 200 行（贴顶）；mistakes **31 条**；*
+*新建脚本：`insert_v34_cards.py`；新存档：`csdn-social-summary-v28.md`。*
