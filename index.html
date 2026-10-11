@@ -215,10 +215,10 @@ footer a{color:var(--text-2)}
     <h1 data-page-node-id="AiHFaPLbdzWhs4cJxbPaCG">游戏制作 × 游戏拓展 · 重点：AI 制作游戏<br data-page-node-id="7picbxz1uDgskpVGBQndAe">三条线上的开源工具地图</h1>
     <p class="sub" data-page-node-id="LVHhXAo5FhfwKnCSkj9LXr">从 GitHub 上筛出真正活跃、能落地的项目，用人话讲清楚它们各自解决什么问题、能不能二次开发、值不值得花时间。不是罗列链接，是帮你做取舍。</p>
     <div class="meta" data-page-node-id="xhBz9HP4CMitXa7DRJmiCE">
-      <span data-page-node-id="U5SVCzIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第三十五版增补 2026-10-11</span>
-      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1257 个项目</span>
+      <span data-page-node-id="U5SVCzIlhM1HBfAou01f1">数据抓取：2026-09-09 · 第三十六版增补 2026-10-11</span>
+      <span data-page-node-id="MHqmzzouq6azfHHmyaJQG7">共 1279 个项目</span>
       <span data-page-node-id="DCE1SCzjW3tXhAFVtReJ7C">星级 / 更新时间 / License 逐项实测</span>
-      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项 + 第十八版增补 2 项 + 第十九版增补 1 项 + 第二十版增补 1 项 + 第二十一版增补 4 项 + 第二十二版增补 6 项 + 第二十三版增补 9 项 + 第二十四版增补 10 项 + 第二十五版增补 8 项 + 第二十六版增补 8 项 + 第二十七版增补 8 项 + 第二十八版增补 13 项 + 第二十九版增补 12 项 + 第三十版增补 15 项 + 第三十一版增补 15 项 + 第三十二版增补 16 项 + 第三十三版增补 16 项 + 第三十四版增补 18 项 + 第三十五版增补 24 项（均与上版零重复）</span>
+      <span data-page-node-id="G2tNNvqJ4Wb0ycgYia1wZ2">第十四版 152 项 + 第十五版增补 6 项 + 第十六版增补 5 项 + 第十七版增补 6 项 + 第十八版增补 2 项 + 第十九版增补 1 项 + 第二十版增补 1 项 + 第二十一版增补 4 项 + 第二十二版增补 6 项 + 第二十三版增补 9 项 + 第二十四版增补 10 项 + 第二十五版增补 8 项 + 第二十六版增补 8 项 + 第二十七版增补 8 项 + 第二十八版增补 13 项 + 第二十九版增补 12 项 + 第三十版增补 15 项 + 第三十一版增补 15 项 + 第三十二版增补 16 项 + 第三十三版增补 16 项 + 第三十四版增补 18 项 + 第三十五版增补 24 项 + 第三十六版增补 22 项（均与上版零重复）</span>
     </div>
   </div>
 </header>
@@ -13901,6 +13901,417 @@ footer a{color:var(--text-2)}
 
     </div>
 
+    <div class="group" data-page-node-id="rpm36g">
+      <div class="group-title" data-page-node-id="rpm36gt">🆕 第三十六版增补 · 不买 Cubism Editor 的那条路，第一次有了完整栈：SDK 本体 + 绑定界面 + 自动化 CLI（22 项）</div>
+      <p class="sec-desc" data-page-node-id="rpm36gd">第三十一辑三路调研（gh 路 37 条 / cn 路 8 条 / official 路 29 条），本版取 22 项，主题 **不买 Cubism Editor 的那条路，第一次有了完整栈**。所有 ★ / 许可证 / 语言 / 推送日均走 `gh api repos/&lt;r&gt;` 逐条实测。<strong>本辑主线：① 开源替代从「只有个编辑器」补齐成「SDK 本体 + 绑定界面 + 自动化 CLI」（Inochi2D/inochi2d ★1811 的 SDK 本体此前一直漏收 + nijigenerate ★314 + PuppetLoom ★245）；②「单图/PSD → 可用模型」这条线开始分叉 —— 一条只在网格层动手、天然绕开 Cubism Core ABI 的墙（mesh-avatar-studio ★597 / kokoro ★42），另一条直接对 moc3 但导出的是 mock（live2d-automation，无许可）；③ 官方两处口径冲突被定位（学生优惠的「76% vs 80%」是同一张英文首页新旧文案没统一，权威值 80%；LEAP 覆盖校数首页 200+ vs 专页 450+），且上一辑「SDK 全线 5-r.5」应修正为「分线各自版本」（Unreal R1 beta2 = 2026-09-29 为最新一次更新）；④ 一个必读的破坏性变更：live2d-py 升 1.0.0（2026-09-30），移除 live2d.v3 / live2d.v2cpp</strong>。</p>
+
+      <div class="card" data-page-node-id="rpm36c1">
+        <div class="card-top" data-page-node-id="rpm36c1t">
+          <span class="card-name" data-page-node-id="rpm36c1mn"><a href="https://github.com/Inochi2D/inochi2d" target="_blank" data-page-node-id="rpm36c1n">inochi2d（Live2D 的开源替代：木偶 SDK 本体）</a></span>
+          <span class="lang" data-page-node-id="rpm36c1l">D</span>
+          <span class="stars" data-page-node-id="rpm36c1s">1811</span>
+          <span class="tag t-make" data-page-node-id="rpm36c1t1">建模</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c1t2">模块化</span>
+          <span class="tag t-ok" data-page-node-id="rpm36c1t3">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c1p">开源 2D 木偶（puppet）动画 SDK —— 把分层立绘绑成<strong>可实时驱动、带表情与物理</strong>的 2D 角色，定位就是 Live2D Cubism 的开源替代，用于 VTubing、游戏与实时应用。</p>
+        <div class="analogy" data-page-node-id="rpm36c1a"><b data-page-node-id="rpm36c1ab">打个比方：</b>前几辑只收过它的<strong>编辑器</strong> inochi-creator，<strong>SDK 本体一直漏在外面</strong> —— 等于只记了「有把螺丝刀」，没记「有个电动工具台」。这条补上的是整套路线的根。</div>
+        <div class="analogy" data-page-node-id="rpm36c1w"><b data-page-node-id="rpm36c1wb">注意：</b>⚠️ 语言是 <strong>D</strong>（不是 Python / JS），要自己编译；生态比 Cubism 小得多，<strong>缺现成模型与教程</strong>，遇到问题也没有中文答案。</div>
+        <div class="grid2" data-page-node-id="rpm36c1g">
+          <div class="mini" data-page-node-id="rpm36c1m1"><span class="lbl" data-page-node-id="rpm36c1m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c1m1b"><div class="bar-track" data-page-node-id="rpm36c1m1t"><div class="bar-fill" style="width:85%;background:var(--make)" data-page-node-id="rpm36c1m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c1m1n">8.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c1m1v">BSD-2 许可宽松 + 开放格式，可直接嵌进自研渲染管线</div></div>
+          <div class="mini" data-page-node-id="rpm36c1m2"><span class="lbl" data-page-node-id="rpm36c1m2l">实用性</span><div class="bar" data-page-node-id="rpm36c1m2b"><div class="bar-track" data-page-node-id="rpm36c1m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c1m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c1m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c1m2v">「不买 Cubism Editor」路线唯一成熟的开源选择 · 代价是 D 语言 + 生态小</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c1c">推送 2026-10-03 · 1811★ · BSD-2-Clause · D · 信源 [1257]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c2">
+        <div class="card-top" data-page-node-id="rpm36c2t">
+          <span class="card-name" data-page-node-id="rpm36c2mn"><a href="https://github.com/nijigenerate/nijigenerate" target="_blank" data-page-node-id="rpm36c2n">nijigenerate（配 inochi2d 的绑定编辑器）</a></span>
+          <span class="lang" data-page-node-id="rpm36c2l">D</span>
+          <span class="stars" data-page-node-id="rpm36c2s">314</span>
+          <span class="tag t-make" data-page-node-id="rpm36c2t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm36c2t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c2p">面向 nijilive 木偶格式（从 Inochi2D v0.8 派生）的开源<strong>绑定编辑器</strong> —— 给模型绑骨、绑定，输出供游戏或 VTubing 实时使用。可以理解成 Inochi2D 生态里的「Cubism Editor 角色」。</p>
+        <div class="analogy" data-page-node-id="rpm36c2a"><b data-page-node-id="rpm36c2ab">打个比方：</b>只有 SDK 是没法干活的，必须有一个能看见、能拖参数的界面。上一条负责引擎，这条负责<strong>手</strong>。两者配齐，开源替代才从「一个库」变成「一条流水线」。</div>
+        <div class="analogy" data-page-node-id="rpm36c2w"><b data-page-node-id="rpm36c2wb">注意：</b>⚠️ 同样是 <strong>D</strong> 语言，Windows 上装它要走 dub 工具链；⚠️ 它的格式与 Cubism 不互通，<strong>不能拿它去开 .moc3</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm36c2g">
+          <div class="mini" data-page-node-id="rpm36c2m1"><span class="lbl" data-page-node-id="rpm36c2m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c2m1b"><div class="bar-track" data-page-node-id="rpm36c2m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c2m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c2m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c2m1v">输出开放格式，方便脚本化批量处理</div></div>
+          <div class="mini" data-page-node-id="rpm36c2m2"><span class="lbl" data-page-node-id="rpm36c2m2l">实用性</span><div class="bar" data-page-node-id="rpm36c2m2b"><div class="bar-track" data-page-node-id="rpm36c2m2t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm36c2m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c2m2n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c2m2v">与 inochi2d 配套使用 · 推送 2026-10-10，仍在活跃</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c2c">推送 2026-10-10 · 314★ · BSD-2-Clause · D · 信源 [1258]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c3">
+        <div class="card-top" data-page-node-id="rpm36c3t">
+          <span class="card-name" data-page-node-id="rpm36c3mn"><a href="https://github.com/shinshin86/mesh-avatar-studio" target="_blank" data-page-node-id="rpm36c3n">mesh-avatar-studio（一张插画 + 编码 agent → 可动 2D 网格形象）</a></span>
+          <span class="lang" data-page-node-id="rpm36c3l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm36c3s">597</span>
+          <span class="tag t-make" data-page-node-id="rpm36c3t1">建模</span>
+          <span class="tag t-new" data-page-node-id="rpm36c3t2">新</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c3t3">模块化</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c3p">把<strong>一张插画</strong>变成可动画的 2D 网格（mesh）虚拟形象 —— 用「编码 agent + 本地编辑器」跑绑定与驱动，主打一条 agent 流程出可动立绘。</p>
+        <div class="analogy" data-page-node-id="rpm36c3a"><b data-page-node-id="rpm36c3ab">打个比方：</b><strong>建仓 7 天就 597★</strong>，说明「让 agent 来干绑定」这个念头大家都在想。它的取巧之处是<strong>只在网格层动手、不碰 `.moc3`</strong> —— 于是天然绕开了前几辑反复撞的 Cubism Core ABI 那道墙。</div>
+        <div class="analogy" data-page-node-id="rpm36c3w"><b data-page-node-id="rpm36c3wb">注意：</b>⚠️ <strong>极新</strong>（2026-10-04 建仓），没有历史沉淀，也别指望教程；⚠️ 输出的是自有网格格式，<strong>不是 Cubism 工程</strong>，导不进 VTube Studio。</div>
+        <div class="grid2" data-page-node-id="rpm36c3g">
+          <div class="mini" data-page-node-id="rpm36c3m1"><span class="lbl" data-page-node-id="rpm36c3m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c3m1b"><div class="bar-track" data-page-node-id="rpm36c3m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm36c3m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c3m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c3m1v">MIT + 网格层开放，容易接到自己的渲染器</div></div>
+          <div class="mini" data-page-node-id="rpm36c3m2"><span class="lbl" data-page-node-id="rpm36c3m2l">实用性</span><div class="bar" data-page-node-id="rpm36c3m2b"><div class="bar-track" data-page-node-id="rpm36c3m2t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm36c3m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c3m2n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c3m2v">与「agent 驱动内容生产」这条主线高度吻合 · 但属尝鲜，别当生产依赖</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c3c">推送 2026-10-11 · 597★ · MIT · TypeScript · 信源 [1259]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c4">
+        <div class="card-top" data-page-node-id="rpm36c4t">
+          <span class="card-name" data-page-node-id="rpm36c4mn"><a href="https://github.com/CheshireMew/PuppetLoom" target="_blank" data-page-node-id="rpm36c4n">PuppetLoom（分层 PSD → 可自动制作、可校验的 2D 角色）</a></span>
+          <span class="lang" data-page-node-id="rpm36c4l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm36c4s">245</span>
+          <span class="tag t-make" data-page-node-id="rpm36c4t1">建模</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c4t2">模块化</span>
+          <span class="tag t-ok" data-page-node-id="rpm36c4t3">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c4p">把分层角色 PSD 变成「<strong>可自动制作、可验证、可继续校准</strong>」的动态角色 —— Electron 桌面应用 + CLI + 一个 <strong>Codex skill</strong>。仓库 topics 直接写着 `live2d` / `psd` / `vtuber` / `windows`，README 有中英日三语。</p>
+        <div class="analogy" data-page-node-id="rpm36c4a"><b data-page-node-id="rpm36c4ab">打个比方：</b>它的卖点不是「一键出模型」，而是<strong>每一步都能被校验、被回退</strong>。这正好对上前几辑反复说的那句：「AI 写标准模块可信，手感 / 边界 / 性能必须亲手验」。</div>
+        <div class="analogy" data-page-node-id="rpm36c4w"><b data-page-node-id="rpm36c4wb">注意：</b>⚠️ <strong>AGPL-3.0</strong>：自己是工具自用没问题，但要当对外服务或分发，传染性很强；⚠️ GitHub 上的仓库描述是<strong>空的</strong>，以上是读 README 得到的（<strong>仅 README 级核实</strong>）。</div>
+        <div class="grid2" data-page-node-id="rpm36c4g">
+          <div class="mini" data-page-node-id="rpm36c4m1"><span class="lbl" data-page-node-id="rpm36c4m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c4m1b"><div class="bar-track" data-page-node-id="rpm36c4m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm36c4m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c4m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c4m1v">CLI + skill 双入口，可被 agent 编排进流水线</div></div>
+          <div class="mini" data-page-node-id="rpm36c4m2"><span class="lbl" data-page-node-id="rpm36c4m2l">实用性</span><div class="bar" data-page-node-id="rpm36c4m2b"><div class="bar-track" data-page-node-id="rpm36c4m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c4m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c4m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c4m2v">明确标 Windows / Codex，与本机场景直接相关</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c4c">推送 2026-10-05 · 245★ · AGPL-3.0 · TypeScript · 信源 [1260]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c5">
+        <div class="card-top" data-page-node-id="rpm36c5t">
+          <span class="card-name" data-page-node-id="rpm36c5mn"><a href="https://github.com/zeikar/iki" target="_blank" data-page-node-id="rpm36c5n">iki（Web 侧的开源木偶引擎 + AI 自动绑骨）</a></span>
+          <span class="lang" data-page-node-id="rpm36c5l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm36c5s">15</span>
+          <span class="tag t-make" data-page-node-id="rpm36c5t1">建模</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c5t2">模块化</span>
+          <span class="tag t-new" data-page-node-id="rpm36c5t3">新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c5p">面向浏览器的一套开放 2D 木偶引擎，自带开放 `.iki` 格式、一个 <strong>AI 自动绑骨器</strong>，还捆了一个 <strong>Claude Code 插件</strong> —— 口号是「AI 能直接构建」。</p>
+        <div class="analogy" data-page-node-id="rpm36c5a"><b data-page-node-id="rpm36c5ab">打个比方：</b>前几辑的开源替代都偏桌面（D / C# / Rust），这条是少见的 <strong>Web 侧</strong>实现，而且是目前唯一<strong>自带 agent 插件</strong>的。</div>
+        <div class="analogy" data-page-node-id="rpm36c5w"><b data-page-node-id="rpm36c5wb">注意：</b>⚠️ 只有 <strong>15★</strong>，个人项目早期；「AI 自动绑骨」的实际效果<strong>没有任何第三方验证</strong> —— 对照上一辑立的打假三问：自动绑骨的头号毛病恰好就是<strong>眨眼这类参数在自动分层上失效</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm36c5g">
+          <div class="mini" data-page-node-id="rpm36c5m1"><span class="lbl" data-page-node-id="rpm36c5m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c5m1b"><div class="bar-track" data-page-node-id="rpm36c5m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c5m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c5m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c5m1v">开放格式 + agent 插件，接口设计偏「可编程」</div></div>
+          <div class="mini" data-page-node-id="rpm36c5m2"><span class="lbl" data-page-node-id="rpm36c5m2l">实用性</span><div class="bar" data-page-node-id="rpm36c5m2b"><div class="bar-track" data-page-node-id="rpm36c5m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm36c5m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c5m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c5m2v">星少、需自验；当 Web 侧思路参考，别当依赖</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c5c">推送 2026-10-10 · 15★ · MIT · TypeScript · 信源 [1261]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c6">
+        <div class="card-top" data-page-node-id="rpm36c6t">
+          <span class="card-name" data-page-node-id="rpm36c6mn"><a href="https://github.com/codewayco/Inkinesis" target="_blank" data-page-node-id="rpm36c6n">Inkinesis（文本 / 图片 → Inochi2D 与 Live2D 双格式 rig）</a></span>
+          <span class="lang" data-page-node-id="rpm36c6l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm36c6s">6</span>
+          <span class="tag t-make" data-page-node-id="rpm36c6t1">建模</span>
+          <span class="tag t-new" data-page-node-id="rpm36c6t2">新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c6p">把一张插画或一段文字变成「可移植的 2D 角色绑定」—— <strong>同时输出 Inochi2D 和 Live2D 两种 rig</strong>，并拿官方运行时做校验。</p>
+        <div class="analogy" data-page-node-id="rpm36c6a"><b data-page-node-id="rpm36c6ab">打个比方：</b>「一张图 → 可用模型」这条流水线和前几辑的 psd2live / See-through 同源，但它是<strong>唯一双格式输出、且拿官方运行时自我校验</strong>的。</div>
+        <div class="analogy" data-page-node-id="rpm36c6w"><b data-page-node-id="rpm36c6wb">注意：</b>⚠️ <strong>6★</strong>，建仓不到三周；「用官方运行时校验」是作者自述，<strong>未实测</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm36c6g">
+          <div class="mini" data-page-node-id="rpm36c6m1"><span class="lbl" data-page-node-id="rpm36c6m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c6m1b"><div class="bar-track" data-page-node-id="rpm36c6m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm36c6m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c6m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c6m1v">Apache-2.0，双格式输出便于以后换栈</div></div>
+          <div class="mini" data-page-node-id="rpm36c6m2"><span class="lbl" data-page-node-id="rpm36c6m2l">实用性</span><div class="bar" data-page-node-id="rpm36c6m2b"><div class="bar-track" data-page-node-id="rpm36c6m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm36c6m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c6m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c6m2v">思路正、体量太小，仅登记观察</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c6c">推送 2026-10-05 · 6★ · Apache-2.0 · TypeScript · 信源 [1262]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c7">
+        <div class="card-top" data-page-node-id="rpm36c7t">
+          <span class="card-name" data-page-node-id="rpm36c7mn"><a href="https://github.com/sayaka-aiart/cubism-api-bridge" target="_blank" data-page-node-id="rpm36c7n">cubism-api-bridge（用脚本 / agent 驱动 Cubism Editor）</a></span>
+          <span class="lang" data-page-node-id="rpm36c7l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm36c7s">11</span>
+          <span class="tag t-make" data-page-node-id="rpm36c7t1">建模</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c7t2">模块化</span>
+          <span class="tag t-warn" data-page-node-id="rpm36c7t3">实验性</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c7p">Cubism Editor 官方 <strong>External API</strong> 的非官方 TS / Python 桥 + 本地 HTTP 服务，附 StandRig 集成 —— 让你能用脚本或 agent 去自动化 Editor。</p>
+        <div class="analogy" data-page-node-id="rpm36c7a"><b data-page-node-id="rpm36c7ab">打个比方：</b>前几辑的结论一直是「Editor 授权买的是<strong>绑骨</strong>，渲染用的 Core 免费」。这条正面回答「那绑骨这步能不能自动化」。</div>
+        <div class="analogy" data-page-node-id="rpm36c7w"><b data-page-node-id="rpm36c7wb">注意：</b>⚠️ 官方 External API 是<strong>付费版功能</strong>；⚠️ 非官方桥意味着官方一改 API 就可能断，作者自己也标了 <strong>Experimental</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm36c7g">
+          <div class="mini" data-page-node-id="rpm36c7m1"><span class="lbl" data-page-node-id="rpm36c7m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c7m1b"><div class="bar-track" data-page-node-id="rpm36c7m1t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm36c7m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c7m1n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c7m1v">提供本地 HTTP 服务，接 MCP 很容易</div></div>
+          <div class="mini" data-page-node-id="rpm36c7m2"><span class="lbl" data-page-node-id="rpm36c7m2l">实用性</span><div class="bar" data-page-node-id="rpm36c7m2b"><div class="bar-track" data-page-node-id="rpm36c7m2t"><div class="bar-fill" style="width:50%;background:var(--make)" data-page-node-id="rpm36c7m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c7m2n">5.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c7m2v">只有在你已经有 Editor 授权时才谈得上有用</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c7c">推送 2026-09-12 · 11★ · MIT · TypeScript · 信源 [1263]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c8">
+        <div class="card-top" data-page-node-id="rpm36c8t">
+          <span class="card-name" data-page-node-id="rpm36c8mn"><a href="https://github.com/mw2wbyys6t-sudo/live2d-auto-pipeline" target="_blank" data-page-node-id="rpm36c8n">live2d-auto-pipeline（素材 → 可部署模型的 Python 全流程）</a></span>
+          <span class="lang" data-page-node-id="rpm36c8l">Python</span>
+          <span class="stars" data-page-node-id="rpm36c8s">10</span>
+          <span class="tag t-make" data-page-node-id="rpm36c8t1">建模</span>
+          <span class="tag t-new" data-page-node-id="rpm36c8t2">新</span>
+          <span class="tag t-warn" data-page-node-id="rpm36c8t3">需自验</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c8p">Live2D 全流程自动化：从素材出发，覆盖<strong>拆分 / 绑定 / 导出</strong>，目标是全自动产出「可部署运行」的 Live2D 模型。</p>
+        <div class="analogy" data-page-node-id="rpm36c8a"><b data-page-node-id="rpm36c8ab">打个比方：</b>它的野心和上一辑 `SparcAI-Inc/Bunraku` 是同一个方向。区别是 Bunraku 有论文有基准有审稿，这条什么都没有 —— <strong>越是「全自动」的宣传，越要先过打假三问</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm36c8w"><b data-page-node-id="rpm36c8wb">注意：</b>⚠️ <strong>10★</strong>；「全自动产出可部署模型」是本辑最需要打问号的一句，请对照三问：指标测的是手作网格还是自动网格 / 与 baseline 是否同协议 / 眨眼参数成没成。</div>
+        <div class="grid2" data-page-node-id="rpm36c8g">
+          <div class="mini" data-page-node-id="rpm36c8m1"><span class="lbl" data-page-node-id="rpm36c8m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c8m1b"><div class="bar-track" data-page-node-id="rpm36c8m1t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm36c8m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c8m1n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c8m1v">Apache-2.0 + Python，便于塞进现有流水线</div></div>
+          <div class="mini" data-page-node-id="rpm36c8m2"><span class="lbl" data-page-node-id="rpm36c8m2l">实用性</span><div class="bar" data-page-node-id="rpm36c8m2b"><div class="bar-track" data-page-node-id="rpm36c8m2t"><div class="bar-fill" style="width:45%;background:var(--make)" data-page-node-id="rpm36c8m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c8m2n">4.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c8m2v">登记为主，<strong>不要当能力已证实的工具</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c8c">推送 2026-10-10 · 10★ · Apache-2.0 · Python · 信源 [1264]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c9">
+        <div class="card-top" data-page-node-id="rpm36c9t">
+          <span class="card-name" data-page-node-id="rpm36c9mn"><a href="https://github.com/J621111/live2d-automation" target="_blank" data-page-node-id="rpm36c9n">live2d-automation（单图 → Live2D 的 MCP Server）</a></span>
+          <span class="lang" data-page-node-id="rpm36c9l">Python</span>
+          <span class="stars" data-page-node-id="rpm36c9s">77</span>
+          <span class="tag t-make" data-page-node-id="rpm36c9t1">建模</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c9t2">模块化</span>
+          <span class="tag t-warn" data-page-node-id="rpm36c9t3">无许可</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c9p">Live2D 自动化的 <strong>MCP Server</strong> —— 提供图像分析、人脸提取、图层生成、绑骨、物理、动作、导出等一批 MCP 工具，从单张角色图生成中间态 Live2D 包；导出的是 <strong>mock `.moc3`</strong> 并带校验契约。</p>
+        <div class="analogy" data-page-node-id="rpm36c9a"><b data-page-node-id="rpm36c9ab">打个比方：</b>「让 agent 通过 MCP 去产模型」这条线，前几辑都是零散玩具；这是<strong>第一个把工具面做全</strong>的，也是最容易被 agent 编排的一个。</div>
+        <div class="analogy" data-page-node-id="rpm36c9w"><b data-page-node-id="rpm36c9wb">注意：</b>⚠️ <strong>无许可证</strong>（只读参考）；⚠️ 导出的是 <strong>mock `.moc3`，不是真能跑的模型</strong>；作者自己标了并发 / TTL 等实验性约束。</div>
+        <div class="grid2" data-page-node-id="rpm36c9g">
+          <div class="mini" data-page-node-id="rpm36c9m1"><span class="lbl" data-page-node-id="rpm36c9m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c9m1b"><div class="bar-track" data-page-node-id="rpm36c9m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c9m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c9m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c9m1v">MCP 工具面最全，天然可被 agent 调</div></div>
+          <div class="mini" data-page-node-id="rpm36c9m2"><span class="lbl" data-page-node-id="rpm36c9m2l">实用性</span><div class="bar" data-page-node-id="rpm36c9m2b"><div class="bar-track" data-page-node-id="rpm36c9m2t"><div class="bar-fill" style="width:50%;background:var(--make)" data-page-node-id="rpm36c9m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c9m2n">5.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c9m2v">方向对，但停在 mock + 无许可 → 不装、不当依赖</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c9c">推送 2026-09-27 · 77★ · 无许可证 · Python · 信源 [1265]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c10">
+        <div class="card-top" data-page-node-id="rpm36c10t">
+          <span class="card-name" data-page-node-id="rpm36c10mn"><a href="https://github.com/Jelosus2/BD2-L2D-Viewer" target="_blank" data-page-node-id="rpm36c10n">BD2-L2D-Viewer（Web 端 Live2D + Spine 查看器）</a></span>
+          <span class="lang" data-page-node-id="rpm36c10l">Vue</span>
+          <span class="stars" data-page-node-id="rpm36c10s">540</span>
+          <span class="tag t-make" data-page-node-id="rpm36c10t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm36c10t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c10p">《Brown Dust 2》的 <strong>Web 端 Live2D 与 Spine 动画交互查看器</strong>，纯浏览器渲染。</p>
+        <div class="analogy" data-page-node-id="rpm36c10a"><b data-page-node-id="rpm36c10ab">打个比方：</b>前几辑遇到的 viewer 都是 0★ 个人件；这条 540★、持续更新，是 Web 侧渲染<strong>可以直接抄的成熟参考</strong>。</div>
+        <div class="analogy" data-page-node-id="rpm36c10w"><b data-page-node-id="rpm36c10wb">注意：</b>⚠️ 它是「查看器」不是「制作器」；⚠️ 内置模型是<strong>游戏资产</strong>，<strong>别把它的模型拿去商用</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm36c10g">
+          <div class="mini" data-page-node-id="rpm36c10m1"><span class="lbl" data-page-node-id="rpm36c10m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c10m1b"><div class="bar-track" data-page-node-id="rpm36c10m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c10m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c10m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c10m1v">MIT，组件可拆出来单用</div></div>
+          <div class="mini" data-page-node-id="rpm36c10m2"><span class="lbl" data-page-node-id="rpm36c10m2l">实用性</span><div class="bar" data-page-node-id="rpm36c10m2b"><div class="bar-track" data-page-node-id="rpm36c10m2t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm36c10m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c10m2n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c10m2v">想在网页里放个「能动的立绘」时最省事的一条</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c10c">推送 2026-10-08 · 540★ · MIT · Vue · 信源 [1266]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c11">
+        <div class="card-top" data-page-node-id="rpm36c11t">
+          <span class="card-name" data-page-node-id="rpm36c11mn"><a href="https://github.com/StudioRaming/warudo-agent-bridge" target="_blank" data-page-node-id="rpm36c11n">warudo-agent-bridge（让 agent「看到并驱动」WARUDO）</a></span>
+          <span class="lang" data-page-node-id="rpm36c11l">C#</span>
+          <span class="stars" data-page-node-id="rpm36c11s">9</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c11t1">模块化</span>
+          <span class="tag t-new" data-page-node-id="rpm36c11t2">新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c11p">一个 <strong>MCP server + CLI</strong>，让 Claude / Codex / 任意 MCP 客户端能<strong>看到并操作</strong>正在运行的 WARUDO：资产、角色姿势与 IK、表情、蓝图、相机、截图。已发 npm 包 `@studioraming/warudo-agent-bridge`。</p>
+        <div class="analogy" data-page-node-id="rpm36c11a"><b data-page-node-id="rpm36c11ab">打个比方：</b>这是「agent 直接操控虚拟形象」少见的<strong>工程化</strong>产物 —— 不是再写一个桌宠，而是<strong>把别人的演播软件变成 agent 的手脚</strong>。这个思路比工具本身值钱。</div>
+        <div class="analogy" data-page-node-id="rpm36c11w"><b data-page-node-id="rpm36c11wb">注意：</b>⚠️ <strong>9★ 极新</strong>；⚠️ WARUDO 本体是<strong>付费商用软件</strong>，桥免费但底座要钱。</div>
+        <div class="grid2" data-page-node-id="rpm36c11g">
+          <div class="mini" data-page-node-id="rpm36c11m1"><span class="lbl" data-page-node-id="rpm36c11m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c11m1b"><div class="bar-track" data-page-node-id="rpm36c11m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c11m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c11m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c11m1v">走标准 MCP 接法，工具集清晰，可拆去看它怎么暴露场景 API</div></div>
+          <div class="mini" data-page-node-id="rpm36c11m2"><span class="lbl" data-page-node-id="rpm36c11m2l">实用性</span><div class="bar" data-page-node-id="rpm36c11m2b"><div class="bar-track" data-page-node-id="rpm36c11m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm36c11m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c11m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c11m2v">思路值得借；但你手上没有 WARUDO，落地不了</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c11c">推送 2026-10-10 · 9★ · MIT · C# · 信源 [1267]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c12">
+        <div class="card-top" data-page-node-id="rpm36c12t">
+          <span class="card-name" data-page-node-id="rpm36c12mn"><a href="https://github.com/morettt/my-neuro" target="_blank" data-page-node-id="rpm36c12n">my-neuro（自制 AI 桌面伴侣的成熟基线）</a></span>
+          <span class="lang" data-page-node-id="rpm36c12l">JavaScript</span>
+          <span class="stars" data-page-node-id="rpm36c12s">1389</span>
+          <span class="tag t-make" data-page-node-id="rpm36c12t1">建模</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c12t2">模块化</span>
+          <span class="tag t-ok" data-page-node-id="rpm36c12t3">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c12p">自制 AI 桌面伴侣：可定制角色 + 语音对话，<strong>响应 1 秒内</strong>，含长期记忆、视觉识别、声音克隆与 LLM 训练，兼容多种 Live2D 定制。</p>
+        <div class="analogy" data-page-node-id="rpm36c12a"><b data-page-node-id="rpm36c12ab">打个比方：</b>上一辑才说「agent 桌宠有了主干（airi ★50k）」。这条是<strong>第二梯队里最成熟的一条</strong> —— ★1389、2024 年底建仓、持续维护。拿它当对照，能把「主干 / 玩具」的分界线画出来。</div>
+        <div class="analogy" data-page-node-id="rpm36c12w"><b data-page-node-id="rpm36c12wb">注意：</b>⚠️ 默认栈偏重（视觉识别 + 声音克隆都要算力），<strong>16GB 机器要按需关模块</strong>。</div>
+        <div class="grid2" data-page-node-id="rpm36c12g">
+          <div class="mini" data-page-node-id="rpm36c12m1"><span class="lbl" data-page-node-id="rpm36c12m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c12m1b"><div class="bar-track" data-page-node-id="rpm36c12m1t"><div class="bar-fill" style="width:80%;background:var(--make)" data-page-node-id="rpm36c12m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c12m1n">8.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c12m1v">MIT，模块较多、可裁剪</div></div>
+          <div class="mini" data-page-node-id="rpm36c12m2"><span class="lbl" data-page-node-id="rpm36c12m2l">实用性</span><div class="bar" data-page-node-id="rpm36c12m2b"><div class="bar-track" data-page-node-id="rpm36c12m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c12m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c12m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c12m2v">想抄「伴侣感」的交互设计，读它比读一堆教程快</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c12c">推送 2026-10-05 · 1389★ · MIT · JavaScript · 信源 [1268]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c13">
+        <div class="card-top" data-page-node-id="rpm36c13t">
+          <span class="card-name" data-page-node-id="rpm36c13mn"><a href="https://github.com/Playa-Cyrene/Cyrene-Agent" target="_blank" data-page-node-id="rpm36c13n">Cyrene-Agent（带虚拟形象的桌面 agent）</a></span>
+          <span class="lang" data-page-node-id="rpm36c13l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm36c13s">697</span>
+          <span class="tag t-make" data-page-node-id="rpm36c13t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm36c13t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c13p">开源桌面 AI 智能体，基于「昔涟」形象 —— 属于「带虚拟形象的桌面 agent」这条线。</p>
+        <div class="analogy" data-page-node-id="rpm36c13a"><b data-page-node-id="rpm36c13ab">打个比方：</b>和上一条同属一个赛道，但侧重不同：my-neuro 重「伴侣感」，这条重「agent 本体」。两条并排看，能看出这个赛道实际上在分叉。</div>
+        <div class="analogy" data-page-node-id="rpm36c13w"><b data-page-node-id="rpm36c13wb">注意：</b>⚠️ 形象资产涉及<strong>角色版权</strong>（二次元角色图），自用与商用要分开看。</div>
+        <div class="grid2" data-page-node-id="rpm36c13g">
+          <div class="mini" data-page-node-id="rpm36c13m1"><span class="lbl" data-page-node-id="rpm36c13m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c13m1b"><div class="bar-track" data-page-node-id="rpm36c13m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm36c13m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c13m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c13m1v">MIT，代码结构可参考</div></div>
+          <div class="mini" data-page-node-id="rpm36c13m2"><span class="lbl" data-page-node-id="rpm36c13m2l">实用性</span><div class="bar" data-page-node-id="rpm36c13m2b"><div class="bar-track" data-page-node-id="rpm36c13m2t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm36c13m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c13m2n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c13m2v">桌宠线可当第二个对照</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c13c">推送 2026-10-09 · 697★ · MIT · TypeScript · 信源 [1269]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c14">
+        <div class="card-top" data-page-node-id="rpm36c14t">
+          <span class="card-name" data-page-node-id="rpm36c14mn"><a href="https://github.com/cqzaaa/AgentPet" target="_blank" data-page-node-id="rpm36c14n">AgentPet（Electron 桌面助手 + Live2D 外观 + ACP 多 agent 调度）</a></span>
+          <span class="lang" data-page-node-id="rpm36c14l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm36c14s">262</span>
+          <span class="tag t-make" data-page-node-id="rpm36c14t1">建模</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c14t2">模块化</span>
+          <span class="tag t-warn" data-page-node-id="rpm36c14t3">无许可</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c14p">Electron + React 的桌面 AI 助手：<strong>Live2D 动态外观</strong> + 自主决策 Agent 引擎，支持 SSH 远程、Computer Use、工具箱与 MCP，并基于 <strong>ACP</strong> 支持多 Agent 本地 / 远程调度。</p>
+        <div class="analogy" data-page-node-id="rpm36c14a"><b data-page-node-id="rpm36c14ab">打个比方：</b>功能面对「agent 桌宠」这条线来说是最全的之一 —— 既管形象又管 agent 调度，而且用的是 ACP 这种协议化的接法。</div>
+        <div class="analogy" data-page-node-id="rpm36c14w"><b data-page-node-id="rpm36c14wb">注意：</b>⚠️ <strong>无许可证</strong> → 只读参考；⚠️ Computer Use / SSH 远程意味着<strong>权限面很大</strong>，真要装必须先读代码（房规：第三方插件先人审）。</div>
+        <div class="grid2" data-page-node-id="rpm36c14g">
+          <div class="mini" data-page-node-id="rpm36c14m1"><span class="lbl" data-page-node-id="rpm36c14m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c14m1b"><div class="bar-track" data-page-node-id="rpm36c14m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm36c14m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c14m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c14m1v">ACP + MCP 双协议，编排接口齐</div></div>
+          <div class="mini" data-page-node-id="rpm36c14m2"><span class="lbl" data-page-node-id="rpm36c14m2l">实用性</span><div class="bar" data-page-node-id="rpm36c14m2b"><div class="bar-track" data-page-node-id="rpm36c14m2t"><div class="bar-fill" style="width:50%;background:var(--make)" data-page-node-id="rpm36c14m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c14m2n">5.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c14m2v">无许可 + 高权限 → 不装主力，只作参考</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c14c">推送 2026-10-10 · 262★ · 无许可证 · TypeScript · 信源 [1270]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c15">
+        <div class="card-top" data-page-node-id="rpm36c15t">
+          <span class="card-name" data-page-node-id="rpm36c15mn"><a href="https://github.com/AOrbitron/Eridanus" target="_blank" data-page-node-id="rpm36c15n">Eridanus（bot 框架，含「不接 QQ 的纯 Live2D 桌宠模式」）</a></span>
+          <span class="lang" data-page-node-id="rpm36c15l">Python</span>
+          <span class="stars" data-page-node-id="rpm36c15s">206</span>
+          <span class="tag t-make" data-page-node-id="rpm36c15t1">建模</span>
+          <span class="tag t-warn" data-page-node-id="rpm36c15t2">许可不明</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c15p">基于 OneBot 协议的多功能 bot 兼开发框架，以 <strong>LLM function calling</strong> 为核心；支持「<strong>不接 QQ 的纯 Live2D 桌宠模式</strong>」。</p>
+        <div class="analogy" data-page-node-id="rpm36c15a"><b data-page-node-id="rpm36c15ab">打个比方：</b>「桌宠」通常要绑一个聊天平台才能有交互，这条反过来 —— <strong>把平台那层剥掉，只留形象</strong>。对只想摆个桌宠、不想接任何 IM 的人反而干净。</div>
+        <div class="analogy" data-page-node-id="rpm36c15w"><b data-page-node-id="rpm36c15wb">注意：</b>⚠️ 许可证是 <strong>NOASSERTION</strong>（GitHub 识别不出，等于没声明）→ 只读。</div>
+        <div class="grid2" data-page-node-id="rpm36c15g">
+          <div class="mini" data-page-node-id="rpm36c15m1"><span class="lbl" data-page-node-id="rpm36c15m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c15m1b"><div class="bar-track" data-page-node-id="rpm36c15m1t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm36c15m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c15m1n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c15m1v">以 function calling 为核心，容易换自家模型</div></div>
+          <div class="mini" data-page-node-id="rpm36c15m2"><span class="lbl" data-page-node-id="rpm36c15m2l">实用性</span><div class="bar" data-page-node-id="rpm36c15m2b"><div class="bar-track" data-page-node-id="rpm36c15m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm36c15m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c15m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c15m2v">许可证不明，登记但<strong>不推荐</strong></div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c15c">推送 2026-10-10 · 206★ · 许可证不明 · Python · 信源 [1271]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c16">
+        <div class="card-top" data-page-node-id="rpm36c16t">
+          <span class="card-name" data-page-node-id="rpm36c16mn"><a href="https://github.com/Xinrea/JPet" target="_blank" data-page-node-id="rpm36c16n">JPet（C++ 原生 Live2D 桌宠，2020 年维护至今）</a></span>
+          <span class="lang" data-page-node-id="rpm36c16l">C++</span>
+          <span class="stars" data-page-node-id="rpm36c16s">105</span>
+          <span class="tag t-make" data-page-node-id="rpm36c16t1">建模</span>
+          <span class="tag t-ok" data-page-node-id="rpm36c16t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c16p">C++ 实现的 Live2D 桌面宠物，2020 年建仓、<strong>一路维护到本月</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm36c16a"><b data-page-node-id="rpm36c16ab">打个比方：</b>前面那些桌宠全是 Electron / Python / TS —— <strong>启动就吃几百 MB</strong>。这条是原生 C++，在 16GB 机器上，「<strong>低占用</strong>」这个维度目前只有它值得看。</div>
+        <div class="analogy" data-page-node-id="rpm36c16w"><b data-page-node-id="rpm36c16wb">注意：</b>⚠️ 原生 C++ 意味着<strong>改起来门槛高</strong>；⚠️ 它用的 Live2D 渲染栈版本要自己核 —— 前几辑反复撞的 Cubism Core ABI 坑就在这里。</div>
+        <div class="grid2" data-page-node-id="rpm36c16g">
+          <div class="mini" data-page-node-id="rpm36c16m1"><span class="lbl" data-page-node-id="rpm36c16m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c16m1b"><div class="bar-track" data-page-node-id="rpm36c16m1t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm36c16m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c16m1n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c16m1v">老项目，扩展要动 C++，边际收益递减</div></div>
+          <div class="mini" data-page-node-id="rpm36c16m2"><span class="lbl" data-page-node-id="rpm36c16m2l">实用性</span><div class="bar" data-page-node-id="rpm36c16m2b"><div class="bar-track" data-page-node-id="rpm36c16m2t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c16m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c16m2n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c16m2v">Windows + 低占用，与你的硬件硬约束最合</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c16c">推送 2026-10-09 · 105★ · MIT · C++ · 信源 [1272]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c17">
+        <div class="card-top" data-page-node-id="rpm36c17t">
+          <span class="card-name" data-page-node-id="rpm36c17mn"><a href="https://github.com/MacchaPafe/D_sakiko" target="_blank" data-page-node-id="rpm36c17n">D_sakiko（Live2D + AI Agent + GPT-SoVITS 的数字角色）</a></span>
+          <span class="lang" data-page-node-id="rpm36c17l">Python</span>
+          <span class="stars" data-page-node-id="rpm36c17s">96</span>
+          <span class="tag t-make" data-page-node-id="rpm36c17t1">建模</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c17t2">模块化</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c17p">把 <strong>Live2D 形象 + AI Agent + GPT-SoVITS 声音克隆</strong>组合起来的桌面 AI 数字角色。</p>
+        <div class="analogy" data-page-node-id="rpm36c17a"><b data-page-node-id="rpm36c17ab">打个比方：</b>形象 + 对话 + 声音，这三件事前面几条都各做了一部分；这条的价值是<strong>把「声音克隆」也接进来了</strong> —— 本地音色一致性是桌宠体验里最后一块拼图。</div>
+        <div class="analogy" data-page-node-id="rpm36c17w"><b data-page-node-id="rpm36c17wb">注意：</b>⚠️ <strong>GPL-3.0</strong>（分发注意）；⚠️ GPT-SoVITS 要另下模型、另吃算力，16GB 上要算清楚。</div>
+        <div class="grid2" data-page-node-id="rpm36c17g">
+          <div class="mini" data-page-node-id="rpm36c17m1"><span class="lbl" data-page-node-id="rpm36c17m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c17m1b"><div class="bar-track" data-page-node-id="rpm36c17m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c17m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c17m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c17m1v">三条链路都开源，可单独拆用</div></div>
+          <div class="mini" data-page-node-id="rpm36c17m2"><span class="lbl" data-page-node-id="rpm36c17m2l">实用性</span><div class="bar" data-page-node-id="rpm36c17m2b"><div class="bar-track" data-page-node-id="rpm36c17m2t"><div class="bar-fill" style="width:60%;background:var(--make)" data-page-node-id="rpm36c17m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c17m2n">6.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c17m2v">语音链路的参考 · 整包跑起来偏重</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c17c">推送 2026-10-08 · 96★ · GPL-3.0 · Python · 信源 [1273]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c18">
+        <div class="card-top" data-page-node-id="rpm36c18t">
+          <span class="card-name" data-page-node-id="rpm36c18mn"><a href="https://github.com/moonrailgun/vtubeleaf" target="_blank" data-page-node-id="rpm36c18n">vtubeleaf（Tauri + MediaPipe 的本地面捕形象）</a></span>
+          <span class="lang" data-page-node-id="rpm36c18l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm36c18s">13</span>
+          <span class="tag t-make" data-page-node-id="rpm36c18t1">建模</span>
+          <span class="tag t-new" data-page-node-id="rpm36c18t2">新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c18p">用于<strong>会议场景</strong>的本地 Live2D 虚拟形象<strong>面部捕捉 / 跟踪</strong>，技术栈 Tauri + MediaPipe。</p>
+        <div class="analogy" data-page-node-id="rpm36c18a"><b data-page-node-id="rpm36c18ab">打个比方：</b>「开会不想露脸、又想有个形象」这个需求很小众但真实；Tauri 栈体积小，比 Electron 方案轻得多，是 16GB 机器上更现实的选择。</div>
+        <div class="analogy" data-page-node-id="rpm36c18w"><b data-page-node-id="rpm36c18wb">注意：</b>⚠️ <strong>13★</strong> 早期项目，功能面还薄。</div>
+        <div class="grid2" data-page-node-id="rpm36c18g">
+          <div class="mini" data-page-node-id="rpm36c18m1"><span class="lbl" data-page-node-id="rpm36c18m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c18m1b"><div class="bar-track" data-page-node-id="rpm36c18m1t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm36c18m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c18m1n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c18m1v">Tauri 栈易二次开发</div></div>
+          <div class="mini" data-page-node-id="rpm36c18m2"><span class="lbl" data-page-node-id="rpm36c18m2l">实用性</span><div class="bar" data-page-node-id="rpm36c18m2b"><div class="bar-track" data-page-node-id="rpm36c18m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm36c18m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c18m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c18m2v">面捕场景的轻量选项 · 需自验</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c18c">推送 2026-10-10 · 13★ · MIT · TypeScript · 信源 [1274]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c19">
+        <div class="card-top" data-page-node-id="rpm36c19t">
+          <span class="card-name" data-page-node-id="rpm36c19mn"><a href="https://github.com/DasterProkio/awesome-ai-companion" target="_blank" data-page-node-id="rpm36c19n">awesome-ai-companion（AI 伴侣 / 桌宠项目大全）</a></span>
+          <span class="lang" data-page-node-id="rpm36c19l">HTML</span>
+          <span class="stars" data-page-node-id="rpm36c19s">914</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c19t1">模块化</span>
+          <span class="tag t-ok" data-page-node-id="rpm36c19t2">持续更新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c19p">AI 伴侣 / 桌宠 / 长期记忆 / 主动对话方向的 <strong>awesome 清单</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm36c19a"><b data-page-node-id="rpm36c19ab">打个比方：</b><strong>它不是代码，是清单</strong> —— 但正因如此，可以直接当下几轮的<strong>选题地图</strong>用：本辑桌宠这一簇能找到这么多条，一半靠的就是这类目录。</div>
+        <div class="analogy" data-page-node-id="rpm36c19w"><b data-page-node-id="rpm36c19wb">注意：</b>⚠️ 清单类项目<strong>天然带时效</strong>，条目里的星数与活跃度要自己复核，<strong>别直接采信清单里的描述</strong>（房规：先核实再下结论）。</div>
+        <div class="grid2" data-page-node-id="rpm36c19g">
+          <div class="mini" data-page-node-id="rpm36c19m1"><span class="lbl" data-page-node-id="rpm36c19m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c19m1b"><div class="bar-track" data-page-node-id="rpm36c19m1t"><div class="bar-fill" style="width:70%;background:var(--make)" data-page-node-id="rpm36c19m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c19m1n">7.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c19m1v">CC0-1.0，可自由摘编作为选题源</div></div>
+          <div class="mini" data-page-node-id="rpm36c19m2"><span class="lbl" data-page-node-id="rpm36c19m2l">实用性</span><div class="bar" data-page-node-id="rpm36c19m2b"><div class="bar-track" data-page-node-id="rpm36c19m2t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm36c19m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c19m2n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c19m2v">下几轮调研的入口，省一轮搜索</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c19c">推送 2026-10-10 · 914★ · CC0-1.0 · HTML · 信源 [1275]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c20">
+        <div class="card-top" data-page-node-id="rpm36c20t">
+          <span class="card-name" data-page-node-id="rpm36c20mn"><a href="https://github.com/pakholeung37/gd_cubism" target="_blank" data-page-node-id="rpm36c20n">gd_cubism（Godot 的 Cubism 集成，带批渲染与屏幕空间遮罩图集）</a></span>
+          <span class="lang" data-page-node-id="rpm36c20l">C++</span>
+          <span class="stars" data-page-node-id="rpm36c20s">0</span>
+          <span class="tag t-make" data-page-node-id="rpm36c20t1">建模</span>
+          <span class="tag t-warn" data-page-node-id="rpm36c20t2">0★</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c20p">Godot 的 <strong>Cubism 集成</strong>，带批渲染与屏幕空间遮罩图集。</p>
+        <div class="analogy" data-page-node-id="rpm36c20a"><b data-page-node-id="rpm36c20ab">打个比方：</b>Godot + Cubism 正是「在游戏引擎里用 Live2D」最缺的一块 —— 之前这条路只有 `MizunagiKB/gd_cubism`（已在库）。这是<strong>新的第二个</strong>实现。</div>
+        <div class="analogy" data-page-node-id="rpm36c20w"><b data-page-node-id="rpm36c20wb">注意：</b>⚠️ <strong>0★、许可证不明、建仓不足一个月</strong> → 仅 README 级核实，<strong>不要当依赖</strong>；⚠️ 而且它没说吃哪一版 Cubism Core —— 这正是前几辑判定「能不能用」的关键数字。</div>
+        <div class="grid2" data-page-node-id="rpm36c20g">
+          <div class="mini" data-page-node-id="rpm36c20m1"><span class="lbl" data-page-node-id="rpm36c20m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c20m1b"><div class="bar-track" data-page-node-id="rpm36c20m1t"><div class="bar-fill" style="width:50%;background:var(--make)" data-page-node-id="rpm36c20m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c20m1n">5.0/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c20m1v">Godot 侧空白位，值得盯后续</div></div>
+          <div class="mini" data-page-node-id="rpm36c20m2"><span class="lbl" data-page-node-id="rpm36c20m2l">实用性</span><div class="bar" data-page-node-id="rpm36c20m2b"><div class="bar-track" data-page-node-id="rpm36c20m2t"><div class="bar-fill" style="width:35%;background:var(--make)" data-page-node-id="rpm36c20m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c20m2n">3.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c20m2v">仅登记，需实测后才能谈可用</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c20c">推送 2026-09-16 · 0★ · 许可证不明 · C++ · 信源 [1276]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c21">
+        <div class="card-top" data-page-node-id="rpm36c21t">
+          <span class="card-name" data-page-node-id="rpm36c21mn"><a href="https://github.com/marukun712/kokoro" target="_blank" data-page-node-id="rpm36c21n">kokoro（面向工程师的 2D 角色网格变形库）</a></span>
+          <span class="lang" data-page-node-id="rpm36c21l">TypeScript</span>
+          <span class="stars" data-page-node-id="rpm36c21s">42</span>
+          <span class="tag t-make" data-page-node-id="rpm36c21t1">建模</span>
+          <span class="tag t-mod" data-page-node-id="rpm36c21t2">模块化</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c21p">提供 <strong>2D 角色网格（mesh）变形</strong>能力的库，可当作立绘驱动 / 变形的底层组件。</p>
+        <div class="analogy" data-page-node-id="rpm36c21a"><b data-page-node-id="rpm36c21ab">打个比方：</b>前面那些都是「完整应用」，这条是<strong>地基</strong> —— 想让立绘按参数扭动，底层就是把网格顶点搬来搬去这一件事。它只做这一件事，所以容易嵌。</div>
+        <div class="analogy" data-page-node-id="rpm36c21w"><b data-page-node-id="rpm36c21wb">注意：</b>⚠️ 42★，纯库、无成品界面；文档薄，需要自己读源码。</div>
+        <div class="grid2" data-page-node-id="rpm36c21g">
+          <div class="mini" data-page-node-id="rpm36c21m1"><span class="lbl" data-page-node-id="rpm36c21m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c21m1b"><div class="bar-track" data-page-node-id="rpm36c21m1t"><div class="bar-fill" style="width:75%;background:var(--make)" data-page-node-id="rpm36c21m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c21m1n">7.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c21m1v">MIT + 纯库形态，最容易嵌进自研渲染</div></div>
+          <div class="mini" data-page-node-id="rpm36c21m2"><span class="lbl" data-page-node-id="rpm36c21m2l">实用性</span><div class="bar" data-page-node-id="rpm36c21m2b"><div class="bar-track" data-page-node-id="rpm36c21m2t"><div class="bar-fill" style="width:55%;background:var(--make)" data-page-node-id="rpm36c21m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c21m2n">5.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c21m2v">自建桌宠 / 看板娘时的渲染底座候选</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c21c">推送 2026-10-06 · 42★ · MIT · TypeScript · 信源 [1277]</div>
+      </div>
+
+      <div class="card" data-page-node-id="rpm36c22">
+        <div class="card-top" data-page-node-id="rpm36c22t">
+          <span class="card-name" data-page-node-id="rpm36c22mn"><a href="https://github.com/NekoUnix/A.R.I.A" target="_blank" data-page-node-id="rpm36c22n">A.R.I.A（跨平台 Avatar Studio：Live2D / PNG / VRM 统一输出）</a></span>
+          <span class="lang" data-page-node-id="rpm36c22l">Rust</span>
+          <span class="stars" data-page-node-id="rpm36c22s">10</span>
+          <span class="tag t-make" data-page-node-id="rpm36c22t1">建模</span>
+          <span class="tag t-new" data-page-node-id="rpm36c22t2">新</span>
+        </div>
+        <p class="plain" data-page-node-id="rpm36c22p">Rust 写的跨平台 Avatar Studio（<strong>Alpha</strong>）：支持 Live2D、PNG/GIF、VRM 及实验性 GLB，共享跟踪、弹性骨骼、灯光、可视化动作与<strong>多形象 OBS 输出</strong>。</p>
+        <div class="analogy" data-page-node-id="rpm36c22a"><b data-page-node-id="rpm36c22ab">打个比方：</b>它的野心是「一个工作室管所有形象格式」—— 这对直播场景很实用（一场直播里同时挂 Live2D 和 VRM 两种形象）。这个方向目前没有成熟品，所以哪怕 10★ 也值得记一笔。</div>
+        <div class="analogy" data-page-node-id="rpm36c22w"><b data-page-node-id="rpm36c22wb">注意：</b>⚠️ <strong>Alpha</strong>；Rust 栈，改起来门槛高。</div>
+        <div class="grid2" data-page-node-id="rpm36c22g">
+          <div class="mini" data-page-node-id="rpm36c22m1"><span class="lbl" data-page-node-id="rpm36c22m1l">可拓展性</span><div class="bar" data-page-node-id="rpm36c22m1b"><div class="bar-track" data-page-node-id="rpm36c22m1t"><div class="bar-fill" style="width:65%;background:var(--make)" data-page-node-id="rpm36c22m1f"></div></div><span class="bar-num" data-page-node-id="rpm36c22m1n">6.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c22m1v">多格式统一抽象，接口若稳则可复用</div></div>
+          <div class="mini" data-page-node-id="rpm36c22m2"><span class="lbl" data-page-node-id="rpm36c22m2l">实用性</span><div class="bar" data-page-node-id="rpm36c22m2b"><div class="bar-track" data-page-node-id="rpm36c22m2t"><div class="bar-fill" style="width:45%;background:var(--make)" data-page-node-id="rpm36c22m2f"></div></div><span class="bar-num" data-page-node-id="rpm36c22m2n">4.5/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="rpm36c22m2v">方向值得盯，现在还不能用</div></div>
+        </div>
+        <div class="src-line" data-page-node-id="rpm36c22c">推送 2026-10-05 · 10★ · MIT · Rust · 信源 [1278]</div>
+      </div>
+
+    </div>
+
 <section id="s3" class="s-mod" data-page-node-id="DnMeSK878hktRocJwzvNIY">
     <div class="sec-head" data-page-node-id="KqPcSUzx4I5yaVNTCjJjRR">
       <span class="sec-num" data-page-node-id="mCQ7flcAuePG05u4HEiQP1">3</span>
@@ -14273,7 +14684,29 @@ footer a{color:var(--text-2)}
         <div class="grid2" data-page-node-id="sPNdIIDUSdTkBdAHrOaC7b">
           <div class="mini" data-page-node-id="89or8BtvQgOr16wEDF8rYz"><span class="lbl" data-page-node-id="0AvYw5S03WiDJZaBl8TcfV">可拓展性</span><div class="bar" data-page-node-id="EX0rmS8x03wTwHxxxJ3sll"><div class="bar-track" data-page-node-id="HHv7YNRN6Pz0f2Xlh6HtDZ"><div class="bar-fill" style="width:62%;background:var(--mod)" data-page-node-id="0HkeslXAHYdJvRNL5qfUlW"></div></div><span class="bar-num" data-page-node-id="9AhxlOTcEylue8Ut1CbLSt">6.2/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="nfNVyoTV3Y7SaqRjftqPBZ">C# 命令行工具，改起来不难，但功能面比较窄。</div></div>
           <div class="mini" data-page-node-id="zMKg1qb0C3RadgjVB4uT4M"><span class="lbl" data-page-node-id="79E8eIyWi5pwxDIvb82My4">实用性</span><div class="bar" data-page-node-id="pDyZEzEXwNX7QKisSSqlVb"><div class="bar-track" data-page-node-id="xYgyC9APEEEyPKbVVgEhbQ"><div class="bar-fill" style="width:84%;background:var(--mod)" data-page-node-id="EDSvCFNlyJMU37Mswpwn3s"></div></div><span class="bar-num" data-page-node-id="8blC3pX9SUn2tmz5G2RSLt">8.4/10</span></div><div class="val" style="margin-top:6px" data-page-node-id="iNbEaM4DIsle8aaZaG30SE">覆盖 XP→MZ 全系列，是这个细分领域最实用的一个。</div></div>
-        </div>
+
+      <div id="r1257" data-page-node-id="rpm36r1257">[1257] <a href="https://github.com/Inochi2D/inochi2d" target="_blank" data-page-node-id="rpm36ra1257">Inochi2D/inochi2d</a> — 1811★ · BSD-2-Clause · D · 推送 2026-10-03 · GitHub REST API 实测</div>
+      <div id="r1258" data-page-node-id="rpm36r1258">[1258] <a href="https://github.com/nijigenerate/nijigenerate" target="_blank" data-page-node-id="rpm36ra1258">nijigenerate/nijigenerate</a> — 314★ · BSD-2-Clause · D · 推送 2026-10-10 · GitHub REST API 实测</div>
+      <div id="r1259" data-page-node-id="rpm36r1259">[1259] <a href="https://github.com/shinshin86/mesh-avatar-studio" target="_blank" data-page-node-id="rpm36ra1259">shinshin86/mesh-avatar-studio</a> — 597★ · MIT · TypeScript · 创建 2026-10-04 · GitHub REST API 实测</div>
+      <div id="r1260" data-page-node-id="rpm36r1260">[1260] <a href="https://github.com/CheshireMew/PuppetLoom" target="_blank" data-page-node-id="rpm36ra1260">CheshireMew/PuppetLoom</a> — 245★ · AGPL-3.0 · TypeScript · 推送 2026-10-05 · GitHub REST API 实测</div>
+      <div id="r1261" data-page-node-id="rpm36r1261">[1261] <a href="https://github.com/zeikar/iki" target="_blank" data-page-node-id="rpm36ra1261">zeikar/iki</a> — 15★ · MIT · TypeScript · 推送 2026-10-10 · GitHub REST API 实测</div>
+      <div id="r1262" data-page-node-id="rpm36r1262">[1262] <a href="https://github.com/codewayco/Inkinesis" target="_blank" data-page-node-id="rpm36ra1262">codewayco/Inkinesis</a> — 6★ · Apache-2.0 · TypeScript · 推送 2026-10-05 · GitHub REST API 实测</div>
+      <div id="r1263" data-page-node-id="rpm36r1263">[1263] <a href="https://github.com/sayaka-aiart/cubism-api-bridge" target="_blank" data-page-node-id="rpm36ra1263">sayaka-aiart/cubism-api-bridge</a> — 11★ · MIT · TypeScript · 推送 2026-09-12 · GitHub REST API 实测</div>
+      <div id="r1264" data-page-node-id="rpm36r1264">[1264] <a href="https://github.com/mw2wbyys6t-sudo/live2d-auto-pipeline" target="_blank" data-page-node-id="rpm36ra1264">mw2wbyys6t-sudo/live2d-auto-pipeline</a> — 10★ · Apache-2.0 · Python · 推送 2026-10-10 · GitHub REST API 实测</div>
+      <div id="r1265" data-page-node-id="rpm36r1265">[1265] <a href="https://github.com/J621111/live2d-automation" target="_blank" data-page-node-id="rpm36ra1265">J621111/live2d-automation</a> — 77★ · 无许可证 · Python · 推送 2026-09-27 · GitHub REST API 实测</div>
+      <div id="r1266" data-page-node-id="rpm36r1266">[1266] <a href="https://github.com/Jelosus2/BD2-L2D-Viewer" target="_blank" data-page-node-id="rpm36ra1266">Jelosus2/BD2-L2D-Viewer</a> — 540★ · MIT · Vue · 推送 2026-10-08 · GitHub REST API 实测</div>
+      <div id="r1267" data-page-node-id="rpm36r1267">[1267] <a href="https://github.com/StudioRaming/warudo-agent-bridge" target="_blank" data-page-node-id="rpm36ra1267">StudioRaming/warudo-agent-bridge</a> — 9★ · MIT · C# · 推送 2026-10-10 · GitHub REST API 实测</div>
+      <div id="r1268" data-page-node-id="rpm36r1268">[1268] <a href="https://github.com/morettt/my-neuro" target="_blank" data-page-node-id="rpm36ra1268">morettt/my-neuro</a> — 1389★ · MIT · JavaScript · 推送 2026-10-05 · GitHub REST API 实测</div>
+      <div id="r1269" data-page-node-id="rpm36r1269">[1269] <a href="https://github.com/Playa-Cyrene/Cyrene-Agent" target="_blank" data-page-node-id="rpm36ra1269">Playa-Cyrene/Cyrene-Agent</a> — 697★ · MIT · TypeScript · 推送 2026-10-09 · GitHub REST API 实测</div>
+      <div id="r1270" data-page-node-id="rpm36r1270">[1270] <a href="https://github.com/cqzaaa/AgentPet" target="_blank" data-page-node-id="rpm36ra1270">cqzaaa/AgentPet</a> — 262★ · 无许可证 · TypeScript · 推送 2026-10-10 · GitHub REST API 实测</div>
+      <div id="r1271" data-page-node-id="rpm36r1271">[1271] <a href="https://github.com/AOrbitron/Eridanus" target="_blank" data-page-node-id="rpm36ra1271">AOrbitron/Eridanus</a> — 206★ · 许可证不明（NOASSERTION）· Python · 推送 2026-10-10 · GitHub REST API 实测</div>
+      <div id="r1272" data-page-node-id="rpm36r1272">[1272] <a href="https://github.com/Xinrea/JPet" target="_blank" data-page-node-id="rpm36ra1272">Xinrea/JPet</a> — 105★ · MIT · C++ · 推送 2026-10-09 · GitHub REST API 实测</div>
+      <div id="r1273" data-page-node-id="rpm36r1273">[1273] <a href="https://github.com/MacchaPafe/D_sakiko" target="_blank" data-page-node-id="rpm36ra1273">MacchaPafe/D_sakiko</a> — 96★ · GPL-3.0 · Python · 推送 2026-10-08 · GitHub REST API 实测</div>
+      <div id="r1274" data-page-node-id="rpm36r1274">[1274] <a href="https://github.com/moonrailgun/vtubeleaf" target="_blank" data-page-node-id="rpm36ra1274">moonrailgun/vtubeleaf</a> — 13★ · MIT · TypeScript · 推送 2026-10-10 · GitHub REST API 实测</div>
+      <div id="r1275" data-page-node-id="rpm36r1275">[1275] <a href="https://github.com/DasterProkio/awesome-ai-companion" target="_blank" data-page-node-id="rpm36ra1275">DasterProkio/awesome-ai-companion</a> — 914★ · CC0-1.0 · HTML · 推送 2026-10-10 · GitHub REST API 实测</div>
+      <div id="r1276" data-page-node-id="rpm36r1276">[1276] <a href="https://github.com/pakholeung37/gd_cubism" target="_blank" data-page-node-id="rpm36ra1276">pakholeung37/gd_cubism</a> — 0★ · 许可证不明 · C++ · 推送 2026-09-16 · GitHub REST API 实测</div>
+      <div id="r1277" data-page-node-id="rpm36r1277">[1277] <a href="https://github.com/marukun712/kokoro" target="_blank" data-page-node-id="rpm36ra1277">marukun712/kokoro</a> — 42★ · MIT · TypeScript · 推送 2026-10-06 · GitHub REST API 实测</div>
+      <div id="r1278" data-page-node-id="rpm36r1278">[1278] <a href="https://github.com/NekoUnix/A.R.I.A" target="_blank" data-page-node-id="rpm36ra1278">NekoUnix/A.R.I.A</a> — 10★ · MIT · Rust · 推送 2026-10-05 · GitHub REST API 实测</div>        </div>
         <div class="src-line" data-page-node-id="f4b7lj71XZ2E2IiSR8hqwR">最近更新 2024-12-30 · MIT · <a href="#r101" data-page-node-id="bT2M7QeWxFvpzwJ1D2abHF">信源 [101]</a></div>
       </div>
 
