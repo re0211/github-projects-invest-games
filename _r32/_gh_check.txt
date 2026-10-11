@@ -1,0 +1,12 @@
+cvindomitable/illust2psd
+daoming07280/whale-maid-svg-layers
+henceketh/inochi2d-autorig-claude
+inochi2d/inochi-viewer
+inochi2d/inox2d
+jcs130/cormy-live2d
+metasekailab/nnnotes
+rydanee/live2drust
+xez65/bang-dream-old-moc-game-import-workflow
+yanjingzhaisun/inochi2d-toolkit
+yoru-kenomovt/ayatsuri_2d
+zwa73/unitylive2dextractor-unofficial
