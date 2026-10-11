@@ -325,3 +325,220 @@ cn 路给了一篇「Ollama 爆显存三步调参」。我读了，**核实后�
 - 新建工具：无常驻（一次性 `_tools/_r34_skill_use.py` 留档）。
 - **口径纪律新增一条**：「**同名 ⇒ 同源」与「同名 ⇒ 不同源」都不该预设** —— 本轮两条同源疑点结论**正好相反**，只能逐条查。
 - **来源可读性翻转**：Steam **000 → 200**（退役回滚）；`creatorsforum` 保持 200。**退役源必须带复测期**。
+
+---
+
+# 第三十五辑（2026-10-11 · 第三十六次执行）
+
+> 原始产出：`_r35/_r35_gh.md`（子 agent）· `_r35/_r35_gh_main.md`（主 agent 直接检索补位）·
+> `_r35/_r35_cn.md` · `_r35/_r35_official.md`
+> 去重基线：**从 `index.html` 现取**（`_r35/_dedupe_gh.txt` 1317 个 owner/repo + `_dedupe_urls.txt` 1472 URL），
+> 非历史快照（历史快照会把上一轮刚入库的东西当新发现，M-0031）。
+
+## 本辑一句话
+
+**上一辑还在看「墙两侧长出两丛轮子」；这一辑「轮子」自己长成了一条流水线 —— 「立绘 → AI 拆层 → 自动绑定 → moc3」第一次出现四个独立仓库互相引用的完整链路，
+而且有人把显存实测贴了出来。同时，桌宠「身体」侧的宿主技术栈整体换代（Electron → Tauri/Rust/原生 OpenGL）。**
+
+## 搜索覆盖
+
+| 路 | 覆盖 | 产出 |
+|---|---|---|
+| gh | GitHub（`search/repositories` × 8 组关键词，窗口 `pushed:>2026-09-01`，关键链条放宽到 08-01） | **49 条**（子 agent）+ **22 条**（主 agent 直接检索补位），合并去重后见 §二 |
+| cn | 掘金（**本轮提为主力源，实测可直连**）/ CSDN / 知乎 / B站专栏 / 网易云社区 / AcFun / 什么值得买 / CSP 官方中文 tips / CGVisual | **24 条**（独立价值约 23 条；E1/E2 同源只算 1 条） |
+| official | `live2d.com` 官方站 / `community.live2d.com` 官方论坛 / Steam·note 复测 | **5 条 + 2 条复测**（4 条论坛帖 + 1 条站内路由变化；剔除 4 条内容农场） |
+
+## 一、⭐ 本辑主线：AI「拆层 → 自动绑定」流水线第一次成形
+
+前几辑的主线是「绕开 Cubism 格式线」（自己解 moc3）；**本辑变了** —— 出现了一条端到端可跑的路径：
+**单张立绘 → See-Through 拆层 → 分层 PSD → `psd2live` 自动绑定 → moc3 → VTube Studio**。
+
+- **`tsunehimatoi/psd2live`（★614 · Kotlin · NOASSERTION · 推送 2026-10-11）** —— 链条核心件：分层 PSD 自动变可驱动模型。
+  ⚠️ 许可证为 NOASSERTION → 商业使用前必须人工读 LICENSE 原文。
+- **`shinshin86/still2rig-psd`（★130 · MIT · JavaScript）** —— **绑定侧★最高**；静态图 → 结构化 PSD，闭环「拆层 + QA 自检 + 动作预演」。
+- **`sayaka-aiart/StandRig`（★82 · Apache-2.0 · TypeScript）** —— 本辑最「另类」：**把绑定做成 MCP 工具调用**，
+  即「agent 直接调绑定」。与上几辑「让 agent 写 Live2D」的尝试不同，这条是**把绑定能力暴露成 agent 的工具**。
+- **`flowingduskpro/jpg-to-live2d-workflow`（★4 · MIT · Python）** —— **含 8GB 显存上的实测性能与精度结论**，
+  是本辑对「16GB Windows 个人开发者」最直接有用的一条（门槛 8GB 跨得过；MIT；且**作者自己写了哪里做不好**）。
+- `lvhaojie456/image-to-live2d`（★2 · MIT）· `daoming07280/live2d-auto-pipeline`（★0 · MIT，RTX 4060 实测）——
+  同链条的另两种封装 / 实测记录。
+- 拆层侧工具：`0ran/puppet-part-splitter`（★4）· `satoxpochi/PSLayerLRSplitter`（★1 · MIT）·
+  `Bellpepperknuthamsun280/ComfyUI-See-through`（ComfyUI 节点，★0）· `bluewakame/live2d-psd-generator`（★1 · MIT）。
+- ⚠️ **纪律**：这一链条**全部是「首版/实验」性质**（除 psd2live/still2rig/StandRig 外 ★ 均为个位数）。
+  **不能当成品工具推**，价值在「路线已经跑通 + 有人贴了数字」。
+
+## 二、桌宠「身体」侧：宿主技术栈换代
+
+上辑的桌宠多是 Electron/Python；本辑**Tauri / Rust / 原生 OpenGL / 纯浏览器**明显变多：
+
+- `A8Chann/dsh-pet-live2d`（★38 · JS）—— **DSH Web GUI 的 Live2D 桌宠插件**，跟着会话状态换动作表情；
+- `ochiru520/Mio`（★49 · Python · MIT）—— Windows 本地优先 AI Agent（对话/记忆/日记/语音/QQ/Live2D/屏幕感知）；
+- `waifuai/waifu-companion`（★38 · **MIT-0**）—— 纯浏览器，**本辑遇到最宽松许可**（连署名都不要求）；
+- `zeikar/charivo`（★23 · MIT）· `FanyinLiu/Nexus`（★20 · MIT）· `sslbs09/suzuran-pet`（★17）；
+- `chengyuZou/EmaAgent`（★3 · MIT · Tauri）—— 亮点是**「叙事 RAG」与普通记忆分开存**；
+- `Hisakazu333/NekoPapa`（★0 · Apache-2.0 · Tauri + Rust + C++/OpenGL 原生舞台）；
+- `Maboroshinatsu/maibot-deskpet-plugin`（★7 · **GPL-3.0** · Electron + Vue3 + PixiJS + Cubism 4）；
+- `mhmdalsaisi/ds-pet`（★0）—— 看鲸鱼对 DSH 会话反应。
+
+**趋势判断**：「**给某个 AI 编码工具配一个 Live2D 身体**」已经成了重复出现的模式 ——
+Codex 有（`nyan-mikan/codex-live2d`）、DSH 有（A8Chann / dsh-whale-girl / ds-pet）、MaiBot 有（maibot 插件）。
+**这类项目的增量已经够单独成一辑**（见待办④）。
+
+## 三、格式 / 渲染线（本辑增量较小）
+
+- `HELPMEEADICE/Neocari`（★0 · **GPL-3.0** · Rust）—— 纯 Rust 加载 Cubism V2，自带 Haru 六件套；
+- `sdegfd/embedded-live2d`（★0 · MIT · C）—— **ESP32-P4 移植**（把 Live2D 塞进单片机，本辑最意外的一条）；
+- `haneoka-gakuen/vega-plugin-cubism`（★0 · MPL-2.0）—— 「**插件宿主 + Cubism 插件**」的分层结构，生态里少见；
+- `davidleonstr/live2dqt`（★1 · MIT）· `RealNath/wuwa-live2d-viewer`（★5）·
+  `4163/pixijs-live2d-spine-viewer`（★2 · MIT）· `rydanee/live2drust`（★0，无 license，❌）· `julfed7/Cubism-2`（★0，无描述，❌）。
+
+## 四、官方侧（official 路）
+
+- **`/discussion/2389`（2026-10-06）** —— 物理完全不动 + **`Maximum Output` 卡在 0 且改不了**（Cubism 5.3）；
+  **截至采集无回复**。价值在于把「配了却不动」的症状与一个**可观察量**绑在一起：先查输出参数的 `Maximum Output` 是不是 0。
+- **`/discussion/2386`（2026-09-17，官方 09-18 回复）** —— 社区请求 **Live2D Cubism 原生支持 Linux**
+  （论据：Cubism 是 **JVM 上的 Java 应用**，改造成本「应该很小」；现在只能 Wine，重模型性能损失大）；
+  官方回复是套话「**已共享给开发团队**」，**无版本承诺** → **短期不要指望原生 Linux 版**。
+- `/discussion/2381`（图层准备工作流，2026-08-25）· `/discussion/2374`（**官方账号**发的 SDK 5 R5 + URP
+  `TransparentPicking` 材质残留，2026-07-06）—— 两条**仅到标题/作者/日期级核实**，正文待取。
+- ⚠️ **论坛路由变了**：本辑抓到的是 `/discussion/<4 位>`，前几辑记录的是 `/t/<4 位>`，**两套编号不互通**。
+
+## 五、⚠️ 方法学：本轮最重要的三个「教训型」发现
+
+### 5.1 `gh api repos/<x>` 返回 404 ≠ 仓库不存在（**新增，影响所有后续回填**）
+本机实测 `kitao/pyxel`（★1.4 万级、当天仍在提交）经 `gh api` 与 `curl api.github.com` **全部 404**，
+而 WebSearch 证明它活跃存在（v2.9.9，2026-08-12 提交）。同批「查不到」的 38 个里包含
+`block/goose` / `fabricmc/fabric` / `hiyouga/LLaMA-Factory` / `pytorch/torchtune` 等**一线项目**。
+→ 判定为**本机网络层（本地代理）对未缓存路径返回 404**，**不是仓库消失**。
+**纪律**：遇到 404 **不许写「已死链/不存在」**，要写「**本轮 API 未命中，原因未定**」，并换第二通道交叉验证（M-0033 家族）。
+
+### 5.2 **22 个仓库改了 owner/name（链接腐化清单）** —— 靠 GraphQL 返回的 canonical 名抓到
+| 索引里的旧路径 | 现在的路径 |
+|---|---|
+| `block/goose` | `aaif-goose/goose` |
+| `Bin-Huang/chatbox` | `chatboxai/chatbox` |
+| `hiyouga/LLaMA-Factory` | `hiyouga/llamafactory` |
+| `pytorch/torchtune` | `meta-pytorch/torchtune` |
+| `oobabooga/text-generation-webui` | `oobabooga/textgen` |
+| `KwaiVGI/LivePortrait` | `klingairesearch/liveportrait` |
+| `FunAudioLLM/CosyVoice` | `qwenaudio/cosyvoice` |
+| `ltdrdata/ComfyUI-Manager` | `comfy-org/comfyui-manager` |
+| `intel-analytics/ipex-llm` | `intel/ipex-llm` |
+| `qodo-ai/pr-agent` | `the-pr-agent/pr-agent` |
+| `sjtu-ipads/powerinfer` | `tiiny-ai/powerinfer` |
+| `itzcrazykns/perplexica` | `itzcrazykns/vane` |
+| `streetpea/chiaki-ng` | `chiaki-ng/chiaki-ng` |
+| `RaiMan/SikuliX1` | `oculix-org/sikulix1` |
+| `haosulab/maniskill` | `mani-skill/maniskill` |
+| `kolbytn/mindcraft` | `mindcraft-bots/mindcraft` |
+| `genesis-embodied-ai/genesis` | `genesis-embodied-ai/genesis-world` |
+| `laude-institute/terminal-bench` | `harbor-framework/terminal-bench-1` |
+| `riffusion/riffusion` | `riffusion/riffusion-hobby` |
+| `RamiLego4Game/LIKO-12` | `liko-12/liko-12` |
+| `Dryxio/auto-re-agent` | `dryxio/reagent` |
+| `JakeSelby/agent-harness` | `jakeselby/model-citizen` |
+
+**判读**：星数不是「项目还行」的信号；**owner/name 会变**。**卡片的 href 虽然重定向，但卡片上显示的仓库名已经过时** → 下轮待办。
+
+### 5.3 内容农场站群在 Live2D 题材上成规模（**识别特征已成型**）
+本轮搜索命中的「文章」里，`hqwc.cn` / `bryh.cn` / `tzjp.cn` / `mtrt.cn` 是同一批：
+开头「作为从业五年的技术美术」+ **百分比数字密集但全部无法核实**（「参数调节范围扩大约 40%」「效率提升 25%」）
++ URL 形状固定（`/a/<7 位>.html`、`/news/<5 位>`）+ 无信源无截图。
+⚠️ **这些数字是编的** —— 例如写出「`Ctrl+D` 直接复制图层」，而 Cubism 里 `Ctrl+D` 不是这个功能。**收录即传播错误。**
+
+## 六、退役源复测（每条带复测期）
+
+| 源 | 本轮 | 处置 |
+|---|---|---|
+| `store.steampowered.com` | **200** | 延续上辑回滚，维持可读 |
+| `community.live2d.com` | **200** | 可读（但**分类页正文 JS 渲染**，要改用 `/categories` 页取） |
+| `note.com` | **000** | 维持退役（本轮未命中） |
+| B 站 | 视频页需登录**仍不可取正文**；**「专栏 `read/cv…`」页可直读** | **口径微调：只有视频详情页退役，专栏不算退役** |
+| 掘金 `juejin.cn` | **实测可直连取正文**（A1–A3 均成功） | **本辑起确认为 CN 路主力源** |
+
+## 七、自测（「有用就改」）
+
+1. **待办① 已落地**：`pushed_at/updated_at` **回填 1212 处 src-line**（见 §八）；顺带得到
+   **190 个「疑似僵尸」**（pushed 比 updated 早 1 年以上）、**28 处反向异常**（updated 比 pushed 还旧）。
+   → 这条规则确认为**双向**（上辑结论复现）。
+2. **`gh api` 404 假阴性**（§5.1）→ **已写入下轮纪律**；本轮**没有**把这 38 个仓库写成死链（守住 M-0033）。
+3. **CN 路主力源切换成功**（掘金可直连）→ 下轮沿用；**B 站专栏页**同步解禁。
+4. **内容农场判据成型**（§5.3）→ 下轮可直接过滤，省一轮检索。
+5. 未落地（超上下文）→ 全部写进待办，不含糊带过。
+
+## 八、索引与文档维护
+
+- **`index.html` 旧卡回填**：`_tools/_r35_backfill.py` 一次改写 **1212 处** src-line，格式统一为
+  `最近更新 <updatedAt>（推送 <pushedAt>）· …`；**38 条因 API 未命中而跳过**（不编数据）；
+  45 条特殊格式（`创建 … · 最近推送 …`）留待办。备份 `_r35/index.html.pre-backfill.bak`。
+- **第四十版增补**：`insert_v40_cards.py` 增补 **24 卡 + 24 条脚注（[1355]-[1378]）**；
+  页头 **1355 → 1379 项**；卡片 **1338 → 1362**；分组 **309 → 310**；div **12606 / 12606**。
+- **闸门（改前改后各跑一次）**：`insert_guard_probe` **6/6**（P0 语法 + P1 正例 + N1–N5 反例）·
+  `index_metrics` E1–E7 全绿 + 恒等式 + `--update` 重封 310 组 ·
+  `gate_recall_probe` 漏检 0 假警 0 · `index_card_loss_probe` ✅ · `doc_ref_check` 全部通过（C1/C2/C3/C4）·
+  `house_rules_enforcement --check` 6/6（主件 189 行）· `skill_budget` 21 技能 0 超预算 · `memory_health` 跑通。
+
+### ⚠️ 8.1 本轮闸门拦下一次「重复收录」—— 并暴露去重流程的一个盲区
+
+**过程**：v40 初稿里我放了 4 个仓库：`tsunehimatoi/psd2live`、`flowingduskpro/jpg-to-live2d-workflow`、
+`lvhaojie456/image-to-live2d`、`A8Chann/dsh-pet-live2d`。
+`insert_guard_probe` 的**重复仓库检测（N5）直接把它们拦下**——4 个全部已在 `index.html` 里出现过。
+
+**逐个查证结果**：
+| 仓库 | 在 index.html 里的实际状态 |
+|---|---|
+| `tsunehimatoi/psd2live` | **已是独立卡片**（`rpm31c1`，第 31 版收的）。⚠️ 更严重的是：**我当时写的「许可证 NOASSERTION」与索引里记的「GPL-3.0」相反** —— 旧卡是读过 LICENSE 原文的 |
+| `flowingduskpro/jpg-to-live2d-workflow` | 已作为**正文里的纯文本提及**（v38 卡 `rpm34c15`：「同类还有 … 都是同一条链的变体，别重复造」） |
+| `lvhaojie456/image-to-live2d` | 同上，被同一句提及 |
+| `A8Chann/dsh-pet-live2d` | 已在 v38 卡里写明「仓库还有 … 与 `A8Chann/dsh-pet-live2d`（★38）两个同题插件，**别装重**」 |
+
+**→ 处置**：4 张卡全部撤下，换成 4 条真正的新条目
+（`bluewakame/live2d-psd-generator` × `0ran/puppet-part-splitter` × `4163/pixijs-live2d-spine-viewer` × `hoardodile/plugin-2d-skel`）。
+
+**暴露的盲区（本轮最该记住的一条）**：
+> **我的去重基线 `_r35/_dedupe_gh.txt` 是用 `grep -oE 'github\.com/[owner]/[repo]'` 从 `index.html` 现取的 ——
+> 它只能抓到「以 URL 形式出现的仓库」，抓不到「卡片正文里以 `owner/repo` 纯文本形式提及的仓库」。**
+> 而我们的卡片**习惯在「注意」栏里写「同类还有 `x/y`」** —— 这些仓库**看起来是新的，实际已经被判过价值**。
+
+**修法（下轮起）**：生成去重基线时**追加一条全文反引号抓取**：
+```bash
+grep -oE '`[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+`' index.html | tr -d '`' | tr 'A-Z' 'a-z' | sort -u >> _dedupe_gh.txt
+```
+并注意：**探针的判据（`slug in src.lower()`）比我的基线更严**——它连「正文提及」也算重复。
+**这次不是探针过度保守，是探针比我严、且它是对的。**
+
+### ⚠️ 8.2 同一个脚本连撞两次 P0/P1 —— 探针的另一次价值实证
+
+- 第一次：中文串里混了 ASCII 双引号 → `SyntaxError: unterminated string literal`（P0 拦下）；
+- 第二次：修语法时**多加了一个逗号**，把 `desc = ('a' 'b' …)` 变成了 tuple → `TypeError: can only concatenate str (not "tuple") to str`（P1 拦下）。
+- **教训**：`desc = ('多行' '字符串' '隐式拼接')` 这种写法，**一个多余的逗号就静默改变类型**。
+  两次都由探针在**未落盘**的状态下拦下 —— 若直接跑真脚本，会写坏 2.5MB 的 `index.html`。
+
+## 九、下一辑待办（按序）
+
+1. **把 22 个改名仓库的 href 与显示名更新**（§5.2 清单已备好）—— 卡片链接虽重定向，但**显示名已过期**。
+2. **`updated_at` 回填的收尾**：38 条 API 未命中的需换通道补（提示：用 `search/repositories` 或镜像页）。
+3. **AI 拆层→绑定链条的实操验证**：`psd2live` 系（★614）/ `still2rig-psd`（★130 MIT）—— 至少把
+   **许可证与运行前置**读清楚，判断本机（16GB Windows）能不能真跑一次。
+4. **DSH 插件生态单独成辑**（连续三轮提到，本辑已集齐 4 个实现）。
+5. **`/skill-doctor` 第二轮**：11 个零命中技能（本辑实测口径）逐条判定「触发写窄 / 真用不上」，
+   **本轮发现的新根因：技能之间职责重叠也会导致零命中**（`github-research-report-pages` 与
+   `round-research-index` 争同一个场景 → 干脆凭记忆跑）。
+6. **`Agent-desktop-pet` GUI 试装**（隔离 CPython 3.12；状态读取半边已被证明 3.13 直接可跑）。
+7. **`awesome-digital-human-live2d` 试装** / `ayagami` 复查 / `creatorsforum`·`Steam` 按轮复测。
+8. **Cubism 5.4 alpha 下线（2026-10-18）后的第一手**；⚠️ 本辑 **cn 路给出的是「可用期至 2026-09-14」**，
+   与上辑记录的 **10-18** **冲突** → **照录不归一，下轮必须定一个**。
+9. **`consolidation`（记忆合并与淘汰）** —— 蓝本已备（cn 路）。
+10. 超上下文顺延：`motion-mirror` 本机可行性 / `MemOS` 35.24% 复现 / Cubism 官方 Release History 的**正确 URL**
+    （本辑实测 `docs.live2d.com/en/cubism-editor-manual/release-history/` **404**，路径形状错了）。
+
+## 统计页脚
+
+- 三路候选：**gh 49（子 agent）+ 22（主 agent 补位）· cn 24 · official 5**；原始产出 `_r35/`。
+- 本辑落索引：**24 卡**（1325 → 1355 是上辑；本辑 1355 → **1379**）；脚注 [1355]-[1378]。
+- **旧卡回填**：**1212 处** src-line（另 38 条 API 未命中跳过、45 条特殊格式留待办）。
+- 累计经验帖：约 **1540 → 约 1585 条**。
+- `mistakes/`：**33 条**（本辑未新增；§5.1 先并入房规纪律，下轮视情况立条）。
+- 新建工具：`_tools/_r35_extract_repos.py` · `_r35_fetch_pushed.py` · `_r35_backfill.py`（**均为一次性，留档**）。
+- **口径纪律新增**：「**API 的失败返回不是事实**」—— 404/超时/空结果都只说明「**这条通道没拿到**」，
+  不说明「东西不存在」；**换通道**是义务，不是加分项。
