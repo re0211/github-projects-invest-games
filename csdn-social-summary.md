@@ -1084,3 +1084,54 @@ Unreal **R1 beta2**（09-29）· GitHub org 最近推送仍 **2026-09-29**、**�
 - 文档：`csdn-social-summary.md` 本辑；存档 `csdn-social-summary-v36.md`；`AGENTS.md` 指针已更新。
 - 工具：`_r37_fix_renames.py`（改名仓库就地更正，含改前改后双向断言）。
 - 闸门：`insert_guard_probe` 6/6 · `index_metrics` E1–E7 + 恒等式全绿 · `gate_recall_probe` · `index_card_loss_probe` · `doc_ref_check` · `house_rules --check` · `skill_budget` · `memory_health`。
+
+
+---
+
+## 十、第四十四版增补（2026-10-12 · Live2D 生产链 / 桌宠 AI + 国内经验帖，18 项）
+
+> 本轮是 39 辑定稿后的累积增补。三路（gh / CSDN / 官方论坛·巴哈姆特·个人博客）得 18 条候选，
+> 与 index.html（1453→1471 项）及 r40 候选池（112）比对，**零重复**。
+> `insert_v44_cards.py` 落索引 18 张卡（1436→1454）+ 18 条脚注（[1453]-[1470]）。
+> 全套闸门（index_metrics E1-E8 / card_loss / gate_recall / doc_ref / house_rules / skill_budget / memory_health / mistakes_seal）通过。
+
+### 10.1 GitHub 生产链与桌宠 AI（9 项）
+
+- **mmmMMM44/VTuber-Python-Unity（★558 · MIT）** [1453]：用 Python 算好「驱动信号」（面捕/语音/表情），再喂给 Unity 里的 3D 或 Live2D 模型。相当于给模型做了一层「驱动中间件」——你不用在 Unity 里手写每条追踪逻辑。可拓展性强（能接任意输入源），但依赖 Unity，二次开发要 C# 底子。（可拓展 70 / 实用 75）
+- **gtf35/live2d_unity_sdk_chinese_document（★29 · LGPL-2.1）** [1454]：把官方 Cubism SDK for Unity 英文手册中译，施工中。对看英文吃力的中文开发者是刚需。（可拓展 40 / 实用 85）
+- **Tian-9/layer2rig-cubism-plugin（★1）** [1455]：用 MCP 桥接 + Codex 工作流做「分层 PSD → Cubism 绑定」。这是「AI 自动绑定」方向的早期样本——把重复绑定操作抽象成 LLM 可调用工具。思路新颖但 ★1、无 license、未验证。（可拓展 55 / 实用 50）
+- **nladuo/live2d-chatbot-demo（★96）** [1456]：Python 后端 + 前端 JS 的 Live2D 聊天机器人演示，模型能根据对话动嘴变表情。这是「会聊天的看板娘」最小可运行样本，后端可换任意 LLM（含本地 Ollama）。（可拓展 65 / 实用 80）
+- **Yancheng-s/mate-human（★11 · 木兰 PSL-2.0）** [1457]：把 Live2D Cubism 5 Web SDK 和 Fay 数字人框架接在一起，本地可跑的中文数字人。木兰协议合规友好，Web 部署简单。（可拓展 60 / 实用 70）
+- **stkrwork/UE-Live2D（★25 · MIT）** [1458]：把 Cubism Native SDK 接入 Unreal Engine 的插件。给虚幻用户补上「官方 SDK 接入层」（官方也有 beta2 插件，社区版给另一条路）。（可拓展 55 / 实用 60）
+- **organics2016/pymouth（★10 · MIT）** [1459]：Python 口型同步库，根据音频自动驱动嘴部参数。做「会说话的 Live2D」最烦的嘴对声一步封装成 Python 调用，和你的 Ollama/语音栈能直接拼。（可拓展 60 / 实用 75）
+- **JSNrepo/live2d-Live-Assistant（★4 · MIT）** [1460]：Python + HTML 做的 Live2D 桌面 AI 伴侣「Hyori」，和待办里 luckui/HiyoriAI 同路线（本地 LLM 驱动桌面 Live2D）。（可拓展 50 / 实用 65）
+- **Hatsukoi-0115/Virtual-Avatar-Intelligent-Driving-System（★4）** [1461]：Windows 上把摄像头+麦克风+实时 ASR+情绪理解串起来驱动 Live2D 的多模态样本。（可拓展 55 / 实用 60）
+
+### 10.2 格式透明化工具（3 项）
+
+- **Arkueid/lpk2moc3（★18）** [1462]：带 GUI 的 .lpk → moc3 提取器。遇到 .lpk 包裹的模型、想提取 moc3 时的一件趁手工具（无 license，商用谨慎）。（可拓展 50 / 实用 55）
+- **QiE2035/moc3-reader-re（★17）** [1463]：Java 写的 moc3 读取器，逆向实现，能解析 moc3 内部结构。和之前收的 py-moc3 同一条「格式透明化」路线，这次是 Java 版、偏读。（可拓展 60 / 实用 65）
+- **Eatgrapes/Live2D-JavaBinding（★16 · MIT）** [1464]：Live2D Cubism SDK 的 Java 封装，让 Java/Kotlin 开发者能调 Cubism。和 cubism-rs（Rust）、Live2D-Python 同类。（可拓展 55 / 实用 60）
+
+### 10.3 国内 / 官方经验帖（6 项）
+
+- **CSDN《Live2D 看板娘全攻略》** [1465]：中文长文，从「模型从哪来」讲起（自制/免费素材/约稿三条路线），重点强调版权意识——没有 ReadMe/规约的一律默认不可商用。中文用户入门最省事的一篇。（可拓展 70 / 实用 85）
+- **CSDN《打造可定制工作流的桌面女友》** [1466]：Electron + live2d-widget + AI（文中用 Lobster AIgo）做「会对话的桌面伴侣」的保姆级笔记。换成你自己的 Ollama 要改 AI 那部分。（可拓展 65 / 实用 80）
+- **巴哈姆特《Live2D 教學、學習資源整理》** [1467]：繁中社区资源大合集（官方手册/B站双语/Discord/商城/拆图教程），资源密度高、社区维护。（可拓展 75 / 实用 80）
+- **yysuni《做一个 Live2D》** [1468]：前端开发者从零做看板娘的踩坑笔记（Cubism 免费版限制、Figma 不行必须 PS 分层、关键帧/镜像动作坑）。前端背景的人最贴近。（可拓展 60 / 实用 70）
+- **Live2D Cubism 官方教程站** [1469]：中文可用的权威视频教程（从 10 分钟眨眼到嵌入 SDK）。做任何 Live2D 项目的「说明书起点」，判断某教程对不对的基准。（可拓展 90 / 实用 95）
+- **live2d.net.cn《从建模到出图流程》** [1470]：中文站把制作拆成 PSD 拆分→导入→绑定→导出三段闭环的速查版。深度不如官方，但照着走不容易乱。（可拓展 55 / 实用 65）
+
+### 10.4 本轮判断：哪些「AI 开发帖」对自己有用
+
+- **最值得落地**：`pymouth`（口型同步，和 Ollama/语音栈直接拼）+ `nladuo/live2d-chatbot-demo`（聊天形象最小样本，后端可指本地 Ollama）+ `Yancheng-s/mate-human`（Fay + Cubism 5 Web 国产数字人栈）。
+- **值得研究思路**：`Tian-9/layer2rig-cubism-plugin` 的「MCP + Codex 驱动 Cubism 绑定」——和 automate 主线「AI 自动拆层→绑定」一致，但 ★1 未验证，先记思路不急着改工作流。
+- **AI 桌宠路线**：`JSNrepo/live2d-Live-Assistant`（Hyori）与待办里 `luckui/HiyoriAI` 同路线，作为「真跑一遍 AI 桌宠」的参考样本对照。
+- **本轮未改工作流/文档**：上述项目经核实均属「外部资源新增」，没有发现需要改本自动化工作流或 AGENTS.md 的新判据/新纪律；`layer2rig` 的 MCP 绑定思路留作下一轮结合「AI 拆层→绑定」实操验证（不超上下文，但本轮未动手）。
+
+### 10.5 去重与闸门
+
+- 去重基线：index.html 全文（1453 项）+ r40 候选池（112）+ 反引号 `owner/repo` 型；本轮 18 条 URL + slug 双查重，零命中。
+- nizima LIVE 2.7 链接已在 39 辑收录，本轮主动跳过以免重复。
+- 索引：1453 → 1471 项（卡片 1436→1454，脚注 [1453]-[1470]）；跑前 `insert_guard_probe` 6/6，跑后 `index_metrics --update` 重封（E7 新增 1 分组）。
+- 全套闸门（E1-E8 / card_loss / gate_recall / doc_ref / house_rules / skill_budget / memory_health / mistakes_seal）**全绿**。
