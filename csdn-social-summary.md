@@ -1,354 +1,275 @@
-# 跨平台游戏制作 × AI 开发资源梳理（2026-10-11 · 第三十二辑 · **有人正面拆了 Cubism Core 那堵墙**）
+# 跨平台游戏制作 × AI 开发资源梳理（2026-10-11 · 第三十三辑 · **轮子开始分叉：一边继续攻 moc3，一边干脆绕开**）
 
-> 本辑为 Live2D 连续第八轮。**主线不是「又找到几个工具」，而是「卡了六轮的那堵墙，第一次有人正面拆」。**
-> 三路候选：gh 30 条 · cn 16 条 · official 21 条；落索引 **22 卡**（1257 → 1279 → **1301**）。
-> 所有 ★ / 许可证 / 日期均走 `gh api repos/<r>` 实取，**主 agent 已把 22 条卡片逐条复验一遍**（见 §四）。
+> 本辑为 Live2D 连续第九轮。**这一辑没有新的「拆墙者」，但出现了两件结构性的东西：**
+> ① 官方 **5.4 alpha2 手册正文第一次被读完** —— 里面既有对制作小白直接有用的 **PSD 导入增强**，
+> 也有一条**单向门**式的数据兼容警告，且 **alpha 可用期 10/18 到期（距本辑 7 天）**；
+> ② 桌宠线上出现一个**被写成架构主张的范式**：「**你的桌宠不需要大脑**」——
+> 不给你一个新 AI，而是**给你已有的 ta 装一具身体**。
+> 三路候选：gh 33 条（+13 行边缘登记） · cn 19 条 · official 26 条；落索引 **24 卡**（1301 → **1325**）。
+> 所有 ★ / 许可证 / 日期均走 `gh api repos/<r>` 实取，**主 agent 已把 34 个候选仓库逐条复验**（见 §四）。
 
 ---
 
-## 一、上轮待办检查（5 条 → **闭环 5 条**）
+## 一、上轮待办检查（7 条 → **闭环 3 条 / 顺延 4 条**）
 
 | # | 上轮待办 | 状态 | 结果一句话 |
 |---|---|---|---|
-| ① | 实测 `moeru-ai/airi`（连续两轮顺延） | ✅ | **它的 Cubism Core 版本定位到了硬编码 URL**：`CubismSdkForWeb-5-r.3.zip`（详见 §五） |
-| ② | 核 Inochi2D 栈在 Windows 能否装起来 | ✅ | **假设部分不成立**：SDK **有 win32 预编译包**，不用 D 编译器；编辑器有 MSI 但**停更 1 年 4 个月** |
-| ③ | 补读 Cubism 5.3.01–5.3.04 各更新了什么 | ✅ | **逐版读完**（规律：**beta1 写全套、正式版只写修补**）→ 见 §五 |
-| ④ | 修 `insert_guard_probe.py --base-block` 裸 sha 陷阱 | ✅ | 自动补 `:index.html` + 非 HTML 直接 rc=2 报错 + 新增 `--selftest`（**7/7**） |
-| ⑤ | 房规压缩（**连续第六轮欠账**） | ✅ | `agent-house-rules.md` **200 → 189 行**，**23 条一条没少**（做法改了：压正文，不撤条款） |
+| ① | **实际装 `Agent-desktop-pet`**（先读 THIRD-PARTY.md） | ⚠️ **半闭环** | **许可边界读清了，但装不上** —— 它要求 **64 位 CPython 3.12**（`vendor/` 里的二进制按 3.12 编译），本机只有 3.13.12 与 3.11.9。详见 §五 |
+| ② | **复查 `ayagami` 进度**（每辑一次） | ✅ | **本轮无推进**：GitHub **无任何 release**；crates.io 上 `ayagami` 只占了个名（`0.0.0-reserved`，2026-06-14 建，**未真正发布**）；代码最后推送仍是 **2026-09-14** |
+| ③ | `/skill-doctor` | ❌ 顺延 | **连续第十二轮** |
+| ④ | 实装 airi 的 Windows 包 | ❌ 顺延 | — |
+| ⑤ | **核 Inochi2D v0.8.6 MSI 在 Win11 能不能跑** | ✅ | **静态核完**（下载 MSI+zip 实测，非猜测）：**没有 OS 版本闸门**、x64、自带 SDL2/freetype、用了 Win10 1703+ 的 DPI API → **Win11 无结构性障碍**；真实风险只有两个：**需要 VC++ 运行库** + **依赖 OpenGL 驱动**。详见 §五 |
+| ⑥ | **决策原则瘦身**（224 行超 200） | ❌ 顺延 | 本轮上下文被 §五 的实测吃掉 |
+| ⑦ | **给 `doc_ref_check` 补 C4** | ✅ | **已落地并自证**：`--selftest` **9/9 → 12/12**；C4 = 「同文件同一量多处声明须两两相等」（M-0032）。详见 §六 |
 
-> ⑤ 这条拖了六轮，本辑换了个做法才推动：**问题不是「条款太多」，是「每条正文太啰嗦」**。
-> 原纪律写的是「超 200 行先砍最通用的条款」—— 但砍条款要先归档、代价高，还会误伤元规则（#33 被砍过两轮）。
-> 改成**压正文**（把来源叙事缩成一行）之后，一行没丢就腾出 11 行。新纪律已写进文件尾部。
-
-**顺手抓到的**：`insert_guard_probe.py` 的修复本身**也暴露了一个可复用的教训** ——
-闸门脚本自己的失败模式如果是「沉默」（不报错、只是判据悄悄翻倍），就必须**给自己配一组反例**（M-0020 / M-0024 家族）。
+> ③ 这条已顺延十二轮。**它不是一个"待办"，是一个信号**：说明「给自己做工具」这件事永远排在「给索引加内容」后面。
+> 下轮把它**排在所有调研动作之前**（先做，做完再开三路）。
 
 ---
 
 ## 二、本辑一句话
 
-**前六辑反复承认同一件事：「不买 Cubism Editor，就没有合法的 moc3 渲染器」。这一辑出现了两个正面拆墙的人 ——
-一个（★351 的 Rust 库）已经把墙拆开了，另一个（★2 的 Rust 栈）刚把枪口对准；同时，官方自己把 Editor 的「编辑 API」放了出来，
-第三方立刻围出一整簇工具。**
+**上一辑有人正面拆了「渲染 moc3」那堵墙；这一辑的看点不在墙，而在墙两侧长出了两丛完全不同的轮子 ——
+一丛继续攻格式（开源解析、自研渲染器），另一丛干脆不碰 `.moc3`（自研运行时 + 把「拆图」这一步自动化）。
+同时，官方那条 alpha 线给了一个硬期限：想试 5.4 的新能力，只剩 7 天；而它存出来的文件，旧版打不开。**
 
 ---
 
-## 三、主线一：ayagami —— 第一条公开的「黑盒逆向 moc3」开源渲染器
+## 三、主线一：官方 5.4 alpha2 手册（本辑唯一「一手正文级」新增）
 
-### 1. `AyagamiDev/ayagami`（★351 · Rust · Apache-2.0）
+### 1. Editor 5.4 alpha2 用户手册 —— 两节新增，其中一节直接改 PSD 准备流程
 
-| 项 | 值 |
-|---|---|
-| 地址 | https://github.com/AyagamiDev/ayagami （Demo: https://demo.ayagami.dev） |
-| 创建 / 推送 | **2026-07-11 / 2026-09-14** |
-| 星标 | **351**（3 个月） |
-| 做的事 | **直接读 Live2D 的 `.moc3`**，用 wgpu 渲染（Vulkan / Metal / DX / OpenGL / WebGL / WebGPU 全后端） |
-| 宣称支持 | MOC3 特性「up to **SDK 5.0**」：Parts、ArtMeshes、旋转/弯曲变形器、Glue、Blendshape 参数；**物理引擎已完成**；「**SDK 5.3 features（advanced blend & off screen rendering）**」也已打勾 |
-| 法律姿态 | README 明写 **strictly using black-box reverse engineering**，并配了 contributor policy 保证 —— **从不反汇编/反编译专有软件** |
+- URL：https://cubism.live2d.com/editor-alpha/doc/manual/alpha2/en/index.html （页首 `09/07/2026`）
+- **① PSD 导入增强（对做模型的人最有用）**：官方原文 ——
+  `Previously, a PSD with a "1 layer = 1 ArtMesh" structure was required, but now PSDs with a "merged multiple layers = 1 ArtMesh" structure can also be imported as-is.`
+  也就是说：**以前 PSD 必须一层对一个 ArtMesh，现在多层可以合并当一个**；合并图层组、合并蒙版、除尘这些**原先靠 Photoshop 脚本做的事，搬进了编辑器**。
+  两个坑写在手册里：**不想被合并的图层组，名字前加 `*`**；**别带调整图层或图层效果**。
+- **② 数据兼容（单向门）**：`Models saved with 5.4.00 alpha2 cannot be loaded in 5.4.00 alpha1 or editors prior to 5.3.`
+  并补一刀：`since this is an alpha version, there is no guarantee that it will be loadable in future 5.4.00 beta or later editors.`
+  → **翻译成人话：用 alpha2 存过的正式工程，旧版打不开，未来的 beta 也不保证打不开 —— 别拿它存真东西。**
+- **社区验真**：论坛有用户正好踩坑求「回退 alpha1」（https://creatorsforum.live2d.com/t/3976 ，2026-09-16），
+  官方回复明确 **不支持前向兼容**（`前方互換には対応しておらず`）。这是官方正文之外的真实世界佐证。
+- 可复用性：**落地**。理由：① PSD 合并能力**只在 alpha2**（正式的 5.3.04 没有）；② 而 alpha2 存的文件是单向门 → **做法是：另存副本再试，别覆盖原文件**。
 
-**为什么这是本辑最硬的一条**：索引里的「开源替代」此前要么**不碰 moc3**（Inochi2D 用自己的格式、`umamo` 只读 `.cmo3`），
-要么**只做 JSON 不做网格**。ayagami 是第一条公开、活跃、**声称已实现 MOC3 加载 + 渲染**的开源库。
-更关键的是它把两件事在法律上分开了：**「格式兼容」≠「破解软件」** —— 只看输入输出反推格式，不碰二进制本体。
+### 2. ⏰ 时间敏感：5.4 alpha 可用期 **截至 2026-10-18**（距本辑 7 天）
 
-**但别现在押它**（作者的自我披露，不是我的判断）：
-① `API is pretty unstable … no documentation yet`，crates.io 还没发版；
-② **表达式 / pose / 动作文件仍是 TODO** → 做得成挂件，做不成完整 VTuber；
-③ 许可**双标**（README 写 MIT + Apache-2.0，GitHub 只识别出 Apache-2.0）→ **引用时以仓库内 LICENSE 原文为准**；
-④ 「黑盒逆向合法」是**作者的法务主张**，各地对专有格式逆向的认定不同，商用前自行复核。
+- URL：https://www.live2d.com/en/information/cubism-5_4-alpha/ ·
+  https://cubism.live2d.com/editor-alpha/doc/manual/alpha2/en/index.html
+- 原文：`Available until "October 18, 2026." After this date, the alpha version will no longer be available.`
+- 可复用性：**落地** —— 想试「多层合并导入 PSD」的，**10/18 前**；过期后这一入口整体下线，只能等 beta。**这是本辑唯一有期限的结论。**
 
-### 2. 两条配套：一条通引擎，一条当实验台
+### 3. 官方口径复核（**三路主干的版本口径本轮逐条未变**）
 
-- **`ayagami-gd`（★39 · MIT · Rust · 推送 2026-09-15）** —— Ayagami 的 **Godot 绑定**。
-  Godot 侧原本只有「官方 Cubism Native SDK」一条路（`gd_cubism`），这条是新增的「**Godot + 非官方 moc3 渲染器**」组合。
-  ⚠️ 需 **Godot 4.7**，而 `gd_cubism` 的二进制仍 target **Godot 4.3 ABI** —— **两者版本要求不同，别混着装**。
-- **`pakholeung37/manosaba-live2d`（★0 · C++ · 无 license · 推送 2026-09-16）** ——
-  **同一 Godot 工程里把两条运行时并行跑**的对照实验台：一条 `gd_cubism v0.9.1 + Cubism Native 5-r.5`（官方），
-  一条 Ayagami（Rust）。它的价值不是代码，是**「可比」** —— 想知道开源那套行不行，这是最快的一手信号源。
-  ⚠️ 路径写死 macOS、无 license、只是 demo。
+| 项 | 本轮复核结果 | 对比上一辑 |
+|---|---|---|
+| Editor 正式版 | **5.3.04（2026-09-03）**，页内**无 5.3.05** | 未变 |
+| Release History 大表 | 最新仍 `09/03/2026 · Cubism 5.3.04`，**5.4 未进表**（只在页顶横幅） | 未变 |
+| 产品页 `cubism/update` | 仍写 **Ver.5.3.00** —— **与 docs 表 5.3.04 冲突连续第 3 轮未修** | 未变 |
+| SDK 术语 | **Cubism 5 SDK = ≤R6 / Cubism 5.4 SDK = ≥R7 alpha1** | 未变 |
+| SDK 两条破坏性变更 | ① Unity **模型计算顺序**改了（物理结果与 R5 不同）② **Json Version Tag** 认不出就加载失败 | 未变 |
+| SDK 公告主线 | 最新仍 **Unreal R1 beta2（2026-09-29）**；**主线无 R6/R7** | 未变 |
+| 官网新闻 | 首条仍 **2026.07.17**，近 3 个月无新增 | 未变 |
+| GitHub org `Live2D` | 最近推送仍 **2026-09-29**，**无 R7 tag** | 未变 |
+| 5.4 SDK alpha2 手册 | **404** —— Editor 有 alpha2，**SDK 手册仍停在 alpha1** | 新增探测 |
+| 竞品 Spine | 正式版仍 **4.3.26（2026-09-07）**，4.3.27 Unreleased | 未变 |
+| Inochi2D | `inochi-creator` 最新仍 **v0.8.6（2024-09-18）** | 未变 |
 
-### 3. 还有一个刚对准枪口的：`ayatsuri_2d`（★2 · Rust · GPL-3.0）
-
-宣称端到端支持 **moc3 v3 到 v6**，自带 C ABI 让 Unity / UE / Godot / Python / JS 都能嵌入，自创 `.aom` 保存格式。
-但它 README 自标 **status: Early**、★2、宣称**无第三方验证**、项目名疑似新号 → **只登记「有人在做」，不采信能力**。
-
-> **两家的意义**：「moc3 兼容层」已经从「某人的怪念头」变成**开源阵营公认的必争点**。
-> 这条线值得**每辑复查一次进度** —— 它是「不买 Editor 也能用现成 moc3 资产」唯一的现实出口。
+> **一句话给小白**：你该装的还是 **5.3.04**；5.4 现在只有 alpha（10/18 下线），**看可以，存不行**。
 
 ---
 
-## 四、主线二：Cubism Editor 的 External API 被第三方围建出一整簇
+## 四、主线二：「大脑和身体分离」—— 桌宠线第一次出现被写清楚的架构主张
 
-**背景**：官方 Cubism Editor 有本机 External API（**默认端口 22033**），2026 起第三方开始围它做插件 / agent / 工程管理，
-且 **5.4 alpha 首次放出「编辑 API」样例（`04_EditSample`）**。索引此前只有零散的 MCP，**这一辑成簇了**。
+### 1. `zziying/ai-live2d-body`（★46）—— 一份「为什么不用现成框架」的设计文档
 
-| 项目 | 星 | 关键点 | 可复用性 |
+- URL：https://github.com/zziying/ai-live2d-body （README.md + human-guide.md，**目录只有 2 个文件**）
+- 主张：airi / Open-LLM-VTuber 这类框架会**给你一个新的 AI**（人格来自框架自己的 prompt、记忆存框架自己的库）；
+  本篇主张**桌宠没有大脑**，只做三件事：① 显示 ta 的状态 ② 把你的触摸传回 ta 的 session ③ 给 ta 一套身体 API。
+  配套代码版 `zziying/ai-live2d-body-starter`（★17）。
+- 可复用性：**参考（当设计纲领）**。⚠️ **无许可证**、只有两份 md，**不是能依赖的项目**。
+- **为什么这条重要**：它正对「已经有一个天天用的 agent」的人 —— **不是换一个新 AI，而是给已有的 ta 装身体**。
+
+### 2. 同日期的「身体」侧供给（本方向本辑最密集）
+
+| 项目 | ★ | 许可 | 一句话 | 可复用性 |
+|---|---|---|---|---|
+| `qiyueblues-design/zhuomianling`（桌面灵） | 27 | MIT | **Windows + local-first 的桌宠框架**，模型由用户自备；`docs/adr/0001-记忆权威账本.md` 把记忆层写成了架构决策，GPT-SoVITS 走配置文件接入 | **落地**（本机画像正面命中；27★ 三个月，先当框架读） |
+| `kiyotakali/Miru` | 175 | Apache-2.0 | 本地优先 + 长期记忆 + 多端同步，**三平台都出安装包**（`Miru-Windows-x64-Setup.exe` / dmg / apk） | **落地→参考**（本辑最成熟） |
+| `ice-only/localai-rag-live2d` | 21 | MIT | 本地 RAG + 长期记忆 + Live2D，体量小 | **参考**（已有 Ollama 的话改造成本最低） |
+| `hhjk21/Firefly-Companion-AI-` | 27 | MIT | **双窗口解耦 + 鼠标穿透** + 本地 ONNX 语义记忆 + GPT-SoVITS | **参考**（工程结构可抄，**角色素材版权归米哈游，禁商用**） |
+| `goodko/xiaozhi-ios` | 128 | MIT | iOS 端：Live2D 形象 + 实时语音 + **MCP 工具调用** | **参考**（本辑唯一像样的移动端） |
+| `ochiru520/Mio` | 49 | MIT | Windows 本地优先 agent：对话/记忆/日记/语音/QQ/Live2D 一体 | **参考**（与桌面灵交叉对照） |
+| `yuri-os/YuriOS` | 34 | Apache-2.0 | 「模型/记忆/角色三权归用户」，日更 | **参考**（口径最清楚，别被 slogan 带走） |
+| `ExpiredPopsicle/SnekStudio` | 418 | GPL-3.0 | **Godot 4.7 写的 VTuber 软件，作者自述生产直播跑了 3 年**（只吃 **VRM 0.x**） | **参考**（3D 路线的重型对照，与 `.moc3` 不互通） |
+| `menglimi/astrbot_plugin_live_stream_companion` | 58 | MIT | **B 站弹幕 → LLM → VTube Studio → OBS 字幕**全链打通，日更 | **参考/落地**（直播集成唯一全链） |
+| `HanetakaChou/Brioche-Puppet` | 14 | LGPL-3.0 | 纯 C++ VTuber 软件，真三平台构建脚本 | **参考** |
+
+---
+
+## 五、上轮待办的两处实测（本辑的「动手」部分）
+
+### 1. `Inochi2D inochi-creator v0.8.6` 在 Win11 能不能跑 —— **静态核完（下载实物解析，非猜测）**
+
+- 方法：`gh api` 取 release asset → 下载 **MSI（23.96MB）** 与 **win32 zip（22.27MB）**，用自建 `_tools/msi_probe.py`
+  读 MSI 的 Property / LaunchCondition 表，再用 PE 头解析主程序依赖。
+- **结论：Win11 无结构性障碍**，证据三条：
+  ① **MSI 里唯一的 LaunchCondition 是 `NOT WIX_DOWNGRADE_DETECTED`** —— **没有任何 OS 版本闸门**（不写 `VersionNT >= …`）；
+  ② 主程序 `inochi-creator.exe` 是 **PE32+ / x86-64**，`MinimumOSVersion = 6.0`，**且引用了 Win10 1703+ 才有的 `SetProcessDpiAwarenessContext`** → 它本来就是按现代 Windows 编的；
+  ③ DLL 依赖全部自带（`SDL2.dll` / `freetype.dll`），运行时只需 **`VCRUNTIME140.dll` + `VCRUNTIME140_1.dll`**（= 装一次 VC++ 2015–2022 x64 运行库）。
+- **真实风险（不是"能不能跑"而是"跑得起来吗"）**：它依赖 **`OpenGL32.dll`** —— 在没装好显卡驱动的机器/虚拟机/远程桌面上，
+  会退到微软的软件 OpenGL 1.1，**编辑器可能起不来或渲染异常**。这是唯一的实质风险点。
+- 另外一条**顺手发现的**：v0.8.6 这个 2024-09 的 release 下，**2026-06-07 又新加了两个资产** `inpfix` / `inpfix.exe`（下载 358 次）——
+  **"老 release 挂新资产"** 是又一个「`updated_at` 骗人」的形态。MSI 安装器**带简繁体中文语言包**（`zh-CN.mo` / `zh-TW.mo`）。
+- 可复用性：**参考** —— 结论是「能装」，但编辑器本体**停更 2 年 1 个月**（v0.8.6 = 2024-09-18），
+  **不买 Editor 这条路真正的短板从来不是能不能装，是没人再维护它**。
+- 复现命令：`python _tools/msi_probe.py <path.msi>`（本轮新建，只读，不安装、不写注册表）。
+
+### 2. `Agent-desktop-pet`（CodexPet 2.0）—— **许可读清了，但装不上**
+
+- URL：https://github.com/shicheng5589-oss/Agent-desktop-pet （★20 · Python · **NOASSERTION** · 推送 2026-10-11 · 建 2026-09-25）
+- **THIRD-PARTY.md 读到的许可边界**（这是上轮待办要的那一步）：
+  - 仓库自己的代码是 **MIT**；但里面带的 **`live2dcubismcore.min.js` 是 Live2D 公司专有授权**（文件头写 "Redistributable Code"）——
+    **可以随程序分发，但不能单独拿去卖/改许可**；
+  - **`web/model/`（角色模型）的授权跟代码的 MIT 是两回事**，通常属于模型作者 —— 仓库自己也写明「别把别人的模型随仓库发到 GitHub」。
+- **装不上的原因（本轮新发现，值得记一笔）**：README 的「运行环境」写死 **64 位 CPython 3.12**
+  （`vendor/` 里的 `pythonnet` 等二进制是按 3.12 编译的）。**本机托管运行时是 3.13.12、系统是 3.11.9 —— 没有 3.12。**
+- 可复用性：**参考**。理由：它是「agent 状态 → 表情」这条线里最完整的一个样本（12 个 Agent 状态 → 9 种表情、只读本地不联网），
+  但**环境钉子比想象中硬**：要么装个 3.12，要么自己改 vendor。→ **顺延到下一轮**（下轮先决定：装 3.12 还是放弃）。
+
+---
+
+## 六、自测与「有用就改」（本辑落地的改动）
+
+### 1. ✅ `doc_ref_check.py` 补 C4「同量一致」（上轮待办 ⑦，本辑闭环）
+
+- **要解决的问题（M-0032）**：同一个文件里两处声明同一个量，改一处漏一处 —— **两边同时"看起来正常"，没有任何东西会报**。
+- **判据设计（三条边界都是实测撞出来的，不是想出来的）**：
+  1. 标签归一化 = **紧邻数字的两个字**（"又说落索引 1257 项" 与 "索引 1301 项" 视为同一个量）；
+  2. **数字前面同行出现反引号标识符** → 判为「按条目罗列的明细行」，跳过 ——
+     否则 `` `a/b` ★38 · 下载次数 38 次 `` 和 `` `c/d` ★51 · 下载次数 511 次 `` 会被当成"自相矛盾"（**首版实测假警**）；
+  3. 标签前一个字是否定词（不/未/无/没/零）→ 跳过 —— 否则「路径**存在** 20 条」与「路径**不存在** 0 条」会撞车（**首版实测假警**）。
+- **实测**：对 5 个真实文档跑 **0 假警**；`--selftest` 从 **9/9 → 12/12**（新增 N9 应红 / N10 应绿 / N11 两个假警回归位）。
+- **已知盲区（写进脚本头注释）**：**跨文件**的同一个量对不上，C4 抓不到（如 `AGENTS.md` 的「1301 项」vs `index.html` 的真实卡数）——
+  那属于「有外部真相」的闸门（`index_metrics.py`）的活，**不在这里重复造**。
+
+### 2. ✅ 新建 `_tools/msi_probe.py`（只读解析 MSI 元数据）
+
+- 用途：**"这包装不装得上"这个问题第一次有了不靠猜的答案** —— 读 Property / LaunchCondition / File 表 + PE 头依赖。
+- 本轮已用它回答了 Inochi2D 那个悬了两轮的问题（§五.1）。
+
+### 3. ⚠️ 收集到但**本轮不改**的（写清为什么）
+
+- **「`updated_at ≠ pushed_at` 应成文规则」**（gh 路提出）：本辑至少 3 处靠 `pushed_at` 才识破假活
+  （`Obs-Live2D-Plugin` updated 2026-09 但 **pushed 2020-06**；`LitStronger/live2d-moc3` updated 2026-10 但 **pushed 2021-02**；
+  `inochi-creator` 老 release 挂新资产）。**建议落成「索引卡固定同时打印两个日期」** —— 但改卡片模板会动到 1290 张卡，
+  **超上下文 → 留下一轮**（见 §九）。
+- **榜单类**（Artificial Analysis 2026-10-11 快照 / `aichangelog.dev`）：与 Live2D 制作无关，**只作背景**，不落地。
+  ⚠️ 顺手探明：`theaic.io` **仍 HTTP 000**（连续两轮）、`mlcommons.org`（MLPerf）**403（WAF，新探明）**。
+
+---
+
+## 七、中文侧（真正有硬信息的三块，其余被农场淹没）
+
+### 1. 律所解读《〈人工智能拟人化互动服务管理暂行办法〉施行满月》—— **本辑执行价值最高的一条**
+
+- URL：https://www.lawzj.cn/news_view.aspx?TypeId=5&Id=1753&Fid=t2:5:2 （2026-08-28，卓建律所）
+- **硬结论**：
+  - **罚款其实不高**：拒不整改一般 **1–10 万元**，造成生命健康损害 **10–20 万元**；
+  - **真正的强约束是分发渠道**：应用分发平台须核验安全评估与备案材料，**可不予上架 / 暂停 / 下架**；
+  - **安全评估触发线（量化）**：**注册用户破 100 万，或月活超过 10 万**；
+  - **三层递进义务**：① 持续展示 **AI 非真人身份标识** → ② 动态风险提示 → ③ **连续使用超 2 小时强制提醒**；
+  - **易被忽视**：禁止用情感挽留话术（"再陪我一会"）阻碍退出。
+  - 处理路径对照：豆包引导至第三方 App / 通义千问关入口 / 腾讯元宝 2026-06-30 关停 / 网易云"妙时" 2026-07-14 停运。
+- 可复用性：**落地** —— 任何要把本地 LLM 桌宠**对外发布**的人，这三条（AI 标识 / 2 小时提醒 / 禁情感挽留）就是最低合规集。
+
+### 2. 腾讯云官方文档《2D 端渲染场景概述》—— 商用 2D 数智人的预算基线
+
+- URL：https://cloud.tencent.com/document/product/1240/118294
+- 硬数字：SDK 包体 **Android 24MB → ≈7.5MB**、**iOS 38.8MB → ≈12.5MB**；基础模型包 **82MB → ≈58MB**；
+  **V1.3 起首帧渲染延迟 1450ms → 450ms**；授权为**年包**（应用/设备/小程序三模式，**不含 TTS**）。
+- 可复用性：**落地（当预算基线）**。⚠️ 是**商用授权**不是开源。
+
+### 3. 米画师《语音对话助理 Live2D 形象设计》—— 一份可直接当规格书的需求单
+
+- URL：https://www.mihuashi.com/projects/11719641 （预算 ¥1,000–3,000，试稿费 500 元/张）
+- 可抄的部分：**要动的部位必须断开**（头发分前/后/侧缕、眼分眼白/瞳孔/高光/上下睫毛/眼皮、嘴分上唇/下唇/口腔内部…）；
+  **可动部位必须画完整**（后脑勺头发画全、裙摆内侧画到 —— "只画到脸边缘一转头就穿帮"）；
+  **分辨率建议 ≥2048×2048**；**转头幅度决定补画量**（要左右 30° 以上，必须补侧脸）；阴影/高光最好也分层。
+- 可复用性：**落地**。⚠️ 与已收的米画师**承制橱窗**是不同条目（这条是**需求方发包单**）。
+
+### 4. 其余（参考级）
+
+- 掘金《XiaoMate 更新》：**同一个 app 内挂 Live2D + VRM + GLB + GLTF 四类模型**（Live2D 走 PIXI + Cubism 4，3D 走 Three.js，按扩展名自动选适配器）
+  https://juejin.cn/post/7689485292671565878 （2026-09-27）· 项目 `oddmeta/xiaomate-desktop`（★4）
+- 腾讯搜一搜盘点《从 29 元到 2000 元…》：软件派 **璇玑·貂蝉 29 元买断** / **桌面小猫 9.9 元、200+ 造型、用户破万**；
+  **MeaPet**（Live2D+PNG 双渲染、对接 Ollama、SQLite 存记忆）/ **DoroPet**（8 种模型后端）；
+  硬件派 **ropet 2000 元/台（卖出近 2 万台）** / **StackChan 59 美元（Kickstarter 超目标 45 倍）**
+  https://so.html5.qq.com/page/real/search_news?docid=70000021_3096a9e153982452
+- 今日头条《教你养"AI桌面宠物"》：把"本地部署"讲成两步 —— `ollama pull qwen:latest` + 地址填 `http://localhost:11434`
+  https://m.toutiao.com/article/7687912255379489319
+- 程序员客栈两条：`f25h-233/live2dpet`（★7 · GPL-3.0，**四进程 ZeroMQ IPC 解耦**：渲染/推理/TTS/监控 —
+  "桌宠一卡全卡"的直接解法）· `mystiafly/Touhou_Pet`（★15，LangGraph ReAct + Qdrant + DataBank 记忆）
+- 发行样本：indienova《不/存在的你，和我》主机版（PC 版 2024-12 上 Steam，**2 万+ 评测、93% 好评**；NS 港区 **38 港币**；主线约 2 小时）
+  https://indienova.com/indie-game-news/the-noexistencen-of-you-and-me-nintendo-switch-ps4-ps5-released/
+- `nanlingyin/SoulLink_Live2D`（★38）—— 一条可回查的「**口型不动**」排查法：有声音但「口 開閉」恒为 0.00 →
+  逐个确认 ① TTS 播放时是否创建 `AnalyserNode` ② 音量是否映射到 `ParamMouthOpenY`（来源 CSDN `g470641382`，非 `weixin_*`）
+
+---
+
+## 八、负结论（**一律写「本轮未命中」，不写「不存在」**）
+
+| 方向 | 本轮结果 | 查法入口 | 复测条件 |
 |---|---|---|---|
-| `turboism/Turboism`（Java · AGPL-3.0-only · 2026-10-08） | ★3 | **Windows 优先的插件框架**；支持表列出 **5.2.03 / 5.3.02 / 5.3.03 各配「精确版本适配器」** ← 这是「5.3.x 内部接口在变」的**第三方硬证据** | 参考（AGPL + ★3，先观察） |
-| `pakholeung37/cubism-editor-computer-use`（Python · MIT · 2026-09-16） | ★0 | **官方 5.4 alpha「编辑 API」样例** + 补齐 `cubism_async/`（session / dispatcher / identity / specs） | 参考（抄它的**握手分层**） |
-| `sena-nana/NanaBetterCubism`（Rust · MIT · 2026-09-07） | ★0 | 对话驱动改工程，所有结构编辑走 **preview → 确认 → 后端事务 → 回读验证** | 参考（抄**可回滚的 AI 编辑**模式） |
-| `RainTrap341/cubihub`（Rust · MIT · 2026-03-21） | ★0 | **多版本 Cubism 的工程管理器**：自动扫描本机版本、绑定启动版本开项目、读写 **Mesh Preset**、**日志→问题摘要** | 参考（思路可借） |
+| **「单图/提示词 → 可部署 `.moc3`」** | **零新增可信工具**：搜到的全部止步于「到自研运行时」或「到 PSD 绑定」 | GitHub 搜索 `image-to-live2d` / `moc3 export` / `one image live2d` | 出现真正产出 `.moc3` 的仓库 |
+| **纯自研 `.moc3` 解析器** | 仍稀缺且玩具化（`moc3-rs` ★6、`jz315/…-sys` ★1 是"读"不是"渲"） | 同上 | 这条线已被 `ayagami` 占住 |
+| **Cubism Editor 自动化** | **近零新增**（仅 `madosuki/live2dManager` ★1 其实是 Web SDK 封装） | GitHub `cubism editor api` | 上一辑 `CubismExternalEditMCP` ★34 已吃满 |
+| **VTube Studio 官方/半官方插件** | **零命中**（官方 `DenchiSoft/VTubeStudio` ★1313 是 **API 文档仓**不是插件市场） | GitHub `vtuber studio plugin` | VTS 插件生态在 GitHub 基本空白 |
+| **音频驱动口型（独立 lip-sync）** | 延续上辑**无独立命中**（都是整包在桌宠里） | GitHub `lipsync live2d` | 维持 |
+| **知乎 / B 站正文** | **本轮仍取不到**：B 站检索触发敏感审批超时、知乎无正文级证据 | 站内搜索 + WebFetch | **下轮改人工浏览器取帖** |
+| **HN / dev.to** | 仍无料：HN `live2d` **2167 命中全误召**（fuzzy 把 "lived/live diff" 算进来）；dev.to 仍 **2 篇**（最新 2026-06-08） | Algolia API / dev.to API | 出现标题含 Live2D 的非误召条目 |
+| **退役源复测** | `Reddit` / `note.com` / `theaic.io` 均 **HTTP 000**（与退役名单一致，本辑已复测）；**`creatorsforum.live2d.com` 本轮 200**（进一步确认退役已回滚） | — | 每辑复测一次 |
 
-**两条值得抄进自己项目设计的**：
-1. **「可回滚的 AI 编辑」**（NanaBetterCubism）—— 用 agent 改美术资产，所有人的第一反应都是「改坏了怎么办」。
-   它的答案是 `preview → 确认 → 事务 → 回读验证`，且可取消。索引里**此前没有任何条目给出这种范式**。
-2. **「GUI-only 的工具，可以在文件层绕过界面」**（呼应 `inochi2d-toolkit`）——
-   `yanjingzhaisun/inochi2d-toolkit`（★0 · MIT）用 CLI + MCP 对 Inochi2D 的傀儡格式做**文件级**读写，
-   而不是模拟点击 UI。**文件级稳定可测，UI 级一改版就碎。**
+**CSDN 侧**：教程类约**七成为 `weixin_*` 同模板农场**；`wenku.csdn.net/answer|column` 与 `blog.csdn.net/gitblog_*` 是站内 AI 聚合/AIGC 搬运 → 中文"Live2D 制作教程"几乎无可采一手料。
 
-> ⚠️ 四条全部依赖**正版授权的 Cubism Editor**；Turboism 明确声明「不分发 Editor、也不绕过其许可」。别误读成「免费替代」。
-
----
-
-## 五、主线三：官方口径 —— **两处被推翻，一处退役可回滚**，外加 5.3.x 逐版补齐
-
-### 1. ⚠️ 推翻上一辑：「5.4 无配套 SDK」不成立
-
-- **上一辑**记的是「5.4 只有 Editor、没有配套 SDK」→ **错**。
-- **本轮实证**：`cubism.live2d.com/link/manual5_4_alpha_sdk_en`（页面日期 **2026/07/14**，标题 **Live2D Cubism 5 SDK R7 alpha1**）。
-- **官方术语澄清**（照抄手册）：**Cubism 5 SDK = 截至 R6；Cubism 5.4 SDK = 自 R7 alpha1 起。**
-- **两个破坏性变更**（这一条比版本号本身重要）：
-  1. **Change in Model Calculation Order** —— Unity SDK 的计算顺序改为与 Native/Web 的 Original Workflow 一致，
-     结果是**涉及物理模拟的参数更新结果会与 R5 Official SDK 不同**（官方给了回退办法：替换 `CubismUpdateExecutionOrder.cs` 的常量）。
-  2. **Json Version Tag Identification** —— SDK 开始识别 json 里的 Version tag，
-     **带 R7 alpha 不认识的 Version tag 的 json 会加载不了**：`.model3.json` 报错且**不创建 prefab**；
-     motion / exp / pose / physio / userdata / paramctrl3 各自降级（不创建对应组件）。
-- **alpha 定位**：**限时评估版，不保证向 beta/release 迁移**；Parameter Controller 在 5.4 SDK 里 **alpha1 只支持 Unity**，其他平台 beta1 起。
-- **论坛实报**：**Cubism Editor 5.4.00 alpha2 启动崩溃**（Creators Forum 2026-09-25，官方回复「调查中」）→ 现在别上。
-
-> **钉子要按线写**：**Editor 线 = 5.3.04（正式）/ 5.4 alpha**；**SDK 线 = 5.3 系 R6 / 5.4 系 R7 alpha1**。
-> 写成一个数就会自相矛盾 —— 这也再次印证「SDK 是**分线各自版本**」。
-
-### 2. ⚠️ 推翻上一辑：`easy-live2d` 确实存在，且已 1.0.0
-
-上一辑记「`easy-live2d` 各 registry 不存在、勿再追」→ **错**。本轮 npm registry 实取：**真实存在，最新 v1.0.0（2026-09-24）**。
-（`github.com/Panzer-Jack/easy-live2d` 已在索引 [1196]，是**包与仓库两条线**被混淆了。）
-
-### 3. ⚠️ 退役名单可回滚：`creatorsforum.live2d.com` 本轮 **HTTP 200**
-
-上一辑记为 **403** → 判退役。本轮实测 **200**，并成功取到单帖（`/t/3983.json`，即上面那条 alpha2 崩溃帖）。
-→ **官方论坛可用，从退役名单移除。**（**退役名单不是永久判决，要定期复测** —— 这条本身就是一个教训。）
-
-### 4. 5.3.01–5.3.04 逐版补齐（连续两轮欠账）
-
-**入口**：`docs.live2d.com/en/cubism-editor-manual/updates-history5-3/`（上一辑只读了大版本表，**没进过这个 patch 明细页**）。
-**官方口径规律**：**beta1 写全套改动，正式版只写 beta 之后新增的修补** → 某版的实质内容要看它的 **beta1**。
-
-| 版本 | 日期 | 实质内容（一句话） | 正式版正文 |
-|---|---|---|---|
-| **5.3.01** | 2026-02-24 | 修项目面板多选失效；新建 PSD 模型可选「Cubism 5.2 及更早的混合模式」 | 本版**无 beta** |
-| **5.3.02** | 2026-04-02 | 网格编辑新增 **[Reset mesh]**（重置回初始态）+ 重叠顶点自动合并 | 只修「多 ArtMesh 改网格无法粘贴」 |
-| **5.3.03** | 2026-06-16 | 参数面板 **[Subject to move]/[Move here]** 拖拽排序 + **Set all parameter values as default** + 网格 **[Paste in copied shape]** | **仅一句「移除 beta、发布正式版」** |
-| **5.3.04** | 2026-09-03 | 日志面板可开新窗口、**物理组 tooltip 显示影响值**、Glue 编辑加笔刷形状与角度、导出参数 **[Clear GUID]** | 只修「拖拽时部件面板高亮色异常」 |
-
-**对建模小白最值钱的两条**：**5.3.02 的 `[Reset mesh]`**（手工分网格搞坏了可直接重置，不用重导 PSD）与
-**5.3.03 的参数拖拽排序**（新手最容易把参数顺序搞乱）。
-**负结论**：**没有 5.3.05**，5.3.04 仍是最新正式版；官网新闻停在 **2026.07.17**（近 3 个月无新增）。
-
-### 5. 顺手实测的两个数（本辑自己跑的，不是二手）
-
-- **`moeru-ai/airi`（★50,267 · MIT · TypeScript · 推送 2026-10-11T06:31Z），待办①的答案在这里**：
-  它的 Windows 安装包 `AIRI-0.12.0-beta.5-windows-x64-setup.exe` **733 MB、下载 17,038 次**（同 release 最大单项）。
-  **它吃哪个 Cubism Core** —— 构建脚本 `@proj-airi/unplugin-live2d-sdk`（独立仓库 `proj-airi/unplugin-live2d-sdk` ★2 · MIT）
-  在 `src/vite/index.ts` 里**硬编码**：
-  `https://cubism.live2d.com/sdk-web/bin/CubismSdkForWeb-5-r.3.zip` → 取 `Core/live2dcubismcore.min.js`。
-  → **结论：吃的是 Cubism SDK for Web 5-r.3**（不是 Unity 线的 R5/R4_2 —— 又一次印证「分线各自版本」）。
-  → **预编译安装包已内含 Core，用户零配置**；但 Core 的**重分发条款仍归 Live2D**（airi 的 MIT 只覆盖它自己的代码）。
-  → 渲染栈 = pixi（`@pixi/*`）+ 自研 `stage-ui-live2d` + `model-driver-magic-live2d`；2025-10 从 Tauri **迁到 Electron**。
-- **Inochi2D 在 Windows 的真实门槛（待办②）**：
-  ✅ `inochi2d` release tag **`nightly`（2025-09-18）提供 `inochi2d-win32-release.tar`** →
-  **用 SDK 本体不需要 D 编译器**（只有「从源码构建」才要 LDC2 + dub）；✅ `inochi-creator`（★1242 · BSD-2-Clause）
-  release `v0.8.6`（2024-09-18）提供 **`inochi-creator-win32.msi`（下载 24,511 次）**。
-  ⚠️ **但编辑器停更约 1 年 4 个月**（发布版 2024-09 / 仓库最后推送 2025-06-16）——
-  **「不买 Editor」路线的真实短板不是装不上，是编辑器停更。**
+**本辑新增的编造留痕**（照旧登记，见到直接剔）：`bryh.cn/news/102191`（给 5.3 编造「物理参数调节范围扩大 40%」「帧率 +15~20fps」等精确数字，**官方日志查无任何百分比**）；
+`tzjp.cn/news/73233` + CSDN `weixin_30843121`（上辑已判编造，**本轮带同文镜像再次浮出**，说明该批镜像仍在持续分发）；
+`3dmplay.com.cn`（编造机构 "StatVista" 与「下载量环比激增 314%」）；`ruan6.com`（**破解教程**，合规风险）。
+镜像农场族复现：`hqwc.cn` / `mhpq.cn` / `mhpn.cn` / `sheratonhq.com` / `live2d.net.cn` / `tzjp.cn` / `bryh.cn`。
 
 ---
 
-## 六、中文侧：AI 陪伴进了监管射程 + 皮套价目表被摊成可抄的表
+## 九、索引与文档维护
 
-### 1. ✅《人工智能拟人化互动服务管理暂行办法》—— **本辑对所有做本地 LLM 数字人的人最该知道的一条**
-
-**2026-04-10 五部门公布（网信办 / 发改委 / 工信部 / 公安部 / 市场监管总局），2026-07-15 施行。**
-本辑**多源交叉核实**：`cac.gov.cn` 官方解读（2026-06-03）+ 深圳市司法局 + 福州市数管局（转央视）+ 中青网，
-四处一致；我自己又跑了一轮 WebSearch 复核。
-
-| 要点 | 内容 |
-|---|---|
-| 适用范围 | 模拟自然人人格特征 / 思维模式 / 沟通风格，**且持续性情感互动**的服务；**智能客服 / 知识问答 / 工作助手 / 学习教育 不适用** |
-| 未成年人 | **不得向未成年人提供虚拟亲属、虚拟伴侣等虚拟亲密关系服务**；未满 14 周岁须监护人同意；建立未成年人模式 |
-| 身份提醒 | 须**显著提示用户正在与 AI 而非自然人互动**；发现过度依赖须弹窗动态提醒；**连续使用每超 2 小时**须提醒 |
-| 行为红线 | 不得**过度迎合、诱导情感依赖或沉迷**；不得用情感操纵诱导不合理决策；须提供**便捷退出**、不得阻碍退出 |
-| 数据 | 交互数据**非经单独同意不得用于模型训练**；除法定/同意外不得向第三方提供 |
-| 门槛 | **注册用户 100 万以上 或 月活 10 万以上** → 须安全评估并报省级网信部门；首次引入**监管沙箱** |
-| 前瞻 | 明确将「**研究制定数字虚拟人、智能体等相关规定**」← 对 VTuber / 虚拟人行业的前置信号 |
-
-**对我们意味着什么**：把自己的桌宠接上「会哄人、有记忆」的本地 LLM 并**对外发布**，就已进入射程。
-**纯自用不发布**不在管理范围（但同一批技术栈迟早要过这道门）。三条可直接抄成检查项：
-**2 小时提醒 / 不得诱导情感依赖 / 数据不得擅自训练**。
-
-### 2. ✅ 两张「皮套多少钱」的价目表（合起来才完整）
-
-- **smzdm《从45.9元到4.5万差出1000倍》**（2026-08-11）—— 从 20+ 真实交易帖整理出 **6 档价格**：
-  免费公皮 / ≤100元（45.9 元"包商"小豆人、60 元客单）/ 100–600 元（128 元商断成品、299 元 Q 版、388 元含商断、599 元小电人一条龙）/
-  600–3000 元（600 定制、2199–2499 高精仅售一人、3K 高精私皮）/ 3000–10000 元（3500 限时直售、7000 二手急出可分期）/
-  ≥1 万元（五位数代挂拍卖、**4.5 万顶配**、万元模型 + 中之人招募）。
-  建模师公开价目：**Q 版 599/1199/2299，正比 1999/4999/9999**。另列 **4 笔隐性开支**：软件（VTS 免费）/ 面捕设备 / 后续维护 / **版权登记**。
-  → **判据价值**：看到低价模型先问「为什么便宜」。
-- **米画师橱窗 `stalls/120410`**（¥3,157 橱窗价 / ¥3,000 起套餐）—— **补上 smzdm 缺的「拆分」口径**：
-  它卖的是**拆分立绘**不是建模。**原子报价**可直接比价：静态表情 **¥35–70/个**、动态 ¥35–100/个、手部 ¥150/只、
-  完整换装 **¥1300–1500/套**；姿势加价：纯正面 ¥3000 < 微侧 ¥3300–3500 < 侧身 ¥3600–3900 < 侧身坐立 ¥4000–4500；
-  画布 8000×10000px、**单件工期 30–60 天**、建议提前 2–3 月预约。
-  ⚠️ **同站 `stalls/51760` 上一辑已收录** → 本条是**不同建模师、不同价目**，不是重复。
-- **繁中两站（参考级，来源为中介站）**：`clibo.tw/commissions/eXNMf0`（NT$40,000–100,000 / 收款后两个月交 / **定金 NT$5,000 才排单**）；
-  `tyaward.com.tw` 的 5 档精度表 —— 其中最有信息量的一条是「**要 CMO3 工程档 = 原报价的 4 倍**」，
-  这解释了「只买 `.moc3` 会锁死后续二改」，**与授权链直接相关**。
-
-### 3. ✅ 虎嗅/学术趴：Live2D 二十周年的官方数字（信息量最大的一篇）
-
-**市占率 95%（VTuber 虚拟形象领域）· 采用 Live2D 的游戏与应用市场每年 350 亿人民币 · 软件月活 10 万 ·
-个人/自由职业者制作销售流通总额每年超 3 亿人民币**（来源：《Live2D 20 周年发展历程之现状》，Live2D × 角川联合）。
-商业节点：**2018 年与 Aniplex 达成资本/业务合作**；**2024 年与 OLM 合作《殿下与狗》成为首部几乎全篇 Live2D 制作的动画**；
-**2027 年 1 月《风之继承者》将在日本 28 家电视台开播**（可跟踪的官方节点）。
-创作者案例（方法论价值）：**脑水回**用「旋转变形器」做纵深视错觉，B 站播放超 60 万；
-**卡米雷特**「扒官方手册学底层」→ 用二维图层模拟三维投影实现 360° 旋转、手搓逻辑门做加法器，获第 12 届 Live2D Creative Awards 模型大奖。
-
-### 4. 🔶 降级采用的两条（AI 生成物，只取思路）
-
-- **掘金《把 3D，live2d 模型放桌面…一款开源 Tauri 应用》**（2026-09-08，介绍 `guipie/pingyou`「屏友」）：
-  拆解 **Tauri 2 + Vue 3 + Rust** 桌宠，Live2D 用 **`easy-live2d` + PixiJS**、3D 用 three.js；
-  鼠标 IPC **16ms 节流**；Ollama 子进程用 `OnceLock<Mutex<Option<Child>>>` 只 kill 自己拉起的进程。
-  **核心踩坑（对上面对 easy-live2d 的纠正）**：`easy-live2d` **不含** Cubism Core SDK，直接 import 报
-  `Live2DCubismCore is not defined` → 须**动态从 CDN 加载 `live2dcubismcore.min.js`（官方/jsdelivr/unpkg 三重兜底）**。
-  → 这与 airi 的做法是**同一个问题的两种解法**（一个构建期下载、一个运行期动态加载），**归到「闭源 Core 怎么合法引入」这一个知识点**。
-- **TrueSight《VTube Studio 模型部署 SOP》**（2026-05-24）：⚠️ **正文顶部印着生成模型签名 `gemma-4-26b-a4b-it`** → 判为 AI 生成站。
-  可取的排错点：纹理 **2K 主流**；`model3.json` **路径含中文/非 ASCII 会加载失败（白模）**；
-  首次导入后生成 `.vtube.json`，**迁移必须一起拷贝否则调优参数全丢**；**VBridger 默认端口 8001**；
-  iPhone 面捕**严禁 2.4GHz Wi-Fi**；**CPU 负载 >80% 面捕出现"粘滞感"**。
-- **51CTO《从零搭建 Live2D 虚拟主播》**（2026-05-13）：`live2d-py` + MediaPipe + PySide6 + OpenCV 思路成立，
-  但正文列了 `pyLive2D` / `Live2D-for-Python` / `bbb-live2d-py-v4` 等**在 PyPI 查无此包**的名字（疑为模板名）→ **工具名以 `live2d-py` 为准**。
+- `index.html` **1301 → 1325**：新建 `insert_v38_cards.py` 增补 **24 卡**（脚注 `[1301]`–`[1324]`，新增分组 1 个 → 308 组）。
+  跑前用 `insert_guard_probe.py` 对 v38 本身做保险丝验证（**6/6**：P0 语法 + 1 正 + 5 反）。
+- **存档**：`cp csdn-social-summary.md csdn-social-summary-v32.md`（v32 = 第三十二辑全文）。
+- **闸门（改前改后各跑一次）**：`index_metrics` E1–E7 + 恒等式（页头 1325 / 脚注 1324 / 卡片 1314）· `gate_recall_probe` 漏检 0 假警 0 ·
+  `doc_ref_check` **12/12**（本辑补 C4）· `insert_guard_probe --selftest` 7/7 · `house_rules --check` 6/6 · `mistakes_seal` 33/33 ·
+  `skill_budget` 21 技能 0 超预算 · `memory_health` rc=0。
+- **本辑改动的共享文件**：`_tools/doc_ref_check.py`（补 C4 + 3 条自测）、`_tools/msi_probe.py`（新建）、
+  `.workbuddy/memory/MEMORY.md`（闸门清单 19→20、`doc_ref_check` 9/9→12/12）、
+  `~/.workbuddy/skills/round-research-index/SKILL.md`（闸门命令行补 C4）。
+- **上轮留下的疑点，本辑未解（留指针）**：`daoming07280/live2d-auto-pipeline` ↔ `mw2wbyys6t-sudo/live2d-auto-pipeline`
+  （同名不同 owner）· `empty-sekai/nnnotes-standalone` ↔ `MetaSekaiLab/nnnotes` —— 两条都**未核**。
 
 ---
 
-## 七、⚠️ 编造 / 内容农场专区（本轮密度创新高：候选里**约七成**是模板站）
+## 十、下一辑待办（**按顺序做**）
 
-### A. 红牌术语复现（沿用上一辑术语表，直接定罪，无需重新论证）
-
-| 例 | 原文声称 | 真相 |
-|---|---|---|
-| 西西软件园《Live2D Cubism Editor 5.1.00 中文最新版》 | **`MeshFitting` 自动网格优化**、**`ParameterMixer` 面板**、「AI 面部自动生成」、「AI 自动生成变形器」 | **四个词全是上一辑已定罪的红牌术语**，Cubism 无这些命名 |
-| CSDN `weixin_30325487`《…导出 .pmx 文件的完整流程》 | 「勾选**包含物理模型(.pmx)**」 | **`.pmx` 是 MMD 格式**，Live2D 根本不导出 `.pmx` |
-| CSDN `weixin_30800987`《…呆毛和头发跟随摆动》 | 物理参数写成「**摩擦力 / 反弹力**」 | 真实术语是 **质量 / 移动 / 阻力 / 弹性 / 重力方向** |
-
-### B. AI 生成 / 农场站清单（见到直接剔）
-
-- **同源 SEO 镜像农场族**：`hqwc.cn`（页脚"编程知识"）、`mhpq.cn`、`kwkr.cn`、`sheratonhq.com`、`live2d.net.cn` → 形态 ⑤ **见域即疑**。
-- **英文 SEO 榜单农场**（连续两辑复现）：`wifitalents.com` / `zipdo.co` / `gitnux.org` / `saashub.com` / `magicmotionstudio.com`（自带 affiliate 声明）。
-- **下载站/聚合站**（版本日志常自相矛盾）：`cr173.com`、`289.com`、`mfunz.com`、`cooco.net.cn`、`4570885.com`、`3dmplay.com.cn`、`jxxy.net`。
-- **CSDN `weixin_29xxxxx/30xxxxx` 簇（8 个 ID，同题材同日）** → 形态 ⑥ **内容农场**，同一模板结构长文。
-- **AIGC 推广号**：CSDN `gitblog_*` 正文挂 `utm_source=gitcode_aigc_v1` → 是**搬运改写**，非原创实测。
-
-### C. 一条重要的判定**反例**（别误杀）
-
-`hqwc.cn` 上的《零基础一晚上用 Live2D 做出会动的头像》**内容其实基本正确**
-（「轴多少 ≠ 灵活度」「参数控制在 15–25 个」「MVV 最小可行」）—— 但**站点属镜像农场族**。
-→ **按站剔除，不逐句采信**；其中「参数 15–25 个」这条思路可留个印象（**来源不可采，结论可参考**）。
-**判定依据永远是「发布节奏 / ID 模式 / 同题材同日」，不是「我没听过」** —— 知识缺口不是虚构的证据。
-
-### D. 本辑新判一条：**同一版本号、三个互斥的更新日志 = 二手拼凑**
-
-`cr173.com` 称 VTube Studio **v1.32.71 (2026-02-18)** 含「20 款樱花主题 / 低光识别率提升 35%」；
-`289.com` 与 `mfunz.com` 又写 v1.32.71 是「**7 月 22 日更新：Live2D SDK 更新至 4.2 版**」。
-→ **同一版本号三个互斥日志 + 无官方出处 → 判为二手拼凑，本辑不采纳任何一条 VTS 版本结论。**
-（official 路已核官方值：**VTS 官方版本 1.35.10（2026-07-08），以官方 Trello 为准**。）
+1. **`/skill-doctor`** —— **连续第十二轮**。**排在所有调研动作之前**：先做，做完再开三路。
+2. **`Agent-desktop-pet` 的环境钉子做决定**：装 3.12，还是改 `vendor/`？**本轮已把许可边界与阻塞点核清，只差一个决定。**
+3. **`updated_at` vs `pushed_at` 落进卡片模板**（本辑至少 3 处靠它识破假活）—— 注意这是**动 1290 张卡的批量改动**，先设计低风险做法（如只加到 `src-line` 拼接处）。
+4. **`wan-h/awesome-digital-human-live2d`（★2425）正面评一次** —— 本辑最大的漏网（两个辑都只登记未深评）。
+5. **DSH 插件生态单独成辑**（`dsh-plugin-shop` ★1009 / `ds-harness-remote` ★309 / `dsh-plugin-registry`）——
+   这是**本机所跑运行时自身**的生态，别再混在 Live2D 里。
+6. **`ayagami` 进度复查**（每辑一次，本辑无推进）。
+7. **决策原则瘦身**（`game-production-pipeline.md` 224 行超 200，照房规的做法：**压正文、不撤条款**）—— 连续第二轮顺延。
+8. **上轮两条同源疑点收口**（见 §九）。
+9. **人工浏览器取知乎/B站正文**（连续多轮被登录墙拦）。
 
 ---
 
-## 八、索引与文档维护（本轮落盘）
-
-| 项目 | 变化 |
-|---|---|
-| `index.html` | **1279 → 1301 项**（v37 增补 **22 卡**，脚注 **[1279]–[1300]**，分组 306 → **307**；div 11375/11375 平衡） |
-| 增补脚本 | 新建 `insert_v37_cards.py`；跑前 `insert_guard_probe` 对 **v37 本身 6/6** |
-| 经验帖存档 | `csdn-social-summary.md` 上一辑 → **`csdn-social-summary-v31.md`** |
-| 房规 | `agent-house-rules.md` **200 → 189 行**（23 条不变）；维护纪律改为**压正文、不撤条款** |
-| 闸门工具 | `insert_guard_probe.py` 修裸 sha 陷阱 + 新增 `--selftest`（7/7） |
-| `index_metrics --update` | 已重封分组快照（307 个分组） |
-
-**本轮卡片选材与复验**：gh 路报 27 条 + 5 条边缘登记 → 取 **22 条**入索引。
-**主 agent 用 `gh api` 把 22 条的 ★ / 许可 / 语言 / 推送日全部重跑一遍**，与子 agent 汇报**逐条一致，零编造**。
-（子 agent 报告不能直接采信 —— 这是房规；本轮按规矩做了。）
-
----
-
-## 九、自测：收集到的 AI / 资源，哪些能直接改（只落地有信号的）
-
-| 条目 | 自测结论 | 落地动作 |
-|---|---|---|
-| `Agent-desktop-pet`（Agent 状态→表情，9 状态，Windows 原生、只读本地不联网） | ✅ **真有用** | 本辑**唯一「明天可试装」级**；它把「编码 agent 的工作状态」当表情信号源，对天天盯 agent 跑任务的人几乎量身定做 → 列入下轮待办「实际装一次」 |
-| `illust2psd` 的 `layer_taxonomy.yaml` 图层命名表 | ✅ 真有用 | 已抄进本辑结论；**不依赖它跑得起来**（它是 Alpha）也能立刻用这张表 |
-| `NanaBetterCubism` 的 **preview→确认→事务→回读验证** | ✅ 真有用（模式） | 落成一条**通用做法**记入本辑 §四；适用于任何「让 AI 改文件」的场景，**已与我们自己的「改前改后各跑闸门」纪律同向** |
-| `inochi2d-autorig-claude` 那句「Cubism 不能自动绑骨」 | ✅ 真有用（认知） | 落成**认知边界**：以后遇到「全自动绑骨」的宣称，先按此打问号 |
-| `inochi2d-toolkit` 的「**GUI-only 工具可在文件层绕过界面**」 | ✅ 真有用（做法） | 记为通用做法；与本工作区「闸门放在真实执行路径上」是同一思路的两个方向 |
-| `insert_guard_probe` 的「沉默失败」教训 | ✅ 真有用 | 已修 + 已配反例；并推广成一条：**闸门脚本自己要能被反例验证**（呼应房规 #33 / M-0020） |
-| 5.4 alpha 两个破坏性变更 | ⚠️ 现在别碰 | **不落地** —— alpha 不保证迁移 + 论坛已报 alpha2 启动崩溃 → 写成**钉子**（下轮复核） |
-| smzdm / 米画师 / tyaward 的价格数字 | ⚠️ 来源分级 | 只有 smzdm 与米画师是**正文已读**；tyaward 明确是**中介整理值**，已降级标注 |
-| `easy-live2d` 不含 Core、须动态加载 | ✅ 真有用 | 与 airi 的构建期下载**归并成一个知识点**：闭源 Core 的两种合法引入方式 |
-
----
-
-## 十、下一辑待办
-
-**最高优先**
-1. **实际装一次 `Agent-desktop-pet`**（本辑评出的「明天可试装」级），并核它的 THIRD-PARTY.md 许可边界。
-2. **复查 `ayagami` 进度**（是否发出 crates.io 版本 / 是否支持表情与动作文件）—— 这条线是「不买 Editor 也能用现成 moc3」的唯一现实出口。
-3. **`/skill-doctor`** —— **连续第十一轮**（照 `darwin-skill` 形状：列出没被用过的 skill + 评估→测试→保留或回滚）。
-4. **实装 `moeru-ai/airi` 的 Windows 包**（733 MB）核一遍：预编译包是否真的零配置、Electron 迁移后 Tauri 版是否还在维护。
-5. **核 `Inochi2D` 编辑器停更的真实影响**：v0.8.6（2024-09）的 MSI 在 Windows 11 上还能不能正常跑。
-
-**闸门与记忆**
-6. **`creatorsforum.live2d.com` 从退役名单移除**并写进 `AGENTS.md` §八 —— 同时立一条规矩：**退役名单要每 N 轮复测一次**，别把「上次 403」当永久判决。
-7. 索引条目加「最后复核日期 + 是否作废」（`mistakes/` 已有；**1290 张卡没有**）—— 承接多轮未动。
-8. `insert_guard_probe.py` 的 `--selftest` 接进「改 index.html 前必跑」的清单（目前靠人记得）。
-9. 「命令可跑性」检查（R7 只查路径在不在，不查命令跑不跑得起来）。
-
-**承接老账**
-10. `rpycdec` 反编译自查（**欠十四轮**）· Codex `config.yaml` 纯离线 · `check_rpy_branches.py` · 词表落地 · 模型分档旋钮 · **`_tools/` 未入版本控制**。
-11. **DSH 插件二轮评估**：若跟 dsh **先走 `dsh-win32` 原生 Windows 路线**；⚠️ **Session V3 不可回退，升级前先备份**。
-12. 未登记候选池仍约 17 个 + 本辑新增（`cubihub` / `Turboism` 等已在索引，另 `live2drust` / `interactive_assistent` / `Godot-Live2D` 等边缘条目可下轮择机单列）。
-13. `_tools/` 与 `AGENTS.md` 不在版本控制里 → 闸门全部无历史，待决定。
-
----
-
-## 十一、搜索覆盖与去重报告（摘要）
-
-| 路 | 覆盖 | 结果 |
-|---|---|---|
-| gh | 7 个子方向（替代栈 / PSD 流水线 / moc3 逆向迁移 / 运行时集成 / AI-Agent 桌宠 / Cubism Editor 自动化 / 边缘登记）；约 40 次单仓库 `gh api` 核实 | 立条 **27**（+ 5 边缘登记）；剔除已收录 **25+** |
-| cn | 10 组检索式（**不用 `site:`**，站名当普通关键词） | 采纳 **16**（✅ 正文已读 6 / 摘要 8 / 弱信源 2）；剔除 **30+** |
-| official | docs Release History **patch 明细页** / live2d.com 各页 / **Creators Forum（含 `/latest.json` 与单帖）** / GitHub org / npm registry / dev.to API / HN Algolia / esotericsoftware changelog / denchisoft + Trello | **21 条**（含 4 条 changelog + 2 条上一辑口径纠正 + 1 条退役回滚），**0 重复** |
-
-**去重执行**：三路每条先 `grep -iF` 对 `_r32/_dedupe_gh.txt`（**1252 owner/repo**）+ `_r32/_dedupe_urls.txt`（**1396 URL**）
-+ `index.html` + `csdn-social-summary.md` + `-v30` + `-v31` 比对。
-**基线从 `index.html` 现取**（不用历史快照 —— M-0031：历史快照会把上一轮成果当新发现）。
-**主 agent 复跑**：cn 路 24 条 URL **零命中**；gh 路 21 条 owner/repo **零命中**（全部新）。
-
-**疑似同源但不确定（提请下轮复核）**：
-- `daoming07280/live2d-auto-pipeline` ↔ `mw2wbyys6t-sudo/live2d-auto-pipeline` —— **同名不同 owner**，
-  描述都指向「See-through + psd2live 全自动流水线」，极可能是同一作者账号迁移 → **只收了 `whale-maid-svg-layers`**。
-- `empty-sekai/nnnotes-standalone` ↔ `MetaSekaiLab/nnnotes` —— 后者 ★15 活跃、前者 ★0 描述几乎逐字相同 → **只收后者**。
-- `Open-LLM-VTuber` **三条中文踪迹**（gh 卡 / CSDN `gitblog_00677` / gitcode 推广镜像）→ **同源，别再各算一条**。
-
-**负结论（别下轮再单独投入）**：
-- **音频驱动口型（Audio→LipSync）专项：GitHub 零独立命中** —— 多被并入「LLM 语音助手/桌宠」整体项目；已成主干的不再单列。
-- **HuggingFace / Gitee：零新制作工具** —— HF 上 Live2D 资源被塞进 LLM 数据集（如 `NopePrime/Open-LLM-Dataset` 内含 `shizuku.moc3`），**没有独立的 Live2D 模型/绑定数据集**；Gitee 侧全是多年前的看板娘 widget 与教程镜像。
-- **无独立「许可证清单仓库」命中** —— 各项目的许可信息是分散写的，没有汇总仓。
-- **HN / dev.to 在 Live2D 上仍是无料源**（HN `search_by_date` 2167 命中近一年全为误召；dev.to 标签存量仅 2 篇，最新 2026-06-08）。
-- **`zhihu.com` / `bilibili.com` 正文仍全被登录墙拦** → 本轮无一条正文级证据；下轮建议改人工浏览器取帖。
-- **`gamemale.com` 未投入**（上一辑已判 Cloudflare Turnstile 结构性退役）；**`creatorsforum.live2d.com` 本轮 200，可回滚**。
-- **新增探测失败**：`theaic.io`（The AI Changelog）**HTTP 000**；`warudo.app` 是 SPA、正文 JS 渲染，取不到静态日志。
-
----
-
-*本辑三路候选：gh 30 条 · cn 16 条 · official 21 条；落索引 **22 卡**；*
-*累计经验帖约 1465 → **约 1490 条**；索引 **1301 项**；房规 23 条 / **189 行**；决策原则 23 条 / 224 行；mistakes **32 条**；*
-*新建脚本：`insert_v37_cards.py`；新存档：`csdn-social-summary-v31.md`；*
-***本辑最硬的一条：卡了六轮的「不买 Editor 就没有 moc3 渲染器」，第一次有人正面拆墙 —— 而且要盯住它（每辑复查进度）。***
+*本辑三路候选：gh 33 条（+13 行边缘登记）· cn 19 条 · official 26 条；落索引 **24 卡**；*
+*累计经验帖约 1490 → **约 1515 条**；索引 **1325 项**；房规 23 条 / 189 行；决策原则 23 条 / 224 行；mistakes **33 条**；*
+*新建脚本：`insert_v38_cards.py`、`_tools/msi_probe.py`；新存档：`csdn-social-summary-v32.md`；闸门：`doc_ref_check` 补 **C4**（12/12）；*
+***本辑最硬的两条：① 官方 5.4 alpha2 的「多层合并 PSD」真有用，但它存的文件是单向门，且 10/18 到期；② 桌宠线第一次有人把「你的 agent 不需要新大脑，只需要一具身体」写成了架构主张。***
