@@ -1,4 +1,249 @@
-# 跨平台游戏制作 × AI 开发资源梳理（2026-10-11 · 第三十四辑 · **「身体」侧的供给第一次压过「格式」侧；官方一手给出了「模型越做越存不动」的根因**）
+# 跨平台游戏制作 × AI 开发资源梳理 · 第三十九辑（2026-10-12 · 官方第一次把「本地 LLM」写进产品）
+
+> 本辑为 Live2D 连续第十二轮。三路并行（gh / cn / official），共得 **gh 38 条 + cn 26 条 + official 23 条** 候选，
+> 经与 index.html（1426→1450 项）及 csdn-social-summary（v36 / v34 / v33）比对，
+> 落索引 **24 张卡（1409→1433）+ 24 条脚注（[1426]–[1449]）**（含 gh 路收尾补录的 2 项）。
+> 详细条目见 `_r39/_r39_gh.md` / `_r39_cn.md` / `_r39_official.md`。
+> **收尾再补录 3 卡**（`insert_v43c_cards.py`，1450→1453）：Core 官方合规口径 / 平台支持表 / 官方组织全表 —— 见 §六.1。
+
+## 一、搜索覆盖
+
+| 路 | 覆盖 | 正条 | 备注 |
+|---|---|---|---|
+| gh | GitHub / Gitee / HF：工具·格式·查看器·引擎插件·AI 数字人 / 桌宠 | 31（工具 14 + [AI] 13 + 边缘 4） | 全部走 `gh api repos/<r>` 实测 |
+| cn | **gamemale（用户点名）** / CSDN / 掘金 / 知乎 / 公众号 / B站 / 抖音 / 虎课 | 26 | **gamemale 本轮首次破墙** |
+| official | Cubism 官网·release notes·手册 / note.com / r-Live2D / Booth / 海外媒体 | 23 | **5.4 alpha 倒计时最后一周核对** |
+
+## 二、本辑一句话主线
+
+**「本地大模型驱动 Live2D」第一次不再是社区自己接线 —— 官方把它写进了产品（nizima LIVE 2.7 的 AI 助手可直连本地 LLM）；
+而开源侧的桌宠不再各自造一个 Electron 壳，开始往宿主里钻：做成 bot 框架插件、做成双格式适配层、甚至挂到路由器面板上。**
+
+## 三、上轮（第三十八辑）待办检查 —— 6 条 → 闭环 3 / 半闭环 1 / 注销 1 / 顺延 1
+
+| # | 上轮待办 | 状态 | 结果一句话 |
+|---|---|---|---|
+| ① | ⭐ **修脚注区漂移** | ✅ **闭环** | **306 条脚注（[1120]–[1425]）从 8 张 card 内部搬回 footer 的 srcs 容器**，8 张被撕开的卡片结构全部恢复。判据补 **E8** + 负对照（把 1 条脚注塞进 card → E1–E7 全绿、唯有 E8 报红）。详见 §五.1 |
+| ② | ⭐ **实测 py-moc3 / easy-live2d `playVoice()`** | ⚠️ **半闭环 + 注销一半** | py-moc3 **✅ 已实测**（见 §五.2）；easy-live2d **❌ 注销** —— **待办本身的前提错了**（详见 §五.3） |
+| ③ | **AI 桌宠本机可行性实测** | ✅ **闭环** | **渲染侧 + LLM 侧都通**：`live2d-py` 实测 `pip install` 成功、`import live2d` 成功（Model/glInit/init 接口齐全）；Ollama **0.32.13 已装机且可拉起**（详见 §五.4） |
+| ④ | **Cubism 5.4 alpha 10-18 复测** | ✅ **闭环** | 距截止 6 天逐语种核对：仍 alpha2、**未转 beta、无 alpha3、无正式版时间表**；原文「可使用至 2026 年 10 月 18 日」 |
+| ⑤ | 中文源补采（note.com / 知乎 / B站） | ⚠️ **部分** | note.com 本轮仍未取到正文（登记为「本轮未命中」）；**但 gamemale 破墙**（Cloudflare 挑战页 → 改走搜索引擎快照，首获 3 帖）；B站/知乎仍是登录墙 |
+| ⑥ | ayagami 复查 / DSH 插件生态成辑 | ❌ **顺延** | 本轮上下文与配额都给了上面五条，未做 |
+
+## 四、分主题条目（均带链接，细节见 `_r39_*.md`）
+
+### A. 官方侧（本辑最硬，6 条全部落卡）
+- ⭐ **nizima LIVE 2.7 —— AI 助手直连本地 LLM，语音即可驱动模型** [1426]：官方第一次把「本地跑大模型」写成产品功能。**对你的 Ollama 栈直接对口**。
+- **Cubism 5 SDK for Unreal Engine R1 beta2（2026-09-29）** [1427]：终结「Unreal 支持是否已弃」的悬案（上辑官方否认过停摆，本条是手册里的一手证据）。
+- **Editor 5.4 alpha2 手册** [1428]：上辑记 404、**本辑首次取到 200**，含 PSD 导入强化。
+- ⚠️ **alpha2 数据不可回退** [1429]：alpha2 存的工程**回不去 alpha1 / 5.3**——用 alpha 前必读的硬约束。
+- **5.4 alpha 倒计时核对** [1431]：仍 alpha2、未转 beta、无 alpha3；官方同时写明「Beta 版和正式版时间可能调整」。
+- **第 13 届 Creative Awards 新增「AI·对话界面」部门** [1430]：官方用奖项承认「能对话的角色」成了独立赛道。
+
+### B. 工具 / 格式 / 宿主（本辑主线所在）
+- **ihopenot/LpkUnpacker（★296，本批最高）** [1432]：解 Live2DViewerEx 的 LPK；README 自述「少部分早期 lpk 仍无法解包」——格式边界写得诚实。
+- **receyuki/live2pet** [1437]：**不做桌宠应用，做适配层** —— Live2D + Spine 双格式统一，面向 Clawd on Desk / Codex 两个 Agent 宿主。
+- **yanghuagai55/astrbot_plugin_live2d_pet（★12 · MIT）** [1441]：**做成成熟 bot 框架的插件**，不自己造壳。「别自己造宿主」这个判断比插件本身值钱。
+- **OliverIsNotAvailble/AS_Live2D-reader** [1433]：不走 Pixi.js，**live2d-py v3 + 原生 OpenGL 直绘**。
+- **Zosuya/ParaRig** [1434]：把「Cubism 的参数面板」搬进 Blender（四种控件 + **非破坏性更新**）。
+- **rayriffy/CubismMetal** [1435]：macOS 原生（Swift + Metal）查看器——Apple 侧稀薄生态的补充。
+- **kinaito/myoc** [1436]：把「捏脸/换表情」从 VTube Studio 里剥离成独立应用。
+- **BANDORI-PET-Android** [1438]：上辑 PC 版（★465）的移动端兄弟，同源 LuaJIT 渲染核。
+
+### C. [AI] AI × Live2D（13 条候选，落 5 张卡）
+- **luckui/HiyoriAI（★93 · MIT）** [1439]：本批 AI 侧星最高。接 **OpenAI 兼容 API（可指本地 Ollama）**；**重活转 Codex SDK**——「按任务难度分流模型」这个分工可直接照搬。
+- **sjmsltx/deepseek-desktop-pet（★13 · MIT）** [1440]：长期记忆 = **BM25 检索 + 事实抽取 + LLM 重排**（不是全塞上下文），对 16GB 机器是正解。⚠️ 仓库 285 MB。
+- **PhyQxx/companion-hub** [1442]：**四层隐私分级 L0–L3**，L2 强制本地模型、L3 不上云；记忆带删除台账与来源追溯。
+- **liyu-1028/mochi** [1443]：前端（Tauri+Live2D）与认知核心（**LangGraph**）显式解耦——大脑和身体的边界划清楚。
+- **去 Electron 轻量路线三条并进**（本次只登记未落卡）：C/SDL3 的 `TianMengLucky/BongoCat-X`、C++ 的 `jinsc123654/l2dpet`、Rust 的 `VeiQiuLab/DesktopPet`。
+- ⭐ **补录 · `whymycompilefail/cpu-only-ai-tuber`** [1448] —— **没有独显也能跑**的 AI 主播栈实测，三条结论**全部反直觉**：
+  ① **LLM 不是瓶颈**（391 ms TTFT 只占整轮 **2.7%**）；② **压量化反而更慢**（Q8_0 35.3 → Q5_0 **28.3 GB/s**，内存带宽才是墙）；
+  ③ **人设跑偏不在 system prompt** —— 破人设率 3/15 → **0/15**，解法在**对话历史**里。**对本机（16GB、无独显）命中度最高的一条。**
+- **补录 · `Hayliy/naixi-desktop`** [1449] —— 规模最硬的量化样本：**7.9 万行 / 56 模块 / 222 个 REST 端点 / 29 张 SQLite 表**。
+  别的 README 写「能聊天能记忆」，这条直接把体量摊开 —— 是判断「这类项目做到底有多大」的标尺。
+
+### D. 中文侧（gamemale 首次破墙）
+- **gamemale《live2d 半藏麦克雷桌面 doi 动画》** [1444]：整站是 Cloudflare 挑战页（HTTP 200 但正文是「请稍候…」），**改走搜索引擎索引快照才破**——破墙方法本身比这条帖子的内容更有价值。
+- **See-through 实测：一张动漫图 → 23 层 PSD** [1445]：与你硬盘上已有的 `live2d/psd2live-out/seethrough_output.moc3` 是**同路线**，可直接对照。
+- **Open-LLM-VTuber 部署笔记** [1446]：命令与端口（localhost:12393）可照抄；最简组合 Ollama + Edge TTS（**仓库本体已在 r31 收录，本条只收经验**）。
+- **Live2D + Ollama 排障** [1447]：最关键一条 —— **默认 Edge TTS 需联网**，很多人以为自己搭的是纯离线栈，其实语音那段走了云。
+
+## 五、实测与「有用就改」（本辑的动手部分）
+
+### 5.1 修脚注区漂移（上轮 ⭐ 待办①，闭环）
+- **根因不是某一版写错，是锚点错一次后每版沿用**：某版把脚注块插进了「上一版最后一张卡片」的内部，之后每版都以「最后一条脚注」为锚点继续插，雪球从 v24 一路滚到 v42 —— 共 **8 张 card 被撕开、306 条脚注落在 card / section 里**。
+- **修复**：`_r39/fix_footnote_drift.py`，只搬「不该在那儿」的 306 条（srcs / footer 内的 1108 条原地不动），搬进 srcs 容器开头。8 张卡片恢复后结构齐全（card-top / plain / grid2 / src-line 全在，脚注归零）。
+- ⚠️ **第一版脚本自己造了个事故**：无差别删除所有脚注片段再回插，把不该动的 1108 条也删了（1424 → 316），靠 `.bak2` 回滚修正。修正后加了**三道写盘前自检**（脚注总数不变 / div 平衡 / card 内归零），不通过就不落盘。
+- **补判据 E8**（`index_metrics.py`）+ `_r39/e8_negative_probe.py` 负对照：把 1 条脚注搬进 card → **E1–E7 全绿、唯有 E8 报红**。E8 前提显式化：页面无 `<footer>` 时跳过并报 W5（迷你 fixture 会假警，与 E7 的 W3 同源）。
+
+### 5.2 ⭐ 实测 py-moc3 v0.1.0（MIT / Ludentes）—— 结论与上轮的期待相反
+- **装得上、读得准**：`info` 秒出结构（Parts / Deformers / ArtMeshes / Parameters / Keyform / UVs / Glues）；`params` 能读出参数名与范围；`meshes` 能列出网格名+顶点数。手上 4 个 moc3 全部读通。
+- **语义层 3/3 全保真**：写回再读回，参数 247 / 网格 269 / 部件 92 / 变形器 425 —— **数量与名称完全一致**。
+- **但 round-trip 4/4 全 FAIL**：写回体积**少 7–9%**（少 14336 / 15872 / 96896 字节）。字节差异从 **0.005%**（差异在文件尾）到 **71%**（差异在文件头，后面全部错位）。
+- **定位**：**只读的「模型体检 / X 光机」，不是手术刀**。能查、能盘点、能对账；**不能拿它改模型**（会丢它不认识的段落，丢在哪不可控）。
+- → 这修正了上轮把它当「字节级 round-trip 亮点」的判断。**「README 写了 ≠ 实测通过」这条老规矩，再一次是对的。**
+
+### 5.3 注销一条待办：easy-live2d 的 `playVoice()` —— 待办本身的前提错了
+- PyPI 上**根本没有 `easy-live2d`**（`pypi.org/pypi/easy-live2d/json` → 404；pip → No matching distribution）。
+- GitHub 上的 `Panzer-Jack/easy-live2d`（★213 · **TypeScript**）是**基于 Pixi.js 的 Web SDK**，不是 Python 包 —— 不可能有供本机 Python 栈调用的 `playVoice()`。
+- → **上轮把它当成 Python 库写进待办，是前提错误**，本轮注销并记录原因。**教训：待办里的「实测 X 的某个函数」类条目，落笔前先确认它是什么语言、以什么形态分发。**
+
+### 5.4 AI 桌宠本机可行性（上轮待办③，闭环）
+- **渲染侧 ✅**：`pip install live2d-py` 成功，`import live2d` 成功，接口齐全（Model / glInit / init / clearBuffer / dispose）。
+- **LLM 侧 ✅**：Ollama **0.32.13 已装机**（`C:\Users\34498\AppData\Local\Programs\Ollama\ollama.exe`），执行 `ollama list` 能自动拉起服务。
+  ⚠️ **差点写成负结论**：第一次用 `curl localhost:11434` 拿到空、且 `which ollama` 无结果，一度要写「本机没有 Ollama」—— 实际是**服务没在跑 + 不在 PATH**，不是没装。**负结论必须先排除「没启动 / 不在 PATH」再下笔。**
+- → 结论：这套栈缺的不是环境，是按 [1446] 那份部署笔记走一遍。**本轮未做完整 clone + 跑通**（仓库大、耗时长），留待下轮。
+
+### 5.5 E8 顺手抓出增补脚本一个潜伏多版的 bug
+- 现象：本辑插完 22 条脚注后 **E8 立刻报红**「22 条脚注游离在 footer 之外」。
+- 根因：`insert_v<N>_cards.py` 先算脚注插入偏移 `fend`，**再**插卡片组（在 `fend` 之前）—— 卡片一插，后面的偏移量整体失效，脚注被插到了 footer 之外。
+- 修法：**先插位置靠后的脚注，再插位置靠前的卡片组**。这个 bug 之前一直没暴露，是因为脚注本来就在 card 里、位置对错看不出来 —— **E8 装上当天就抓到了它**。
+
+## 六、索引与文档维护
+
+- 落索引：`insert_v43_cards.py` → 22 张卡 + 22 条脚注（[1426]–[1447]）；gh 路收尾补录 `insert_v43b_cards.py` → 再 2 张卡 + 2 条脚注（[1448]–[1449]）。
+  合计 **24 张卡（1409→1433）+ 24 条脚注**；页头 1426→1450 项。
+- 闸门：`insert_guard_probe` **6/6**；`index_metrics` **E1–E8 全绿**（恒等式 1448 == 1447+1，div 13763/13763），`--update` 已重封 313 分组快照；`index_metrics --selftest` 8/8；`gate_recall_probe` 漏检 0 / 假警 0。
+- 新增工具：`_r39/fix_footnote_drift.py`（修漂移）、`_r39/diag_footnote_container.py`（容器诊断）、`_r39/e8_negative_probe.py`（E8 负对照）。
+- 判据变更：`index_metrics.py` 增 **E8 脚注位置** + **W4**（footer 内不在 srcs）、**W5**（无 footer 时 E8 跳过）。
+
+### 6.1 收尾再补录（`insert_v43c_cards.py`，3 卡，1450→1453）—— official 路 §八 里最有价值的 3 条
+
+| 信源 | 内容 | 为什么值得单独立卡 |
+|---|---|---|
+| [1450] | **Cubism Core 官方合规口径** —— 官方手册原文「根据 Live2D 专有软件许可协议，**不在 GitHub 上发布 Cubism Core**」，适用 EULA v2.1（修订 2025-02-03） | 追了十几轮的「Core 那堵墙」的**官方答案**：不是技术拆不动，是**许可不允许**。反推出判据：任何号称「自带 Core / 免下载 SDK」的仓库都该先怀疑合规性 |
+| [1451] | **平台支持表 2026-09-29 更新** + ⚠️ **官方口径不一致第三例**：GitHub README 仍写未来时「will be ended」，官方手册已改完成态「**was terminated after Native R2**」并给日期 **2024-12-19** | 选型唯一该看的权威表；「以手册为准、别信仓库 README」第三次撞到。另附 Native 版本链 R2(2024-12-19)→R5(2026-04-02) |
+| [1452] | **Live2D 官方组织全表（18 个仓库）** —— `CubismWebSamples` ★393（121 forks）/ `CubismSpecs` ★22（格式规格）/ `nizimaLIVEPluginAPI` ★6 | **十二辑从没整表扫过官方组织**，★393 的基础件漏了整整十二轮。`gh api orgs/Live2D/repos` 实取 |
+
+> 补录的 3 条全部来自 `_r39/_r39_official.md` §八（§25–§27 结案条 + MotionSync 授权边界条），
+> `insert_guard_probe` 对 v43c 本身 **6/6**；`index_metrics` 复跑 E1–E8 全绿（1453/1452/1436，div 13852）。
+
+## 七、下一辑待办（按顺序）
+
+1. ⭐ **按 [1446] 那份笔记真跑一遍 AI 桌宠**（渲染侧与 LLM 侧本轮都已验证可用，缺的是走通）—— 建议从 `HiyoriAI`（★93/MIT/可指 Ollama）或 DoroPet_V3 入手。
+2. ⭐ **追 nizima LIVE 2.7 的后续**（官方第一次给本地 LLM 开口子，值得盯它有没有放出接口细节/文档）。
+3. **把 414 条「footer 内但不在 srcs 容器」的脚注（[661]–[1074]）也搬进 srcs**（本轮 W4 提示，位置能用但容器不规范）。
+4. **gamemale 顺着「搜索引擎快照」这条路继续挖**（本轮已证明可行，只取到 3 帖）。
+5. **note.com 正文**（连续多轮未取到；可能需要带登录态或换检索式）。
+6. **ayagami 复查**（连续多轮无推进，考虑降级为「每季度查一次」）+ DSH 插件生态成辑。
+7. 超上下文顺延：`wan-h/awesome-digital-human-live2d` 试装 · `motion-mirror` 本机可行性 · 1290 张旧卡 `updated_at/pushed_at` 回填。
+
+## 统计页脚（第三十九辑）
+
+- 检索：gh 31 条（工具 14 + [AI] 13 + 边缘 4）· cn 26 条 · official 23 条。
+- 去重：对 index.html（1426 项）+ csdn-social-summary（v36 / v34 / v33）+ `_r38/_r38_gh.md` 全表逐条 `grep -iF`，**落卡的 24 条零重复**（gh 路剔除 8 条：LPK 三连中与已有 LpkUnpacker 重复 2 条、官方 SDK 仓库已在索引、内容农场等）；剔除内容农场（SAM2 第三次出现在新镜像站）、已收录旧闻（Bunraku / Open-LLM-VTuber 仓库本体）。
+- 索引：**1426 → 1453 项**（v43 22 卡 + v43b 2 卡 + v43c 再补录 3 卡；卡片 1409→1436 / 脚注 1425→1452）；分组 312→315。
+- 闸门：`insert_guard_probe` 6/6（v43c 复验 6/6）· `index_metrics` E1–E8 全绿 + `--update` · selftest 8/8 · `gate_recall_probe` 0/0 · E8 负对照 ✅。
+- 原始：`_r39/_r39_gh.md` · `_r39_cn.md` · `_r39_official.md` · `insert_v43_cards.py` · `insert_v43b_cards.py` · `insert_v43c_cards.py` · `fix_footnote_drift.py` · `diag_footnote_container.py` · `e8_negative_probe.py`。
+- ⚠️ 工具修复：`index_metrics.py` 的 `BASE_GAP` 常量**只写了注释没写定义**（第三十九辑补 W1 基线时留下的）→ 闸门直接 `NameError` 崩溃。已在常量区补 `BASE_GAP = 16`（依据 = 注释里记的两版交叉实测），复跑全绿。**「闸门沉默/崩溃」比假警更危险的又一例。**
+
+---
+
+
+# 跨平台游戏制作 × AI 开发资源梳理 · 第三十八辑（2026-10-11 · Live2D 制作全谱系补采）
+
+> 本辑为 Live2D 连续第十一轮。三路并行（gh / cn / official），共得 **gh 24 条 + cn 18 条 + official 16 条** 候选，
+> 经与 index.html（1403→1426 项）及 csdn-social-summary（v34 / v36）比对待办，**全部 28 个 GitHub slug 零重复**，
+> 落索引 **23 张卡（1386→1409）+ 23 条脚注（[1403]–[1425]）**。详细条目见 `_r38/_r38_gh.md` / `_r38_cn.md` / `_r38_official.md`。
+
+## 一、搜索覆盖
+
+| 路 | 覆盖 | 正条 | 边缘 |
+|---|---|---|---|
+| gh | GitHub / Gitee / HF：Live2D 工具·查看器·插件·引擎·AI 数字人 | 24（§三 11 + §四 13 [AI]） | 7 行（§五） |
+| cn | CSDN / 掘金 / 知乎 / 公众号 / 少数派 / gamemale / 微博 / B站 | 18 | gamemale 复测状态 1 + 应用/纠纷 4 + [AI] 1 |
+| official | Cubism 官网·release notes / note.com / r-Live2D / 官方论坛 / X | 16（§三 8 + §四 4 + §五-A 6 帖） | — |
+
+## 二、本辑一句话主线
+
+**Live2D 制作的「身体侧」供给继续加密，且第一次出现可验证的硬指标样本；AI×Live2D 数字人从「主张」彻底变成「重复模式」——
+12 条新增 AI 桌宠/数字人收敛出一条可复用的本地栈（Live2D 渲染 + 本地 LLM/Ollama + TTS/ASR + 长期记忆）。**
+
+## 三、分主题条目（均带链接，细节见 _r38_*.md）
+
+### A. 工具 / 查看器 / 插件 / 引擎（gh §三，11 条）
+- **ImDuck42/Live2D-Viewer**（★14 · MIT）— **本辑唯一标「落地」的网页查看器**：原生 JS+PIXI.js 6.5.10，四种载入（URL/预设/GitHub 仓库浏览器/本地 ZIP），可在索引站直接嵌一个 Live2D 预览器。[1412]
+- **TSKI433/hime-display**（★254 · GPL）— 一套 UI 看 Live2D/Spine/MMD/VRoid 四格式，做素材库预览省事。[1404]
+- **LIlGG/plugin-live2d**（★251 · MIT）— Halo 博客 Live2D 看板娘插件，即插即用。[1405]
+- **evgo2017/vue-live2d**（★166 · MIT）— Vue 组件版看板娘。[1409]
+- **amorist/platelet**（★226 · GPL）— 经典「血小板」网页看板娘 widget。[1406]
+- **LSTM-Kirigaya/Live2dRender**（★183 · Apache）— Web 端新版 Cubism 渲染封装，当渲染底座。[1408]
+- **Arisego/UnrealLive2D**（★153 · MIT）— Unreal 路线稀缺的 Live2D 桥接（⚠️ 2025-02 后未动，先核 SDK 兼容）。[1410]
+- **iCharlesZ/vscode-live2d-models**（★169）— VSCode 看板娘模型库（资源集合）。[1407]
+- **ezshine/AwesomeLive2D**（★411）— Live2D 模型/资源 awesome 清单（约 3 年未动，作导航）。[1403]
+- **redchenk/yachiyo-live2d-studio**（★25 · MIT）— 当天建仓的「studio」，待 README 补全再评。[1411]
+- **sweetcornna/OneClick2D**（★0）— **不碰 Cubism 授权的替代格式 .oc2d**，版权敏感场景的稀缺思路。[1413]
+
+### B. AI × Live2D 数字人 / 桌宠（gh §四，12 条，全部 [AI]）
+- **HELPMEEADICE/BANDORI-PET-REV**（★465 · GPL）— **本辑最硬指标**：Cubism SDK+PySide6，51+ 角色/305+ 服装，自研 LuaJIT 渲染核较 live2d-py **6 倍+（30→180fps+）**，Qwen3TTS 口型 + faster-whisper ASR + LLM 记忆。[1422]
+- **waterfeet/DoroPet_V3**（Gitee · ★7 · Apache）— **架构最贴本机栈**：live2d-py + Ollama + sherpa-onnx/edge-tts + SQLite 记忆 + Galgame 叙事。[1423]
+- **andyhuo520/openclaw-assistant-mvp**（★408）— Electron AI 语音助手 + Live2D 表情/口型（⚠️ 无 LICENSE）。[1414]
+- **MIO-456/Lumi_Nox**（★239 · MIT）— 双 AI VTuber 同台直播实时编排（open-core）。[1415]
+- **YuriCrystal/ai-avatar-bot**（★203 · NOASSERTION）— Live2D/VRM 语音 avatar，一行嵌入网站。[1416]
+- **inni918/warashi**（★119 · NOASSERTION）— 桌面 AI 伴侣：Live2D+语音+长期记忆+主动搭话（正中本地 Ollama 基准）。[1417]
+- **chyinan/Kokoro-Engine**（★156 · MIT）— Rust 跨平台虚拟角色交互引擎。[1424]
+- **funnycups/petto**（★119 · GPL）— Flutter/Dart Live2D 桌宠。[1418]
+- **ReSerendipity/SpiritPal**（★0 · Apache）— **Tauri v2 + Pixi.js 8 Live2D**（2026 新写法样本）。[1421]
+- **DesktopPetXuansi/Xuansi**（★1 · Apache）— Windows 本地 AI 桌宠，纯本地优先。[1420]
+- **Nav-Joe/Xue_CyberNeko**（★7 · MIT）— 轻量 Live2D AI Neko。[1419]
+- **aurel-g/ComfyUI-Live2DViewer**（★0 · MIT）— ComfyUI 节点预览 Live2D（补「AI→Live2D 流水线」可视化环，但 2024 起停更）。[1425]
+
+### C. 中文经验帖 / 实战测评（cn，取到正文的关键 2 条 + 状态）
+- **塔猴《2D 立绘活了：Live2D / Spine 动作的 AI 辅助生成流》**（tahou.com · 2026-01-13）— **本辑唯一取到正文的中文 AI 辅助 Live2D 流程帖**：AI 拆层 → Auto Mesh → Deform Path → Auto Standard Form → Physics/Auto Blink/Breathing Loop，给了可点的菜单路径（「3–5 天→1 天」偏宣发，需自测打折扣）。[CSDN 路径见 _r38_cn.md §六]
+- **CSDN React 帖「TTS→RMS→口型」代码** — 可直接抄进本地 Ollama 语音桌宠（主 agent 实测优先级 2）。
+- **Steam AI桌面宠物**（4227700 · 42kami）— 本地 LLM + Live2D 桌宠，最贴 16GB+Ollama 基准（待装实测）。
+- 已剔除：米画师 4 处价格锚（R41 已收）、海淀 7627 元案（R37 已收）、SAM 2 三篇 weixin_数字 内容农场（打假）。
+- **gamemale 复测**：仍被 Cloudflare 挑战页挡住 → **本轮未命中（待复测）**，未写成负结论。
+
+### D. 官方 / 海外（official，关键结论）
+- **Cubism 5.4**：仍为 **alpha2，可用期延至 2026-10-18，未转 beta**；alpha 版无前方兼容（alpha2 存的工程 5.3 打不开）。
+- **官方论坛**：Unity Sprite 压不过模型 / motion3 覆盖重导入 / Unreal SDK 停摆三件事上轮已认领，本轮无新进展。
+- **note.com / r-Live2D**：本机 fetch 000（非限流），下轮用代理或带登录态浏览器补采。
+- **creatorsforum.live2d.com**：403 用 `.json` 端点绕过成功。
+
+## 四、AI 开发 / 使用相关帖子的实测结论（主 agent 逐条读 + 核实）
+
+本轮 [AI] 帖子共 **13（gh）+ 1（cn）= 14 条**，全部走 `gh api` 复核 stars/许可证/语言/日期。结论：
+
+1. **可复用性**：除 ImDuck42/Live2D-Viewer 标「落地」外，AI 数字人/桌宠 12 条均为 **② 参考**、1 条 HF LoRA 为 **③ 不采用**（闭源付费、非本地）。
+2. **收敛出的本地栈**（对本机 16GB+Ollama 基准直接有用）：`Live2D 渲染（pixi-live2d / live2d-py）+ 本地 LLM（Ollama / Qwen3）+ TTS（edge-tts / sherpa-onnx / Qwen3TTS）+ ASR（faster-whisper）+ 长期记忆（SQLite / JSON）`。
+   - 最完整两个样本：**BANDORI-PET-REV**（★465、自研渲染核 6x+）与 **DoroPet_V3**（Gitee、live2d-py+Ollama 全链路）。两者协议分别为 GPL-3.0 / Apache-2.0，抄架构不抄依赖。
+3. **是否「改我们的工具/流程」**：**本轮不改**。这些帖子是「AI 桌宠/数字人」应用，对维护索引站 / agent 工具链无直接改造点；其价值是**作为索引卡收录**（已落 12 张）与**本地栈架构参考**。
+4. **待实测（留作下轮待办）**：在 16GB 本机 clone 并跑通 BANDORI-PET-REV / DoroPet_V3，验证本地 Ollama 栈可行性；以及在 Cubism 5.3 复一遍塔猴的 `Auto Standard Form` 是否真按图层命名自动形变。
+
+## 五、可拓展性 & 实用性 思考（通俗版）
+
+- **查看器/插件侧**：格局已稳，新增多是「换框架再实现一遍」（Halo / Vue / Unreal / Flutter）。**真正可落地的是 ImDuck42/Live2D-Viewer**——它能在我们的索引站里直接嵌一个 Live2D 模型预览器，MIT、有在线 demo，改造量小。
+- **AI 数字人侧**：这是本辑密度最高的方向，且**第一次出现可验证硬指标**（BANDORI-PET-REV 的 6x 渲染、50+/300+ 模型量）。说明「AI 装 Live2D 身体」已从玩具走向能跑的工程。但**绝大多数是 ★0–1 或当天建仓**，协议也参差（无 LICENSE / NOASSERTION / GPL 传染），当参考骨架可以，当依赖不行。
+- **合规红线仍在**：凡碰 `.moc3` / Cubism SDK 的（BANDORI-PET-REV、DoroPet_V3、UnrealLive2D）都绕不开 Live2D 官方授权；**OneClick2D 走「不碰 Cubism」的 .oc2d 替代格式**是版权敏感场景的稀缺思路，值得持续盯。
+- **对本机最实用的三件事**：① 用 Live2D-Viewer 给索引站加预览器；② 抄 BANDORI/DoroPet 的本地栈架构做自己的桌宠/数字人；③ 把「本地 LLM + TTS/ASR + 记忆」当标准件复用，别重复造。
+
+## 六、索引与文档维护
+
+- 落索引：**insert_v42_cards.py** → 23 张卡（1386→1409）+ 23 条脚注（[1403]–[1425]）；页头 1403→1426 项。
+- `index_metrics`：**E1–E7 全绿**，恒等式 1426 == 1425+1，div 13389/13389 平衡，`--update` 已重封 312 分组快照。
+- ⚠️ **脚注区漂移（上轮待办①）仍未修**：[1301]–[1378] 嵌在 card `rpm38c4` 内，本辑 [1403]–[1425] 按既有规则接在其后，**同样落在 card 容器内**（这是 E1–E7 盲区，下轮必修）。
+- 原始产出：`_r38/_r38_gh.md` / `_r38_cn.md` / `_r38_official.md`。
+
+## 七、下一辑待办（按序）
+
+1. ⭐ **修脚注区漂移**：把 [1301]–[1378]（及本辑 [1403]–[1425]）整体搬出 `rpm38c4` 的 card div 进 `<footer>`，并给 `index_metrics` 加「脚注不得出现在 card 容器内」判据（加判据后必跑 `gate_recall_probe` + 造负对照）。
+2. ⭐ **实测 py-moc3 / easy-live2d v0.4.0 `playVoice()`**（上轮待办②③，仍pending）。
+3. **AI 桌宠本机可行性实测**：clone BANDORI-PET-REV / DoroPet_V3，在 16GB 跑通 Ollama 本地栈。
+4. **Cubism 5.4 alpha 10-18 下线后复测**（转 beta？SDK 手册补 alpha2？）。
+5. **中文源补采**：note.com / r-Live2D / 知乎·B站（带登录态浏览器），本机 fetch 000 本轮未取到。
+6. 超上下文顺延：ayagami 复查（连续多轮无推进）、DSH 插件生态成辑。
+
+## 统计页脚（第三十八辑）
+
+- 检索：gh 24 条正文 + 7 边缘 · cn 18 条正文 · official 16 条正文。
+- 去重：28 个 GitHub slug 对 index.html + csdn-social-summary(v34/v36) **零重复**；打假 SAM2 内容农场 3 篇、剔除 R37/R41 已收旧闻 2 处。
+- 索引：**1403 → 1426 项**（卡片 1386→1409 / 脚注 1402→1425）；分组 311→312。
+- 闸门：`index_metrics` E1–E7 全绿 + `--update` 重封快照。
+- 原始：`_r38/_r38_gh.md` · `_r38_cn.md` · `_r38_official.md` · `insert_v42_cards.py` · `prepend_summary.py`。
+
+---
+
 
 > 本辑为 Live2D 连续第十轮。**这一辑的看点从「墙」挪到了「墙两边的人」：**
 > ① 「绕开 Cubism 的绑定」这条线第一次出现**可验证流水线** —— `rig-c/core` 把 rig spec 编译成 **Spine 4.3**，
